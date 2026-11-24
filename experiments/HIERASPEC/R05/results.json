@@ -1,0 +1,322 @@
+{
+  "source": {
+    "repo": "shreyansh26/Speculative-Decoding",
+    "ref": "76335be2f8f1a7bf25739310ae80435b83782b23"
+  },
+  "methods": {
+    "E3": {
+      "n": 100,
+      "match": 44,
+      "tokens": 12089,
+      "accept": 0.3612932398824327,
+      "baseSeconds": 195.824267685035,
+      "methodSeconds": 155.1595571990474,
+      "speedup": 1.2620831821131109,
+      "slower": 0,
+      "targetForwards": 4476,
+      "specSteps": 4476,
+      "draftForwards": 8846,
+      "p95Normalized": 0.9051444426695376,
+      "failedBaselineSeconds": 112.55350204303977,
+      "idealRerunSeconds": 267.7130592420872,
+      "idealRerunSpeedup": 0.7314707330282133,
+      "shadowARSpeedup": 0.5579296075815142
+    },
+    "E6": {
+      "n": 100,
+      "match": 42,
+      "tokens": 12095,
+      "accept": 0.2821713677488026,
+      "baseSeconds": 193.4679299639538,
+      "methodSeconds": 162.29323806311004,
+      "speedup": 1.1920886678514666,
+      "slower": 0,
+      "targetForwards": 4747,
+      "specSteps": 4747,
+      "draftForwards": 9395,
+      "p95Normalized": 0.9169381147461845,
+      "failedBaselineSeconds": 114.27996597200399,
+      "idealRerunSeconds": 276.57320403511403,
+      "idealRerunSpeedup": 0.6995179834536353,
+      "shadowARSpeedup": 0.5438140734607553
+    },
+    "MTP1": {
+      "n": 100,
+      "match": 100,
+      "tokens": 12142,
+      "accept": 0.7382671480144405,
+      "baseSeconds": 188.08702254109085,
+      "methodSeconds": 210.86929723166395,
+      "speedup": 0.8919602095247456,
+      "slower": 100,
+      "targetForwards": 12204,
+      "specSteps": 4466,
+      "draftForwards": 4432,
+      "p95Normalized": 1.1433410836277114,
+      "failedBaselineSeconds": 0,
+      "idealRerunSeconds": 210.86929723166395,
+      "idealRerunSpeedup": 0.8919602095247456,
+      "shadowARSpeedup": 0.4714476578494234
+    },
+    "MTP2": {
+      "n": 100,
+      "match": 100,
+      "tokens": 12142,
+      "accept": 0.6833611574846967,
+      "baseSeconds": 186.45918461005203,
+      "methodSeconds": 231.26694121654145,
+      "speedup": 0.8062509221128379,
+      "slower": 100,
+      "targetForwards": 12188,
+      "specSteps": 3638,
+      "draftForwards": 7188,
+      "p95Normalized": 1.2695689523624092,
+      "failedBaselineSeconds": 0,
+      "idealRerunSeconds": 231.26694121654145,
+      "idealRerunSpeedup": 0.8062509221128379,
+      "shadowARSpeedup": 0.4463670646433424
+    },
+    "Medusa": {
+      "n": 100,
+      "match": 45,
+      "tokens": 12124,
+      "accept": 0.3603841658620865,
+      "baseSeconds": 190.24653534495155,
+      "methodSeconds": 88.46837155400135,
+      "speedup": 2.1504468998711537,
+      "slower": 0,
+      "targetForwards": 5032,
+      "specSteps": 5032,
+      "draftForwards": 5032,
+      "p95Normalized": 0.6730859242958386,
+      "failedBaselineSeconds": 107.63351288199192,
+      "idealRerunSeconds": 196.10188443599327,
+      "idealRerunSpeedup": 0.9701412910544831,
+      "shadowARSpeedup": 0.6825847151904392
+    }
+  },
+  "pairedIds": 100,
+  "sameGeneratedLength": 92,
+  "allMatched": 26,
+  "observationallyEligible": [
+    "MTP1",
+    "MTP2"
+  ],
+  "mtp2VsMedusaAcceptanceRankReversal": 93,
+  "strata": [
+    {
+      "group": 0,
+      "n": 28,
+      "arms": {
+        "E3": {
+          "meanNormalized": 0.7804788177262786,
+          "mismatches": 18
+        },
+        "E6": {
+          "meanNormalized": 0.8293044803717883,
+          "mismatches": 18
+        },
+        "MTP1": {
+          "meanNormalized": 1.1290098055274271,
+          "mismatches": 0
+        },
+        "MTP2": {
+          "meanNormalized": 1.2591714020263798,
+          "mismatches": 0
+        },
+        "Medusa": {
+          "meanNormalized": 0.47312745941866574,
+          "mismatches": 15
+        }
+      }
+    },
+    {
+      "group": 1,
+      "n": 28,
+      "arms": {
+        "E3": {
+          "meanNormalized": 0.7763909633728608,
+          "mismatches": 12
+        },
+        "E6": {
+          "meanNormalized": 0.8260445470144476,
+          "mismatches": 15
+        },
+        "MTP1": {
+          "meanNormalized": 1.1173759610222695,
+          "mismatches": 0
+        },
+        "MTP2": {
+          "meanNormalized": 1.2342068598934695,
+          "mismatches": 0
+        },
+        "Medusa": {
+          "meanNormalized": 0.43221836324485474,
+          "mismatches": 14
+        }
+      }
+    },
+    {
+      "group": 2,
+      "n": 44,
+      "arms": {
+        "E3": {
+          "meanNormalized": 0.8018249501662486,
+          "mismatches": 26
+        },
+        "E6": {
+          "meanNormalized": 0.8475629183986524,
+          "mismatches": 25
+        },
+        "MTP1": {
+          "meanNormalized": 1.1216649460666763,
+          "mismatches": 0
+        },
+        "MTP2": {
+          "meanNormalized": 1.2374415019670304,
+          "mismatches": 0
+        },
+        "Medusa": {
+          "meanNormalized": 0.46709535259708335,
+          "mismatches": 26
+        }
+      }
+    }
+  ],
+  "oracle": {
+    "eligible": 1,
+    "allUnconstrained": 0.4589567337671918,
+    "freeDetectorRerun": 0.6974665004986872
+  },
+  "splits": [
+    {
+      "seed": 11,
+      "nTrain": 68,
+      "nTest": 32,
+      "global": "AR",
+      "regional": [
+        "AR",
+        "AR",
+        "AR"
+      ],
+      "acceptance": "MTP1",
+      "globalMean": 1,
+      "regionalMean": 1,
+      "acceptanceMean": 1.1212386333807771,
+      "oracleEligible": 1
+    },
+    {
+      "seed": 29,
+      "nTrain": 68,
+      "nTest": 32,
+      "global": "AR",
+      "regional": [
+        "AR",
+        "AR",
+        "AR"
+      ],
+      "acceptance": "MTP1",
+      "globalMean": 1,
+      "regionalMean": 1,
+      "acceptanceMean": 1.1248691067027097,
+      "oracleEligible": 1
+    },
+    {
+      "seed": 73,
+      "nTrain": 68,
+      "nTest": 32,
+      "global": "AR",
+      "regional": [
+        "AR",
+        "AR",
+        "AR"
+      ],
+      "acceptance": "MTP1",
+      "globalMean": 1,
+      "regionalMean": 1,
+      "acceptanceMean": 1.1220946248956063,
+      "oracleEligible": 1
+    }
+  ],
+  "bootstrap": [
+    {
+      "seed": 11,
+      "replicates": 2000,
+      "intervals": {
+        "E3": [
+          1.2434473182472874,
+          1.281746690414451
+        ],
+        "E6": [
+          1.1784082475276914,
+          1.2060464812025402
+        ],
+        "MTP1": [
+          0.8904579106493922,
+          0.8934081299477065
+        ],
+        "MTP2": [
+          0.8042417185571022,
+          0.8082276020266793
+        ],
+        "Medusa": [
+          2.059466079594631,
+          2.2499378676850674
+        ]
+      }
+    },
+    {
+      "seed": 29,
+      "replicates": 2000,
+      "intervals": {
+        "E3": [
+          1.2428262360650824,
+          1.2813993335987377
+        ],
+        "E6": [
+          1.1774048661785441,
+          1.2068816845640675
+        ],
+        "MTP1": [
+          0.8904541975448275,
+          0.8935312421181809
+        ],
+        "MTP2": [
+          0.8042419615675374,
+          0.808201859372921
+        ],
+        "Medusa": [
+          2.0566079770754793,
+          2.2550160625907436
+        ]
+      }
+    },
+    {
+      "seed": 73,
+      "replicates": 2000,
+      "intervals": {
+        "E3": [
+          1.242760194922774,
+          1.2813628185213013
+        ],
+        "E6": [
+          1.178235481288953,
+          1.2066864035194305
+        ],
+        "MTP1": [
+          0.8904531376009857,
+          0.8933825616107361
+        ],
+        "MTP2": [
+          0.8042176124516126,
+          0.808140258366019
+        ],
+        "Medusa": [
+          2.050566645950534,
+          2.2537617656915914
+        ]
+      }
+    }
+  ],
+  "zeroFailuresUpper95": 0.029513049607039932
+}
