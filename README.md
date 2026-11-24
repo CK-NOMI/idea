@@ -3591,3 +3591,12 @@ H未执行：只有真实训练部署确实将同一合法GRPO组跨区域分配
 
 
 **R45 arithmetic correction / 评分算术更正：** weights 25/25/20/15/15 with component scores 8.5/7.5/8.5/6.5/7.0 give **7.725/10**, not 7.75; component scores, evidence and verdict unchanged.
+
+
+### team-far/R46｜SCM-SD：多Token生存凹下界与分层正式学习质量约束
+
+- 2026-11-24；起始 main 540fb904e738d19e8c7b5215063fc360c561ca83，README 0ee18ed1288e13866cd13e962e5cf0e57d09170c（3594行/505333字符）；写前 92d1bcc5f74fdf453804038c92cfa7876eb3a5b8 / 0ee18ed1288e13866cd13e962e5cf0e57d09170c。取得全文并筛查，复查FSGPA/VAPE/R39/R43/R45及R43 joint.js，非全库逐式审查或复跑。
+- T：固定特征、仿射正式/内生logits、正softmax、有限窗口，A(θ)=Σ_i m_i(θ)，m_i为各非空接受前缀的权重乘逐token min(p,q)。参考r_i=m_i(θ0)/A0，S=Σ_i r_i log(m_i(θ)/m_i(θ0))，log A≥log A0+S，精确gap=KL(r||m/A)，锚点紧/可微处梯度相同。log min(p,q)凹，S凹；每客户CE凸质量约束，same-anchor全体同约束的可行候选凸聚合安全。局部归一S_e必须按A_e0加权且固定工作负载权重，edge/cloud求和可组合；不同局部约束/锚点不闭合。同信息平坦可复制。标准Jensen/MM非基础数学原创，VSD直接近邻。参考接受路径可估计未归一S，ratio有偏，有限样本不保总体；精确构权指数成本，完整求解/物理HFL未实现。
+- E：两同7264参数microGPT，3 hash split、4逻辑client/2 edge、3人工漂移，同正式浅深共享W_e；两脚本.08/.01归一梯度步长，每18配置、共5952重复特征调用、1728客户CE梯度评估、648辅助步/下界检查，0违反、锚点梯度差2.37e−16。相同per-client guard NLL容忍.005，root/window/MM各6步选可行候选，未做真正凸约束求解。.08 direct全回退，MM仅2/18接受且2未见test超限；.01均15/18接受，低中高EAL MM1.736027/1.733948/1.727816，direct1.735476/1.733234/1.727311，CE1.733966/1.731758/1.725629；MM和direct各5/18未见test质量超限，MM均值NLL略退。提升微小，非同质量、无GPU/实际生成/物理通信/CI，非独立训练seed。
+- 实查VSD/WTV/D-PAL/TVP/LK/LayerSkip/FedMGDA+/convex global-local constrained FL/Fed-GCE/federated surrogate优化原始摘要/出版页，非全文穷尽/正式查重。主观8.045（8.6/8/9.2/6.2/7.5，25/25/20/15/15），R44 8.14与R30窄数学8.35保留。G1/G2/G4 FAIL，G3/G7部分，G5未验，G6无80%证据。**Reject独立立项，保留凹下界/KL gap/同锚点聚合证书与质量负结果**。P0有限样本验证与真正约束求解对照direct WTV/FedMGDA/同信息平坦，先确认实际不可替代约束；1–2×40GB两真实尺度三非IID/延迟/独立seed同质量全流程−15%或工作+20%和CI未执行。
+- [报告](experiments/team-far/R46/record.md) · [代码](experiments/team-far/R46/scm.js) · [结果](experiments/team-far/R46/results.json) · [小步长对照](experiments/team-far/R46/smallstep.js) · [结果](experiments/team-far/R46/smallstep_results.json)
