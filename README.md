@@ -1922,3 +1922,52 @@ CRITICAL：普通精确halo交换、无预测的延迟边界、上下文并行�
 - 文献2026-11-24检索rollout activation reuse、speculative backward、rematerialization、splitfed、training prefix reuse，核对原始摘要/NeMo HTML非全篇。除NeMo：[SPEC-RL](https://arxiv.org/abs/2509.23232) 2025，[SRT](https://arxiv.org/abs/2601.09083) 2026已研究SD rollout树缓存；[PrefixFlow](https://arxiv.org/abs/2606.01143) 2026训练时KV和延迟prefix backward（摘要/机构介绍，完整公式待核）；[Checkmate](https://proceedings.mlsys.org/paper_files/paper/2020/hash/0b816ae8f06f8dd3543dc3d9ef196cab-Abstract.html) MLSys2020、[Dynamic Tensor Rematerialization](https://ztatlock.net/pubs/2021-iclr-dtr/2021-iclr-dtr.pdf) ICLR2021（检索摘要）已有checkpoint；[SplitFed](https://arxiv.org/abs/2004.12088) AAAI2022，[Reuse your FLOPs](https://proceedings.mlr.press/v306/setlur26a.html) ICML2026离策略prefix语义不同。盲区：融合rollout/training最新引擎、GPU kernel、未索引/未公开、全文附录。无正式文字查重。
 - CRITICAL：AR/SD/平坦替代；全候选tape可能降低batch，批量teacher forcing/FlashAttention/PrefixFlow强基线未实测；非IID、HFL与SD因果双向缺失。H：若新证据改变前提再做1–2×40GB Qwen2.5-1.5B/3B、LoRA、内生头、8客户端2边缘，公开数学/代码/通用任务三非IID/时延三种子；先测F/T、版本命中、跨块梯度、GPU峰值与吞吐；比较普通HFL AR、AR+tape、普通HFL+SD、SD+checkpoint、PrefixFlow、同信息平坦、批量重算。计reward、optimizer、通信、回退、质量、真实累计时间及CI。未执行，不建议投入GPU挽救当前方案。
 - 主观等权创新5.9/10（问题7、机制5.5、理论6、价值7、距离4）；非同行评审。G1 FAIL、G2 CRITICAL FAIL、G3 PARTIAL/FAIL（局部梯度证明，完整greedy/采样/跨块/精度未验）、G4 FAIL随机小网络、G5 FAIL仅局部CPU、G6 FAIL无80%依据、G7 PARTIAL/FAIL局部代码结果可复算无完整系统。好结果仍同质量资源最强公平基线真实总wall time−15%或有效工作+20%、全部G。**Reject and Pivot**。保留VJP等价、版本/分支反例、实际CPU计时及成本界；禁止普通激活缓存换名立项。下一轮优先获取真实预训练模型/rollout profiler，定位物理数据驻留、版本屏障及共享工作占比；先设可被普通AR/SD/同信息平坦否证的双向因果假设，若无法取真实证据则明确缺失。
+
+
+### team-hiercouple/R04｜CPG：实测阶段耗时驱动的分层RL自投机关键路径与立项门槛
+
+- 2026-11-24；研究起始 main commit 9ee593ae13e43e983bf63cc79da0883e99e8dc42、README blob 2e1bac9e6e8f1d5262c235de35e5d805f616ddfa，1885行。核对上次归档commit 62e9f054e66415d1ed2727e05482c6fb539b2352 README为原样前缀，阅读其后新增FLPS/FBS及HC/R03详细记录、FBS/R04和HCR/R04相关代码；历史结果未独立复跑。提交前读取并发HC/R03 FCR-SD索引及HiMerge/R04 FVC（共享容量障碍、CPU算子合批），与本轮关键路径审计对象不同。没有真实GPU/HFL trace，明确降级为证据审计而非新模型实验。
+- **Reject and Pivot（否决将关键路径调度单独立项，保留真实问题证据、门槛与实验规程）。** T=限定数学；E-H=原论文报告真实GPU时间（未独立复现）；E=本次实际执行JS数值重分析；P=基于已报告数值的假设敏感性/路径模型；H=未验证。不是HFL系统实测，未宣称80%成功把握。
+
+#### 1. 真实瓶颈与研究场景
+固定学习语义的同步分层联邦RLVR/GRPO：客户端持非IID私有prompt/奖励，使用各自合法固定策略快照及内生头/MTP/早退/目标派生量化路径生成独立rollout组，区域聚合完整预定本地更新，云聚合区域更新。不部署独立完整草稿LLM；量化派生需核算额外存储。按真实q及p执行精确SD；同一训练快照、同目标、独立轨迹随机性、同样本组与权重、确定归约顺序（实际浮点另审计）；不得以按时完成作为样本筛选、改动本地步数或偷换策略版本来声称同质量。A/R04、A/R12已经给出联合轨迹及截止选择偏差，本轮不重复。
+优化目标为达到同预定训练质量的真实总wall time/有效工作，约束数据权限、相同模型/预算、所有阶段费用；真实HFL生成占比尚未知。普通HFL监督训练未必存在rollout瓶颈，不能外推。
+公开论文真实数据：Iso et al. [arXiv:2604.26779](https://arxiv.org/abs/2604.26779) Table 1, Qwen3-8B/8B-Base、DAPO-Math-17K、32 GB200 GPU（186GB/卡），RL-Think/Zero分别 AR总185.3/151.2s、生成133.6/100s；EAGLE-3总137.4/107.5s、生成87/56.6s。是集中同步RL非HFL；EAGLE-3附加预测组件、预训练成本须计。论文235B异步2.5倍为模拟投影而非实测。EfficientRollout [arXiv:2606.18967](https://arxiv.org/abs/2606.18967) Table 2报告Qwen2.5-7B/14B和Llama3.1-8B的加速AR总132.6/221.1/186.9s，生成82.4/126.6/126.4s；EfficientRollout总115.7/197.2/172.2s，生成66.3/105.3/112.9s，量化准备1.3/2.6/1.4s。不同论文不作跨平台速度排名。另ECHO-2 [arXiv:2602.02192](https://arxiv.org/abs/2602.02192) Table 2报告9机器peer broadcast 1437s/learner等待0s，去P2P 1830s/等待131.9s；巨大通信耗时不等于同额关键路径，异步可隐藏。不是HFL LoRA通信数据。
+本地环境实际检查：Python3.13环境 torch2.10.0+cpu、CUDA false/0设备、transformers未安装、~/.cache/huggingface/hub与/opt/models不存在，/mnt/data为空。尝试读取两篇arXiv html URL失败后改用abs页面可访问正文。未取得公开逐请求原始trace或可运行预训练权重，不伪造；本轮只重新计算公开实测表格并进行假设敏感性分析。
+
+#### 2. 关键路径可证伪门槛（T/P）
+固定调度、无新增资源冲突、完成依赖为DAG，所有路径π基线时间C_π+G_π（C不可加速、G可加速生成）；T0=max_π(C_π+G_π)。若生成等比例减r∈[0,1]，额外路径开销H_π≥0，则T(r)=max_π(C_π+(1−r)G_π+H_π)。G5 15%总时间下降（固定质量/训练轮数）当且仅当所有路径均≤.85 T0。故每条G_π>0须r≥(C_π+G_π+H_π−.85 T0)/G_π，取max并截到0；G_π=0须C_π+H_π≤.85 T0；若最大所需r>1或零生成路径不满足，单靠生成优化不可能通过。证明直接由max定义。异步/动态调度/资源竞争须重建DAG，非所有系统下界；总GPU忙时与关键路径时间不等。
+简单同步串行T0=G+C+W（W额外不可重叠HFL通信/聚合），候选新增开销h，则时间节省(rG−h)/T0；r≥(.15T0+h)/G。若已有SD强基线，必须以该基线G、T为分母；不能把普通SD相对AR收益冒称新机制收益。训练到同质量的轮数可能变化，须计入；同成本+20%有效工作单独验证。
+二层固定同步例T=cloud+max_e(edge_e+Σ_j max_i(local_{eji}))，可在每个合法阶段按预测结束时间求局部配置。对只有一次本地阶段、独立客户端配置菜单(t_i(k),cost_i(k))、固定区域/云延迟a_e,c、无共享GPU/网络竞争的限定模型，给定D，要求每个i在区域e满足t_i(k)≤D−a_e−c；选各自最低cost的可行配置，其cost之和≤全局预算B iff D可达。证明约束可分离；枚举有限完成时间即可取最优D。多本地轮/共享资源不能直接用此结论。实际CPG可作为立项前审计和因果消融计划，不是新调度原语；关键路径、Amdahl、deadline配置与同信息平坦调度完全可复制。
+形式上精确SD只换同一p的采样实现，不改变预定学习目标；HFL更新影响策略版本及草稿适配，SD影响阶段成本但未建立正式学习反向新原语。若用完成时间选择训练样本/区域、改变同步频率或轨迹组，需另外证明学习语义与质量，不能将定理用于该变化。
+
+#### 3. 实际执行公开数据重分析（E-H/E/P）
+[代码](experiments/team-hiercouple/R04/probe.js)，[完整结果](experiments/team-hiercouple/R04/results.json)，命令 node experiments/team-hiercouple/R04/probe.js。实际JS V8、确定性算术，不需要随机种子；输入5组公开论文实测总时间和生成时间，执行60组假设开销敏感性（每组W=0/20/60s、h=0/5s、假设暴露生成比例1/.5）与4组两并行路径模型。暴露比例敏感性保持基线总时间固定，仅为可消除工作上界代理，不是实际异步执行重构。无真实网络、预训练模型、真实HFL、GPU测量或CI。
+|模型/设置|普通SD相对AR总时间降幅|SD剩余生成占比|相对SD强基线单靠生成达G5所需额外生成降幅|假设再降20%生成的总时间降幅|
+|---|---:|---:|---:|---:|
+|Qwen3-8B RL-Think|25.85%|63.32%|23.69%|12.66%|
+|Qwen3-8B-Base RL-Zero|28.90%|52.65%|28.49%|10.53%|
+|Qwen2.5-7B|12.75%|57.30%|26.18%|11.46%|
+|Qwen2.5-14B|10.81%|53.40%|28.09%|10.68%|
+|Llama3.1-8B|7.87%|65.56%|22.88%|13.11%|
+上述前列基于论文实测数据，后列为数学重算，不是本队硬件实测。五组全都不能仅靠再减少20%生成达到15%全流程门槛（假定其他阶段不变、无额外开销）；不是所有模型/系统否证。Qwen2.5-7B W=20/60s时所需额外生成降幅30.70/39.75%；W=60s,h=5s且仅一半生成暴露时所需约94.59%（(0.15×175.7+5)/33.15≈.946）；不把假设通信秒数当HFL实测。RL-Think/Zero普通SD相对AR在共用不可重叠W≤134.03/140.13s时仍达15%，但非本轮创新收益。
+两并行路径用RL-Think/Zero已有SD阶段数值作锚，B路径人为加入W=0/20/40/80s（并非同一系统实测、不是原始trace）：基线makespan137.4/137.4/147.5/187.5s；两路径均再降20%生成，整体仅降12.66/12.66/7.67/6.04%；W=40时只优化A即使A生成降20%，整体收益0，因为B成为关键路径；共同r达G5要求23.69/23.69/39.09/49.69%。路径变化必须审计，平均客户端吞吐不能替代。
+无正式统计CI：五个设置不是随机样本，不能估计成功概率。全部脚本数据转录与输出可复算，不等同原论文独立复现。
+
+#### 4. 文献核查和强基线
+2026-11-24实际搜索 RL rollout speculative decoding time breakdown/self speculation/federated GRPO/distributed wide-area rollout；核对原始页面与可访问正文（部分html直连失败，abs页面正文恢复），非穷尽全文/附录、专利或未公开工作。
+- [Accelerating RL Post-Training Rollouts via System-Integrated Speculative Decoding](https://arxiv.org/abs/2604.26779) 2026-04，Table 1实测，Section 4异步投影；已明确异步减少生成关键路径份额。直接机制近邻。
+- [EfficientRollout](https://arxiv.org/abs/2606.18967) 2026-06，目标派生量化自投机、阶段toggle、接受长度适应；实测Table 2，直接重合。
+- [DAS MLSys2026](https://proceedings.mlsys.org/paper_files/paper/2026/hash/cbc4ab80cd77aa0eb87da062fbcddb46-Abstract-Conference.html)，[作者说明](https://mlsys.wuklab.io/posts/das/)：长尾makespan、按难度/长度预算分配、历史后缀草稿；作者报告最高约50% rollout下降，不等于50%全训练。
+- [ReSpec MLSys2026](https://proceedings.mlsys.org/paper_files/paper/2026/hash/dcb38c6ad7911842ab31081be9540b89-Abstract-Conference.html)：动态SD、蒸馏、奖励加权。
+- [SpecRoll](https://arxiv.org/abs/2608.04962) 2026-08，验证反馈快慢双时间尺度、稀疏树；报告相对FastGRPO平均端到端1.18×，不外推至HFL。
+- [ECHO-2](https://arxiv.org/abs/2602.02192) 2026-02，真实WAN分布式rollout、流水线广播、重叠与陈旧性；集中learner非HFL。
+- [FGRPO](https://arxiv.org/abs/2606.03094) 2026-06、[Fed-GRPO](https://arxiv.org/abs/2610.11502) 2026-10，自适应联邦RL聚合；[When RL Meets Adaptive Speculative Training](https://proceedings.mlr.press/v306/wang26j.html) ICML2026，训练服务联合。另[HierFAVG](https://arxiv.org/abs/1905.06641)为基础HFL，[SPEC-RL](https://arxiv.org/abs/2509.23232)为历史rollout复用先例。原始论文与作者博客仅支持其报告结果，不声称已获得原始trace；无正式文字查重。
+CRITICAL：关键路径预算是常规调度及Amdahl分析，普通AR/SD、同信息平坦、分布式资源调度可复制；RL生成加速是真实问题但已经有直接系统工作，不是新的HFL双向机制。相同训练目标下仅加速生成不改变正式学习算法；若改学习目标/参与则另审计A/R04、A/R12。
+
+#### 5. G1–G7与最具体下一步
+主观审计型候选评分（非同行评审）：问题6.5、机制4、理论5、价值7、距离3.5，权重25/25/20/15/15，5.2/10（加权5.2）。不应因文献实测高性能提高自身创新分。G1 FAIL（已知关键路径与RL SD）；G2 CRITICAL FAIL（同信息平坦和常规调度）；G3 未完整验证（限定DAG命题和标准SD理想正确性，未实现）；G4 FAIL（仅他人真实数据重算）；G5 未验证（无本队全流程真实时间）；G6 未验证（无80%证据）；G7局部可复算/完整FAIL。好结果仍是同质量/硬件预算相对最强公平基线总实际wall time−15%或同成本有效工作+20%，并全部G；无发布成功概率估计。
+H未执行：下一轮首要获取预训练Qwen2.5-1.5B/3B或Qwen3-1.7B/4B、同目标MTP/早退/量化自投机实现，1–2×40GB，优先1.5B/3B LoRA GRPO小规模（实际显存需先测，串行逻辑客户端非物理并行）。公开数学/代码/通用任务，8逻辑客户端/2边缘，三种子三非IID/网络设置，至少30个稳定计时轮/配置，记录per-request版本、prompt/生成长度、预填充/起草/验证/回退、logprob、奖励、反传、优化器、通信字节与起止、聚合屏障、峰值显存、任务质量。对照普通HFL AR、同训练目标HFL+最优调参内生SD、FGRPO/Fed-GRPO同资源、DAS式长度策略、EfficientRollout同模型适用量化自投机、同信息平坦且允许同委托和物理拓扑。双卡测真实链路，WAN仿真另标；固定组不因截止丢弃。先量测候选可消除工作占真实关键路径，基线总时、GPU时、通信，计算G5必要条件及CI；若无可优化≥15%关键路径或无学习双向约束，停止，不先设计抽象toy。若无法取得真实模型/trace则保持未验证，不声称新立项。
+**Reject and Pivot**（证据审计保留，普通关键路径调度不作为新论文）。保存公开数据重算、路径必要条件、强基线与测量schema；下一轮只在真实测量揭示尚未被普通AR/SD和平坦替代的正式学习—验证共享计算后再设计机制。
+
+- 追加时实际README blob 9318fa99e5ee8c161e5304123b163c48b3ea82ec，基于重新读取的完整旧文本保留并发内容。
