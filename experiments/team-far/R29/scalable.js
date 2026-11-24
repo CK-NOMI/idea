@@ -42,9 +42,9 @@ function tree(a,lo=0,hi=a.length){if(hi-lo===1)return {lo,hi,A:[1-a[lo],a[lo]]};
 function split(t,k){return norm(t.L.A.map((x,i)=>x*(t.R.A[k-i]||0)))}
 function pairs(a,b){let i=0,j=0,u=a[0],v=b[0],out=[];while(i<a.length&&j<b.length){let z=Math.min(u,v);if(z>0)out.push([i,j,z]);u-=z;v-=z;if(u<=0){i++;u=a[i]||0}if(v<=0){j++;v=b[j]||0}}return out}
 function transport(t,root,W,audit){if(!t.L){let m=[[0,0],[0,0]];for(let [k,l,p] of root)m[k][l]+=p;W[t.lo]=m;return}let n=t.L.hi-t.L.lo+1,m=t.R.hi-t.R.lo+1,L=Array.from({length:n},()=>Array(n).fill(0)),R=Array.from({length:m},()=>Array(m).fill(0)),cache=t.A.map((_,i)=>split(t,i));
-for(let [k,l,p] of root){for(let [i,j,z] of pairs(cache[k],cache[l])){let r=k-i,s=l-j;if(r<0||r>=m||s<0||s>=m){audit.bad++;continue}L[i][j]+=p*z;R[r][s]+=p*z;audit.work++;if((l-k)*(j-i)<0||(l-k)*(s-r)<0)audit.bad++}}
+for(let [k,l,p] of root){for(let [i,j,z] of pairs(cache[k],cache[l])){let r=k-i,s=l-j;if(r<0||r>=m||s<0||s>=m){audit.bad++;audit.badRangeMass+=p*z;continue}L[i][j]+=p*z;R[r][s]+=p*z;audit.work++;if((l-k)*(j-i)<0||(l-k)*(s-r)<0){audit.bad++;audit.badMonotonicMass+=p*z;audit.maxBadMonotonicMass=Math.max(audit.maxBadMonotonicMass,p*z)}}}
 let list=M=>M.flatMap((r,i)=>r.map((x,j)=>[i,j,x]).filter(t=>t[2]>0));transport(t.L,list(L),W,audit);transport(t.R,list(R),W,audit)}
-let rows=[],audit={bad:0,work:0,maxVoteMarginal:0,maxCountError:0,maxOutputMarginal:0,maxNorm:0};
+let rows=[],audit={bad:0,badRangeMass:0,badMonotonicMass:0,maxBadMonotonicMass:0,work:0,maxVoteMarginal:0,maxCountError:0,maxOutputMarginal:0,maxNorm:0};
 const config=new Map();for(let c of cohorts){let key=c.wi+","+c.seed;if(!config.has(key))config.set(key,[]);config.get(key).push(...c.xs)}
 for(let [key,all] of config)for(let N of [4,16,64])for(let start=0;start<all.length;start+=N){let xs=all.slice(start,start+N),a=xs.map(x=>x.a),t=tree(a),T=Math.round(sum(a)),pref=[[1]],suff=Array(N+1);suff[N]=[1];for(let i=0;i<N;i++)pref.push(conv(pref[i],[1-a[i],a[i]]));for(let i=N-1;i>=0;i--)suff[i]=conv([1-a[i],a[i]],suff[i+1]);
 let rec={key,N,start,T,first:0,block:0,seqFirst:0,seqBlock:0,freshFirst:0,freshBlock:0,upperBlock:0,meanChanged:0,rootLower:0,zeroInfoBlock:0};

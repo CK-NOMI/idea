@@ -2063,6 +2063,9 @@
   ],
   "audit": {
     "bad": 22,
+    "badRangeMass": 0,
+    "badMonotonicMass": 1.399318874258754e-18,
+    "maxBadMonotonicMass": 5.0636843791802575e-19,
     "work": 380763,
     "maxVoteMarginal": 7.771561172376096e-16,
     "maxCountError": 2.6645352591003757e-15,
