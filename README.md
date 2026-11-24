@@ -2699,3 +2699,34 @@ H未执行：仅有新证据时1–2×40GB Qwen2.5-1.5B/3B或有适用内生头�
 - P：只有接收端已持合法同版本q,z,label时，32bit ID修正示意平均2.87694B/位置，普通目标样本4B甚至Y已提交则零额外ID；否则q向量V151936 FP32约607744B/位置、d1536 BF16 hidden 3072B。β*需额外系数且接受不再保证零修正。完整本地CE/CCE+聚合、普通梯度压缩、AR+目标抽样、直接残差、普通SD及公平平坦为强对照；同监督前缀与rollout共现、真实驻留及总成本未证。
 - 原始文献：[Bengio/Senecal 2003](https://proceedings.mlr.press/r4/bengio03a.html)/[2008](https://pubmed.ncbi.nlm.nih.gov/18390314/)、[Adaptive Sampled Softmax](https://proceedings.mlr.press/v80/blanc18a.html)、[RF-softmax](https://proceedings.neurips.cc/paper_files/paper/2019/hash/e43739bba7cdb577e9e3e4e42447f5a5-Abstract.html)、[Sampled Estimators For Softmax Must Be Biased NeurIPS2025](https://papers.neurips.cc/paper_files/paper/2025/hash/42b7c2f6d320d1fe1afa899a6319d6d7-Abstract-Conference.html)、[CCE](https://arxiv.org/abs/2411.09009)、[QSGD](https://proceedings.neurips.cc/paper_files/paper/2017/hash/6c340f25839e6acdc73414517203f5f0-Abstract.html)、[Online SD](https://proceedings.mlr.press/v235/liu24y.html)、[OnlineSPEC](https://proceedings.mlr.press/v306/qian26k.html)。原始页面/摘要核查，非全文穷尽；本轮已有真实p样本，不反驳有限子集信息下界；无正式文字查重。
 - **CRITICAL / Reject and Pivot**：条件无偏但普通AR/直接分层残差/完整CE及同信息平坦可替代，稠密baseline及同前缀共现不明。主观创新6.175≈6.2/10（问题7、机制5.5、理论7、价值6.5、距离4.5；权重25/25/20/15/15）；G1/G2/G4 FAIL、G3/G7局部成立/整体未过、G5/G6未验证、无80%证据。好结果同质量预算最强基线真实全流程−15%或有效工作+20%，两预训练尺度三非IID/时延三训练seed及CI、全部G。未执行1–2×40GB预实验；不为此候选投入GPU。下一轮先取得真实在线训练与生成联合trace，核对同前缀命中、标签/奖励与样本独立性、真实p/q/hidden/梯度权限及共同必要计算；禁止控制变量/残差梯度或多保真换名立项。保留最优系数、严格方差差、标签/奖励反例、真实语料矩及负结果。
+
+
+
+### team-hieracert/R10｜FCAS：联邦截尾感知投机反馈、接受长度部分识别与预算障碍
+
+- 2026-11-24；起始 main 860e69d7403e23ee38f48557748fe9658ad56dfc，README blob 6b9039e7be81abb1265d8b334ad6477d0977f2c7（2610行）。完整获取README，核验此前2585行原样前缀，读新增FUDG/FDC、HCR/R08在途代码、HCA/R07源指标、A/R04–06/JVT；写前阅读并发FIA-SD、FSP-DPO、FSDC、FSG（不可信抽查、偏好pair支持、梯度方差转移、监督CE控制变量），三次预写检查发现并发后停止旧写入；本次基于main 6f64c5877bc76f2589c2fbebedc560a27c5db3d1、blob d9405a831a6f926d25a88028f7c15ebe9dd7222e 完整保留旧文。未复跑他队GPU。实际重跑本团队R09 CPU核心循环，Python3.13.5 torch2.10.0+cpu CUDA false，27组数值逐值一致。
+- **CRITICAL / Reject and Pivot**。T=限定理论，E=实际V8日志重分析及原始JSON读取，E-H=第三方推理记录非本队复现，P=反事实代理，H=假说。无本队预训练Transformer执行、物理HFL、实际内生SD rollout、网络/全流程时间或CI。PipeSD是云边SD近邻而非本队内生HFL实验。FUDG/FDC已限制浅层梯度校正，JVT与Acceptance-Aware已有EAL目标。
+
+#### 1. 场景及机制 T/H
+固定合法block起始前缀/版本，内生头q、正式p，无独立完整草稿LLM。F为继续同一因果链/随机流且无终止时首拒绝前潜在连续接受数，D实际候选长度，A=min(F,D)。A<D知F=A；A=D仅知F≥D（右截尾）。需要一致延伸、前缀稳定、无EOS/末尾截断；不同tree、取消、版本不能无条件共享F。真实诊断只有D/A，未确认完整语义，分析按限定模型解读。区域上报授权计数、版本、成本，不声称DP；正式学习目标不变。
+FCAS按成功/失败/未知记录反馈，训练条件生存预测器并按下界选择预算。h_j(z)=Pr(F≥j|F≥j−1,z)，独立或适当顺序可忽略截尾时负对数似然−Σ_{j≤A}log h_j−1{A<D}log(1−h_{A+1})，未观测后缀非负例。D依赖未记录候选置信度/潜在难度时边际风险集估计可偏。给定z预先随机D且与F条件独立、π_j(z)=Pr(D≥j|z)>0时，1{D≥j,A≥j}/π_j(z)条件期望为Pr(F≥j|z)，π小方差高，零支持不可重加权恢复；序贯适应需真实倾向概率另证。无法判定时有成本地探索。仅训练预测/路由器不改变正式HFL学习。精确SD须真实后处理p/q、min(1,p/q)、正残差、因果截断、独立随机、bonus/EOS/KV；greedy正式argmax同tie-break；本轮非新完整采样器，未验top-p/浮点。
+
+#### 2. 理论 T
+N个固定起始block的统一cap k经验潜在均值L(k)=Σ min(F_i,k)/N。锐利界L_lo=Σ min(A_i,k)/N；L_hi=L_lo+Σ_{i:A_i=D_i}(k−D_i)_+/N。首拒绝观测项精确，截尾项取F=D或F≥max(D,k)分别达两端，非统计CI或新策略完整rollout。逐位置生存下界Σ1{A≥j}/N，上界1−Σ1{A<j,A<D}/N。各区同权重下可加和计数，预定客户端权重按权重归约，不能简单平均区域百分比。平坦同信息可复制。block起点分布随策略变化，推广至新请求/版本需额外假设。
+iid恒定a且外生截尾时似然a^{ΣA}(1−a)^{Σ1{A<D}}，MLE=ΣA/(ΣA+Σ1{A<D})而非ΣA/ΣD（含首拒绝后未走到的位置）；全接受MLE=1只是边界拟合。KM风险集n_j=Σ1{D≥j,A≥j−1}，事件d_j=Σ1{A=j−1,A<D}，乘积Π(1−d_j/n_j)；无risk support不外推、独立/适当条件截尾不可省。经典统计非新数学。
+反例100块均D=A=1，F=1或8均相容，k8的L分别1/8。假设无终止、额外正式token1、成本1+.1k，k1得2/1.1=1.8182，k8两世界分别2/1.8=1.1111与9/1.8=5；同一记录不能判断延长收益。非真实端到端下界。
+
+#### 3. 实际执行 E/E-H/P
+[来源指标](experiments/team-hieracert/R10/source_metrics.json)、[代码](experiments/team-hieracert/R10/probe.js)、[结果](experiments/team-hieracert/R10/results.json)，命令 node experiments/team-hieracert/R10/probe.js。V8实际确定性运算，非MC/训练seed。根据HCA/R07入口直接重新读取[PipeSD固定commit dac0f52eae7ba55e5def2d82003d8413cb58340c](https://github.com/Ghanyunhe/PipeSD/tree/dac0f52eae7ba55e5def2d82003d8413cb58340c)四个HumanEval nav_diag_pilot_v3_bw=2.5MB 原始JSON，全部blob与HCA manifest一致，具体路径/哈希存source_metrics。仅存任务ID、D/A、verify_num。4方法×5任务=20记录、532诊断事件，5/20任务verify_num与数组长度不一致（PipeSD2、EdgeLLM3），以数组为准；未独立复现硬件、未确认首拒绝/取消/EOS完整语义，不把不同输出长度/质量当公平性能比较。
+|方法|N|ΣD|ΣA|首拒绝|ΣA/ΣD|iid截尾MLE|k8识别区间|k16识别区间|
+|---|---:|---:|---:|---:|---:|---:|---|---|
+|Vanilla|92|736|567|34|.77038|.94343|[6.16304,6.16304]|[6.16304,11.20652]|
+|PipeSD|126|625|601|21|.96160|.96624|[3.36508,6.95238]|[4.16667,13.62698]|
+|HSL|166|528|483|23|.91477|.95455|[2.47590,7.09639]|[2.85542,13.98795]|
+|EdgeLLM|148|702|626|26|.89174|.96012|[2.37162,6.89189]|[3.11486,13.58108]|
+Vanilla诊断D固定8（文件名gamma6不覆盖实际值），k8观测6.16304，误用A/D作iid成功概率给几何2.93879（低估52.31%），iid截尾MLE给6.21066（高约.77%，不证iid）。PipeSD k4 naive几何3.63046超过固定block识别上界3.56349；首位置观测比例.91270而naive=.9616。可变长度k8界宽3.58730/4.62048/4.52027。24组方法×cap1/2/4/8/16/32、32位置生存/risk set、12组假设成本存JSON。score=(1+L)/(1+c k)，c=.05/.1/.25，k0 AR=1；c=.1四方法下界最优k8/4/4/4、naive4/16/8/8、iid MLE16/16/16/16、上界均32。非实际速度/完整策略收益；无真实每块cost、训练、CI。
+通信P：K32位置每区成功/失败两uint32计数+N为260B示意（版本、权重、成本、安全及协议另计）；直接D,A各uint32=8B/块，本数据4256B；足够大窗口才可能省，普通分层/平坦均可。探索增加起草/验证、真实反向/网络/回退/总时均未测。
+
+#### 4. 文献与裁决
+2026-11-24实际web检索原始摘要/出版页：[Acceptance-Aware Draft Model Training](https://arxiv.org/abs/2609.24150) 2026-09（直接EAL损失）；[SpecDec++](https://arxiv.org/abs/2405.19715) 2024（条件接受预测/阈值）；[AdaEDL](https://arxiv.org/abs/2410.18351) 2024；[DISCO](https://proceedings.mlr.press/v262/mamou24a.html) 2024；[EAGLE-2](https://aclanthology.org/2024.emnlp-main.422/) 2024；[BanditSpec](https://proceedings.mlr.press/v267/hou25h.html) 2025（在线动作选择）；[PipeSD](https://proceedings.mlr.press/v306/han26k.html) 2026；[Acceptance Dynamics Across Cognitive Domains](https://arxiv.org/abs/2604.14682) 2026；[Kaplan–Meier](https://www.tandfonline.com/doi/abs/10.1080/01621459.1958.10501452) 1958经典截尾估计。仅原始摘要/出版页及源日志，非逐式全文，未穷尽统计部分识别/未索引工作，无正式文字查重。强对照真实固定cap sweep、BanditSpec/SpecDec++/DISCO/EAGLE2、条件生存回归/随机探索、普通HFL+生产内生SD及同信息平坦。
+**CRITICAL / Reject and Pivot**：统计纠偏可改善诊断，但普通SD动态预算、条件生存回归及同信息平坦可复制，正式HFL学习无不可替代变化。等权主观创新5.9/10（问题7.5、机制5、理论6.5、价值7、距离3.5），非审稿意见；G1/G2/G4 FAIL；G3 PARTIAL（限定T，无新完整SD/精度）；G5/G6未验证、无80%依据；G7局部可复算/整体未过。好结果同目标质量预算最强公平基线真实全流程−15%或有效工作+20%，两预训练尺度三非IID/时延三独立训练seed CI及全部G。未执行1–2×40GB，不为已否决机制投入GPU。若资源可得，Qwen2.5-1.5B/3B或兼容内生头两尺度、LoRA/GRPO、8逻辑客户端2区域，真实固定cap与随机cap记录实际p/q、候选/首拒绝、终止、版本、选择倾向、reward/梯度、各阶段成本/通信；比较优化AR、普通HFL+生产SD、真实cap sweep、BanditSpec、条件生存回归与同信息平坦；只有实际SD反馈影响正式学习并超越强基线才立项。无资源停止重复截尾/调度候选。保留锐利识别界、不可识别反例、源日志重分析和反馈记录规范。
