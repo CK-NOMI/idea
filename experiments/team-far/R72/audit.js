@@ -1,0 +1,12 @@
+function audit(){
+const sum=a=>a.reduce((s,v)=>s+v,0);let seed=17071;const u=()=>((seed=Math.imul(seed,1664525)+1013904223>>>0)+.5)/4294967296;
+function leaf(p,q){let d=sum(p.map((v,k)=>Math.max(0,v-q[k])));return {P:p,Q:q,J:q.map((v,i)=>p.map((w,j)=>i===j?Math.min(v,w):d?Math.max(0,v-p[i])*Math.max(0,w-q[j])/d:0)),kids:[]}}
+function combine(kids){let tuples=[[]];for(let k of kids)tuples=tuples.flatMap(x=>k.P.map((_,i)=>x.concat(i)));let Q=tuples.map(t=>t.reduce((v,i,k)=>v*kids[k].Q[i],1)),P=tuples.map(t=>t.reduce((v,i,k)=>v*kids[k].P[i],1)),J0=tuples.map(x=>tuples.map(y=>x.reduce((v,i,k)=>v*kids[k].J[i][y[k]],1))),S=P.length,order=Array.from({length:S},(_,i)=>i).sort((a,b)=>rank(a)-rank(b));function rank(i){return sum(tuples[i].map((j,k)=>+(kids[k].P[j]>kids[k].Q[j])))}
+let J=Array.from({length:S},(_,i)=>Array.from({length:S},(_,j)=>i===j?Math.min(P[i],Q[i]):0));
+for(let i=0;i<S;i++){let mass=Array(S).fill(0);mass[i]=Math.max(0,Q[i]-P[i]);for(let z of order){if(mass[z]===0)continue;let diag=J0[z][z],I=P[z]-diag,O=Q[z]-diag,stop=P[z]>Q[z]?Math.max(0,Math.min(1,(P[z]-Q[z])/I)):0;J[i][z]+=mass[z]*stop;let rem=mass[z]*(1-stop);if(rem>1e-18&&O>0)for(let y=0;y<S;y++)if(y!==z&&J0[z][y]>0)mass[y]+=rem*J0[z][y]/O}}
+return {P,Q,J,kids,tuples}}
+let err=0,projectionError=0,monotone=0,count=0,states=0;function check(n){let S=n.P.length;states+=S;for(let i=0;i<S;i++){err=Math.max(err,Math.abs(sum(n.J[i])-n.Q[i]),Math.abs(sum(n.J.map(r=>r[i]))-n.P[i]),Math.abs(n.J[i][i]-Math.min(n.P[i],n.Q[i])));for(let j=0;j<S;j++)if(i!==j&&!(n.Q[i]>n.P[i]&&n.P[j]>n.Q[j]))monotone=Math.max(monotone,n.J[i][j])}
+for(let k=0;k<n.kids.length;k++){let child=n.kids[k],m=child.P.length,a=Array.from({length:m},()=>Array(m).fill(0));for(let i=0;i<S;i++)for(let j=0;j<S;j++)a[n.tuples[i][k]][n.tuples[j][k]]+=n.J[i][j];for(let i=0;i<m;i++)for(let j=0;j<m;j++)projectionError=Math.max(projectionError,Math.abs(a[i][j]-child.J[i][j]));check(child)}}
+for(let t=0;t<120;t++){let K=t%2?2:3;let ls=Array.from({length:4},()=>{let p=Array.from({length:K},()=>.01+u()),q=Array.from({length:K},()=>.01+u()),s=sum(p),r=sum(q);return leaf(p.map(x=>x/s),q.map(x=>x/r))});let root=combine([combine(ls.slice(0,2)),combine(ls.slice(2))]);check(root);count++}
+return {count,states,maxMarginalDiagonalError:err,maxChildProjectionError:projectionError,maxNonmonotoneMass:monotone}}
+if(require.main===module)console.log(JSON.stringify(audit(),null,2));

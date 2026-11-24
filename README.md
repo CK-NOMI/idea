@@ -3820,3 +3820,12 @@ H未执行：只有真实训练部署确实将同一合法GRPO组跨区域分配
 - E：R69 K27 48历史表，2同尺寸权重、3划分seed、2交替fold 4train/4test，固定p，三参数logit校准；5方法 KL/TV/Hellinger/单槽score/RB、3固定ridge、N8/32/64，540实际fit/54000更新、24 MC/训练行步、4096 MC/评估行。144×1024方差审计，RB/score迹比.028439/.019589/.016381。无ridge RB N32 train .599546、heldout .526756<原 .537454；N64 .384828<原 .400858；所有无ridge方法heldout退化，ridge完整结果见json，不能挑test宣布成功。相同步数非同计算、无新模型前向/真实FL/GPU/网络/CI。
 - 实查LayerSkip/Online SD/DistillSpec/VSD/Acceptance-Aware Draft Training WTV Eq14/RB gradients/product TV complexity/HierFAVG；**Revise条件梯度，Reject已验证学习增益或独立立项**；G1/G2/G4未过，G3/G7部分，G5/G6未验，历史完整8.14不变，无80%证据。P0实际固定区域修复成本与更大异质留出集、同计算KL/TV/Hellinger/WTV/flat，双尺度1–2×40GB、三nonIID/时延三独立seed、同质量总时间−15%或工作+20%与CI未执行。
 - [报告](experiments/team-far/R71/record.md) · [训练代码](experiments/team-far/R71/train.js) · [原始结果](experiments/team-far/R71/results.json)
+
+
+### team-far/R72｜HPM-SD 4.0：层流分区树同时最大耦合、递归隐式验证与突发修复代价
+- 2026-11-25；起始 main 154758ffb3ca5f8fba34ee3796c8849745275a26、README 91b99f48d6ff962acdbce0fb963e46ff3b6c2aba；写前 main 154758ffb3ca5f8fba34ee3796c8849745275a26、README 91b99f48d6ff962acdbce0fb963e46ff3b6c2aba。完整获取并结构筛查，复查R71报告/R69概率表/R28–30相关摘要，未穷尽复跑。
+- T：固定独立乘积P/Q及层流分区树，逐层以子最大核乘积构建R70隐式流；每子节点非恒等仅Q_c>P_c→P_c>Q_c且至多变一次，原边流利用量保持，故子节点整对联合律J_c投影不变，递归全部节点同时达到Pr(X_v≠Y_v)=TV(P_v,Q_v)。任意非负层级事件加权成本Σb_v1{变更}全局最优；非重叠分区、非makespan最优。E每内部节点hop=1−Π_child A_c，整树不是≤1；无需显式图/精确TV数值。真实多步/FP/通信尚未执行。
+- E1：120合成4槽二元/三元异质2×2树显式流矩阵，8580节点状态，边际/最大对角/子联合投影最大误差2.22e−16，禁止流0。E2：R69 K27 48概率表，4逻辑区N16/32/64，三人工分配模式，54配置、2048共享X/配置、4方法442368实际V8抽样，0符号违反、最大单节点9 hop。N32 independent/regional/star/nested全局修复.953016/.700846/.509033/.511203，区域数2.129612/1.048584/1.589789/1.049967，根/区MC下界.509614/1.046280；叶修复约3.0不变。无新模型前向/训练/真实GPU网络/CI。
+- T/E负结果：E[R²]≥μ²/Pr(R>0)，最大根耦合可能增加突发，N32独立→嵌套方差2.627366→11.418263、Pr(R≥8) .011746→.124051、区最大修复1.662164→1.784939，star1.392171。提出成本加权树TV学习、R71祖先阈值归约、按实测成本选择层级cut，未训练。同委托flat可复制，云端若无暴露修复事务不强制云验证。实查SpecTr/UniVer/Multi-Sample SD/LayerSkip/HierFAVG/HiRef/product-TV complexity/analytic proxy，非穷尽查重。
+- **Revise层级核，Reject完整独立立项**；G1/G2/G4未过，G3/G7部分，G5/G6未验，历史完整8.14不变，无80%证据。P0真实LayerSkip双尺度暴露事务与尾延迟、普通SD+去重/异步/AR/同委托flat，1–2×40GB三nonIID/时延三独立seed、同质量总时间−15%或工作+20%与CI未执行。
+- [报告](experiments/team-far/R72/record.md) · [递归核](experiments/team-far/R72/nested.js) · [精确审计](experiments/team-far/R72/audit.js) · [结果](experiments/team-far/R72/results.json)
