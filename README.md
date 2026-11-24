@@ -1842,3 +1842,43 @@ CRITICAL：直接AR包络可精确采样，查询工作显著更低，即使q=p�
 - E/P/O：JS V8实际合成枚举，3种子×3歧义数×3异质性=27配置、216客户端配置，8客户端2边缘，3词、k=4/8/12二元歧义。k12 σ1.2：全局r接受52.6872%、区域r83.7020%、同组同信息平坦83.7020%、投影oracle90.0664%、独立匹配35.9759%；错误规范路径近似输出TV=.207187；全局/区域ELBO gap .816648/.049622 nat。最大边际误差9.83e−15、界数值违反2.78e−15。额外200000次单步MC输出计数[99672,100328]，接受.65028（理论.65），修正尝试199987。合成q具有易求边际的乘积分解，不能冒称真实指数加速或实际训练；没有GPU、真实LLM、网络、wall time或CI。
 - 原始文献：2026-11-24 检索异构词表、分词边缘似然、变分SD、辅助采样。[Timor ICML2025](https://proceedings.mlr.press/v267/timor25a.html)已研究SLRS/SLEM/TLI及指数路径；[Geh EMNLP2024](https://aclanthology.org/2024.emnlp-main.230/)边缘计算困难；[DPE ACL2020](https://aclanthology.org/2020.acl-main.275/)隐变量分词DP；[ICLR2026跨分词似然](https://proceedings.iclr.cc/paper_files/paper/2026/hash/40d50fe20d5e6922dbb52d7da6de03f1-Abstract-Conference.html)结构化精确计算；[VSD ICML2026](https://proceedings.mlr.press/v306/zou26i.html)ELBO与草稿路径训练；[联邦分词器](https://machinelearning.apple.com/research/training-a-tokenizer)已存在；详细来源和盲区见完整记录。无正式文字查重。
 - **CRITICAL / Reject and Pivot**：区域拟合收益被同信息平坦完全复制；正式词表内生头直接避开歧义；普通AR、HFL+SD、TLI/SLEM/SLRS、DPE/精确边缘化为强对照。未证明HFL双向必要性与真实端到端收益。主观创新6.55/10（问题7.5、机制6.5、理论7、价值6.5、距离4.5，权重25/25/20/15/15），无80%把握证据。G1/G2/G4/G5/G6 FAIL，G3/G7部分成立/整体未过。好结果仍为同质量预算最强基线真实总时间−15%或有效工作+20%、两尺度三配置三种子和全部G。预实验1–2×40GB、Qwen2.5-1.5B/3B尚未执行，不建议投入GPU挽救已否决方案。保留精确性证明、ELBO损失界、负结果和代码；下一轮优先真实预训练模型trace，测学习/验证共同工作比例及实际跨层约束，再创造不可替代机制。
+
+
+
+### team-hieracert/R04｜FBS：跨客户端序列边界推测、精确梯度分解与验证语义障碍
+
+- 2026-11-24；起始 main 55cb74dfd154a66cb1d72d84dbfc8b386878f1c0，README blob 32bb90bd6b253398fb6c3c66797907258f48080d（1771行）。验证此前已读1677行原样前缀，阅读全部新增README、HCA/R03和HCR/R03脚本/结果摘要、HiMerge/R03独立记录及HierCouple/R03脚本/结果摘要；未独立重跑他队。上传前读取并发HiMerge/R03、HierCouple/R03完整索引以及HIERASPEC/R03 FLPS摘要与详细记录相关部分；检测README更新后停止旧写入并重新读取。最终基于 main 6e701fbea0a409716e55caf535762460a7048dd7，blob 8dde1b1c889092c5d71ddbbd2bd84ab14392ff42 追加，保留历史。
+- **CRITICAL / Reject and Pivot**。T=限定数学；E=本轮实际小Transformer训练、CPU前反向与计时；P=成本代理；H=未验证。没有真实预训练模型、真实语料、物理HFL多设备、GPU或网络实验。普通halo/context parallel与非投机依赖调度可替代，已观测训练上下文不等于SD生成候选，HFL↔SD双向必要性未建立。不得用局部CPU实验冒称完整R级。
+
+#### 1. 场景与机制（T/H）
+同一条已观测长序列分段由不同机构持有，客户端/边缘共享参数快照θ，云聚合全局梯度；允许授权的必要边界token、位置与目标标签交换，不宣称DP。若不得交换真实边界，须合法精确分布式计算或停止，不能猜测替代。普通HFL独立样本不天然具有这种依赖，真实业务需求未证。正式训练目标为全序列CE的全局token平均，目标标签固定；本轮只研究共同快照一次梯度聚合，不是多步本地FedAvg。每层纯因果局部窗口w_l（含自身），逐token FFN/norm/residual，位置全局一致、关闭dropout或固定随机数，无跨token全局算子。
+最大依赖距离R=Σ_l(w_l−1)。分段[b,e)前R个位置的损失为B，余下为I；真实前序R个token称Halo。候选Halo由模型共享浅层和输出头从授权anchor预测，无独立草稿LLM。先算精确I及候选B；收到真实Halo后严格验证token、位置及版本，完全一致则复用，否则丢弃候选边界梯度并重算。正式服务可用同目标标准内生SD（greedy逐步argmax、随机min(1,p/q)及正残差），但未实现，不能把预测固定训练数据称为标准SD。优化同质量下全流程时间、通信、训练收敛和生成精确性。
+
+#### 2. 数学资产（T）
+T1：第l层位置t依赖[t−Σ_{j≤l}(w_j−1),t]，层归纳；故t≥b+R的预测函数对任意跨段前缀值完全相同（对所有θ的结构恒等），其损失参数梯度相同。若R≥段长则无内部区，若全局attention或跨位置归一/路由耦合则该局部界失效。全局位置、标签、随机性及版本须一致。
+T2：g=Σ_i(g_i^I+g_i^B)，全局归一，先算I、后算真实Halo的B即完整梯度；不必预测。候选g_hat=g_I+g_hat_B，代数修正g_hat+(g_B−g_hat_B)=g_I+g_B；直接分开保存/丢弃可避免减法误差。不得先不可逆更新参数/优化器再假装可简单修复。平坦同信息可精确求和，非HFL独有；多步local update不保证与单快照全局梯度一致。
+T3：相同greedy甚至单点相同logits并不意味着梯度相同。z(θ)=(θ,0), z_hat=(2θ,0)，θ=0两者概率(.5,.5)，同tie-break；正确标签第一类，CE梯度−.5/−1。故SD token验证不能直接验证训练梯度。真实Halo相同为充分而非必要；本轮未测猜测Halo的梯度误差，截断误差是独立对照，不可混用。
+T4/P：N=mS、R<S，朴素整段halo输入位置N+(m−1)R；延迟内部+独立边界重算N+2(m−1)R。单段阻塞代理T_comm+C_h，非投机延迟边界max(T_comm,C_I)+C_B。若网络等待显著，后者可能有益但重算可能抵消；未测真实通信。依赖图逐层裁剪、预取、流水线及激活/KV与反向adjoint交换是更强非投机基线。若真实Halo可提前传输，直接预取更简单；否则猜测无法替代验证。32层、每层窗口4096的理论R=131040（纯局部假设），小分段可能无独立区域。
+
+#### 3. 实际运行 E/P
+[代码](experiments/team-hieracert/R04/probe.py)，[逐种子原始结果](experiments/team-hieracert/R04/results.json)。命令 python experiments/team-hieracert/R04/probe.py，Python3.13.5 torch2.10.0+cpu 单线程FP64，CUDA不可用、无本地预训练缓存；尝试读取外部公开文本未获得可用文本，明确用合成数据。13600参数，2层4头TransformerEncoderLayer因果局部mask、24维FFN48、16词、128位置、batch4、每段32、dropout0。种子11/29/73，w=4/8/16，9个随机初始化模型各完整序列AdamW训练30步，共270实际optimizer更新；合成数据70%概率从上token加分段偏移，否则均匀。训练不是HFL；后续固定快照用新合成batch对比完整梯度和4逻辑分段梯度加总。CPU计时每方法5次前向+反向+梯度拼接的中位数，三个种子中位数取均值；固定方法顺序，未做CI，未计optimizer、数据、网络、猜测和投机修正总时间。
+|w|R|完整ms|halo ms|defer ms|截断ms|halo相对梯度误差|defer相对梯度误差|截断相对梯度误差|
+|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+|4|6|9.6732|10.4653|14.2032|9.3202|8.06e-16|7.83e-16|.112663|
+|8|14|9.6165|11.4075|15.4250|8.5510|8.09e-16|7.63e-16|.146275|
+|16|30|9.3541|13.3947|18.7909|8.6235|8.10e-16|8.25e-16|.192670|
+defer比直接halo在无通信CPU下慢35.7%/35.2%/40.3%；不能推广到有网络GPU。full为集中权限放宽质量参考。截断相对L2梯度误差11.27–19.27%，未测长期收敛。
+浅层猜测实际运行：第一层+共享输出头（未专门早退训练、无KV缓存），从真实Halo前一个授权anchor贪心预测R个token；9模型×4样本×3边界=108 Halo，完整匹配0/108。w4/8/16逐token准确率8.333/7.937/6.481%，错误Halo下正式模型边界greedy与真实Halo一致86.574/91.865/94.074%；内部最大logit误差≤1.11e−15/1.33e−15/8.88e−16。只说明该初步预测器困难及结构独立性，不是最优预测器上界。未实现投机边界梯度完整协议、真实SD生成或真实HFL多设备。
+成本P：每序列halo输入位置146/170/218、defer164/212/308；3边界×R×4字节token ID=72/168/360B，未计anchor、跨段标签、版本、训练梯度聚合、RPC、权限或安全机制。实际局部attention kernel与本次稠密mask CPU成本不同。不可将该代理直接外推LLM速度。
+
+#### 4. 文献核对与去重
+2026-11-24检索 sequence/context parallel sliding window halo gradient; overlap; parallel-in-time neural training; self speculative sparse attention; federated split LLM; segmented execution。核对原始摘要及可读HTML，非穷尽公式、全文、专利与未公开研究。
+- [Mistral 7B](https://arxiv.org/abs/2310.06825) 2023，滑窗及跨层依赖；[SWAT](https://arxiv.org/abs/2502.18845) 2025；[Sliding Window Attention Adaptation](https://arxiv.org/abs/2512.10411) 2025，长上下文质量与窗口改变。
+- [Ring Attention](https://arxiv.org/abs/2310.01889) ICLR2024，分块精确计算及通信重叠；[DeepSpeed Ulysses](https://arxiv.org/abs/2309.14509) 2023，序列并行all-to-all；[StarTrail](https://proceedings.neurips.cc/paper_files/paper/2025/hash/a55dd7fc416d91fbb3817defe6a75df6-Abstract-Conference.html) NeurIPS2025，多维环分布式长序列训练。
+- [Training–Inference Consistent Segmented Execution for Long-Context LLMs](https://proceedings.mlr.press/v306/shang26c.html) ICML2026，分段执行近邻，需完整核查；[Predict globally, correct locally](https://doi.org/10.1016/j.automatica.2024.111976) Automatica2024，跨层parallel-in-time预测修正先例（非本轮跨输入段）。
+- [LayerSkip](https://arxiv.org/abs/2404.16710) ACL2024，早退自投机；[SpecAttn/Vegas](https://arxiv.org/abs/2602.07223) 2026，验证引导稀疏KV自投机；[Safely Learning with Private Data](https://aclanthology.org/2024.emnlp-main.303/) EMNLP2024，联邦split LLM。
+库内A/R03跨版本缓存、A/R08仿射编译、A/R09近似反向、PRE-11激活复用为近邻，但本轮固定快照跨输入段依赖与梯度分解不同；HiMerge/JVT为接受长度梯度，非观测CE；HIERASPEC/FLPS为异构分词潜变量。未做正式文字查重；仍有真实halo kernel/autograd、真实跨机构连续数据、最新未索引工作的盲区。
+
+#### 5. G1–G7及后续
+CRITICAL：普通精确halo交换、无预测的延迟边界、上下文并行、同信息平坦均可复制核心；未证明跨机构连续数据业务必要性，也未建立真正HFL与自投机双向机制。猜测训练输入与精确SD是不同目标。若无权共享边界不能保证验证；改变原全局attention目标需另报质量。仅新证据改变前提时做真实预实验H：1–2×40GB，两种明确支持纯局部依赖的预训练模型尺度（必须核实具体配置），公开长文/代码、三异质/时延、三种子、真实权限及数据分段；对照完整可访问质量参考、普通HFL+SD、非投机延迟边界、适用Ring/Ulysses/StarTrail、真实输入预取、同信息平坦、截断质量对照及同容量早退头。计全部训练推理时间、GPU/通信/回退、收敛与质量、greedy及随机精确性、P95、CI；未执行。好结果仍为同质量预算最强公平基线总真实wall time降≥15%或有效工作增≥20%，全部G通过；无80%证据。
+主观等权创新度5.6/10（问题6.5、机制5、理论6、价值6、距离4.5），非同行评审。G1 FAIL，G2 CRITICAL FAIL，G3 PARTIAL/FAIL（结构梯度及FP64实验，完整SD未实现），G4 FAIL（一个随机初始化小模型规模，非两预训练尺度），G5 FAIL（局部CPU计时，不是全流程），G6 FAIL（证据不足），G7 PARTIAL/FAIL（代码及逐种子实际结果，非完整系统）。**Reject and Pivot**。保留精确依赖梯度分解、token验证不等于梯度验证的反例、实际小Transformer数据及无预测强基线。不建议投入GPU挽救本方向。下一轮先取得真实预训练模型或公开可复核系统trace并审计可消除工作占总成本≥15%的必要条件，明确数据驻留和普通AR/SD/平坦不能匹配的因果假设；缺资源就明确报告缺失，不再为凑创新分构造无真实场景的toy机制。
