@@ -3495,3 +3495,13 @@ H未执行：只有真实训练部署确实将同一合法GRPO组跨区域分配
 - E/O/P：第二审计48上下文1344模型前缀、641416四路径组合；固定4条正确解，mass-top/散度贪心/穷举散度成本oracle平均utility .0220167/.0227681/.0228242，贪心仅23/48严格胜top，边际公式误差1.53e-16。选择需要候选score且未计搜索成本，utility非真实方差×时间。原始代码和逐行数据已保留。
 - 实核DAPO、Grammar-Aligned Decoding、Adaptive Weighted Rejection、EfficientRollout、SpecRoll、Fed-GRPO原始页；Group-Std Identity原页失败，仅二级索引和作者仓库；非穷尽/正式查重。R36独立主观7.80（8.5/8/9/7/5.5，25/25/20/15/15），历史R30数学子问题8.35不变。G1/G2/G4 FAIL，G3/G7局部，G5未验，G6无80%依据。**Revise储备，Reject独立立项**：强AR+同证书RB及同信息平坦可替代学习收益。P0真实同快照已存在的正确解法计算/缓存、质量匹配实际梯度和条件q_B共算的GPU成本，需比较AR+RB/解析、最优自SD、同信息平坦和Fed-GRPO；1–2×40GB两不同预训练尺度、三异质/延迟、三独立训练seed，真实总时间−15%或有效工作+20%与CI未执行；无证书摊销或增量则终止该族。
 - [完整报告](experiments/team-far/R36/record.md) · [代码](experiments/team-far/R36/probe.js) · [原始结果](experiments/team-far/R36/results.json) · [证书选择代码](experiments/team-far/R36/selection.js) · [结果](experiments/team-far/R36/selection_results.json)
+
+
+### team-far/R37｜PCR-SD：区域重叠正确解法的前缀单元路由与分数证书（9分目标）
+
+- 2026-11-24；起始 main f5a7db5ce2d5fb12c8df49972caab935b6773633、README 3498行/487660字符、blob 1d75ebca2133d6e3fb5a7a7b0cacf1bf1d942031；写前 main 1a47437c13c421dce67db2565f8ba29a6d9d3ef3、blob 1d75ebca2133d6e3fb5a7a7b0cacf1bf1d942031。完整取得、筛查标题、重点复查R36/FCIP/LEA/FDC/FCRH/FLPV/VAPE/LBS/CPG，未全库复跑。按用户同意将创新评分中HFL必要性与可行性拆为深度融合15%与G4–G6工程门槛，不改变历史分。
+- T：同prompt/正式快照/二元奖励，区域正确集合A_e可任意重叠。公开互斥前缀单元u，每单元lambda_ue>=0且和<=1；r(y)=Σlambda_ue 1_Ae(y)∈[0,1]且r<=R，p=a p_C+(1−a)p_B，a=E_p r，p_C=pr/a,p_B=p(1−r)/(1−a)。精确独立混合；若仅首步固定长度on-policy梯度，用C成员平均score。区域可加权汇总每单元(a,g,b)=(Σp,ΣpS,Σp||S||²)，D=b−||g||²/a，梯度迹方差降低D*((1−pi)−(1−pi)^N)/(pi N L²)，录取条件除Z；权重冻结，D对连续lambda凹，可凸优化；硬路由质量最大Σ_u max_e a_ue支配任一单区质量/常数单纯形混合，不保证散度最优。无需求集合交集或并集，但可能漏覆盖，非DP、非不同正式模型、非任意PPO。
+- T：H_r(h)=E[r|h]，p_B(x|h)=p(x|h)(1−H_r(hx))/(1−H_r(h))，qW同权重归一；标准精确验证及正残差。首token硬路由后证书仅所属区查询（须授权/能力，KV迁移成本未测）。普通AR+同RB与同信息委托平坦可复制；重叠集合相加会超计，互斥集合同局部质量无法仅凭质量识别并集；分数机制不恢复完整并集。
+- E/P/O：实际两同7264参数microGPT检查点、3 hash seed、48上下文、144配置、1344 p/q前缀计算、1179648缓存轨迹抽样；每正确二字符后缀随机首属4区，再按d=0/.3/.7独立复制到其他区，合成异质而非真实机构。d=.3散度路由覆盖a=.210587 vs最佳单区.168282、全并集.244978；MC梯度迹方差.037675→.018933（−49.7%，非对同证书AR的增量），期望方差降.018851 vs单区.013949；根条件重叠约.9197各法基本相同，无SD专属收益。最大混合法则误差8.88e−16、散度4.44e−16；d=0/.7另见JSON。仅27维logit偏移score，无真实梯度/SD rollout/GPU/网络/训练/CI。全量候选统计通信和选择成本未计，不能声称真实节约。
+- 文献摘要筛查GAD/Private Federated Submodel Learning via PSU/EP-MPD PSI去重/Generalizing Balance Heuristic/EfficientRollout/SpecFed/S3R/HierFAVG，非全文穷尽或正式查重；报告链接。独立主观8.075/10（8.5/8.5/9/7/6.5，25/25/20/15/15），历史数学8.35不改。G1/G2/G4 FAIL，G3/G7部分，G5未验，G6无80%依据。Revise储备，Reject独立立项；P0需证实真实同prompt/同模型的区域证书分布，完整梯度矩、路由/KV及网络开销，比较同证书AR、同信息平坦、普通内生SD、真实授权并集/PSI，1–2×40GB两尺度三非IID/延迟/独立训练seed、质量匹配总时间−15%或有效工作+20%及CI未执行。
+- [完整报告](experiments/team-far/R37/record.md) · [实验代码](experiments/team-far/R37/probe.js) · [原始结果](experiments/team-far/R37/results.json)
