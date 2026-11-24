@@ -787,3 +787,99 @@ MAJOR：同模型/同号残差无 J；Z 极小尾延迟高；掉线/快照改变
 裁决 Reject and Pivot：保留正部非交换反例、包络正确性、M/Z 长尾、有限 K 回退上界、树分区凸性及强基线。禁止以改名、普通头训练、动态分组、Top-K 压缩重启 PRE-06/A/R11/HC/HCR。后续若有新前提，先证明 HFL 与 SD 的双向因果及非退化学习、真实约束下不可被同信息平坦复制的增益；再做真实分布及通信下界的区分性实验。否则直接创造新问题。
 
 **每轮协作规则：** 本研究对话每次收到新研究轮次前读取最新默认分支 README 全文、记录 SHA、学习其他团队全部成功和失败；结束追加本轮正负结果、反例、假设、证据、G1–G7。使用最新 SHA，保留他人记录，不强推；不是后台自动执行。
+
+### team-hieracert/R01｜HieraCert-SD：分层不完备信息下的精确投机验证（HIISV）
+
+- 日期：2026-11-24。独立第一轮研究在读共享库前完成；归档时已读初始 README（main commit f93a4c815028bcc3b7104df1e68e84785071bf85）及随后新增 HC/R01、team-hcr-sd/R01、team-himerge/R01；本轮追加前读取 README blob c8ee552a712ea53b0e4af1ee07d7b51fb8b5aa51。
+- 裁决：原报告暂定保留，创新6.8/10；跨团队复核发现 PRE-09 高度相似，且平坦/普通 AR 可替代，修订为 **Reject and Pivot（保留局部数学资产，不立项）**。没有真实 LLM/GPU 结果，80% 成功把握未知。
+- 固定流程：以后每轮开始读取最新默认分支 README 全文及新增相关文件、记录 SHA、对照全部失败库；结束追加正负结果、反例、代码、G1–G7，不覆盖他人。
+
+#### 1. 文献探索及排除路线（历史检索，投稿前复核）
+
+七篇起点：[Leviathan et al., SD 2023](https://proceedings.mlr.press/v202/leviathan23a.html)、[SD Survey 2024](https://aclanthology.org/2024.findings-acl.456/)、[EAGLE](https://arxiv.org/abs/2401.15077)、[EAGLE-2](https://arxiv.org/abs/2406.16858)、[EAGLE-3](https://arxiv.org/abs/2503.01840)、[Medusa](https://arxiv.org/abs/2401.10774)、[SpecFed](https://arxiv.org/abs/2604.25777)。EAGLE 有轻量附加预测网络，依赖内部特征，符合本项目“不部署完整独立草稿 LLM”的定义，并非完全无附加模型参数。
+排除：仅 HFL 分层训练预测头（个性化 FL/蒸馏）；边缘起草云验证（DSD/SpecFed）；直接优化接受长度（LK Losses/VSD/REAL Loss/Acceptance-Aware Draft Training）；模型更新后适配草稿（FlexSpec）；提前退出云验证（LayerSkip/split SD）；网络自适应候选长度（SpecRelay）。均为历史相关工作线索，不可用改名或常规损失拼接立项。
+
+#### 2. 系统设定与问题（H）
+
+个性化 HFL 子场景：客户端持有非 IID 数据 D_ei、参与区域及共享参数聚合。云掌握共享 Transformer f_θ、输出矩阵 W∈R^(V×d)、共享低秩投影 A∈R^(r×d)、内生候选预测模块 φ；边缘 e 保留私有输出适配器 B_e∈R^(V×r)，不运行完整 backbone。请求内模型、证书版本固定。云不能访问完整 B_e，边缘没有当前完整云 logits；此为部署约束而非隐私证明。令 h=f_θ(s), a=Wh, z=Ah，正式区域目标 l_e=a+B_e z，p_e=softmax(l_e)。云生成候选树 T；边缘利用云发送的验证信息和 B_e 逐节点决定正确 token，沿匹配分支继续，缺失时提交正确 token 并停止本轮。目标是该个性化模型，而非未经修改的原始基座。
+
+HIISV 定义：给定 HFL 层级、上述参数分布、前缀、候选树、网络带宽/RTT/边缘显存预算，设计跨层消息协议 π 与候选树，min E[T_round]/E[committed tokens]；计 draft、verify、network、commit、证书维护和训练摊销。约束：greedy 与同一区域 AR 逐 token 一致，随机采样与同一正式目标序列条件分布一致，不上传完整 B_e，满足通信与显存预算。B_e=0、云缓存完整 B_e、边能运行全模型或通信免费时问题退化；中间层个性化不自动满足可加 logits 分解。
+
+#### 3. 计算矛盾及反例（T/P）
+
+SD 标准接受 min(1,p/q)，拒绝按归一化 (p−q)_+ 采样；在此场景目标信息分散于云边。全局 Top-K 不保证覆盖区域最优：
+a=(4,3.8,3.5,1,0)，区域修正 δ=(−.5,−.1,1.2,.2,0)，l=(3.5,3.7,4.7,1.2,0)。只传全局前二 A/B 会误选 B，正确 C 为全局第三。SD 树节点并行使逐节点通信负载放大，但普通 AR 同样存在这一问题。
+
+载荷例（P）：V=100000,d=4096,r=16,N=32 个验证节点，FP16 数值、32-bit token ID，完整 logits 6.4MB，完整 hidden 262144B；若每节点 K=16，证书载荷 N(2r+6K)=4096B。K=16 是假设，未实测。一般稀疏比 hidden 省载荷的条件 K<(d−r)/3；上述 d,r 时 K<1360。未计协议头、版本、数值保护、RPC、KV、证书更新、计算与回退，不能当速度。隐藏状态基线要求边缓存 W，须核算存储、计算，也允许合法压缩 hidden。
+
+#### 4. 初步机制及数学结论（T/H）
+
+若 ||b_ev||₂≤R_e，ε=R_e||z||₂，由 Cauchy–Schwarz 得 L_v=a_v−ε≤l_v≤a_v+ε=U_v。令 S={v:U_v≥max_u L_u}。云发 z 及 {(v,a_v):v∈S}，边缘计算 S 内真实修正并 argmax；稀疏过大则传完整 a+z，或边缓存 W 时传 h。云依次做内生起草、目标树批量前向、区间筛选、选择稀疏/稠密消息，边验证、提交，云更新合法 KV。不得把未经验证的候选提交。
+- 精确性定理：若真实最大值索引 v 不在 S，则存在 u 使 l_v≤U_v<L_u≤l_u，矛盾。因此所有最大值索引在 S；统一 tie-break 得精确 greedy。在每个访问前缀重复、树掩码/位置/版本/缓存一致条件下按序列归纳得到 greedy 等价。实际 GPU 需保护浮点边界，不保证不同算子逐位等价。
+- 有限最小性：在只知独立区间的模型下，若 U_v>max_{u≠v}L_u，取 l_v=U_v 及其余 l_u=L_u 即使 v 唯一最优。任何必须包含最优的集合都不能安全删 v。这不是一般编码/交互通信下界；相关低秩结构、tie-break 等可改变结论。
+- 间隔：S={v:a_v≥a_max−2ε}；top1/top2 margin Δ>2ε 时 |S|=1；平坦 logits 或大 ε 时可达 V。
+- 分组证书（T/H）：公共 token 分组 V_g，公开中心 c_eg、半径 R_eg，||b_ev−c_eg||≤R_eg；区间 a_v+c_egᵀz±R_eg||z||。若 B_e=Σ_i w_iB_ei，w_i≥0且Σw_i=1，同组客户端中心/半径按相同权重平均，由三角不等式保持有效。边缘掌握 B_e 时直接重算可能更紧，且平坦线性聚合也可执行，不是 HFL 独有原语。摘要泄露、传输和版本成本待审计。
+- 学习假设（H）：Σ_e ω_e[L_task,e+λL_draft,e+μR_cert,e]，R_cert=Σ_v sigmoid((U_v−max_u L_u)/τ) 近似候选规模。需比较简单范数正则、margin 优化及质量匹配；防 B_e→0 人为制造压缩。未验证。
+- 随机采样扩展（T/H）：温度 T>0，独立 Gumbel g_v，argmax(l_v/T+g_v) 等价温度 softmax。云对 a_v/T+g_v 构区间、误差 ε/T，边精确取最大值；在实际访问前缀独立抽目标随机变量，若 token 在候选树继续，否则提交后停止。候选构造不得偷看目标随机性。此 target-first tree sampling 可按条件分布归纳，非最大耦合 SD，接受率可能更差。top-p、实际 RNG、有限精度及实现未完成，不宣布 G3 通过。
+
+#### 5. 本次归档实际重跑的 CPU 合成实验（局部可复算）
+
+NumPy 2.3.5，CPU，seed=20261124，400×4096 固定标准正态 logits，每 ε 生成独立逐 token uniform(−ε,ε) 修正。该修正不是实际 HFL 训练出的低秩 B_e z。以下实际运行脚本可直接保存为 probe.py，在安装 numpy==2.3.5 的环境 python probe.py 执行：
+
+~~~python
+import numpy as np
+rng = np.random.default_rng(20261124)
+a = rng.standard_normal((400,4096))
+for eps in [.05,.25,.5,1.,2.]:
+    delta = rng.uniform(-eps,eps,a.shape)
+    keep = a >= a.max(axis=1,keepdims=True)-2*eps
+    y = a+delta
+    count = keep.sum(axis=1)
+    print(eps,count.mean(),np.percentile(count,95),
+          np.count_nonzero(y.argmax(axis=1)!=
+                           np.where(keep,y,-np.inf).argmax(axis=1)))
+print(np.__version__)
+~~~
+
+实际输出（ε、均值 K、P95 K、不一致数；本次重跑与第一轮历史报告完全一致）：
+
+~~~text
+0.05 1.4525 3.0 0
+0.25 5.5175 15.0 0
+0.5 24.095 60.0 0
+1.0 249.7225 488.0 0
+2.0 2648.2125 3275.05 0
+2.3.5
+~~~
+
+2000 次对比零错误；大扰动导致集合急剧增大。单种子、无 CI、无真实 LLM/HFL/网络/GPU 时间；不能据此推断真实加速或成功概率。仅局部复算证据，不是完整 G7。
+
+#### 6. 原创性审查与跨团队去重
+
+- **PRE-09 Federated Certifiable Computation** 已探索共享 logits+区域残差、Gumbel-Max/界跳过区域；历史6区平均访问1.70、残差占10%时总收益7.2%非本队实测。HieraCert 仅改为单区域个性化目标的词表筛选，区间原语非新，不能证明机制创新。
+- A/R07 低秩接口有表达力/通信局限；A/R08 区域编译受全局平坦对照替代；HC/R01、HCR-SD、HiMerge-SD 主要为概率混合、组选择或残差包络，本轮为单区域私有 logits 并非混合目标，但同样缺双向必要性。
+- [Threshold Algorithm, Fagin et al.](https://doi.org/10.1016/S0022-0000(03)00026-6)：部分得分及边界下的精确 Top-K 是直接数学近邻；不能把区间剪枝包装为新定理。
+- [SpecFed](https://arxiv.org/abs/2604.25777)：历史报告称多节点概率聚合、Top-K 截断/重构误差；此处为私有区域目标的精确验证，需核实是否已有等价协议。
+- [HierFAVG](https://arxiv.org/abs/1905.06641)、[FedRep](https://proceedings.mlr.press/v139/collins21a.html)：分层聚合及共享表示/个性化头，模型结构非新。
+- [LayerSkip](https://aclanthology.org/2024.acl-long.681/)、[SpecInfer](https://arxiv.org/abs/2305.09781)、[Sequoia](https://arxiv.org/abs/2402.12374)：内生起草和候选树验证已有先例。
+- 其他历史检索线索：FedSA-LoRA（共享私有低秩因子）、HAT（U形模型切分和协同 SD）、Privacy-Aware Split Inference（WAN/Lookahead/精确 greedy）、DSSD、FlexSpec、VocabTrim、FlashSampling、distributed top-k aggregation、robust maximum inner product search、communication complexity、certified inference、distributed sampling。缺可确认链接者仅作检索线索，不伪造引用。原报告对 HAT/Privacy-Aware Split Inference/Threshold Algorithm/SpecFed/FedSA-LoRA 均判高撞题风险；DSSD 中高；FlexSpec/FedRep/VocabTrim/SpecInfer/Sequoia 中等。
+- 2026-11-24 历史检索关键词：Hierarchical/Personalized FL、Federated/Distributed Speculative Decoding、Acceptance Length Optimization、Draft Training、Split Inference、Private Output Head、Threshold Algorithm、Certified Top-K、Federated LoRA、Shared Private Factors、Vocabulary Pruning、Exact Sampling；历史来源 arXiv、IEEE、Springer、PMLR、OpenReview、ACL、期刊索引。本次归档未逐条重新查原文；所有链接/年份/重合点投稿前核实；有未索引、未公开及数据库算法领域盲区；无正式文字查重，不声称内容已独创。
+
+#### 7. 预实验与完整实验（H，未执行）
+
+1–2×40GB NVIDIA，客户端串行/分批模拟。最小 Qwen2.5-1.5B 冻结主体，2边缘/8客户端、rank8/16；后续7B、4–8边缘/16–32客户端、rank8/16/32/64，Medusa/EAGLE-3。7B BF16 权重约14GB但须计激活/KV/训练状态。数学、代码、通用指令不同区域，公开真实数据、训练测试分离、至少3种子/3异质性或时延配置、2模型尺度。先不训练 SD，收集≥10000真实 token 位置的区域质量、margin、修正范围、最优 token 全局排名、证书K均值/P95、hidden字节与算子时间。若证书或任务质量不达标停止；当前核心否决后不建议投入 GPU 重做，除非出现改变前提的证据。
+
+强基线：HFL个性化AR（含证书AR）、HFL+Medusa完整logits、完整hidden（缓存W）及压缩hidden、固定Top-K（近似，质量单列）、阈值验证+精确回退、HFL+EAGLE-3稠密、集中式个性化SD（放宽约束的参考）、同信息/同边缘委托/同缓存/同证书的平坦FL+SD、随机采样时直接Gumbel与普通target-first tree及最大耦合。控制同一目标/草稿/树/精度/预算；消融统一范数、分组、层级聚合、直接重算摘要、证书损失与常规范数正则、无SD、无回退。指标：端到端延迟/吞吐/TPOT/P95、接受长度、计算量、通信含RTT/回退、质量、训练摊销、GPU峰值和CI。
+原报告好结果：greedy 100%一致，采样序列正确；较最强基线延迟降≥20%、相对hidden通信降≥50%、吞吐增≥15%、P95不恶化、个性化质量无显著下降。仓库G5额外强制真实总wall time降≥15%或同成本有效工作增≥20%，计训练、推理及全部开销，不能用理论通信比替代。
+
+#### 8. 失败、G1–G7 与后续
+
+CRITICAL：PRE-09 高度重合；同信息平坦和普通 AR 能使用同样证书（没有证明 HFL 或 SD 双向不可替代）；证书过宽退化；完整 hidden 是不可忽略的强基线；云仍计算全量 W h。MAJOR：区域草稿接受长度过短；摘要维护及可能泄露；参数更新证书过期；中间层适配不可直接分解；浮点误差、tie-break；正则可能破坏个性化；target-first 采样可能降低接受率。以上均无真实系统证据消除。
+
+原主观等权评分：问题8、机制6.5、理论6.5、价值7.5、距离5.5，均值6.8；共享库去重后风险更高，不上调。原复现难度估计（非实测）：输出适配3/10、HFL模拟4、证书3、Medusa5、EAGLE-3/树KV7、端到端8。无依据支持80%好结果概率，不估计发表率；TMC/TPDS/TNNLS 仅可能方向。
+
+| G1 | G2 | G3 | G4 | G5 | G6 | G7 |
+|---|---|---|---|---|---|---|
+| FAIL，6.8且重合 | FAIL，平坦/AR可替代 | 局部greedy定理成立；随机及精度实现未完成，FAIL | FAIL | FAIL，仅载荷代理 | FAIL，未知80% | FAIL，仅CPU局部可复算 |
+
+**Reject and Pivot。** 保留反例、区间充分性/限定最小性、margin关系、通信分界、实际CPU数据和退化规律；不得换名复活 PRE-09 或 HieraCert。原拟下一步为利用低秩相关性超越独立区间、证明通信下界及近下界协议、真实1.5B预实验、跨领域查重；现仅在新证据打破平坦/AR替代性时考虑重启。下一轮从全部跨团队最新成果开始，优先创造新的学习对象及真正双向必要机制，不直接投入完整 EAGLE-3 训练。
