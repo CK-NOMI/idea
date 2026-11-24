@@ -1,0 +1,7018 @@
+{
+  "pairs": 72,
+  "matched": 36,
+  "checks": 243,
+  "maxGap": 0,
+  "summary": [
+    {
+      "mode": "ar",
+      "subset": "all",
+      "period": 2,
+      "shared": false,
+      "peak": 23,
+      "maxPeak": 23,
+      "area": 488.1134,
+      "makespan": 38.18470666666666,
+      "meanActive": 12.783062846223466,
+      "capacities": [
+        {
+          "k": 2,
+          "finish": 244.35670333333334,
+          "meanDelay": 105.5181438888889,
+          "maxDelay": 214.26783999999998
+        },
+        {
+          "k": 4,
+          "finish": 129.53679666666667,
+          "meanDelay": 43.905872037037035,
+          "maxDelay": 92.15568999999999
+        },
+        {
+          "k": 8,
+          "finish": 68.26316666666668,
+          "meanDelay": 14.366873703703703,
+          "maxDelay": 30.930509999999998
+        },
+        {
+          "k": 12,
+          "finish": 50.49236666666667,
+          "meanDelay": 5.416883240740741,
+          "maxDelay": 14.327749999999995
+        }
+      ]
+    },
+    {
+      "mode": "ar",
+      "subset": "all",
+      "period": 2,
+      "shared": true,
+      "peak": 9,
+      "maxPeak": 9,
+      "area": 194.21647999999996,
+      "makespan": 38.18470666666666,
+      "meanActive": 5.086280093134715,
+      "capacities": [
+        {
+          "k": 2,
+          "finish": 99.10824000000001,
+          "meanDelay": 30.461766666666673,
+          "maxDelay": 61.067350000000005
+        },
+        {
+          "k": 4,
+          "finish": 54.55411999999999,
+          "meanDelay": 8.184706666666667,
+          "maxDelay": 16.51323
+        },
+        {
+          "k": 8,
+          "finish": 38.369413333333334,
+          "meanDelay": 0.061568888888889006,
+          "maxDelay": 0.3101699999999994
+        },
+        {
+          "k": 12,
+          "finish": 38.18470666666666,
+          "meanDelay": 0,
+          "maxDelay": 0
+        }
+      ]
+    },
+    {
+      "mode": "ar",
+      "subset": "all",
+      "period": 5,
+      "shared": false,
+      "peak": 10,
+      "maxPeak": 10,
+      "area": 488.11339999999996,
+      "makespan": 71.18470666666667,
+      "meanActive": 6.857014711027461,
+      "capacities": [
+        {
+          "k": 2,
+          "finish": 244.35670333333334,
+          "meanDelay": 89.0181438888889,
+          "maxDelay": 181.26783999999998
+        },
+        {
+          "k": 4,
+          "finish": 129.53679666666667,
+          "meanDelay": 28.072538703703703,
+          "maxDelay": 59.15568999999999
+        },
+        {
+          "k": 8,
+          "finish": 72.83299333333333,
+          "meanDelay": 0.8161461111111109,
+          "maxDelay": 2.3299400000000006
+        },
+        {
+          "k": 12,
+          "finish": 71.18470666666667,
+          "meanDelay": 0,
+          "maxDelay": 0
+        }
+      ]
+    },
+    {
+      "mode": "ar",
+      "subset": "all",
+      "period": 5,
+      "shared": true,
+      "peak": 4,
+      "maxPeak": 4,
+      "area": 194.21647999999996,
+      "makespan": 71.18470666666667,
+      "meanActive": 2.7283521830869035,
+      "capacities": [
+        {
+          "k": 2,
+          "finish": 102.10824000000001,
+          "meanDelay": 15.46176666666667,
+          "maxDelay": 31.067350000000005
+        },
+        {
+          "k": 4,
+          "finish": 71.18470666666667,
+          "meanDelay": 0,
+          "maxDelay": 0
+        },
+        {
+          "k": 8,
+          "finish": 71.18470666666667,
+          "meanDelay": 0,
+          "maxDelay": 0
+        },
+        {
+          "k": 12,
+          "finish": 71.18470666666667,
+          "meanDelay": 0,
+          "maxDelay": 0
+        }
+      ]
+    },
+    {
+      "mode": "ar",
+      "subset": "all",
+      "period": 10,
+      "shared": false,
+      "peak": 5,
+      "maxPeak": 5,
+      "area": 488.1133999999999,
+      "makespan": 126.18470666666667,
+      "meanActive": 3.8682482894928456,
+      "capacities": [
+        {
+          "k": 2,
+          "finish": 244.35670333333334,
+          "meanDelay": 61.518143888888886,
+          "maxDelay": 126.26783999999998
+        },
+        {
+          "k": 4,
+          "finish": 131.97436666666667,
+          "meanDelay": 3.659866759259259,
+          "maxDelay": 7.626350000000002
+        },
+        {
+          "k": 8,
+          "finish": 126.18470666666667,
+          "meanDelay": 0,
+          "maxDelay": 0
+        },
+        {
+          "k": 12,
+          "finish": 126.18470666666667,
+          "meanDelay": 0,
+          "maxDelay": 0
+        }
+      ]
+    },
+    {
+      "mode": "ar",
+      "subset": "all",
+      "period": 10,
+      "shared": true,
+      "peak": 2,
+      "maxPeak": 2,
+      "area": 194.21647999999996,
+      "makespan": 126.18470666666667,
+      "meanActive": 1.539145548045437,
+      "capacities": [
+        {
+          "k": 2,
+          "finish": 126.18470666666667,
+          "meanDelay": 0,
+          "maxDelay": 0
+        },
+        {
+          "k": 4,
+          "finish": 126.18470666666667,
+          "meanDelay": 0,
+          "maxDelay": 0
+        },
+        {
+          "k": 8,
+          "finish": 126.18470666666667,
+          "meanDelay": 0,
+          "maxDelay": 0
+        },
+        {
+          "k": 12,
+          "finish": 126.18470666666667,
+          "meanDelay": 0,
+          "maxDelay": 0
+        }
+      ]
+    },
+    {
+      "mode": "ar",
+      "subset": "matched",
+      "period": 2,
+      "shared": false,
+      "peak": 23,
+      "maxPeak": 23,
+      "area": 483.2626800000001,
+      "makespan": 38.184580000000004,
+      "meanActive": 12.656070663780019,
+      "capacities": [
+        {
+          "k": 2,
+          "finish": 241.93154333333337,
+          "meanDelay": 104.44016388888889,
+          "maxDelay": 212.20112000000003
+        },
+        {
+          "k": 4,
+          "finish": 128.57282333333333,
+          "meanDelay": 43.35154814814814,
+          "maxDelay": 91.22247999999999
+        },
+        {
+          "k": 8,
+          "finish": 68.26304,
+          "meanDelay": 14.10061537037037,
+          "maxDelay": 30.930509999999998
+        },
+        {
+          "k": 12,
+          "finish": 50.49211333333333,
+          "meanDelay": 5.260220185185186,
+          "maxDelay": 14.243570000000005
+        }
+      ]
+    },
+    {
+      "mode": "ar",
+      "subset": "matched",
+      "period": 2,
+      "shared": true,
+      "peak": 9,
+      "maxPeak": 9,
+      "area": 194.21496,
+      "makespan": 38.184580000000004,
+      "meanActive": 5.086257142229996,
+      "capacities": [
+        {
+          "k": 2,
+          "finish": 99.10748000000001,
+          "meanDelay": 30.461450000000003,
+          "maxDelay": 61.066590000000005
+        },
+        {
+          "k": 4,
+          "finish": 54.553740000000005,
+          "meanDelay": 8.184580000000002,
+          "maxDelay": 16.51285
+        },
+        {
+          "k": 8,
+          "finish": 38.36916,
+          "meanDelay": 0.061526666666666806,
+          "maxDelay": 0.3101699999999994
+        },
+        {
+          "k": 12,
+          "finish": 38.184580000000004,
+          "meanDelay": 0,
+          "maxDelay": 0
+        }
+      ]
+    },
+    {
+      "mode": "ar",
+      "subset": "matched",
+      "period": 5,
+      "shared": false,
+      "peak": 10,
+      "maxPeak": 10,
+      "area": 483.26268,
+      "makespan": 71.18458,
+      "meanActive": 6.788883893628022,
+      "capacities": [
+        {
+          "k": 2,
+          "finish": 241.93154333333337,
+          "meanDelay": 87.94016388888889,
+          "maxDelay": 179.20112000000003
+        },
+        {
+          "k": 4,
+          "finish": 128.57282333333333,
+          "meanDelay": 27.51821481481481,
+          "maxDelay": 58.22247999999999
+        },
+        {
+          "k": 8,
+          "finish": 72.42876666666666,
+          "meanDelay": 0.7599753703703701,
+          "maxDelay": 2.3299400000000006
+        },
+        {
+          "k": 12,
+          "finish": 71.18458,
+          "meanDelay": 0,
+          "maxDelay": 0
+        }
+      ]
+    },
+    {
+      "mode": "ar",
+      "subset": "matched",
+      "period": 5,
+      "shared": true,
+      "peak": 4,
+      "maxPeak": 4,
+      "area": 194.21496000000002,
+      "makespan": 71.18458,
+      "meanActive": 2.7283356824607488,
+      "capacities": [
+        {
+          "k": 2,
+          "finish": 102.10748000000001,
+          "meanDelay": 15.461450000000005,
+          "maxDelay": 31.066590000000005
+        },
+        {
+          "k": 4,
+          "finish": 71.18458,
+          "meanDelay": 0,
+          "maxDelay": 0
+        },
+        {
+          "k": 8,
+          "finish": 71.18458,
+          "meanDelay": 0,
+          "maxDelay": 0
+        },
+        {
+          "k": 12,
+          "finish": 71.18458,
+          "meanDelay": 0,
+          "maxDelay": 0
+        }
+      ]
+    },
+    {
+      "mode": "ar",
+      "subset": "matched",
+      "period": 10,
+      "shared": false,
+      "peak": 5,
+      "maxPeak": 5,
+      "area": 483.26268000000005,
+      "makespan": 126.18458,
+      "meanActive": 3.8298106777324192,
+      "capacities": [
+        {
+          "k": 2,
+          "finish": 241.93154333333337,
+          "meanDelay": 60.44016388888888,
+          "maxDelay": 124.20112000000003
+        },
+        {
+          "k": 4,
+          "finish": 130.82399666666666,
+          "meanDelay": 3.2470172222222207,
+          "maxDelay": 7.019799999999989
+        },
+        {
+          "k": 8,
+          "finish": 126.18458,
+          "meanDelay": 0,
+          "maxDelay": 0
+        },
+        {
+          "k": 12,
+          "finish": 126.18458,
+          "meanDelay": 0,
+          "maxDelay": 0
+        }
+      ]
+    },
+    {
+      "mode": "ar",
+      "subset": "matched",
+      "period": 10,
+      "shared": true,
+      "peak": 2,
+      "maxPeak": 2,
+      "area": 194.21496000000002,
+      "makespan": 126.18458,
+      "meanActive": 1.5391350467687157,
+      "capacities": [
+        {
+          "k": 2,
+          "finish": 126.18458,
+          "meanDelay": 0,
+          "maxDelay": 0
+        },
+        {
+          "k": 4,
+          "finish": 126.18458,
+          "meanDelay": 0,
+          "maxDelay": 0
+        },
+        {
+          "k": 8,
+          "finish": 126.18458,
+          "meanDelay": 0,
+          "maxDelay": 0
+        },
+        {
+          "k": 12,
+          "finish": 126.18458,
+          "meanDelay": 0,
+          "maxDelay": 0
+        }
+      ]
+    },
+    {
+      "mode": "sd",
+      "subset": "all",
+      "period": 2,
+      "shared": false,
+      "peak": 14,
+      "maxPeak": 14,
+      "area": 275.9093599999999,
+      "makespan": 34.16314,
+      "meanActive": 8.08247061349824,
+      "capacities": [
+        {
+          "k": 2,
+          "finish": 138.24660666666665,
+          "meanDelay": 54.50770074074074,
+          "maxDelay": 111.98119
+        },
+        {
+          "k": 4,
+          "finish": 73.36319333333333,
+          "meanDelay": 19.873125648148147,
+          "maxDelay": 41.65569999999999
+        },
+        {
+          "k": 8,
+          "finish": 41.85541333333333,
+          "meanDelay": 3.800176388888889,
+          "maxDelay": 10.03398
+        },
+        {
+          "k": 12,
+          "finish": 34.16314,
+          "meanDelay": 0.15024407407407414,
+          "maxDelay": 0.8219599999999989
+        }
+      ]
+    },
+    {
+      "mode": "sd",
+      "subset": "all",
+      "period": 2,
+      "shared": true,
+      "peak": 7,
+      "maxPeak": 7,
+      "area": 144.41592,
+      "makespan": 34.16314,
+      "meanActive": 4.23051044560907,
+      "capacities": [
+        {
+          "k": 2,
+          "finish": 74.33644,
+          "meanDelay": 20.086649999999995,
+          "maxDelay": 41.75966999999999
+        },
+        {
+          "k": 4,
+          "finish": 42.35701666666666,
+          "meanDelay": 4.03466,
+          "maxDelay": 9.655689999999996
+        },
+        {
+          "k": 8,
+          "finish": 34.16314,
+          "meanDelay": 0,
+          "maxDelay": 0
+        },
+        {
+          "k": 12,
+          "finish": 34.16314,
+          "meanDelay": 0,
+          "maxDelay": 0
+        }
+      ]
+    },
+    {
+      "mode": "sd",
+      "subset": "all",
+      "period": 5,
+      "shared": false,
+      "peak": 6,
+      "maxPeak": 6,
+      "area": 275.90935999999994,
+      "makespan": 67.03465999999999,
+      "meanActive": 4.117087596053638,
+      "capacities": [
+        {
+          "k": 2,
+          "finish": 138.24660666666665,
+          "meanDelay": 38.00770074074073,
+          "maxDelay": 78.98119
+        },
+        {
+          "k": 4,
+          "finish": 74.14202666666667,
+          "meanDelay": 4.1296925,
+          "maxDelay": 9.533469999999994
+        },
+        {
+          "k": 8,
+          "finish": 67.03465999999999,
+          "meanDelay": 0,
+          "maxDelay": 0
+        },
+        {
+          "k": 12,
+          "finish": 67.03465999999999,
+          "meanDelay": 0,
+          "maxDelay": 0
+        }
+      ]
+    },
+    {
+      "mode": "sd",
+      "subset": "all",
+      "period": 5,
+      "shared": true,
+      "peak": 3,
+      "maxPeak": 3,
+      "area": 144.41592,
+      "makespan": 67.03465999999999,
+      "meanActive": 2.15495767488524,
+      "capacities": [
+        {
+          "k": 2,
+          "finish": 77.20796,
+          "meanDelay": 5.086649999999997,
+          "maxDelay": 11.75967
+        },
+        {
+          "k": 4,
+          "finish": 67.03465999999999,
+          "meanDelay": 0,
+          "maxDelay": 0
+        },
+        {
+          "k": 8,
+          "finish": 67.03465999999999,
+          "meanDelay": 0,
+          "maxDelay": 0
+        },
+        {
+          "k": 12,
+          "finish": 67.03465999999999,
+          "meanDelay": 0,
+          "maxDelay": 0
+        }
+      ]
+    },
+    {
+      "mode": "sd",
+      "subset": "all",
+      "period": 10,
+      "shared": false,
+      "peak": 4,
+      "maxPeak": 4,
+      "area": 275.90936,
+      "makespan": 122.03465999999999,
+      "meanActive": 2.261102107378355,
+      "capacities": [
+        {
+          "k": 2,
+          "finish": 138.24660666666665,
+          "meanDelay": 10.507700740740733,
+          "maxDelay": 23.981189999999998
+        },
+        {
+          "k": 4,
+          "finish": 122.03465999999999,
+          "meanDelay": 0,
+          "maxDelay": 0
+        },
+        {
+          "k": 8,
+          "finish": 122.03465999999999,
+          "meanDelay": 0,
+          "maxDelay": 0
+        },
+        {
+          "k": 12,
+          "finish": 122.03465999999999,
+          "meanDelay": 0,
+          "maxDelay": 0
+        }
+      ]
+    },
+    {
+      "mode": "sd",
+      "subset": "all",
+      "period": 10,
+      "shared": true,
+      "peak": 2,
+      "maxPeak": 2,
+      "area": 144.41592000000003,
+      "makespan": 122.03465999999999,
+      "meanActive": 1.1835014986479038,
+      "capacities": [
+        {
+          "k": 2,
+          "finish": 122.03465999999999,
+          "meanDelay": 0,
+          "maxDelay": 0
+        },
+        {
+          "k": 4,
+          "finish": 122.03465999999999,
+          "meanDelay": 0,
+          "maxDelay": 0
+        },
+        {
+          "k": 8,
+          "finish": 122.03465999999999,
+          "meanDelay": 0,
+          "maxDelay": 0
+        },
+        {
+          "k": 12,
+          "finish": 122.03465999999999,
+          "meanDelay": 0,
+          "maxDelay": 0
+        }
+      ]
+    },
+    {
+      "mode": "sd",
+      "subset": "matched",
+      "period": 2,
+      "shared": false,
+      "peak": 14,
+      "maxPeak": 14,
+      "area": 264.36644,
+      "makespan": 34.16314,
+      "meanActive": 7.74433307552577,
+      "capacities": [
+        {
+          "k": 2,
+          "finish": 132.89295666666666,
+          "meanDelay": 51.95197564814814,
+          "maxDelay": 107.67854
+        },
+        {
+          "k": 4,
+          "finish": 70.01324,
+          "meanDelay": 18.68923861111111,
+          "maxDelay": 39.72637
+        },
+        {
+          "k": 8,
+          "finish": 40.590516666666666,
+          "meanDelay": 3.2463420370370364,
+          "maxDelay": 8.117109999999997
+        },
+        {
+          "k": 12,
+          "finish": 34.16314,
+          "meanDelay": 0.06777370370370386,
+          "maxDelay": 0.5344200000000043
+        }
+      ]
+    },
+    {
+      "mode": "sd",
+      "subset": "matched",
+      "period": 2,
+      "shared": true,
+      "peak": 7,
+      "maxPeak": 7,
+      "area": 135.67543999999998,
+      "makespan": 34.16314,
+      "meanActive": 3.974467400357291,
+      "capacities": [
+        {
+          "k": 2,
+          "finish": 70.69457333333332,
+          "meanDelay": 18.265716666666663,
+          "maxDelay": 39.574549999999995
+        },
+        {
+          "k": 4,
+          "finish": 41.81883,
+          "meanDelay": 3.233653888888888,
+          "maxDelay": 7.65569
+        },
+        {
+          "k": 8,
+          "finish": 34.16314,
+          "meanDelay": 0,
+          "maxDelay": 0
+        },
+        {
+          "k": 12,
+          "finish": 34.16314,
+          "meanDelay": 0,
+          "maxDelay": 0
+        }
+      ]
+    },
+    {
+      "mode": "sd",
+      "subset": "matched",
+      "period": 5,
+      "shared": false,
+      "peak": 6,
+      "maxPeak": 6,
+      "area": 264.36644,
+      "makespan": 66.30628666666667,
+      "meanActive": 3.991351704202461,
+      "capacities": [
+        {
+          "k": 2,
+          "finish": 132.89295666666666,
+          "meanDelay": 35.45197564814815,
+          "maxDelay": 74.67854
+        },
+        {
+          "k": 4,
+          "finish": 71.01323333333333,
+          "meanDelay": 3.352521296296296,
+          "maxDelay": 7.700450000000004
+        },
+        {
+          "k": 8,
+          "finish": 66.30628666666667,
+          "meanDelay": 0,
+          "maxDelay": 0
+        },
+        {
+          "k": 12,
+          "finish": 66.30628666666667,
+          "meanDelay": 0,
+          "maxDelay": 0
+        }
+      ]
+    },
+    {
+      "mode": "sd",
+      "subset": "matched",
+      "period": 5,
+      "shared": true,
+      "peak": 3,
+      "maxPeak": 3,
+      "area": 135.67543999999998,
+      "makespan": 66.30628666666667,
+      "meanActive": 2.048400692093969,
+      "capacities": [
+        {
+          "k": 2,
+          "finish": 73.41666333333332,
+          "meanDelay": 3.748169444444443,
+          "maxDelay": 9.574550000000002
+        },
+        {
+          "k": 4,
+          "finish": 66.30628666666667,
+          "meanDelay": 0,
+          "maxDelay": 0
+        },
+        {
+          "k": 8,
+          "finish": 66.30628666666667,
+          "meanDelay": 0,
+          "maxDelay": 0
+        },
+        {
+          "k": 12,
+          "finish": 66.30628666666667,
+          "meanDelay": 0,
+          "maxDelay": 0
+        }
+      ]
+    },
+    {
+      "mode": "sd",
+      "subset": "matched",
+      "period": 10,
+      "shared": false,
+      "peak": 4,
+      "maxPeak": 4,
+      "area": 264.36644,
+      "makespan": 121.30628666666667,
+      "meanActive": 2.180024766555926,
+      "capacities": [
+        {
+          "k": 2,
+          "finish": 133.59875333333332,
+          "meanDelay": 8.326903611111112,
+          "maxDelay": 19.678539999999998
+        },
+        {
+          "k": 4,
+          "finish": 121.30628666666667,
+          "meanDelay": 0,
+          "maxDelay": 0
+        },
+        {
+          "k": 8,
+          "finish": 121.30628666666667,
+          "meanDelay": 0,
+          "maxDelay": 0
+        },
+        {
+          "k": 12,
+          "finish": 121.30628666666667,
+          "meanDelay": 0,
+          "maxDelay": 0
+        }
+      ]
+    },
+    {
+      "mode": "sd",
+      "subset": "matched",
+      "period": 10,
+      "shared": true,
+      "peak": 2,
+      "maxPeak": 2,
+      "area": 135.67544,
+      "makespan": 121.30628666666667,
+      "meanActive": 1.1188100101259921,
+      "capacities": [
+        {
+          "k": 2,
+          "finish": 121.30628666666667,
+          "meanDelay": 0,
+          "maxDelay": 0
+        },
+        {
+          "k": 4,
+          "finish": 121.30628666666667,
+          "meanDelay": 0,
+          "maxDelay": 0
+        },
+        {
+          "k": 8,
+          "finish": 121.30628666666667,
+          "meanDelay": 0,
+          "maxDelay": 0
+        },
+        {
+          "k": 12,
+          "finish": 121.30628666666667,
+          "meanDelay": 0,
+          "maxDelay": 0
+        }
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "mode": "ar",
+      "subset": "all",
+      "period": 2,
+      "phase": 0,
+      "shared": false,
+      "fixed": {
+        "peak": 23,
+        "area": 488.11339999999996,
+        "makespan": 38.31017,
+        "meanActive": 12.741091986801415
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 488.1133999999999,
+          "meanDelay": 228.78841055555552,
+          "maxDelay": 457.7525099999999,
+          "delayArea": 65891.06223999998
+        },
+        {
+          "k": 2,
+          "finish": 244.21865,
+          "meanDelay": 105.50452888888888,
+          "maxDelay": 213.85775999999998,
+          "delayArea": 30385.30432
+        },
+        {
+          "k": 3,
+          "finish": 163.2613,
+          "meanDelay": 63.563803888888906,
+          "maxDelay": 131.73457,
+          "delayArea": 18306.375520000005
+        },
+        {
+          "k": 4,
+          "finish": 129.87271000000004,
+          "meanDelay": 43.901251388888895,
+          "maxDelay": 92.15568999999999,
+          "delayArea": 12643.560400000002
+        },
+        {
+          "k": 6,
+          "finish": 89.89943,
+          "meanDelay": 23.892225555555555,
+          "maxDelay": 52.478269999999995,
+          "delayArea": 6880.960959999999
+        },
+        {
+          "k": 8,
+          "finish": 68.36948000000001,
+          "meanDelay": 14.356370555555555,
+          "maxDelay": 30.930509999999998,
+          "delayArea": 4134.63472
+        },
+        {
+          "k": 12,
+          "finish": 50.53081,
+          "meanDelay": 5.408683333333332,
+          "maxDelay": 14.327749999999995,
+          "delayArea": 1557.7007999999996
+        },
+        {
+          "k": 16,
+          "finish": 42.62034,
+          "meanDelay": 1.7070891666666668,
+          "maxDelay": 4.687489999999997,
+          "delayArea": 491.64168
+        },
+        {
+          "k": 24,
+          "finish": 38.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 38.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "ar",
+      "subset": "all",
+      "period": 2,
+      "phase": 0,
+      "shared": true,
+      "fixed": {
+        "peak": 9,
+        "area": 194.21648,
+        "makespan": 38.31017,
+        "meanActive": 5.069580218516388
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 194.21648,
+          "meanDelay": 77.98018333333333,
+          "maxDelay": 155.90631,
+          "delayArea": 22458.292800000003
+        },
+        {
+          "k": 2,
+          "finish": 99.10824,
+          "meanDelay": 30.443915,
+          "maxDelay": 61.067350000000005,
+          "delayArea": 8767.84752
+        },
+        {
+          "k": 3,
+          "finish": 69.24068,
+          "meanDelay": 15.27706,
+          "maxDelay": 30.930509999999998,
+          "delayArea": 4399.79328
+        },
+        {
+          "k": 4,
+          "finish": 54.55412,
+          "meanDelay": 8.175780833333333,
+          "maxDelay": 16.51323,
+          "delayArea": 2354.6248800000003
+        },
+        {
+          "k": 6,
+          "finish": 42.62034,
+          "meanDelay": 2.0923533333333335,
+          "maxDelay": 4.310169999999999,
+          "delayArea": 602.5977600000001
+        },
+        {
+          "k": 8,
+          "finish": 38.51323,
+          "meanDelay": 0.06309833333333348,
+          "maxDelay": 0.3101699999999994,
+          "delayArea": 18.17232000000004
+        },
+        {
+          "k": 12,
+          "finish": 38.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 38.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 38.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 38.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "ar",
+      "subset": "all",
+      "period": 2,
+      "phase": 1,
+      "shared": false,
+      "fixed": {
+        "peak": 23,
+        "area": 488.1134000000001,
+        "makespan": 38.20306,
+        "meanActive": 12.776814213311711
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 488.11339999999984,
+          "meanDelay": 228.85538722222222,
+          "maxDelay": 457.74842999999987,
+          "delayArea": 65910.35152
+        },
+        {
+          "k": 2,
+          "finish": 244.63280999999998,
+          "meanDelay": 105.53801722222222,
+          "maxDelay": 214.26783999999998,
+          "delayArea": 30394.94896
+        },
+        {
+          "k": 3,
+          "finish": 162.92316,
+          "meanDelay": 63.586129444444445,
+          "maxDelay": 132.23015,
+          "delayArea": 18312.80528
+        },
+        {
+          "k": 4,
+          "finish": 129.78829,
+          "meanDelay": 43.9171738888889,
+          "maxDelay": 91.84644999999999,
+          "delayArea": 12648.146080000002
+        },
+        {
+          "k": 6,
+          "finish": 88.51916,
+          "meanDelay": 23.903388333333332,
+          "maxDelay": 52.48629,
+          "delayArea": 6884.17584
+        },
+        {
+          "k": 8,
+          "finish": 68.32639,
+          "meanDelay": 14.379473611111113,
+          "maxDelay": 30.447229999999998,
+          "delayArea": 4141.2884
+        },
+        {
+          "k": 12,
+          "finish": 50.39217000000001,
+          "meanDelay": 5.414895277777778,
+          "maxDelay": 14.222830000000002,
+          "delayArea": 1559.4898400000002
+        },
+        {
+          "k": 16,
+          "finish": 42.24417,
+          "meanDelay": 1.6893286111111108,
+          "maxDelay": 4.687489999999997,
+          "delayArea": 486.52663999999993
+        },
+        {
+          "k": 24,
+          "finish": 38.20306,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 38.20306,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "ar",
+      "subset": "all",
+      "period": 2,
+      "phase": 1,
+      "shared": true,
+      "fixed": {
+        "peak": 9,
+        "area": 194.21648000000002,
+        "makespan": 38.20306,
+        "meanActive": 5.083793811281086
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 194.21647999999996,
+          "meanDelay": 77.96183,
+          "maxDelay": 156.01341999999997,
+          "delayArea": 22453.007039999997
+        },
+        {
+          "k": 2,
+          "finish": 99.10824000000002,
+          "meanDelay": 30.43473833333334,
+          "maxDelay": 60.905180000000016,
+          "delayArea": 8765.20464
+        },
+        {
+          "k": 3,
+          "finish": 68.81224,
+          "meanDelay": 15.27706,
+          "maxDelay": 30.930509999999998,
+          "delayArea": 4399.79328
+        },
+        {
+          "k": 4,
+          "finish": 54.554120000000005,
+          "meanDelay": 8.171192500000002,
+          "maxDelay": 16.51323,
+          "delayArea": 2353.30344
+        },
+        {
+          "k": 6,
+          "finish": 42.40612,
+          "meanDelay": 2.0923533333333335,
+          "maxDelay": 4.310169999999999,
+          "delayArea": 602.5977600000001
+        },
+        {
+          "k": 8,
+          "finish": 38.24395,
+          "meanDelay": 0.04958416666666684,
+          "maxDelay": 0.3101699999999994,
+          "delayArea": 14.280240000000049
+        },
+        {
+          "k": 12,
+          "finish": 38.20306,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 38.20306,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 38.20306,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 38.20306,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "ar",
+      "subset": "all",
+      "period": 2,
+      "phase": 2,
+      "shared": false,
+      "fixed": {
+        "peak": 23,
+        "area": 488.11339999999996,
+        "makespan": 38.040890000000005,
+        "meanActive": 12.831282338557271
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 488.11339999999996,
+          "meanDelay": 228.80312388888893,
+          "maxDelay": 457.44348999999994,
+          "delayArea": 65895.29968000001
+        },
+        {
+          "k": 2,
+          "finish": 244.21865,
+          "meanDelay": 105.51188555555558,
+          "maxDelay": 213.54874,
+          "delayArea": 30387.423040000005
+        },
+        {
+          "k": 3,
+          "finish": 162.75293000000002,
+          "meanDelay": 63.56870833333333,
+          "maxDelay": 132.06592,
+          "delayArea": 18307.788
+        },
+        {
+          "k": 4,
+          "finish": 128.94939,
+          "meanDelay": 43.899190833333336,
+          "maxDelay": 91.62530999999998,
+          "delayArea": 12642.96696
+        },
+        {
+          "k": 6,
+          "finish": 88.95236000000001,
+          "meanDelay": 23.894677777777776,
+          "maxDelay": 53.09476000000001,
+          "delayArea": 6881.6672
+        },
+        {
+          "k": 8,
+          "finish": 68.09363,
+          "meanDelay": 14.364776944444442,
+          "maxDelay": 30.12267,
+          "delayArea": 4137.055759999999
+        },
+        {
+          "k": 12,
+          "finish": 50.55412,
+          "meanDelay": 5.427071111111112,
+          "maxDelay": 14.243949999999998,
+          "delayArea": 1562.9964800000002
+        },
+        {
+          "k": 16,
+          "finish": 42.08178,
+          "meanDelay": 1.6902088888888889,
+          "maxDelay": 4.406079999999999,
+          "delayArea": 486.78016
+        },
+        {
+          "k": 24,
+          "finish": 38.040890000000005,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 38.040890000000005,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "ar",
+      "subset": "all",
+      "period": 2,
+      "phase": 2,
+      "shared": true,
+      "fixed": {
+        "peak": 9,
+        "area": 194.21648,
+        "makespan": 38.040890000000005,
+        "meanActive": 5.105466249606672
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 194.21648,
+          "meanDelay": 78.10564666666666,
+          "maxDelay": 156.17559,
+          "delayArea": 22494.42624
+        },
+        {
+          "k": 2,
+          "finish": 99.10824000000001,
+          "meanDelay": 30.506646666666672,
+          "maxDelay": 61.067350000000005,
+          "delayArea": 8785.91424
+        },
+        {
+          "k": 3,
+          "finish": 68.16356,
+          "meanDelay": 15.27706,
+          "maxDelay": 30.930509999999998,
+          "delayArea": 4399.79328
+        },
+        {
+          "k": 4,
+          "finish": 54.55412,
+          "meanDelay": 8.207146666666667,
+          "maxDelay": 16.51323,
+          "delayArea": 2363.65824
+        },
+        {
+          "k": 6,
+          "finish": 42.08178,
+          "meanDelay": 2.0923533333333335,
+          "maxDelay": 4.310169999999999,
+          "delayArea": 602.5977600000001
+        },
+        {
+          "k": 8,
+          "finish": 38.351060000000004,
+          "meanDelay": 0.07202416666666671,
+          "maxDelay": 0.3101699999999994,
+          "delayArea": 20.74296000000001
+        },
+        {
+          "k": 12,
+          "finish": 38.040890000000005,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 38.040890000000005,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 38.040890000000005,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 38.040890000000005,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "ar",
+      "subset": "all",
+      "period": 5,
+      "phase": 0,
+      "shared": false,
+      "fixed": {
+        "peak": 10,
+        "area": 488.11339999999996,
+        "makespan": 71.31017,
+        "meanActive": 6.844933899330207
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 488.1133999999999,
+          "meanDelay": 212.28841055555552,
+          "maxDelay": 424.7525099999999,
+          "delayArea": 61139.06223999999
+        },
+        {
+          "k": 2,
+          "finish": 244.21865,
+          "meanDelay": 89.00452888888891,
+          "maxDelay": 180.85775999999998,
+          "delayArea": 25633.304320000007
+        },
+        {
+          "k": 3,
+          "finish": 163.2613,
+          "meanDelay": 47.0638038888889,
+          "maxDelay": 98.73456999999999,
+          "delayArea": 13554.375520000003
+        },
+        {
+          "k": 4,
+          "finish": 129.87271000000004,
+          "meanDelay": 28.067918055555555,
+          "maxDelay": 59.15568999999999,
+          "delayArea": 8083.5604
+        },
+        {
+          "k": 6,
+          "finish": 89.89943,
+          "meanDelay": 9.119313055555557,
+          "maxDelay": 22.478269999999995,
+          "delayArea": 2626.36216
+        },
+        {
+          "k": 8,
+          "finish": 72.77713,
+          "meanDelay": 0.8094261111111107,
+          "maxDelay": 2.3299400000000006,
+          "delayArea": 233.1147199999999
+        },
+        {
+          "k": 12,
+          "finish": 71.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 71.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 71.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 71.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "ar",
+      "subset": "all",
+      "period": 5,
+      "phase": 0,
+      "shared": true,
+      "fixed": {
+        "peak": 4,
+        "area": 194.21648,
+        "makespan": 71.31017,
+        "meanActive": 2.7235453231986404
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 194.21648,
+          "meanDelay": 61.480183333333336,
+          "maxDelay": 122.90630999999999,
+          "delayArea": 17706.292800000003
+        },
+        {
+          "k": 2,
+          "finish": 102.10824,
+          "meanDelay": 15.443914999999999,
+          "maxDelay": 31.067350000000005,
+          "delayArea": 4447.847519999999
+        },
+        {
+          "k": 3,
+          "finish": 75.24068,
+          "meanDelay": 1.7770600000000003,
+          "maxDelay": 3.930509999999998,
+          "delayArea": 511.7932800000001
+        },
+        {
+          "k": 4,
+          "finish": 71.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 6,
+          "finish": 71.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 8,
+          "finish": 71.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 12,
+          "finish": 71.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 71.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 71.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 71.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "ar",
+      "subset": "all",
+      "period": 5,
+      "phase": 1,
+      "shared": false,
+      "fixed": {
+        "peak": 10,
+        "area": 488.11339999999996,
+        "makespan": 71.20306,
+        "meanActive": 6.855230660030622
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 488.11339999999984,
+          "meanDelay": 212.3553872222222,
+          "maxDelay": 424.74842999999987,
+          "delayArea": 61158.35151999999
+        },
+        {
+          "k": 2,
+          "finish": 244.63280999999998,
+          "meanDelay": 89.03801722222221,
+          "maxDelay": 181.26783999999998,
+          "delayArea": 25642.948959999994
+        },
+        {
+          "k": 3,
+          "finish": 162.92316,
+          "meanDelay": 47.086129444444445,
+          "maxDelay": 99.23015000000001,
+          "delayArea": 13560.80528
+        },
+        {
+          "k": 4,
+          "finish": 129.78829,
+          "meanDelay": 28.083840555555547,
+          "maxDelay": 58.84644999999999,
+          "delayArea": 8088.146079999998
+        },
+        {
+          "k": 6,
+          "finish": 88.51916,
+          "meanDelay": 9.088123055555554,
+          "maxDelay": 22.486289999999997,
+          "delayArea": 2617.3794399999997
+        },
+        {
+          "k": 8,
+          "finish": 72.97255,
+          "meanDelay": 0.8205491666666666,
+          "maxDelay": 2.3299400000000006,
+          "delayArea": 236.31815999999998
+        },
+        {
+          "k": 12,
+          "finish": 71.20306,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 71.20306,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 71.20306,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 71.20306,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "ar",
+      "subset": "all",
+      "period": 5,
+      "phase": 1,
+      "shared": true,
+      "fixed": {
+        "peak": 4,
+        "area": 194.21648000000002,
+        "makespan": 71.20306,
+        "meanActive": 2.727642323237232
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 194.21647999999996,
+          "meanDelay": 61.46183,
+          "maxDelay": 123.01341999999997,
+          "delayArea": 17701.007039999997
+        },
+        {
+          "k": 2,
+          "finish": 102.10824000000002,
+          "meanDelay": 15.434738333333337,
+          "maxDelay": 30.905180000000016,
+          "delayArea": 4445.204640000001
+        },
+        {
+          "k": 3,
+          "finish": 74.81224,
+          "meanDelay": 1.7770600000000003,
+          "maxDelay": 3.930509999999998,
+          "delayArea": 511.79328000000004
+        },
+        {
+          "k": 4,
+          "finish": 71.20306,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 6,
+          "finish": 71.20306,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 8,
+          "finish": 71.20306,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 12,
+          "finish": 71.20306,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 71.20306,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 71.20306,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 71.20306,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "ar",
+      "subset": "all",
+      "period": 5,
+      "phase": 2,
+      "shared": false,
+      "fixed": {
+        "peak": 10,
+        "area": 488.11339999999996,
+        "makespan": 71.04089,
+        "meanActive": 6.870879573721556
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 488.11339999999996,
+          "meanDelay": 212.3031238888889,
+          "maxDelay": 424.44348999999994,
+          "delayArea": 61143.299680000004
+        },
+        {
+          "k": 2,
+          "finish": 244.21865,
+          "meanDelay": 89.01188555555557,
+          "maxDelay": 180.54874,
+          "delayArea": 25635.42304
+        },
+        {
+          "k": 3,
+          "finish": 162.75293000000002,
+          "meanDelay": 47.06870833333334,
+          "maxDelay": 99.06592,
+          "delayArea": 13555.788000000002
+        },
+        {
+          "k": 4,
+          "finish": 128.94939,
+          "meanDelay": 28.0658575,
+          "maxDelay": 58.625309999999985,
+          "delayArea": 8082.96696
+        },
+        {
+          "k": 6,
+          "finish": 89.26357,
+          "meanDelay": 9.122331944444444,
+          "maxDelay": 23.094760000000008,
+          "delayArea": 2627.2315999999996
+        },
+        {
+          "k": 8,
+          "finish": 72.7493,
+          "meanDelay": 0.8184630555555554,
+          "maxDelay": 2.3299400000000006,
+          "delayArea": 235.71735999999996
+        },
+        {
+          "k": 12,
+          "finish": 71.04089,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 71.04089,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 71.04089,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 71.04089,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "ar",
+      "subset": "all",
+      "period": 5,
+      "phase": 2,
+      "shared": true,
+      "fixed": {
+        "peak": 4,
+        "area": 194.21648,
+        "makespan": 71.04089,
+        "meanActive": 2.7338689028248377
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 194.21648,
+          "meanDelay": 61.60564666666668,
+          "maxDelay": 123.17559,
+          "delayArea": 17742.42624
+        },
+        {
+          "k": 2,
+          "finish": 102.10824000000001,
+          "meanDelay": 15.50664666666667,
+          "maxDelay": 31.067350000000005,
+          "delayArea": 4465.914240000001
+        },
+        {
+          "k": 3,
+          "finish": 74.16356,
+          "meanDelay": 1.7770600000000003,
+          "maxDelay": 3.930509999999998,
+          "delayArea": 511.79328000000004
+        },
+        {
+          "k": 4,
+          "finish": 71.04089,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 6,
+          "finish": 71.04089,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 8,
+          "finish": 71.04089,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 12,
+          "finish": 71.04089,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 71.04089,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 71.04089,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 71.04089,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "ar",
+      "subset": "all",
+      "period": 10,
+      "phase": 0,
+      "shared": false,
+      "fixed": {
+        "peak": 5,
+        "area": 488.11339999999984,
+        "makespan": 126.31017,
+        "meanActive": 3.8644030009618375
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 488.1133999999999,
+          "meanDelay": 184.78841055555554,
+          "maxDelay": 369.7525099999999,
+          "delayArea": 53219.06224
+        },
+        {
+          "k": 2,
+          "finish": 244.21865,
+          "meanDelay": 61.504528888888885,
+          "maxDelay": 125.85775999999998,
+          "delayArea": 17713.30432
+        },
+        {
+          "k": 3,
+          "finish": 164.40590999999998,
+          "meanDelay": 20.06339638888889,
+          "maxDelay": 43.89651999999998,
+          "delayArea": 5778.25816
+        },
+        {
+          "k": 4,
+          "finish": 132.02835,
+          "meanDelay": 3.7007305555555567,
+          "maxDelay": 7.626350000000002,
+          "delayArea": 1065.8104000000003
+        },
+        {
+          "k": 6,
+          "finish": 126.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 8,
+          "finish": 126.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 12,
+          "finish": 126.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 126.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 126.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 126.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "ar",
+      "subset": "all",
+      "period": 10,
+      "phase": 0,
+      "shared": true,
+      "fixed": {
+        "peak": 2,
+        "area": 194.21648,
+        "makespan": 126.31017,
+        "meanActive": 1.5376155380045802
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 194.21648,
+          "meanDelay": 33.980183333333336,
+          "maxDelay": 67.90630999999999,
+          "delayArea": 9786.2928
+        },
+        {
+          "k": 2,
+          "finish": 126.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 3,
+          "finish": 126.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 4,
+          "finish": 126.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 6,
+          "finish": 126.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 8,
+          "finish": 126.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 12,
+          "finish": 126.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 126.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 126.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 126.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "ar",
+      "subset": "all",
+      "period": 10,
+      "phase": 1,
+      "shared": false,
+      "fixed": {
+        "peak": 5,
+        "area": 488.11339999999996,
+        "makespan": 126.20306,
+        "meanActive": 3.867682764585898
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 488.11339999999984,
+          "meanDelay": 184.8553872222222,
+          "maxDelay": 369.74842999999987,
+          "delayArea": 53238.35151999999
+        },
+        {
+          "k": 2,
+          "finish": 244.63280999999998,
+          "meanDelay": 61.5380172222222,
+          "maxDelay": 126.26783999999998,
+          "delayArea": 17722.948959999994
+        },
+        {
+          "k": 3,
+          "finish": 164.25325,
+          "meanDelay": 19.992545833333335,
+          "maxDelay": 44.23015000000001,
+          "delayArea": 5757.8532000000005
+        },
+        {
+          "k": 4,
+          "finish": 132.02835,
+          "meanDelay": 3.633388055555555,
+          "maxDelay": 7.626350000000002,
+          "delayArea": 1046.4157599999999
+        },
+        {
+          "k": 6,
+          "finish": 126.20306,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 8,
+          "finish": 126.20306,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 12,
+          "finish": 126.20306,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 126.20306,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 126.20306,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 126.20306,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "ar",
+      "subset": "all",
+      "period": 10,
+      "phase": 1,
+      "shared": true,
+      "fixed": {
+        "peak": 2,
+        "area": 194.21648000000002,
+        "makespan": 126.20306,
+        "meanActive": 1.5389205301361157
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 194.21647999999996,
+          "meanDelay": 33.96182999999999,
+          "maxDelay": 68.01341999999997,
+          "delayArea": 9781.007039999997
+        },
+        {
+          "k": 2,
+          "finish": 126.20306,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 3,
+          "finish": 126.20306,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 4,
+          "finish": 126.20306,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 6,
+          "finish": 126.20306,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 8,
+          "finish": 126.20306,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 12,
+          "finish": 126.20306,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 126.20306,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 126.20306,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 126.20306,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "ar",
+      "subset": "all",
+      "period": 10,
+      "phase": 2,
+      "shared": false,
+      "fixed": {
+        "peak": 5,
+        "area": 488.11339999999996,
+        "makespan": 126.04089,
+        "meanActive": 3.872659102930802
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 488.11339999999996,
+          "meanDelay": 184.8031238888889,
+          "maxDelay": 369.44348999999994,
+          "delayArea": 53223.299680000004
+        },
+        {
+          "k": 2,
+          "finish": 244.21865,
+          "meanDelay": 61.51188555555557,
+          "maxDelay": 125.54874000000001,
+          "delayArea": 17715.423040000005
+        },
+        {
+          "k": 3,
+          "finish": 164.05846999999997,
+          "meanDelay": 20.069547499999988,
+          "maxDelay": 44.17711,
+          "delayArea": 5780.029679999997
+        },
+        {
+          "k": 4,
+          "finish": 131.8664,
+          "meanDelay": 3.6454816666666656,
+          "maxDelay": 7.626349999999988,
+          "delayArea": 1049.8987199999997
+        },
+        {
+          "k": 6,
+          "finish": 126.04089,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 8,
+          "finish": 126.04089,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 12,
+          "finish": 126.04089,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 126.04089,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 126.04089,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 126.04089,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "ar",
+      "subset": "all",
+      "period": 10,
+      "phase": 2,
+      "shared": true,
+      "fixed": {
+        "peak": 2,
+        "area": 194.21648,
+        "makespan": 126.04089,
+        "meanActive": 1.5409005759956154
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 194.21648,
+          "meanDelay": 34.105646666666665,
+          "maxDelay": 68.17559,
+          "delayArea": 9822.42624
+        },
+        {
+          "k": 2,
+          "finish": 126.04089,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 3,
+          "finish": 126.04089,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 4,
+          "finish": 126.04089,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 6,
+          "finish": 126.04089,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 8,
+          "finish": 126.04089,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 12,
+          "finish": 126.04089,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 126.04089,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 126.04089,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 126.04089,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "ar",
+      "subset": "matched",
+      "period": 2,
+      "phase": 0,
+      "shared": false,
+      "fixed": {
+        "peak": 23,
+        "area": 483.26268000000016,
+        "makespan": 38.31017,
+        "meanActive": 12.61447495534476
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 483.2626799999999,
+          "meanDelay": 226.7669961111111,
+          "maxDelay": 453.5079199999999,
+          "delayArea": 32951.267439999996
+        },
+        {
+          "k": 2,
+          "finish": 241.95588000000004,
+          "meanDelay": 104.52750722222224,
+          "maxDelay": 212.20112000000003,
+          "delayArea": 15156.850920000003
+        },
+        {
+          "k": 3,
+          "finish": 162.77088,
+          "meanDelay": 62.89002722222223,
+          "maxDelay": 130.07699000000002,
+          "delayArea": 9093.34712
+        },
+        {
+          "k": 4,
+          "finish": 128.90294,
+          "meanDelay": 43.40438972222221,
+          "maxDelay": 91.22247999999999,
+          "delayArea": 6319.392640000001
+        },
+        {
+          "k": 6,
+          "finish": 89.29212,
+          "meanDelay": 23.58902277777778,
+          "maxDelay": 51.87214,
+          "delayArea": 3446.07226
+        },
+        {
+          "k": 8,
+          "finish": 68.36948000000001,
+          "meanDelay": 14.135093888888889,
+          "maxDelay": 30.930509999999998,
+          "delayArea": 2061.28593
+        },
+        {
+          "k": 12,
+          "finish": 50.530429999999996,
+          "meanDelay": 5.255244722222223,
+          "maxDelay": 14.037350000000004,
+          "delayArea": 775.2950899999998
+        },
+        {
+          "k": 16,
+          "finish": 42.32994,
+          "meanDelay": 1.6073241666666669,
+          "maxDelay": 4.406079999999999,
+          "delayArea": 240.53001
+        },
+        {
+          "k": 24,
+          "finish": 38.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 38.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "ar",
+      "subset": "matched",
+      "period": 2,
+      "phase": 0,
+      "shared": true,
+      "fixed": {
+        "peak": 9,
+        "area": 194.21495999999996,
+        "makespan": 38.31017,
+        "meanActive": 5.069540542367731
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 194.21496,
+          "meanDelay": 77.97936,
+          "maxDelay": 155.90479,
+          "delayArea": 11172.217120000003
+        },
+        {
+          "k": 2,
+          "finish": 99.10748000000001,
+          "meanDelay": 30.443535000000008,
+          "maxDelay": 61.066590000000005,
+          "delayArea": 4358.925120000001
+        },
+        {
+          "k": 3,
+          "finish": 69.24068,
+          "meanDelay": 15.27687,
+          "maxDelay": 30.930509999999998,
+          "delayArea": 2200.84002
+        },
+        {
+          "k": 4,
+          "finish": 54.553740000000005,
+          "meanDelay": 8.175622500000001,
+          "maxDelay": 16.51285,
+          "delayArea": 1169.0326600000003
+        },
+        {
+          "k": 6,
+          "finish": 42.62034,
+          "meanDelay": 2.09229,
+          "maxDelay": 4.310169999999999,
+          "delayArea": 301.61334
+        },
+        {
+          "k": 8,
+          "finish": 38.51285,
+          "meanDelay": 0.06303500000000017,
+          "maxDelay": 0.3101699999999994,
+          "delayArea": 8.807760000000027
+        },
+        {
+          "k": 12,
+          "finish": 38.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 38.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 38.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 38.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "ar",
+      "subset": "matched",
+      "period": 2,
+      "phase": 1,
+      "shared": false,
+      "fixed": {
+        "peak": 23,
+        "area": 483.26268000000016,
+        "makespan": 38.20268,
+        "meanActive": 12.649968012715343
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 483.26267999999993,
+          "meanDelay": 226.4301261111111,
+          "maxDelay": 452.8977099999999,
+          "delayArea": 33362.02084
+        },
+        {
+          "k": 2,
+          "finish": 242.20741,
+          "meanDelay": 104.35907222222222,
+          "maxDelay": 211.84244,
+          "delayArea": 15349.648750000002
+        },
+        {
+          "k": 3,
+          "finish": 161.3821,
+          "meanDelay": 62.77773722222222,
+          "maxDelay": 131.01713,
+          "delayArea": 9217.35988
+        },
+        {
+          "k": 4,
+          "finish": 128.40667,
+          "meanDelay": 43.306386944444434,
+          "maxDelay": 90.42957999999999,
+          "delayArea": 6401.84623
+        },
+        {
+          "k": 6,
+          "finish": 88.38577000000001,
+          "meanDelay": 23.515872777777773,
+          "maxDelay": 51.87411,
+          "delayArea": 3478.1883500000004
+        },
+        {
+          "k": 8,
+          "finish": 68.32601000000001,
+          "meanDelay": 14.093171111111111,
+          "maxDelay": 30.446470000000005,
+          "delayArea": 2075.6693199999995
+        },
+        {
+          "k": 12,
+          "finish": 50.39217000000001,
+          "meanDelay": 5.2531375,
+          "maxDelay": 14.139499999999998,
+          "delayArea": 789.86357
+        },
+        {
+          "k": 16,
+          "finish": 42.08222,
+          "meanDelay": 1.5946075000000002,
+          "maxDelay": 4.310169999999999,
+          "delayArea": 241.85310999999996
+        },
+        {
+          "k": 24,
+          "finish": 38.20268,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 38.20268,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "ar",
+      "subset": "matched",
+      "period": 2,
+      "phase": 1,
+      "shared": true,
+      "fixed": {
+        "peak": 9,
+        "area": 194.21495999999996,
+        "makespan": 38.20268,
+        "meanActive": 5.083804591719742
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 194.21496000000002,
+          "meanDelay": 77.96126000000001,
+          "maxDelay": 156.01228,
+          "delayArea": 11339.825680000002
+        },
+        {
+          "k": 2,
+          "finish": 99.10748000000001,
+          "meanDelay": 30.434485000000006,
+          "maxDelay": 60.90480000000001,
+          "delayArea": 4430.7294
+        },
+        {
+          "k": 3,
+          "finish": 68.81072,
+          "meanDelay": 15.276870000000002,
+          "maxDelay": 30.930509999999998,
+          "delayArea": 2200.8400199999996
+        },
+        {
+          "k": 4,
+          "finish": 54.553740000000005,
+          "meanDelay": 8.1710975,
+          "maxDelay": 16.51285,
+          "delayArea": 1192.9348000000002
+        },
+        {
+          "k": 6,
+          "finish": 42.40536,
+          "meanDelay": 2.09229,
+          "maxDelay": 4.310169999999999,
+          "delayArea": 301.61334
+        },
+        {
+          "k": 8,
+          "finish": 38.243570000000005,
+          "meanDelay": 0.04955250000000019,
+          "maxDelay": 0.3101699999999994,
+          "delayArea": 6.907170000000029
+        },
+        {
+          "k": 12,
+          "finish": 38.20268,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 38.20268,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 38.20268,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 38.20268,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "ar",
+      "subset": "matched",
+      "period": 2,
+      "phase": 2,
+      "shared": false,
+      "fixed": {
+        "peak": 23,
+        "area": 483.26268000000005,
+        "makespan": 38.040890000000005,
+        "meanActive": 12.70376902327995
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 483.26267999999993,
+          "meanDelay": 226.5798061111111,
+          "maxDelay": 453.19893999999994,
+          "delayArea": 32924.312079999996
+        },
+        {
+          "k": 2,
+          "finish": 241.63134,
+          "meanDelay": 104.43391222222222,
+          "maxDelay": 211.56759999999997,
+          "delayArea": 15143.370439999999
+        },
+        {
+          "k": 3,
+          "finish": 161.53169999999997,
+          "meanDelay": 62.827630555555544,
+          "maxDelay": 130.28513999999998,
+          "delayArea": 9059.188139999998
+        },
+        {
+          "k": 4,
+          "finish": 128.40886,
+          "meanDelay": 43.343867777777774,
+          "maxDelay": 90.75192999999999,
+          "delayArea": 6303.146739999999
+        },
+        {
+          "k": 6,
+          "finish": 88.34585,
+          "meanDelay": 23.541533333333334,
+          "maxDelay": 52.708560000000006,
+          "delayArea": 3427.57766
+        },
+        {
+          "k": 8,
+          "finish": 68.09363,
+          "meanDelay": 14.07358111111111,
+          "maxDelay": 30.12267,
+          "delayArea": 2048.28977
+        },
+        {
+          "k": 12,
+          "finish": 50.553740000000005,
+          "meanDelay": 5.272278333333333,
+          "maxDelay": 14.243570000000005,
+          "delayArea": 777.51219
+        },
+        {
+          "k": 16,
+          "finish": 42.08178,
+          "meanDelay": 1.6228377777777778,
+          "maxDelay": 4.406079999999999,
+          "delayArea": 246.17809999999997
+        },
+        {
+          "k": 24,
+          "finish": 38.040890000000005,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 38.040890000000005,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "ar",
+      "subset": "matched",
+      "period": 2,
+      "phase": 2,
+      "shared": true,
+      "fixed": {
+        "peak": 9,
+        "area": 194.21496000000005,
+        "makespan": 38.040890000000005,
+        "meanActive": 5.105426292602513
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 194.21496000000002,
+          "meanDelay": 78.10495000000002,
+          "maxDelay": 156.17407000000003,
+          "delayArea": 11190.302080000001
+        },
+        {
+          "k": 2,
+          "finish": 99.10748000000001,
+          "meanDelay": 30.506330000000005,
+          "maxDelay": 61.066590000000005,
+          "delayArea": 4367.967600000001
+        },
+        {
+          "k": 3,
+          "finish": 68.16356,
+          "meanDelay": 15.27687,
+          "maxDelay": 30.930509999999998,
+          "delayArea": 2200.8400199999996
+        },
+        {
+          "k": 4,
+          "finish": 54.553740000000005,
+          "meanDelay": 8.207020000000002,
+          "maxDelay": 16.51285,
+          "delayArea": 1173.5539
+        },
+        {
+          "k": 6,
+          "finish": 42.08178,
+          "meanDelay": 2.09229,
+          "maxDelay": 4.310169999999999,
+          "delayArea": 301.61334
+        },
+        {
+          "k": 8,
+          "finish": 38.351060000000004,
+          "meanDelay": 0.07199250000000006,
+          "maxDelay": 0.3101699999999994,
+          "delayArea": 9.78747000000001
+        },
+        {
+          "k": 12,
+          "finish": 38.040890000000005,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 38.040890000000005,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 38.040890000000005,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 38.040890000000005,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "ar",
+      "subset": "matched",
+      "period": 5,
+      "phase": 0,
+      "shared": false,
+      "fixed": {
+        "peak": 10,
+        "area": 483.26267999999993,
+        "makespan": 71.31017,
+        "meanActive": 6.776911063316774
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 483.2626799999999,
+          "meanDelay": 210.2669961111111,
+          "maxDelay": 420.5079199999999,
+          "delayArea": 30587.26744
+        },
+        {
+          "k": 2,
+          "finish": 241.95588000000004,
+          "meanDelay": 88.02750722222224,
+          "maxDelay": 179.20112000000003,
+          "delayArea": 12792.850920000003
+        },
+        {
+          "k": 3,
+          "finish": 162.77088,
+          "meanDelay": 46.39002722222223,
+          "maxDelay": 97.07699000000002,
+          "delayArea": 6729.34712
+        },
+        {
+          "k": 4,
+          "finish": 128.90294,
+          "meanDelay": 27.571056388888884,
+          "maxDelay": 58.22247999999999,
+          "delayArea": 4048.39264
+        },
+        {
+          "k": 6,
+          "finish": 89.29212,
+          "meanDelay": 8.816110277777778,
+          "maxDelay": 21.87214,
+          "delayArea": 1332.1378300000003
+        },
+        {
+          "k": 8,
+          "finish": 72.77713,
+          "meanDelay": 0.7756983333333332,
+          "maxDelay": 2.3299400000000006,
+          "delayArea": 130.80149999999998
+        },
+        {
+          "k": 12,
+          "finish": 71.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 71.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 71.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 71.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "ar",
+      "subset": "matched",
+      "period": 5,
+      "phase": 0,
+      "shared": true,
+      "fixed": {
+        "peak": 4,
+        "area": 194.21495999999996,
+        "makespan": 71.31017,
+        "meanActive": 2.7235240078659184
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 194.21496,
+          "meanDelay": 61.47936000000001,
+          "maxDelay": 122.90478999999999,
+          "delayArea": 8808.217120000001
+        },
+        {
+          "k": 2,
+          "finish": 102.10748000000001,
+          "meanDelay": 15.443535000000004,
+          "maxDelay": 31.066590000000005,
+          "delayArea": 2210.925120000001
+        },
+        {
+          "k": 3,
+          "finish": 75.24068,
+          "meanDelay": 1.7768700000000004,
+          "maxDelay": 3.930509999999998,
+          "delayArea": 256.8400200000001
+        },
+        {
+          "k": 4,
+          "finish": 71.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 6,
+          "finish": 71.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 8,
+          "finish": 71.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 12,
+          "finish": 71.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 71.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 71.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 71.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "ar",
+      "subset": "matched",
+      "period": 5,
+      "phase": 1,
+      "shared": false,
+      "fixed": {
+        "peak": 10,
+        "area": 483.26268,
+        "makespan": 71.20268,
+        "meanActive": 6.787141719946496
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 483.26267999999993,
+          "meanDelay": 209.9301261111111,
+          "maxDelay": 419.8977099999999,
+          "delayArea": 30962.020839999997
+        },
+        {
+          "k": 2,
+          "finish": 242.20741,
+          "meanDelay": 87.85907222222222,
+          "maxDelay": 178.84244,
+          "delayArea": 12949.648749999998
+        },
+        {
+          "k": 3,
+          "finish": 161.3821,
+          "meanDelay": 46.277737222222214,
+          "maxDelay": 98.01713000000001,
+          "delayArea": 6817.359880000001
+        },
+        {
+          "k": 4,
+          "finish": 128.40667,
+          "meanDelay": 27.47305361111111,
+          "maxDelay": 57.42957999999999,
+          "delayArea": 4094.8462300000006
+        },
+        {
+          "k": 6,
+          "finish": 88.5019,
+          "meanDelay": 8.784797777777776,
+          "maxDelay": 21.87411,
+          "delayArea": 1341.56516
+        },
+        {
+          "k": 8,
+          "finish": 72.366,
+          "meanDelay": 0.753155833333333,
+          "maxDelay": 2.3299400000000006,
+          "delayArea": 128.32570999999996
+        },
+        {
+          "k": 12,
+          "finish": 71.20268,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 71.20268,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 71.20268,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 71.20268,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "ar",
+      "subset": "matched",
+      "period": 5,
+      "phase": 1,
+      "shared": true,
+      "fixed": {
+        "peak": 4,
+        "area": 194.21496000000002,
+        "makespan": 71.20268,
+        "meanActive": 2.7276355328198325
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 194.21496000000002,
+          "meanDelay": 61.46126000000001,
+          "maxDelay": 123.01228,
+          "delayArea": 8939.825680000002
+        },
+        {
+          "k": 2,
+          "finish": 102.10748000000001,
+          "meanDelay": 15.434485000000004,
+          "maxDelay": 30.90480000000001,
+          "delayArea": 2246.7294
+        },
+        {
+          "k": 3,
+          "finish": 74.81072,
+          "meanDelay": 1.7768700000000004,
+          "maxDelay": 3.930509999999998,
+          "delayArea": 256.84002000000004
+        },
+        {
+          "k": 4,
+          "finish": 71.20268,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 6,
+          "finish": 71.20268,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 8,
+          "finish": 71.20268,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 12,
+          "finish": 71.20268,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 71.20268,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 71.20268,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 71.20268,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "ar",
+      "subset": "matched",
+      "period": 5,
+      "phase": 2,
+      "shared": false,
+      "fixed": {
+        "peak": 10,
+        "area": 483.26268000000005,
+        "makespan": 71.04089,
+        "meanActive": 6.802598897620793
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 483.26267999999993,
+          "meanDelay": 210.0798061111111,
+          "maxDelay": 420.19893999999994,
+          "delayArea": 30560.31208
+        },
+        {
+          "k": 2,
+          "finish": 241.63134,
+          "meanDelay": 87.9339122222222,
+          "maxDelay": 178.56759999999997,
+          "delayArea": 12779.370439999999
+        },
+        {
+          "k": 3,
+          "finish": 161.53169999999997,
+          "meanDelay": 46.32763055555555,
+          "maxDelay": 97.28513999999998,
+          "delayArea": 6695.18814
+        },
+        {
+          "k": 4,
+          "finish": 128.40886,
+          "meanDelay": 27.510534444444446,
+          "maxDelay": 57.75192999999999,
+          "delayArea": 4035.1467400000006
+        },
+        {
+          "k": 6,
+          "finish": 88.79646000000001,
+          "meanDelay": 8.867023611111115,
+          "maxDelay": 22.708560000000006,
+          "delayArea": 1333.07213
+        },
+        {
+          "k": 8,
+          "finish": 72.14317,
+          "meanDelay": 0.7510719444444441,
+          "maxDelay": 2.3299400000000006,
+          "delayArea": 127.94092999999997
+        },
+        {
+          "k": 12,
+          "finish": 71.04089,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 71.04089,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 71.04089,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 71.04089,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "ar",
+      "subset": "matched",
+      "period": 5,
+      "phase": 2,
+      "shared": true,
+      "fixed": {
+        "peak": 4,
+        "area": 194.21496000000005,
+        "makespan": 71.04089,
+        "meanActive": 2.733847506696496
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 194.21496000000002,
+          "meanDelay": 61.60495000000001,
+          "maxDelay": 123.17407000000003,
+          "delayArea": 8826.302080000001
+        },
+        {
+          "k": 2,
+          "finish": 102.10748000000001,
+          "meanDelay": 15.506330000000005,
+          "maxDelay": 31.066590000000005,
+          "delayArea": 2219.9676000000004
+        },
+        {
+          "k": 3,
+          "finish": 74.16356,
+          "meanDelay": 1.7768700000000004,
+          "maxDelay": 3.930509999999998,
+          "delayArea": 256.8400200000001
+        },
+        {
+          "k": 4,
+          "finish": 71.04089,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 6,
+          "finish": 71.04089,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 8,
+          "finish": 71.04089,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 12,
+          "finish": 71.04089,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 71.04089,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 71.04089,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 71.04089,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "ar",
+      "subset": "matched",
+      "period": 10,
+      "phase": 0,
+      "shared": false,
+      "fixed": {
+        "peak": 5,
+        "area": 483.26268000000005,
+        "makespan": 126.31017,
+        "meanActive": 3.825999759164286
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 483.2626799999999,
+          "meanDelay": 182.7669961111111,
+          "maxDelay": 365.5079199999999,
+          "delayArea": 26647.26744
+        },
+        {
+          "k": 2,
+          "finish": 241.95588000000004,
+          "meanDelay": 60.52750722222223,
+          "maxDelay": 124.20112000000003,
+          "delayArea": 8852.85092
+        },
+        {
+          "k": 3,
+          "finish": 164.40590999999998,
+          "meanDelay": 19.389619722222225,
+          "maxDelay": 42.07699000000002,
+          "delayArea": 2859.6534100000003
+        },
+        {
+          "k": 4,
+          "finish": 131.00222,
+          "meanDelay": 3.2434063888888875,
+          "maxDelay": 7.019799999999989,
+          "delayArea": 548.7731999999997
+        },
+        {
+          "k": 6,
+          "finish": 126.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 8,
+          "finish": 126.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 12,
+          "finish": 126.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 126.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 126.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 126.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "ar",
+      "subset": "matched",
+      "period": 10,
+      "phase": 0,
+      "shared": true,
+      "fixed": {
+        "peak": 2,
+        "area": 194.21496000000008,
+        "makespan": 126.31017,
+        "meanActive": 1.5376035041358909
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 194.21496,
+          "meanDelay": 33.97936000000001,
+          "maxDelay": 67.90478999999999,
+          "delayArea": 4868.217120000001
+        },
+        {
+          "k": 2,
+          "finish": 126.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 3,
+          "finish": 126.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 4,
+          "finish": 126.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 6,
+          "finish": 126.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 8,
+          "finish": 126.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 12,
+          "finish": 126.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 126.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 126.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 126.31017,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "ar",
+      "subset": "matched",
+      "period": 10,
+      "phase": 1,
+      "shared": false,
+      "fixed": {
+        "peak": 5,
+        "area": 483.26268000000005,
+        "makespan": 126.20268,
+        "meanActive": 3.8292584594875483
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 483.26267999999993,
+          "meanDelay": 182.43012611111106,
+          "maxDelay": 364.8977099999999,
+          "delayArea": 26962.020839999997
+        },
+        {
+          "k": 2,
+          "finish": 242.20741,
+          "meanDelay": 60.35907222222222,
+          "maxDelay": 123.84244000000001,
+          "delayArea": 8949.648749999998
+        },
+        {
+          "k": 3,
+          "finish": 162.43473999999998,
+          "meanDelay": 19.36937222222222,
+          "maxDelay": 43.01713000000001,
+          "delayArea": 2897.650779999999
+        },
+        {
+          "k": 4,
+          "finish": 130.81566999999998,
+          "meanDelay": 3.230449999999997,
+          "maxDelay": 7.019799999999989,
+          "delayArea": 553.5613699999996
+        },
+        {
+          "k": 6,
+          "finish": 126.20268,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 8,
+          "finish": 126.20268,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 12,
+          "finish": 126.20268,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 126.20268,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 126.20268,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 126.20268,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "ar",
+      "subset": "matched",
+      "period": 10,
+      "phase": 1,
+      "shared": true,
+      "fixed": {
+        "peak": 2,
+        "area": 194.21496000000002,
+        "makespan": 126.20268,
+        "meanActive": 1.538913119753083
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 194.21496000000002,
+          "meanDelay": 33.96126000000001,
+          "maxDelay": 68.01228,
+          "delayArea": 4939.825680000002
+        },
+        {
+          "k": 2,
+          "finish": 126.20268,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 3,
+          "finish": 126.20268,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 4,
+          "finish": 126.20268,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 6,
+          "finish": 126.20268,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 8,
+          "finish": 126.20268,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 12,
+          "finish": 126.20268,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 126.20268,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 126.20268,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 126.20268,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "ar",
+      "subset": "matched",
+      "period": 10,
+      "phase": 2,
+      "shared": false,
+      "fixed": {
+        "peak": 5,
+        "area": 483.26268000000005,
+        "makespan": 126.04089,
+        "meanActive": 3.834173814545423
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 483.26267999999993,
+          "meanDelay": 182.5798061111111,
+          "maxDelay": 365.19893999999994,
+          "delayArea": 26620.31208
+        },
+        {
+          "k": 2,
+          "finish": 241.63134,
+          "meanDelay": 60.4339122222222,
+          "maxDelay": 123.56759999999997,
+          "delayArea": 8839.370439999999
+        },
+        {
+          "k": 3,
+          "finish": 162.79419,
+          "meanDelay": 19.513676111111106,
+          "maxDelay": 42.43473999999998,
+          "delayArea": 2854.3435899999995
+        },
+        {
+          "k": 4,
+          "finish": 130.6541,
+          "meanDelay": 3.2671952777777764,
+          "maxDelay": 7.019799999999989,
+          "delayArea": 551.6715399999998
+        },
+        {
+          "k": 6,
+          "finish": 126.04089,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 8,
+          "finish": 126.04089,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 12,
+          "finish": 126.04089,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 126.04089,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 126.04089,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 126.04089,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "ar",
+      "subset": "matched",
+      "period": 10,
+      "phase": 2,
+      "shared": true,
+      "fixed": {
+        "peak": 2,
+        "area": 194.21496000000002,
+        "makespan": 126.04089,
+        "meanActive": 1.5408885164171724
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 194.21496000000002,
+          "meanDelay": 34.10495000000001,
+          "maxDelay": 68.17407000000003,
+          "delayArea": 4886.30208
+        },
+        {
+          "k": 2,
+          "finish": 126.04089,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 3,
+          "finish": 126.04089,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 4,
+          "finish": 126.04089,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 6,
+          "finish": 126.04089,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 8,
+          "finish": 126.04089,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 12,
+          "finish": 126.04089,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 126.04089,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 126.04089,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 126.04089,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "sd",
+      "subset": "all",
+      "period": 2,
+      "phase": 0,
+      "shared": false,
+      "fixed": {
+        "peak": 14,
+        "area": 275.90935999999994,
+        "makespan": 34.83373,
+        "meanActive": 7.920752672768605
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 275.90936,
+          "meanDelay": 124.68607777777781,
+          "maxDelay": 249.44919,
+          "delayArea": 35909.59040000001
+        },
+        {
+          "k": 2,
+          "finish": 138.36007999999998,
+          "meanDelay": 54.014037777777766,
+          "maxDelay": 111.08911,
+          "delayArea": 15556.042879999997
+        },
+        {
+          "k": 3,
+          "finish": 94.34903999999999,
+          "meanDelay": 30.84320333333333,
+          "maxDelay": 66.07678,
+          "delayArea": 8882.84256
+        },
+        {
+          "k": 4,
+          "finish": 73.37876,
+          "meanDelay": 19.635728611111105,
+          "maxDelay": 40.79512999999999,
+          "delayArea": 5655.089839999999
+        },
+        {
+          "k": 6,
+          "finish": 52.62823999999999,
+          "meanDelay": 8.805915833333334,
+          "maxDelay": 20.4705,
+          "delayArea": 2536.10376
+        },
+        {
+          "k": 8,
+          "finish": 42.489419999999996,
+          "meanDelay": 3.7127147222222217,
+          "maxDelay": 9.820949999999996,
+          "delayArea": 1069.26184
+        },
+        {
+          "k": 12,
+          "finish": 34.83373,
+          "meanDelay": 0.15875527777777781,
+          "maxDelay": 0.8219599999999989,
+          "delayArea": 45.72152000000001
+        },
+        {
+          "k": 16,
+          "finish": 34.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 34.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 34.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "sd",
+      "subset": "all",
+      "period": 2,
+      "phase": 0,
+      "shared": true,
+      "fixed": {
+        "peak": 7,
+        "area": 144.41592,
+        "makespan": 34.83373,
+        "meanActive": 4.145864367668923
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 144.41592,
+          "meanDelay": 54.395483333333324,
+          "maxDelay": 109.58219,
+          "delayArea": 15665.899199999998
+        },
+        {
+          "k": 2,
+          "finish": 74.20795999999999,
+          "meanDelay": 19.689076666666665,
+          "maxDelay": 39.385999999999996,
+          "delayArea": 5670.4540799999995
+        },
+        {
+          "k": 3,
+          "finish": 54.62689,
+          "meanDelay": 8.9929875,
+          "maxDelay": 20.46588,
+          "delayArea": 2589.9804
+        },
+        {
+          "k": 4,
+          "finish": 42.489419999999996,
+          "meanDelay": 3.8358733333333332,
+          "maxDelay": 8.89658,
+          "delayArea": 1104.73152
+        },
+        {
+          "k": 6,
+          "finish": 35.28202,
+          "meanDelay": 0.21170833333333303,
+          "maxDelay": 0.8219599999999989,
+          "delayArea": 60.97199999999991
+        },
+        {
+          "k": 8,
+          "finish": 34.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 12,
+          "finish": 34.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 34.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 34.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 34.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "sd",
+      "subset": "all",
+      "period": 2,
+      "phase": 1,
+      "shared": false,
+      "fixed": {
+        "peak": 14,
+        "area": 275.9093599999999,
+        "makespan": 32.83373,
+        "meanActive": 8.403229240174657
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 275.90936000000005,
+          "meanDelay": 126.51426444444445,
+          "maxDelay": 249.46549000000005,
+          "delayArea": 36436.10816
+        },
+        {
+          "k": 2,
+          "finish": 138.42506,
+          "meanDelay": 54.9317411111111,
+          "maxDelay": 111.98119,
+          "delayArea": 15820.341439999997
+        },
+        {
+          "k": 3,
+          "finish": 92.35378,
+          "meanDelay": 31.452598888888886,
+          "maxDelay": 64.75792999999999,
+          "delayArea": 9058.348479999999
+        },
+        {
+          "k": 4,
+          "finish": 72.11742,
+          "meanDelay": 20.041159444444443,
+          "maxDelay": 41.65569999999999,
+          "delayArea": 5771.85392
+        },
+        {
+          "k": 6,
+          "finish": 49.84305,
+          "meanDelay": 9.010171111111111,
+          "maxDelay": 20.670339999999996,
+          "delayArea": 2594.92928
+        },
+        {
+          "k": 8,
+          "finish": 40.87778,
+          "meanDelay": 3.8996430555555555,
+          "maxDelay": 9.72589,
+          "delayArea": 1123.0972
+        },
+        {
+          "k": 12,
+          "finish": 32.83373,
+          "meanDelay": 0.14393416666666678,
+          "maxDelay": 0.8219599999999971,
+          "delayArea": 41.45304000000003
+        },
+        {
+          "k": 16,
+          "finish": 32.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 32.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 32.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "sd",
+      "subset": "all",
+      "period": 2,
+      "phase": 1,
+      "shared": true,
+      "fixed": {
+        "peak": 7,
+        "area": 144.41592000000003,
+        "makespan": 32.83373,
+        "meanActive": 4.398401278197756
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 144.41592000000003,
+          "meanDelay": 55.98185333333333,
+          "maxDelay": 111.96763000000001,
+          "delayArea": 16122.773759999998
+        },
+        {
+          "k": 2,
+          "finish": 74.20795999999999,
+          "meanDelay": 20.482261666666663,
+          "maxDelay": 41.75966999999999,
+          "delayArea": 5898.89136
+        },
+        {
+          "k": 3,
+          "finish": 50.937709999999996,
+          "meanDelay": 9.05199,
+          "maxDelay": 19.730310000000003,
+          "delayArea": 2606.97312
+        },
+        {
+          "k": 4,
+          "finish": 42.10397999999999,
+          "meanDelay": 4.2324658333333325,
+          "maxDelay": 9.655689999999996,
+          "delayArea": 1218.9501599999999
+        },
+        {
+          "k": 6,
+          "finish": 33.28202,
+          "meanDelay": 0.21170833333333303,
+          "maxDelay": 0.8219599999999989,
+          "delayArea": 60.97199999999991
+        },
+        {
+          "k": 8,
+          "finish": 32.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 12,
+          "finish": 32.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 32.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 32.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 32.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "sd",
+      "subset": "all",
+      "period": 2,
+      "phase": 2,
+      "shared": false,
+      "fixed": {
+        "peak": 14,
+        "area": 275.9093599999999,
+        "makespan": 34.82196,
+        "meanActive": 7.923429927551462
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 275.90936000000005,
+          "meanDelay": 125.64443111111115,
+          "maxDelay": 249.14029000000005,
+          "delayArea": 36185.59616000001
+        },
+        {
+          "k": 2,
+          "finish": 137.95468,
+          "meanDelay": 54.57732333333333,
+          "maxDelay": 111.18561,
+          "delayArea": 15718.269119999999
+        },
+        {
+          "k": 3,
+          "finish": 96.41365,
+          "meanDelay": 31.162654444444442,
+          "maxDelay": 62.57496999999999,
+          "delayArea": 8974.84448
+        },
+        {
+          "k": 4,
+          "finish": 74.5934,
+          "meanDelay": 19.94248888888889,
+          "maxDelay": 41.38822,
+          "delayArea": 5743.4368
+        },
+        {
+          "k": 6,
+          "finish": 53.41842,
+          "meanDelay": 8.939123055555553,
+          "maxDelay": 20.647440000000003,
+          "delayArea": 2574.4674399999994
+        },
+        {
+          "k": 8,
+          "finish": 42.19904,
+          "meanDelay": 3.788171388888889,
+          "maxDelay": 10.03398,
+          "delayArea": 1090.99336
+        },
+        {
+          "k": 12,
+          "finish": 34.82196,
+          "meanDelay": 0.14804277777777783,
+          "maxDelay": 0.8219599999999971,
+          "delayArea": 42.63632000000001
+        },
+        {
+          "k": 16,
+          "finish": 34.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 34.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 34.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "sd",
+      "subset": "all",
+      "period": 2,
+      "phase": 2,
+      "shared": true,
+      "fixed": {
+        "peak": 7,
+        "area": 144.41591999999997,
+        "makespan": 34.82196,
+        "meanActive": 4.147265690960531
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 144.41592,
+          "meanDelay": 55.19455333333334,
+          "maxDelay": 109.59396000000001,
+          "delayArea": 15896.03136
+        },
+        {
+          "k": 2,
+          "finish": 74.5934,
+          "meanDelay": 20.088611666666665,
+          "maxDelay": 41.37422999999999,
+          "delayArea": 5785.520159999998
+        },
+        {
+          "k": 3,
+          "finish": 55.28783999999999,
+          "meanDelay": 9.051989999999998,
+          "maxDelay": 20.46587999999999,
+          "delayArea": 2606.9731199999997
+        },
+        {
+          "k": 4,
+          "finish": 42.47765,
+          "meanDelay": 4.035640833333332,
+          "maxDelay": 9.28202,
+          "delayArea": 1162.2645599999996
+        },
+        {
+          "k": 6,
+          "finish": 35.643919999999994,
+          "meanDelay": 0.21170833333333286,
+          "maxDelay": 0.8219599999999971,
+          "delayArea": 60.971999999999866
+        },
+        {
+          "k": 8,
+          "finish": 34.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 12,
+          "finish": 34.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 34.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 34.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 34.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "sd",
+      "subset": "all",
+      "period": 5,
+      "phase": 0,
+      "shared": false,
+      "fixed": {
+        "peak": 6,
+        "area": 275.90935999999994,
+        "makespan": 67.83373,
+        "meanActive": 4.067436067572872
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 275.90936,
+          "meanDelay": 108.1860777777778,
+          "maxDelay": 216.44919,
+          "delayArea": 31157.590400000005
+        },
+        {
+          "k": 2,
+          "finish": 138.36007999999998,
+          "meanDelay": 37.514037777777766,
+          "maxDelay": 78.08911,
+          "delayArea": 10804.042879999997
+        },
+        {
+          "k": 3,
+          "finish": 94.34903999999999,
+          "meanDelay": 14.513131944444446,
+          "maxDelay": 33.48465,
+          "delayArea": 4179.782
+        },
+        {
+          "k": 4,
+          "finish": 73.87115,
+          "meanDelay": 3.9159872222222223,
+          "maxDelay": 8.566709999999993,
+          "delayArea": 1127.80432
+        },
+        {
+          "k": 6,
+          "finish": 67.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 8,
+          "finish": 67.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 12,
+          "finish": 67.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 67.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 67.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 67.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "sd",
+      "subset": "all",
+      "period": 5,
+      "phase": 0,
+      "shared": true,
+      "fixed": {
+        "peak": 3,
+        "area": 144.41592000000003,
+        "makespan": 67.83373,
+        "meanActive": 2.1289691721213035
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 144.41592,
+          "meanDelay": 37.895483333333324,
+          "maxDelay": 76.58219,
+          "delayArea": 10913.899199999998
+        },
+        {
+          "k": 2,
+          "finish": 77.20795999999999,
+          "meanDelay": 4.689076666666662,
+          "maxDelay": 9.385999999999996,
+          "delayArea": 1350.4540799999988
+        },
+        {
+          "k": 3,
+          "finish": 67.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 4,
+          "finish": 67.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 6,
+          "finish": 67.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 8,
+          "finish": 67.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 12,
+          "finish": 67.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 67.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 67.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 67.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "sd",
+      "subset": "all",
+      "period": 5,
+      "phase": 1,
+      "shared": false,
+      "fixed": {
+        "peak": 6,
+        "area": 275.90935999999994,
+        "makespan": 65.44829,
+        "meanActive": 4.215684779541221
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 275.90936000000005,
+          "meanDelay": 110.01426444444445,
+          "maxDelay": 216.46549000000005,
+          "delayArea": 31684.108160000003
+        },
+        {
+          "k": 2,
+          "finish": 138.42506,
+          "meanDelay": 38.43174111111111,
+          "maxDelay": 78.98119,
+          "delayArea": 11068.34144
+        },
+        {
+          "k": 3,
+          "finish": 92.53156999999997,
+          "meanDelay": 15.02316083333333,
+          "maxDelay": 31.81107,
+          "delayArea": 4326.670319999999
+        },
+        {
+          "k": 4,
+          "finish": 73.02687999999999,
+          "meanDelay": 4.267383611111111,
+          "maxDelay": 9.533469999999994,
+          "delayArea": 1229.0064799999998
+        },
+        {
+          "k": 6,
+          "finish": 65.44829,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 8,
+          "finish": 65.44829,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 12,
+          "finish": 65.44829,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 65.44829,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 65.44829,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 65.44829,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "sd",
+      "subset": "all",
+      "period": 5,
+      "phase": 1,
+      "shared": true,
+      "fixed": {
+        "peak": 3,
+        "area": 144.41591999999997,
+        "makespan": 65.44829,
+        "meanActive": 2.2065652135449216
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 144.41592000000003,
+          "meanDelay": 39.48185333333333,
+          "maxDelay": 78.96763000000001,
+          "delayArea": 11370.773760000002
+        },
+        {
+          "k": 2,
+          "finish": 77.20796,
+          "meanDelay": 5.4822616666666635,
+          "maxDelay": 11.75967,
+          "delayArea": 1578.891359999999
+        },
+        {
+          "k": 3,
+          "finish": 65.44829,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 4,
+          "finish": 65.44829,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 6,
+          "finish": 65.44829,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 8,
+          "finish": 65.44829,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 12,
+          "finish": 65.44829,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 65.44829,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 65.44829,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 65.44829,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "sd",
+      "subset": "all",
+      "period": 5,
+      "phase": 2,
+      "shared": false,
+      "fixed": {
+        "peak": 6,
+        "area": 275.90935999999994,
+        "makespan": 67.82196,
+        "meanActive": 4.068141941046822
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 275.90936000000005,
+          "meanDelay": 109.14443111111112,
+          "maxDelay": 216.14029000000005,
+          "delayArea": 31433.59616
+        },
+        {
+          "k": 2,
+          "finish": 137.95468,
+          "meanDelay": 38.077323333333325,
+          "maxDelay": 78.18561,
+          "delayArea": 10966.269119999997
+        },
+        {
+          "k": 3,
+          "finish": 96.41365,
+          "meanDelay": 14.8276025,
+          "maxDelay": 29.976380000000006,
+          "delayArea": 4270.34952
+        },
+        {
+          "k": 4,
+          "finish": 75.52805,
+          "meanDelay": 4.205706666666667,
+          "maxDelay": 9.439049999999995,
+          "delayArea": 1211.24352
+        },
+        {
+          "k": 6,
+          "finish": 67.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 8,
+          "finish": 67.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 12,
+          "finish": 67.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 67.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 67.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 67.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "sd",
+      "subset": "all",
+      "period": 5,
+      "phase": 2,
+      "shared": true,
+      "fixed": {
+        "peak": 3,
+        "area": 144.41592,
+        "makespan": 67.82196,
+        "meanActive": 2.1293386389894953
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 144.41592,
+          "meanDelay": 38.69455333333334,
+          "maxDelay": 76.59396000000001,
+          "delayArea": 11144.031359999999
+        },
+        {
+          "k": 2,
+          "finish": 77.20796,
+          "meanDelay": 5.088611666666665,
+          "maxDelay": 11.759669999999993,
+          "delayArea": 1465.5201599999996
+        },
+        {
+          "k": 3,
+          "finish": 67.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 4,
+          "finish": 67.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 6,
+          "finish": 67.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 8,
+          "finish": 67.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 12,
+          "finish": 67.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 67.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 67.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 67.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "sd",
+      "subset": "all",
+      "period": 10,
+      "phase": 0,
+      "shared": false,
+      "fixed": {
+        "peak": 4,
+        "area": 275.90936,
+        "makespan": 122.83373,
+        "meanActive": 2.246201918642379
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 275.90936,
+          "meanDelay": 80.68607777777777,
+          "maxDelay": 161.44919,
+          "delayArea": 23237.590399999997
+        },
+        {
+          "k": 2,
+          "finish": 138.36007999999998,
+          "meanDelay": 10.014037777777771,
+          "maxDelay": 23.089110000000005,
+          "delayArea": 2884.042879999998
+        },
+        {
+          "k": 3,
+          "finish": 122.83373,
+          "meanDelay": 0.5995052777777781,
+          "maxDelay": 2.8337300000000027,
+          "delayArea": 172.6575200000001
+        },
+        {
+          "k": 4,
+          "finish": 122.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 6,
+          "finish": 122.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 8,
+          "finish": 122.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 12,
+          "finish": 122.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 122.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 122.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 122.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "sd",
+      "subset": "all",
+      "period": 10,
+      "phase": 0,
+      "shared": true,
+      "fixed": {
+        "peak": 2,
+        "area": 144.41592000000003,
+        "makespan": 122.83373,
+        "meanActive": 1.175702471951312
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 144.41592,
+          "meanDelay": 10.395483333333326,
+          "maxDelay": 21.582189999999997,
+          "delayArea": 2993.899199999998
+        },
+        {
+          "k": 2,
+          "finish": 122.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 3,
+          "finish": 122.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 4,
+          "finish": 122.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 6,
+          "finish": 122.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 8,
+          "finish": 122.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 12,
+          "finish": 122.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 122.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 122.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 122.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "sd",
+      "subset": "all",
+      "period": 10,
+      "phase": 1,
+      "shared": false,
+      "fixed": {
+        "peak": 4,
+        "area": 275.90936000000005,
+        "makespan": 120.44829,
+        "meanActive": 2.2906872318403195
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 275.90936000000005,
+          "meanDelay": 82.51426444444444,
+          "maxDelay": 161.46549000000005,
+          "delayArea": 23764.108159999996
+        },
+        {
+          "k": 2,
+          "finish": 138.42506,
+          "meanDelay": 10.931741111111105,
+          "maxDelay": 23.981189999999998,
+          "delayArea": 3148.3414399999983
+        },
+        {
+          "k": 3,
+          "finish": 120.44829,
+          "meanDelay": 0.6657675000000004,
+          "maxDelay": 2.8337300000000027,
+          "delayArea": 191.7410400000001
+        },
+        {
+          "k": 4,
+          "finish": 120.44829,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 6,
+          "finish": 120.44829,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 8,
+          "finish": 120.44829,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 12,
+          "finish": 120.44829,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 120.44829,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 120.44829,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 120.44829,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "sd",
+      "subset": "all",
+      "period": 10,
+      "phase": 1,
+      "shared": true,
+      "fixed": {
+        "peak": 2,
+        "area": 144.41592000000003,
+        "makespan": 120.44829,
+        "meanActive": 1.198986884745313
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 144.41592000000003,
+          "meanDelay": 11.981853333333339,
+          "maxDelay": 23.967630000000014,
+          "delayArea": 3450.773760000001
+        },
+        {
+          "k": 2,
+          "finish": 120.44829,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 3,
+          "finish": 120.44829,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 4,
+          "finish": 120.44829,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 6,
+          "finish": 120.44829,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 8,
+          "finish": 120.44829,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 12,
+          "finish": 120.44829,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 120.44829,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 120.44829,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 120.44829,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "sd",
+      "subset": "all",
+      "period": 10,
+      "phase": 2,
+      "shared": false,
+      "fixed": {
+        "peak": 4,
+        "area": 275.90936,
+        "makespan": 122.82196,
+        "meanActive": 2.2464171716523658
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 275.90936000000005,
+          "meanDelay": 81.64443111111109,
+          "maxDelay": 161.14029000000005,
+          "delayArea": 23513.596159999994
+        },
+        {
+          "k": 2,
+          "finish": 137.95468,
+          "meanDelay": 10.577323333333323,
+          "maxDelay": 23.185609999999997,
+          "delayArea": 3046.269119999997
+        },
+        {
+          "k": 3,
+          "finish": 122.82196,
+          "meanDelay": 0.5998322222222224,
+          "maxDelay": 2.8337300000000027,
+          "delayArea": 172.75168000000005
+        },
+        {
+          "k": 4,
+          "finish": 122.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 6,
+          "finish": 122.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 8,
+          "finish": 122.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 12,
+          "finish": 122.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 122.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 122.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 122.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "sd",
+      "subset": "all",
+      "period": 10,
+      "phase": 2,
+      "shared": true,
+      "fixed": {
+        "peak": 2,
+        "area": 144.41592,
+        "makespan": 122.82196,
+        "meanActive": 1.1758151392470857
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 144.41592,
+          "meanDelay": 11.194553333333337,
+          "maxDelay": 21.59396000000001,
+          "delayArea": 3224.031360000001
+        },
+        {
+          "k": 2,
+          "finish": 122.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 3,
+          "finish": 122.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 4,
+          "finish": 122.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 6,
+          "finish": 122.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 8,
+          "finish": 122.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 12,
+          "finish": 122.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 122.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 122.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 122.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "sd",
+      "subset": "matched",
+      "period": 2,
+      "phase": 0,
+      "shared": false,
+      "fixed": {
+        "peak": 14,
+        "area": 264.36644,
+        "makespan": 34.83373,
+        "meanActive": 7.589380752506263
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 264.36643999999995,
+          "meanDelay": 118.28483944444444,
+          "maxDelay": 237.98503999999997,
+          "delayArea": 17235.336719999996
+        },
+        {
+          "k": 2,
+          "finish": 132.18322,
+          "meanDelay": 51.22048555555555,
+          "maxDelay": 105.80181999999999,
+          "delayArea": 7431.62274
+        },
+        {
+          "k": 3,
+          "finish": 90.72392,
+          "meanDelay": 28.88851388888888,
+          "maxDelay": 62.43355000000001,
+          "delayArea": 4196.714970000001
+        },
+        {
+          "k": 4,
+          "finish": 69.83771999999999,
+          "meanDelay": 18.34213638888889,
+          "maxDelay": 38.289860000000004,
+          "delayArea": 2671.6313999999993
+        },
+        {
+          "k": 6,
+          "finish": 50.66375000000001,
+          "meanDelay": 7.859370277777779,
+          "maxDelay": 17.920429999999996,
+          "delayArea": 1154.46894
+        },
+        {
+          "k": 8,
+          "finish": 42.386889999999994,
+          "meanDelay": 3.1087333333333325,
+          "maxDelay": 8.117109999999997,
+          "delayArea": 462.18486999999993
+        },
+        {
+          "k": 12,
+          "finish": 34.83373,
+          "meanDelay": 0.06281750000000007,
+          "maxDelay": 0.5344200000000008,
+          "delayArea": 10.501480000000011
+        },
+        {
+          "k": 16,
+          "finish": 34.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 34.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 34.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "sd",
+      "subset": "matched",
+      "period": 2,
+      "phase": 0,
+      "shared": true,
+      "fixed": {
+        "peak": 7,
+        "area": 135.67543999999998,
+        "makespan": 34.83373,
+        "meanActive": 3.8949443542221855
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 135.67544,
+          "meanDelay": 49.66105666666666,
+          "maxDelay": 100.84171,
+          "delayArea": 7126.13948
+        },
+        {
+          "k": 2,
+          "finish": 69.83771999999999,
+          "meanDelay": 17.503956666666664,
+          "maxDelay": 35.01576,
+          "delayArea": 2512.01988
+        },
+        {
+          "k": 3,
+          "finish": 50.75259,
+          "meanDelay": 7.3406825,
+          "maxDelay": 17.623240000000003,
+          "delayArea": 1039.9731499999998
+        },
+        {
+          "k": 4,
+          "finish": 42.489419999999996,
+          "meanDelay": 2.925406666666666,
+          "maxDelay": 7.65569,
+          "delayArea": 418.9718499999999
+        },
+        {
+          "k": 6,
+          "finish": 34.83373,
+          "meanDelay": 0.04386166666666691,
+          "maxDelay": 0.26317000000000235,
+          "delayArea": 5.789740000000032
+        },
+        {
+          "k": 8,
+          "finish": 34.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 12,
+          "finish": 34.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 34.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 34.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 34.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "sd",
+      "subset": "matched",
+      "period": 2,
+      "phase": 1,
+      "shared": false,
+      "fixed": {
+        "peak": 14,
+        "area": 264.36643999999995,
+        "makespan": 32.83373,
+        "meanActive": 8.051672472180284
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 264.36644,
+          "meanDelay": 121.4148661111111,
+          "maxDelay": 238.00120000000004,
+          "delayArea": 17926.427
+        },
+        {
+          "k": 2,
+          "finish": 134.04378,
+          "meanDelay": 52.73381666666666,
+          "maxDelay": 107.67854,
+          "delayArea": 7752.143959999999
+        },
+        {
+          "k": 3,
+          "finish": 88.78472000000001,
+          "meanDelay": 29.921908888888893,
+          "maxDelay": 62.41948000000001,
+          "delayArea": 4417.10762
+        },
+        {
+          "k": 4,
+          "finish": 68.18012,
+          "meanDelay": 19.085838055555556,
+          "maxDelay": 39.72637,
+          "delayArea": 2819.8328899999997
+        },
+        {
+          "k": 6,
+          "finish": 47.30158,
+          "meanDelay": 8.303765555555556,
+          "maxDelay": 18.726299999999995,
+          "delayArea": 1234.5749500000002
+        },
+        {
+          "k": 8,
+          "finish": 39.088089999999994,
+          "meanDelay": 3.4143655555555545,
+          "maxDelay": 7.975969999999997,
+          "delayArea": 515.7718099999998
+        },
+        {
+          "k": 12,
+          "finish": 32.83373,
+          "meanDelay": 0.07037583333333346,
+          "maxDelay": 0.5344200000000008,
+          "delayArea": 11.86198000000002
+        },
+        {
+          "k": 16,
+          "finish": 32.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 32.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 32.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "sd",
+      "subset": "matched",
+      "period": 2,
+      "phase": 1,
+      "shared": true,
+      "fixed": {
+        "peak": 7,
+        "area": 135.67543999999998,
+        "makespan": 32.83373,
+        "meanActive": 4.132196981579613
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 135.67544,
+          "meanDelay": 52.70417333333334,
+          "maxDelay": 105.41227000000002,
+          "delayArea": 7676.023720000001
+        },
+        {
+          "k": 2,
+          "finish": 69.83771999999999,
+          "meanDelay": 19.025514999999995,
+          "maxDelay": 39.574549999999995,
+          "delayArea": 2774.9619999999995
+        },
+        {
+          "k": 3,
+          "finish": 48.75259,
+          "meanDelay": 7.9594299999999985,
+          "maxDelay": 15.918860000000002,
+          "delayArea": 1143.2872699999998
+        },
+        {
+          "k": 4,
+          "finish": 40.489419999999996,
+          "meanDelay": 3.4939033333333325,
+          "maxDelay": 7.65569,
+          "delayArea": 508.44683999999995
+        },
+        {
+          "k": 6,
+          "finish": 32.83373,
+          "meanDelay": 0.04386166666666691,
+          "maxDelay": 0.26317000000000235,
+          "delayArea": 5.789740000000032
+        },
+        {
+          "k": 8,
+          "finish": 32.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 12,
+          "finish": 32.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 32.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 32.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 32.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "sd",
+      "subset": "matched",
+      "period": 2,
+      "phase": 2,
+      "shared": false,
+      "fixed": {
+        "peak": 14,
+        "area": 264.36644,
+        "makespan": 34.82196,
+        "meanActive": 7.591946001890761
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 264.36644,
+          "meanDelay": 119.6620427777778,
+          "maxDelay": 237.67629,
+          "delayArea": 17433.654000000006
+        },
+        {
+          "k": 2,
+          "finish": 132.45186999999999,
+          "meanDelay": 51.901624722222216,
+          "maxDelay": 105.76172,
+          "delayArea": 7529.1694800000005
+        },
+        {
+          "k": 3,
+          "finish": 91.74206000000001,
+          "meanDelay": 29.33138805555556,
+          "maxDelay": 59.12651000000001,
+          "delayArea": 4261.16975
+        },
+        {
+          "k": 4,
+          "finish": 72.02188000000001,
+          "meanDelay": 18.63974138888889,
+          "maxDelay": 39.40146,
+          "delayArea": 2705.90081
+        },
+        {
+          "k": 6,
+          "finish": 50.75235,
+          "meanDelay": 8.08546111111111,
+          "maxDelay": 19.382399999999997,
+          "delayArea": 1186.2266200000001
+        },
+        {
+          "k": 8,
+          "finish": 40.296569999999996,
+          "meanDelay": 3.2159272222222217,
+          "maxDelay": 7.9885899999999985,
+          "delayArea": 483.39330999999993
+        },
+        {
+          "k": 12,
+          "finish": 34.82196,
+          "meanDelay": 0.07012777777777807,
+          "maxDelay": 0.5344200000000043,
+          "delayArea": 11.554160000000044
+        },
+        {
+          "k": 16,
+          "finish": 34.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 34.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 34.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "sd",
+      "subset": "matched",
+      "period": 2,
+      "phase": 2,
+      "shared": true,
+      "fixed": {
+        "peak": 7,
+        "area": 135.67543999999995,
+        "makespan": 34.82196,
+        "meanActive": 3.8962608652700754
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 135.67544,
+          "meanDelay": 51.188500000000005,
+          "maxDelay": 100.85348000000002,
+          "delayArea": 7346.09132
+        },
+        {
+          "k": 2,
+          "finish": 72.40828,
+          "meanDelay": 18.267678333333333,
+          "maxDelay": 37.58632,
+          "delayArea": 2619.42524
+        },
+        {
+          "k": 3,
+          "finish": 55.01575999999999,
+          "meanDelay": 7.936756666666664,
+          "maxDelay": 20.193799999999996,
+          "delayArea": 1130.0945399999998
+        },
+        {
+          "k": 4,
+          "finish": 42.47765,
+          "meanDelay": 3.2816516666666664,
+          "maxDelay": 7.65569,
+          "delayArea": 472.81371
+        },
+        {
+          "k": 6,
+          "finish": 35.08513,
+          "meanDelay": 0.043861666666667055,
+          "maxDelay": 0.26317000000000235,
+          "delayArea": 5.789740000000052
+        },
+        {
+          "k": 8,
+          "finish": 34.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 12,
+          "finish": 34.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 34.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 34.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 34.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "sd",
+      "subset": "matched",
+      "period": 5,
+      "phase": 0,
+      "shared": false,
+      "fixed": {
+        "peak": 6,
+        "area": 264.36644,
+        "makespan": 67.83373,
+        "meanActive": 3.8972711658344603
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 264.36643999999995,
+          "meanDelay": 101.78483944444444,
+          "maxDelay": 204.98503999999997,
+          "delayArea": 14871.33672
+        },
+        {
+          "k": 2,
+          "finish": 132.18322,
+          "meanDelay": 34.72048555555555,
+          "maxDelay": 72.80181999999999,
+          "delayArea": 5067.62274
+        },
+        {
+          "k": 3,
+          "finish": 91.04444000000001,
+          "meanDelay": 12.582468333333336,
+          "maxDelay": 29.43355000000001,
+          "delayArea": 1860.62557
+        },
+        {
+          "k": 4,
+          "finish": 71.12395,
+          "meanDelay": 3.1823575,
+          "maxDelay": 7.101070000000007,
+          "delayArea": 493.35158
+        },
+        {
+          "k": 6,
+          "finish": 67.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 8,
+          "finish": 67.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 12,
+          "finish": 67.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 67.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 67.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 67.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "sd",
+      "subset": "matched",
+      "period": 5,
+      "phase": 0,
+      "shared": true,
+      "fixed": {
+        "peak": 3,
+        "area": 135.67544,
+        "makespan": 67.83373,
+        "meanActive": 2.0001176405897185
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 135.67544,
+          "meanDelay": 33.16105666666666,
+          "maxDelay": 67.84171,
+          "delayArea": 4762.13948
+        },
+        {
+          "k": 2,
+          "finish": 72.83771999999999,
+          "meanDelay": 3.227635833333331,
+          "maxDelay": 6.752589999999998,
+          "delayArea": 466.49284999999975
+        },
+        {
+          "k": 3,
+          "finish": 67.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 4,
+          "finish": 67.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 6,
+          "finish": 67.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 8,
+          "finish": 67.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 12,
+          "finish": 67.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 67.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 67.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 67.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "sd",
+      "subset": "matched",
+      "period": 5,
+      "phase": 1,
+      "shared": false,
+      "fixed": {
+        "peak": 6,
+        "area": 264.36644,
+        "makespan": 63.26317,
+        "meanActive": 4.178836438325806
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 264.36644,
+          "meanDelay": 104.91486611111111,
+          "maxDelay": 205.00120000000004,
+          "delayArea": 15526.427
+        },
+        {
+          "k": 2,
+          "finish": 134.04378,
+          "meanDelay": 36.23381666666668,
+          "maxDelay": 74.67854,
+          "delayArea": 5352.143959999999
+        },
+        {
+          "k": 3,
+          "finish": 88.78472000000001,
+          "meanDelay": 13.516585277777779,
+          "maxDelay": 29.419480000000007,
+          "delayArea": 2031.0508700000003
+        },
+        {
+          "k": 4,
+          "finish": 69.26251,
+          "meanDelay": 3.4864816666666654,
+          "maxDelay": 7.700450000000004,
+          "delayArea": 541.5059699999998
+        },
+        {
+          "k": 6,
+          "finish": 63.26317,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 8,
+          "finish": 63.26317,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 12,
+          "finish": 63.26317,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 63.26317,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 63.26317,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 63.26317,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "sd",
+      "subset": "matched",
+      "period": 5,
+      "phase": 1,
+      "shared": true,
+      "fixed": {
+        "peak": 3,
+        "area": 135.67543999999998,
+        "makespan": 63.26317,
+        "meanActive": 2.14461968946545
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 135.67544,
+          "meanDelay": 36.204173333333344,
+          "maxDelay": 72.41227000000002,
+          "delayArea": 5276.023720000001
+        },
+        {
+          "k": 2,
+          "finish": 72.83772,
+          "meanDelay": 4.025514999999999,
+          "maxDelay": 9.574550000000002,
+          "delayArea": 590.9619999999998
+        },
+        {
+          "k": 3,
+          "finish": 63.26317,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 4,
+          "finish": 63.26317,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 6,
+          "finish": 63.26317,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 8,
+          "finish": 63.26317,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 12,
+          "finish": 63.26317,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 63.26317,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 63.26317,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 63.26317,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "sd",
+      "subset": "matched",
+      "period": 5,
+      "phase": 2,
+      "shared": false,
+      "fixed": {
+        "peak": 6,
+        "area": 264.36643999999995,
+        "makespan": 67.82196,
+        "meanActive": 3.897947508447116
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 264.36644,
+          "meanDelay": 103.16204277777777,
+          "maxDelay": 204.67629,
+          "delayArea": 15069.654
+        },
+        {
+          "k": 2,
+          "finish": 132.45186999999999,
+          "meanDelay": 35.40162472222222,
+          "maxDelay": 72.76172,
+          "delayArea": 5165.1694800000005
+        },
+        {
+          "k": 3,
+          "finish": 92.17150000000001,
+          "meanDelay": 13.025659166666665,
+          "maxDelay": 26.95043000000001,
+          "delayArea": 1924.2347900000004
+        },
+        {
+          "k": 4,
+          "finish": 72.65324,
+          "meanDelay": 3.388724722222222,
+          "maxDelay": 7.484790000000004,
+          "delayArea": 525.2322000000001
+        },
+        {
+          "k": 6,
+          "finish": 67.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 8,
+          "finish": 67.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 12,
+          "finish": 67.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 67.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 67.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 67.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "sd",
+      "subset": "matched",
+      "period": 5,
+      "phase": 2,
+      "shared": true,
+      "fixed": {
+        "peak": 3,
+        "area": 135.67544,
+        "makespan": 67.82196,
+        "meanActive": 2.000464746226738
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 135.67544,
+          "meanDelay": 34.688500000000005,
+          "maxDelay": 67.85348000000002,
+          "delayArea": 4982.09132
+        },
+        {
+          "k": 2,
+          "finish": 74.57455,
+          "meanDelay": 3.9913574999999994,
+          "maxDelay": 9.574549999999995,
+          "delayArea": 576.46877
+        },
+        {
+          "k": 3,
+          "finish": 67.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 4,
+          "finish": 67.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 6,
+          "finish": 67.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 8,
+          "finish": 67.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 12,
+          "finish": 67.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 67.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 67.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 67.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "sd",
+      "subset": "matched",
+      "period": 10,
+      "phase": 0,
+      "shared": false,
+      "fixed": {
+        "peak": 4,
+        "area": 264.36644,
+        "makespan": 122.83373,
+        "meanActive": 2.152230010437687
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 264.36643999999995,
+          "meanDelay": 74.28483944444446,
+          "maxDelay": 149.98503999999997,
+          "delayArea": 10931.33672
+        },
+        {
+          "k": 2,
+          "finish": 133.40643999999998,
+          "meanDelay": 7.972698611111109,
+          "maxDelay": 18.315429999999992,
+          "delayArea": 1230.3389299999994
+        },
+        {
+          "k": 3,
+          "finish": 122.83373,
+          "meanDelay": 0.549695277777778,
+          "maxDelay": 2.8337300000000027,
+          "delayArea": 98.94515000000006
+        },
+        {
+          "k": 4,
+          "finish": 122.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 6,
+          "finish": 122.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 8,
+          "finish": 122.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 12,
+          "finish": 122.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 122.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 122.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 122.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "sd",
+      "subset": "matched",
+      "period": 10,
+      "phase": 0,
+      "shared": true,
+      "fixed": {
+        "peak": 2,
+        "area": 135.67544000000004,
+        "makespan": 122.83373,
+        "meanActive": 1.1045454697174792
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 137.41227,
+          "meanDelay": 7.253150833333329,
+          "maxDelay": 14.578540000000004,
+          "delayArea": 1049.6642099999995
+        },
+        {
+          "k": 2,
+          "finish": 122.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 3,
+          "finish": 122.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 4,
+          "finish": 122.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 6,
+          "finish": 122.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 8,
+          "finish": 122.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 12,
+          "finish": 122.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 122.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 122.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 122.83373,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "sd",
+      "subset": "matched",
+      "period": 10,
+      "phase": 1,
+      "shared": false,
+      "fixed": {
+        "peak": 4,
+        "area": 264.36644,
+        "makespan": 118.26317,
+        "meanActive": 2.2354080310886304
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 264.36644,
+          "meanDelay": 77.41486611111112,
+          "maxDelay": 150.00120000000004,
+          "delayArea": 11526.427000000001
+        },
+        {
+          "k": 2,
+          "finish": 134.04378,
+          "meanDelay": 8.733816666666668,
+          "maxDelay": 19.678539999999998,
+          "delayArea": 1352.1439600000003
+        },
+        {
+          "k": 3,
+          "finish": 118.26317,
+          "meanDelay": 0.6284100000000004,
+          "maxDelay": 2.8337300000000027,
+          "delayArea": 113.11380000000007
+        },
+        {
+          "k": 4,
+          "finish": 118.26317,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 6,
+          "finish": 118.26317,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 8,
+          "finish": 118.26317,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 12,
+          "finish": 118.26317,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 118.26317,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 118.26317,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 118.26317,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "sd",
+      "subset": "matched",
+      "period": 10,
+      "phase": 1,
+      "shared": true,
+      "fixed": {
+        "peak": 2,
+        "area": 135.67544,
+        "makespan": 118.26317,
+        "meanActive": 1.1472332426062992
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 135.67544,
+          "meanDelay": 8.704173333333339,
+          "maxDelay": 17.41227000000002,
+          "delayArea": 1276.023720000001
+        },
+        {
+          "k": 2,
+          "finish": 118.26317,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 3,
+          "finish": 118.26317,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 4,
+          "finish": 118.26317,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 6,
+          "finish": 118.26317,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 8,
+          "finish": 118.26317,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 12,
+          "finish": 118.26317,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 118.26317,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 118.26317,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 118.26317,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "sd",
+      "subset": "matched",
+      "period": 10,
+      "phase": 2,
+      "shared": false,
+      "fixed": {
+        "peak": 4,
+        "area": 264.36644,
+        "makespan": 122.82196,
+        "meanActive": 2.1524362581414596
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 264.36644,
+          "meanDelay": 75.66204277777776,
+          "maxDelay": 149.67629,
+          "delayArea": 11129.654
+        },
+        {
+          "k": 2,
+          "finish": 133.34604,
+          "meanDelay": 8.274195555555558,
+          "maxDelay": 18.65589,
+          "delayArea": 1277.92551
+        },
+        {
+          "k": 3,
+          "finish": 122.82196,
+          "meanDelay": 0.5500222222222224,
+          "maxDelay": 2.8337300000000027,
+          "delayArea": 99.00400000000003
+        },
+        {
+          "k": 4,
+          "finish": 122.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 6,
+          "finish": 122.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 8,
+          "finish": 122.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 12,
+          "finish": 122.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 122.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 122.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 122.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    },
+    {
+      "mode": "sd",
+      "subset": "matched",
+      "period": 10,
+      "phase": 2,
+      "shared": true,
+      "fixed": {
+        "peak": 2,
+        "area": 135.67544,
+        "makespan": 122.82196,
+        "meanActive": 1.1046513180541981
+      },
+      "capacities": [
+        {
+          "k": 1,
+          "finish": 135.67544,
+          "meanDelay": 7.188500000000005,
+          "maxDelay": 14.590310000000017,
+          "delayArea": 1042.0913200000007
+        },
+        {
+          "k": 2,
+          "finish": 122.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 3,
+          "finish": 122.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 4,
+          "finish": 122.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 6,
+          "finish": 122.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 8,
+          "finish": 122.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 12,
+          "finish": 122.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 16,
+          "finish": 122.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 24,
+          "finish": 122.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        },
+        {
+          "k": 36,
+          "finish": 122.82196,
+          "meanDelay": 0,
+          "maxDelay": 0,
+          "delayArea": 0
+        }
+      ]
+    }
+  ]
+}
