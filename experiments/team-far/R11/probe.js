@@ -1,0 +1,14 @@
+// Reproduce with node probe.js
+const run=()=>{
+const H=4,G=2,d=4,D=H*d;
+let seed=1;function rnd(){seed=(Math.imul(seed,1664525)+1013904223)>>>0;return seed/4294967296-.5}
+const vec=n=>Array.from({length:n},rnd),zeros=n=>Array(n).fill(0),dot=(a,b)=>a.reduce((s,x,i)=>s+x*b[i],0);
+function calc(x,split){const {z,U,A,delta,K,V,m,n,r,s}=x;const Q=U.map(u=>dot(u,z)),g=Array.from({length:D},(_,j)=>A.reduce((v,a,i)=>v+a[j]*delta[i],0));let out=zeros(s),dz=zeros(r),du=U.map(u=>zeros(r)),da=A.map(a=>zeros(D)),dk=K.map(v=>zeros(v.length)),dv=V.map(v=>zeros(v.length));
+for(let h=0;h<H;h++){let group=Math.floor(h/(H/G)),off=h*d,q=Q.slice(off,off+d),gh=g.slice(off,off+d),idx=Array.from({length:m+n},(_,i)=>i);function part(ids){let e=ids.map(i=>Math.exp(dot(q,K[i].slice(group*d,(group+1)*d))/Math.sqrt(d))),Z=e.reduce((a,b)=>a+b,0),o=zeros(d);ids.forEach((i,j)=>{for(let k=0;k<d;k++)o[k]+=e[j]/Z*V[i][group*d+k]});return {ids,e,Z,o}}
+let ps=split?[part(idx.slice(0,m)),part(idx.slice(m))]:[part(idx)],Z=ps.reduce((a,p)=>a+p.Z,0),Ds=ps.reduce((a,p)=>a+p.Z/Z*dot(gh,p.o),0);
+for(let p of ps){let w=p.Z/Z,dq=zeros(d);for(let k=0;k<d;k++){for(let i=0;i<s;i++){out[i]+=A[i][off+k]*w*p.o[k];da[i][off+k]+=delta[i]*w*p.o[k]}}p.ids.forEach((j,t)=>{let a=p.e[t]/Z,v=V[j].slice(group*d,(group+1)*d),k=K[j].slice(group*d,(group+1)*d),u=a*(dot(gh,v)-Ds)/Math.sqrt(d);for(let l=0;l<d;l++){dk[j][group*d+l]+=u*q[l];dv[j][group*d+l]+=a*gh[l];dq[l]+=u*k[l]}});for(let l=0;l<d;l++)for(let j=0;j<r;j++){dz[j]+=U[off+l][j]*dq[l];du[off+l][j]+=dq[l]*z[j]}}}return {out,dz,du,da,dk,dv}}
+let rows=[];for(let k of [11,29,73])for(let m of [8,32,128])for(let r of [2,4,8]){seed=k;let n=5,s=r,x={m,n,r,s,z:vec(r),U:Array.from({length:D},()=>vec(r)),A:Array.from({length:s},()=>vec(D)),delta:vec(s),K:Array.from({length:m+n},()=>vec(G*d)),V:Array.from({length:m+n},()=>vec(G*d))};let a=calc(x,false),b=calc(x,true),err={};for(let p of Object.keys(a))err[p]=Math.max(...a[p].flat().map((v,i)=>Math.abs(v-b[p].flat()[i])));let fd=0;for(let [arr,grad,j] of [[x.z,b.dz,0],[x.U[0],b.du[0],0],[x.A[0],b.da[0],0],[x.K[0],b.dk[0],0],[x.V[0],b.dv[0],0],[x.K[m],b.dk[m],0],[x.V[m],b.dv[m],0]]){let old=arr[j],e=1e-5;arr[j]=old+e;let hi=dot(calc(x,false).out,x.delta);arr[j]=old-e;let lo=dot(calc(x,false).out,x.delta);arr[j]=old;fd=Math.max(fd,Math.abs((hi-lo)/(2*e)-grad[j]))}rows.push({seed:k,m,r,err,fd})}
+const max=Object.fromEntries([...Object.keys(rows[0].err).map(p=>[p,Math.max(...rows.map(x=>x.err[p]))]),["fd",Math.max(...rows.map(x=>x.fd))]]);
+const h=28,Dq=3584,kv=512,base=[1.1965961945910197,4.786384778364079,9.572769556728158];const proxy=[128,256,512,1024,1792,3584].map(r=>({r,perPass:2*r+2*h,relToR10:2*(2*r+2*h)/(4*Dq+3*h),ratios:base.map(x=>x*2*(2*r+2*h)/(4*Dq+3*h)),minPrefixPerQuery:(2*r+2*h)/(2*kv)}));return {rows,max,proxy};
+};
+console.log(JSON.stringify(run(),null,2));
