@@ -1,0 +1,30 @@
+[
+  {
+    "model": "Qwen2.5-1.5B-Instruct",
+    "d": 1536,
+    "f": 8960,
+    "l": 28,
+    "heads": 12,
+    "kvheads": 2,
+    "config": "https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct/blob/main/config.json",
+    "kv": 256,
+    "rank": 32,
+    "params": 36929536,
+    "bytes": 73859072,
+    "fourVersionBytes": 295436288
+  },
+  {
+    "model": "Qwen2.5-3B-Instruct",
+    "d": 2048,
+    "f": 11008,
+    "l": 36,
+    "heads": 16,
+    "kvheads": 2,
+    "config": "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct/blob/main/config.json",
+    "kv": 256,
+    "rank": 32,
+    "params": 59867136,
+    "bytes": 119734272,
+    "fourVersionBytes": 478937088
+  }
+]
