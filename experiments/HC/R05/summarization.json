@@ -1,0 +1,392 @@
+{
+  "src": "Aaryaman3/Speculative-Decoding-Eval",
+  "ref": "99f1b223f007e93c5206ab9d5e43dba3ec4920e7",
+  "manifest": [
+    {
+      "path": "Code/results/raw/eagle3_L4_summarization_c08_t1.jsonl",
+      "sha": "39b6d9af12d5df0920691a7ef858a74fad08d3fb",
+      "n": 8,
+      "distinctAcceptance": [
+        0.4998
+      ]
+    },
+    {
+      "path": "Code/results/raw/baseline_L4_summarization_c08_t1.jsonl",
+      "sha": "52843a67cd2f62742a4516c81bd74838bb43cc63",
+      "n": 8,
+      "distinctAcceptance": [
+        null
+      ]
+    },
+    {
+      "path": "Code/results/raw/baseline_L4_summarization_c08_t2.jsonl",
+      "sha": "ddc1221761cd2ca1f7a20ffa198cd31c8c8c245d",
+      "n": 8,
+      "distinctAcceptance": [
+        null
+      ]
+    },
+    {
+      "path": "Code/results/raw/eagle3_L4_summarization_c08_t2.jsonl",
+      "sha": "e9737ff544dd4dfe8f918ebd3ccc4a29499a2348",
+      "n": 8,
+      "distinctAcceptance": [
+        0.4988
+      ]
+    },
+    {
+      "path": "Code/results/raw/eagle3_L4_summarization_c08_t3.jsonl",
+      "sha": "79a8d6e37c256a93106a287192d7de7c49e2c5ff",
+      "n": 8,
+      "distinctAcceptance": [
+        0.4979
+      ]
+    },
+    {
+      "path": "Code/results/raw/baseline_L4_summarization_c08_t3.jsonl",
+      "sha": "9c8363001f3408694eb1c44b77e85c6d4dec0a52",
+      "n": 8,
+      "distinctAcceptance": [
+        null
+      ]
+    }
+  ],
+  "pairs": [
+    {
+      "gpu": "L4",
+      "task": "summarization",
+      "trial": 1,
+      "id": "summarization_0000_c8_t1",
+      "ar": 7940.41,
+      "sd": 3801.06,
+      "arTokens": 120,
+      "sdTokens": 121,
+      "equalText": false,
+      "arTTFT": 457.18,
+      "sdTTFT": 550.62,
+      "acceptance": 0.4998
+    },
+    {
+      "gpu": "L4",
+      "task": "summarization",
+      "trial": 1,
+      "id": "summarization_0001_c8_t1",
+      "ar": 8669.91,
+      "sd": 3972.65,
+      "arTokens": 132,
+      "sdTokens": 129,
+      "equalText": false,
+      "arTTFT": 456.55,
+      "sdTTFT": 550.41,
+      "acceptance": 0.4998
+    },
+    {
+      "gpu": "L4",
+      "task": "summarization",
+      "trial": 1,
+      "id": "summarization_0002_c8_t1",
+      "ar": 8371.22,
+      "sd": 4769.07,
+      "arTokens": 127,
+      "sdTokens": 135,
+      "equalText": false,
+      "arTTFT": 456.48,
+      "sdTTFT": 550.13,
+      "acceptance": 0.4998
+    },
+    {
+      "gpu": "L4",
+      "task": "summarization",
+      "trial": 1,
+      "id": "summarization_0003_c8_t1",
+      "ar": 8063.74,
+      "sd": 4690.15,
+      "arTokens": 123,
+      "sdTokens": 123,
+      "equalText": true,
+      "arTTFT": 385.97,
+      "sdTTFT": 112.8,
+      "acceptance": 0.4998
+    },
+    {
+      "gpu": "L4",
+      "task": "summarization",
+      "trial": 1,
+      "id": "summarization_0004_c8_t1",
+      "ar": 7503.81,
+      "sd": 3368.27,
+      "arTokens": 114,
+      "sdTokens": 114,
+      "equalText": true,
+      "arTTFT": 386.1,
+      "sdTTFT": 550.12,
+      "acceptance": 0.4998
+    },
+    {
+      "gpu": "L4",
+      "task": "summarization",
+      "trial": 1,
+      "id": "summarization_0005_c8_t1",
+      "ar": 7063.92,
+      "sd": 3192.99,
+      "arTokens": 107,
+      "sdTokens": 101,
+      "equalText": false,
+      "arTTFT": 386.05,
+      "sdTTFT": 549.86,
+      "acceptance": 0.4998
+    },
+    {
+      "gpu": "L4",
+      "task": "summarization",
+      "trial": 1,
+      "id": "summarization_0006_c8_t1",
+      "ar": 7753.4,
+      "sd": 3886.44,
+      "arTokens": 118,
+      "sdTokens": 118,
+      "equalText": true,
+      "arTTFT": 385.99,
+      "sdTTFT": 549.69,
+      "acceptance": 0.4998
+    },
+    {
+      "gpu": "L4",
+      "task": "summarization",
+      "trial": 1,
+      "id": "summarization_0007_c8_t1",
+      "ar": 5866.31,
+      "sd": 2927.89,
+      "arTokens": 88,
+      "sdTokens": 88,
+      "equalText": true,
+      "arTTFT": 385.85,
+      "sdTTFT": 549.2,
+      "acceptance": 0.4998
+    },
+    {
+      "gpu": "L4",
+      "task": "summarization",
+      "trial": 2,
+      "id": "summarization_0000_c8_t2",
+      "ar": 7631.41,
+      "sd": 3474.31,
+      "arTokens": 120,
+      "sdTokens": 120,
+      "equalText": true,
+      "arTTFT": 162.73,
+      "sdTTFT": 222.38,
+      "acceptance": 0.4988
+    },
+    {
+      "gpu": "L4",
+      "task": "summarization",
+      "trial": 2,
+      "id": "summarization_0001_c8_t2",
+      "ar": 8360.89,
+      "sd": 3900.46,
+      "arTokens": 132,
+      "sdTokens": 135,
+      "equalText": false,
+      "arTTFT": 162.53,
+      "sdTTFT": 222.47,
+      "acceptance": 0.4988
+    },
+    {
+      "gpu": "L4",
+      "task": "summarization",
+      "trial": 2,
+      "id": "summarization_0002_c8_t2",
+      "ar": 8062.16,
+      "sd": 4460.17,
+      "arTokens": 127,
+      "sdTokens": 135,
+      "equalText": false,
+      "arTTFT": 162.46,
+      "sdTTFT": 222.4,
+      "acceptance": 0.4988
+    },
+    {
+      "gpu": "L4",
+      "task": "summarization",
+      "trial": 2,
+      "id": "summarization_0003_c8_t2",
+      "ar": 7754.76,
+      "sd": 4381.4,
+      "arTokens": 123,
+      "sdTokens": 123,
+      "equalText": true,
+      "arTTFT": 89.29,
+      "sdTTFT": 118.01,
+      "acceptance": 0.4988
+    },
+    {
+      "gpu": "L4",
+      "task": "summarization",
+      "trial": 2,
+      "id": "summarization_0004_c8_t2",
+      "ar": 7257.29,
+      "sd": 2954.54,
+      "arTokens": 114,
+      "sdTokens": 114,
+      "equalText": true,
+      "arTTFT": 162.24,
+      "sdTTFT": 117.8,
+      "acceptance": 0.4988
+    },
+    {
+      "gpu": "L4",
+      "task": "summarization",
+      "trial": 2,
+      "id": "summarization_0005_c8_t2",
+      "ar": 6441.36,
+      "sd": 2954.6,
+      "arTokens": 101,
+      "sdTokens": 107,
+      "equalText": false,
+      "arTTFT": 162.1,
+      "sdTTFT": 117.78,
+      "acceptance": 0.4988
+    },
+    {
+      "gpu": "L4",
+      "task": "summarization",
+      "trial": 2,
+      "id": "summarization_0006_c8_t2",
+      "ar": 7506.32,
+      "sd": 3559.64,
+      "arTokens": 118,
+      "sdTokens": 118,
+      "equalText": true,
+      "arTTFT": 161.63,
+      "sdTTFT": 222.16,
+      "acceptance": 0.4988
+    },
+    {
+      "gpu": "L4",
+      "task": "summarization",
+      "trial": 2,
+      "id": "summarization_0007_c8_t2",
+      "ar": 5623.52,
+      "sd": 2601.36,
+      "arTokens": 88,
+      "sdTokens": 88,
+      "equalText": true,
+      "arTTFT": 161.85,
+      "sdTTFT": 221.99,
+      "acceptance": 0.4988
+    },
+    {
+      "gpu": "L4",
+      "task": "summarization",
+      "trial": 3,
+      "id": "summarization_0000_c8_t3",
+      "ar": 7635.44,
+      "sd": 3470.54,
+      "arTokens": 120,
+      "sdTokens": 121,
+      "equalText": false,
+      "arTTFT": 165.73,
+      "sdTTFT": 219.44,
+      "acceptance": 0.4979
+    },
+    {
+      "gpu": "L4",
+      "task": "summarization",
+      "trial": 3,
+      "id": "summarization_0001_c8_t3",
+      "ar": 8364.97,
+      "sd": 3726.5,
+      "arTokens": 132,
+      "sdTokens": 132,
+      "equalText": true,
+      "arTTFT": 165.56,
+      "sdTTFT": 219.31,
+      "acceptance": 0.4979
+    },
+    {
+      "gpu": "L4",
+      "task": "summarization",
+      "trial": 3,
+      "id": "summarization_0002_c8_t3",
+      "ar": 8066.19,
+      "sd": 4443.87,
+      "arTokens": 127,
+      "sdTokens": 135,
+      "equalText": false,
+      "arTTFT": 165.04,
+      "sdTTFT": 219.12,
+      "acceptance": 0.4979
+    },
+    {
+      "gpu": "L4",
+      "task": "summarization",
+      "trial": 3,
+      "id": "summarization_0003_c8_t3",
+      "ar": 7758.15,
+      "sd": 4365.24,
+      "arTokens": 123,
+      "sdTokens": 123,
+      "equalText": true,
+      "arTTFT": 94.97,
+      "sdTTFT": 111.94,
+      "acceptance": 0.4979
+    },
+    {
+      "gpu": "L4",
+      "task": "summarization",
+      "trial": 3,
+      "id": "summarization_0004_c8_t3",
+      "ar": 7198.71,
+      "sd": 3036.65,
+      "arTokens": 114,
+      "sdTokens": 114,
+      "equalText": true,
+      "arTTFT": 94.83,
+      "sdTTFT": 218.88,
+      "acceptance": 0.4979
+    },
+    {
+      "gpu": "L4",
+      "task": "summarization",
+      "trial": 3,
+      "id": "summarization_0005_c8_t3",
+      "ar": 6446.37,
+      "sd": 2861.43,
+      "arTokens": 101,
+      "sdTokens": 101,
+      "equalText": true,
+      "arTTFT": 165.04,
+      "sdTTFT": 218.94,
+      "acceptance": 0.4979
+    },
+    {
+      "gpu": "L4",
+      "task": "summarization",
+      "trial": 3,
+      "id": "summarization_0006_c8_t3",
+      "ar": 7510.09,
+      "sd": 3555.68,
+      "arTokens": 118,
+      "sdTokens": 121,
+      "equalText": false,
+      "arTTFT": 165,
+      "sdTTFT": 218.78,
+      "acceptance": 0.4979
+    },
+    {
+      "gpu": "L4",
+      "task": "summarization",
+      "trial": 3,
+      "id": "summarization_0007_c8_t3",
+      "ar": 5627.84,
+      "sd": 2596.98,
+      "arTokens": 88,
+      "sdTokens": 88,
+      "equalText": true,
+      "arTTFT": 164.95,
+      "sdTTFT": 218.11,
+      "acceptance": 0.4979
+    }
+  ]
+}
