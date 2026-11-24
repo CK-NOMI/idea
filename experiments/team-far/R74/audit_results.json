@@ -1,0 +1,9 @@
+{
+  "cases": 120,
+  "states": 7680,
+  "maxJointError": 8.326672684688674e-17,
+  "maxRaceIdentityError": 2.220446049250313e-15,
+  "maxRemainingMass": 0,
+  "meanExpectedRaces": 2,
+  "maxConditionalRaceMean": 66.66945961311075
+}
