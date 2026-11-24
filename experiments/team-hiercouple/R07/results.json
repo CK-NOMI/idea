@@ -1,0 +1,1010 @@
+{
+  "env": "JS V8 actual corpus count fitting and probability enumeration/MC; not Transformer/GPU/real HFL",
+  "trainLengths": [
+    24273,
+    54055,
+    54055
+  ],
+  "testLengths": [
+    6069,
+    13514,
+    13514
+  ],
+  "V": 27,
+  "seeds": [
+    11,
+    29,
+    73
+  ],
+  "Ns": 4096,
+  "stats": [
+    {
+      "region": 0,
+      "qkind": "regional",
+      "k": 1,
+      "heldoutContexts": 6067,
+      "topP": 0.4259006600054918,
+      "topQ": 0.2886512211856183,
+      "independentDraft": 0.16848888181789756,
+      "sdDraftPlusQ": 0.634967782662259,
+      "sdConditionalOracle": 0.7757246602729237,
+      "sdAcceptance": 0.634967782662259,
+      "actualTextTopQ": 0.2988297346299725,
+      "mc": [
+        {
+          "seed": 11,
+          "n": 4096,
+          "sd": 0.654541015625,
+          "conditionalOracle": 0.78125,
+          "ind": 0.17333984375
+        },
+        {
+          "seed": 29,
+          "n": 4096,
+          "sd": 0.638916015625,
+          "conditionalOracle": 0.77490234375,
+          "ind": 0.16162109375
+        },
+        {
+          "seed": 73,
+          "n": 4096,
+          "sd": 0.646484375,
+          "conditionalOracle": 0.773193359375,
+          "ind": 0.167724609375
+        }
+      ]
+    },
+    {
+      "region": 0,
+      "qkind": "regional",
+      "k": 2,
+      "heldoutContexts": 6067,
+      "topP": 0.6001621683473759,
+      "topQ": 0.4570676692891446,
+      "independentDraft": 0.4024674445304339,
+      "sdDraftPlusQ": 0.7350408720115106,
+      "sdConditionalOracle": 0.8908997422021705,
+      "sdAcceptance": 0.634967782662259,
+      "actualTextTopQ": 0.4567331465304226,
+      "mc": [
+        {
+          "seed": 11,
+          "n": 4096,
+          "sd": 0.744384765625,
+          "conditionalOracle": 0.89111328125,
+          "ind": 0.394775390625
+        },
+        {
+          "seed": 29,
+          "n": 4096,
+          "sd": 0.737548828125,
+          "conditionalOracle": 0.89501953125,
+          "ind": 0.39208984375
+        },
+        {
+          "seed": 73,
+          "n": 4096,
+          "sd": 0.75146484375,
+          "conditionalOracle": 0.8896484375,
+          "ind": 0.4072265625
+        }
+      ]
+    },
+    {
+      "region": 0,
+      "qkind": "regional",
+      "k": 4,
+      "heldoutContexts": 6067,
+      "topP": 0.7779545406055258,
+      "topQ": 0.6461052420132077,
+      "independentDraft": 0.6277799806590518,
+      "sdDraftPlusQ": 0.8325234464314015,
+      "sdConditionalOracle": 0.9671200037469803,
+      "sdAcceptance": 0.634967782662259,
+      "actualTextTopQ": 0.6578209988462358,
+      "mc": [
+        {
+          "seed": 11,
+          "n": 4096,
+          "sd": 0.837158203125,
+          "conditionalOracle": 0.965087890625,
+          "ind": 0.62939453125
+        },
+        {
+          "seed": 29,
+          "n": 4096,
+          "sd": 0.833984375,
+          "conditionalOracle": 0.97021484375,
+          "ind": 0.618896484375
+        },
+        {
+          "seed": 73,
+          "n": 4096,
+          "sd": 0.838134765625,
+          "conditionalOracle": 0.967529296875,
+          "ind": 0.62841796875
+        }
+      ]
+    },
+    {
+      "region": 0,
+      "qkind": "regional",
+      "k": 8,
+      "heldoutContexts": 6067,
+      "topP": 0.9152133529927987,
+      "topQ": 0.8430484708160911,
+      "independentDraft": 0.8406505839830849,
+      "sdDraftPlusQ": 0.9273946186381927,
+      "sdConditionalOracle": 0.9959244426286537,
+      "sdAcceptance": 0.634967782662259,
+      "actualTextTopQ": 0.84506345805178,
+      "mc": [
+        {
+          "seed": 11,
+          "n": 4096,
+          "sd": 0.923095703125,
+          "conditionalOracle": 0.99658203125,
+          "ind": 0.84765625
+        },
+        {
+          "seed": 29,
+          "n": 4096,
+          "sd": 0.92626953125,
+          "conditionalOracle": 0.99755859375,
+          "ind": 0.830322265625
+        },
+        {
+          "seed": 73,
+          "n": 4096,
+          "sd": 0.926025390625,
+          "conditionalOracle": 0.996337890625,
+          "ind": 0.8388671875
+        }
+      ]
+    },
+    {
+      "region": 0,
+      "qkind": "global",
+      "k": 1,
+      "heldoutContexts": 6067,
+      "topP": 0.4259006600054918,
+      "topQ": 0.29106061630833646,
+      "independentDraft": 0.17002197862319518,
+      "sdDraftPlusQ": 0.6418568795372142,
+      "sdConditionalOracle": 0.7826195618714299,
+      "sdAcceptance": 0.6418568795372142,
+      "actualTextTopQ": 0.2955332124608608,
+      "mc": [
+        {
+          "seed": 11,
+          "n": 4096,
+          "sd": 0.65185546875,
+          "conditionalOracle": 0.780029296875,
+          "ind": 0.17333984375
+        },
+        {
+          "seed": 29,
+          "n": 4096,
+          "sd": 0.646240234375,
+          "conditionalOracle": 0.781982421875,
+          "ind": 0.1640625
+        },
+        {
+          "seed": 73,
+          "n": 4096,
+          "sd": 0.647705078125,
+          "conditionalOracle": 0.778564453125,
+          "ind": 0.166748046875
+        }
+      ]
+    },
+    {
+      "region": 0,
+      "qkind": "global",
+      "k": 2,
+      "heldoutContexts": 6067,
+      "topP": 0.6001621683473759,
+      "topQ": 0.45434135975058276,
+      "independentDraft": 0.40325620624025,
+      "sdDraftPlusQ": 0.7417770039777083,
+      "sdConditionalOracle": 0.8938133273720585,
+      "sdAcceptance": 0.6418568795372142,
+      "actualTextTopQ": 0.4529421460359441,
+      "mc": [
+        {
+          "seed": 11,
+          "n": 4096,
+          "sd": 0.74462890625,
+          "conditionalOracle": 0.8935546875,
+          "ind": 0.393798828125
+        },
+        {
+          "seed": 29,
+          "n": 4096,
+          "sd": 0.744873046875,
+          "conditionalOracle": 0.89599609375,
+          "ind": 0.388916015625
+        },
+        {
+          "seed": 73,
+          "n": 4096,
+          "sd": 0.751220703125,
+          "conditionalOracle": 0.89111328125,
+          "ind": 0.405517578125
+        }
+      ]
+    },
+    {
+      "region": 0,
+      "qkind": "global",
+      "k": 4,
+      "heldoutContexts": 6067,
+      "topP": 0.7779545406055258,
+      "topQ": 0.6516693201783242,
+      "independentDraft": 0.6338873260977971,
+      "sdDraftPlusQ": 0.8401306483048131,
+      "sdConditionalOracle": 0.9684056396398565,
+      "sdAcceptance": 0.6418568795372142,
+      "actualTextTopQ": 0.6571616944124135,
+      "mc": [
+        {
+          "seed": 11,
+          "n": 4096,
+          "sd": 0.848388671875,
+          "conditionalOracle": 0.968505859375,
+          "ind": 0.637939453125
+        },
+        {
+          "seed": 29,
+          "n": 4096,
+          "sd": 0.843994140625,
+          "conditionalOracle": 0.970703125,
+          "ind": 0.61865234375
+        },
+        {
+          "seed": 73,
+          "n": 4096,
+          "sd": 0.846923828125,
+          "conditionalOracle": 0.966552734375,
+          "ind": 0.633544921875
+        }
+      ]
+    },
+    {
+      "region": 0,
+      "qkind": "global",
+      "k": 8,
+      "heldoutContexts": 6067,
+      "topP": 0.9152133529927987,
+      "topQ": 0.8492439202790335,
+      "independentDraft": 0.8466108860035324,
+      "sdDraftPlusQ": 0.9332398182638518,
+      "sdConditionalOracle": 0.996690765930625,
+      "sdAcceptance": 0.6418568795372142,
+      "actualTextTopQ": 0.8468765452447914,
+      "mc": [
+        {
+          "seed": 11,
+          "n": 4096,
+          "sd": 0.9306640625,
+          "conditionalOracle": 0.9970703125,
+          "ind": 0.85107421875
+        },
+        {
+          "seed": 29,
+          "n": 4096,
+          "sd": 0.933349609375,
+          "conditionalOracle": 0.9970703125,
+          "ind": 0.838623046875
+        },
+        {
+          "seed": 73,
+          "n": 4096,
+          "sd": 0.931884765625,
+          "conditionalOracle": 0.995361328125,
+          "ind": 0.842041015625
+        }
+      ]
+    },
+    {
+      "region": 1,
+      "qkind": "regional",
+      "k": 1,
+      "heldoutContexts": 13512,
+      "topP": 0.4339898094307958,
+      "topQ": 0.29565943681517903,
+      "independentDraft": 0.17268227337084624,
+      "sdDraftPlusQ": 0.6407992174136988,
+      "sdConditionalOracle": 0.7862521730962263,
+      "sdAcceptance": 0.6407992174136988,
+      "actualTextTopQ": 0.3009917110716348,
+      "mc": [
+        {
+          "seed": 11,
+          "n": 4096,
+          "sd": 0.62939453125,
+          "conditionalOracle": 0.770751953125,
+          "ind": 0.176025390625
+        },
+        {
+          "seed": 29,
+          "n": 4096,
+          "sd": 0.63720703125,
+          "conditionalOracle": 0.787353515625,
+          "ind": 0.172119140625
+        },
+        {
+          "seed": 73,
+          "n": 4096,
+          "sd": 0.644775390625,
+          "conditionalOracle": 0.788818359375,
+          "ind": 0.18017578125
+        }
+      ]
+    },
+    {
+      "region": 1,
+      "qkind": "regional",
+      "k": 2,
+      "heldoutContexts": 13512,
+      "topP": 0.6073898772092922,
+      "topQ": 0.4596538707815364,
+      "independentDraft": 0.41004858111604686,
+      "sdDraftPlusQ": 0.7457691629779005,
+      "sdConditionalOracle": 0.895804319366293,
+      "sdAcceptance": 0.6407992174136988,
+      "actualTextTopQ": 0.46543812907040627,
+      "mc": [
+        {
+          "seed": 11,
+          "n": 4096,
+          "sd": 0.740966796875,
+          "conditionalOracle": 0.892822265625,
+          "ind": 0.41552734375
+        },
+        {
+          "seed": 29,
+          "n": 4096,
+          "sd": 0.754150390625,
+          "conditionalOracle": 0.900634765625,
+          "ind": 0.422119140625
+        },
+        {
+          "seed": 73,
+          "n": 4096,
+          "sd": 0.74609375,
+          "conditionalOracle": 0.897705078125,
+          "ind": 0.4130859375
+        }
+      ]
+    },
+    {
+      "region": 1,
+      "qkind": "regional",
+      "k": 4,
+      "heldoutContexts": 13512,
+      "topP": 0.7822404619305254,
+      "topQ": 0.6497549126323316,
+      "independentDraft": 0.6342552893202543,
+      "sdDraftPlusQ": 0.836033057736981,
+      "sdConditionalOracle": 0.9695338539055016,
+      "sdAcceptance": 0.6407992174136988,
+      "actualTextTopQ": 0.6506068679691129,
+      "mc": [
+        {
+          "seed": 11,
+          "n": 4096,
+          "sd": 0.8359375,
+          "conditionalOracle": 0.972412109375,
+          "ind": 0.637939453125
+        },
+        {
+          "seed": 29,
+          "n": 4096,
+          "sd": 0.839599609375,
+          "conditionalOracle": 0.971923828125,
+          "ind": 0.638916015625
+        },
+        {
+          "seed": 73,
+          "n": 4096,
+          "sd": 0.83251953125,
+          "conditionalOracle": 0.970947265625,
+          "ind": 0.63916015625
+        }
+      ]
+    },
+    {
+      "region": 1,
+      "qkind": "regional",
+      "k": 8,
+      "heldoutContexts": 13512,
+      "topP": 0.9162188324236404,
+      "topQ": 0.8509835735232991,
+      "independentDraft": 0.848485905100715,
+      "sdDraftPlusQ": 0.9325725150494228,
+      "sdConditionalOracle": 0.9966267624228164,
+      "sdAcceptance": 0.6407992174136988,
+      "actualTextTopQ": 0.8492451154527775,
+      "mc": [
+        {
+          "seed": 11,
+          "n": 4096,
+          "sd": 0.927978515625,
+          "conditionalOracle": 0.99755859375,
+          "ind": 0.84912109375
+        },
+        {
+          "seed": 29,
+          "n": 4096,
+          "sd": 0.93212890625,
+          "conditionalOracle": 0.99658203125,
+          "ind": 0.854248046875
+        },
+        {
+          "seed": 73,
+          "n": 4096,
+          "sd": 0.93115234375,
+          "conditionalOracle": 0.998046875,
+          "ind": 0.8525390625
+        }
+      ]
+    },
+    {
+      "region": 1,
+      "qkind": "global",
+      "k": 1,
+      "heldoutContexts": 13512,
+      "topP": 0.4339898094307958,
+      "topQ": 0.29565943681517903,
+      "independentDraft": 0.17180781672642434,
+      "sdDraftPlusQ": 0.6404855524031413,
+      "sdConditionalOracle": 0.7856668455168543,
+      "sdAcceptance": 0.6404855524031413,
+      "actualTextTopQ": 0.3009917110716348,
+      "mc": [
+        {
+          "seed": 11,
+          "n": 4096,
+          "sd": 0.626953125,
+          "conditionalOracle": 0.7763671875,
+          "ind": 0.17333984375
+        },
+        {
+          "seed": 29,
+          "n": 4096,
+          "sd": 0.638671875,
+          "conditionalOracle": 0.792236328125,
+          "ind": 0.173828125
+        },
+        {
+          "seed": 73,
+          "n": 4096,
+          "sd": 0.63525390625,
+          "conditionalOracle": 0.78515625,
+          "ind": 0.176025390625
+        }
+      ]
+    },
+    {
+      "region": 1,
+      "qkind": "global",
+      "k": 2,
+      "heldoutContexts": 13512,
+      "topP": 0.6073898772092922,
+      "topQ": 0.4594743342845155,
+      "independentDraft": 0.4091425847529255,
+      "sdDraftPlusQ": 0.7435042848616463,
+      "sdConditionalOracle": 0.8969703564367023,
+      "sdAcceptance": 0.6404855524031413,
+      "actualTextTopQ": 0.4644020130254095,
+      "mc": [
+        {
+          "seed": 11,
+          "n": 4096,
+          "sd": 0.739013671875,
+          "conditionalOracle": 0.89453125,
+          "ind": 0.413818359375
+        },
+        {
+          "seed": 29,
+          "n": 4096,
+          "sd": 0.748779296875,
+          "conditionalOracle": 0.903564453125,
+          "ind": 0.419677734375
+        },
+        {
+          "seed": 73,
+          "n": 4096,
+          "sd": 0.740234375,
+          "conditionalOracle": 0.89794921875,
+          "ind": 0.411376953125
+        }
+      ]
+    },
+    {
+      "region": 1,
+      "qkind": "global",
+      "k": 4,
+      "heldoutContexts": 13512,
+      "topP": 0.7822404619305254,
+      "topQ": 0.6519796374683452,
+      "independentDraft": 0.6356965244459131,
+      "sdDraftPlusQ": 0.8398539397042601,
+      "sdConditionalOracle": 0.970311317205261,
+      "sdAcceptance": 0.6404855524031413,
+      "actualTextTopQ": 0.6506068679691129,
+      "mc": [
+        {
+          "seed": 11,
+          "n": 4096,
+          "sd": 0.8369140625,
+          "conditionalOracle": 0.968505859375,
+          "ind": 0.640625
+        },
+        {
+          "seed": 29,
+          "n": 4096,
+          "sd": 0.84375,
+          "conditionalOracle": 0.9716796875,
+          "ind": 0.6416015625
+        },
+        {
+          "seed": 73,
+          "n": 4096,
+          "sd": 0.837646484375,
+          "conditionalOracle": 0.970703125,
+          "ind": 0.6357421875
+        }
+      ]
+    },
+    {
+      "region": 1,
+      "qkind": "global",
+      "k": 8,
+      "heldoutContexts": 13512,
+      "topP": 0.9162188324236404,
+      "topQ": 0.8519501090021573,
+      "independentDraft": 0.8492362629112914,
+      "sdDraftPlusQ": 0.9348588224673738,
+      "sdConditionalOracle": 0.9966916333665404,
+      "sdAcceptance": 0.6404855524031413,
+      "actualTextTopQ": 0.8496151568974192,
+      "mc": [
+        {
+          "seed": 11,
+          "n": 4096,
+          "sd": 0.9296875,
+          "conditionalOracle": 0.9970703125,
+          "ind": 0.84716796875
+        },
+        {
+          "seed": 29,
+          "n": 4096,
+          "sd": 0.932373046875,
+          "conditionalOracle": 0.995361328125,
+          "ind": 0.855224609375
+        },
+        {
+          "seed": 73,
+          "n": 4096,
+          "sd": 0.93115234375,
+          "conditionalOracle": 0.997314453125,
+          "ind": 0.85400390625
+        }
+      ]
+    },
+    {
+      "region": 2,
+      "qkind": "regional",
+      "k": 1,
+      "heldoutContexts": 13512,
+      "topP": 0.4386657267536789,
+      "topQ": 0.30813942178720877,
+      "independentDraft": 0.17945376540474745,
+      "sdDraftPlusQ": 0.6423967332324759,
+      "sdConditionalOracle": 0.7830724921618276,
+      "sdAcceptance": 0.6423967332324759,
+      "actualTextTopQ": 0.31756956779158296,
+      "mc": [
+        {
+          "seed": 11,
+          "n": 4096,
+          "sd": 0.636474609375,
+          "conditionalOracle": 0.772705078125,
+          "ind": 0.181884765625
+        },
+        {
+          "seed": 29,
+          "n": 4096,
+          "sd": 0.6318359375,
+          "conditionalOracle": 0.766357421875,
+          "ind": 0.17236328125
+        },
+        {
+          "seed": 73,
+          "n": 4096,
+          "sd": 0.65625,
+          "conditionalOracle": 0.78857421875,
+          "ind": 0.1904296875
+        }
+      ]
+    },
+    {
+      "region": 2,
+      "qkind": "regional",
+      "k": 2,
+      "heldoutContexts": 13512,
+      "topP": 0.6120231413264257,
+      "topQ": 0.4668707491881995,
+      "independentDraft": 0.42001558190768223,
+      "sdDraftPlusQ": 0.7466327657625091,
+      "sdConditionalOracle": 0.8943656872116829,
+      "sdAcceptance": 0.6423967332324759,
+      "actualTextTopQ": 0.4682504440496832,
+      "mc": [
+        {
+          "seed": 11,
+          "n": 4096,
+          "sd": 0.74951171875,
+          "conditionalOracle": 0.89306640625,
+          "ind": 0.425537109375
+        },
+        {
+          "seed": 29,
+          "n": 4096,
+          "sd": 0.73486328125,
+          "conditionalOracle": 0.88330078125,
+          "ind": 0.43212890625
+        },
+        {
+          "seed": 73,
+          "n": 4096,
+          "sd": 0.7568359375,
+          "conditionalOracle": 0.896728515625,
+          "ind": 0.430908203125
+        }
+      ]
+    },
+    {
+      "region": 2,
+      "qkind": "regional",
+      "k": 4,
+      "heldoutContexts": 13512,
+      "topP": 0.7846049236333301,
+      "topQ": 0.6502819131554202,
+      "independentDraft": 0.6373903035766598,
+      "sdDraftPlusQ": 0.8345575895311698,
+      "sdConditionalOracle": 0.9687039956809544,
+      "sdAcceptance": 0.6423967332324759,
+      "actualTextTopQ": 0.6500888099466146,
+      "mc": [
+        {
+          "seed": 11,
+          "n": 4096,
+          "sd": 0.834228515625,
+          "conditionalOracle": 0.96826171875,
+          "ind": 0.638427734375
+        },
+        {
+          "seed": 29,
+          "n": 4096,
+          "sd": 0.8251953125,
+          "conditionalOracle": 0.9638671875,
+          "ind": 0.645263671875
+        },
+        {
+          "seed": 73,
+          "n": 4096,
+          "sd": 0.843994140625,
+          "conditionalOracle": 0.970703125,
+          "ind": 0.63427734375
+        }
+      ]
+    },
+    {
+      "region": 2,
+      "qkind": "regional",
+      "k": 8,
+      "heldoutContexts": 13512,
+      "topP": 0.9172830792454105,
+      "topQ": 0.8533694810772652,
+      "independentDraft": 0.8507695795428345,
+      "sdDraftPlusQ": 0.9326002694546358,
+      "sdConditionalOracle": 0.9961169632971296,
+      "sdAcceptance": 0.6423967332324759,
+      "actualTextTopQ": 0.8519834221431261,
+      "mc": [
+        {
+          "seed": 11,
+          "n": 4096,
+          "sd": 0.92578125,
+          "conditionalOracle": 0.99658203125,
+          "ind": 0.85107421875
+        },
+        {
+          "seed": 29,
+          "n": 4096,
+          "sd": 0.929443359375,
+          "conditionalOracle": 0.99658203125,
+          "ind": 0.85302734375
+        },
+        {
+          "seed": 73,
+          "n": 4096,
+          "sd": 0.943603515625,
+          "conditionalOracle": 0.993896484375,
+          "ind": 0.84375
+        }
+      ]
+    },
+    {
+      "region": 2,
+      "qkind": "global",
+      "k": 1,
+      "heldoutContexts": 13512,
+      "topP": 0.4386657267536789,
+      "topQ": 0.30629817949079174,
+      "independentDraft": 0.17685653578143234,
+      "sdDraftPlusQ": 0.6442538195808333,
+      "sdConditionalOracle": 0.7868507833898298,
+      "sdAcceptance": 0.6442538195808333,
+      "actualTextTopQ": 0.31312907045588256,
+      "mc": [
+        {
+          "seed": 11,
+          "n": 4096,
+          "sd": 0.63623046875,
+          "conditionalOracle": 0.7724609375,
+          "ind": 0.182373046875
+        },
+        {
+          "seed": 29,
+          "n": 4096,
+          "sd": 0.6484375,
+          "conditionalOracle": 0.77978515625,
+          "ind": 0.17138671875
+        },
+        {
+          "seed": 73,
+          "n": 4096,
+          "sd": 0.651611328125,
+          "conditionalOracle": 0.79052734375,
+          "ind": 0.18994140625
+        }
+      ]
+    },
+    {
+      "region": 2,
+      "qkind": "global",
+      "k": 2,
+      "heldoutContexts": 13512,
+      "topP": 0.6120231413264257,
+      "topQ": 0.4689075065432796,
+      "independentDraft": 0.4195194261722834,
+      "sdDraftPlusQ": 0.7499260012146213,
+      "sdConditionalOracle": 0.8983024316081366,
+      "sdAcceptance": 0.6442538195808333,
+      "actualTextTopQ": 0.4678804026050415,
+      "mc": [
+        {
+          "seed": 11,
+          "n": 4096,
+          "sd": 0.74951171875,
+          "conditionalOracle": 0.889404296875,
+          "ind": 0.42919921875
+        },
+        {
+          "seed": 29,
+          "n": 4096,
+          "sd": 0.753662109375,
+          "conditionalOracle": 0.8935546875,
+          "ind": 0.434814453125
+        },
+        {
+          "seed": 73,
+          "n": 4096,
+          "sd": 0.75439453125,
+          "conditionalOracle": 0.903076171875,
+          "ind": 0.43701171875
+        }
+      ]
+    },
+    {
+      "region": 2,
+      "qkind": "global",
+      "k": 4,
+      "heldoutContexts": 13512,
+      "topP": 0.7846049236333301,
+      "topQ": 0.6541085649108968,
+      "independentDraft": 0.6395682946195755,
+      "sdDraftPlusQ": 0.8415699333418305,
+      "sdConditionalOracle": 0.9706251883033824,
+      "sdAcceptance": 0.6442538195808333,
+      "actualTextTopQ": 0.6449822380105591,
+      "mc": [
+        {
+          "seed": 11,
+          "n": 4096,
+          "sd": 0.836669921875,
+          "conditionalOracle": 0.969482421875,
+          "ind": 0.645751953125
+        },
+        {
+          "seed": 29,
+          "n": 4096,
+          "sd": 0.841796875,
+          "conditionalOracle": 0.967041015625,
+          "ind": 0.637451171875
+        },
+        {
+          "seed": 73,
+          "n": 4096,
+          "sd": 0.8466796875,
+          "conditionalOracle": 0.973388671875,
+          "ind": 0.640380859375
+        }
+      ]
+    },
+    {
+      "region": 2,
+      "qkind": "global",
+      "k": 8,
+      "heldoutContexts": 13512,
+      "topP": 0.9172830792454105,
+      "topQ": 0.8547910575637199,
+      "independentDraft": 0.8521063439228709,
+      "sdDraftPlusQ": 0.9359675506922721,
+      "sdConditionalOracle": 0.9966939640063479,
+      "sdAcceptance": 0.6442538195808333,
+      "actualTextTopQ": 0.8532415630549078,
+      "mc": [
+        {
+          "seed": 11,
+          "n": 4096,
+          "sd": 0.930908203125,
+          "conditionalOracle": 0.99755859375,
+          "ind": 0.85791015625
+        },
+        {
+          "seed": 29,
+          "n": 4096,
+          "sd": 0.934814453125,
+          "conditionalOracle": 0.99560546875,
+          "ind": 0.8544921875
+        },
+        {
+          "seed": 73,
+          "n": 4096,
+          "sd": 0.942626953125,
+          "conditionalOracle": 0.998046875,
+          "ind": 0.847412109375
+        }
+      ]
+    }
+  ],
+  "maxMarginalError": 1.915134717478395e-15,
+  "maxBoundViolation": 2.220446049250313e-16,
+  "endpoint": [
+    {
+      "a": [
+        0,
+        0
+      ],
+      "b": [
+        0,
+        1
+      ],
+      "flatEndpoints": [
+        0,
+        1
+      ],
+      "hierTwo": 0.5
+    },
+    {
+      "a": [
+        0,
+        0.5
+      ],
+      "b": [
+        0,
+        0.6666666666666666
+      ],
+      "flatEndpoints": [
+        0,
+        1
+      ],
+      "hierTwo": 0.41666666666666663
+    }
+  ],
+  "summary": [
+    {
+      "qkind": "regional",
+      "k": 1,
+      "topP": 0.4328520653966555,
+      "topQ": 0.29748335992933533,
+      "independentDraft": 0.1735416401978304,
+      "sdDraftPlusQ": 0.6393879111028112,
+      "sdConditionalOracle": 0.7816831085103259,
+      "sdAcceptance": 0.6393879111028112,
+      "actualTextTopQ": 0.3057970044977301
+    },
+    {
+      "qkind": "regional",
+      "k": 2,
+      "topP": 0.6065250622943645,
+      "topQ": 0.4611974297529602,
+      "independentDraft": 0.410843869184721,
+      "sdDraftPlusQ": 0.7424809335839734,
+      "sdConditionalOracle": 0.8936899162600488,
+      "sdAcceptance": 0.6393879111028112,
+      "actualTextTopQ": 0.4634739065501707
+    },
+    {
+      "qkind": "regional",
+      "k": 4,
+      "topP": 0.7815999753897938,
+      "topQ": 0.6487140226003199,
+      "independentDraft": 0.6331418578519886,
+      "sdDraftPlusQ": 0.8343713645665174,
+      "sdConditionalOracle": 0.9684526177778121,
+      "sdAcceptance": 0.6393879111028112,
+      "actualTextTopQ": 0.6528388922539877
+    },
+    {
+      "qkind": "regional",
+      "k": 8,
+      "topP": 0.9162384215539499,
+      "topQ": 0.849133841805552,
+      "independentDraft": 0.8466353562088781,
+      "sdDraftPlusQ": 0.930855801047417,
+      "sdConditionalOracle": 0.9962227227828665,
+      "sdAcceptance": 0.6393879111028112,
+      "actualTextTopQ": 0.8487639985492278
+    },
+    {
+      "qkind": "global",
+      "k": 1,
+      "topP": 0.4328520653966555,
+      "topQ": 0.2976727442047691,
+      "independentDraft": 0.17289544371035062,
+      "sdDraftPlusQ": 0.6421987505070629,
+      "sdConditionalOracle": 0.7850457302593713,
+      "sdAcceptance": 0.6421987505070629,
+      "actualTextTopQ": 0.3032179979961261
+    },
+    {
+      "qkind": "global",
+      "k": 2,
+      "topP": 0.6065250622943645,
+      "topQ": 0.46090773352612596,
+      "independentDraft": 0.4106394057218196,
+      "sdDraftPlusQ": 0.7450690966846586,
+      "sdConditionalOracle": 0.8963620384722991,
+      "sdAcceptance": 0.6421987505070629,
+      "actualTextTopQ": 0.4617415205554651
+    },
+    {
+      "qkind": "global",
+      "k": 4,
+      "topP": 0.7815999753897938,
+      "topQ": 0.652585840852522,
+      "independentDraft": 0.6363840483877619,
+      "sdDraftPlusQ": 0.8405181737836346,
+      "sdConditionalOracle": 0.9697807150495,
+      "sdAcceptance": 0.6421987505070629,
+      "actualTextTopQ": 0.6509169334640285
+    },
+    {
+      "qkind": "global",
+      "k": 8,
+      "topP": 0.9162384215539499,
+      "topQ": 0.8519950289483035,
+      "independentDraft": 0.8493178309458983,
+      "sdDraftPlusQ": 0.9346887304744992,
+      "sdConditionalOracle": 0.9966921211011712,
+      "sdAcceptance": 0.6421987505070629,
+      "actualTextTopQ": 0.8499110883990394
+    }
+  ]
+}
