@@ -1,0 +1,65 @@
+# team-far/R13 — FOV-SD: competing order-sensitive and multiset verification objectives
+2026-11-24; start e7fa0392513fdcacb760d43c962b1b05f8ef45df; prewrite e7fa0392513fdcacb760d43c962b1b05f8ef45df; README blob 23bbda9c0cf14976ad813f8407736fbb919a7830, 3256 lines, 441149 chars. Entire README retrieved, relevant R12, FPCS, JVT, FCAS, FSGPA, FSOT, FSG, FEC, FBS, FSDC screened; previous HC/R09 action class coupling and A/R10 dependency decomposition are direct related assets. Not exhaustive line-by-line audit or other-team independent reproduction. This study is not a validated architecture; T=conditional mathematical result, E=actual FP64 external microGPT forward and distribution/flow calculation, O=complete-information coupling oracle, P=cost proxy, H=hypothesis.
+
+## Problem and formal target
+For fixed legal prefix h and model snapshot, P(x1,x2)=p(x1|h)p(x2|h,x1) (unchanged formal target), Q similarly from the model's shallow internal head; no independent draft LM. Two-token fixed block (no EOS, full support at temperature 1 in audit), X~Q,Y~P. Set M(x) to unordered multiset incl multiplicity. Candidate use: preserve genuinely order-insensitive block computation if M(X)=M(Y) even when order differs, retain normal prefix compute if first tokens match, exact ordered block reuse if X=Y. Unlike semantic approximate SD, do not output wrong order; actual target sampled according to P. This only works if a target architecture has a demonstrably permutation-invariant expensive subgraph (e.g., at block boundary, a bag encoder) with order-sensitive remainder independently recomputed. Standard Transformer positional/causal states generally not reusable by swapping. Proposed new target architecture H: formal distribution factor P_theta(M|h)R_theta(x|M,h), normalized conditional order head, train via -log P_theta(M|h)-log R_theta(x|M,h), with region bag/order statistics and shared trunk; this is exact factorization of a distribution but changing model parameterization may change quality. Normalizing both distributions or recovering from original AR can be expensive. Direct ancestral sampling of bag then order is a strong baseline, not optional. Ordinary teacher forcing has true bags and orders, so SD has no proven learning advantage. No such architecture trained. HFL only a candidate learning arrangement, same-info flat can reproduce. No claim privacy, no actual cross-domain execution.
+
+## T: two crossing partitions
+Let D=sum_x min(P_x,Q_x), A=sum_i min(P_first=i,Q_first=i), B=sum_M min(P_M,Q_M) be maximal full block, first-token and multiset agreement, individually. For two tokens the unordered orbits are singleton (aa) or pair (ab,ba). Given any coupling attaining D, diagonal fixed min(P_x,Q_x), residual supplies a_x=(Q_x-P_x)_+, demands b_x=(P_x-Q_x)_+. To also attain B, within each pair orbit the residual swap mass must be min(a_ab,b_ba) and min(a_ba,b_ab); these are unique (only one direction can be nonzero since a,b disjoint at each x). After exhausting all such matches, each orbit has residual only on one side. Remaining first-token matching is unconstrained by orbit (no residual both sides in any orbit). Hence exact maximum prefix agreement subject to D and B is A_B=D+sum_i min(a'_i,b'_i), where a',b' are residual after swap. Construct exact transport: diagonal, within orbit, same first, then arbitrary residual across different first; all marginals P/Q exact, achieves D,B,A_B. Greedy is not a coupling objective: to preserve original greedy output, use original target argmax and only reuse computations with independently proven invariance; block argmax not generally same as tokenwise greedy.
+Conversely, to attain D and A, within each first-token group match min(a_i,b_i) residual mass. Cross-group flow necessarily only from surplus group i (s_i=a_i-b_i>0) to deficit group j (s_j<0). Additional multiset agreement uses swaps x=(i,j),y=(j,i), capacity c_ij=min(a_ij,b_ji). Build source→surplus first-token groups capacity (s_i)_+, group i→target first-token group j cap c_ij, target groups→sink capacity (-s_j)_+. Any D,A-preserving coupling gives feasible swap flow. Conversely any flow respecting capacities can first allocate swaps, then fill same-first mass, then remaining surplus/deficit across groups; diagonal residual disjoint; remaining group supplies/demands compatible. Thus maximal multiset agreement subject to D,A equals B_A=D+maxflow. These are sharp lexicographic corners, not entire Pareto frontier; standard max-flow and coupling mathematics, no first novelty claim. For real arithmetic exact block transport from full P,Q produces Y~P; conditional block-by-block exact by chain rule if fresh causal random draws, correct EOS/truncation/processed distributions. Here full transport only evaluated, not actual multi-block SD, no production greedy/top-p/finite precision proof.
+Counterexample Q=.5 AB+.5 BC, P=.5 BA+.5 CB. D=0,A=.5,B=1. Attaining B forces both swaps and A_B=0; attaining A forces BC→BA mass .5, AB→CB mass .5, so B_A=0. For mixtures of these two couplings at least this line feasible; any general claim that class match gains automatically retain ordered prefix is false. Unlike HC/R09 (single-token action class agreement plus exact token equality), adding crossing ordered prefix partition introduces incompatibility. But class coupling itself already exists. Unlike FPCS and block verification, order-insensitive reuse is not an ordered-prefix reward. If all positions are processed via ordinary AR KV, only ordered prefix valid; bag score not speed. General k may have k! permutations and expensive target probability sums; no general efficient oracle.
+For fixed two-token fully sampled output, expected reused ordered-prefix length = first-agreement+full-agreement (if exact computation reusable). Compare the two oracle corners: additional bag agreement B-B_A costs A-A_B in prefix agreement. If c_B denotes independently reusable *extra* value per bag match and c_P per first-prefix match, and no double counting, then bag-max corner beats prefix-max corner only if c_B*(B-B_A)>c_P*(A-A_B)+extra cost. This is a comparison of two corners, not universal optimality or measured latency. In standard AR c_B=0 for causal deep states. Actual full-block coupling is oracle: enumerating P/Q of V^2 requires V+1 prefix distributions each, rather than along one proposed path; residual block sampling may require many more evaluations, so ordinary production Block Verification much stronger.
+
+## E/O: actual external model audit
+Source {"repo":"sanchayan7432/microGPT","ref":"aa28d7c0aa66704ce56b263dfd3270579f3d5f6d","files":[{"path":"weights.json","blob":"df323b7e714ceeb10ca070f9945a82c51b2c233c"},{"path":"checkpoint.json","blob":"7f0b4968c56290ebad706ab740de942c369f42a5"},{"path":"input.txt","blob":"736d88e18b70b292750a30e5cca6a92b0b333bd2"}]}. Two same-scale 7264-param character Transformer checkpoints, 2 layers/d16/4 heads, V27, fixed shared output head on first layer for q and second for p. Adapted forward from shared microGPT prior teams. Filter unique 6–14 lowercase names and group by first letter into four buckets 7304/7675/3612/1332, last 16 names per bucket; three-character prefix plus BOS. 2 checkpoints×4 groups×16=128 contexts, possibly repeated and upstream-seen, no independent training seed or test set guarantee. Enumerated all 729 two-token paths per context for P and Q (93,312 pairs of probability values each), actual 28 full prefix forwards per context exposing shallow and deep probabilities (3584 forwards, no GPU, not timing or production batching). Calculated token-by-token SD full-block acceptance sum_i min(p_i,q_i) sum_j min(p_j|i,q_j|i), exact D/A/B, A_B via residual allocation, B_A via max-flow, and explicitly constructed D/B/A_B transport for marginal and objective verification. No sampling experiments, training, physical HFL, real communication or speed. Source model provenance not independently verified. V8 Number FP64. Max bag mass discrepancy 3.1086244689504383e-15, max coupling marginal/objective discrepancy 1.2212453270876722e-15, min/max prefix loss 0.00008342303105568494/0.018821679044883077. All 128 contexts prefix loss >1e-10. Results:
+[
+  {
+    "wi": 0,
+    "n": 64,
+    "diag": 0.8386730491972872,
+    "bag": 0.8530455775764909,
+    "prefix": 0.8894029724191669,
+    "prefixAtBag": 0.8838337840950817,
+    "bagAtPrefix": 0.8482390747314216,
+    "bagDirect": 0.853045577576491,
+    "loss": 0.0055691883240844495,
+    "extra": 0.014372528379203256,
+    "frontierGain": 0.004806502845069052,
+    "couplingError": 4.062599309497424e-16,
+    "tokenAccept": 0.792540172134413,
+    "conflict": 64
+  },
+  {
+    "wi": 1,
+    "n": 64,
+    "diag": 0.8731401506993817,
+    "bag": 0.8827321609374756,
+    "prefix": 0.918163559462812,
+    "prefixAtBag": 0.9122881813207749,
+    "bagAtPrefix": 0.8782355134986033,
+    "bagDirect": 0.8827321609374758,
+    "loss": 0.005875378142036668,
+    "extra": 0.009592010238094022,
+    "frontierGain": 0.00449664743887233,
+    "couplingError": 4.725175016793789e-16,
+    "tokenAccept": 0.8348962788561944,
+    "conflict": 64
+  }
+]
+Counter: {"diag":0,"bag":1,"prefix":0.5,"prefixAtBag":0,"bagAtPrefix":0,"bagDirect":1,"loss":0.5,"extra":1,"frontierGain":1,"couplingError":0}.
+Per-context results in JSON. Reproduce node experiments/team-far/R13/probe.js weights.json checkpoint.json input.txt after downloading fixed files.
+P: for V=27, V+1=28 prefix distributions vs 2 candidate-path distributions; full ordered block Q/P table V^2 entries each. At V=128000, V^2=16.384 billion entries, FP32 one table 65.536GB, no feasible full table on one 40GB card, not claiming this is unavoidable for every factorized target. Pair orbit mass for a given distinct (a,b) needs just 2 path scores, but sampling residual over all bags still requires efficient structure/algorithm, not free. Learned explicit bag/order target enables direct ancestral baseline. Training data grouping only evaluation grouping, no actual HFL.
+
+## Primary literature checked via web search 2026-11-24
+- Block Verification Accelerates Speculative Decoding (ICLR2025), https://arxiv.org/abs/2403.10444, optimal ordered-prefix verification within stated conditions.
+- SpecTr-GBV (2026), https://arxiv.org/abs/2604.25925, block transport, direct near-neighbor.
+- Reviving Any-Subset Autoregressive Models (2025), https://arxiv.org/abs/2504.20456, exact joint parallel sampling/SD with changed architecture.
+- Parallel Sampling via Autospeculation (2025), https://arxiv.org/abs/2511.07869, any-order sampling via counting.
+- Autoregressive Models Rival Diffusion Models at ANY-ORDER Generation (2026), https://arxiv.org/abs/2601.13228, trainable any-order modeling.
+- The Importance of Generation Order in Language Modeling (2018), https://aclanthology.org/D18-1324/, two-pass generation.
+- Beyond Tokens: Semantic-Aware Speculative Decoding (2026), https://aclanthology.org/2026.emnlp-main.123/, equivalence-aware near-neighbor; not evidence exact token distribution preservation.
+- Traversal Verification (NeurIPS2025), https://proceedings.nips.cc/paper_files/paper/2025/hash/70596d70542c51c8d9b4e423f4bf2736-Abstract-Conference.html, tree verification strong baseline.
+Checked original abstract/search excerpts, not exhaustive full text or patents, formal text similarity not done. Prior HC/R09 class coupling, FPCS, A/R10, FPQ, FCQS reduce novelty; cannot claim first class coupling or permutation-invariant generation. Strong baselines ordinary HFL+standard production SD/Block Verification/SpecTr-GBV, direct bag+order sampling on new target, same-information flat, any-subset AR. Current oracle not production method.
+
+## Verdict
+Score provisional subjective same weights .25/.25/.20/.15/.15: problem 8, mechanism 6.5, theory 8, value 6, literature distance 5.5 = 6.95/10 (not an increase from R12 7.10; best prior remains R12 provisional). Literature distance moderately improved conceptually due to crossing partitions, but not 8 and no proven original architecture. G1 FAIL, G2 CRITICAL FAIL (no actual learning effect, direct sampling/ordinary AR same architecture or same-info flat), G3 partial (exact oracle transport, no full production greedy/sequence/top-p), G4 FAIL (same scale checkpoints only, no training or physical HFL), G5/G6 unverified, G7 partial code/results. No evidence 80%. Good result remains quality-matched actual total wall time -15% or useful work +20%, 2 pretrained scales, 3 independent seeds and nonIID/delay regimes, CI and all G. Reject standalone; retain crossing-partition incompatibility, two exact lexicographic corners and external audit. Next only if real traces demonstrate substantial permutation-invariant expensive operations with identical formal behavior: evaluate 1.5B/3B pretrained models under 1–2×40GB, inspect dependency graphs, measure true reusable ops and ranking cost, train new target with matched quality and compare direct sampling as mandatory. Otherwise pivot away from bag reuse; no GPU spent here. Do not grade-inflate.
