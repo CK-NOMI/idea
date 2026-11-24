@@ -1568,3 +1568,50 @@ H（未执行）：若新证据改变前提，在1–2×40GB、Qwen2.5-1.5B/3B�
 **Reject and Pivot。** 保留固定边际条件隐私LP、支持反例、满秩零泄露障碍、共享组构造及强基线。下一轮从真正HFL学习对象和可执行规则出发，先证普通AR、同信息平坦、本地执行不可替代；用真实小模型或trace证实问题再投入训练。禁止以隐私模块换名重启。本轮追加使用最新blob保护并发，不覆盖原文。
 
 - 实际写入前 README blob：db2f19d6f3a13d5d63c1501be8fd0d8a06df66f2；保留原文全部内容。
+
+
+### HC/R02｜TJSA：目标保持的联合投机特征子空间与分层截断障碍
+
+- 2026-11-24；起始 main commit 337195f58d2c286d5ce421d1f103183d3ef071fa，README blob 54306a1d276251d11389a5944af2f9364d004e11（1039行，143220字节）；完整读取该快照及随后并发追加。PRE/A/R01–13、HC/R01、所有R01均已对照；后来读取HiMerge/HieraCert/HCR/A/R14的隐私结果、HierCouple/R02短语头前缀目标、HCA/R02共同后缀证书、HIERASPEC/R02公开草稿的条件隐私秩障碍。后者的概率差零空间与本轮参数算子行空间不同；不据此宣称新颖。 
+- **CRITICAL / Reject and Pivot**。T=有限数学推导，E=实际执行CPU合成数值实验，P=代理指标，H=未验证假设。没有GPU、真实HFL训练、真实模型生成、wall time或CI；不外推速度或成功概率。
+
+#### 1. 问题、机制、理论
+
+客户端持私有非IID文本；边缘聚合有效矩阵更新，云低频聚合一个全局目标LLM及其内生预测头；服务时冻结目标版本。目标模型的局部线性适配块T∈R^(m×d)，多步草稿投影D∈R^(n×d)，共享输入h∈R^d及低秩投影A∈R^(r×d)，目标BAh、草稿CAh。不是完整Transformer的线性化等价，不另部署独立LLM。T*=Σw_e T_e，D*=Σw_e D_e；目标BA=T*严格不改，优化D近似及全流程成本。云不知道各区域算子，区域持自身算子，通信计费。可信聚合，不宣称隐私。真实HFL学习仍是普通NLL与草稿蒸馏，未发明反向学习原语。
+
+坐标反例：标量A1=B1=C1=1、A2=B2=C2=-1，各端BA=CA=1，但逐因子平均为0。一般(BR^-1)(RA)=BA。已有精确产品聚合/对齐可解，非新问题。
+
+T1：t=rank(T*)≤r，P_T为目标行空间正交投影，最小目标保持草稿Frobenius误差平方=Σ_{j>r-t}σ_j²(D*(I-P_T))。因为S=row(A)必须包含row(T*)，固定S最优Dhat=D*P_S；S=row(T*)⊕U，dim U≤r-t，Eckart–Young给出残差最佳奇异子空间。A取正交行基，B=T*A^T，C=D*A^T。联合精确最小秩rank([T*;D*])；t>r不可行。Frobenius在零均值各向同性输入时等于输出MSE，不适用于任意真实隐藏分布。经典线代而非全新定理。
+
+T2：目标正交补中M1=diag(2,1)、M2=diag(-2,1)，等权。局部rank1截断后平均0，原平均diag(0,1)的全局rank1误差0，先截断误差平方1。故该局部截断算法不存在相对全局最优有限乘法界；不是所有通信协议下界。绝对界||M-Mhat||_F≤Σw_e||M_e-C_b(M_e)||_F+||Σw_e C_b(M_e)-C_k(Σw_e C_b(M_e))||_F。尾范数在抵消时可能松。
+
+T3：温度τ>0、无截断的softmax，logit误差δ时TV≤min(1,||δ||∞/τ)，沿路径概率导数p_i(δ_i-E_pδ)/τ积分；若原草稿并非教师需加原误差，不能推多步长度。目标保持，实际q及精确残差采样在实数和正确因果前缀下保留正式随机序列，greedy须用目标逐步argmax；未审计实际KV、EOS、top-p、有限精度实现。
+
+TJSA：云发送P_T（计获取及广播），边缘分解D_eP_T与D_e(I-P_T)，残差先过采样rank b，云聚合取剩余k=r-t；尾范数不足则补传或退回独立投影。强替代：共享线性sketch先聚合后恢复；精确有效矩阵/LoRA因子堆叠后全局SVD；同信息平坦、固定公共空间、独立头、普通多任务共享子空间。每边dense残差nd标量，rank b因子约b(n+d)，另计保护部分、基底同步、补传和协议；现有局部低秩因子可直接堆叠，不得只比较dense弱基线。若可消除的重复投影占全流程不到15%，即使消除也达不到G5时间门槛。真实成本未知。
+
+#### 2. 实际实验（CPU E/P）
+
+[脚本](experiments/HC/R02/probe.js)，[逐种子汇总结果CSV（六位精度）](experiments/HC/R02/results.csv)。命令 node experiments/HC/R02/probe.js；本轮实际执行JS V8工具，LCG+Box-Muller，seed11/23/37，4边缘、16维（4保护/12残差），每配置100对角矩阵组×64高斯上下文，3异质性共900组、57600上下文/方法。一致信号位于残差前4维，另8维为同向/独立/配对抵消噪声；未压缩平均矩阵产生toy教师logits，非真实LLM。比较局部b=4/8/12后根k=4 vs 精确聚合后根k=4(root)。NMSE为每组平方误差/真实范数平方；alpha为解析单步1-TV，不是实际采样频率。b12所有组等root。
+
+|异质性|b4 alpha|b8 alpha|root alpha|
+|---|---:|---:|---:|
+|同向|67.67%|67.67%|67.67%|
+|独立|79.82%|83.97%|85.16%|
+|抵消|83.46%|83.46%|100%|
+
+抵消组b4/b8 NMSE=1、root=0；双倍秩仍丢失一致信号。root只是Frobenius最优而非一般接受率最优。该极端人为构造不是现实HFL出现频率证据；未运行模型训练或GPU。代码可复算逐种子完整精度输出。
+
+#### 3. 原始文献与致命基线
+
+2026-11-24检索 exact federated LoRA aggregation, subspace alignment, hierarchical low-rank truncation, SD feature representation, signed matrix sum sketches。核对原始页面/摘要，EAGLE-3正文；部分2026 arXiv HTML不可用，仅摘要，不声称穷尽全文。
+- [FedEx-LoRA ACL2025](https://aclanthology.org/2025.acl-long.67/) 精确产品聚合；[CFLoRA](https://arxiv.org/abs/2609.33147) 互补因子；[FedLore](https://arxiv.org/abs/2610.01620) 共享低秩投影/子空间碎片化；[Rethinking Factor Sharing](https://arxiv.org/abs/2608.09742) rank-aware共享空间；[Subspace-Constrained FL](https://arxiv.org/abs/2606.22724) 破坏性聚合。四篇2026 arXiv仅摘要。
+- [FedPissa ICML2026](https://proceedings.mlr.press/v306/he26p.html)、[SDFLoRA IJCAI2026](https://ijcai.org/proceedings/2026/533)、[FedRoRA](https://aclanthology.org/2026.findings-emnlp.608/)、[FedSVD](https://proceedings.neurips.cc/paper_files/paper/2025/hash/ad922aa85d4027ff3502e8e5f406e828-Abstract-Conference.html) 选择性聚合、对齐及全局SVD。
+- [Git Re-Basin](https://arxiv.org/abs/2209.04836) 对称性；[EAGLE-3](https://arxiv.org/html/2503.01840v3) 内生多层特征；[ReeFL](https://proceedings.mlr.press/v235/lee24h.html) 联邦早退/蒸馏；[Practical Sketching Algorithms](https://doi.org/10.1137/17M1111590) 通用矩阵sketch；[Frequent Directions](https://arxiv.org/abs/1501.01711) 合并式协方差/行流，不直接等价有符号矩阵求和；[Leviathan SD](https://proceedings.mlr.press/v202/leviathan23a.html) 精确采样。
+盲区：真实EAGLE联合训练、非线性、多任务共享投影、未索引和全文公式；无实际文字查重。PRE-05/A/R02–03/A/R07–08已有子空间/接口近邻；本轮不同于概率混合和隐私，但与通用低秩矩阵压缩高度重合。普通AR、普通HFL+内生头、产品精确聚合+根SVD、共享sketch及同信息同委托平坦皆为强基线。完整聚合在压力测试恢复全部方向；未实测同预算sketch或独立头实际时间，不能声称优于它们。CRITICAL：HFL没有不可替代性，SD没有反向改变学习；标准矩阵工具可复制主要机制。
+
+#### 4. 验收和下一轮
+
+主观分项问题6.5×25%、机制5×25%、理论6×20%、价值6×15%、文献距离4×15%=5.575≈5.6/10，非同行评审。G1 FAIL；G2 CRITICAL FAIL；G3 PARTIAL/FAIL（局部数学、完整精确解码未验）；G4 FAIL仅合成；G5 FAIL无真实总时间；G6 FAIL无80%依据；G7 PARTIAL/FAIL（局部可复算，完整系统未复现）。好结果：同目标/质量/预算下训练推理全流程真实时间降≥15%或同成本有效工作+20%，两预训练尺度、三种子三非IID/时延设置及CI，全部G门槛。未执行的最小实验H：1×40GB Qwen2.5-1.5B、后扩3B/7B，8客户端2边缘、rank8/16/32、数学代码通用公开语料，先测真实联合秩谱、跨边缘截断误差、共享投影真实耗时占比；计训练、通信、TPOT、质量、显存、回退与CI，与上述强基线公平比较。单卡逻辑模拟不是物理并行。因致命缺陷不建议为本方案投入GPU。
+**Reject and Pivot**。保留目标保持联合秩界、截断反例、绝对误差界、CPU合成结果。禁止改名复刻普通低秩对齐、压缩、概率混合或隐私耦合。下一轮先从真实小模型trace验证数据驻留、跨层异步屏障、SD流水线的实际瓶颈，预设普通AR/SD与公平平坦，寻找学习和执行双向不可替代原语。先读最新库再研究，正负均追加。
+
+- 写入前 README blob：4e929ec4c7d31767be44ccb761272b290875e31c；完整保留旧内容。
