@@ -1,0 +1,32 @@
+function run(raws,names){
+const V=27,d=16,H=4,k=4,sum=a=>a.reduce((s,x)=>s+x,0),dot=(a,b)=>sum(a.map((v,i)=>v*b[i])),mat=(a,x)=>a.map(r=>dot(r,x)),add=(a,b)=>a.map((v,i)=>v+b[i]),scale=(a,s)=>a.map(v=>v*s),zero=n=>Array(n).fill(0),rms=x=>scale(x,1/Math.sqrt(dot(x,x)/d+1e-5)),sm=x=>{let m=Math.max(...x),v=x.map(t=>Math.exp(t-m));return scale(v,1/sum(v))};
+function model(raw){let off=0;const take=(n,m)=>Array.from({length:n},()=>Array.from({length:m},()=>raw[off++]));let E=take(V,d),P=take(16,d),W=take(V,d),L=Array.from({length:2},()=>({q:take(d,d),k:take(d,d),v:take(d,d),o:take(d,d),f1:take(4*d,d),f2:take(d,4*d)}));if(off!==7264)throw Error("shape");return {W,feature:h=>{let shallow,lastF;let seq=h.map((t,i)=>rms(add(E[t],P[i])));for(let b of L){let z=seq.map(rms),Q=z.map(x=>mat(b.q,x)),K=z.map(x=>mat(b.k,x)),v=z.map(x=>mat(b.v,x));seq=seq.map((x,i)=>{let a=[];for(let j=0;j<H;j++){let t=j*k,w=sm(K.slice(0,i+1).map(x=>dot(Q[i].slice(t,t+k),x.slice(t,t+k))/2));for(let l=t;l<t+k;l++)a.push(sum(w.map((p,s)=>p*v[s][l])))}let y=add(x,mat(b.o,a));let f=mat(b.f1,rms(y)).map(v=>Math.max(0,v));if(i===seq.length-1)lastF=f;return add(y,mat(b.f2,f))});if(!shallow)shallow=seq.at(-1).slice()}return {deep:seq.at(-1),shallow,f:lastF}}}}
+
+
+
+
+
+const avg=a=>sum(a)/a.length,hash=(x,seed)=>{let h=seed>>>0;for(let c of x)h=Math.imul(h^c.charCodeAt(0),16777619)>>>0;return h},words=[...new Set(names.split(/\s+/).filter(x=>/^[a-z]{7,14}$/.test(x)))];
+function fitMap(data,K){let f=Array.from({length:V},()=>Array(V).fill(.01));for(let n of data)for(let i=1;i<n.length;i++)f[n.charCodeAt(i-1)-97][n.charCodeAt(i)-97]++;let g=f.slice(0,26).map((v,i)=>({ids:[i],v}));let ent=v=>{let n=sum(v);return -sum(v.map(x=>x*Math.log(x/n)))};while(g.length>K-1){let best=Infinity,bi=0,bj=1;for(let i=0;i<g.length;i++)for(let j=i+1;j<g.length;j++){let a=g[i].v,b=g[j].v,c=add(a,b),z=ent(c)-ent(a)-ent(b);if(z<best){best=z;bi=i;bj=j}}g[bi]={ids:g[bi].ids.concat(g[bj].ids),v:add(g[bi].v,g[bj].v)};g.splice(bj,1)}let out=zero(V);g.forEach((a,i)=>a.ids.forEach(x=>out[x]=i));out[26]=K-1;return out}
+
+
+function rng(seed){let s=seed;return ()=>((s=Math.imul(s,1664525)+1013904223>>>0)+.5)/4294967296}
+function draw(a,u){u*=sum(a);for(let i=0;i<a.length;i++){u-=a[i];if(u<0)return i}return a.findLastIndex(v=>v>0)}
+function cdfs(p,N){let rows=[[1]],pm=[1];for(let n=1;n<=N;n++){let next=Array(n+1).fill(0);for(let j=0;j<n;j++){next[j]+=pm[j]*(1-p);next[j+1]+=pm[j]*p}pm=next;let s=0;rows.push(pm.map((x,i)=>i===n?1:(s+=x)))}return rows}
+function inverse(F,u){let l=0,r=F.length-1;while(l<r){let m=(l+r)>>1;if(u<F[m])r=m;else l=m+1}return l}
+function setup(p,q,N,order){let ps=sum(p),qs=sum(q);return order.slice(0,-1).map(i=>{let a=cdfs(Math.min(1,p[i]/ps),N),b=cdfs(Math.min(1,q[i]/qs),N);ps-=p[i];qs-=q[i];return {i,a,b}})}
+function transport(x,bank,N,last,r){let a=N,b=N,y=zero(x.length);for(let z of bank){let n=x[z.i],F=z.b[b],lo=n?F[n-1]:0,hi=F[n],u=lo+(hi-lo)*r();let m=inverse(z.a[a],u);y[z.i]=m;a-=m;b-=n}y[last]=a;return y}
+let rows=[],forwards=0,trials=0,audit=0,binaryAudit=0;
+for(let p of [.01,.1,.3,.5,.8,.99])for(let q of [.01,.1,.3,.5,.8,.99])for(let N of [2,8,32,64]){let F=cdfs(p,N)[N],G=cdfs(q,N)[N],col=zero(N+1),miss=0,move=0;for(let i=0;i<=N;i++)for(let j=0;j<=N;j++){let w=Math.max(0,Math.min(F[j],G[i])-Math.max(j?F[j-1]:0,i?G[i-1]:0));col[j]+=w;miss+=w*((j>0&&i===0)+(j<N&&i===N));move+=w*Math.abs(i-j)}
+let lb=Math.max(0,(1-q)**N-(1-p)**N)+Math.max(0,q**N-p**N);audit=Math.max(audit,Math.abs(miss-lb),Math.abs(move-N*Math.abs(p-q)),...col.map((x,j)=>Math.abs(x-(F[j]-(j?F[j-1]:0)))));binaryAudit++}
+for(let wi=0;wi<raws.length;wi++){let m=model(raws[wi]);for(let seed of [11,29,73]){let data=words.slice().sort((a,b)=>hash(a,seed)-hash(b,seed));for(let K of [2,4,8,16,27]){let g=K===27?Array.from({length:V},(_,i)=>i):K===2?Array.from({length:V},(_,i)=>[0,4,8,14,20].includes(i)?0:1):fitMap(data.slice(0,256),K);for(let name of data.slice(256,264)){let anchor=[26,...name.slice(0,3).split("").map(x=>x.charCodeAt(0)-97)],a=m.feature(anchor);forwards++;let p=zero(K),q=zero(K);sm(mat(m.W,a.deep)).forEach((v,i)=>p[g[i]]+=v);sm(mat(m.W,a.shallow)).forEach((v,i)=>q[g[i]]+=v);
+for(let N of [8,32,64]){let order=Array.from({length:K},(_,i)=>i).sort((a,b)=>q[b]-q[a]),bank=setup(p,q,N,order),natural=Array.from({length:K},(_,i)=>i),bankNat=setup(p,q,N,natural),res=p.map((v,i)=>Math.max(0,v-q[i])),r=rng(seed+wi*103+N*19+K*97+hash(name,17)),stat={};
+for(let k of ["independentSD","count","natural","independentAR","coverage"])stat[k]={miss:0,missMass:0,move:0,all:0,occ:0,targetOcc:0,union:0,first:zero(K),second:0};
+function addStat(k,x,y){let a=stat[k];let miss=sum(y.map((v,i)=>+(v>0&&x[i]===0))),mass=sum(y.map((v,i)=>x[i]===0?v:0)),move=sum(y.map((v,i)=>Math.max(0,v-x[i])));a.miss+=miss;a.missMass+=mass;a.move+=move;a.all+=+(move===0);a.occ+=x.filter(v=>v>0).length;a.targetOcc+=y.filter(v=>v>0).length;a.union+=x.filter(v=>v>0).length+miss;for(let j=0;j<K;j++)a.first[j]+=y[j];a.second+=y[0]*(y[0]-1)}
+for(let t=0;t<256;t++){let x=zero(K),y=zero(K),ya=zero(K);for(let i=0;i<N;i++){let c=draw(q,r());x[c]++;let d=r()<Math.min(1,p[c]/q[c])?c:draw(res,r());y[d]++;ya[draw(p,r())]++}let z=transport(x,bank,N,order.at(-1),r),zn=transport(x,bankNat,N,K-1,r);addStat("independentSD",x,y);addStat("count",x,z);addStat("natural",x,zn);addStat("independentAR",x,ya);let top=zero(K);for(let i of order.slice(0,x.filter(v=>v>0).length))top[i]=1;addStat("coverage",top,ya);trials++}
+let lb=sum(p.map((v,i)=>Math.max(0,(1-q[i])**N-(1-v)**N))),targetOcc=sum(p.map(v=>1-(1-v)**N));rows.push({wi,seed,K,N,name,p,q,lb,targetOcc,stat})}
+}}}}
+let summary=[];for(let K of [2,4,8,16,27])for(let N of [8,32,64]){let a=rows.filter(x=>x.K===K&&x.N===N),s={K,N,n:a.length,lb:avg(a.map(x=>x.lb)),targetOcc:avg(a.map(x=>x.targetOcc))};for(let mode of ["independentSD","count","natural","independentAR","coverage"]){s[mode]=Object.fromEntries(["miss","missMass","move","all","occ","targetOcc","union"].map(k=>[k,avg(a.map(x=>x.stat[mode][k]/256))]));s[mode].secondRatio=avg(a.map(x=>x.stat[mode].second/256/(N*(N-1)*x.p[0]**2)))}summary.push(s)}
+return {rows,summary,forwards,trials,audit,binaryAudit};
+}
+if(typeof module!=="undefined"&&require.main===module){const fs=require("fs");console.log(JSON.stringify(run([JSON.parse(fs.readFileSync(process.argv[2],"utf8")),JSON.parse(fs.readFileSync(process.argv[3],"utf8")).weights],fs.readFileSync(process.argv[4],"utf8")),null,2))}
