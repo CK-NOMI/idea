@@ -3245,3 +3245,11 @@ H未执行：只有真实训练部署确实将同一合法GRPO组跨区域分配
 - E/P：实际V8 CPU 27组合、H4/G2/d4、种子11/29/73、公共8/32/128、r2/4/8。前向最大误差8.33e-17，梯度最大2.78e-17，有限差分3.03e-12。没有真实GPU/网络/训练/SD运行。Qwen历史R10代理，rq=ro512、H28，等前反向行数每位置2160 vs14420元素（-85.02%）；1/4/8轨迹相对KV复制 .179/.717/1.434；rank256 .094/.377/.754。未计权重同步、回退、实际RTT/计算与质量，不能称真实提速。原始文献：Context Parallelism, MLA, MHA2MLA, MLRA, PrefixFlow, ASVD, standard SD（链接见记录）。
 - 主观创新7.075/10（问题8、机制7、理论8、价值7、距离4.5；25/25/20/15/15），高于R10 6.85但不足8.35。G1/G2 FAIL（CRITICAL，普通AR+同接口能复制，平坦同委托匹配）；G3/G7局部；G4/G5/G6未通过或未验证；无80%成功率证据。Reject as standalone / retain submechanism。下一轮先验证真实rank-quality frontier、同模型KV复制/MLA及AR/普通SD强基线，实际物理通信与总时间；无因果双向收益则停止。禁止将通信代理当端到端加速。
 - [完整记录](experiments/team-far/R11/record.md) · [实验代码](experiments/team-far/R11/probe.js) · [全部结果](experiments/team-far/R11/results.json)
+
+
+### team-far/R12｜DCA-SD：延迟补空间伴随量与前向精确、反向失真障碍
+
+- 日期2026-11-24；起始/写前main 3e5d8b3cb10cbdcc624789bb504ccb5568574077；README blob 8151a380b06dc0d1a22a28a1aa2b586104bb61ad。完整获取、筛查标题、重审R11/TJSA/FSRA/FVP等，未逐式复核全部历史。不同R11：不限制正式模型参数秩，精确公共Key行空间投影；不同TJSA/FSRA：不是低秩参数聚合/坐标对齐。
+- T：K_P q_perp=0，前向只需row(K_P)坐标；对任意q精确恢复K_Pq的固定线性编码秩≥rank(K_P)。但dK_i=c_i q，c_i=a_i(g·v_i−g·o)/√d，投影反向缺c_i q_perp。d2 public k=(1,0),v=1,private k=0,v=0,q=(0,t),g=1：前向输出.5与t无关，公共dK=(0,t/(4√2))。正式学习节点延迟补传q_perp，非必要候选后代丢弃，第一拒绝的父节点和所有loss祖先仍须保留。固定C时批量补空间梯度C^TQ_perp，连续单次精确摘要维数≥rank(C)(d−r)，条件性线性维数界，不是通用网络下界；若C列空间基已知可压缩但需计下行。未实现批量协议/真实SD。
+- E：重新读取microGPT固定commit aa28d7c0aa66704ce56b263dfd3270579f3d5f6d两同尺度7264参数检查点及input。56条12–14字母去重姓名，分组13/27/16/0，非真实HFL。2检查点×56序列×2层×4头×6长度=5376实际FP64测试，合成g；每长度896。m2/3时rank2/3、朴素压缩Key梯度相对误差.680093/.568571；m4/5/8/12所有Key/Value满秩，无精确压缩余地。前向最大误差3.55e-15，补偿梯度2.22e-16；无SGD/多token生成/GPU/网络。P：相对R10仅Q项减少Hq(d−r)(nv−nt)，Qwen-like r32,d128,nv=2nt，Query省37.5%，全接口约12.44%（基底前）；短prefix直接KV复制更强。低秩长前缀未证，AR同样可用，不能冒称端到端提速。文献Context Parallelism、PrefixFlow、BasisKV、KQ-SVD、StiefAttention、JSSA、标准SD见记录。主观创新7.10（8/7/8.5/6.5/4.5，25/25/20/15/15），较R11微变不构成实质提升，机制7。G1/G2/G4未通过、G3/G7局部、G5/G6未验；无80%证据。Reject独立立项，保留前反向不可辨识、条件维数下界及实际反例。下一步真实两尺度rank/祖先/成本profile及四因子强基线，不再为自然精确低秩假设投入无依据的系统开发。
+- [完整记录](experiments/team-far/R12/record.md) · [代码](experiments/team-far/R12/probe.js) · [5376条测试及通信代理](experiments/team-far/R12/results.json)
