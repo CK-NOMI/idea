@@ -1,0 +1,392 @@
+{
+  "src": "Aaryaman3/Speculative-Decoding-Eval",
+  "ref": "99f1b223f007e93c5206ab9d5e43dba3ec4920e7",
+  "manifest": [
+    {
+      "path": "Code/results/raw/eagle3_L4_chat_c08_t1.jsonl",
+      "sha": "1b32c6634d434ca8ed1a0eb395f4260b0a4f174c",
+      "n": 8,
+      "distinctAcceptance": [
+        0.3577
+      ]
+    },
+    {
+      "path": "Code/results/raw/baseline_L4_chat_c08_t1.jsonl",
+      "sha": "218ad8f1feb864203c317457cabeaacb445d97e7",
+      "n": 8,
+      "distinctAcceptance": [
+        null
+      ]
+    },
+    {
+      "path": "Code/results/raw/baseline_L4_chat_c08_t2.jsonl",
+      "sha": "4e0e126a771b0462b9275e86cd789450b5a2c027",
+      "n": 8,
+      "distinctAcceptance": [
+        null
+      ]
+    },
+    {
+      "path": "Code/results/raw/eagle3_L4_chat_c08_t2.jsonl",
+      "sha": "6d67615620db861af358767449c5a997fc0bbc9e",
+      "n": 8,
+      "distinctAcceptance": [
+        0.3637
+      ]
+    },
+    {
+      "path": "Code/results/raw/eagle3_L4_chat_c08_t3.jsonl",
+      "sha": "ac81f9644589178c392057db4d806c5e2fe140cd",
+      "n": 8,
+      "distinctAcceptance": [
+        0.3673
+      ]
+    },
+    {
+      "path": "Code/results/raw/baseline_L4_chat_c08_t3.jsonl",
+      "sha": "d36fef31b6d153b697918542ccda2469ed292173",
+      "n": 8,
+      "distinctAcceptance": [
+        null
+      ]
+    }
+  ],
+  "pairs": [
+    {
+      "gpu": "L4",
+      "task": "chat",
+      "trial": 1,
+      "id": "chat_0000_c8_t1",
+      "ar": 16203.06,
+      "sd": 10448.29,
+      "arTokens": 256,
+      "sdTokens": 256,
+      "equalText": false,
+      "arTTFT": 246.4,
+      "sdTTFT": 328.25,
+      "acceptance": 0.3577
+    },
+    {
+      "gpu": "L4",
+      "task": "chat",
+      "trial": 1,
+      "id": "chat_0001_c8_t1",
+      "ar": 16202.68,
+      "sd": 5010.28,
+      "arTokens": 256,
+      "sdTokens": 256,
+      "equalText": true,
+      "arTTFT": 246.02,
+      "sdTTFT": 328.33,
+      "acceptance": 0.3577
+    },
+    {
+      "gpu": "L4",
+      "task": "chat",
+      "trial": 1,
+      "id": "chat_0002_c8_t1",
+      "ar": 16202.62,
+      "sd": 8263.17,
+      "arTokens": 256,
+      "sdTokens": 256,
+      "equalText": true,
+      "arTTFT": 245.95,
+      "sdTTFT": 327.89,
+      "acceptance": 0.3577
+    },
+    {
+      "gpu": "L4",
+      "task": "chat",
+      "trial": 1,
+      "id": "chat_0003_c8_t1",
+      "ar": 16139.03,
+      "sd": 6994.59,
+      "arTokens": 256,
+      "sdTokens": 256,
+      "equalText": false,
+      "arTTFT": 86.41,
+      "sdTTFT": 109.74,
+      "acceptance": 0.3577
+    },
+    {
+      "gpu": "L4",
+      "task": "chat",
+      "trial": 1,
+      "id": "chat_0004_c8_t1",
+      "ar": 16202.5,
+      "sd": 7165.63,
+      "arTokens": 256,
+      "sdTokens": 256,
+      "equalText": false,
+      "arTTFT": 245.84,
+      "sdTTFT": 327.96,
+      "acceptance": 0.3577
+    },
+    {
+      "gpu": "L4",
+      "task": "chat",
+      "trial": 1,
+      "id": "chat_0005_c8_t1",
+      "ar": 16201.87,
+      "sd": 6908.88,
+      "arTokens": 256,
+      "sdTokens": 256,
+      "equalText": true,
+      "arTTFT": 245.17,
+      "sdTTFT": 327.92,
+      "acceptance": 0.3577
+    },
+    {
+      "gpu": "L4",
+      "task": "chat",
+      "trial": 1,
+      "id": "chat_0006_c8_t1",
+      "ar": 16202.42,
+      "sd": 5615.95,
+      "arTokens": 256,
+      "sdTokens": 256,
+      "equalText": false,
+      "arTTFT": 245.74,
+      "sdTTFT": 327.47,
+      "acceptance": 0.3577
+    },
+    {
+      "gpu": "L4",
+      "task": "chat",
+      "trial": 1,
+      "id": "chat_0007_c8_t1",
+      "ar": 16201.78,
+      "sd": 8741.45,
+      "arTokens": 256,
+      "sdTokens": 256,
+      "equalText": false,
+      "arTTFT": 245.43,
+      "sdTTFT": 327.68,
+      "acceptance": 0.3577
+    },
+    {
+      "gpu": "L4",
+      "task": "chat",
+      "trial": 2,
+      "id": "chat_0000_c8_t2",
+      "ar": 16017.58,
+      "sd": 12821.96,
+      "arTokens": 256,
+      "sdTokens": 256,
+      "equalText": true,
+      "arTTFT": 158.61,
+      "sdTTFT": 213.72,
+      "acceptance": 0.3637
+    },
+    {
+      "gpu": "L4",
+      "task": "chat",
+      "trial": 2,
+      "id": "chat_0001_c8_t2",
+      "ar": 16017.51,
+      "sd": 4814.16,
+      "arTokens": 256,
+      "sdTokens": 256,
+      "equalText": false,
+      "arTTFT": 158.47,
+      "sdTTFT": 213.52,
+      "acceptance": 0.3637
+    },
+    {
+      "gpu": "L4",
+      "task": "chat",
+      "trial": 2,
+      "id": "chat_0002_c8_t2",
+      "ar": 16016.53,
+      "sd": 8076.91,
+      "arTokens": 256,
+      "sdTokens": 256,
+      "equalText": false,
+      "arTTFT": 157.79,
+      "sdTTFT": 213.25,
+      "acceptance": 0.3637
+    },
+    {
+      "gpu": "L4",
+      "task": "chat",
+      "trial": 2,
+      "id": "chat_0003_c8_t2",
+      "ar": 15953.33,
+      "sd": 7057.47,
+      "arTokens": 256,
+      "sdTokens": 256,
+      "equalText": false,
+      "arTTFT": 85.41,
+      "sdTTFT": 108.16,
+      "acceptance": 0.3637
+    },
+    {
+      "gpu": "L4",
+      "task": "chat",
+      "trial": 2,
+      "id": "chat_0004_c8_t2",
+      "ar": 16017.29,
+      "sd": 7142.93,
+      "arTokens": 256,
+      "sdTokens": 256,
+      "equalText": false,
+      "arTTFT": 158.14,
+      "sdTTFT": 213.04,
+      "acceptance": 0.3637
+    },
+    {
+      "gpu": "L4",
+      "task": "chat",
+      "trial": 2,
+      "id": "chat_0005_c8_t2",
+      "ar": 16016.35,
+      "sd": 7569.14,
+      "arTokens": 256,
+      "sdTokens": 256,
+      "equalText": false,
+      "arTTFT": 157.9,
+      "sdTTFT": 213.18,
+      "acceptance": 0.3637
+    },
+    {
+      "gpu": "L4",
+      "task": "chat",
+      "trial": 2,
+      "id": "chat_0006_c8_t2",
+      "ar": 16017.16,
+      "sd": 5506.32,
+      "arTokens": 256,
+      "sdTokens": 256,
+      "equalText": true,
+      "arTTFT": 158.04,
+      "sdTTFT": 212.8,
+      "acceptance": 0.3637
+    },
+    {
+      "gpu": "L4",
+      "task": "chat",
+      "trial": 2,
+      "id": "chat_0007_c8_t2",
+      "ar": 16016.87,
+      "sd": 9100.23,
+      "arTokens": 256,
+      "sdTokens": 255,
+      "equalText": false,
+      "arTTFT": 157.85,
+      "sdTTFT": 212.86,
+      "acceptance": 0.3637
+    },
+    {
+      "gpu": "L4",
+      "task": "chat",
+      "trial": 3,
+      "id": "chat_0000_c8_t3",
+      "ar": 16019.77,
+      "sd": 12833.73,
+      "arTokens": 256,
+      "sdTokens": 256,
+      "equalText": true,
+      "arTTFT": 160.67,
+      "sdTTFT": 213.48,
+      "acceptance": 0.3673
+    },
+    {
+      "gpu": "L4",
+      "task": "chat",
+      "trial": 3,
+      "id": "chat_0001_c8_t3",
+      "ar": 16018.8,
+      "sd": 4818.49,
+      "arTokens": 256,
+      "sdTokens": 256,
+      "equalText": false,
+      "arTTFT": 160.26,
+      "sdTTFT": 213.28,
+      "acceptance": 0.3673
+    },
+    {
+      "gpu": "L4",
+      "task": "chat",
+      "trial": 3,
+      "id": "chat_0002_c8_t3",
+      "ar": 16018.42,
+      "sd": 8084.54,
+      "arTokens": 256,
+      "sdTokens": 256,
+      "equalText": false,
+      "arTTFT": 159.58,
+      "sdTTFT": 213.02,
+      "acceptance": 0.3673
+    },
+    {
+      "gpu": "L4",
+      "task": "chat",
+      "trial": 3,
+      "id": "chat_0003_c8_t3",
+      "ar": 15955.32,
+      "sd": 7063.74,
+      "arTokens": 256,
+      "sdTokens": 256,
+      "equalText": false,
+      "arTTFT": 87.02,
+      "sdTTFT": 106.35,
+      "acceptance": 0.3673
+    },
+    {
+      "gpu": "L4",
+      "task": "chat",
+      "trial": 3,
+      "id": "chat_0004_c8_t3",
+      "ar": 16019.06,
+      "sd": 7149.91,
+      "arTokens": 256,
+      "sdTokens": 256,
+      "equalText": false,
+      "arTTFT": 159.99,
+      "sdTTFT": 212.81,
+      "acceptance": 0.3673
+    },
+    {
+      "gpu": "L4",
+      "task": "chat",
+      "trial": 3,
+      "id": "chat_0005_c8_t3",
+      "ar": 16018.22,
+      "sd": 7576.19,
+      "arTokens": 256,
+      "sdTokens": 256,
+      "equalText": false,
+      "arTTFT": 159.71,
+      "sdTTFT": 212.8,
+      "acceptance": 0.3673
+    },
+    {
+      "gpu": "L4",
+      "task": "chat",
+      "trial": 3,
+      "id": "chat_0006_c8_t3",
+      "ar": 16018.75,
+      "sd": 5511.78,
+      "arTokens": 256,
+      "sdTokens": 256,
+      "equalText": true,
+      "arTTFT": 159.75,
+      "sdTTFT": 212.58,
+      "acceptance": 0.3673
+    },
+    {
+      "gpu": "L4",
+      "task": "chat",
+      "trial": 3,
+      "id": "chat_0007_c8_t3",
+      "ar": 16018.75,
+      "sd": 9109.08,
+      "arTokens": 256,
+      "sdTokens": 255,
+      "equalText": false,
+      "arTTFT": 159.7,
+      "sdTTFT": 212.78,
+      "acceptance": 0.3673
+    }
+  ]
+}
