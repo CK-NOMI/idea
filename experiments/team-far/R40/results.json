@@ -1,0 +1,5664 @@
+{
+  "evals": 34271,
+  "updates": 1080,
+  "draws": 13824,
+  "maxGrad": 5.551115123125783e-17,
+  "maxLoss": 0,
+  "maxFD": 2.483578447065593e-12,
+  "summary": [
+    {
+      "drift": 0.02,
+      "sharing": "common",
+      "method": "AR",
+      "global": 252.83333333333334,
+      "local": 293.3333333333333,
+      "pGlobal": 293.3333333333333,
+      "pLocal": 293.3333333333333,
+      "qGlobal": 0,
+      "qLocal": 0,
+      "proposals": 0,
+      "accepted": 0,
+      "blocks": 512,
+      "commits": 512,
+      "backwardLocal": 293.3333333333333,
+      "backwardGlobal": 252.83333333333334,
+      "backwardSeparate": 512,
+      "loss": -0.020412077220500428,
+      "accept": 0
+    },
+    {
+      "drift": 0.02,
+      "sharing": "common",
+      "method": "SDregional",
+      "global": 271.3333333333333,
+      "local": 314.3333333333333,
+      "pGlobal": 314.3333333333333,
+      "pLocal": 314.3333333333333,
+      "qGlobal": 314.3333333333333,
+      "qLocal": 314.3333333333333,
+      "proposals": 536.8333333333334,
+      "accepted": 462.1666666666667,
+      "blocks": 280.1666666666667,
+      "commits": 512,
+      "backwardLocal": 296.5,
+      "backwardGlobal": 256.3333333333333,
+      "backwardSeparate": 512,
+      "loss": -0.01482889752912952,
+      "accept": 0.8609127600124185
+    },
+    {
+      "drift": 0.02,
+      "sharing": "common",
+      "method": "SDshared",
+      "global": 266.3333333333333,
+      "local": 308.8333333333333,
+      "pGlobal": 308.8333333333333,
+      "pLocal": 308.8333333333333,
+      "qGlobal": 266.3333333333333,
+      "qLocal": 308.8333333333333,
+      "proposals": 539.6666666666666,
+      "accepted": 454.1666666666667,
+      "blocks": 281.6666666666667,
+      "commits": 512,
+      "backwardLocal": 291.8333333333333,
+      "backwardGlobal": 251.66666666666666,
+      "backwardSeparate": 512,
+      "loss": -0.017092810203245913,
+      "accept": 0.8415688696726376
+    },
+    {
+      "drift": 0.02,
+      "sharing": "private",
+      "method": "AR",
+      "global": 351.3333333333333,
+      "local": 351.3333333333333,
+      "pGlobal": 351.3333333333333,
+      "pLocal": 351.3333333333333,
+      "qGlobal": 0,
+      "qLocal": 0,
+      "proposals": 0,
+      "accepted": 0,
+      "blocks": 512,
+      "commits": 512,
+      "backwardLocal": 351.3333333333333,
+      "backwardGlobal": 351.3333333333333,
+      "backwardSeparate": 512,
+      "loss": -0.04575371629515796,
+      "accept": 0
+    },
+    {
+      "drift": 0.02,
+      "sharing": "private",
+      "method": "SDregional",
+      "global": 364.5,
+      "local": 364.5,
+      "pGlobal": 364.5,
+      "pLocal": 364.5,
+      "qGlobal": 364.5,
+      "qLocal": 364.5,
+      "proposals": 537.8333333333334,
+      "accepted": 459.6666666666667,
+      "blocks": 280,
+      "commits": 512,
+      "backwardLocal": 345.8333333333333,
+      "backwardGlobal": 345.8333333333333,
+      "backwardSeparate": 512,
+      "loss": -0.04464661332246461,
+      "accept": 0.8546637744034707
+    },
+    {
+      "drift": 0.02,
+      "sharing": "private",
+      "method": "SDshared",
+      "global": 362.3333333333333,
+      "local": 362.3333333333333,
+      "pGlobal": 362.3333333333333,
+      "pLocal": 362.3333333333333,
+      "qGlobal": 362.3333333333333,
+      "qLocal": 362.3333333333333,
+      "proposals": 541,
+      "accepted": 461.1666666666667,
+      "blocks": 283.8333333333333,
+      "commits": 512,
+      "backwardLocal": 341.6666666666667,
+      "backwardGlobal": 341.6666666666667,
+      "backwardSeparate": 512,
+      "loss": -0.04203343387401622,
+      "accept": 0.8524337646333949
+    },
+    {
+      "drift": 0.1,
+      "sharing": "common",
+      "method": "AR",
+      "global": 245.33333333333334,
+      "local": 287.5,
+      "pGlobal": 287.5,
+      "pLocal": 287.5,
+      "qGlobal": 0,
+      "qLocal": 0,
+      "proposals": 0,
+      "accepted": 0,
+      "blocks": 512,
+      "commits": 512,
+      "backwardLocal": 287.5,
+      "backwardGlobal": 245.33333333333334,
+      "backwardSeparate": 512,
+      "loss": -0.015676490565852366,
+      "accept": 0
+    },
+    {
+      "drift": 0.1,
+      "sharing": "common",
+      "method": "SDregional",
+      "global": 269.6666666666667,
+      "local": 310.6666666666667,
+      "pGlobal": 310.6666666666667,
+      "pLocal": 310.6666666666667,
+      "qGlobal": 310.6666666666667,
+      "qLocal": 310.6666666666667,
+      "proposals": 536.6666666666666,
+      "accepted": 457.5,
+      "blocks": 278.8333333333333,
+      "commits": 512,
+      "backwardLocal": 294,
+      "backwardGlobal": 253.83333333333334,
+      "backwardSeparate": 512,
+      "loss": -0.01999533587315891,
+      "accept": 0.8524844720496895
+    },
+    {
+      "drift": 0.1,
+      "sharing": "common",
+      "method": "SDshared",
+      "global": 266.1666666666667,
+      "local": 306.1666666666667,
+      "pGlobal": 306.1666666666667,
+      "pLocal": 306.1666666666667,
+      "qGlobal": 266.1666666666667,
+      "qLocal": 306.1666666666667,
+      "proposals": 549.6666666666666,
+      "accepted": 436.5,
+      "blocks": 289.8333333333333,
+      "commits": 512,
+      "backwardLocal": 283.8333333333333,
+      "backwardGlobal": 248.16666666666666,
+      "backwardSeparate": 512,
+      "loss": -0.02454137692652049,
+      "accept": 0.7941176470588236
+    },
+    {
+      "drift": 0.1,
+      "sharing": "private",
+      "method": "AR",
+      "global": 341.5,
+      "local": 341.5,
+      "pGlobal": 341.5,
+      "pLocal": 341.5,
+      "qGlobal": 0,
+      "qLocal": 0,
+      "proposals": 0,
+      "accepted": 0,
+      "blocks": 512,
+      "commits": 512,
+      "backwardLocal": 341.5,
+      "backwardGlobal": 341.5,
+      "backwardSeparate": 512,
+      "loss": -0.03561468681546224,
+      "accept": 0
+    },
+    {
+      "drift": 0.1,
+      "sharing": "private",
+      "method": "SDregional",
+      "global": 361.8333333333333,
+      "local": 361.8333333333333,
+      "pGlobal": 361.8333333333333,
+      "pLocal": 361.8333333333333,
+      "qGlobal": 361.8333333333333,
+      "qLocal": 361.8333333333333,
+      "proposals": 539.1666666666666,
+      "accepted": 459,
+      "blocks": 281.8333333333333,
+      "commits": 512,
+      "backwardLocal": 340.1666666666667,
+      "backwardGlobal": 340.1666666666667,
+      "backwardSeparate": 512,
+      "loss": -0.031832074716086754,
+      "accept": 0.8513137557959816
+    },
+    {
+      "drift": 0.1,
+      "sharing": "private",
+      "method": "SDshared",
+      "global": 364.1666666666667,
+      "local": 364.1666666666667,
+      "pGlobal": 364.1666666666667,
+      "pLocal": 364.1666666666667,
+      "qGlobal": 364.1666666666667,
+      "qLocal": 364.1666666666667,
+      "proposals": 544.1666666666666,
+      "accepted": 449.3333333333333,
+      "blocks": 287,
+      "commits": 512,
+      "backwardLocal": 341.3333333333333,
+      "backwardGlobal": 341.3333333333333,
+      "backwardSeparate": 512,
+      "loss": -0.06911620406877969,
+      "accept": 0.8257274119448699
+    },
+    {
+      "drift": 0.4,
+      "sharing": "common",
+      "method": "AR",
+      "global": 244.83333333333334,
+      "local": 276.1666666666667,
+      "pGlobal": 276.1666666666667,
+      "pLocal": 276.1666666666667,
+      "qGlobal": 0,
+      "qLocal": 0,
+      "proposals": 0,
+      "accepted": 0,
+      "blocks": 512,
+      "commits": 512,
+      "backwardLocal": 276.1666666666667,
+      "backwardGlobal": 244.83333333333334,
+      "backwardSeparate": 512,
+      "loss": -0.027058009325410404,
+      "accept": 0
+    },
+    {
+      "drift": 0.4,
+      "sharing": "common",
+      "method": "SDregional",
+      "global": 258,
+      "local": 294.1666666666667,
+      "pGlobal": 294.1666666666667,
+      "pLocal": 294.1666666666667,
+      "qGlobal": 294.1666666666667,
+      "qLocal": 294.1666666666667,
+      "proposals": 538.8333333333334,
+      "accepted": 455,
+      "blocks": 282.1666666666667,
+      "commits": 512,
+      "backwardLocal": 277.8333333333333,
+      "backwardGlobal": 243.66666666666666,
+      "backwardSeparate": 512,
+      "loss": -0.00913584633760564,
+      "accept": 0.8444169502010516
+    },
+    {
+      "drift": 0.4,
+      "sharing": "common",
+      "method": "SDshared",
+      "global": 275.3333333333333,
+      "local": 310.8333333333333,
+      "pGlobal": 310.8333333333333,
+      "pLocal": 310.8333333333333,
+      "qGlobal": 275.3333333333333,
+      "qLocal": 310.8333333333333,
+      "proposals": 565.3333333333334,
+      "accepted": 405,
+      "blocks": 303.1666666666667,
+      "commits": 512,
+      "backwardLocal": 276.3333333333333,
+      "backwardGlobal": 246.66666666666666,
+      "backwardSeparate": 512,
+      "loss": -0.013178374013528657,
+      "accept": 0.7163915094339622
+    },
+    {
+      "drift": 0.4,
+      "sharing": "private",
+      "method": "AR",
+      "global": 328.3333333333333,
+      "local": 328.3333333333333,
+      "pGlobal": 328.3333333333333,
+      "pLocal": 328.3333333333333,
+      "qGlobal": 0,
+      "qLocal": 0,
+      "proposals": 0,
+      "accepted": 0,
+      "blocks": 512,
+      "commits": 512,
+      "backwardLocal": 328.3333333333333,
+      "backwardGlobal": 328.3333333333333,
+      "backwardSeparate": 512,
+      "loss": -0.03876864169222855,
+      "accept": 0
+    },
+    {
+      "drift": 0.4,
+      "sharing": "private",
+      "method": "SDregional",
+      "global": 355,
+      "local": 355,
+      "pGlobal": 355,
+      "pLocal": 355,
+      "qGlobal": 355,
+      "qLocal": 355,
+      "proposals": 543.3333333333334,
+      "accepted": 449,
+      "blocks": 285.3333333333333,
+      "commits": 512,
+      "backwardLocal": 331.5,
+      "backwardGlobal": 331.5,
+      "backwardSeparate": 512,
+      "loss": -0.03077476662753111,
+      "accept": 0.8263803680981594
+    },
+    {
+      "drift": 0.4,
+      "sharing": "private",
+      "method": "SDshared",
+      "global": 373,
+      "local": 373,
+      "pGlobal": 373,
+      "pLocal": 373,
+      "qGlobal": 373,
+      "qLocal": 373,
+      "proposals": 565.3333333333334,
+      "accepted": 414,
+      "blocks": 303.6666666666667,
+      "commits": 512,
+      "backwardLocal": 330,
+      "backwardGlobal": 330,
+      "backwardSeparate": 512,
+      "loss": -0.031540861140123076,
+      "accept": 0.7323113207547169
+    }
+  ],
+  "rows": [
+    {
+      "wi": 0,
+      "seed": 11,
+      "drift": 0.02,
+      "sharing": "common",
+      "method": "AR",
+      "counts": {
+        "global": 250,
+        "local": 289,
+        "pGlobal": 289,
+        "pLocal": 289,
+        "qGlobal": 0,
+        "qLocal": 0,
+        "proposals": 0,
+        "accepted": 0,
+        "blocks": 512,
+        "commits": 512,
+        "backwardLocal": 289,
+        "backwardGlobal": 250,
+        "backwardSeparate": 512,
+        "loss": 0.04676908575761912
+      },
+      "rounds": [
+        {
+          "global": 62,
+          "local": 71,
+          "backwardGlobal": 62,
+          "backwardLocal": 71
+        },
+        {
+          "global": 54,
+          "local": 65,
+          "backwardGlobal": 54,
+          "backwardLocal": 65
+        },
+        {
+          "global": 74,
+          "local": 82,
+          "backwardGlobal": 74,
+          "backwardLocal": 82
+        },
+        {
+          "global": 60,
+          "local": 71,
+          "backwardGlobal": 60,
+          "backwardLocal": 71
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "drift": 0.02,
+      "sharing": "common",
+      "method": "SDregional",
+      "counts": {
+        "global": 288,
+        "local": 327,
+        "pGlobal": 327,
+        "pLocal": 327,
+        "qGlobal": 327,
+        "qLocal": 327,
+        "proposals": 535,
+        "accepted": 460,
+        "blocks": 279,
+        "commits": 512,
+        "backwardLocal": 309,
+        "backwardGlobal": 272,
+        "backwardSeparate": 512,
+        "loss": -0.00503773785575605
+      },
+      "rounds": [
+        {
+          "global": 68,
+          "local": 80,
+          "backwardGlobal": 67,
+          "backwardLocal": 78
+        },
+        {
+          "global": 65,
+          "local": 77,
+          "backwardGlobal": 63,
+          "backwardLocal": 75
+        },
+        {
+          "global": 85,
+          "local": 92,
+          "backwardGlobal": 80,
+          "backwardLocal": 86
+        },
+        {
+          "global": 70,
+          "local": 78,
+          "backwardGlobal": 62,
+          "backwardLocal": 70
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "drift": 0.02,
+      "sharing": "common",
+      "method": "SDshared",
+      "counts": {
+        "global": 251,
+        "local": 301,
+        "pGlobal": 301,
+        "pLocal": 301,
+        "qGlobal": 251,
+        "qLocal": 301,
+        "proposals": 534,
+        "accepted": 463,
+        "blocks": 276,
+        "commits": 512,
+        "backwardLocal": 284,
+        "backwardGlobal": 238,
+        "backwardSeparate": 512,
+        "loss": -0.017047175009232904
+      },
+      "rounds": [
+        {
+          "global": 59,
+          "local": 73,
+          "backwardGlobal": 54,
+          "backwardLocal": 68
+        },
+        {
+          "global": 52,
+          "local": 64,
+          "backwardGlobal": 51,
+          "backwardLocal": 61
+        },
+        {
+          "global": 76,
+          "local": 88,
+          "backwardGlobal": 73,
+          "backwardLocal": 83
+        },
+        {
+          "global": 64,
+          "local": 76,
+          "backwardGlobal": 60,
+          "backwardLocal": 72
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "drift": 0.02,
+      "sharing": "private",
+      "method": "AR",
+      "counts": {
+        "global": 345,
+        "local": 345,
+        "pGlobal": 345,
+        "pLocal": 345,
+        "qGlobal": 0,
+        "qLocal": 0,
+        "proposals": 0,
+        "accepted": 0,
+        "blocks": 512,
+        "commits": 512,
+        "backwardLocal": 345,
+        "backwardGlobal": 345,
+        "backwardSeparate": 512,
+        "loss": -0.013342352472740768
+      },
+      "rounds": [
+        {
+          "global": 90,
+          "local": 90,
+          "backwardGlobal": 90,
+          "backwardLocal": 90
+        },
+        {
+          "global": 87,
+          "local": 87,
+          "backwardGlobal": 87,
+          "backwardLocal": 87
+        },
+        {
+          "global": 86,
+          "local": 86,
+          "backwardGlobal": 86,
+          "backwardLocal": 86
+        },
+        {
+          "global": 82,
+          "local": 82,
+          "backwardGlobal": 82,
+          "backwardLocal": 82
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "drift": 0.02,
+      "sharing": "private",
+      "method": "SDregional",
+      "counts": {
+        "global": 359,
+        "local": 359,
+        "pGlobal": 359,
+        "pLocal": 359,
+        "qGlobal": 359,
+        "qLocal": 359,
+        "proposals": 533,
+        "accepted": 460,
+        "blocks": 276,
+        "commits": 512,
+        "backwardLocal": 341,
+        "backwardGlobal": 341,
+        "backwardSeparate": 512,
+        "loss": -0.041791428637125594
+      },
+      "rounds": [
+        {
+          "global": 89,
+          "local": 89,
+          "backwardGlobal": 84,
+          "backwardLocal": 84
+        },
+        {
+          "global": 85,
+          "local": 85,
+          "backwardGlobal": 84,
+          "backwardLocal": 84
+        },
+        {
+          "global": 94,
+          "local": 94,
+          "backwardGlobal": 87,
+          "backwardLocal": 87
+        },
+        {
+          "global": 91,
+          "local": 91,
+          "backwardGlobal": 86,
+          "backwardLocal": 86
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "drift": 0.02,
+      "sharing": "private",
+      "method": "SDshared",
+      "counts": {
+        "global": 360,
+        "local": 360,
+        "pGlobal": 360,
+        "pLocal": 360,
+        "qGlobal": 360,
+        "qLocal": 360,
+        "proposals": 545,
+        "accepted": 455,
+        "blocks": 289,
+        "commits": 512,
+        "backwardLocal": 340,
+        "backwardGlobal": 340,
+        "backwardSeparate": 512,
+        "loss": -0.016053332970830173
+      },
+      "rounds": [
+        {
+          "global": 90,
+          "local": 90,
+          "backwardGlobal": 88,
+          "backwardLocal": 88
+        },
+        {
+          "global": 90,
+          "local": 90,
+          "backwardGlobal": 85,
+          "backwardLocal": 85
+        },
+        {
+          "global": 92,
+          "local": 92,
+          "backwardGlobal": 86,
+          "backwardLocal": 86
+        },
+        {
+          "global": 88,
+          "local": 88,
+          "backwardGlobal": 81,
+          "backwardLocal": 81
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "drift": 0.1,
+      "sharing": "common",
+      "method": "AR",
+      "counts": {
+        "global": 237,
+        "local": 278,
+        "pGlobal": 278,
+        "pLocal": 278,
+        "qGlobal": 0,
+        "qLocal": 0,
+        "proposals": 0,
+        "accepted": 0,
+        "blocks": 512,
+        "commits": 512,
+        "backwardLocal": 278,
+        "backwardGlobal": 237,
+        "backwardSeparate": 512,
+        "loss": -0.012901649651195782
+      },
+      "rounds": [
+        {
+          "global": 61,
+          "local": 73,
+          "backwardGlobal": 61,
+          "backwardLocal": 73
+        },
+        {
+          "global": 46,
+          "local": 55,
+          "backwardGlobal": 46,
+          "backwardLocal": 55
+        },
+        {
+          "global": 71,
+          "local": 82,
+          "backwardGlobal": 71,
+          "backwardLocal": 82
+        },
+        {
+          "global": 59,
+          "local": 68,
+          "backwardGlobal": 59,
+          "backwardLocal": 68
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "drift": 0.1,
+      "sharing": "common",
+      "method": "SDregional",
+      "counts": {
+        "global": 256,
+        "local": 301,
+        "pGlobal": 301,
+        "pLocal": 301,
+        "qGlobal": 301,
+        "qLocal": 301,
+        "proposals": 532,
+        "accepted": 458,
+        "blocks": 275,
+        "commits": 512,
+        "backwardLocal": 288,
+        "backwardGlobal": 244,
+        "backwardSeparate": 512,
+        "loss": -0.03850571609043324
+      },
+      "rounds": [
+        {
+          "global": 68,
+          "local": 80,
+          "backwardGlobal": 64,
+          "backwardLocal": 76
+        },
+        {
+          "global": 56,
+          "local": 70,
+          "backwardGlobal": 55,
+          "backwardLocal": 69
+        },
+        {
+          "global": 78,
+          "local": 88,
+          "backwardGlobal": 72,
+          "backwardLocal": 82
+        },
+        {
+          "global": 54,
+          "local": 63,
+          "backwardGlobal": 53,
+          "backwardLocal": 61
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "drift": 0.1,
+      "sharing": "common",
+      "method": "SDshared",
+      "counts": {
+        "global": 267,
+        "local": 304,
+        "pGlobal": 304,
+        "pLocal": 304,
+        "qGlobal": 267,
+        "qLocal": 304,
+        "proposals": 548,
+        "accepted": 440,
+        "blocks": 292,
+        "commits": 512,
+        "backwardLocal": 278,
+        "backwardGlobal": 246,
+        "backwardSeparate": 512,
+        "loss": -0.030179835764997234
+      },
+      "rounds": [
+        {
+          "global": 64,
+          "local": 73,
+          "backwardGlobal": 55,
+          "backwardLocal": 64
+        },
+        {
+          "global": 60,
+          "local": 73,
+          "backwardGlobal": 57,
+          "backwardLocal": 66
+        },
+        {
+          "global": 80,
+          "local": 85,
+          "backwardGlobal": 74,
+          "backwardLocal": 79
+        },
+        {
+          "global": 63,
+          "local": 73,
+          "backwardGlobal": 60,
+          "backwardLocal": 69
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "drift": 0.1,
+      "sharing": "private",
+      "method": "AR",
+      "counts": {
+        "global": 342,
+        "local": 342,
+        "pGlobal": 342,
+        "pLocal": 342,
+        "qGlobal": 0,
+        "qLocal": 0,
+        "proposals": 0,
+        "accepted": 0,
+        "blocks": 512,
+        "commits": 512,
+        "backwardLocal": 342,
+        "backwardGlobal": 342,
+        "backwardSeparate": 512,
+        "loss": -0.0009661455267190727
+      },
+      "rounds": [
+        {
+          "global": 84,
+          "local": 84,
+          "backwardGlobal": 84,
+          "backwardLocal": 84
+        },
+        {
+          "global": 84,
+          "local": 84,
+          "backwardGlobal": 84,
+          "backwardLocal": 84
+        },
+        {
+          "global": 89,
+          "local": 89,
+          "backwardGlobal": 89,
+          "backwardLocal": 89
+        },
+        {
+          "global": 85,
+          "local": 85,
+          "backwardGlobal": 85,
+          "backwardLocal": 85
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "drift": 0.1,
+      "sharing": "private",
+      "method": "SDregional",
+      "counts": {
+        "global": 367,
+        "local": 367,
+        "pGlobal": 367,
+        "pLocal": 367,
+        "qGlobal": 367,
+        "qLocal": 367,
+        "proposals": 542,
+        "accepted": 459,
+        "blocks": 285,
+        "commits": 512,
+        "backwardLocal": 342,
+        "backwardGlobal": 342,
+        "backwardSeparate": 512,
+        "loss": 0.012485510114242664
+      },
+      "rounds": [
+        {
+          "global": 98,
+          "local": 98,
+          "backwardGlobal": 89,
+          "backwardLocal": 89
+        },
+        {
+          "global": 96,
+          "local": 96,
+          "backwardGlobal": 88,
+          "backwardLocal": 88
+        },
+        {
+          "global": 87,
+          "local": 87,
+          "backwardGlobal": 81,
+          "backwardLocal": 81
+        },
+        {
+          "global": 86,
+          "local": 86,
+          "backwardGlobal": 84,
+          "backwardLocal": 84
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "drift": 0.1,
+      "sharing": "private",
+      "method": "SDshared",
+      "counts": {
+        "global": 351,
+        "local": 351,
+        "pGlobal": 351,
+        "pLocal": 351,
+        "qGlobal": 351,
+        "qLocal": 351,
+        "proposals": 540,
+        "accepted": 458,
+        "blocks": 283,
+        "commits": 512,
+        "backwardLocal": 332,
+        "backwardGlobal": 332,
+        "backwardSeparate": 512,
+        "loss": -0.020154495901494374
+      },
+      "rounds": [
+        {
+          "global": 88,
+          "local": 88,
+          "backwardGlobal": 85,
+          "backwardLocal": 85
+        },
+        {
+          "global": 89,
+          "local": 89,
+          "backwardGlobal": 82,
+          "backwardLocal": 82
+        },
+        {
+          "global": 90,
+          "local": 90,
+          "backwardGlobal": 84,
+          "backwardLocal": 84
+        },
+        {
+          "global": 84,
+          "local": 84,
+          "backwardGlobal": 81,
+          "backwardLocal": 81
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "drift": 0.4,
+      "sharing": "common",
+      "method": "AR",
+      "counts": {
+        "global": 246,
+        "local": 281,
+        "pGlobal": 281,
+        "pLocal": 281,
+        "qGlobal": 0,
+        "qLocal": 0,
+        "proposals": 0,
+        "accepted": 0,
+        "blocks": 512,
+        "commits": 512,
+        "backwardLocal": 281,
+        "backwardGlobal": 246,
+        "backwardSeparate": 512,
+        "loss": -0.02530556452178019
+      },
+      "rounds": [
+        {
+          "global": 63,
+          "local": 72,
+          "backwardGlobal": 63,
+          "backwardLocal": 72
+        },
+        {
+          "global": 54,
+          "local": 68,
+          "backwardGlobal": 54,
+          "backwardLocal": 68
+        },
+        {
+          "global": 71,
+          "local": 77,
+          "backwardGlobal": 71,
+          "backwardLocal": 77
+        },
+        {
+          "global": 58,
+          "local": 64,
+          "backwardGlobal": 58,
+          "backwardLocal": 64
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "drift": 0.4,
+      "sharing": "common",
+      "method": "SDregional",
+      "counts": {
+        "global": 268,
+        "local": 302,
+        "pGlobal": 302,
+        "pLocal": 302,
+        "qGlobal": 302,
+        "qLocal": 302,
+        "proposals": 538,
+        "accepted": 462,
+        "blocks": 282,
+        "commits": 512,
+        "backwardLocal": 283,
+        "backwardGlobal": 251,
+        "backwardSeparate": 512,
+        "loss": 0.006274909663034447
+      },
+      "rounds": [
+        {
+          "global": 66,
+          "local": 74,
+          "backwardGlobal": 59,
+          "backwardLocal": 67
+        },
+        {
+          "global": 63,
+          "local": 70,
+          "backwardGlobal": 58,
+          "backwardLocal": 65
+        },
+        {
+          "global": 79,
+          "local": 88,
+          "backwardGlobal": 75,
+          "backwardLocal": 83
+        },
+        {
+          "global": 60,
+          "local": 70,
+          "backwardGlobal": 59,
+          "backwardLocal": 68
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "drift": 0.4,
+      "sharing": "common",
+      "method": "SDshared",
+      "counts": {
+        "global": 269,
+        "local": 300,
+        "pGlobal": 300,
+        "pLocal": 300,
+        "qGlobal": 269,
+        "qLocal": 300,
+        "proposals": 569,
+        "accepted": 394,
+        "blocks": 307,
+        "commits": 512,
+        "backwardLocal": 265,
+        "backwardGlobal": 237,
+        "backwardSeparate": 512,
+        "loss": 0.0001335767453675349
+      },
+      "rounds": [
+        {
+          "global": 74,
+          "local": 79,
+          "backwardGlobal": 65,
+          "backwardLocal": 70
+        },
+        {
+          "global": 58,
+          "local": 68,
+          "backwardGlobal": 52,
+          "backwardLocal": 60
+        },
+        {
+          "global": 77,
+          "local": 87,
+          "backwardGlobal": 68,
+          "backwardLocal": 77
+        },
+        {
+          "global": 60,
+          "local": 66,
+          "backwardGlobal": 52,
+          "backwardLocal": 58
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "drift": 0.4,
+      "sharing": "private",
+      "method": "AR",
+      "counts": {
+        "global": 332,
+        "local": 332,
+        "pGlobal": 332,
+        "pLocal": 332,
+        "qGlobal": 0,
+        "qLocal": 0,
+        "proposals": 0,
+        "accepted": 0,
+        "blocks": 512,
+        "commits": 512,
+        "backwardLocal": 332,
+        "backwardGlobal": 332,
+        "backwardSeparate": 512,
+        "loss": 0.010288331000034519
+      },
+      "rounds": [
+        {
+          "global": 87,
+          "local": 87,
+          "backwardGlobal": 87,
+          "backwardLocal": 87
+        },
+        {
+          "global": 80,
+          "local": 80,
+          "backwardGlobal": 80,
+          "backwardLocal": 80
+        },
+        {
+          "global": 81,
+          "local": 81,
+          "backwardGlobal": 81,
+          "backwardLocal": 81
+        },
+        {
+          "global": 84,
+          "local": 84,
+          "backwardGlobal": 84,
+          "backwardLocal": 84
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "drift": 0.4,
+      "sharing": "private",
+      "method": "SDregional",
+      "counts": {
+        "global": 361,
+        "local": 361,
+        "pGlobal": 361,
+        "pLocal": 361,
+        "qGlobal": 361,
+        "qLocal": 361,
+        "proposals": 554,
+        "accepted": 442,
+        "blocks": 296,
+        "commits": 512,
+        "backwardLocal": 334,
+        "backwardGlobal": 334,
+        "backwardSeparate": 512,
+        "loss": 0.04246960130926289
+      },
+      "rounds": [
+        {
+          "global": 93,
+          "local": 93,
+          "backwardGlobal": 84,
+          "backwardLocal": 84
+        },
+        {
+          "global": 88,
+          "local": 88,
+          "backwardGlobal": 84,
+          "backwardLocal": 84
+        },
+        {
+          "global": 93,
+          "local": 93,
+          "backwardGlobal": 85,
+          "backwardLocal": 85
+        },
+        {
+          "global": 87,
+          "local": 87,
+          "backwardGlobal": 81,
+          "backwardLocal": 81
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "drift": 0.4,
+      "sharing": "private",
+      "method": "SDshared",
+      "counts": {
+        "global": 377,
+        "local": 377,
+        "pGlobal": 377,
+        "pLocal": 377,
+        "qGlobal": 377,
+        "qLocal": 377,
+        "proposals": 571,
+        "accepted": 397,
+        "blocks": 312,
+        "commits": 512,
+        "backwardLocal": 327,
+        "backwardGlobal": 327,
+        "backwardSeparate": 512,
+        "loss": -0.02080850517374247
+      },
+      "rounds": [
+        {
+          "global": 93,
+          "local": 93,
+          "backwardGlobal": 84,
+          "backwardLocal": 84
+        },
+        {
+          "global": 94,
+          "local": 94,
+          "backwardGlobal": 78,
+          "backwardLocal": 78
+        },
+        {
+          "global": 94,
+          "local": 94,
+          "backwardGlobal": 80,
+          "backwardLocal": 80
+        },
+        {
+          "global": 96,
+          "local": 96,
+          "backwardGlobal": 85,
+          "backwardLocal": 85
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "drift": 0.02,
+      "sharing": "common",
+      "method": "AR",
+      "counts": {
+        "global": 245,
+        "local": 289,
+        "pGlobal": 289,
+        "pLocal": 289,
+        "qGlobal": 0,
+        "qLocal": 0,
+        "proposals": 0,
+        "accepted": 0,
+        "blocks": 512,
+        "commits": 512,
+        "backwardLocal": 289,
+        "backwardGlobal": 245,
+        "backwardSeparate": 512,
+        "loss": -0.029374881635227185
+      },
+      "rounds": [
+        {
+          "global": 67,
+          "local": 81,
+          "backwardGlobal": 67,
+          "backwardLocal": 81
+        },
+        {
+          "global": 56,
+          "local": 68,
+          "backwardGlobal": 56,
+          "backwardLocal": 68
+        },
+        {
+          "global": 63,
+          "local": 72,
+          "backwardGlobal": 63,
+          "backwardLocal": 72
+        },
+        {
+          "global": 59,
+          "local": 68,
+          "backwardGlobal": 59,
+          "backwardLocal": 68
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "drift": 0.02,
+      "sharing": "common",
+      "method": "SDregional",
+      "counts": {
+        "global": 262,
+        "local": 307,
+        "pGlobal": 307,
+        "pLocal": 307,
+        "qGlobal": 307,
+        "qLocal": 307,
+        "proposals": 531,
+        "accepted": 469,
+        "blocks": 275,
+        "commits": 512,
+        "backwardLocal": 293,
+        "backwardGlobal": 249,
+        "backwardSeparate": 512,
+        "loss": -0.048791101446155165
+      },
+      "rounds": [
+        {
+          "global": 75,
+          "local": 86,
+          "backwardGlobal": 69,
+          "backwardLocal": 79
+        },
+        {
+          "global": 63,
+          "local": 75,
+          "backwardGlobal": 62,
+          "backwardLocal": 74
+        },
+        {
+          "global": 63,
+          "local": 76,
+          "backwardGlobal": 60,
+          "backwardLocal": 73
+        },
+        {
+          "global": 61,
+          "local": 70,
+          "backwardGlobal": 58,
+          "backwardLocal": 67
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "drift": 0.02,
+      "sharing": "common",
+      "method": "SDshared",
+      "counts": {
+        "global": 255,
+        "local": 304,
+        "pGlobal": 304,
+        "pLocal": 304,
+        "qGlobal": 255,
+        "qLocal": 304,
+        "proposals": 539,
+        "accepted": 454,
+        "blocks": 281,
+        "commits": 512,
+        "backwardLocal": 291,
+        "backwardGlobal": 243,
+        "backwardSeparate": 512,
+        "loss": -0.027241518506744528
+      },
+      "rounds": [
+        {
+          "global": 72,
+          "local": 84,
+          "backwardGlobal": 67,
+          "backwardLocal": 79
+        },
+        {
+          "global": 63,
+          "local": 79,
+          "backwardGlobal": 58,
+          "backwardLocal": 74
+        },
+        {
+          "global": 66,
+          "local": 75,
+          "backwardGlobal": 65,
+          "backwardLocal": 73
+        },
+        {
+          "global": 54,
+          "local": 66,
+          "backwardGlobal": 53,
+          "backwardLocal": 65
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "drift": 0.02,
+      "sharing": "private",
+      "method": "AR",
+      "counts": {
+        "global": 352,
+        "local": 352,
+        "pGlobal": 352,
+        "pLocal": 352,
+        "qGlobal": 0,
+        "qLocal": 0,
+        "proposals": 0,
+        "accepted": 0,
+        "blocks": 512,
+        "commits": 512,
+        "backwardLocal": 352,
+        "backwardGlobal": 352,
+        "backwardSeparate": 512,
+        "loss": -0.05962336273055571
+      },
+      "rounds": [
+        {
+          "global": 91,
+          "local": 91,
+          "backwardGlobal": 91,
+          "backwardLocal": 91
+        },
+        {
+          "global": 84,
+          "local": 84,
+          "backwardGlobal": 84,
+          "backwardLocal": 84
+        },
+        {
+          "global": 87,
+          "local": 87,
+          "backwardGlobal": 87,
+          "backwardLocal": 87
+        },
+        {
+          "global": 90,
+          "local": 90,
+          "backwardGlobal": 90,
+          "backwardLocal": 90
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "drift": 0.02,
+      "sharing": "private",
+      "method": "SDregional",
+      "counts": {
+        "global": 359,
+        "local": 359,
+        "pGlobal": 359,
+        "pLocal": 359,
+        "qGlobal": 359,
+        "qLocal": 359,
+        "proposals": 537,
+        "accepted": 461,
+        "blocks": 279,
+        "commits": 512,
+        "backwardLocal": 341,
+        "backwardGlobal": 341,
+        "backwardSeparate": 512,
+        "loss": -0.0678982081293175
+      },
+      "rounds": [
+        {
+          "global": 91,
+          "local": 91,
+          "backwardGlobal": 85,
+          "backwardLocal": 85
+        },
+        {
+          "global": 85,
+          "local": 85,
+          "backwardGlobal": 82,
+          "backwardLocal": 82
+        },
+        {
+          "global": 90,
+          "local": 90,
+          "backwardGlobal": 86,
+          "backwardLocal": 86
+        },
+        {
+          "global": 93,
+          "local": 93,
+          "backwardGlobal": 88,
+          "backwardLocal": 88
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "drift": 0.02,
+      "sharing": "private",
+      "method": "SDshared",
+      "counts": {
+        "global": 365,
+        "local": 365,
+        "pGlobal": 365,
+        "pLocal": 365,
+        "qGlobal": 365,
+        "qLocal": 365,
+        "proposals": 542,
+        "accepted": 460,
+        "blocks": 285,
+        "commits": 512,
+        "backwardLocal": 344,
+        "backwardGlobal": 344,
+        "backwardSeparate": 512,
+        "loss": -0.010949942349453727
+      },
+      "rounds": [
+        {
+          "global": 93,
+          "local": 93,
+          "backwardGlobal": 88,
+          "backwardLocal": 88
+        },
+        {
+          "global": 90,
+          "local": 90,
+          "backwardGlobal": 84,
+          "backwardLocal": 84
+        },
+        {
+          "global": 89,
+          "local": 89,
+          "backwardGlobal": 85,
+          "backwardLocal": 85
+        },
+        {
+          "global": 93,
+          "local": 93,
+          "backwardGlobal": 87,
+          "backwardLocal": 87
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "drift": 0.1,
+      "sharing": "common",
+      "method": "AR",
+      "counts": {
+        "global": 248,
+        "local": 296,
+        "pGlobal": 296,
+        "pLocal": 296,
+        "qGlobal": 0,
+        "qLocal": 0,
+        "proposals": 0,
+        "accepted": 0,
+        "blocks": 512,
+        "commits": 512,
+        "backwardLocal": 296,
+        "backwardGlobal": 248,
+        "backwardSeparate": 512,
+        "loss": -0.045594701811005445
+      },
+      "rounds": [
+        {
+          "global": 70,
+          "local": 84,
+          "backwardGlobal": 70,
+          "backwardLocal": 84
+        },
+        {
+          "global": 62,
+          "local": 71,
+          "backwardGlobal": 62,
+          "backwardLocal": 71
+        },
+        {
+          "global": 62,
+          "local": 75,
+          "backwardGlobal": 62,
+          "backwardLocal": 75
+        },
+        {
+          "global": 54,
+          "local": 66,
+          "backwardGlobal": 54,
+          "backwardLocal": 66
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "drift": 0.1,
+      "sharing": "common",
+      "method": "SDregional",
+      "counts": {
+        "global": 266,
+        "local": 310,
+        "pGlobal": 310,
+        "pLocal": 310,
+        "qGlobal": 310,
+        "qLocal": 310,
+        "proposals": 542,
+        "accepted": 449,
+        "blocks": 283,
+        "commits": 512,
+        "backwardLocal": 288,
+        "backwardGlobal": 245,
+        "backwardSeparate": 512,
+        "loss": -0.01669241172264707
+      },
+      "rounds": [
+        {
+          "global": 77,
+          "local": 88,
+          "backwardGlobal": 71,
+          "backwardLocal": 82
+        },
+        {
+          "global": 69,
+          "local": 82,
+          "backwardGlobal": 62,
+          "backwardLocal": 74
+        },
+        {
+          "global": 60,
+          "local": 69,
+          "backwardGlobal": 55,
+          "backwardLocal": 64
+        },
+        {
+          "global": 60,
+          "local": 71,
+          "backwardGlobal": 57,
+          "backwardLocal": 68
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "drift": 0.1,
+      "sharing": "common",
+      "method": "SDshared",
+      "counts": {
+        "global": 246,
+        "local": 290,
+        "pGlobal": 290,
+        "pLocal": 290,
+        "qGlobal": 246,
+        "qLocal": 290,
+        "proposals": 545,
+        "accepted": 445,
+        "blocks": 287,
+        "commits": 512,
+        "backwardLocal": 274,
+        "backwardGlobal": 231,
+        "backwardSeparate": 512,
+        "loss": -0.018527709568968022
+      },
+      "rounds": [
+        {
+          "global": 72,
+          "local": 79,
+          "backwardGlobal": 65,
+          "backwardLocal": 72
+        },
+        {
+          "global": 66,
+          "local": 77,
+          "backwardGlobal": 62,
+          "backwardLocal": 73
+        },
+        {
+          "global": 62,
+          "local": 76,
+          "backwardGlobal": 61,
+          "backwardLocal": 74
+        },
+        {
+          "global": 46,
+          "local": 58,
+          "backwardGlobal": 43,
+          "backwardLocal": 55
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "drift": 0.1,
+      "sharing": "private",
+      "method": "AR",
+      "counts": {
+        "global": 340,
+        "local": 340,
+        "pGlobal": 340,
+        "pLocal": 340,
+        "qGlobal": 0,
+        "qLocal": 0,
+        "proposals": 0,
+        "accepted": 0,
+        "blocks": 512,
+        "commits": 512,
+        "backwardLocal": 340,
+        "backwardGlobal": 340,
+        "backwardSeparate": 512,
+        "loss": -0.04587275028096827
+      },
+      "rounds": [
+        {
+          "global": 82,
+          "local": 82,
+          "backwardGlobal": 82,
+          "backwardLocal": 82
+        },
+        {
+          "global": 86,
+          "local": 86,
+          "backwardGlobal": 86,
+          "backwardLocal": 86
+        },
+        {
+          "global": 88,
+          "local": 88,
+          "backwardGlobal": 88,
+          "backwardLocal": 88
+        },
+        {
+          "global": 84,
+          "local": 84,
+          "backwardGlobal": 84,
+          "backwardLocal": 84
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "drift": 0.1,
+      "sharing": "private",
+      "method": "SDregional",
+      "counts": {
+        "global": 353,
+        "local": 353,
+        "pGlobal": 353,
+        "pLocal": 353,
+        "qGlobal": 353,
+        "qLocal": 353,
+        "proposals": 531,
+        "accepted": 462,
+        "blocks": 275,
+        "commits": 512,
+        "backwardLocal": 338,
+        "backwardGlobal": 338,
+        "backwardSeparate": 512,
+        "loss": -0.03318129238795836
+      },
+      "rounds": [
+        {
+          "global": 93,
+          "local": 93,
+          "backwardGlobal": 88,
+          "backwardLocal": 88
+        },
+        {
+          "global": 90,
+          "local": 90,
+          "backwardGlobal": 86,
+          "backwardLocal": 86
+        },
+        {
+          "global": 85,
+          "local": 85,
+          "backwardGlobal": 81,
+          "backwardLocal": 81
+        },
+        {
+          "global": 85,
+          "local": 85,
+          "backwardGlobal": 83,
+          "backwardLocal": 83
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "drift": 0.1,
+      "sharing": "private",
+      "method": "SDshared",
+      "counts": {
+        "global": 370,
+        "local": 370,
+        "pGlobal": 370,
+        "pLocal": 370,
+        "qGlobal": 370,
+        "qLocal": 370,
+        "proposals": 545,
+        "accepted": 446,
+        "blocks": 288,
+        "commits": 512,
+        "backwardLocal": 344,
+        "backwardGlobal": 344,
+        "backwardSeparate": 512,
+        "loss": -0.1185375518488779
+      },
+      "rounds": [
+        {
+          "global": 97,
+          "local": 97,
+          "backwardGlobal": 91,
+          "backwardLocal": 91
+        },
+        {
+          "global": 96,
+          "local": 96,
+          "backwardGlobal": 87,
+          "backwardLocal": 87
+        },
+        {
+          "global": 92,
+          "local": 92,
+          "backwardGlobal": 86,
+          "backwardLocal": 86
+        },
+        {
+          "global": 85,
+          "local": 85,
+          "backwardGlobal": 80,
+          "backwardLocal": 80
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "drift": 0.4,
+      "sharing": "common",
+      "method": "AR",
+      "counts": {
+        "global": 261,
+        "local": 296,
+        "pGlobal": 296,
+        "pLocal": 296,
+        "qGlobal": 0,
+        "qLocal": 0,
+        "proposals": 0,
+        "accepted": 0,
+        "blocks": 512,
+        "commits": 512,
+        "backwardLocal": 296,
+        "backwardGlobal": 261,
+        "backwardSeparate": 512,
+        "loss": -0.019020335505912738
+      },
+      "rounds": [
+        {
+          "global": 74,
+          "local": 82,
+          "backwardGlobal": 74,
+          "backwardLocal": 82
+        },
+        {
+          "global": 72,
+          "local": 78,
+          "backwardGlobal": 72,
+          "backwardLocal": 78
+        },
+        {
+          "global": 65,
+          "local": 72,
+          "backwardGlobal": 65,
+          "backwardLocal": 72
+        },
+        {
+          "global": 50,
+          "local": 64,
+          "backwardGlobal": 50,
+          "backwardLocal": 64
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "drift": 0.4,
+      "sharing": "common",
+      "method": "SDregional",
+      "counts": {
+        "global": 274,
+        "local": 309,
+        "pGlobal": 309,
+        "pLocal": 309,
+        "qGlobal": 309,
+        "qLocal": 309,
+        "proposals": 543,
+        "accepted": 447,
+        "blocks": 287,
+        "commits": 512,
+        "backwardLocal": 292,
+        "backwardGlobal": 258,
+        "backwardSeparate": 512,
+        "loss": -0.002654341748391688
+      },
+      "rounds": [
+        {
+          "global": 76,
+          "local": 83,
+          "backwardGlobal": 72,
+          "backwardLocal": 78
+        },
+        {
+          "global": 73,
+          "local": 83,
+          "backwardGlobal": 68,
+          "backwardLocal": 78
+        },
+        {
+          "global": 68,
+          "local": 77,
+          "backwardGlobal": 65,
+          "backwardLocal": 74
+        },
+        {
+          "global": 57,
+          "local": 66,
+          "backwardGlobal": 53,
+          "backwardLocal": 62
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "drift": 0.4,
+      "sharing": "common",
+      "method": "SDshared",
+      "counts": {
+        "global": 275,
+        "local": 309,
+        "pGlobal": 309,
+        "pLocal": 309,
+        "qGlobal": 275,
+        "qLocal": 309,
+        "proposals": 551,
+        "accepted": 428,
+        "blocks": 293,
+        "commits": 512,
+        "backwardLocal": 282,
+        "backwardGlobal": 251,
+        "backwardSeparate": 512,
+        "loss": 0.014417537538263157
+      },
+      "rounds": [
+        {
+          "global": 79,
+          "local": 85,
+          "backwardGlobal": 70,
+          "backwardLocal": 76
+        },
+        {
+          "global": 74,
+          "local": 86,
+          "backwardGlobal": 67,
+          "backwardLocal": 77
+        },
+        {
+          "global": 69,
+          "local": 74,
+          "backwardGlobal": 65,
+          "backwardLocal": 70
+        },
+        {
+          "global": 53,
+          "local": 64,
+          "backwardGlobal": 49,
+          "backwardLocal": 59
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "drift": 0.4,
+      "sharing": "private",
+      "method": "AR",
+      "counts": {
+        "global": 324,
+        "local": 324,
+        "pGlobal": 324,
+        "pLocal": 324,
+        "qGlobal": 0,
+        "qLocal": 0,
+        "proposals": 0,
+        "accepted": 0,
+        "blocks": 512,
+        "commits": 512,
+        "backwardLocal": 324,
+        "backwardGlobal": 324,
+        "backwardSeparate": 512,
+        "loss": -0.018312123366624813
+      },
+      "rounds": [
+        {
+          "global": 74,
+          "local": 74,
+          "backwardGlobal": 74,
+          "backwardLocal": 74
+        },
+        {
+          "global": 86,
+          "local": 86,
+          "backwardGlobal": 86,
+          "backwardLocal": 86
+        },
+        {
+          "global": 88,
+          "local": 88,
+          "backwardGlobal": 88,
+          "backwardLocal": 88
+        },
+        {
+          "global": 76,
+          "local": 76,
+          "backwardGlobal": 76,
+          "backwardLocal": 76
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "drift": 0.4,
+      "sharing": "private",
+      "method": "SDregional",
+      "counts": {
+        "global": 366,
+        "local": 366,
+        "pGlobal": 366,
+        "pLocal": 366,
+        "qGlobal": 366,
+        "qLocal": 366,
+        "proposals": 551,
+        "accepted": 443,
+        "blocks": 293,
+        "commits": 512,
+        "backwardLocal": 338,
+        "backwardGlobal": 338,
+        "backwardSeparate": 512,
+        "loss": -0.03201680866854444
+      },
+      "rounds": [
+        {
+          "global": 97,
+          "local": 97,
+          "backwardGlobal": 88,
+          "backwardLocal": 88
+        },
+        {
+          "global": 94,
+          "local": 94,
+          "backwardGlobal": 86,
+          "backwardLocal": 86
+        },
+        {
+          "global": 90,
+          "local": 90,
+          "backwardGlobal": 86,
+          "backwardLocal": 86
+        },
+        {
+          "global": 85,
+          "local": 85,
+          "backwardGlobal": 78,
+          "backwardLocal": 78
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "drift": 0.4,
+      "sharing": "private",
+      "method": "SDshared",
+      "counts": {
+        "global": 378,
+        "local": 378,
+        "pGlobal": 378,
+        "pLocal": 378,
+        "qGlobal": 378,
+        "qLocal": 378,
+        "proposals": 559,
+        "accepted": 433,
+        "blocks": 299,
+        "commits": 512,
+        "backwardLocal": 339,
+        "backwardGlobal": 339,
+        "backwardSeparate": 512,
+        "loss": -0.027643497300320508
+      },
+      "rounds": [
+        {
+          "global": 97,
+          "local": 97,
+          "backwardGlobal": 85,
+          "backwardLocal": 85
+        },
+        {
+          "global": 99,
+          "local": 99,
+          "backwardGlobal": 88,
+          "backwardLocal": 88
+        },
+        {
+          "global": 94,
+          "local": 94,
+          "backwardGlobal": 83,
+          "backwardLocal": 83
+        },
+        {
+          "global": 88,
+          "local": 88,
+          "backwardGlobal": 83,
+          "backwardLocal": 83
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "drift": 0.02,
+      "sharing": "common",
+      "method": "AR",
+      "counts": {
+        "global": 275,
+        "local": 319,
+        "pGlobal": 319,
+        "pLocal": 319,
+        "qGlobal": 0,
+        "qLocal": 0,
+        "proposals": 0,
+        "accepted": 0,
+        "blocks": 512,
+        "commits": 512,
+        "backwardLocal": 319,
+        "backwardGlobal": 275,
+        "backwardSeparate": 512,
+        "loss": -0.017170998293241008
+      },
+      "rounds": [
+        {
+          "global": 66,
+          "local": 79,
+          "backwardGlobal": 66,
+          "backwardLocal": 79
+        },
+        {
+          "global": 69,
+          "local": 78,
+          "backwardGlobal": 69,
+          "backwardLocal": 78
+        },
+        {
+          "global": 74,
+          "local": 86,
+          "backwardGlobal": 74,
+          "backwardLocal": 86
+        },
+        {
+          "global": 66,
+          "local": 76,
+          "backwardGlobal": 66,
+          "backwardLocal": 76
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "drift": 0.02,
+      "sharing": "common",
+      "method": "SDregional",
+      "counts": {
+        "global": 296,
+        "local": 339,
+        "pGlobal": 339,
+        "pLocal": 339,
+        "qGlobal": 339,
+        "qLocal": 339,
+        "proposals": 546,
+        "accepted": 452,
+        "blocks": 289,
+        "commits": 512,
+        "backwardLocal": 317,
+        "backwardGlobal": 276,
+        "backwardSeparate": 512,
+        "loss": -0.0165931367377095
+      },
+      "rounds": [
+        {
+          "global": 65,
+          "local": 79,
+          "backwardGlobal": 61,
+          "backwardLocal": 75
+        },
+        {
+          "global": 66,
+          "local": 75,
+          "backwardGlobal": 63,
+          "backwardLocal": 72
+        },
+        {
+          "global": 88,
+          "local": 95,
+          "backwardGlobal": 79,
+          "backwardLocal": 84
+        },
+        {
+          "global": 77,
+          "local": 90,
+          "backwardGlobal": 73,
+          "backwardLocal": 86
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "drift": 0.02,
+      "sharing": "common",
+      "method": "SDshared",
+      "counts": {
+        "global": 288,
+        "local": 325,
+        "pGlobal": 325,
+        "pLocal": 325,
+        "qGlobal": 288,
+        "qLocal": 325,
+        "proposals": 552,
+        "accepted": 441,
+        "blocks": 293,
+        "commits": 512,
+        "backwardLocal": 301,
+        "backwardGlobal": 265,
+        "backwardSeparate": 512,
+        "loss": 0.03005878077861099
+      },
+      "rounds": [
+        {
+          "global": 56,
+          "local": 68,
+          "backwardGlobal": 51,
+          "backwardLocal": 63
+        },
+        {
+          "global": 72,
+          "local": 82,
+          "backwardGlobal": 63,
+          "backwardLocal": 73
+        },
+        {
+          "global": 80,
+          "local": 86,
+          "backwardGlobal": 75,
+          "backwardLocal": 80
+        },
+        {
+          "global": 80,
+          "local": 89,
+          "backwardGlobal": 76,
+          "backwardLocal": 85
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "drift": 0.02,
+      "sharing": "private",
+      "method": "AR",
+      "counts": {
+        "global": 356,
+        "local": 356,
+        "pGlobal": 356,
+        "pLocal": 356,
+        "qGlobal": 0,
+        "qLocal": 0,
+        "proposals": 0,
+        "accepted": 0,
+        "blocks": 512,
+        "commits": 512,
+        "backwardLocal": 356,
+        "backwardGlobal": 356,
+        "backwardSeparate": 512,
+        "loss": -0.0491945112929212
+      },
+      "rounds": [
+        {
+          "global": 95,
+          "local": 95,
+          "backwardGlobal": 95,
+          "backwardLocal": 95
+        },
+        {
+          "global": 86,
+          "local": 86,
+          "backwardGlobal": 86,
+          "backwardLocal": 86
+        },
+        {
+          "global": 92,
+          "local": 92,
+          "backwardGlobal": 92,
+          "backwardLocal": 92
+        },
+        {
+          "global": 83,
+          "local": 83,
+          "backwardGlobal": 83,
+          "backwardLocal": 83
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "drift": 0.02,
+      "sharing": "private",
+      "method": "SDregional",
+      "counts": {
+        "global": 369,
+        "local": 369,
+        "pGlobal": 369,
+        "pLocal": 369,
+        "qGlobal": 369,
+        "qLocal": 369,
+        "proposals": 539,
+        "accepted": 461,
+        "blocks": 282,
+        "commits": 512,
+        "backwardLocal": 353,
+        "backwardGlobal": 353,
+        "backwardSeparate": 512,
+        "loss": -0.027619471489414356
+      },
+      "rounds": [
+        {
+          "global": 93,
+          "local": 93,
+          "backwardGlobal": 88,
+          "backwardLocal": 88
+        },
+        {
+          "global": 89,
+          "local": 89,
+          "backwardGlobal": 86,
+          "backwardLocal": 86
+        },
+        {
+          "global": 97,
+          "local": 97,
+          "backwardGlobal": 91,
+          "backwardLocal": 91
+        },
+        {
+          "global": 90,
+          "local": 90,
+          "backwardGlobal": 88,
+          "backwardLocal": 88
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "drift": 0.02,
+      "sharing": "private",
+      "method": "SDshared",
+      "counts": {
+        "global": 372,
+        "local": 372,
+        "pGlobal": 372,
+        "pLocal": 372,
+        "qGlobal": 372,
+        "qLocal": 372,
+        "proposals": 542,
+        "accepted": 456,
+        "blocks": 285,
+        "commits": 512,
+        "backwardLocal": 349,
+        "backwardGlobal": 349,
+        "backwardSeparate": 512,
+        "loss": -0.05917934608770295
+      },
+      "rounds": [
+        {
+          "global": 92,
+          "local": 92,
+          "backwardGlobal": 87,
+          "backwardLocal": 87
+        },
+        {
+          "global": 99,
+          "local": 99,
+          "backwardGlobal": 93,
+          "backwardLocal": 93
+        },
+        {
+          "global": 87,
+          "local": 87,
+          "backwardGlobal": 84,
+          "backwardLocal": 84
+        },
+        {
+          "global": 94,
+          "local": 94,
+          "backwardGlobal": 85,
+          "backwardLocal": 85
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "drift": 0.1,
+      "sharing": "common",
+      "method": "AR",
+      "counts": {
+        "global": 254,
+        "local": 296,
+        "pGlobal": 296,
+        "pLocal": 296,
+        "qGlobal": 0,
+        "qLocal": 0,
+        "proposals": 0,
+        "accepted": 0,
+        "blocks": 512,
+        "commits": 512,
+        "backwardLocal": 296,
+        "backwardGlobal": 254,
+        "backwardSeparate": 512,
+        "loss": 0.05341310336213605
+      },
+      "rounds": [
+        {
+          "global": 59,
+          "local": 72,
+          "backwardGlobal": 59,
+          "backwardLocal": 72
+        },
+        {
+          "global": 67,
+          "local": 75,
+          "backwardGlobal": 67,
+          "backwardLocal": 75
+        },
+        {
+          "global": 62,
+          "local": 72,
+          "backwardGlobal": 62,
+          "backwardLocal": 72
+        },
+        {
+          "global": 66,
+          "local": 77,
+          "backwardGlobal": 66,
+          "backwardLocal": 77
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "drift": 0.1,
+      "sharing": "common",
+      "method": "SDregional",
+      "counts": {
+        "global": 286,
+        "local": 328,
+        "pGlobal": 328,
+        "pLocal": 328,
+        "qGlobal": 328,
+        "qLocal": 328,
+        "proposals": 540,
+        "accepted": 456,
+        "blocks": 283,
+        "commits": 512,
+        "backwardLocal": 309,
+        "backwardGlobal": 267,
+        "backwardSeparate": 512,
+        "loss": 0.014490671776432502
+      },
+      "rounds": [
+        {
+          "global": 69,
+          "local": 80,
+          "backwardGlobal": 66,
+          "backwardLocal": 77
+        },
+        {
+          "global": 67,
+          "local": 73,
+          "backwardGlobal": 61,
+          "backwardLocal": 67
+        },
+        {
+          "global": 78,
+          "local": 91,
+          "backwardGlobal": 71,
+          "backwardLocal": 84
+        },
+        {
+          "global": 72,
+          "local": 84,
+          "backwardGlobal": 69,
+          "backwardLocal": 81
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "drift": 0.1,
+      "sharing": "common",
+      "method": "SDshared",
+      "counts": {
+        "global": 283,
+        "local": 326,
+        "pGlobal": 326,
+        "pLocal": 326,
+        "qGlobal": 283,
+        "qLocal": 326,
+        "proposals": 563,
+        "accepted": 407,
+        "blocks": 298,
+        "commits": 512,
+        "backwardLocal": 297,
+        "backwardGlobal": 260,
+        "backwardSeparate": 512,
+        "loss": 0.0037678831371389665
+      },
+      "rounds": [
+        {
+          "global": 69,
+          "local": 77,
+          "backwardGlobal": 61,
+          "backwardLocal": 69
+        },
+        {
+          "global": 66,
+          "local": 75,
+          "backwardGlobal": 59,
+          "backwardLocal": 66
+        },
+        {
+          "global": 73,
+          "local": 86,
+          "backwardGlobal": 67,
+          "backwardLocal": 77
+        },
+        {
+          "global": 75,
+          "local": 88,
+          "backwardGlobal": 73,
+          "backwardLocal": 85
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "drift": 0.1,
+      "sharing": "private",
+      "method": "AR",
+      "counts": {
+        "global": 345,
+        "local": 345,
+        "pGlobal": 345,
+        "pLocal": 345,
+        "qGlobal": 0,
+        "qLocal": 0,
+        "proposals": 0,
+        "accepted": 0,
+        "blocks": 512,
+        "commits": 512,
+        "backwardLocal": 345,
+        "backwardGlobal": 345,
+        "backwardSeparate": 512,
+        "loss": -0.015650826590696842
+      },
+      "rounds": [
+        {
+          "global": 86,
+          "local": 86,
+          "backwardGlobal": 86,
+          "backwardLocal": 86
+        },
+        {
+          "global": 92,
+          "local": 92,
+          "backwardGlobal": 92,
+          "backwardLocal": 92
+        },
+        {
+          "global": 92,
+          "local": 92,
+          "backwardGlobal": 92,
+          "backwardLocal": 92
+        },
+        {
+          "global": 75,
+          "local": 75,
+          "backwardGlobal": 75,
+          "backwardLocal": 75
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "drift": 0.1,
+      "sharing": "private",
+      "method": "SDregional",
+      "counts": {
+        "global": 378,
+        "local": 378,
+        "pGlobal": 378,
+        "pLocal": 378,
+        "qGlobal": 378,
+        "qLocal": 378,
+        "proposals": 554,
+        "accepted": 441,
+        "blocks": 296,
+        "commits": 512,
+        "backwardLocal": 342,
+        "backwardGlobal": 342,
+        "backwardSeparate": 512,
+        "loss": -0.05584864318621424
+      },
+      "rounds": [
+        {
+          "global": 102,
+          "local": 102,
+          "backwardGlobal": 89,
+          "backwardLocal": 89
+        },
+        {
+          "global": 94,
+          "local": 94,
+          "backwardGlobal": 89,
+          "backwardLocal": 89
+        },
+        {
+          "global": 97,
+          "local": 97,
+          "backwardGlobal": 85,
+          "backwardLocal": 85
+        },
+        {
+          "global": 85,
+          "local": 85,
+          "backwardGlobal": 79,
+          "backwardLocal": 79
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "drift": 0.1,
+      "sharing": "private",
+      "method": "SDshared",
+      "counts": {
+        "global": 378,
+        "local": 378,
+        "pGlobal": 378,
+        "pLocal": 378,
+        "qGlobal": 378,
+        "qLocal": 378,
+        "proposals": 556,
+        "accepted": 429,
+        "blocks": 297,
+        "commits": 512,
+        "backwardLocal": 350,
+        "backwardGlobal": 350,
+        "backwardSeparate": 512,
+        "loss": -0.09101181330330665
+      },
+      "rounds": [
+        {
+          "global": 99,
+          "local": 99,
+          "backwardGlobal": 89,
+          "backwardLocal": 89
+        },
+        {
+          "global": 95,
+          "local": 95,
+          "backwardGlobal": 89,
+          "backwardLocal": 89
+        },
+        {
+          "global": 94,
+          "local": 94,
+          "backwardGlobal": 87,
+          "backwardLocal": 87
+        },
+        {
+          "global": 90,
+          "local": 90,
+          "backwardGlobal": 85,
+          "backwardLocal": 85
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "drift": 0.4,
+      "sharing": "common",
+      "method": "AR",
+      "counts": {
+        "global": 256,
+        "local": 284,
+        "pGlobal": 284,
+        "pLocal": 284,
+        "qGlobal": 0,
+        "qLocal": 0,
+        "proposals": 0,
+        "accepted": 0,
+        "blocks": 512,
+        "commits": 512,
+        "backwardLocal": 284,
+        "backwardGlobal": 256,
+        "backwardSeparate": 512,
+        "loss": -0.021609359398758736
+      },
+      "rounds": [
+        {
+          "global": 63,
+          "local": 71,
+          "backwardGlobal": 63,
+          "backwardLocal": 71
+        },
+        {
+          "global": 59,
+          "local": 65,
+          "backwardGlobal": 59,
+          "backwardLocal": 65
+        },
+        {
+          "global": 65,
+          "local": 71,
+          "backwardGlobal": 65,
+          "backwardLocal": 71
+        },
+        {
+          "global": 69,
+          "local": 77,
+          "backwardGlobal": 69,
+          "backwardLocal": 77
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "drift": 0.4,
+      "sharing": "common",
+      "method": "SDregional",
+      "counts": {
+        "global": 272,
+        "local": 299,
+        "pGlobal": 299,
+        "pLocal": 299,
+        "qGlobal": 299,
+        "qLocal": 299,
+        "proposals": 535,
+        "accepted": 458,
+        "blocks": 278,
+        "commits": 512,
+        "backwardLocal": 285,
+        "backwardGlobal": 261,
+        "backwardSeparate": 512,
+        "loss": 0.0017406752555984544
+      },
+      "rounds": [
+        {
+          "global": 61,
+          "local": 69,
+          "backwardGlobal": 60,
+          "backwardLocal": 67
+        },
+        {
+          "global": 72,
+          "local": 76,
+          "backwardGlobal": 68,
+          "backwardLocal": 72
+        },
+        {
+          "global": 73,
+          "local": 79,
+          "backwardGlobal": 69,
+          "backwardLocal": 74
+        },
+        {
+          "global": 66,
+          "local": 75,
+          "backwardGlobal": 64,
+          "backwardLocal": 72
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "drift": 0.4,
+      "sharing": "common",
+      "method": "SDshared",
+      "counts": {
+        "global": 279,
+        "local": 315,
+        "pGlobal": 315,
+        "pLocal": 315,
+        "qGlobal": 279,
+        "qLocal": 315,
+        "proposals": 577,
+        "accepted": 407,
+        "blocks": 309,
+        "commits": 512,
+        "backwardLocal": 277,
+        "backwardGlobal": 249,
+        "backwardSeparate": 512,
+        "loss": 0.000840659510020627
+      },
+      "rounds": [
+        {
+          "global": 65,
+          "local": 74,
+          "backwardGlobal": 57,
+          "backwardLocal": 64
+        },
+        {
+          "global": 64,
+          "local": 70,
+          "backwardGlobal": 58,
+          "backwardLocal": 63
+        },
+        {
+          "global": 76,
+          "local": 88,
+          "backwardGlobal": 69,
+          "backwardLocal": 77
+        },
+        {
+          "global": 74,
+          "local": 83,
+          "backwardGlobal": 65,
+          "backwardLocal": 73
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "drift": 0.4,
+      "sharing": "private",
+      "method": "AR",
+      "counts": {
+        "global": 330,
+        "local": 330,
+        "pGlobal": 330,
+        "pLocal": 330,
+        "qGlobal": 0,
+        "qLocal": 0,
+        "proposals": 0,
+        "accepted": 0,
+        "blocks": 512,
+        "commits": 512,
+        "backwardLocal": 330,
+        "backwardGlobal": 330,
+        "backwardSeparate": 512,
+        "loss": -0.053015564334554496
+      },
+      "rounds": [
+        {
+          "global": 80,
+          "local": 80,
+          "backwardGlobal": 80,
+          "backwardLocal": 80
+        },
+        {
+          "global": 83,
+          "local": 83,
+          "backwardGlobal": 83,
+          "backwardLocal": 83
+        },
+        {
+          "global": 87,
+          "local": 87,
+          "backwardGlobal": 87,
+          "backwardLocal": 87
+        },
+        {
+          "global": 80,
+          "local": 80,
+          "backwardGlobal": 80,
+          "backwardLocal": 80
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "drift": 0.4,
+      "sharing": "private",
+      "method": "SDregional",
+      "counts": {
+        "global": 364,
+        "local": 364,
+        "pGlobal": 364,
+        "pLocal": 364,
+        "qGlobal": 364,
+        "qLocal": 364,
+        "proposals": 539,
+        "accepted": 449,
+        "blocks": 282,
+        "commits": 512,
+        "backwardLocal": 344,
+        "backwardGlobal": 344,
+        "backwardSeparate": 512,
+        "loss": -0.028339865878489752
+      },
+      "rounds": [
+        {
+          "global": 93,
+          "local": 93,
+          "backwardGlobal": 87,
+          "backwardLocal": 87
+        },
+        {
+          "global": 90,
+          "local": 90,
+          "backwardGlobal": 85,
+          "backwardLocal": 85
+        },
+        {
+          "global": 94,
+          "local": 94,
+          "backwardGlobal": 90,
+          "backwardLocal": 90
+        },
+        {
+          "global": 87,
+          "local": 87,
+          "backwardGlobal": 82,
+          "backwardLocal": 82
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "drift": 0.4,
+      "sharing": "private",
+      "method": "SDshared",
+      "counts": {
+        "global": 376,
+        "local": 376,
+        "pGlobal": 376,
+        "pLocal": 376,
+        "qGlobal": 376,
+        "qLocal": 376,
+        "proposals": 580,
+        "accepted": 405,
+        "blocks": 314,
+        "commits": 512,
+        "backwardLocal": 327,
+        "backwardGlobal": 327,
+        "backwardSeparate": 512,
+        "loss": -0.02465120031278009
+      },
+      "rounds": [
+        {
+          "global": 96,
+          "local": 96,
+          "backwardGlobal": 83,
+          "backwardLocal": 83
+        },
+        {
+          "global": 84,
+          "local": 84,
+          "backwardGlobal": 76,
+          "backwardLocal": 76
+        },
+        {
+          "global": 96,
+          "local": 96,
+          "backwardGlobal": 82,
+          "backwardLocal": 82
+        },
+        {
+          "global": 100,
+          "local": 100,
+          "backwardGlobal": 86,
+          "backwardLocal": 86
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "drift": 0.02,
+      "sharing": "common",
+      "method": "AR",
+      "counts": {
+        "global": 252,
+        "local": 291,
+        "pGlobal": 291,
+        "pLocal": 291,
+        "qGlobal": 0,
+        "qLocal": 0,
+        "proposals": 0,
+        "accepted": 0,
+        "blocks": 512,
+        "commits": 512,
+        "backwardLocal": 291,
+        "backwardGlobal": 252,
+        "backwardSeparate": 512,
+        "loss": -0.033535577754457285
+      },
+      "rounds": [
+        {
+          "global": 58,
+          "local": 70,
+          "backwardGlobal": 58,
+          "backwardLocal": 70
+        },
+        {
+          "global": 59,
+          "local": 67,
+          "backwardGlobal": 59,
+          "backwardLocal": 67
+        },
+        {
+          "global": 77,
+          "local": 87,
+          "backwardGlobal": 77,
+          "backwardLocal": 87
+        },
+        {
+          "global": 58,
+          "local": 67,
+          "backwardGlobal": 58,
+          "backwardLocal": 67
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "drift": 0.02,
+      "sharing": "common",
+      "method": "SDregional",
+      "counts": {
+        "global": 257,
+        "local": 305,
+        "pGlobal": 305,
+        "pLocal": 305,
+        "qGlobal": 305,
+        "qLocal": 305,
+        "proposals": 531,
+        "accepted": 470,
+        "blocks": 275,
+        "commits": 512,
+        "backwardLocal": 290,
+        "backwardGlobal": 246,
+        "backwardSeparate": 512,
+        "loss": -0.0015458047392485161
+      },
+      "rounds": [
+        {
+          "global": 58,
+          "local": 68,
+          "backwardGlobal": 56,
+          "backwardLocal": 66
+        },
+        {
+          "global": 55,
+          "local": 69,
+          "backwardGlobal": 53,
+          "backwardLocal": 66
+        },
+        {
+          "global": 72,
+          "local": 85,
+          "backwardGlobal": 68,
+          "backwardLocal": 79
+        },
+        {
+          "global": 72,
+          "local": 83,
+          "backwardGlobal": 69,
+          "backwardLocal": 79
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "drift": 0.02,
+      "sharing": "common",
+      "method": "SDshared",
+      "counts": {
+        "global": 260,
+        "local": 299,
+        "pGlobal": 299,
+        "pLocal": 299,
+        "qGlobal": 260,
+        "qLocal": 299,
+        "proposals": 529,
+        "accepted": 466,
+        "blocks": 272,
+        "commits": 512,
+        "backwardLocal": 286,
+        "backwardGlobal": 250,
+        "backwardSeparate": 512,
+        "loss": -0.011614507506998087
+      },
+      "rounds": [
+        {
+          "global": 56,
+          "local": 69,
+          "backwardGlobal": 55,
+          "backwardLocal": 67
+        },
+        {
+          "global": 59,
+          "local": 67,
+          "backwardGlobal": 56,
+          "backwardLocal": 64
+        },
+        {
+          "global": 75,
+          "local": 80,
+          "backwardGlobal": 74,
+          "backwardLocal": 78
+        },
+        {
+          "global": 70,
+          "local": 83,
+          "backwardGlobal": 65,
+          "backwardLocal": 77
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "drift": 0.02,
+      "sharing": "private",
+      "method": "AR",
+      "counts": {
+        "global": 341,
+        "local": 341,
+        "pGlobal": 341,
+        "pLocal": 341,
+        "qGlobal": 0,
+        "qLocal": 0,
+        "proposals": 0,
+        "accepted": 0,
+        "blocks": 512,
+        "commits": 512,
+        "backwardLocal": 341,
+        "backwardGlobal": 341,
+        "backwardSeparate": 512,
+        "loss": -0.008681163703738698
+      },
+      "rounds": [
+        {
+          "global": 86,
+          "local": 86,
+          "backwardGlobal": 86,
+          "backwardLocal": 86
+        },
+        {
+          "global": 86,
+          "local": 86,
+          "backwardGlobal": 86,
+          "backwardLocal": 86
+        },
+        {
+          "global": 87,
+          "local": 87,
+          "backwardGlobal": 87,
+          "backwardLocal": 87
+        },
+        {
+          "global": 82,
+          "local": 82,
+          "backwardGlobal": 82,
+          "backwardLocal": 82
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "drift": 0.02,
+      "sharing": "private",
+      "method": "SDregional",
+      "counts": {
+        "global": 363,
+        "local": 363,
+        "pGlobal": 363,
+        "pLocal": 363,
+        "qGlobal": 363,
+        "qLocal": 363,
+        "proposals": 536,
+        "accepted": 462,
+        "blocks": 277,
+        "commits": 512,
+        "backwardLocal": 346,
+        "backwardGlobal": 346,
+        "backwardSeparate": 512,
+        "loss": -0.028112614050453073
+      },
+      "rounds": [
+        {
+          "global": 90,
+          "local": 90,
+          "backwardGlobal": 87,
+          "backwardLocal": 87
+        },
+        {
+          "global": 85,
+          "local": 85,
+          "backwardGlobal": 83,
+          "backwardLocal": 83
+        },
+        {
+          "global": 93,
+          "local": 93,
+          "backwardGlobal": 88,
+          "backwardLocal": 88
+        },
+        {
+          "global": 95,
+          "local": 95,
+          "backwardGlobal": 88,
+          "backwardLocal": 88
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "drift": 0.02,
+      "sharing": "private",
+      "method": "SDshared",
+      "counts": {
+        "global": 359,
+        "local": 359,
+        "pGlobal": 359,
+        "pLocal": 359,
+        "qGlobal": 359,
+        "qLocal": 359,
+        "proposals": 533,
+        "accepted": 468,
+        "blocks": 275,
+        "commits": 512,
+        "backwardLocal": 344,
+        "backwardGlobal": 344,
+        "backwardSeparate": 512,
+        "loss": -0.05054040740537965
+      },
+      "rounds": [
+        {
+          "global": 87,
+          "local": 87,
+          "backwardGlobal": 84,
+          "backwardLocal": 84
+        },
+        {
+          "global": 92,
+          "local": 92,
+          "backwardGlobal": 86,
+          "backwardLocal": 86
+        },
+        {
+          "global": 90,
+          "local": 90,
+          "backwardGlobal": 86,
+          "backwardLocal": 86
+        },
+        {
+          "global": 90,
+          "local": 90,
+          "backwardGlobal": 88,
+          "backwardLocal": 88
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "drift": 0.1,
+      "sharing": "common",
+      "method": "AR",
+      "counts": {
+        "global": 240,
+        "local": 284,
+        "pGlobal": 284,
+        "pLocal": 284,
+        "qGlobal": 0,
+        "qLocal": 0,
+        "proposals": 0,
+        "accepted": 0,
+        "blocks": 512,
+        "commits": 512,
+        "backwardLocal": 284,
+        "backwardGlobal": 240,
+        "backwardSeparate": 512,
+        "loss": 0.001592092638831791
+      },
+      "rounds": [
+        {
+          "global": 54,
+          "local": 66,
+          "backwardGlobal": 54,
+          "backwardLocal": 66
+        },
+        {
+          "global": 56,
+          "local": 67,
+          "backwardGlobal": 56,
+          "backwardLocal": 67
+        },
+        {
+          "global": 67,
+          "local": 79,
+          "backwardGlobal": 67,
+          "backwardLocal": 79
+        },
+        {
+          "global": 63,
+          "local": 72,
+          "backwardGlobal": 63,
+          "backwardLocal": 72
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "drift": 0.1,
+      "sharing": "common",
+      "method": "SDregional",
+      "counts": {
+        "global": 254,
+        "local": 286,
+        "pGlobal": 286,
+        "pLocal": 286,
+        "qGlobal": 286,
+        "qLocal": 286,
+        "proposals": 527,
+        "accepted": 465,
+        "blocks": 271,
+        "commits": 512,
+        "backwardLocal": 275,
+        "backwardGlobal": 244,
+        "backwardSeparate": 512,
+        "loss": 0.002865851748202617
+      },
+      "rounds": [
+        {
+          "global": 51,
+          "local": 58,
+          "backwardGlobal": 50,
+          "backwardLocal": 57
+        },
+        {
+          "global": 60,
+          "local": 71,
+          "backwardGlobal": 57,
+          "backwardLocal": 68
+        },
+        {
+          "global": 77,
+          "local": 81,
+          "backwardGlobal": 73,
+          "backwardLocal": 77
+        },
+        {
+          "global": 66,
+          "local": 76,
+          "backwardGlobal": 64,
+          "backwardLocal": 73
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "drift": 0.1,
+      "sharing": "common",
+      "method": "SDshared",
+      "counts": {
+        "global": 272,
+        "local": 306,
+        "pGlobal": 306,
+        "pLocal": 306,
+        "qGlobal": 272,
+        "qLocal": 306,
+        "proposals": 550,
+        "accepted": 448,
+        "blocks": 290,
+        "commits": 512,
+        "backwardLocal": 284,
+        "backwardGlobal": 255,
+        "backwardSeparate": 512,
+        "loss": -0.01964184935303642
+      },
+      "rounds": [
+        {
+          "global": 59,
+          "local": 71,
+          "backwardGlobal": 57,
+          "backwardLocal": 68
+        },
+        {
+          "global": 61,
+          "local": 67,
+          "backwardGlobal": 59,
+          "backwardLocal": 63
+        },
+        {
+          "global": 77,
+          "local": 86,
+          "backwardGlobal": 73,
+          "backwardLocal": 80
+        },
+        {
+          "global": 75,
+          "local": 82,
+          "backwardGlobal": 66,
+          "backwardLocal": 73
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "drift": 0.1,
+      "sharing": "private",
+      "method": "AR",
+      "counts": {
+        "global": 353,
+        "local": 353,
+        "pGlobal": 353,
+        "pLocal": 353,
+        "qGlobal": 0,
+        "qLocal": 0,
+        "proposals": 0,
+        "accepted": 0,
+        "blocks": 512,
+        "commits": 512,
+        "backwardLocal": 353,
+        "backwardGlobal": 353,
+        "backwardSeparate": 512,
+        "loss": -0.07391932747316604
+      },
+      "rounds": [
+        {
+          "global": 88,
+          "local": 88,
+          "backwardGlobal": 88,
+          "backwardLocal": 88
+        },
+        {
+          "global": 88,
+          "local": 88,
+          "backwardGlobal": 88,
+          "backwardLocal": 88
+        },
+        {
+          "global": 87,
+          "local": 87,
+          "backwardGlobal": 87,
+          "backwardLocal": 87
+        },
+        {
+          "global": 90,
+          "local": 90,
+          "backwardGlobal": 90,
+          "backwardLocal": 90
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "drift": 0.1,
+      "sharing": "private",
+      "method": "SDregional",
+      "counts": {
+        "global": 372,
+        "local": 372,
+        "pGlobal": 372,
+        "pLocal": 372,
+        "qGlobal": 372,
+        "qLocal": 372,
+        "proposals": 532,
+        "accepted": 470,
+        "blocks": 274,
+        "commits": 512,
+        "backwardLocal": 355,
+        "backwardGlobal": 355,
+        "backwardSeparate": 512,
+        "loss": -0.026251248867277897
+      },
+      "rounds": [
+        {
+          "global": 92,
+          "local": 92,
+          "backwardGlobal": 87,
+          "backwardLocal": 87
+        },
+        {
+          "global": 88,
+          "local": 88,
+          "backwardGlobal": 85,
+          "backwardLocal": 85
+        },
+        {
+          "global": 91,
+          "local": 91,
+          "backwardGlobal": 90,
+          "backwardLocal": 90
+        },
+        {
+          "global": 101,
+          "local": 101,
+          "backwardGlobal": 93,
+          "backwardLocal": 93
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "drift": 0.1,
+      "sharing": "private",
+      "method": "SDshared",
+      "counts": {
+        "global": 363,
+        "local": 363,
+        "pGlobal": 363,
+        "pLocal": 363,
+        "qGlobal": 363,
+        "qLocal": 363,
+        "proposals": 542,
+        "accepted": 459,
+        "blocks": 285,
+        "commits": 512,
+        "backwardLocal": 341,
+        "backwardGlobal": 341,
+        "backwardSeparate": 512,
+        "loss": -0.03487493935884022
+      },
+      "rounds": [
+        {
+          "global": 88,
+          "local": 88,
+          "backwardGlobal": 86,
+          "backwardLocal": 86
+        },
+        {
+          "global": 88,
+          "local": 88,
+          "backwardGlobal": 83,
+          "backwardLocal": 83
+        },
+        {
+          "global": 95,
+          "local": 95,
+          "backwardGlobal": 88,
+          "backwardLocal": 88
+        },
+        {
+          "global": 92,
+          "local": 92,
+          "backwardGlobal": 84,
+          "backwardLocal": 84
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "drift": 0.4,
+      "sharing": "common",
+      "method": "AR",
+      "counts": {
+        "global": 249,
+        "local": 273,
+        "pGlobal": 273,
+        "pLocal": 273,
+        "qGlobal": 0,
+        "qLocal": 0,
+        "proposals": 0,
+        "accepted": 0,
+        "blocks": 512,
+        "commits": 512,
+        "backwardLocal": 273,
+        "backwardGlobal": 249,
+        "backwardSeparate": 512,
+        "loss": -0.018579346329064755
+      },
+      "rounds": [
+        {
+          "global": 61,
+          "local": 68,
+          "backwardGlobal": 61,
+          "backwardLocal": 68
+        },
+        {
+          "global": 58,
+          "local": 64,
+          "backwardGlobal": 58,
+          "backwardLocal": 64
+        },
+        {
+          "global": 76,
+          "local": 81,
+          "backwardGlobal": 76,
+          "backwardLocal": 81
+        },
+        {
+          "global": 54,
+          "local": 60,
+          "backwardGlobal": 54,
+          "backwardLocal": 60
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "drift": 0.4,
+      "sharing": "common",
+      "method": "SDregional",
+      "counts": {
+        "global": 249,
+        "local": 283,
+        "pGlobal": 283,
+        "pLocal": 283,
+        "qGlobal": 283,
+        "qLocal": 283,
+        "proposals": 534,
+        "accepted": 468,
+        "blocks": 278,
+        "commits": 512,
+        "backwardLocal": 270,
+        "backwardGlobal": 237,
+        "backwardSeparate": 512,
+        "loss": 0.028642664464952068
+      },
+      "rounds": [
+        {
+          "global": 56,
+          "local": 64,
+          "backwardGlobal": 54,
+          "backwardLocal": 62
+        },
+        {
+          "global": 54,
+          "local": 60,
+          "backwardGlobal": 51,
+          "backwardLocal": 57
+        },
+        {
+          "global": 71,
+          "local": 82,
+          "backwardGlobal": 70,
+          "backwardLocal": 80
+        },
+        {
+          "global": 68,
+          "local": 77,
+          "backwardGlobal": 62,
+          "backwardLocal": 71
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "drift": 0.4,
+      "sharing": "common",
+      "method": "SDshared",
+      "counts": {
+        "global": 260,
+        "local": 292,
+        "pGlobal": 292,
+        "pLocal": 292,
+        "qGlobal": 260,
+        "qLocal": 292,
+        "proposals": 553,
+        "accepted": 400,
+        "blocks": 293,
+        "commits": 512,
+        "backwardLocal": 261,
+        "backwardGlobal": 234,
+        "backwardSeparate": 512,
+        "loss": 0.004801123288649571
+      },
+      "rounds": [
+        {
+          "global": 57,
+          "local": 64,
+          "backwardGlobal": 54,
+          "backwardLocal": 60
+        },
+        {
+          "global": 55,
+          "local": 59,
+          "backwardGlobal": 47,
+          "backwardLocal": 51
+        },
+        {
+          "global": 81,
+          "local": 93,
+          "backwardGlobal": 71,
+          "backwardLocal": 80
+        },
+        {
+          "global": 67,
+          "local": 76,
+          "backwardGlobal": 62,
+          "backwardLocal": 70
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "drift": 0.4,
+      "sharing": "private",
+      "method": "AR",
+      "counts": {
+        "global": 332,
+        "local": 332,
+        "pGlobal": 332,
+        "pLocal": 332,
+        "qGlobal": 0,
+        "qLocal": 0,
+        "proposals": 0,
+        "accepted": 0,
+        "blocks": 512,
+        "commits": 512,
+        "backwardLocal": 332,
+        "backwardGlobal": 332,
+        "backwardSeparate": 512,
+        "loss": -0.01737809120233379
+      },
+      "rounds": [
+        {
+          "global": 83,
+          "local": 83,
+          "backwardGlobal": 83,
+          "backwardLocal": 83
+        },
+        {
+          "global": 80,
+          "local": 80,
+          "backwardGlobal": 80,
+          "backwardLocal": 80
+        },
+        {
+          "global": 87,
+          "local": 87,
+          "backwardGlobal": 87,
+          "backwardLocal": 87
+        },
+        {
+          "global": 82,
+          "local": 82,
+          "backwardGlobal": 82,
+          "backwardLocal": 82
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "drift": 0.4,
+      "sharing": "private",
+      "method": "SDregional",
+      "counts": {
+        "global": 355,
+        "local": 355,
+        "pGlobal": 355,
+        "pLocal": 355,
+        "qGlobal": 355,
+        "qLocal": 355,
+        "proposals": 539,
+        "accepted": 457,
+        "blocks": 281,
+        "commits": 512,
+        "backwardLocal": 332,
+        "backwardGlobal": 332,
+        "backwardSeparate": 512,
+        "loss": -0.039796911441590165
+      },
+      "rounds": [
+        {
+          "global": 86,
+          "local": 86,
+          "backwardGlobal": 84,
+          "backwardLocal": 84
+        },
+        {
+          "global": 92,
+          "local": 92,
+          "backwardGlobal": 84,
+          "backwardLocal": 84
+        },
+        {
+          "global": 86,
+          "local": 86,
+          "backwardGlobal": 80,
+          "backwardLocal": 80
+        },
+        {
+          "global": 91,
+          "local": 91,
+          "backwardGlobal": 84,
+          "backwardLocal": 84
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "drift": 0.4,
+      "sharing": "private",
+      "method": "SDshared",
+      "counts": {
+        "global": 384,
+        "local": 384,
+        "pGlobal": 384,
+        "pLocal": 384,
+        "qGlobal": 384,
+        "qLocal": 384,
+        "proposals": 570,
+        "accepted": 402,
+        "blocks": 304,
+        "commits": 512,
+        "backwardLocal": 336,
+        "backwardGlobal": 336,
+        "backwardSeparate": 512,
+        "loss": -0.04885814205231859
+      },
+      "rounds": [
+        {
+          "global": 93,
+          "local": 93,
+          "backwardGlobal": 80,
+          "backwardLocal": 80
+        },
+        {
+          "global": 91,
+          "local": 91,
+          "backwardGlobal": 79,
+          "backwardLocal": 79
+        },
+        {
+          "global": 105,
+          "local": 105,
+          "backwardGlobal": 91,
+          "backwardLocal": 91
+        },
+        {
+          "global": 95,
+          "local": 95,
+          "backwardGlobal": 86,
+          "backwardLocal": 86
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "drift": 0.02,
+      "sharing": "common",
+      "method": "AR",
+      "counts": {
+        "global": 244,
+        "local": 282,
+        "pGlobal": 282,
+        "pLocal": 282,
+        "qGlobal": 0,
+        "qLocal": 0,
+        "proposals": 0,
+        "accepted": 0,
+        "blocks": 512,
+        "commits": 512,
+        "backwardLocal": 282,
+        "backwardGlobal": 244,
+        "backwardSeparate": 512,
+        "loss": -0.039926003861723715
+      },
+      "rounds": [
+        {
+          "global": 69,
+          "local": 81,
+          "backwardGlobal": 69,
+          "backwardLocal": 81
+        },
+        {
+          "global": 57,
+          "local": 66,
+          "backwardGlobal": 57,
+          "backwardLocal": 66
+        },
+        {
+          "global": 64,
+          "local": 74,
+          "backwardGlobal": 64,
+          "backwardLocal": 74
+        },
+        {
+          "global": 54,
+          "local": 61,
+          "backwardGlobal": 54,
+          "backwardLocal": 61
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "drift": 0.02,
+      "sharing": "common",
+      "method": "SDregional",
+      "counts": {
+        "global": 261,
+        "local": 300,
+        "pGlobal": 300,
+        "pLocal": 300,
+        "qGlobal": 300,
+        "qLocal": 300,
+        "proposals": 531,
+        "accepted": 469,
+        "blocks": 275,
+        "commits": 512,
+        "backwardLocal": 286,
+        "backwardGlobal": 251,
+        "backwardSeparate": 512,
+        "loss": -0.04122999789357435
+      },
+      "rounds": [
+        {
+          "global": 67,
+          "local": 79,
+          "backwardGlobal": 65,
+          "backwardLocal": 75
+        },
+        {
+          "global": 63,
+          "local": 71,
+          "backwardGlobal": 59,
+          "backwardLocal": 66
+        },
+        {
+          "global": 69,
+          "local": 77,
+          "backwardGlobal": 68,
+          "backwardLocal": 76
+        },
+        {
+          "global": 62,
+          "local": 73,
+          "backwardGlobal": 59,
+          "backwardLocal": 69
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "drift": 0.02,
+      "sharing": "common",
+      "method": "SDshared",
+      "counts": {
+        "global": 288,
+        "local": 317,
+        "pGlobal": 317,
+        "pLocal": 317,
+        "qGlobal": 288,
+        "qLocal": 317,
+        "proposals": 540,
+        "accepted": 456,
+        "blocks": 283,
+        "commits": 512,
+        "backwardLocal": 302,
+        "backwardGlobal": 275,
+        "backwardSeparate": 512,
+        "loss": -0.04640068711287712
+      },
+      "rounds": [
+        {
+          "global": 79,
+          "local": 86,
+          "backwardGlobal": 76,
+          "backwardLocal": 81
+        },
+        {
+          "global": 73,
+          "local": 80,
+          "backwardGlobal": 70,
+          "backwardLocal": 77
+        },
+        {
+          "global": 70,
+          "local": 80,
+          "backwardGlobal": 68,
+          "backwardLocal": 78
+        },
+        {
+          "global": 66,
+          "local": 71,
+          "backwardGlobal": 61,
+          "backwardLocal": 66
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "drift": 0.02,
+      "sharing": "private",
+      "method": "AR",
+      "counts": {
+        "global": 357,
+        "local": 357,
+        "pGlobal": 357,
+        "pLocal": 357,
+        "qGlobal": 0,
+        "qLocal": 0,
+        "proposals": 0,
+        "accepted": 0,
+        "blocks": 512,
+        "commits": 512,
+        "backwardLocal": 357,
+        "backwardGlobal": 357,
+        "backwardSeparate": 512,
+        "loss": -0.09664309272277752
+      },
+      "rounds": [
+        {
+          "global": 91,
+          "local": 91,
+          "backwardGlobal": 91,
+          "backwardLocal": 91
+        },
+        {
+          "global": 90,
+          "local": 90,
+          "backwardGlobal": 90,
+          "backwardLocal": 90
+        },
+        {
+          "global": 90,
+          "local": 90,
+          "backwardGlobal": 90,
+          "backwardLocal": 90
+        },
+        {
+          "global": 86,
+          "local": 86,
+          "backwardGlobal": 86,
+          "backwardLocal": 86
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "drift": 0.02,
+      "sharing": "private",
+      "method": "SDregional",
+      "counts": {
+        "global": 367,
+        "local": 367,
+        "pGlobal": 367,
+        "pLocal": 367,
+        "qGlobal": 367,
+        "qLocal": 367,
+        "proposals": 539,
+        "accepted": 463,
+        "blocks": 280,
+        "commits": 512,
+        "backwardLocal": 347,
+        "backwardGlobal": 347,
+        "backwardSeparate": 512,
+        "loss": -0.0589582830640727
+      },
+      "rounds": [
+        {
+          "global": 95,
+          "local": 95,
+          "backwardGlobal": 90,
+          "backwardLocal": 90
+        },
+        {
+          "global": 95,
+          "local": 95,
+          "backwardGlobal": 89,
+          "backwardLocal": 89
+        },
+        {
+          "global": 89,
+          "local": 89,
+          "backwardGlobal": 84,
+          "backwardLocal": 84
+        },
+        {
+          "global": 88,
+          "local": 88,
+          "backwardGlobal": 84,
+          "backwardLocal": 84
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "drift": 0.02,
+      "sharing": "private",
+      "method": "SDshared",
+      "counts": {
+        "global": 353,
+        "local": 353,
+        "pGlobal": 353,
+        "pLocal": 353,
+        "qGlobal": 353,
+        "qLocal": 353,
+        "proposals": 537,
+        "accepted": 473,
+        "blocks": 279,
+        "commits": 512,
+        "backwardLocal": 332,
+        "backwardGlobal": 332,
+        "backwardSeparate": 512,
+        "loss": -0.027924772616296722
+      },
+      "rounds": [
+        {
+          "global": 95,
+          "local": 95,
+          "backwardGlobal": 88,
+          "backwardLocal": 88
+        },
+        {
+          "global": 83,
+          "local": 83,
+          "backwardGlobal": 81,
+          "backwardLocal": 81
+        },
+        {
+          "global": 89,
+          "local": 89,
+          "backwardGlobal": 85,
+          "backwardLocal": 85
+        },
+        {
+          "global": 86,
+          "local": 86,
+          "backwardGlobal": 78,
+          "backwardLocal": 78
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "drift": 0.1,
+      "sharing": "common",
+      "method": "AR",
+      "counts": {
+        "global": 254,
+        "local": 294,
+        "pGlobal": 294,
+        "pLocal": 294,
+        "qGlobal": 0,
+        "qLocal": 0,
+        "proposals": 0,
+        "accepted": 0,
+        "blocks": 512,
+        "commits": 512,
+        "backwardLocal": 294,
+        "backwardGlobal": 254,
+        "backwardSeparate": 512,
+        "loss": -0.07105043409959176
+      },
+      "rounds": [
+        {
+          "global": 73,
+          "local": 80,
+          "backwardGlobal": 73,
+          "backwardLocal": 80
+        },
+        {
+          "global": 58,
+          "local": 70,
+          "backwardGlobal": 58,
+          "backwardLocal": 70
+        },
+        {
+          "global": 70,
+          "local": 78,
+          "backwardGlobal": 70,
+          "backwardLocal": 78
+        },
+        {
+          "global": 53,
+          "local": 66,
+          "backwardGlobal": 53,
+          "backwardLocal": 66
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "drift": 0.1,
+      "sharing": "common",
+      "method": "SDregional",
+      "counts": {
+        "global": 284,
+        "local": 322,
+        "pGlobal": 322,
+        "pLocal": 322,
+        "qGlobal": 322,
+        "qLocal": 322,
+        "proposals": 533,
+        "accepted": 472,
+        "blocks": 277,
+        "commits": 512,
+        "backwardLocal": 308,
+        "backwardGlobal": 270,
+        "backwardSeparate": 512,
+        "loss": -0.08078086669600351
+      },
+      "rounds": [
+        {
+          "global": 75,
+          "local": 84,
+          "backwardGlobal": 70,
+          "backwardLocal": 79
+        },
+        {
+          "global": 68,
+          "local": 76,
+          "backwardGlobal": 64,
+          "backwardLocal": 72
+        },
+        {
+          "global": 73,
+          "local": 85,
+          "backwardGlobal": 70,
+          "backwardLocal": 82
+        },
+        {
+          "global": 68,
+          "local": 77,
+          "backwardGlobal": 66,
+          "backwardLocal": 75
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "drift": 0.1,
+      "sharing": "common",
+      "method": "SDshared",
+      "counts": {
+        "global": 267,
+        "local": 309,
+        "pGlobal": 309,
+        "pLocal": 309,
+        "qGlobal": 267,
+        "qLocal": 309,
+        "proposals": 541,
+        "accepted": 447,
+        "blocks": 283,
+        "commits": 512,
+        "backwardLocal": 292,
+        "backwardGlobal": 253,
+        "backwardSeparate": 512,
+        "loss": -0.04577506056826829
+      },
+      "rounds": [
+        {
+          "global": 74,
+          "local": 85,
+          "backwardGlobal": 69,
+          "backwardLocal": 77
+        },
+        {
+          "global": 64,
+          "local": 76,
+          "backwardGlobal": 59,
+          "backwardLocal": 71
+        },
+        {
+          "global": 73,
+          "local": 81,
+          "backwardGlobal": 71,
+          "backwardLocal": 79
+        },
+        {
+          "global": 56,
+          "local": 67,
+          "backwardGlobal": 54,
+          "backwardLocal": 65
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "drift": 0.1,
+      "sharing": "private",
+      "method": "AR",
+      "counts": {
+        "global": 331,
+        "local": 331,
+        "pGlobal": 331,
+        "pLocal": 331,
+        "qGlobal": 0,
+        "qLocal": 0,
+        "proposals": 0,
+        "accepted": 0,
+        "blocks": 512,
+        "commits": 512,
+        "backwardLocal": 331,
+        "backwardGlobal": 331,
+        "backwardSeparate": 512,
+        "loss": -0.04342812573998268
+      },
+      "rounds": [
+        {
+          "global": 81,
+          "local": 81,
+          "backwardGlobal": 81,
+          "backwardLocal": 81
+        },
+        {
+          "global": 86,
+          "local": 86,
+          "backwardGlobal": 86,
+          "backwardLocal": 86
+        },
+        {
+          "global": 84,
+          "local": 84,
+          "backwardGlobal": 84,
+          "backwardLocal": 84
+        },
+        {
+          "global": 80,
+          "local": 80,
+          "backwardGlobal": 80,
+          "backwardLocal": 80
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "drift": 0.1,
+      "sharing": "private",
+      "method": "SDregional",
+      "counts": {
+        "global": 352,
+        "local": 352,
+        "pGlobal": 352,
+        "pLocal": 352,
+        "qGlobal": 352,
+        "qLocal": 352,
+        "proposals": 534,
+        "accepted": 470,
+        "blocks": 277,
+        "commits": 512,
+        "backwardLocal": 334,
+        "backwardGlobal": 334,
+        "backwardSeparate": 512,
+        "loss": -0.05523837670810249
+      },
+      "rounds": [
+        {
+          "global": 99,
+          "local": 99,
+          "backwardGlobal": 91,
+          "backwardLocal": 91
+        },
+        {
+          "global": 83,
+          "local": 83,
+          "backwardGlobal": 78,
+          "backwardLocal": 78
+        },
+        {
+          "global": 84,
+          "local": 84,
+          "backwardGlobal": 82,
+          "backwardLocal": 82
+        },
+        {
+          "global": 86,
+          "local": 86,
+          "backwardGlobal": 83,
+          "backwardLocal": 83
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "drift": 0.1,
+      "sharing": "private",
+      "method": "SDshared",
+      "counts": {
+        "global": 353,
+        "local": 353,
+        "pGlobal": 353,
+        "pLocal": 353,
+        "qGlobal": 353,
+        "qLocal": 353,
+        "proposals": 540,
+        "accepted": 461,
+        "blocks": 283,
+        "commits": 512,
+        "backwardLocal": 334,
+        "backwardGlobal": 334,
+        "backwardSeparate": 512,
+        "loss": -0.08587651729217284
+      },
+      "rounds": [
+        {
+          "global": 88,
+          "local": 88,
+          "backwardGlobal": 87,
+          "backwardLocal": 87
+        },
+        {
+          "global": 91,
+          "local": 91,
+          "backwardGlobal": 84,
+          "backwardLocal": 84
+        },
+        {
+          "global": 87,
+          "local": 87,
+          "backwardGlobal": 81,
+          "backwardLocal": 81
+        },
+        {
+          "global": 87,
+          "local": 87,
+          "backwardGlobal": 82,
+          "backwardLocal": 82
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "drift": 0.4,
+      "sharing": "common",
+      "method": "AR",
+      "counts": {
+        "global": 240,
+        "local": 272,
+        "pGlobal": 272,
+        "pLocal": 272,
+        "qGlobal": 0,
+        "qLocal": 0,
+        "proposals": 0,
+        "accepted": 0,
+        "blocks": 512,
+        "commits": 512,
+        "backwardLocal": 272,
+        "backwardGlobal": 240,
+        "backwardSeparate": 512,
+        "loss": -0.09228460791383407
+      },
+      "rounds": [
+        {
+          "global": 72,
+          "local": 78,
+          "backwardGlobal": 72,
+          "backwardLocal": 78
+        },
+        {
+          "global": 56,
+          "local": 65,
+          "backwardGlobal": 56,
+          "backwardLocal": 65
+        },
+        {
+          "global": 56,
+          "local": 64,
+          "backwardGlobal": 56,
+          "backwardLocal": 64
+        },
+        {
+          "global": 56,
+          "local": 65,
+          "backwardGlobal": 56,
+          "backwardLocal": 65
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "drift": 0.4,
+      "sharing": "common",
+      "method": "SDregional",
+      "counts": {
+        "global": 248,
+        "local": 292,
+        "pGlobal": 292,
+        "pLocal": 292,
+        "qGlobal": 292,
+        "qLocal": 292,
+        "proposals": 531,
+        "accepted": 465,
+        "blocks": 275,
+        "commits": 512,
+        "backwardLocal": 282,
+        "backwardGlobal": 238,
+        "backwardSeparate": 512,
+        "loss": -0.08224047923581121
+      },
+      "rounds": [
+        {
+          "global": 65,
+          "local": 79,
+          "backwardGlobal": 62,
+          "backwardLocal": 76
+        },
+        {
+          "global": 64,
+          "local": 75,
+          "backwardGlobal": 61,
+          "backwardLocal": 72
+        },
+        {
+          "global": 66,
+          "local": 77,
+          "backwardGlobal": 65,
+          "backwardLocal": 76
+        },
+        {
+          "global": 53,
+          "local": 61,
+          "backwardGlobal": 50,
+          "backwardLocal": 58
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "drift": 0.4,
+      "sharing": "common",
+      "method": "SDshared",
+      "counts": {
+        "global": 284,
+        "local": 324,
+        "pGlobal": 324,
+        "pLocal": 324,
+        "qGlobal": 284,
+        "qLocal": 324,
+        "proposals": 561,
+        "accepted": 416,
+        "blocks": 302,
+        "commits": 512,
+        "backwardLocal": 297,
+        "backwardGlobal": 260,
+        "backwardSeparate": 512,
+        "loss": -0.07620348470356987
+      },
+      "rounds": [
+        {
+          "global": 80,
+          "local": 89,
+          "backwardGlobal": 75,
+          "backwardLocal": 84
+        },
+        {
+          "global": 69,
+          "local": 78,
+          "backwardGlobal": 66,
+          "backwardLocal": 74
+        },
+        {
+          "global": 69,
+          "local": 79,
+          "backwardGlobal": 62,
+          "backwardLocal": 72
+        },
+        {
+          "global": 66,
+          "local": 78,
+          "backwardGlobal": 57,
+          "backwardLocal": 67
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "drift": 0.4,
+      "sharing": "private",
+      "method": "AR",
+      "counts": {
+        "global": 335,
+        "local": 335,
+        "pGlobal": 335,
+        "pLocal": 335,
+        "qGlobal": 0,
+        "qLocal": 0,
+        "proposals": 0,
+        "accepted": 0,
+        "blocks": 512,
+        "commits": 512,
+        "backwardLocal": 335,
+        "backwardGlobal": 335,
+        "backwardSeparate": 512,
+        "loss": -0.05630841761438511
+      },
+      "rounds": [
+        {
+          "global": 83,
+          "local": 83,
+          "backwardGlobal": 83,
+          "backwardLocal": 83
+        },
+        {
+          "global": 87,
+          "local": 87,
+          "backwardGlobal": 87,
+          "backwardLocal": 87
+        },
+        {
+          "global": 84,
+          "local": 84,
+          "backwardGlobal": 84,
+          "backwardLocal": 84
+        },
+        {
+          "global": 81,
+          "local": 81,
+          "backwardGlobal": 81,
+          "backwardLocal": 81
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "drift": 0.4,
+      "sharing": "private",
+      "method": "SDregional",
+      "counts": {
+        "global": 338,
+        "local": 338,
+        "pGlobal": 338,
+        "pLocal": 338,
+        "qGlobal": 338,
+        "qLocal": 338,
+        "proposals": 535,
+        "accepted": 458,
+        "blocks": 277,
+        "commits": 512,
+        "backwardLocal": 321,
+        "backwardGlobal": 321,
+        "backwardSeparate": 512,
+        "loss": -0.05290115491544557
+      },
+      "rounds": [
+        {
+          "global": 79,
+          "local": 79,
+          "backwardGlobal": 77,
+          "backwardLocal": 77
+        },
+        {
+          "global": 88,
+          "local": 88,
+          "backwardGlobal": 81,
+          "backwardLocal": 81
+        },
+        {
+          "global": 87,
+          "local": 87,
+          "backwardGlobal": 84,
+          "backwardLocal": 84
+        },
+        {
+          "global": 84,
+          "local": 84,
+          "backwardGlobal": 79,
+          "backwardLocal": 79
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "drift": 0.4,
+      "sharing": "private",
+      "method": "SDshared",
+      "counts": {
+        "global": 366,
+        "local": 366,
+        "pGlobal": 366,
+        "pLocal": 366,
+        "qGlobal": 366,
+        "qLocal": 366,
+        "proposals": 556,
+        "accepted": 436,
+        "blocks": 296,
+        "commits": 512,
+        "backwardLocal": 330,
+        "backwardGlobal": 330,
+        "backwardSeparate": 512,
+        "loss": -0.011736254889099225
+      },
+      "rounds": [
+        {
+          "global": 101,
+          "local": 101,
+          "backwardGlobal": 87,
+          "backwardLocal": 87
+        },
+        {
+          "global": 94,
+          "local": 94,
+          "backwardGlobal": 84,
+          "backwardLocal": 84
+        },
+        {
+          "global": 83,
+          "local": 83,
+          "backwardGlobal": 79,
+          "backwardLocal": 79
+        },
+        {
+          "global": 88,
+          "local": 88,
+          "backwardGlobal": 80,
+          "backwardLocal": 80
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "drift": 0.02,
+      "sharing": "common",
+      "method": "AR",
+      "counts": {
+        "global": 251,
+        "local": 290,
+        "pGlobal": 290,
+        "pLocal": 290,
+        "qGlobal": 0,
+        "qLocal": 0,
+        "proposals": 0,
+        "accepted": 0,
+        "blocks": 512,
+        "commits": 512,
+        "backwardLocal": 290,
+        "backwardGlobal": 251,
+        "backwardSeparate": 512,
+        "loss": -0.049234087535972484
+      },
+      "rounds": [
+        {
+          "global": 56,
+          "local": 70,
+          "backwardGlobal": 56,
+          "backwardLocal": 70
+        },
+        {
+          "global": 62,
+          "local": 69,
+          "backwardGlobal": 62,
+          "backwardLocal": 69
+        },
+        {
+          "global": 69,
+          "local": 77,
+          "backwardGlobal": 69,
+          "backwardLocal": 77
+        },
+        {
+          "global": 64,
+          "local": 74,
+          "backwardGlobal": 64,
+          "backwardLocal": 74
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "drift": 0.02,
+      "sharing": "common",
+      "method": "SDregional",
+      "counts": {
+        "global": 264,
+        "local": 308,
+        "pGlobal": 308,
+        "pLocal": 308,
+        "qGlobal": 308,
+        "qLocal": 308,
+        "proposals": 547,
+        "accepted": 453,
+        "blocks": 288,
+        "commits": 512,
+        "backwardLocal": 284,
+        "backwardGlobal": 244,
+        "backwardSeparate": 512,
+        "loss": 0.02422439349766647
+      },
+      "rounds": [
+        {
+          "global": 56,
+          "local": 66,
+          "backwardGlobal": 53,
+          "backwardLocal": 63
+        },
+        {
+          "global": 58,
+          "local": 65,
+          "backwardGlobal": 52,
+          "backwardLocal": 58
+        },
+        {
+          "global": 77,
+          "local": 91,
+          "backwardGlobal": 68,
+          "backwardLocal": 81
+        },
+        {
+          "global": 73,
+          "local": 86,
+          "backwardGlobal": 71,
+          "backwardLocal": 82
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "drift": 0.02,
+      "sharing": "common",
+      "method": "SDshared",
+      "counts": {
+        "global": 256,
+        "local": 307,
+        "pGlobal": 307,
+        "pLocal": 307,
+        "qGlobal": 256,
+        "qLocal": 307,
+        "proposals": 544,
+        "accepted": 445,
+        "blocks": 285,
+        "commits": 512,
+        "backwardLocal": 287,
+        "backwardGlobal": 239,
+        "backwardSeparate": 512,
+        "loss": -0.03031175386223382
+      },
+      "rounds": [
+        {
+          "global": 62,
+          "local": 71,
+          "backwardGlobal": 59,
+          "backwardLocal": 68
+        },
+        {
+          "global": 64,
+          "local": 82,
+          "backwardGlobal": 60,
+          "backwardLocal": 77
+        },
+        {
+          "global": 68,
+          "local": 80,
+          "backwardGlobal": 64,
+          "backwardLocal": 75
+        },
+        {
+          "global": 62,
+          "local": 74,
+          "backwardGlobal": 56,
+          "backwardLocal": 67
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "drift": 0.02,
+      "sharing": "private",
+      "method": "AR",
+      "counts": {
+        "global": 357,
+        "local": 357,
+        "pGlobal": 357,
+        "pLocal": 357,
+        "qGlobal": 0,
+        "qLocal": 0,
+        "proposals": 0,
+        "accepted": 0,
+        "blocks": 512,
+        "commits": 512,
+        "backwardLocal": 357,
+        "backwardGlobal": 357,
+        "backwardSeparate": 512,
+        "loss": -0.04703781484821386
+      },
+      "rounds": [
+        {
+          "global": 91,
+          "local": 91,
+          "backwardGlobal": 91,
+          "backwardLocal": 91
+        },
+        {
+          "global": 86,
+          "local": 86,
+          "backwardGlobal": 86,
+          "backwardLocal": 86
+        },
+        {
+          "global": 91,
+          "local": 91,
+          "backwardGlobal": 91,
+          "backwardLocal": 91
+        },
+        {
+          "global": 89,
+          "local": 89,
+          "backwardGlobal": 89,
+          "backwardLocal": 89
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "drift": 0.02,
+      "sharing": "private",
+      "method": "SDregional",
+      "counts": {
+        "global": 370,
+        "local": 370,
+        "pGlobal": 370,
+        "pLocal": 370,
+        "qGlobal": 370,
+        "qLocal": 370,
+        "proposals": 543,
+        "accepted": 451,
+        "blocks": 286,
+        "commits": 512,
+        "backwardLocal": 347,
+        "backwardGlobal": 347,
+        "backwardSeparate": 512,
+        "loss": -0.043499674564404435
+      },
+      "rounds": [
+        {
+          "global": 96,
+          "local": 96,
+          "backwardGlobal": 91,
+          "backwardLocal": 91
+        },
+        {
+          "global": 94,
+          "local": 94,
+          "backwardGlobal": 89,
+          "backwardLocal": 89
+        },
+        {
+          "global": 92,
+          "local": 92,
+          "backwardGlobal": 83,
+          "backwardLocal": 83
+        },
+        {
+          "global": 88,
+          "local": 88,
+          "backwardGlobal": 84,
+          "backwardLocal": 84
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "drift": 0.02,
+      "sharing": "private",
+      "method": "SDshared",
+      "counts": {
+        "global": 365,
+        "local": 365,
+        "pGlobal": 365,
+        "pLocal": 365,
+        "qGlobal": 365,
+        "qLocal": 365,
+        "proposals": 547,
+        "accepted": 455,
+        "blocks": 290,
+        "commits": 512,
+        "backwardLocal": 341,
+        "backwardGlobal": 341,
+        "backwardSeparate": 512,
+        "loss": -0.08755280181443412
+      },
+      "rounds": [
+        {
+          "global": 95,
+          "local": 95,
+          "backwardGlobal": 91,
+          "backwardLocal": 91
+        },
+        {
+          "global": 89,
+          "local": 89,
+          "backwardGlobal": 81,
+          "backwardLocal": 81
+        },
+        {
+          "global": 89,
+          "local": 89,
+          "backwardGlobal": 85,
+          "backwardLocal": 85
+        },
+        {
+          "global": 92,
+          "local": 92,
+          "backwardGlobal": 84,
+          "backwardLocal": 84
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "drift": 0.1,
+      "sharing": "common",
+      "method": "AR",
+      "counts": {
+        "global": 239,
+        "local": 277,
+        "pGlobal": 277,
+        "pLocal": 277,
+        "qGlobal": 0,
+        "qLocal": 0,
+        "proposals": 0,
+        "accepted": 0,
+        "blocks": 512,
+        "commits": 512,
+        "backwardLocal": 277,
+        "backwardGlobal": 239,
+        "backwardSeparate": 512,
+        "loss": -0.019517353834289063
+      },
+      "rounds": [
+        {
+          "global": 60,
+          "local": 70,
+          "backwardGlobal": 60,
+          "backwardLocal": 70
+        },
+        {
+          "global": 56,
+          "local": 67,
+          "backwardGlobal": 56,
+          "backwardLocal": 67
+        },
+        {
+          "global": 62,
+          "local": 71,
+          "backwardGlobal": 62,
+          "backwardLocal": 71
+        },
+        {
+          "global": 61,
+          "local": 69,
+          "backwardGlobal": 61,
+          "backwardLocal": 69
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "drift": 0.1,
+      "sharing": "common",
+      "method": "SDregional",
+      "counts": {
+        "global": 272,
+        "local": 317,
+        "pGlobal": 317,
+        "pLocal": 317,
+        "qGlobal": 317,
+        "qLocal": 317,
+        "proposals": 546,
+        "accepted": 445,
+        "blocks": 284,
+        "commits": 512,
+        "backwardLocal": 296,
+        "backwardGlobal": 253,
+        "backwardSeparate": 512,
+        "loss": -0.0013495442545047483
+      },
+      "rounds": [
+        {
+          "global": 57,
+          "local": 66,
+          "backwardGlobal": 57,
+          "backwardLocal": 66
+        },
+        {
+          "global": 66,
+          "local": 77,
+          "backwardGlobal": 59,
+          "backwardLocal": 69
+        },
+        {
+          "global": 78,
+          "local": 91,
+          "backwardGlobal": 68,
+          "backwardLocal": 80
+        },
+        {
+          "global": 71,
+          "local": 83,
+          "backwardGlobal": 69,
+          "backwardLocal": 81
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "drift": 0.1,
+      "sharing": "common",
+      "method": "SDshared",
+      "counts": {
+        "global": 262,
+        "local": 302,
+        "pGlobal": 302,
+        "pLocal": 302,
+        "qGlobal": 262,
+        "qLocal": 302,
+        "proposals": 551,
+        "accepted": 432,
+        "blocks": 289,
+        "commits": 512,
+        "backwardLocal": 278,
+        "backwardGlobal": 244,
+        "backwardSeparate": 512,
+        "loss": -0.03689168944099195
+      },
+      "rounds": [
+        {
+          "global": 61,
+          "local": 69,
+          "backwardGlobal": 56,
+          "backwardLocal": 64
+        },
+        {
+          "global": 67,
+          "local": 80,
+          "backwardGlobal": 62,
+          "backwardLocal": 73
+        },
+        {
+          "global": 63,
+          "local": 76,
+          "backwardGlobal": 57,
+          "backwardLocal": 67
+        },
+        {
+          "global": 71,
+          "local": 77,
+          "backwardGlobal": 69,
+          "backwardLocal": 74
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "drift": 0.1,
+      "sharing": "private",
+      "method": "AR",
+      "counts": {
+        "global": 338,
+        "local": 338,
+        "pGlobal": 338,
+        "pLocal": 338,
+        "qGlobal": 0,
+        "qLocal": 0,
+        "proposals": 0,
+        "accepted": 0,
+        "blocks": 512,
+        "commits": 512,
+        "backwardLocal": 338,
+        "backwardGlobal": 338,
+        "backwardSeparate": 512,
+        "loss": -0.03385094528124054
+      },
+      "rounds": [
+        {
+          "global": 88,
+          "local": 88,
+          "backwardGlobal": 88,
+          "backwardLocal": 88
+        },
+        {
+          "global": 83,
+          "local": 83,
+          "backwardGlobal": 83,
+          "backwardLocal": 83
+        },
+        {
+          "global": 85,
+          "local": 85,
+          "backwardGlobal": 85,
+          "backwardLocal": 85
+        },
+        {
+          "global": 82,
+          "local": 82,
+          "backwardGlobal": 82,
+          "backwardLocal": 82
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "drift": 0.1,
+      "sharing": "private",
+      "method": "SDregional",
+      "counts": {
+        "global": 349,
+        "local": 349,
+        "pGlobal": 349,
+        "pLocal": 349,
+        "qGlobal": 349,
+        "qLocal": 349,
+        "proposals": 542,
+        "accepted": 452,
+        "blocks": 284,
+        "commits": 512,
+        "backwardLocal": 330,
+        "backwardGlobal": 330,
+        "backwardSeparate": 512,
+        "loss": -0.0329583972612102
+      },
+      "rounds": [
+        {
+          "global": 87,
+          "local": 87,
+          "backwardGlobal": 84,
+          "backwardLocal": 84
+        },
+        {
+          "global": 89,
+          "local": 89,
+          "backwardGlobal": 84,
+          "backwardLocal": 84
+        },
+        {
+          "global": 88,
+          "local": 88,
+          "backwardGlobal": 85,
+          "backwardLocal": 85
+        },
+        {
+          "global": 85,
+          "local": 85,
+          "backwardGlobal": 77,
+          "backwardLocal": 77
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "drift": 0.1,
+      "sharing": "private",
+      "method": "SDshared",
+      "counts": {
+        "global": 370,
+        "local": 370,
+        "pGlobal": 370,
+        "pLocal": 370,
+        "qGlobal": 370,
+        "qLocal": 370,
+        "proposals": 542,
+        "accepted": 443,
+        "blocks": 286,
+        "commits": 512,
+        "backwardLocal": 347,
+        "backwardGlobal": 347,
+        "backwardSeparate": 512,
+        "loss": -0.06424190670798618
+      },
+      "rounds": [
+        {
+          "global": 91,
+          "local": 91,
+          "backwardGlobal": 87,
+          "backwardLocal": 87
+        },
+        {
+          "global": 96,
+          "local": 96,
+          "backwardGlobal": 86,
+          "backwardLocal": 86
+        },
+        {
+          "global": 90,
+          "local": 90,
+          "backwardGlobal": 86,
+          "backwardLocal": 86
+        },
+        {
+          "global": 93,
+          "local": 93,
+          "backwardGlobal": 88,
+          "backwardLocal": 88
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "drift": 0.4,
+      "sharing": "common",
+      "method": "AR",
+      "counts": {
+        "global": 217,
+        "local": 251,
+        "pGlobal": 251,
+        "pLocal": 251,
+        "qGlobal": 0,
+        "qLocal": 0,
+        "proposals": 0,
+        "accepted": 0,
+        "blocks": 512,
+        "commits": 512,
+        "backwardLocal": 251,
+        "backwardGlobal": 217,
+        "backwardSeparate": 512,
+        "loss": 0.014451157716888076
+      },
+      "rounds": [
+        {
+          "global": 59,
+          "local": 67,
+          "backwardGlobal": 59,
+          "backwardLocal": 67
+        },
+        {
+          "global": 38,
+          "local": 47,
+          "backwardGlobal": 38,
+          "backwardLocal": 47
+        },
+        {
+          "global": 60,
+          "local": 69,
+          "backwardGlobal": 60,
+          "backwardLocal": 69
+        },
+        {
+          "global": 60,
+          "local": 68,
+          "backwardGlobal": 60,
+          "backwardLocal": 68
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "drift": 0.4,
+      "sharing": "common",
+      "method": "SDregional",
+      "counts": {
+        "global": 237,
+        "local": 280,
+        "pGlobal": 280,
+        "pLocal": 280,
+        "qGlobal": 280,
+        "qLocal": 280,
+        "proposals": 552,
+        "accepted": 430,
+        "blocks": 293,
+        "commits": 512,
+        "backwardLocal": 255,
+        "backwardGlobal": 217,
+        "backwardSeparate": 512,
+        "loss": -0.006578506425015899
+      },
+      "rounds": [
+        {
+          "global": 59,
+          "local": 66,
+          "backwardGlobal": 57,
+          "backwardLocal": 64
+        },
+        {
+          "global": 57,
+          "local": 70,
+          "backwardGlobal": 51,
+          "backwardLocal": 63
+        },
+        {
+          "global": 62,
+          "local": 77,
+          "backwardGlobal": 55,
+          "backwardLocal": 67
+        },
+        {
+          "global": 59,
+          "local": 67,
+          "backwardGlobal": 54,
+          "backwardLocal": 61
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "drift": 0.4,
+      "sharing": "common",
+      "method": "SDshared",
+      "counts": {
+        "global": 285,
+        "local": 325,
+        "pGlobal": 325,
+        "pLocal": 325,
+        "qGlobal": 285,
+        "qLocal": 325,
+        "proposals": 581,
+        "accepted": 385,
+        "blocks": 315,
+        "commits": 512,
+        "backwardLocal": 276,
+        "backwardGlobal": 249,
+        "backwardSeparate": 512,
+        "loss": -0.023059656459902968
+      },
+      "rounds": [
+        {
+          "global": 70,
+          "local": 79,
+          "backwardGlobal": 61,
+          "backwardLocal": 68
+        },
+        {
+          "global": 65,
+          "local": 75,
+          "backwardGlobal": 54,
+          "backwardLocal": 62
+        },
+        {
+          "global": 80,
+          "local": 92,
+          "backwardGlobal": 68,
+          "backwardLocal": 73
+        },
+        {
+          "global": 70,
+          "local": 79,
+          "backwardGlobal": 66,
+          "backwardLocal": 73
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "drift": 0.4,
+      "sharing": "private",
+      "method": "AR",
+      "counts": {
+        "global": 317,
+        "local": 317,
+        "pGlobal": 317,
+        "pLocal": 317,
+        "qGlobal": 0,
+        "qLocal": 0,
+        "proposals": 0,
+        "accepted": 0,
+        "blocks": 512,
+        "commits": 512,
+        "backwardLocal": 317,
+        "backwardGlobal": 317,
+        "backwardSeparate": 512,
+        "loss": -0.0978859846355076
+      },
+      "rounds": [
+        {
+          "global": 78,
+          "local": 78,
+          "backwardGlobal": 78,
+          "backwardLocal": 78
+        },
+        {
+          "global": 84,
+          "local": 84,
+          "backwardGlobal": 84,
+          "backwardLocal": 84
+        },
+        {
+          "global": 72,
+          "local": 72,
+          "backwardGlobal": 72,
+          "backwardLocal": 72
+        },
+        {
+          "global": 83,
+          "local": 83,
+          "backwardGlobal": 83,
+          "backwardLocal": 83
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "drift": 0.4,
+      "sharing": "private",
+      "method": "SDregional",
+      "counts": {
+        "global": 346,
+        "local": 346,
+        "pGlobal": 346,
+        "pLocal": 346,
+        "qGlobal": 346,
+        "qLocal": 346,
+        "proposals": 542,
+        "accepted": 445,
+        "blocks": 283,
+        "commits": 512,
+        "backwardLocal": 320,
+        "backwardGlobal": 320,
+        "backwardSeparate": 512,
+        "loss": -0.07406346017037962
+      },
+      "rounds": [
+        {
+          "global": 91,
+          "local": 91,
+          "backwardGlobal": 87,
+          "backwardLocal": 87
+        },
+        {
+          "global": 87,
+          "local": 87,
+          "backwardGlobal": 80,
+          "backwardLocal": 80
+        },
+        {
+          "global": 85,
+          "local": 85,
+          "backwardGlobal": 76,
+          "backwardLocal": 76
+        },
+        {
+          "global": 83,
+          "local": 83,
+          "backwardGlobal": 77,
+          "backwardLocal": 77
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "drift": 0.4,
+      "sharing": "private",
+      "method": "SDshared",
+      "counts": {
+        "global": 357,
+        "local": 357,
+        "pGlobal": 357,
+        "pLocal": 357,
+        "qGlobal": 357,
+        "qLocal": 357,
+        "proposals": 556,
+        "accepted": 411,
+        "blocks": 297,
+        "commits": 512,
+        "backwardLocal": 321,
+        "backwardGlobal": 321,
+        "backwardSeparate": 512,
+        "loss": -0.05554756711247759
+      },
+      "rounds": [
+        {
+          "global": 90,
+          "local": 90,
+          "backwardGlobal": 79,
+          "backwardLocal": 79
+        },
+        {
+          "global": 93,
+          "local": 93,
+          "backwardGlobal": 84,
+          "backwardLocal": 84
+        },
+        {
+          "global": 82,
+          "local": 82,
+          "backwardGlobal": 75,
+          "backwardLocal": 75
+        },
+        {
+          "global": 92,
+          "local": 92,
+          "backwardGlobal": 83,
+          "backwardLocal": 83
+        }
+      ]
+    }
+  ]
+}
