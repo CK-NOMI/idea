@@ -362,3 +362,88 @@ A/R13 后建议停止围绕通用统计估计器小修小补。优先挑战 HFL 
 ## 9. 跨团队追加日志
 
 > 此处保留供其他研究对话追加。**先读最新版本，再写入；失败也要提交。** 初始记录 A/R01–A/R13 及 PRE-01–PRE-11 已在上文归档。
+
+
+### HC/R01｜HiCut-SD：分层验证切面与预测偏差抵消
+
+- **日期 / 读取版本：** 2026-11-24；追加前 README blob SHA：c9a305f316ad5bb371e4ab3c731dd590a5e0b9ae（不是 commit SHA）。团队 ID HC（HiCut-SD 独立对话）。
+- **裁决：CRITICAL / Reject and Pivot（核心机制重复 A/R11 FSV；保留数学与工程分析）。** 独立探索时曾暂定保留、创新度估计 6.9/10；读共享库后发现 A/R11 已覆盖随机验证组、TV 凸性和逐 token 路由，且已有更深入的负结果。不能以 HiCut-SD 改名重启，也不能把 A/R11 数值作为 HC 团队实测。
+- **证据等级：** T（初步数学推导，需复核）、P（构造例子和理想成本模型）、O（假定完整信息的树形代理最优解）、H（尚未验证的实验/学习机制）。本轮无实际 CPU/GPU 实验、无代码或原始日志、无独立复现 R 证据。
+
+#### 1. 场景、目标和信息约束（H）
+
+真实分层个性化联邦语言建模：客户端持有私有非 IID 数据 D_i，边缘聚合区域适配器，云低频聚合全局适配器。冻结共享主干 theta_0，客户端参数写为 theta_i=theta_0+Delta_theta_cloud+Delta_theta_edge(i)+Delta_theta_i；初步目标为加权语言模型 NLL + 正则项。普通 HFL 不必联合推理，本场景额外定义了 token 级概率混合，不能宣称与参数平均模型相同。
+
+给定已提交上下文 h、权重 w_i>=0 且 sum_i w_i=1，正式目标 P(v|h)=sum_i w_i p_i(v|h)。模型版本请求内固定，候选来自共享主干内部特征上的轻量预测头 q_phi（Medusa/EAGLE 风格，不部署完整独立草稿 LLM）。边缘持有其分支、云持有协调策略及历史低成本统计。决策前不能免费查询当前所有 p_i，否则消除验证成本的前提失效。目标分布与截断、温度的施加顺序需要预先明确定义。
+
+#### 2. 计算矛盾与完整构造例子（T/P）
+
+最大耦合单步接受率 alpha(P,q)=sum_v min(P(v),q(v))=1-TV(P,q)。四个等权二元模型 p_1=(.9,.1), p_2=(.1,.9), p_3=(.8,.2), p_4=(.2,.8)，候选 q=(.5,.5)。全量联合 P=q，接受率 1，模型数 4。逐位置随机单模型验证，分别接受 .6/.6/.7/.7，平均 .65，模型数 1。分组 {1,2}/{3,4} 后，各组条件混合均为 q，接受率 1、模型数 2。混合切面 {1,2}/{3}/{4} 的接受率 .85、期望模型数 1.5。**这些是解析构造值，不是模型测量、实际延迟或显存收益。**
+
+局部相对 q 的误差可以在加权聚合后抵消，降低验证粒度时可能丢失这一收益。若组内模型同向偏差，例如全部 (.9,.1)，q=(.5,.5)，无论合并多少接受率始终 .6；HFL 通常同质聚合，可能恰恰缺少组内互补性。
+
+#### 3. HSVP：Hierarchical Selective Verification Problem（T/H）
+
+在模型层级树 H=(N,E) 上，合法切面 C 是不交叠且覆盖所有叶的子树根集合。组 G 的权重 W_G=sum_{i in G}w_i，条件目标 P_G=sum_{i in G}w_i p_i/W_G（忽略零权重组），恒有 P=sum_{G in C}W_G P_G。切面可同时包含不同层级。拟优化策略 pi、候选长度 gamma、预测头 phi，使长期单位提交 token 的期望成本 E[tau+lambda B]/E[L+1] 最小，其中 tau 是端到端块耗时、B 是通信字节、L 为接受前缀长度；lambda 的单位应与 tau/B 匹配。正式约束为逐 token 条件分布及完整序列分布与同一混合 AR 目标一致。该目标不是对原始单个 pretrained 模型的无损加速，也不保证混合目标 greedy 一致。
+
+**机制：** (1) 已确认上下文和历史分歧/网络成本选择合法切面；(2) 轻量预测头生成 gamma 个条件候选及其真实 q_j；(3) 对每个位置（含全接受后的 bonus）独立按 W_G 抽取组，独立于当前及未来草稿随机性；(4) 只计算相应组的条件目标，在末端适配器设定下尝试共享基础特征；(5) 接受候选 x 的概率 min(1,P_G(x)/q(x))，拒绝用归一化 [P_G-q]_+ 采样，停止并丢弃后续草稿；全接受时 bonus 直接从其抽取组目标采样；(6) 边缘记录历史偏差与费用，云周期性更新策略/候选头（尚未设计出独有联邦学习机制）。不能按观察到的当前候选或某组验证成功后任意更改路由概率。
+
+#### 4. 理论与新增代理优化（T/O）
+
+- **单步/序列精确性（与 A/R11 重合）：** 条件于组 G，输出概率为 min(P_G(v),q(v))+[P_G(v)-q(v)]_+=P_G(v)。对组随机性边缘化即 P(v)。若各位置在已确认上下文条件下具有规定混合权重且不与当前草稿随机性耦合，按链式法则推广到整个自回归序列。需要重新检查实现的停止时刻、预采样未来组及有限精度；不声称相同随机 seed 的文本逐位一致，也不声称支持任意 top-p/greedy。
+- **合并单调性（与 A/R11 重合）：** alpha_C=1-sum_G W_G TV(P_G,q)。由 TV 凸性，合法合并 A,B 不会降低单步平均接受率。
+- **显式抵消增益（T，已有三角不等式的直接推论，不认定新定理）：** J(A,B;q)=[W_A||P_A-q||_1+W_B||P_B-q||_1-||W_A(P_A-q)+W_B(P_B-q)||_1]/2 >=0。同向偏差无增益，逐坐标异号可能产生正增益。
+- **树形切面 DP（O，HC 新增明确推导，标准树形动态规划）：** 对固定上下文、已知全部组 TV 与可加成本 c_G，代理目标 F(C)=sum_G W_G[TV(P_G,q)+lambda c_G]。递推 V(G)=min{W_G[TV(P_G,q)+lambda c_G], sum_{H child of G}V(H)}；叶节点只能取第一项。归纳可知合法切面代理全局最优，给定节点分数时 O(|N|) 时间。完整概率取得成本未计，不能作为在线可部署算法；真实 SD 多步接受、批次、共享权重读带宽、KV cache、网络 RPC 都不具备简单可加性，DP 不证明最优真实 wall-clock。
+- **简化成本敏感性（P）：** 若所有位置条件接受率恒为 alpha，E[L+1]=sum_{j=0}^gamma alpha^j，归一化最强 AR 单 token 成本=1，理想加速 S=E[L+1]/(C_draft+C_verify)。示例 gamma=4,alpha=.8,C_draft=.25,C_verify=1.5，E[L+1]=3.3616，S≈1.921；仅理想化参数，不是实测。若接受条件概率随前缀变化，应计算真实前缀生存概率。
+
+#### 5. 主动反例与失败诊断（T/P）
+
+1. **整块固定组不精确。** p1=(1,0),p2=(0,1)，等权、恒定条件分布；正确逐位置混合的 AA/AB/BA/BB 各 .25。整个长度2序列只选一次模型则 AA/BB 各 .5，AB/BA 为0。必须逐位置独立抽组；以共享一次路由降低成本会改变序列目标（与 A/R11 反例同类）。
+2. **同质层级无互补收益。** 如上述全部 (.9,.1)；现实 HFL 区域同质性可能构成直接反例。
+3. **批内验证组覆盖几乎全量。** m 个预验证位置、组权重 W_G，期望访问不同组数为 sum_G[1-(1-W_G)^m]。两等权组、gamma=4 加 bonus，m=5，期望 1.9375/2 组。若每个组均需运行整块前缀或恢复自己的 KV，逐位置理论模型调用减少无法等价为真实 GPU 节约；共享主干后末端头开销也可能小到无研究价值。
+4. **无 SD 强基线已可精确抽样。** 逐 token 按 w_i 抽一个模型再采样即得到 P；不必每次全量混合。最强同信息平坦委托也可执行相同随机分组、切面和普通共享计算。固定 HFL 树甚至可能比全局自由配对差；共享库 A/R11 已有此类负结果。
+5. **greedy 不保证。** 随机组输出的 argmax 不等于完整 P 的 argmax；例如 p1=(.9,.1),p2=(.4,.6)，等权，混合 greedy 为 A，但组选 B 的概率非零。不能将随机分布等价当作 greedy 正确。
+6. **质量与双向必要性尚未证明。** 概率混合本身未证实提高领域模型质量；预测反馈尚只是普通候选头训练/切面统计，无 HFL 必要的新学习对象。A/R11 已否决核心机制；仅增加 DP、调度、训练损失、扩大实验不能消除重复。
+
+#### 6. 文献检索与撞题审查（历史对话检索线索，非本次独立核验）
+
+起始原文链接（用户指定）：
+- [Leviathan et al., Fast Inference from Transformers via Speculative Decoding](https://proceedings.mlr.press/v202/leviathan23a.html)（2023）；精确接受/残差采样。
+- [SD Survey](https://aclanthology.org/2024.findings-acl.456/)（2024）；SD 分类。
+- [EAGLE](https://arxiv.org/abs/2401.15077)（2024）、[EAGLE-2](https://arxiv.org/abs/2406.16858)（2024）、[EAGLE-3](https://arxiv.org/abs/2503.01840)（2025）；附属轻量预测、动态树、训练时测试/多层特征。
+- [Medusa](https://arxiv.org/abs/2401.10774)（2024）；多预测头、树验证；不同采样策略需区别精确性。
+- [SpecFed](https://arxiv.org/abs/2604.25777)（2026）；历史阅读报告称各节点概率聚合、Top-K 压缩与重建；正式稿需复核其误差和协议细节，不能只凭历史描述比较。
+- [SpecTr](https://arxiv.org/abs/2310.15141)；多候选最优传输。[LayerSkip](https://aclanthology.org/2024.acl-long.681/)；早退、自投机。
+- [Lossless Hierarchical Speculative Decoding](https://arxiv.org/abs/2601.05724)；层级草稿/验证，需核对与目标组切面的差异。
+- [FedEM](https://proceedings.neurips.cc/paper/2021/hash/82599a4ec94aca066873c99b4c741ed8-Abstract.html)；混合个性化学习。
+- [FACT](https://arxiv.org/abs/2611.23463)；历史检索记录涉及预算/跨步训练，待核对。
+- 额外历史检索名称：CoS（多模型联合分布精确投机，最高近邻风险，原文链接需复核）、HierFAVG / Client-Edge-Cloud Hierarchical FL、HFL with Quantization、DSSD、AsymSpec、DISCO、SpecDec++、Acceptance-Aware Draft Model Training、REAL Loss、Optimal Multi-Draft SD、OnlineSPEC、FeMAM、FedGMM、PFAdapter、FLoRA、Punica、S-LoRA。没有已核验链接者仅作检索线索，不伪造引用。CoS/SpecFed 可能覆盖多模型混合目标；接受率损失、动态草稿长度、网络调度、压缩、个性化适配和共享 serving 均不能独立作为新贡献。
+
+检索记录（历史首轮日期 2026-11-24）：client-edge-cloud hierarchical federated learning; hierarchical personalized FL; mixture of distributions; self-speculative decoding; LayerSkip; EAGLE; distributed speculative decoding; edge-cloud verification; speculative ensemble; collaborative decoding; mixture target sampling; randomized verification; hierarchical partition; verifier grouping; total variation; expected acceptance length; acceptance-aware training; multi-LoRA serving; shared backbone。历史报告列出 arXiv、PMLR、ACL Anthology、OpenReview、NeurIPS/ICLR、IEEE 等来源。盲区：分层随机化耦合、混合最优耦合、延迟采样、分布式 Monte Carlo、最新未索引工作。未进行逐篇全公式复核和正式文字查重；论文须独立撰写并规范引用，内容重复不能靠改写解决。
+
+**最直接的去重依据是仓库 A/R11 FSV，不依赖外部查重是否完成。** 其历史数值实验（E-H/P）已经显示平坦配对可匹配/超越边缘分组，不应重做同一核心机制。HC 树形切面 DP、批内组覆盖公式保留为后续研究的限制与分析工具，不认定为可立项的新 Idea。
+
+#### 7. 原拟最小与完整实验（H，未执行；当前裁决取消重复性实验）
+
+原拟 CPU 二元分布枚举、1×40GB GPU Qwen2.5-1.5B-Instruct + 4 个轻量适配器、8 虚拟客户端/2 边缘/1 云、LoRA rank 8/16、gamma 1/2/4/6/8、500–2000 条独立测试上下文；数学、代码、通用 QA、摘要构成非 IID；温度采样初期不做截断。先将适配限制在最后层注意力之后的 MLP/输出模块以共享此前 KV；注意个性化能力可能受限，后续若增加最后 2–4 层适配必须计独立 KV/前缀补算。第二规模 3B 或 7B，多进程网络模拟，最多 2×40GB；7B BF16 权重约 14GB（不含激活、优化器和缓存）。无需独立草稿 LLM。
+
+原拟离线 oracle：固定真实模型分布、枚举合法切面，绘制接受率—成本 Pareto 前沿，比较 HFL 树、随机树、全量与叶节点。未计获取成本的 oracle 只用于证伪，不能当可部署性能；若无至少 20% 潜在优势立即停止。考虑到 A/R11 负证据，当前不建议投入 GPU 重做这一实验，除非出现改变核心前提的独立证据。
+
+原拟公平基线：全量混合 AR；逐 token 随机单模型 AR（共享主干、适配执行、cache）；附属头+全量混合验证；附属头+随机单模型验证；静态边缘组；SpecFed（如近似须单列质量/误差）；CoS（适用同一目标时）；同信息平坦自由分组、同成本委托与预缓存。消融：动态切面、原始 HFL 树、抵消统计、候选头联邦训练、主干复用。指标：真实端到端耗时、TPOT、吞吐、P50/P95、通信 bytes/token 及 RPC、GPU time、FLOPs、缓存与峰值显存、接受长度、模型质量、训练通信；数学分布枚举与采样检验。正式实验应满足两种模型尺度、三种异质性/延迟、至少三种子及 CI。无真实测量、种子、脚本、日志或置信区间可上传。
+
+#### 8. 成功门槛与 G1–G7（按共享库定义重新评估）
+
+旧对话给的主观创新分项：问题 7.5×25%、机制 7×25%、理论 6.5×20%、价值 7×15%、距离 6×15%，加权 6.875≈6.9/10；已经不达标。读 A/R11 后核心重复，原评分失效，不再给貌似精确的新分数。原拟好结果门槛：最强精确 SD 吞吐 +20%、最强无 SD 端到端 1.3×、网络瓶颈通信 -30%、两模型尺度/三领域、<=2×40GB、优于随机或平坦层级。最终必须遵循仓库 G5 的**全流程真实总 wall time -15% 或同成本有效工作 +20%，质量/预算匹配**，不得只汇报 inference speedup。
+
+| 门槛 | HC/R01 裁决 |
+|---|---|
+| G1 | FAIL：A/R11 已覆盖核心；原创新评分也不足 8 |
+| G2 | FAIL：HFL 学习未产生不可替代计算；SD 未反向改变学习；平坦可模拟 |
+| G3 | PARTIAL/FAIL：有限假设下随机采样正确，greedy 失败，无非平凡新理论、无有限精度实现审计 |
+| G4 | FAIL：零真实 LLM 实验 |
+| G5 | FAIL：无端到端证据，批内组覆盖/KV 为明确风险 |
+| G6 | FAIL：无证据支持好结果概率 80%；不提供虚构成功率 |
+| G7 | FAIL：仅推导及设计，无运行代码或原始日志 |
+
+**保留资产与下一步：** J 的显式表达、代理切面 DP 的适用边界、期望访问组数公式、随机混合 greedy 反例、强 AR/平坦基线要求可纳入公共限制。禁止仅通过改名、随机选组粒度、普通候选头联邦训练或接受率损失重新提交 A/R11/HC/R01。原本下一轮想让 HFL 主动形成互补层级，但普通分组/混合训练及人工错误抵消不足以产生独立贡献；只有新计算对象、可证明的非退化学习/验证双向必要性以及无法被强基线抹去的真实约束才值得继续。下一轮从共享库所有团队最新结果出发重新创造，不预设继续 HiCut-SD。
+
