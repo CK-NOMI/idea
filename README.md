@@ -969,3 +969,70 @@ q=(.40,.30,.20,.10)，四等权节点 p1=(.70,.10,.10,.10)，p2=(.20,.40,.30,.10
 | FAIL：核心重复且原分不足8 | FAIL：无双向必要性，平坦模拟 | PARTIAL/FAIL：随机采样局部T，greedy/精度/完整实现未审计 | FAIL：无真实LLM | FAIL：无实际总时间 | FAIL：无80%依据 | FAIL：历史原脚本/日志缺失 |
 
 保留全局残差精确性、K次回退概率上界、ρ=0边界、下行q成本、历史四节点数字和强基线。原下一步假说为HFL训练最优分组与SD推理抵消最优分组冲突；共享失败证据说明不能仅重新分组、调度或普通候选头训练就重启。下一轮优先读取最新README全文并记录版本，遵循Supervisor-Skills，去重其他团队正负结果，寻找真正新的学习对象及双向不可替代计算规则。每轮追加正负结果、证据等级和裁决，不覆盖他人、不强推、不降低门槛。仅在收到新研究任务时执行，非后台工作。
+
+
+### team-hca/R01｜HCA-SD / HCDCP：分层概率耦合与跨层抵消感知投机解码
+
+- 日期 2026-11-24；独立 ChatGPT 研究对话 team-hca；初次读取完整 README blob c9a305f316ad5bb371e4ab3c731dd590a5e0b9ae，后续读取 9fc7bb02fa901f2cddaf3a05b6aba069ade2eeb8 及 a8d64203aed1f6fd46a0816f6caf670a2dd788da 的并发新增记录。
+- **修订裁决 CRITICAL / Reject and Pivot**：原报告创新度 7/10，暂存未立项。共享库 A/R11 FSV 已覆盖混合目标、随机验证组、TV 凸性、逐位置路由且已有负结果；HC/R01 已有同样的树切面 DP，team-hcr-sd/R01、HIERASPEC/R01 已有相邻且更紧的正残差包络。不得改名重新立项。保留数学、失败方向、机制与实验计划供其他团队使用。
+- T=数学推导，O=完整信息代理，H=假说。**本轮无任何实际 CPU/GPU 实验**，所有数值为解析例子，非真实模型结果；无代码、日志、CI 或独立复现证据。
+
+#### 1. HFL 场景和对象（H）
+
+客户端私有非 IID 数据训练个性化 LoRA，边缘区域聚合，云全局聚合；共享基础 LLM、词表与 tokenizer。有效参数 θ_i=θ_0+Δθ_i，不假设 LoRA 因子分别平均等于有效权重平均；经授权可由边缘代执行客户端模型，不要求每客户端有 GPU。云端 HFL 全局模型的已获得隐藏状态 h_t 供 Medusa 风格轻量多头 q_{t,k}=softmax(H_k(h_t))，初期单候选链、冻结目标；可替换 EAGLE-3/LayerSkip，不需独立完整草稿 LLM，但辅助参数和云主模型前向/KV 不免费。
+
+给定前缀 s，正式目标特意定义为 p(y|s)=Σ_e w_e Σ_i w_{i|e}p_{e,i}(y|s)，各层权重归一，叶权重 w_i。概率混合不同于参数聚合模型 p_{Σw_iθ_i}，必须另证混合服务质量价值。仅用一个全局模型时本问题消失。节点持有各自模型与 KV，边缘协调，云持候选、权重和历史统计；跨层完整概率、隐藏状态与 KV 不可免费获取。允许前向、点概率查询、局部采样、聚合、验证、回滚。请求内版本、前缀、词表、温度/截断顺序须统一；prompt 共享需授权，不宣称天然隐私。
+
+#### 2. 计算矛盾（T）
+
+标准 SD：X~q，接受 min(1,p(X)/q(X))，拒绝从归一化 [p−q]_+ 补采；A=Σ min(p,q)=1−TV(p,q)。正部函数与概率聚合不交换：
+R_global(y)=[Σ_i w_i(p_i(y)−q(y))]_+ ≤ R_local(y)=Σ_i w_i[p_i(y)−q(y)]_+。
+异号偏差在全局抵消，先局部截断会丢失抵消。经典凸性，不是新定理。
+三词 A/B/C：q=(.5,.3,.2)，p1=(.8,.15,.05)，p2=(.2,.15,.65)，等权 p=(.5,.15,.35)。偏差 (.30,−.15,−.15)、(−.30,−.15,.45)；全局残差 (0,0,.15)，局部正残差聚合 (.15,0,.225)。全局接受 .85；局部 .70/.55，加权 .625，相差22.5pp。错误混用全局接受与归一化局部残差，输出 (.56,.15,.29)≠p。完整一致的局部规则则保持精确。二元 q=(.5,.5),p1=(.9,.1),p2=(.1,.9)，等权全局接受1、局部.6。均为手算。
+退化：单模型、分布全相同、逐词偏差同号、全量聚合免费。真实 HFL 区域可能同向而非互补。
+
+#### 3. HCDCP 问题、HCA-SD 机制与命题（T/H）
+
+Hierarchy-Constrained Distribution Coupling Problem：合法树切分 P 是覆盖全部叶且互不重叠的子树集合；W_g=Σ_{i∈g}w_i，p_g=Σ_{i∈g}w_i p_i/W_g（忽略零权组），p=Σ_g W_gp_g。根、区域、叶及不对称切分均合法。优化长期 E[总时间]/E[总提交 token]，含起草、验证、通信、补采、缓存同步及回退；显存/通信约束，正式自回归序列 ∏_t p(y_t|y_<t) 不变，训练推理全流程成本另按 G5。
+
+机制：在当前候选随机性前依据已提交前缀/历史统计选切分，每个位置（包括 bonus）按 W_g 独立于当前及未来候选随机性抽 G，仅对 p_G 做完整精确 SD。Uq(X)≤p_G(X) 接受；否则正确残差补采、截断后缀、更新 KV；全通过则 bonus 从新抽组目标采样。不可按当前候选任意选组或整块固定组。
+
+命题1：在合法因果路由、同快照/前缀、真实条件 q、独立随机性及精确补采下，P(Y=y|G=g)=p_g(y)，边缘化得 p(y)。每步完整历史条件正确才能归纳整个序列。预采样候选、停止/EOS、bonus、浮点及 top-p 需另审计；不证明 greedy 一致。A/R11 已有整块固定组反例 TV=.32；HC/R01 已有 greedy 反例。
+命题2：A(P)=1−Σ_g W_g TV(p_g,q)。合并子树 h 为父 g 的接受率增益 Δ_g=Σ_h W_h TV(p_h,q)−W_g TV(p_g,q)=1/2[Σ_h W_h||p_h−q||_1−||Σ_h W_h(p_h−q)||_1]≥0。凸性直接结果，与 A/R11/HC 重合。
+命题3：**无需完整词表上传的精确残差采样**（已完成所选子树前向时）：拒绝后按 w_i/W_g 抽叶 I，再 Z~p_I，故 Z~p_g。向子树其他叶查询标量 p_i(Z)，聚合 p_g(Z)，以 b(Z)=[1−q(Z)/p_g(Z)]_+ 接受（仅在 p_g(Z)>0 上）。否则重复。一次提议并接受 z 的质量 [p_g(z)−q(z)]_+，最终样本为正确归一化残差。δ=TV(p_g,q)>0 时每次成功率 δ，拒绝条件下 E[N]=1/δ；原候选拒绝概率 δ，每个到达验证位置无条件 E[N]=1；δ=0 时 N=0。m 叶且本地概率已可查询，理想期望标量通信 O(m) 对比全量 O(m|V|)。最多 M 次尝试再回退到完整真实残差，回退概率 δ(1−δ)^M；字节、串行 RTT、局部完整 logits/softmax、KV/前向与长尾均需计入，不保证最坏通信或真实速度。这是经典拒绝采样应用，不是新原语。HCR/HIERASPEC 正残差包络质量 R≤1，条件尝试 R/δ，可能更高效但需付包络准备费用；DISCO/remote sampling 等亦需比较。
+
+#### 4. 树优化及信息循环（O/H）
+
+D_g=W_g TV(p_g,q)，c_g 为选中子树期望成本，代理 J(P)=Σ_g(D_g+λW_gc_g)。已知可加代价下 F(g)=min{D_g+λW_gc_g,Σ_{h child of g}F(h)}；叶仅第一项。O(树节点数)，HC/R01 同样推导。真实多步生存率、KV、并行临界路径、通信竞争并不可加。获取 D_g 本身可能要求全量前向与通信，出现先完成昂贵验证才能选验证粒度的信息循环。原拟用低成本标量查询、历史统计估计 Δ_g 并给误差界；PRE-08/A/R11 已有相邻失败，现不重复，除非新证据改变核心前提。
+
+#### 5. 失败方向、反例及强基线
+
+初筛不采用：联邦训练 Medusa 头（拼接）；接受率加权聚合（接受感知训练/自适应聚合已有）；在线 EAGLE（在线学习/演化目标）；边缘预测云验证（分布式 SD）；词表压缩（SpecFed/DSSD/DISCO）；简单增设验证层（Lossless HSD）。属文献/机制筛选，不是新实验。
+CRITICAL：PRE-06/PRE-08/A/R06/A/R10/A/R11 已有相关历史，尤其 FSV 核心相同，E-H/P 表明平坦配对匹配或胜过边缘配对；同信息同委托计算平坦可模拟树。普通 AR 逐 token 按权重选一个模型再采样即精确，不需全量混合，禁止只和低效全量 AR 比。SD 目前不反向改变 HFL 学习；数学也可搭配独立草稿模型，G2 不通过。HC/HCR/HIERASPEC 的同期记录进一步说明概率抵消方向已高度重复。
+MAJOR：逐位置抽组导致其他模型补算前缀/KV；高 RTT 残差串行长尾；云候选器前向成本；联合模型任务质量未知；真实区域同号偏差导致 Δ=0；参数聚合非概率聚合；错误混用残差或整块路由破坏分布；greedy/浮点未证。接受率与通信降幅不能代替全流程 wall time。
+
+#### 6. 文献检索与撞题（历史线索，归档未逐条重新核验）
+
+检索日期 2026-11-24，来源 arXiv、PMLR、ACL Anthology、OpenReview、IEEE、ICLR。关键词 Client Edge Cloud Hierarchical Federated Learning; Hierarchical Federated LoRA; Personalized Federated LLM; Multi-target SD; Distributed Speculative Decoding; Cloud Edge Verification; Speculative Ensemble; Collaborative Decoding; Maximal Coupling; Communication-free Coupling; Hierarchical Residual Sampling; Lossless Verification; Acceptance-Aware Training; Online Speculative Decoding; Mixture Distribution Coupling; Partition Verification; Distributed Exact Sampling。盲区：未公开同期、未索引、付费全文、概率论不同术语等价机制。
+指定原文：[Leviathan SD](https://proceedings.mlr.press/v202/leviathan23a.html) 精确接受/残差；[SD Survey](https://aclanthology.org/2024.findings-acl.456/) 分类；[EAGLE](https://arxiv.org/abs/2401.15077)、[EAGLE-2](https://arxiv.org/abs/2406.16858)、[EAGLE-3](https://arxiv.org/abs/2503.01840) 特征递推/动态树/多层特征直接 token 预测；[Medusa](https://arxiv.org/abs/2401.10774) 多头树验证（不可默认所有采样策略精确）；[SpecFed](https://arxiv.org/abs/2604.25777)（历史 [HTML v2](https://arxiv.org/html/2604.25777v2)）概率聚合/Top-K 压缩、重建近似待复核，最直接外部近邻。
+重点近邻：[CoS](https://arxiv.org/html/2502.01662) 已有多模型联合分布精确 SD，不可声称首次；[Lossless HSD](https://arxiv.org/html/2601.05724) 候选分支层级残差而非物理树，仍需比对数学等价；[DISCO](https://arxiv.org/abs/2610.35957) 低通信分布式 SD，核查草稿复现与标量精确性；DIVERSED 动态集成，固定目标/保证待核；[HierFAVG](https://arxiv.org/abs/1905.06641)、[LayerSkip](https://aclanthology.org/2024.acl-long.681/)、[ResiSpec](https://arxiv.org/abs/2608.24411)。
+其他原报告名称线索：Personalized Client-Edge-Cloud HFL、HierFedLoRA、pFedGPT、S2D、DSD、DSSD、PipeSD、FlexSpec、Variational SD、Acceptance-Aware Draft Training、When Drafts Evolve、Coupling without Communication。其他团队已记录部分链接；不补造未知链接。正式投稿前逐篇核查题名、时间、算法和重合点，独立撰写/规范引用不能解决内容重复；无正式文字查重。内部重合已足以否决。
+
+#### 7. 最小及完整实验计划（H，未运行，取消重复核心实验）
+
+P0 CPU 人造分布：词表 10/100/1000/32000，4/8/16/32 客户端，2/4 边缘，Dirichlet 异质性、RTT、K=1/2/4/8；枚举/MC 验证 TV、接受、回退、序列。A/R11 有相似实验。
+P1 1–2×40GB NVIDIA，Qwen 1.5B–3B 级，8–16 虚拟客户端，顺序训练、共享主干、按需 LoRA。GSM8K 数学、MBPP 代码、通用 QA/指令、XSum 摘要、多轮对话；训练测试隔离、两级 non-IID。先测真实前缀 Δ_g 分布和层级相关性、混合质量；抵消小或混合无价值即否决。
+P2 基线 B0 HFL 全局 AR（不同目标质量参考）；B1 全概率混合 AR；B2 随机选叶精确混合 AR；B3 Medusa 式+全局精确 SD；B4 EAGLE 式+全局验证；B5 SpecFed 压缩（质量/误差单列）；B6 固定叶/区域切分精确 SD；B7 全局标量查询+精确残差。加同信息平坦委托、自由配对、预缓存。消融：去动态切分/Δ估计、随机切分、平坦、打乱区域、完整残差、候选头、异质性。
+指标 TTFT、TPOT、P95/P99、吞吐、接受长度、通信字节/轮次、FLOPs/GPU time、KV 补算回滚、任务质量、分布/序列正确性、训练推理累计 wall time/CI；两尺度、三非 IID/延迟设置、三独立种子。单卡模拟不冒充实际分布式速度。原拟好结果：同目标最快强基线≥1.2×推理加速、完整概率 SD 通信下降≥50%、精确、至少三任务、层级消融正收益；仓库 G5 要求全流程真实时间下降≥15%或同成本有效工作+20%。无实际数据，不判80%。
+
+#### 8. G1–G7 和下一轮
+
+原主观等权评分：问题7.5、机制6.5、理论7、价值7.5、距离6.5，均值7.0/10（未达8）；跨团队直接重合后旧分数失效，不虚构新评分。
+
+| G1 | G2 | G3 | G4 | G5 | G6 | G7 |
+|---|---|---|---|---|---|---|
+| FAIL 核心重复 | FAIL 无双向必要性 | PARTIAL/FAIL 单步 T，greedy/多步实现未审计 | FAIL 无实测 | FAIL 无全流程耗时 | FAIL 无80%证据 | FAIL 无代码日志 |
+
+保留非交换性反例、残差期望尝试与有界回退、树代理优化及成本边界；不冒用他队数值。原拟 Δ 估计、HFL 特异性、真实概率预实验及重新查重，现 **Reject and Pivot**，禁止复刻 A/R11/HC/HCR/HIERASPEC 或仅追加普通训练/通信模块。下一轮先读最新 README 全文及所有团队正负成果，创造能真正双向改变 HFL 学习和免独立草稿执行的新计算对象，以强平坦及普通 AR/SD 否证；每轮结束无论成败都追加，不覆盖、不强推。
+
+- 本次追加实际使用 README blob SHA：fa9946c112aa63d0d6542b916e5d8124ca451b8c；保留该版本中全部其他团队记录。
