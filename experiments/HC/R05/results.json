@@ -1,0 +1,290 @@
+{
+  "full": {
+    "n": 72,
+    "arMeanMs": 13210.112638888888,
+    "sdMeanMs": 5650.725000000001,
+    "arP95": 16309.77,
+    "sdP95": 9109.08,
+    "arTotalTokens": 15063,
+    "sdTotalTokens": 14964,
+    "sdSlower": 0,
+    "oracleExtraSaving": 0
+  },
+  "matched": {
+    "n": 36,
+    "arMeanMs": 12633.317777777782,
+    "sdMeanMs": 5383.8069444444445,
+    "arP95": 16309.97,
+    "sdP95": 12821.96,
+    "arTotalTokens": 7196,
+    "sdTotalTokens": 7196,
+    "sdSlower": 0,
+    "oracleExtraSaving": 0
+  },
+  "equalText": 36,
+  "equalLength": 57,
+  "cells": [
+    {
+      "task": "chat",
+      "full": {
+        "n": 24,
+        "arMeanMs": 16071.486249999996,
+        "sdMeanMs": 7641.0341666666645,
+        "arP95": 16202.68,
+        "sdP95": 12821.96,
+        "arTotalTokens": 6144,
+        "sdTotalTokens": 6142,
+        "sdSlower": 0,
+        "oracleExtraSaving": 0
+      },
+      "matched": {
+        "n": 7,
+        "arMeanMs": 16097.204285714286,
+        "sdMeanMs": 8122.302857142857,
+        "arP95": 16202.68,
+        "sdP95": 12833.73,
+        "arTotalTokens": 1792,
+        "sdTotalTokens": 1792,
+        "sdSlower": 0,
+        "oracleExtraSaving": 0
+      },
+      "equalText": 7,
+      "equalLength": 22
+    },
+    {
+      "task": "code",
+      "full": {
+        "n": 24,
+        "arMeanMs": 16122.260416666666,
+        "sdMeanMs": 5688.145416666666,
+        "arP95": 16310.12,
+        "sdP95": 6272.1,
+        "arTotalTokens": 6144,
+        "sdTotalTokens": 6018,
+        "sdSlower": 0,
+        "oracleExtraSaving": 0
+      },
+      "matched": {
+        "n": 15,
+        "arMeanMs": 16117.493999999999,
+        "sdMeanMs": 5902.008666666667,
+        "arP95": 16310.17,
+        "sdP95": 6272.1,
+        "arTotalTokens": 3840,
+        "sdTotalTokens": 3840,
+        "sdSlower": 0,
+        "oracleExtraSaving": 0
+      },
+      "equalText": 15,
+      "equalLength": 21
+    },
+    {
+      "task": "summarization",
+      "full": {
+        "n": 24,
+        "arMeanMs": 7436.591249999998,
+        "sdMeanMs": 3622.995416666666,
+        "arP95": 8371.22,
+        "sdP95": 4690.15,
+        "arTotalTokens": 2775,
+        "sdTotalTokens": 2804,
+        "sdSlower": 0,
+        "oracleExtraSaving": 0
+      },
+      "matched": {
+        "n": 14,
+        "arMeanMs": 7168.328571428571,
+        "sdMeanMs": 3459.342857142857,
+        "arP95": 8364.97,
+        "sdP95": 4690.15,
+        "arTotalTokens": 1564,
+        "sdTotalTokens": 1564,
+        "sdSlower": 0,
+        "oracleExtraSaving": 0
+      },
+      "equalText": 14,
+      "equalLength": 14
+    }
+  ],
+  "trials": [
+    {
+      "task": "chat",
+      "trial": 1,
+      "n": 8,
+      "matchedN": 3,
+      "arMax": 16203.06,
+      "sdMax": 10448.29,
+      "oracleMax": 10448.29,
+      "choice": "sd",
+      "chosenMax": 10448.29,
+      "repairMax": 26651.35,
+      "routingMax": 16203.06,
+      "acceptance": 0.3577,
+      "arTokens": 2048,
+      "sdTokens": 2048
+    },
+    {
+      "task": "chat",
+      "trial": 2,
+      "n": 8,
+      "matchedN": 2,
+      "arMax": 16017.58,
+      "sdMax": 12821.96,
+      "oracleMax": 12821.96,
+      "choice": "sd",
+      "chosenMax": 12821.96,
+      "repairMax": 25117.1,
+      "routingMax": 16017.51,
+      "acceptance": 0.3637,
+      "arTokens": 2048,
+      "sdTokens": 2047
+    },
+    {
+      "task": "chat",
+      "trial": 3,
+      "n": 8,
+      "matchedN": 2,
+      "arMax": 16019.77,
+      "sdMax": 12833.73,
+      "oracleMax": 12833.73,
+      "choice": "sd",
+      "chosenMax": 12833.73,
+      "repairMax": 25127.83,
+      "routingMax": 16019.06,
+      "acceptance": 0.3673,
+      "arTokens": 2048,
+      "sdTokens": 2047
+    },
+    {
+      "task": "code",
+      "trial": 1,
+      "n": 8,
+      "matchedN": 5,
+      "arMax": 16310.17,
+      "sdMax": 6656.9,
+      "oracleMax": 6656.9,
+      "choice": "sd",
+      "chosenMax": 6656.9,
+      "repairMax": 22966.39,
+      "routingMax": 16310.12,
+      "acceptance": 0.4429,
+      "arTokens": 2048,
+      "sdTokens": 2006
+    },
+    {
+      "task": "code",
+      "trial": 2,
+      "n": 8,
+      "matchedN": 5,
+      "arMax": 16041.11,
+      "sdMax": 6272.1,
+      "oracleMax": 6272.1,
+      "choice": "sd",
+      "chosenMax": 6272.1,
+      "repairMax": 21827.18,
+      "routingMax": 16040.68,
+      "acceptance": 0.4481,
+      "arTokens": 2048,
+      "sdTokens": 2006
+    },
+    {
+      "task": "code",
+      "trial": 3,
+      "n": 8,
+      "matchedN": 5,
+      "arMax": 16040.89,
+      "sdMax": 6271.25,
+      "oracleMax": 6271.25,
+      "choice": "sd",
+      "chosenMax": 6271.25,
+      "repairMax": 21825.579999999998,
+      "routingMax": 16040.4,
+      "acceptance": 0.453,
+      "arTokens": 2048,
+      "sdTokens": 2006
+    },
+    {
+      "task": "summarization",
+      "trial": 1,
+      "n": 8,
+      "matchedN": 4,
+      "arMax": 8669.91,
+      "sdMax": 4769.07,
+      "oracleMax": 4769.07,
+      "choice": "sd",
+      "chosenMax": 4769.07,
+      "repairMax": 13140.289999999999,
+      "routingMax": 8669.91,
+      "acceptance": 0.4998,
+      "arTokens": 929,
+      "sdTokens": 929
+    },
+    {
+      "task": "summarization",
+      "trial": 2,
+      "n": 8,
+      "matchedN": 5,
+      "arMax": 8360.89,
+      "sdMax": 4460.17,
+      "oracleMax": 4460.17,
+      "choice": "sd",
+      "chosenMax": 4460.17,
+      "repairMax": 12522.33,
+      "routingMax": 8360.89,
+      "acceptance": 0.4988,
+      "arTokens": 923,
+      "sdTokens": 940
+    },
+    {
+      "task": "summarization",
+      "trial": 3,
+      "n": 8,
+      "matchedN": 5,
+      "arMax": 8364.97,
+      "sdMax": 4443.87,
+      "oracleMax": 4443.87,
+      "choice": "sd",
+      "chosenMax": 4443.87,
+      "repairMax": 12510.06,
+      "routingMax": 8066.19,
+      "acceptance": 0.4979,
+      "arTokens": 923,
+      "sdTokens": 935
+    }
+  ],
+  "deadline": 5603.03,
+  "admission": [
+    {
+      "task": "chat",
+      "n": 24,
+      "arAdmitted": 0,
+      "sdAdmitted": 5
+    },
+    {
+      "task": "code",
+      "n": 24,
+      "arAdmitted": 0,
+      "sdAdmitted": 7
+    },
+    {
+      "task": "summarization",
+      "n": 24,
+      "arAdmitted": 0,
+      "sdAdmitted": 24
+    }
+  ],
+  "groupMaxProxy": {
+    "arMax": 122028.35,
+    "sdMax": 68977.34,
+    "oracleExtraSaving": 0,
+    "heldoutExtraSaving": 0,
+    "oracleRepairSavingVsAR": -0.4889008169003348,
+    "oraclePreRouteSavingVsAR": 0.0024627883602459377
+  },
+  "serialProxy": {
+    "arSum": 951128.11,
+    "sdSum": 406852.20000000007,
+    "oracleRepairSavingVsAR": 0.05041091677965437,
+    "oraclePreRouteSavingVsAR": 0.27439246853928
+  }
+}
