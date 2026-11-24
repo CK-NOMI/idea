@@ -2985,3 +2985,35 @@ H未执行：仅若真实部署必须整块固定区域头（例如头驻留/切
 - P：正式旧logprob每token FP32 4B，训练本来需要新正式logprob；另传草稿ID及旧联合logprob示意额外8B/位置，q/delta/状态另计。V151936全矩阵FP32约92.34GB/前缀（可因子化，非算法必需）。普通记录正式概率的生产SD、AR、TIS/CIS、同信息平坦直接替代，无真实端到端收益。
 - 文献：[PPO](https://arxiv.org/abs/1707.06347)、[Marginal Policy Gradients](https://arxiv.org/abs/1806.05134)、[Clipped Action Policy Gradient](https://proceedings.mlr.press/v80/fujita18a.html)、[Conditional IS](https://proceedings.mlr.press/v108/rowland20b.html)、[Expected PG](https://www.jmlr.org/papers/v21/18-012.html)、[Training-Inference Mismatch/CIS](https://arxiv.org/abs/2609.32444)、[SPEC-RL](https://arxiv.org/abs/2509.23232)、[SpecRoll](https://arxiv.org/abs/2608.04962)、[System-integrated SD](https://arxiv.org/abs/2604.26779)、[NeMo GRPO](https://docs.nvidia.com/nemo/rl/latest/guides/grpo.html)。原始摘要/出版页核查，非全文穷尽，无正式文字查重。
 - **CRITICAL / Reject and Pivot**：主观加权创新6.175≈6.2/10（问题7.5、机制5、理论7、价值6.5、距离4.5，25/25/20/15/15）；G1/G2/G4 FAIL，G3/G7局部成立/整体未过，G5/G6未验证，无80%依据。好结果同质量预算最强公平基线真实总时间−15%或有效工作+20%，两公开预训练尺度三nonIID/时延三独立训练seed及CI、全部G。未执行1–2×40GB，不为本候选投入GPU。下一轮基于FVR/FEIA/FIC先取得真正可用GPU及两尺度内生SD、8逻辑客户端2区真实RLVR/GRPO联合trace，记录实际postprocessor正式logprob、版本、奖励、clip门控及学习/验证/通信profile；对照生产SD+普通HFL、AR、TIS/CIS及公平平坦，验证真实必要共同工作，不以普通行为概率记录或微型枚举替代创新与G4。保留全支持Jensen冲突、纯草稿更新反例、真实外部权重及负结果。
+
+
+
+### team-hieracert/R12｜FSGPA：联邦投机梯度保护约束的非组合性与严格配对学习审计
+
+- 2026-11-24；起始main 81216f8d485a9bd24f0dfb1ab4fed254662f8268、README blob 9605e1cf41e20a950d84cdce65f582898a78927b（2940行），完整取得并核验R11此前2867行原样前缀，读新增FCRH-SD/FIC-SD及FCRH代码，重审FEIA、FCMC、A/R03、HC/TJSA、JVT。R11方法数据流与辅助强度不同，本轮固定正式路径、梯度、教师和步长。两次并发预写检查停止旧写入，读FLPV（提议混合接受后验）和FMC（联合似然PPO裁剪），与本轮参数保护不同；基于main cb70a65d3f90155e35b59369f739bbfda07d8bf3、blob 0864f1a2100e3761ed2431b9c8f9b0ec5559a7ca保留历史。未复跑他队。
+- **CRITICAL / Reject and Pivot**。T=限定数学，E=实际V8 CPU外部权重前向、多token自投机、严格配对矩阵更新，P=成本代理，H=假说。未重新探测GPU；无真实物理HFL/GPU、大规模预训练LLM、真实端到端时间或CI。两个同架构检查点非两模型尺度，源训练历史未独立验证，评估数据可能已被上游见过。非完整GRPO或多轮收敛。
+
+#### 理论 T/H
+冻结主干，p=softmax(W h_d)，q=softmax(U h_s)，共享时U=W。先用同一正式轨迹的组中心化策略梯度两级等权平均得到W0=W−η_p g_p，再用W0产生detach教师p0，辅助G=E[(q0−p0)h_s^T]。保护W0而非禁止正式策略学习。区域锚点深特征矩阵H_e，S_e=span(H_e)，P_e为其正交补投影。正式概率不变 iff CΔW H_e=0，C=I−11^T/V；对于列和为零的梯度及右投影，等价于ΔW H_e=0。局部Δ_e=−ηG_eP_e保护本区，云平均不必保护各区。V2,d2例H1=e1,H2=e2，Δ1两行(0,1),(0,−1)，Δ2两行(1,0),(−1,0)，各自保护、平均改变两锚点。与FCMC、A/R03、HC/TJSA、OGD近邻，非新基础投影。
+联合P投影至(Σ S_e)^⊥，Δ*=−ηGP（G=Σw_eG_e）唯一最小化||Δ+ηG||_F²且ΔH_e=0 all e，由逐行正交分解；一阶下降保留率ρ=||GP||_F²/||G||_F²（同η，不重新放大）。联合rank r时每中心化输出方向自由度d−r，满秩ρ=0，只剩softmax不敏感行常数。有限锚点不保证未见前缀保护，PCGrad方向兼容不等于逐锚点分布保护，ρ非实际接受长度/正式质量。独立内生头不改变W0，普通AR同样可取特征与教师p，公平平坦可复制；锚点/基向量需授权，可能泄露数据，非DP。
+固定版本真实条件p/q、独立随机性、min(1,p/q)、正残差、首拒绝截断、合法bonus/EOS标准SD逐步保持正式p；greedy同argmax。实验FP64 LCG完整softmax温度1、BOS作普通token、固定4 token，无生产KV/EOS/top-p/完整随机序列及有限精度验证。组中心化R−mean含自身，iid组期望为普通score梯度(1−1/G)倍，此处G=3，非完整GRPO。
+
+#### 实际执行 E/P
+[代码](experiments/team-hieracert/R12/probe.js)、[完整48组结果](experiments/team-hieracert/R12/results.json)。node experiments/team-hieracert/R12/probe.js weights.json checkpoint.json input.txt。实际重取[外部microGPT固定commit aa28d7c0aa66704ce56b263dfd3270579f3d5f6d](https://github.com/sanchayan7432/microGPT/tree/aa28d7c0aa66704ce56b263dfd3270579f3d5f6d) weights.json blob df323b7e714ceeb10ca070f9945a82c51b2c233c、checkpoint.json blob 7f0b4968c56290ebad706ab740de942c369f42a5、input.txt blob 736d88e18b70b292750a30e5cca6a92b0b333bd2；复用R11前向/生成代码blob ce0ea6f4d4638ff6f3691e643539473da81054d1。2层/d16/4头/V27/7264参数，冻结主干，V8 FP64。筛6–14字母姓名21275条，按首字母每7字母分4客户端7784/8198/3885/1408条，每客户端末40条作本轮评估、640 teacher-forced位置，非独立上游预训练holdout。
+两检查点×seed11/29/73，六cohort，各4客户端×4 prompt×3 SD rollout×4 token=192正式token，共24客户端梯度、288实际轨迹、1152正式token。weights 418/486、checkpoint 427/479 accepted/attempted，205/194次验证调用，deepPositions1291/1214、shallowPositions2374/2285。已确认路径重新取深特征与tape最大误差0，非随机AR逐字相等验证。每cohort一次正式策略更新η_p=.08，八种辅助更新共用W0、已确认路径、教师p0、辅助步长η=.25，48实际矩阵更新及概率评估，无多轮收敛。两区各2客户等权，每区前4个已确认位置为锚点，两遍modified Gram–Schmidt阈值1e−8，六组rank均4/4、联合8、全轨迹16。PCGrad为单向变体，负内积时去分量，非完整PCGrad复现。
+|方法|梯度范数保留|一阶下降比例|评估KL(p0||p)|评估KL(p0||q)|评估1−TV(p,q)|联合锚点最大TV|
+|---|---:|---:|---:|---:|---:|---:|
+|无辅助|0|0|0|.03799234|.89952669|0|
+|共享|1|1|.000443475|.03475635|.90028690|.03783486|
+|独立|1|1|0|.03475635|.90516799|0|
+|本区单向PCGrad|.990733|.986609|.000437239|.03479159|.90028233|.03740985|
+|全局单向PCGrad|.994219|.988539|.000440903|.03476398|.90027972|.03783486|
+|本区4锚点投影后平均|.358852|.161655|.0000127764|.03739654|.89976862|.00237220|
+|联合8锚点投影|.257329|.0682644|.00000213509|.03777138|.89961243|2.982e−16|
+|全部已确认深特征投影|1.682e−16|约0|0|.03799234|.89952669|0|
+六组均值（最大TV跨组最大），KL自然对数。本区各自投影未聚合时本区最大TV2.407e−16，平均后不保真。联合一阶下降仅6.826%，满秩归零。独立头比无辅助重叠+0.56413pp，联合+0.00857pp；独立与共享相同q而正式p不动，属于严格同梯度干预的局部证据。正式NLL无辅助/独立2.57175513，共享2.57544855，本区投影2.57226247、联合2.57198495。未执行更新后rollout/接受长度/实际时延或长期质量；重叠为固定teacher-forced代理，无CI。
+P：d16每头432参数FP32 1728B，4客户上行共享6912B、独立13824B；2区至云共享3456B、独立全局6912B（区域U保留则3456B），未计下行/版本/协议。联合保护额外每区4基向量256B，合计512B；d4096每区4向量65536B、r_e=d时67108864B。基构建O(ndr)、联合正交化O(dr²)、头投影O(Vdr)；隐私权限/激活/传输不能免费。独立头增加Vd存储，低秩头、冻结头+投影变换为强对照。无GPU/网络/全训练及回退计时。
+
+#### 文献及裁决
+2026-11-24实际web检索原始摘要/出版页：[LayerSkip](https://aclanthology.org/2024.acl-long.681/) ACL2024；[OGD](https://proceedings.mlr.press/v108/farajtabar20a.html) AISTATS2020（保持旧任务输出的投影）；[PCGrad](https://proceedings.neurips.cc/paper_files/paper/2020/hash/3fe78a8acf5fda99de95303940a2420c-Abstract.html) NeurIPS2020；[FedRep](https://proceedings.mlr.press/v139/collins21a.html) ICML2021；[LK Losses](https://proceedings.mlr.press/v306/samarin26a.html) ICML2026；[Acceptance-Aware Draft Model Training](https://arxiv.org/abs/2609.24150) 2026-09 window TV；[Halfway SD作者论文](https://sergiu-nistor.com/assets/publications/Halfway_Speculative_Decoding.pdf) 联合target/draft接受率优化（片段，发表状态未确认）；[SkyRL native MTP](https://docs.skyrl.ai/docs/examples/spec_decode) 解耦draft梯度。未逐式穷尽全文及正式文字查重。
+**CRITICAL / Reject and Pivot**：等权主观创新5.6/10（问题7、机制4.5、理论6.5、价值7、距离3）；G1/G2/G4 FAIL，G3局部T/E完整生产未验，G5/G6未验证无80%依据，G7局部可复算/整体未过。好结果同正式目标/质量/预算最强公平基线真实总时间−15%或有效工作+20%，两公开预训练尺度三非IID/延迟三独立训练seed CI及全部G。独立头、OGD/PCGrad、AR及同信息平坦可替代。仅真实共享头硬内存限制或近似保护有实需才继续；下一轮在1–2×40GB可用环境测两真实尺度深特征有效谱、合法信息驻留、正式联合学习profile、低秩独立头/OGD/PCGrad/LK/WTV、生产AR/SD与同信息平坦，匹配正式质量和辅助预算，测更新后rollout及全成本/CI。无资源不以微模型扩大实验充当G4。保留严格配对、非组合反例、自由度、实际下降比例及原始结果。
