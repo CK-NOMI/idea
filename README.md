@@ -3578,3 +3578,13 @@ H未执行：只有真实训练部署确实将同一合法GRPO组跨区域分配
 - E：两同7264参数microGPT、三hash seed、四逻辑client、两edge、三人工漂移，12672真实特征、1440正式本地输出头步、1296浅层KL步。固定同一6头bank，33特征ridge离线估计两组拆分收益，在线只看浅层。双token EAL低/中/高漂移：静态1.705064/1.487753/1.167357，动态1.706013/1.493833/1.173152，动态胜17/18配置；高漂移全分1.188903、动态oracle1.177184。优势小，所有6头保留，活跃头数不是实际显存、通信或计算公平；无真实生成、GPU/物理HFL/正式质量反馈/CI。数据按名字拆分，前缀可能重合，非独立训练seed。
 - 实核WTV/VSD/S2D/CHPFL/D-PAL/VAT原始摘要或出版页，非全文穷尽/查重。主观8.14（8.6/8.2/9.2/6.5/7.5，25/25/20/15/15）；G1/G2/G4 FAIL，G3/G7部分，G5未验，G6无80%证据。**Revise数学与小幅正门控结果，Reject独立立项**。P0紧凑区域条件低秩头、同预算自适应平坦、普通HFL+WTV/D-PAL、公平质量约束的反向学习与真实GPU全链路；不能以活跃头数量代理宣称端到端加速。
 - [报告](experiments/team-far/R44/record.md) · [概率实验](experiments/team-far/R44/probability.js) · [原始结果](experiments/team-far/R44/probability_results.json) · [门控实验](experiments/team-far/R44/gate.js) · [原始结果](experiments/team-far/R44/gate_results.json)
+
+
+
+### team-far/R45｜HRT-SD：正式残差跨版本内生预测传输与兼容性边界
+
+- 2026-11-24；起始 main 2f4a00cc334a05f051b002031edba094a254de83，README 0ae7ed8020243fc92face208bdb352695dac8567（3581行/503477字符）；代码结果 212ff572ae8594e287609b714598ff6b46cdf557；写前 212ff572ae8594e287609b714598ff6b46cdf557 / 0ae7ed8020243fc92face208bdb352695dac8567。完整取得并筛查README，复查R39/FCRH/FSRA/FSGPA/R43/R44，非全库逐式审计。首大脚本超时无结果，缩小后实跑。
+- T：固定浅深特征x,y，正式增量D与预测增量DB的log-odds漂移一致 iff C D(y−Bx)=0，C=I−11ᵀ/V。多区域共享B要求误差位于所有centered增量核空间交；堆叠满列秩则y=Bx；同x不同y且差可被D辨识反例。非保证旧p=q或主干变化。固定B与线性聚合交换，LoRA DB=A(LB)保持rank及坐标gauge；普通线性代数/同信息平坦可复制。T：TV(softmax(z),softmax(z+δ))≤min(1,range(δ)/4)；固定p、两q生存转移的telescoping给|ΔEAL_K|≤2Σ_t(K−t+1)Σ_h μ_ref(h)TV(q,q_ref)，仅误差界非性能保证。
+- E：两同7264参数microGPT、三hash seed、四逻辑客户、三人工漂移；旧正式10步再10步；3264实际特征、1440正式输出头步、972浅头KL步、216 diagonal优化步，18配置。未来版本不再训练传输算子，固定同一p。低/中/高漂移 EAL：共享旧头1.679636/1.421068/1.126682，刷新独立头1.763307/1.724680/1.627888，16参数window传输1.759780/1.752868/1.721423，普通残差dense bridge1.760142/1.754087/1.727382，普通W_eB feature-regression lens-like1.770901/1.768302/1.752631（最强）。window胜diagKL 15/18、freshLocal13/18但未赢普通bridge均值。无等预算rank头、在线强调参、真实HFL/正式反馈/GPU/生成/通信/CI；同p只保证proposal arms正式质量相同，未验证个性化p质量。
+- 实核pFedHN/HierFedEHN/FedPissa/Tuned Lens/LayerSkip/WTV/When Drafts Evolve/EAGLE-3原始摘要或出版页；非穷尽/查重。独立主观7.75（8.5/7.5/8.5/6.5/7，25/25/20/15/15），R44 8.14及R30窄数学8.35保留。G1/G2/G4 FAIL、G3/G7部分、G5未验、G6无80%证据。**Reject standalone，保留跨版本兼容性和强基线负结果**。停止简单映射；P0质量约束正式反向学习、聚合后仍有效的SD方向与R39/FSGPA/PCGrad/WTV/LoRA/同委托平坦强对照；真实1–2×40GB两尺度三非IID/独立训练seed同质量全流程−15%或有效工作+20%和CI未执行。
+- [完整报告](experiments/team-far/R45/record.md) · [代码](experiments/team-far/R45/transport.js) · [原始结果](experiments/team-far/R45/transport_results.json)
