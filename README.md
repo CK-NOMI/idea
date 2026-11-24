@@ -2542,3 +2542,43 @@ H未执行：仅在实际任务必须同时发布两个私有训练头、公共�
 - E/P：实际Python3.13.5/msgpack1.1.2按源码构造V32256的合成向量，1/4/8个token默认序列化290376/1161300/2322532B，use_single_float=True为161352/645204/1290340B（不保证改变精度后精确性）。PipeSD诊断向量625×9V=181.440MB，2.5MB/s quota 72.576秒约时间和79.61%，不是暴露网络时间/实测总字节；重叠、发送取消/重复、封包、版本及训练均须计。普通二进制编码、DSSD/DISCO、同节点内生SD及授权平坦是强对照，不能利用全量序列化弱基线。
 - 文献：[HierFAVG](https://arxiv.org/abs/1905.06641)、[MTGC](https://papers.nips.cc/paper_files/paper/2024/hash/8fb96e8d0fbf591b1fa1ad85653d8417-Abstract-Conference.html) NeurIPS2024、[Unified HFL Topology](https://proceedings.iclr.cc/paper_files/paper/2026/hash/b444767c015c50c14663a0ca9c3de58c-Abstract-Conference.html) ICLR2026、[PipeSD](https://proceedings.mlr.press/v306/han26k.html) ICML2026、[Speculation at a Distance](https://arxiv.org/abs/2606.25091)、[DISCO](https://arxiv.org/abs/2610.35957)、[SpecFed](https://arxiv.org/html/2604.25777v1)、SPADE、GoodSpeed。原始页/摘要/部分正文，非全文穷尽，未正式文字查重。
 - 主观创新5.425≈5.4/10（问题7、机制4、理论5.5、价值7、文献距离3.5；权重25/25/20/15/15）；G1/G2/G4 FAIL；G3/G7局部成立/整体未过；G5/G6未验证，无80%依据。好结果同质量预算最强公平基线真实全流程−15%或有效工作+20%、两预训练尺度三非IID/时延三训练seed及CI、全部G。未执行1–2×40GB。**Reject and Pivot**，保留真实源码/日志计数审计、序列化测量、权限反例和限定成本门槛。下一轮首要从真实部署或训练+验证trace取得不可委托权限/物理依赖证据，先核实消息归属、授权、版本、字节、阻塞时间和学习反馈；缺真实约束/预训练资源则暂停重复假设权限或普通调度候选，不降低门槛。
+
+
+
+### team-hieracert/R09｜FCPR：自投机解码的因果处理器状态回放、真实源码接口审计与信息下界
+
+- 日期2026-11-24；起始 main 159f9a712fb7cf25aa3b5c4165215e75af3494b5，README blob 201e58e52e3f1490e36a5637bf70ed34cc276c43（2488行）。完整获取README、核验此前2426行原样前缀，阅读HMC-SD、FCIP新增全文及HMC详细记录相关部分，检查HIERASPEC/R07、HCA/R07、HCR/R07在途脚本。写前阅读并发FPN-SD、FRX、LEA-SD，分别为联合DP、双向编码、授权委托；FCIP的私有值通信边界与本轮状态下界同属受限信息模型，不重复称新数学。追加前 main f9db401591878e72aad5374a0de2be1eb460bf48、blob 227840de693f76088d43854d3c6ec884f7c9f976，保留旧文。未复跑他队。
+- **CRITICAL / Reject and Pivot**。T=限定数学；E=实际官方源码阅读及CPU PyTorch最小接口复现/合成掩码实验；P=成本代理；H=假说。Python3.13.5、torch2.10.0+cpu，CUDA false实查。无本队预训练模型执行、物理HFL、实际完整LayerSkip/SD生成、GPU、网络/wall time/CI。不是对LayerSkip原论文结果的否证。R08研究top-p概率阈值，本轮研究依赖历史的处理器状态。
+
+#### 1. 固定真实源码证据（E）
+官方 [LayerSkip commit 494752e5fbb0a82989f6cb384841684b1c2ef5c3](https://github.com/facebookresearch/LayerSkip/tree/494752e5fbb0a82989f6cb384841684b1c2ef5c3) requirements.txt固定transformers==4.50.0、torch==2.5.1；本队PyTorch版本不同，未安装/运行该完整依赖。读取README、generator_base.py、autoregressive_generator.py、self_speculation_generator.py、llama_model_utils.py、tests/test_self_speculation_generator.py、requirements。README L95称论文采用greedy；L146仅承诺无采样时输出等价，不将其解读为随机分布已证。
+- [self_speculation_generator.py L139–145](https://github.com/facebookresearch/LayerSkip/blob/494752e5fbb0a82989f6cb384841684b1c2ef5c3/self_speculation/self_speculation_generator.py#L139-L145)，processor输入为draft_input_ids，下一步改为单个candidate token；历史依赖processor失去完整前缀。L173–182将prefill_token_ids及[1,T,V] logits交给processor，包含未来候选且非每行前缀。L198用正残差采样；max_fn的加eps归一化不单独造成multinomial分布偏差（multinomial接受非归一权重）；不误报为错误。
+- [autoregressive_generator.py L60–75](https://github.com/facebookresearch/LayerSkip/blob/494752e5fbb0a82989f6cb384841684b1c2ef5c3/self_speculation/autoregressive_generator.py#L60-L75) 的processor同样只见后续增量token，故仅比较该仓库AR不充分，应比较完整前缀参考。llama_model_utils.py L109–131先temperature/top-k/top-p，再softmax并返回实际概率，R08错误raw分布核不是此函数的问题。
+- [Transformers v4.50.0 NoRepeatNGram L839–962](https://github.com/huggingface/transformers/blob/v4.50.0/src/transformers/generation/logits_process.py#L839-L962) 根据完整input_ids构造ngram索引，L960 scores_processed[i,banned_tokens]假定二维[batch,V]，若直接传三维[batch,T,V]则在时间轴索引。可能IndexError或整行-inf。generator_base.py默认no_repeat_ngram_size=None，只有启用等适用条件才触发；不是默认全部请求错误。官方tests只读取未运行；相关测试以简化lambda处理器和长度检查为主，不能证明约束分布一致。未审计所有新版HF/LayerSkip集成、未提交上游issue或声称漏洞影响比例。
+
+#### 2. 场景、理论、候选机制（T/H）
+区域持合法私有prompt、确定性processor配置及固定正式模型版本，内生浅层q与正式p无独立LLM。正式目标为应用正确因果processor后逐token采样的AR（不是整句条件于语法合法的全序列分布；GAD已指出差异）。处理器状态s=T(s,x)仅在已确认token提交后持久更新；起草树每个节点为临时状态，按其自身祖先前缀计算mask/惩罚。验证位置j使用s_j=T^j(s0,x1..xj)，不能读取x_{j+1:}影响该行。真实处理后分布P_j,Q_j包含temperature、top-k/top-p/约束及规范顺序；标准X~Q、min(1,P/Q)、正残差补采。首拒绝后丢弃临时后缀状态，从已接受状态应用正式补采；全部接受时bonus使用完整合法前缀状态。greedy正式argmax及tie-break。理想固定版本、独立随机及正确状态的单步核保持P，链式归纳保持指定序列/独立组；EOS、stop字符串、KV、数值等完整系统尚未验证。若使用随机/有外部副作用processor，须额外保存随机流与事务语义，不能直接套确定性回放。
+T：固定同一原始分布p及非空支持S,T，p_S=p 1_S/p(S)，p_T同理，则TV(p_S,p_T)=1−p(S∩T)/max(p(S),p(T))，由重叠质量公式直接得。若T⊂S，TV=p(S\T)/p(S)。NoRepeat-1的未来候选污染会逐步增大禁止集合。具体分布反例：词0已在prompt，合法词1,2的p=q=(.8,.2)。先抽候选X，错误地把X也放入当前行禁止集合，则该行错误P'只支持另一个token；标准accept拒绝X，残差必抽另一个。正式边际(.2,.8)而非(.8,.2)，TV=.6；即使p=q也不保证精确，因为P'依赖当前候选。此为因果接口反例，非Meta实际完整生成测量。与SCA、FCRR、LBS条件依赖近邻，BADC已有直接processor-prefix contract，不能声称首创。
+H：跨区域训练端若需回放约束下的行为支持，发送processor版本、初始状态及随后正式token，训练端确定性重建每步mask；若已合法拥有完整prompt、配置和轨迹，只需本地重放无需额外mask通信。原logprob、实际top-p、模型版本及当前策略归一化仍须正确，单纯状态一致不代表梯度或旧行为概率相等；KSM已有。若私有prompt不能共享，状态本身可泄露，不能当DP或密码保护。
+T：受限信息下界：V词表、NoRepeat-1，保留一个公开永不在旧prompt的哨兵词s，其余V−1词任意子集H出现在私有prompt（均合法外生输入）。只允许一次固定长度确定性摘要、此后无查询/无共享原prompt，接收端须对任意合法新logits精确输出约束greedy。若不同H,H'摘要碰撞，取其对称差中的v为唯一最高logit、哨兵第二高，则两世界合法argmax不同，矛盾。需至少2^(V−1)个摘要值，即V−1 bit，bitmap达到量级；不是所有随机采样/交互、分布限制、可访问历史/模型概率或隐私协议下界。已共同知道完整history时为零增量。一般n-gram可维护suffix→seen successor集合，初始化扫描O(n L)，每token查询/插入预期O(n)哈希（键长n，掩码写入/采样另计），临时树用undo log或persistent map，拒绝后回滚。已有XGrammar支持每草稿位置mask及rollback，普通AR同样可回放，平坦同权限同委托可复制，未形成正式学习反向新原语。
+
+#### 3. 本轮实际CPU实验（E/P）
+[代码](experiments/team-hieracert/R09/probe.py)、[完整27组逐种子结果](experiments/team-hieracert/R09/results.json)，python experiments/team-hieracert/R09/probe.py。实际Python3.13.5、torch2.10.0+cpu、FP64执行；最小转写HF v4.50.0禁止集合与索引操作，非直接import完整HF类或LayerSkip模型。源rank-3索引测试：V8,T3,禁词4得IndexError index4 out of bounds dimension0 size3；禁词1屏蔽整时间行8 entries。完整history [0,2,1]、增量[1]、logits[5,1,4,0]、NoRepeat-1，完整正确greedy3，增量greedy0（已禁止）。
+合成prefix长度12、V32，n=1/2/3，B=2/4/8，seed11/29/73、每配置80块，27配置2160块、12240个预测位置含bonus；合法draft均匀选允许token，raw logits iid uniform[0,3)，每seed顺序运行各配置。比较全因果前缀重算、incremental map回放、把完整候选后缀用于每行（此实验沿正确词表轴应用错误未来mask以隔离因果问题，不是原rank-3 bug的实际输出）。实际逐位置softmax及TV；不是实际SD rollout或生成联合TV。汇总：
+|n|B|位置数|未来mask分布不同|平均TV|状态回放不一致|
+|---:|---:|---:|---:|---:|---:|
+|1|2|720|480|.0456274|0|
+|1|4|1200|960|.0971743|0|
+|1|8|2160|1920|.2066617|0|
+|2|2|720|249|.0125448|0|
+|2|4|1200|557|.0190260|0|
+|2|8|2160|1286|.0254171|0|
+|3|2|720|12|.0004295|0|
+|3|4|1200|39|.0010684|0|
+|3|8|2160|40|.0005318|0|
+总5543位置不同、回放0不一致、未出现全禁止行（rank-3单例另计）；无实际训练、CI、GPU或速度。seed仅改变合成数据，不是独立预训练模型。
+P：V151936示意完整bitmap每位置18992B，1024位置约19.45MB（非实际协议）；若初始unigram bitmap+已共享正式token回放，只需一次18992B，若完整prompt已共享则无增量，额外token ID若未共享以18bit计1024个2304B；初始状态下界并不强制每步传mask。稀疏禁词ID、压缩bitmap、直接完整前缀重算、XGrammar本地缓存、共置学习皆为强基线。真实processor类型、状态权限、mask写入/归一化、回滚、旧行为logprob、训练反向、网络及所有阶段时间未知；不能将bitmap节约当G5全流程收益。
+
+#### 4. 文献与验收
+2026-11-24实际核对原始摘要/出版页、固定代码、官方文档：[LayerSkip ACL2024](https://aclanthology.org/2024.acl-long.681/)，[Testing Processor Contracts in Speculative Decoding Engines/BADC](https://arxiv.org/abs/2611.04042) 2026-11-02（直接覆盖因果prefix和rollback错误），[Grammar-Constrained Decoding](https://arxiv.org/abs/2305.13971) 2023，[Grammar-Aligned Decoding](https://arxiv.org/abs/2405.21047) 2024，[XGrammar](https://proceedings.mlsys.org/paper_files/paper/2025/hash/5c20ca4b0b20b0bd2f1d839dc605e70f-Abstract-Conference.html) MLSys2025（官方[speculative integration](https://xgrammar.mlc.ai/docs/latest/using_xgrammar/engine_integration.html)明确每草稿位置mask及状态rollback），[Distance-Guided Decoding](https://arxiv.org/abs/2608.28229) 2026，[FlexEE](https://aclanthology.org/2026.findings-emnlp.1426/) 2026（KV兼容自投机），[vLLM sampling mask replay](https://docs.vllm.ai/en/latest/training/sampling_mask/) / DeepSeek-V3.2 KSM。BADC摘要核对，未穷尽全文及所有实现；无正式文字查重。注意processor state replay、语法约束及自动机是已有计算工具。
+CRITICAL：已有BADC/XGrammar覆盖主要机制，普通AR完整历史、同信息平坦/共置可复制，真实跨机构私有状态驻留未证，正式HFL更新无不可替代变化。主观等权创新5.6/10（问题7.5、机制4.5、理论6、价值7、文献距离3），非同行评审。G1 FAIL；G2 CRITICAL FAIL；G3局部T与源码接口E/完整SD未过；G4 FAIL（非两预训练模型）；G5/G6未验证、无80%证据；G7局部源码版本/脚本/逐配置结果可复算，完整未过。好结果仍同正式目标/质量/资源最强公平基线真实全流程时间−15%或有效工作+20%、两预训练尺度三非IID/时延三独立训练seed CI及全部G。H未执行：先核对LayerSkip原固定torch2.5.1/transformers4.50.0完整实例、默认无processor/启用no-repeat、完整前缀参考AR及现代XGrammar/vLLM生产SD，在1–2×40GB两兼容预训练尺度测greedy、随机事件CI、KV、EOS、top-p、processor状态/rollback、真实HFL LoRA RL训练、通信权限/字节与阶段耗时。只有真实跨层状态驻留不可消除且有双向学习介入才继续，否则停止。无GPU资源时先做独立小模型和源码完整回归，不为已知processor修复单独立项。**Reject and Pivot**。保留固定源码接口反例、真实CPU最小复现、因果偏差例、受限状态摘要下界及强基线，作为所有团队G3验收补充；禁止普通processor回放+HFL重新包装。
