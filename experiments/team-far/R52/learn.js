@@ -1,0 +1,79 @@
+function probe(raws,names){
+const V=27,d=16,sum=a=>a.reduce((s,v)=>s+v,0),dot=(a,b)=>sum(a.map((x,i)=>x*b[i])),zero=n=>Array(n).fill(0),add=(a,b)=>a.map((x,i)=>x+b[i]),sub=(a,b)=>a.map((x,i)=>x-b[i]),mul=(a,b)=>a.map(x=>x*b),avg=a=>mul(a.reduce(add,zero(a[0].length)),1/a.length),mat=(a,x)=>a.map(r=>dot(r,x)),rms=x=>mul(x,1/Math.sqrt(dot(x,x)/d+1e-5)),sm=x=>{let m=Math.max(...x),z=x.map(t=>Math.exp(t-m));return mul(z,1/sum(z))},hash=(x,s)=>{let h=s>>>0;for(let c of x)h=Math.imul(h^c.charCodeAt(0),16777619)>>>0;return h};
+let features=0,fdMax=0,unbiasMax=0,fitSteps=0;
+function model(raw){let off=0;const take=(n,m)=>Array.from({length:n},()=>Array.from({length:m},()=>raw[off++]));let E=take(V,d),P=take(16,d),W=take(V,d),layers=Array.from({length:2},()=>({q:take(d,d),k:take(d,d),v:take(d,d),o:take(d,d),f1:take(4*d,d),f2:take(d,4*d)}));if(off!==7264)throw Error("shape");return h=>{features++;let seq=h.map((t,i)=>rms(add(E[t],P[i]))),s;for(let b of layers){let z=seq.map(rms),Q=z.map(x=>mat(b.q,x)),K=z.map(x=>mat(b.k,x)),v=z.map(x=>mat(b.v,x));seq=seq.map((x,i)=>{let a=[];for(let j=0;j<4;j++){let t=j*4,w=sm(K.slice(0,i+1).map(x=>dot(Q[i].slice(t,t+4),x.slice(t,t+4))/2));for(let l=t;l<t+4;l++)a.push(sum(w.map((p,s)=>p*v[s][l])))}let y=add(x,mat(b.o,a));return add(y,mat(b.f2,mat(b.f1,rms(y)).map(v=>Math.max(0,v))))});if(!s)s=seq.at(-1)}return {p:mat(W,seq.at(-1)),q:mat(W,s)}}}
+function mass(p,q){const m=p.map((x,i)=>Math.min(x,q[i]));const g=m.map((x,i)=>mul((p[i]<=q[i]?p:q).map((v,j)=>+(j===i)-v),x));return {m,g,a:sum(m),G:g.reduce(add,zero(V))}}
+function calc(s,pb,qb,theta=zero(V)){
+const ms=s.fs.map(f=>mass(sm(add(add(f.p,pb),theta)),sm(add(add(f.q,qb),theta))));
+const rt=ms[0],q=sm(add(add(s.fs[0].q,qb),theta));
+const a=ms.slice(1).map(x=>x.a),G=ms.slice(1).map(x=>x.G);
+const root=rt.G,val=rt.a+dot(rt.m,a);
+const t=rt.g.map((g,i)=>mul(g,1/q[i])),S=rt.g.map((g,i)=>mul(add(mul(g,a[i]),mul(G[i],rt.m[i])),1/q[i]));
+const mu=S.map((g,i)=>mul(g,q[i])).reduce(add,zero(V));
+const T=t.map(g=>sub(g,root)),Z=S.map(g=>sub(g,mu));
+return {q,T,Z,root,mu,val,truth:add(root,mu),a}
+}
+function moment(cs){let a=0,b=0,over=0;for(let c of cs){over+=dot(c.q,c.a);for(let i=0;i<V;i++){a+=c.q[i]*dot(c.T[i],c.Z[i]);b+=c.q[i]*dot(c.T[i],c.T[i]);}}return {num:a,den:b,n:cs.length,over};}
+function baseline(cs){let m=moment(cs);return m.num/Math.max(m.den,1e-20)}
+function varAt(c,b){return sum(c.q.map((w,i)=>{const v=sub(c.Z[i],mul(c.T[i],b));return w*dot(v,v)}))}
+function rawVar(c){return sum(c.q.map((w,i)=>w*dot(add(c.Z[i],c.T[i]),add(c.Z[i],c.T[i]))))}
+
+let learnRows=[],actualSteps=0,trainChild=0;
+function learn(C,T,cal,test,pb,qb,eta,seed,wi,gB,eB,heurB){
+const arms=["task","raw","root","heur","globalCV","edgeCV","full"];
+const beta=.3,lr=.12,rounds=32;
+function evalMetrics(theta){
+let E=0,L=0,n=0;for(let c=0;c<4;c++)for(let s of test[c]){
+const p=sm(add(add(s.f.p,pb[c]),theta));L-=Math.log(p[s.lab]);E+=calc(s,pb[c],qb[c>>1],theta).val;n++
+}return {eal:E/n,nll:L/n}}
+const initial=evalMetrics(zero(V));
+for(let arm of arms){
+let theta=zero(V),state=(1234901+seed*371+wi*2131)>>>0;const U=()=>{state=(1664525*state+1013904223)>>>0;return (state+.5)/4294967296};
+let sq=0,child=0;
+for(let r=0;r<rounds;r++){
+const grads=[];
+for(let c=0;c<4;c++){
+let s=cal[c][Math.floor(U()*cal[c].length)],u=U();
+const p=sm(add(add(s.f.p,pb[c]),theta)),q=sm(add(add(s.f.q,qb[c>>1]),theta)),rt=mass(p,q);
+let g=p.map((v,j)=>+(j===s.lab)-v),G=zero(V);
+if(arm==="full"){G=calc(s,pb[c],qb[c>>1],theta).truth;child+=V}
+else if(arm!=="task"){
+let i=0;while(i<V-1&&u>=q[i])u-=q[i++];
+let f=s.fs[i+1],next=mass(sm(add(add(f.p,pb[c]),theta)),sm(add(add(f.q,qb[c>>1]),theta))),t=mul(rt.g[i],1/q[i]),S=mul(add(mul(rt.g[i],next.a),mul(next.G,rt.m[i])),1/q[i]);child++;
+if(arm==="raw")G=add(t,S);
+else{let b=arm==="root"?0:arm==="heur"?heurB:arm==="globalCV"?gB:eB[c>>1];G=add(rt.G,sub(S,mul(sub(t,rt.G),b)))}
+}
+g=add(g,mul(G,beta));grads.push(g);sq+=dot(G,G);actualSteps++;
+}
+theta=add(theta,mul(avg([avg(grads.slice(0,2)),avg(grads.slice(2))]),lr));
+}
+let end=evalMetrics(theta);trainChild+=child;learnRows.push({wi,seed,eta,arm,initial,end,dEAL:end.eal-initial.eal,dNLL:end.nll-initial.nll,gradSquared:sq/(rounds*4),child,thetaNorm:Math.sqrt(dot(theta,theta))})
+}
+}
+const words=[...new Set(names.toLowerCase().split(/\s+/).filter(w=>/^[a-z]{6,14}$/.test(w)))],rows=[];
+for(let wi=0;wi<raws.length;wi++){const feat=model(raws[wi]),cache=new Map();const F=h=>{const key=h.join(",");if(!cache.has(key))cache.set(key,feat(h));return cache.get(key)};
+for(let seed of [11,29,73]){
+const pools=Array.from({length:4},(_,c)=>words.filter(w=>Math.min(3,Math.floor((w.charCodeAt(0)-97)/7))===c).sort((a,b)=>hash(a,seed)-hash(b,seed)).slice(0,40));
+const ex=w=>{let h=[26,...w.slice(0,3).split("").map(x=>x.charCodeAt(0)-97)];return {h,lab:w.charCodeAt(3)-97,f:F(h)}};
+const clients=pools.map(p=>p.slice(0,16).map(ex));
+const tree=w=>{let e=ex(w);return {...e,fs:[e.f,...Array.from({length:V},(_,i)=>F(e.h.concat(i)))]}};
+const cal=pools.map(p=>p.slice(16,28).map(tree)),test=pools.map(p=>p.slice(28,40).map(tree));
+for(let eta of [.05,.2,.6]){
+const pb=clients.map(cs=>{let b=zero(V);for(let it=0;it<24;it++){let g=zero(V);for(let s of cs){const p=sm(add(s.f.p,b));g=add(g,p.map((v,j)=>+(j===s.lab)-v));}b=add(b,mul(g,eta/cs.length));fitSteps++}return b});
+const qb=[0,1].map(e=>{let b=avg(pb.slice(e*2,e*2+2));for(let it=0;it<16;it++){let g=zero(V);for(let c=e*2;c<e*2+2;c++)for(let s of clients[c])g=add(g,sub(sm(add(s.f.p,pb[c])),sm(add(s.f.q,b))));b=add(b,mul(g,.2/32));fitSteps++}return b});
+const C=cal.map((cs,c)=>cs.map(s=>calc(s,pb[c],qb[c>>1]))),T=test.map((cs,c)=>cs.map(s=>calc(s,pb[c],qb[c>>1])));
+const gB=baseline(C.flat()),eB=[baseline(C[0].concat(C[1])),baseline(C[2].concat(C[3]))],lB=C.map(baseline);
+const naiveMean=moment(C.flat()).over/C.flat().length;
+learn(C,T,cal,test,pb,qb,eta,seed,wi,gB,eB,naiveMean);
+for(let c=0;c<4;c++){
+let vs=T[c].map((t,j)=>{let own=baseline([t]);let raw=rawVar(t),root=varAt(t,0),glob=varAt(t,gB),edge=varAt(t,eB[c>>1]),local=varAt(t,lB[c]),heur=varAt(t,naiveMean),oracle=varAt(t,own);
+let err=zero(V);for(let i=0;i<V;i++)err=add(err,mul(sub(t.Z[i],mul(t.T[i],eB[c>>1])),t.q[i]));unbiasMax=Math.max(unbiasMax,...err.map(Math.abs));
+if(j===0){let h=1e-5;for(let k=0;k<V;k++){let u=zero(V),v=zero(V);u[k]=h;v[k]=-h;let fd=(calc(test[c][j],pb[c],qb[c>>1],u).val-calc(test[c][j],pb[c],qb[c>>1],v).val)/(2*h);fdMax=Math.max(fdMax,Math.abs(fd-t.truth[k]));}}
+return {raw,root,glob,edge,local,heur,oracle,eal:t.val}});
+let keys=Object.keys(vs[0]);rows.push({wi,seed,eta,c,gB,eB:eB[c>>1],lB:lB[c],heurB:naiveMean,...Object.fromEntries(keys.map(k=>[k,sum(vs.map(v=>v[k]))/vs.length])),contexts:vs});
+}
+}}}
+let summary=[.05,.2,.6].map(eta=>{let a=rows.filter(r=>r.eta===eta);let keys=["raw","root","glob","edge","local","heur","oracle","eal"];return {eta,...Object.fromEntries(keys.map(k=>[k,sum(a.map(r=>r[k]))/a.length])),edgeWinsGlobal:a.filter(r=>r.edge<r.glob).length,edgeWinsLocal:a.filter(r=>r.edge<r.local).length,edgeWinsHeur:a.filter(r=>r.edge<r.heur).length,n:a.length}});
+const learning=[];for(let eta of [.05,.2,.6])for(let arm of ["task","raw","root","heur","globalCV","edgeCV","full"]){let a=learnRows.filter(r=>r.eta===eta&&r.arm===arm);learning.push({eta,arm,n:a.length,...Object.fromEntries(["dEAL","dNLL","gradSquared","child","thetaNorm"].map(v=>[v,sum(a.map(r=>r[v]))/a.length]))})}return {features,fitSteps,actualSteps,trainChild,learning,learnRows};
+}
+const fs=require('node:fs');console.log(JSON.stringify(probe([JSON.parse(fs.readFileSync(process.argv[2],'utf8')),JSON.parse(fs.readFileSync(process.argv[3],'utf8')).weights],fs.readFileSync(process.argv[4],'utf8')),null,2));
