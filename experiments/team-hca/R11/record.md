@@ -1,0 +1,37 @@
+# team-hca/R11｜FVP-SD：联邦Value投影更新的跨版本不变表示与精确学习/验证审计
+
+2026-11-24；起始 main 0c17da4ec3a413094845b518417442f9d458215b、README blob bdd2ea3f61067e093fed3c239d0faa457b4acfd1（3130行）。获取完整README，与R10提交c18524935c28f2b6be73701ebb123594b4323b8a原样相同；检查递归树、重读FSRA/FIC-SD/FSGPA/FVT/FIV及A/R03等相关记录，实际读取FIC详细代码ccffec89358c2b1d315664f0e1e2b957d4c748bb。FIC是最后层O更新、历史V保持不变；本轮最后层V本身更新，基于固定Q/K及共享低秩A构造跨版本pool。不是首次恢复外部权重。未复跑他队；实际前向继承本队R10和HieraCert/R11 FEIA（blob ce0ea6f4d4638ff6f3691e643539473da81054d1）。写前README无新追加（main cc592f22d00afe2840cdd894260bf88d54ef36fe）。
+
+**CRITICAL / Reject and Pivot**。核心计算被ForkKV 2026原文§5.3 Algorithm1 Eq4直接覆盖，FFA-LoRA已提出固定A仅训练B，FIC给出依赖图缓存及AR替代。保留联邦版本条件下的跨版本query级缓存及梯度严格配对结果、基底可恢复条件、成本交叉点和错误旧V反例；不宣称新注意力或AD数学。T=限定理论、E=实际V8 FP64微型外部模型、解析反向/逻辑HFL SGD与多token生成、P=计算/通信代理、H=假说。无真实物理HFL、GPU、生产KV/批验证、真实网络、端到端时间/CI；未重新探测CUDA或大模型下载。两个同架构外部checkpoint不满足两预训练尺度。
+
+## 1. 场景与候选计算原语 T/H
+冻结全部上游层、最后层Q/K、norm、O、MLP、输出头及位置/掩码、随机状态。仅训练最后层V投影的低秩更新：V_h=W_h^0+B_h A；A∈R^(r×d)由公共固定基底给出，B_h∈R^(d_v×r)随本地训练和区域/云聚合变化。h指query head，MHA每head有独立V行，GQA可按KV group共享B/A但query权重不同。所有客户端合法共享A和版本，私有文本及缓存仅在有权限节点保留，不声称DP。正式p_B是这个实际参数化模型；保持其精确并不意味着与可训练所有层/自由LoRA的质量等价。q为同模型上一层特征通过冻结W的浅层内生路径；无独立完整草稿LLM。q在本实验固定，p随B改变。
+对于固定合法前缀及某个query位置t，令z_j是最后层attention norm输入，w_hj为因果softmax(QK^T)的权重（独立于B）。则a_h(B)=Σ_j w_hj(W_h^0 z_j+B_h A z_j)=a_h^0+B_h c_h，a_h^0=Σw W_h^0 z，c_h=Σw A z。历史V_j本身依赖B，不能盲用旧值；但a_h^0,c_h与B无关。保留x_t、a^0,c即可从任意新B精确重算O/MLP/logits。对新prefix或query须重新计算合法Q/K和注意力权重，缓存query池不能仅凭位置复用。RoPE通常仅作用Q/K；若V有token依赖非线性/旋转，或者Q/K/上游状态也更新，须重证，不可直接交换。
+同一合法固定轨迹、损失系数detach，令u_h=∂L/∂a_h，则∂L/∂B_h=u_h c_h^T。证明由矩阵微分da_h=dB_h c_h；常规逐tokenV反向为Σ_j w_hj u_h(A z_j)^T，实数等价。缓存不依赖B，故不省略B的任何导数；其他冻结参数梯度不能由此免费恢复。对固定共享A，Bbar=Σβ_i B_i时Vbar=W0+Bbar A，区域/云任意线性加权聚合闭合。多本地步可改变学习轨迹，但给定相同梯度计算和随机数据顺序，缓存和直接计算严格配对。若两个LoRA因子同时训练，平均因子不等于平均有效权重，FSRA/FedEx已有。
+标准精确SD：固定当前版本真实条件p_B,q及实际后处理温度/top-p，X~q、min(1,p_B(X)/q(X))、拒绝正残差、首拒绝截断、合法bonus/EOS/KV和独立随机流；因果归纳得目标p_B序列分布。greedy用正式argmax统一tie-break。实验温度1全支持、固定6 token、BOS普通符号；数值误差不是生产位级/完整top-p/EOS验证。不得以旧a(B_old)当当前值，必须重算后继。
+
+## 2. 跨版本基底变化的充分必要条件 T
+给定单query head的合法加权输入s=Σ_j w_j z_j（对所有s∈R^d的线性代数命题，不宣称真实可达激活全空间）。若只保存c=A s，则要对任意s精确恢复新c'=A' s，当且仅当ker(A)⊆ker(A')，等价row(A')⊆row(A)，亦即存在R使A'=R A。必要：若存在u∈ker A且A'u≠0，s与s+u旧缓存相同但新值不同，任何算法不可区分；充分c'=Rc。若同时缓存a^0=W_h^0 s，则用堆叠矩阵C=[A;W_h^0]替代A，且要求缓存的a0确实是同一s的线性投影。可恢复条件row(A')⊆row(C)，一般仍不够（d大于r+d_v时）。若只需恢复给定B'的更新结果，较弱条件row(B'A')⊆row(C)。反例d=3、A=(1,0,0)、W0=(0,1,0)、A'=(0,0,1)、s=e3与0，旧两缓存均0、新c'分别1和0。保存完整s即可允许任意A'，但每head需d而非r维，且真实激活若上游变动仍无效。对多区域不同A_i或新A_i，若希望同一个c覆盖全部区域，其rowspace至少容纳所有所需行空间（已有A/R03/FSRA的子空间限制近邻）；实际可按区域分开缓存或重算，不能把满秩压力认作所有部署必然。固定A可能限制正式学习，必须与自由LoRA同质量比较，不可由精确缓存证明学习质量。普通AR也能使用上述表示。
+
+## 3. 成本及强基线 T/P
+对单head固定长度n、r、d_v、已存在每token base V和低秩latent Az缓存，某新B版本需m个不同query。忽略共同base attention/QK/FFN等、同等算术精度，先将全部n个V残差物化需n r d_v乘加，之后普通attention；延后低秩投影需m(nr+rd_v)额外乘加（每query池化latent再投影）。因此仅该额外项延迟形式优于预物化时 m < n d_v/(n+d_v)。示例n4096,d_v128,r16，eager 8,388,608 MAC，deferred每query 67,584 MAC，交叉m≈124.12。m1/4/32/128时deferred/eager约0.00806/0.03223/0.25781/1.03125；非实际时间，不含公共base算术/融合kernel/内存带宽，eager亦可只更新部分缓存/分块。若已经保存同一query的a0,c,x，跨版本只需r d_v（后继O/MLP/logit仍需重算），但前缀重复率及缓存构建、字节和设备命中必须计。GQA每token latent可按KV group或全局A共享；每query池化c通常按query head存储，若H_q≫H_kv，额外query缓存可能大于按token缓存latent，不能只比较rank数字。微模型每query必要x+a0+c为2d+H r，r1/2/4为36/40/48浮点数（FP32 144/160/192B；实现为了direct基线还保存z/weights/lat等，非实际内存）。模型参数B=dr个，FP32一次客户端上行64r B；每配置24客户端+12区域上行总2304r B（仅参数上行、不含下行/协议/同步），直接FFA-LoRA也相同。真实MHA d=4096,H=32,r16示意每query额外H r=512 FP16 1024B，若只保存全latent每token r×2=32B（不可将两类cache直接等价）。缓存权限、版本、同prefix和可合法共享另计。
+强基线：普通AR/内生SD+固定A FFA-LoRA；ForkKV原始ResidualAttention以同公式在每个query累积base/residual；普通同query memoization可保存a0,c；FIC依赖缓存；分块物化与局部增量V缓存；同信息/资源平坦委托。ForkKV与普通缓存能够组合复现本轮机制，不能以全层无缓存重算或盲用旧V为最强对照。实际正式学习未使用SD反馈，监督CE本可直接teacher forcing；生成使用缓存不是训练机制的必要条件。若可复用的额外V工作仅占全流程f，则即使免费消除也至多f时间降幅，f未测，无法宣称G5。没有测CPU/GPU延迟，不给速度估计。
+
+## 4. 实际执行 E
+[代码](probe.js)，[18组原始结果及3组汇总](results.json)。重新读取[sanchayan7432/microGPT固定commit aa28d7c0aa66704ce56b263dfd3270579f3d5f6d](https://github.com/sanchayan7432/microGPT/tree/aa28d7c0aa66704ce56b263dfd3270579f3d5f6d) weights.json blob df323b7e714ceeb10ca070f9945a82c51b2c233c、checkpoint.json 7f0b4968c56290ebad706ab740de942c369f42a5、input.txt 736d88e18b70b292750a30e5cca6a92b0b333bd2。下载三个固定文件，node experiments/team-hca/R11/probe.js weights.json checkpoint.json input.txt。实际V8 FP64两份7264参数同架构、2层d16/4头/V27/context16，冻结除末层V的B，公共A为DCT正交行，rank1/2/4，B零初始化，头无绑定。源训练历史未独立证实，姓名评估可能被上游见过，非独立预训练test。按8–14字符姓名去重4613条，首字母每7字母4逻辑客户1893/1720/782/218，末32姓名×4位置每客户评估=512位置。其余训练池每本地步8姓名×4位置，eta=.2，3云轮×2区×2区域同步×2客户端=24本地SGD/配置，两checkpoint×3rank×seed11/29/73=18配置。缓存与直接逐token重算V在同一批样本配对，分别执行432本地更新（合计864本地更新执行、每法13824训练位置），手写CE梯度含末层RMSNorm/MLP/O的准确链式求导。直接基线同样合法保留固定Q/K、注意力权重、上游激活，并独立更新B，不是整模型无缓存重算；仍未执行生产反向/完整参数训练。有限差分每配置1坐标对照（步长1e−5）最大误差5.99145e−11；同B条件概率最大绝对误差5.55112e−16、梯度元素7.77156e−16、两独立配对聚合B元素2.77556e−17，非bitwise同值。
+|rank|初始NLL|最终NLL|上一全局版本直接复用p的平均TV|旧/新greedy不一致|新/旧理论接受|
+|---:|---:|---:|---:|---:|---|
+|1|2.814959|2.811916|.00185150|.00683594|.893913/.893772|
+|2|2.814959|2.804498|.00529878|.01562500|.894380/.894349|
+|4|2.814959|2.802007|.00684685|.01888021|.894458/.894605|
+旧版本greedy比例是旧/新正式p，不是本轮缓存算法错误；更新后必须用当前B，且这些值不能视为一般模型质量或时间。学习使p实际改变，q冻结，理论接受变化很小且有正有负。NLL下降仅小模型固定语料监督学习、非正式RL优化或两预训练尺度。未与自由LoRA质量匹配。
+每配置4客户各末8姓名prompt BOS+2字符、固定6新token、cap2，真实标准SD接受/拒绝正残差/bonus，缓存候选和每个正式验证前缀与直接重算概率对照。每rank192轨迹1152 token，合计576轨迹3456 token、2519尝试/2263接受/937 bonus；rank1/2/4实际接受.901542/.900718/.892857（不同训练与随机流，不作显著性结论）。cacheHit .738715/.730903/.733507是验证前查询是否已在JS map，包含本次draft立即计算的特征、此前评估/训练及其他请求；绝不是独立跨版本命中率或实际可免计算比例。实现为了验证正确性feature函数在draft阶段也计算末层池并保存额外基线数据，未实现高效浅层单独执行/真实KV/GPU批验证；无wall clock/网络/CI。模型已生成真实样本但未实际比较greedy完整序列或随机输出分布的统计认证，理论仅条件正确。正式学习CE不依赖rollout，G2失败。
+
+## 5. 文献查重与G1–G7
+2026-11-24实际检索原始论文摘要、出版页和ForkKV HTML正文： 
+- [ForkKV](https://arxiv.org/html/2604.06370v1) 2026-04-07 §5.3 Algorithm1/Eq4明确将base value与residual latent分别累积，最后执行B_v投影，核心公式完全重合。原作者SGLang/Triton实现，不能宣称本队重现其性能；其通用多adapter实际隐藏状态可能变化，不因此认定任意跨版本cache严格精确。 
+- [FFA-LoRA](https://proceedings.iclr.cc/paper_files/paper/2024/hash/4e243e95c913b367775d71d7182b99d9-Abstract-Conference.html) ICLR2024 固定A仅训练B、联邦聚合；[DeepSeek-V2](https://arxiv.org/abs/2405.04434) 2024 MLA投影吸收/latent缓存；[Hardware-Centric Analysis of MLA](https://arxiv.org/abs/2506.02523) 2025计算-内存权衡。
+- [FLoRA](https://papers.nips.cc/paper_files/paper/2024/hash/28312c9491d60ed0c77f7fff4ad86dd1-Abstract-Conference.html) NeurIPS2024，异构rank堆叠；[FedEx-LoRA](https://aclanthology.org/2025.acl-long.67/) ACL2025，精确有效更新聚合。
+- [LRAgent](https://proceedings.mlr.press/v306/jeon26b.html) ICML2026，多LoRA缓存共享；[aLoRA serving](https://arxiv.org/abs/2512.17910) 2025，激活前的base缓存复用；[Shared-Prefix KV Reuse](https://arxiv.org/abs/2609.17109) 2026质量成本权衡；[SPRA-LoRA](https://arxiv.org/abs/2611.13331) 2026-11，冻结/重采样A与rank学习率（重采样会破坏固定A缓存，除非满足rowspace条件）；[LayerSkip](https://aclanthology.org/2024.acl-long.681/) ACL2024自投机。
+未穷尽所有全文/未公开研究，未正式文字查重。核心计算重合是直接CRITICAL而非仅关键词。主观加权创新5.625/10（问题7×25%、机制4×25%、理论6.5×20%、价值7×15%、距离3.5×15%），非同行评审。G1 FAIL；G2 CRITICAL FAIL（FFA+ForkKV+普通缓存及公平平坦可复制，SD没有改变正式监督学习）；G3 PARTIAL（限定精确前向/梯度/标准SD条件，未生产greedy/随机/top-p/精度/EOS）；G4 FAIL（外部同架构微模型、缺真实任务/异质网络及两尺度）；G5/G6未验证、无80%依据，G7局部可复算/整体未过。好结果同目标质量预算最强公平基线真实全流程−15%或有效工作+20%，两预训练尺度、三nonIID/时延、三独立训练seed、CI及全部G。未执行1–2×40GB。
+**Reject and Pivot**。不为该候选单独投入GPU。下一轮若有真实资源，先在两预训练尺度内生SD+真实HFL训练基线实现/对照FFA-LoRA+ForkKV residual attention、FIC固定祖先缓存、普通AR+同缓存，按版本统计合法重复query、真实缓存构建/命中来源（draft即刻/跨请求/跨版本分开）、物化与延迟投影真实GPU临界点、固定A vs 自由A同质量、通信/训练/生成/回退全流程，明确尚未消除的工作。若不能证明真实SD特有计算反馈改变正式学习，就停止仅缓存/固定A的方向，寻找新架构约束而非换名。保留rowspace反例和精确梯度对照，不以直接重算或旧缓存错误制造优势。
