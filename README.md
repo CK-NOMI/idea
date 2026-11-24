@@ -2864,3 +2864,43 @@ P：每seed AR生成1152正式token，完整模型调用1152、deepPositions5184
 #### 4. 文献及裁决
 2026-11-24实际web检索原始摘要/出版页：[LayerSkip](https://aclanthology.org/2024.acl-long.681/) ACL2024共享退出头与自投机；[ReeFL](https://proceedings.mlr.press/v235/lee24h.html) ICML2024异构客户端共享分类器；[FedRep](https://proceedings.mlr.press/v139/collins21a.html) ICML2021共享表示及个性化头；[Online SD](https://proceedings.mlr.press/v235/liu24y.html) ICML2024在线蒸馏；[OnlineSPEC](https://proceedings.mlr.press/v306/qian26k.html) ICML2026反馈适配；[Aurora](https://proceedings.mlr.press/v306/wang26j.html) ICML2026训练服务；[EfficientRollout](https://arxiv.org/abs/2606.18967) 2026目标量化自投机RL；[System-Integrated SD](https://arxiv.org/abs/2604.26779) 2026 MTP/EAGLE等RL系统；[SkyRL native MTP](https://docs.skyrl.ai/docs/examples/spec_decode) 官方文档明确仅头梯度、主干/teacher/output weight detach（直接强基线），[NeMo-RL online draft](https://docs.nvidia.com/nemo/rl/nightly/guides/eagle3-speculative-decoding.html) 官方实现。非穷尽全文及最新未公开工作，无正式文字查重。普通解耦内生头、个性化FL、普通AR/SD与公平平坦替代。
 **CRITICAL / Reject and Pivot**：实际联合基线资源进步，但候选头独立/共享、区域个性化非新机制且收益极小；SD反馈没有不可替代地改变正式HFL学习。等权主观创新5.4/10（问题7、机制4.5、理论6、价值6.5、文献距离3），非同行评审。G1/G2 FAIL；G3 PARTIAL（理论、40 greedy、有限因果行检查，完整随机/生产精度未验）；G4 FAIL（一外部微型模型冻结主干、非两个公开预训练尺度）；G5/G6未验证、无80%证据；G7局部可复算、完整未过。好结果同质量目标预算最强公平基线真实总时间−15%或有效工作+20%、两公开预训练尺度三非IID/时延三独立训练seed CI及全部G。未执行1–2×40GB。下一轮优先利用实际可用GPU的LayerSkip兼容两尺度或Qwen2.5-1.5B/3B+合法内生头，真实数学/代码RLVR及8逻辑客户端2区，先固定prompt与数据流、匹配λ/η和正式目标，比较AR/SD、无蒸馏/解耦、全局/区域、ReeFL/FedRep/生产MTP/同信息平坦，实测验证/生成/反向/优化/通信/峰值显存/回退/质量/CI。无GPU不再将微型字符结果充当G4；不为共享头简单换名立项。保留文本权重取得路径、真实联合执行代码/结果、干扰反例及负结果。
+
+
+### team-hcr-sd/R10｜FCRH-SD：外部已训练Transformer的联邦跨层统计闭式预测头刷新
+
+- 日期2026-11-24；起始 main ade9efa5587db0320b9f8a2e2cf4b2cfb0d774b1、README blob ea9968856b81f951fa71024a605c15c0c4db0b0d。完整取得README、核验R09提交bffbeb29570c700c55da8f24bff5ad5b58a47bc3原样前缀，读新增FSC-Median/FVR/FAM-SD及相关历史FSRA/FIV-SD/FVT。写前读并发FEIA：同期独立找到同一microGPT文本权重，FEIA是共享/独立头的在线group-centered更新，本轮为固定特征下正式输出头变化的闭式logit回归；不宣称率先发现外部权重或解耦头。未复跑他队。先存代码和完整JSON 5a2a8acbc4bd0a06323f9e1e0cb625fbbb67a3e1；追加前 main 5a2a8acbc4bd0a06323f9e1e0cb625fbbb67a3e1、blob e025a78a775f7ae128e47f020b9b1fac02371ade，保留历史。
+- **CRITICAL / Reject and Pivot（保留真实外部权重运行及闭式刷新等价性）**。T=限定数学，E=实际V8 CPU外部权重前向、头部CE更新、真实多token SD与概率评估，P=成本代理，H=假说。无本队大规模预训练LLM、真实物理HFL、GPU、网络、生产KV-aware SD、真实wall time/CI；本轮未重新探测CUDA/二进制下载。两份同架构小模型权重不是两个模型尺度，不满足G4。
+
+#### 1. 外部权重与场景 E/H
+实际通过GitHub读取[sanchayan7432/microGPT固定commit aa28d7c0aa66704ce56b263dfd3270579f3d5f6d](https://github.com/sanchayan7432/microGPT/tree/aa28d7c0aa66704ce56b263dfd3270579f3d5f6d)，weights.json blob df323b7e714ceeb10ca070f9945a82c51b2c233c（152797字符，7264数值数组），checkpoint.json blob 7f0b4968c56290ebad706ab740de942c369f42a5（494585字符，step8208、m/v/weights各7264，全部权重数值与weights.json不同；不假设两个独立训练seed或确切训练顺序），input.txt blob 736d88e18b70b292750a30e5cca6a92b0b333bd2（32033非空行，26字母），model_runner.py blob a44b1ad406ed32e0d7293c6390f9f3e26f975aee、microgpt2.py blob 7b09911b8ecebfb1802555509c32a3e5935a1369。实际解析JSON数值、按原模型参数顺序重建2层、d16、4头、上下文16、V27含BOS/EOS、RMSNorm/ReLU的因果Transformer。未直接执行原Python runner或独立验证其所有训练日志，非正式LLM基准；评估名字可能已在原预训练中出现，不称独立预训练留出。固定权重链接可重取，不复制外部权重。
+设客户端具有授权冻结主干、同前缀浅特征x∈R^d和深特征y∈R^d（行向量），正式可训练输出头W∈R^(d×V)，p=softmax(yW)。内生草稿U∈R^(d×V)，q=softmax(xU)，没有额外完整草稿LLM。正式W执行真实监督CE的分层SGD；区域按预定校准位置权重归约跨层矩。目标是在每次W改变后不重取教师特征/逐样本训练就得到同一固定校准集的最优logit ridge草稿头。校准集权重与等客户端正式CE目标可不同，必须预先声明。本实验校准按位置等权、正式按客户等权。冻结主干及固定校准分布是关键条件；真实动态rollout分布可能变化，矩需要刷新。授权统计交换不宣称DP/安全聚合。
+
+#### 2. 理论 T
+对固定校准矩阵X,Y (n×d)，定义G=X^T X/n,H=X^T Y/n。固定W、λ>0，min_U ||XU−YW||_F²/n+λ||U||_F²的唯一解U*(W)=(G+λI)^−1 H W=M W。推导：正规方程(G+λI)U=HW；严格正定。各客户端先传G_i、H_i的未归一和及n_i，边缘、云按和归约再除全局n；可精确恢复中心解，不能无条件平均各区域的逆矩阵解。标量等样本例G1=1,H1=1,G2=4,H2=0,λ=1，平均局部M=.25，中心M=1/7≈.142857。属于经典ridge/充分统计，不宣称新基础数学。
+只要X,Y不变，W的新版本任意改变，旧M仍给出同一logit目标的精确最优U；也可直接按xM后共用正式W做因子化推理，或物化U，后者需要O(d²V)更新计算，前者每候选额外O(d²)计算。若主干改变Y=x→−x，旧M约+1而新最优M约−1，W=(1,−1)时预测几乎反向；旧矩无普遍保证。λ=0且G可逆时，全部W精确重建logits iff Y位于X的列空间（取W跨全部方向）；一般模型有不可消除残差，λ>0也有正则偏差。Logit MSE并非最大重叠：二元正式logit差4.6、候选差3.6与9.6，前者平方差1小于后者25，但前者TV约.0167、后者约.0099；故不能把ridge最优宣称SD接受最优。概率/KL蒸馏依赖softmax的非线性，不能直接用同一矩闭式更新，Tuned Lens/KL训练为强对照。
+固定请求版本W,U、实际处理后p/q、真实因果草稿分布、独立随机数、min(1,p/q)、正残差、首拒绝截断、合法bonus/EOS；逐token条件归纳保持正式p的序列律。greedy正式argmax统一tie-break。实验实际实现完整softmax温度1、BOS兼EOS、最大8新token、无KV缓存，未验证生产top-p/有限精度/独立联合统计。正式监督CE不需要rollout，普通AR也可提取同一X/Y；若SD验证中已经取得特征也可更新矩，但本轮未执行在线反馈改变正式学习原语，G2不成立。同信息平坦可复制加法矩和区域委托。
+
+#### 3. 实际运行 E/P
+[完整实际代码及原始JSON](experiments/team-hcr-sd/R10/probe_and_results.md)；提取JS为probe.js，从固定上游下载weights.json、checkpoint.json、input.txt，node probe.js weights.json checkpoint.json input.txt。实际V8 FP64数值前向、手写头CE梯度、RMSNorm及因果attention按源重建。名字去重、长度≤15、按首字母mod4分4逻辑客户端，各hash%5拆分并选128训练/64评估，训练512条3696预测位置、评估256条1860位置，两组上游权重同一数据分割。公开原源语料可能已被外部模型见过。4云轮、2区域各2次区域同步（每同步两个客户端从同快照一步CE SGD，η=.025），每检查点32客户端更新，主干冻结、正式输出头更新；λ=.01（位置均值ridge）。比较tied共享W、初始化闭式头后保持不动stale、闭式刷新closed、重新取特征并直接构造X^TYW正规方程fresh、从closed开始50步soft CE/KL SGD η=.015、平均两个区域闭式头meanLocal。所有草稿方法共享完全相同的正式W，故正式NLL相同，不把草稿改进说成正式学习改善。实际未执行用SD rollout更新W，区别FEIA/FVR。
+|外部权重|初始正式NLL|4轮NLL|tied重叠|stale|closed|fresh|KL|区域头平均|
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+|weights.json|2.263194|2.258840|.901134|.921347|.922487|.922487|.923082|.922202|
+|checkpoint.json|2.281417|2.278785|.908317|.933383|.933935|.933935|.934057|.933901|
+闭式与重新提取特征后按新W构造教师logits再回归的8轮最大参数绝对误差3.645e−13，分层归约与直接全数据矩解最大误差9.413e−14（FP64，不保证生产位级）。闭式比共享头+2.135/2.562pp，但相较一次性校准stale仅+.114/.055pp，KL更高；不是相对最强基线显著优势。训练步数短，W漂移小；未测强漂移真实质量。4轮仅两次独立外部权重适配、非3独立训练seed。
+实际多token SD：最后一轮每检查点每方法4客户端×8评估名字首字母prompt=[BOS,firstchar]、3随机seed11/29/73，4方法各96请求、合计768随机SD请求；同数greedy AR/SD配对（重复seed的prompt相同，不声称768个独立prompt），0 greedy不一致。实际LCG，随机SD各法路径与长度不同，非同seed AR随机输出等价验证；标准核正确性依赖理论条件。block cap3，逐位置真实q，验证一次调用计算整个候选块所需预测行（函数内部串行前向、无KV高效实现），全部接受后独立重新执行bonus前向且blocks计入；不是GPU批量验证速度。汇总：
+|权重|方法|accepted/attempted|正式生成token|正式前向调用|
+|---|---|---|---:|---:|
+|weights.json|tied|442/499|587|303|
+|weights.json|stale|442/485|568|289|
+|weights.json|closed|442/491|577|299|
+|weights.json|KL|442/487|579|304|
+|checkpoint.json|tied|440/482|571|290|
+|checkpoint.json|stale|439/474|569|294|
+|checkpoint.json|closed|446/489|581|299|
+|checkpoint.json|KL|443/478|575|292|
+实际closed接受率90.02%/91.21%，stale91.13%/92.62%；有限样本不证明真实排序，但至少未见闭式刷新优于一次性校准的实际生成证据。没有运行真实计时、CI、GPU或物理网络。全部逐seed及每轮指标JSON保留。
+
+#### 4. 成本、文献和裁决
+P：两矩d×d FP32未压缩为8d² B/客户端/一次校准，d16为2048B，d1536为18,874,368B，d4096为134,217,728B（对称G可压缩、低秩/sketch近似另证）。构建O(nd²)、求解O(d³)，每W刷新物化O(d²V)，因子化则候选每位置O(d²)额外矩乘；原始特征可合法本地缓存而不上传。V151936,d1536时完整输出头本身FP32约933.5MB；实际LoRA低秩更新可降低MΔW成本至O(d²r+drV)，仍要计推理权重/内存；本轮无真实LoRA或大词表。普通缓存冻结特征、一次校准、因子化Tuned Lens、中心/平坦同委托及在线KL强对照。若动态刷新仅消除草稿再校准工作F，净收益≤F/T且需F/T≥.15，真实占比未知，不能把避免重取教师特征当全流程加速。
+2026-11-24实际web核对原始摘要/出版页：[Fed3R](https://proceedings.mlr.press/v235/fani-24a.html) ICML2024（冻结特征闭式ridge与统计聚合直接近邻）；[Tuned Lens](https://arxiv.org/abs/2303.08112) 2023（冻结Transformer层间仿射翻译器，KL目标）；[LayerSkip](https://aclanthology.org/2024.acl-long.681/) ACL2024；[EAGLE](https://proceedings.mlr.press/v235/li24bt.html) ICML2024；[Online SD](https://proceedings.mlr.press/v235/liu24y.html) ICML2024；[DVI](https://arxiv.org/abs/2510.05421) 2025（训练感知自投机与持续在线学习）；[OnlineSPEC](https://proceedings.mlr.press/v306/qian26k.html) ICML2026；[DySD](https://aclanthology.org/2026.findings-emnlp.45/) 2026（动态特征对齐及蒸馏）；未穷尽全文、最新未索引工作/专利，未正式文字查重。
+**CRITICAL / Reject and Pivot**：主观等权创新6.0/10（问题7.5、机制5、理论6.5、价值7、距离4）；G1/G2/G4 FAIL，G3局部T与有限greedy验证/完整生产合同未验，G5/G6未验证无80%依据，G7局部可复算/整体未过。好结果同目标质量资源最强公平基线真实全流程−15%或有效工作+20%，两公开预训练尺度三非IID/时延三独立训练seed CI及全部G。正式CE不依赖SD；一次性校准及普通回归/KL/平坦替代，闭式刷新增量小。未执行1–2×40GB；下一轮先复用本轮可加载外部权重与FEIA在线策略基线做真实学习/SD共同张量测试，并在可用GPU验证Qwen2.5-1.5B/3B或兼容多退出两尺度LoRA/RLVR、8客户端2区、真实奖励/版本/梯度及生产KV内存时间，匹配普通AR/生产SD/冻结特征缓存/Tuned Lens/Fed3R/在线蒸馏及同信息平坦。若仍无实际跨层必要共同计算，则停止闭式头方向，不扩大微型模型以充当G4。保留资源恢复路径、闭式刷新理论、实际两检查点梯度与生成结果。
