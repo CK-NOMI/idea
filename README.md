@@ -3505,3 +3505,14 @@ H未执行：只有真实训练部署确实将同一合法GRPO组跨区域分配
 - E/P/O：实际两同7264参数microGPT检查点、3 hash seed、48上下文、144配置、1344 p/q前缀计算、1179648缓存轨迹抽样；每正确二字符后缀随机首属4区，再按d=0/.3/.7独立复制到其他区，合成异质而非真实机构。d=.3散度路由覆盖a=.210587 vs最佳单区.168282、全并集.244978；MC梯度迹方差.037675→.018933（−49.7%，非对同证书AR的增量），期望方差降.018851 vs单区.013949；根条件重叠约.9197各法基本相同，无SD专属收益。最大混合法则误差8.88e−16、散度4.44e−16；d=0/.7另见JSON。仅27维logit偏移score，无真实梯度/SD rollout/GPU/网络/训练/CI。全量候选统计通信和选择成本未计，不能声称真实节约。
 - 文献摘要筛查GAD/Private Federated Submodel Learning via PSU/EP-MPD PSI去重/Generalizing Balance Heuristic/EfficientRollout/SpecFed/S3R/HierFAVG，非全文穷尽或正式查重；报告链接。独立主观8.075/10（8.5/8.5/9/7/6.5，25/25/20/15/15），历史数学8.35不改。G1/G2/G4 FAIL，G3/G7部分，G5未验，G6无80%依据。Revise储备，Reject独立立项；P0需证实真实同prompt/同模型的区域证书分布，完整梯度矩、路由/KV及网络开销，比较同证书AR、同信息平坦、普通内生SD、真实授权并集/PSI，1–2×40GB两尺度三非IID/延迟/独立训练seed、质量匹配总时间−15%或有效工作+20%及CI未执行。
 - [完整报告](experiments/team-far/R37/record.md) · [实验代码](experiments/team-far/R37/probe.js) · [原始结果](experiments/team-far/R37/results.json)
+
+
+### team-far/R38｜FEF-SD：首出界概率前沿、拒绝重试抵消与同缓存支配（9分目标）
+
+- 2026-11-24；起始 main 5672e3a28460ad06e5f7e2592a98bc2eca0dec17、README 3508行/489528字符、blob 19e62571adba61f96663903c3030c0e4f0b3f17a；写前 main 1d8f5249f78c9ec808a583114eb2934fc09cc544、blob 19e62571adba61f96663903c3030c0e4f0b3f17a。完整取得README、筛查标题/R36–37尾部、读R37原始代码，未全库复跑；9分与深度融合15%不变。
+- T：证书标签C质量a、B质量Z=1−a，先抽标签再用普通精确SD拒绝采样B，iid独立重试且有限成本时每B请求E C/Z，每原始slot乘Z后正好E C，即完整重试抵消，非GPU时间下界。按前缀单元u路由后局部重试，每slot后缀成本Σ_{Z_u>0}P(u)E[C|u]，仅完全证书覆盖单元可省，非通用SD加速。
+- T：有限证书trie内节点h首出界质量m(h)=P(h)Σ_{x不在子节点}p(x|h)，分数证书额外叶质量P(y)(1−r(y))；分割质量合计Z，按m/Z抽原子、在出界边条件采样，再普通SD补全，严格恢复p(.|B)，混合恢复p。压缩前沿可存节点ID+出界质量，但选中行/拓扑/KV/有限精度需计。CRITICAL：trie外任一前缀v有Z P_B(v)=P(v)，同版本理想缓存AR的外部正式位置工作与先标签条件前沿相同；posttag同样可跳到首出界再普通SD，不能声称HFL/SD特有收益。仅固定快照、固定长、有限明确证书，非任意PPO/生产EOS/top-p/FP。
+- E/P：同两7264参数microGPT、3 hash seed、48上下文、144配置、1344实际p/q前缀计算、294912配对实验slot（各方法抽样数不同），真实缓存概率两token最大耦合模拟而非GPU kernel。d=.3 posttag/条件SD/完整重试正式调用代理1.079941/.851389/1.079941；前者到条件−21.16%但同证书p缓存未计，理想缓存miss .333225/.333225相同，根接受.920059/.919785。条件查询.487751 vs posttag .666775为解析计数，MC cond queries=0字段未实际采集、不可解释零通信。条件核误差8.33e−17；重试恒等1.11e−15。无物理通信或训练。
+- E/P：L4另48上下文、1164真实前缀评估、196608首出界原子抽样（非实际后缀生成），证书质量.00555188；每slot 4位置中普通缓存命中1.724459、外部2.275541，与前沿尾部2.275541相同，恒等误差1.78e−15；质量归一5.55e−16。密集FP32行/节点ID+标量质量代理2619/194字节（−92.59%，不含trie拓扑/精度/KV/采样表），仅标量需每slot .994448选中行重算；非真实存储或加速。实际GAD/Block Verification/SpecTr/SpecTr-GBV/SpecFed/SPADE/PipeSD原始摘要或出版页检索，非全文穷尽或正式查重。
+- **Reject standalone，保留前沿和负结果**。R37主观8.075及历史R30数学8.35不改，不按代理增益抬分。G1/G2/G4 FAIL，G3/G7部分，G5未验，G6无80%依据。停止证书路线扩张，除非真实工作负载/权限及已存在缓存trace证明暴露瓶颈；P0真实GPU阶段profile、共同计算原语、同信息平坦/AR+同缓存RB/最优SD对照。1–2×40GB两真实尺度、三非IID/时延/独立训练seed、同质量总时间−15%或有效工作+20%与CI未执行。
+- [报告](experiments/team-far/R38/record.md) · [验证成本代码](experiments/team-far/R38/probe.js) · [结果](experiments/team-far/R38/results.json) · [首出界代码](experiments/team-far/R38/frontier.js) · [结果](experiments/team-far/R38/frontier_results.json)
