@@ -1,0 +1,392 @@
+{
+  "src": "Aaryaman3/Speculative-Decoding-Eval",
+  "ref": "99f1b223f007e93c5206ab9d5e43dba3ec4920e7",
+  "manifest": [
+    {
+      "path": "Code/results/raw/baseline_L4_code_c08_t1.jsonl",
+      "sha": "5db4adc0ec8a3f621f5cc55b12e22525e875e2b2",
+      "n": 8,
+      "distinctAcceptance": [
+        null
+      ]
+    },
+    {
+      "path": "Code/results/raw/eagle3_L4_code_c08_t1.jsonl",
+      "sha": "05195c4ff75f633a319bdf47eb3a4b1b808aa730",
+      "n": 8,
+      "distinctAcceptance": [
+        0.4429
+      ]
+    },
+    {
+      "path": "Code/results/raw/eagle3_L4_code_c08_t2.jsonl",
+      "sha": "4e8cba0f487e0efb32d3cbde2d2e02ceacad7a9a",
+      "n": 8,
+      "distinctAcceptance": [
+        0.4481
+      ]
+    },
+    {
+      "path": "Code/results/raw/baseline_L4_code_c08_t2.jsonl",
+      "sha": "b942c4c84689463b17a321ba39b01c958644bea1",
+      "n": 8,
+      "distinctAcceptance": [
+        null
+      ]
+    },
+    {
+      "path": "Code/results/raw/baseline_L4_code_c08_t3.jsonl",
+      "sha": "3c773f6310b0242058214f0a0917f4dea7c5f852",
+      "n": 8,
+      "distinctAcceptance": [
+        null
+      ]
+    },
+    {
+      "path": "Code/results/raw/eagle3_L4_code_c08_t3.jsonl",
+      "sha": "15382ec9da85760ae87ea7be3ad385149a46798a",
+      "n": 8,
+      "distinctAcceptance": [
+        0.453
+      ]
+    }
+  ],
+  "pairs": [
+    {
+      "gpu": "L4",
+      "task": "code",
+      "trial": 1,
+      "id": "code_0000_c8_t1",
+      "ar": 16309.97,
+      "sd": 6192.61,
+      "arTokens": 256,
+      "sdTokens": 256,
+      "equalText": true,
+      "arTTFT": 315.67,
+      "sdTTFT": 375.86,
+      "acceptance": 0.4429
+    },
+    {
+      "gpu": "L4",
+      "task": "code",
+      "trial": 1,
+      "id": "code_0001_c8_t1",
+      "ar": 16246.07,
+      "sd": 5860.81,
+      "arTokens": 256,
+      "sdTokens": 256,
+      "equalText": true,
+      "arTTFT": 85.77,
+      "sdTTFT": 109.07,
+      "acceptance": 0.4429
+    },
+    {
+      "gpu": "L4",
+      "task": "code",
+      "trial": 1,
+      "id": "code_0002_c8_t1",
+      "ar": 16310.17,
+      "sd": 5344.17,
+      "arTokens": 256,
+      "sdTokens": 256,
+      "equalText": true,
+      "arTTFT": 315.68,
+      "sdTTFT": 108.83,
+      "acceptance": 0.4429
+    },
+    {
+      "gpu": "L4",
+      "task": "code",
+      "trial": 1,
+      "id": "code_0003_c8_t1",
+      "ar": 16310.12,
+      "sd": 4732.32,
+      "arTokens": 256,
+      "sdTokens": 214,
+      "equalText": false,
+      "arTTFT": 315.61,
+      "sdTTFT": 375.47,
+      "acceptance": 0.4429
+    },
+    {
+      "gpu": "L4",
+      "task": "code",
+      "trial": 1,
+      "id": "code_0004_c8_t1",
+      "ar": 16309.49,
+      "sd": 6656.9,
+      "arTokens": 256,
+      "sdTokens": 256,
+      "equalText": false,
+      "arTTFT": 315.4,
+      "sdTTFT": 374.84,
+      "acceptance": 0.4429
+    },
+    {
+      "gpu": "L4",
+      "task": "code",
+      "trial": 1,
+      "id": "code_0005_c8_t1",
+      "ar": 16309.77,
+      "sd": 5603.03,
+      "arTokens": 256,
+      "sdTokens": 256,
+      "equalText": false,
+      "arTTFT": 315.34,
+      "sdTTFT": 375.4,
+      "acceptance": 0.4429
+    },
+    {
+      "gpu": "L4",
+      "task": "code",
+      "trial": 1,
+      "id": "code_0006_c8_t1",
+      "ar": 16309.73,
+      "sd": 5774.88,
+      "arTokens": 256,
+      "sdTokens": 256,
+      "equalText": true,
+      "arTTFT": 315.28,
+      "sdTTFT": 375.13,
+      "acceptance": 0.4429
+    },
+    {
+      "gpu": "L4",
+      "task": "code",
+      "trial": 1,
+      "id": "code_0007_c8_t1",
+      "ar": 16309.68,
+      "sd": 6028.72,
+      "arTokens": 256,
+      "sdTokens": 256,
+      "equalText": true,
+      "arTTFT": 315.21,
+      "sdTTFT": 375.19,
+      "acceptance": 0.4429
+    },
+    {
+      "gpu": "L4",
+      "task": "code",
+      "trial": 2,
+      "id": "code_0000_c8_t2",
+      "ar": 16041.11,
+      "sd": 6039.41,
+      "arTokens": 256,
+      "sdTokens": 256,
+      "equalText": true,
+      "arTTFT": 157.42,
+      "sdTTFT": 214.74,
+      "acceptance": 0.4481
+    },
+    {
+      "gpu": "L4",
+      "task": "code",
+      "trial": 2,
+      "id": "code_0001_c8_t2",
+      "ar": 15977.44,
+      "sd": 5786.43,
+      "arTokens": 256,
+      "sdTokens": 256,
+      "equalText": true,
+      "arTTFT": 86.18,
+      "sdTTFT": 107.01,
+      "acceptance": 0.4481
+    },
+    {
+      "gpu": "L4",
+      "task": "code",
+      "trial": 2,
+      "id": "code_0002_c8_t2",
+      "ar": 16040.68,
+      "sd": 5182.95,
+      "arTokens": 256,
+      "sdTokens": 256,
+      "equalText": false,
+      "arTTFT": 157.05,
+      "sdTTFT": 214.42,
+      "acceptance": 0.4481
+    },
+    {
+      "gpu": "L4",
+      "task": "code",
+      "trial": 2,
+      "id": "code_0003_c8_t2",
+      "ar": 16040.23,
+      "sd": 4571.58,
+      "arTokens": 256,
+      "sdTokens": 214,
+      "equalText": false,
+      "arTTFT": 156.92,
+      "sdTTFT": 214.35,
+      "acceptance": 0.4481
+    },
+    {
+      "gpu": "L4",
+      "task": "code",
+      "trial": 2,
+      "id": "code_0004_c8_t2",
+      "ar": 16040.69,
+      "sd": 6272.1,
+      "arTokens": 256,
+      "sdTokens": 256,
+      "equalText": true,
+      "arTTFT": 156.95,
+      "sdTTFT": 214.12,
+      "acceptance": 0.4481
+    },
+    {
+      "gpu": "L4",
+      "task": "code",
+      "trial": 2,
+      "id": "code_0005_c8_t2",
+      "ar": 16040.65,
+      "sd": 5786.53,
+      "arTokens": 256,
+      "sdTokens": 256,
+      "equalText": false,
+      "arTTFT": 156.89,
+      "sdTTFT": 214.22,
+      "acceptance": 0.4481
+    },
+    {
+      "gpu": "L4",
+      "task": "code",
+      "trial": 2,
+      "id": "code_0006_c8_t2",
+      "ar": 16040.47,
+      "sd": 5614.09,
+      "arTokens": 256,
+      "sdTokens": 256,
+      "equalText": true,
+      "arTTFT": 156.75,
+      "sdTTFT": 213.9,
+      "acceptance": 0.4481
+    },
+    {
+      "gpu": "L4",
+      "task": "code",
+      "trial": 2,
+      "id": "code_0007_c8_t2",
+      "ar": 16039.81,
+      "sd": 5954.46,
+      "arTokens": 256,
+      "sdTokens": 256,
+      "equalText": true,
+      "arTTFT": 156.26,
+      "sdTTFT": 213.91,
+      "acceptance": 0.4481
+    },
+    {
+      "gpu": "L4",
+      "task": "code",
+      "trial": 3,
+      "id": "code_0000_c8_t3",
+      "ar": 16040.89,
+      "sd": 6038.61,
+      "arTokens": 256,
+      "sdTokens": 256,
+      "equalText": true,
+      "arTTFT": 157.61,
+      "sdTTFT": 214.72,
+      "acceptance": 0.453
+    },
+    {
+      "gpu": "L4",
+      "task": "code",
+      "trial": 3,
+      "id": "code_0001_c8_t3",
+      "ar": 15977.03,
+      "sd": 5786.09,
+      "arTokens": 256,
+      "sdTokens": 256,
+      "equalText": true,
+      "arTTFT": 86.01,
+      "sdTTFT": 109.44,
+      "acceptance": 0.453
+    },
+    {
+      "gpu": "L4",
+      "task": "code",
+      "trial": 3,
+      "id": "code_0002_c8_t3",
+      "ar": 16040.36,
+      "sd": 5095.28,
+      "arTokens": 256,
+      "sdTokens": 256,
+      "equalText": false,
+      "arTTFT": 157.18,
+      "sdTTFT": 109.18,
+      "acceptance": 0.453
+    },
+    {
+      "gpu": "L4",
+      "task": "code",
+      "trial": 3,
+      "id": "code_0003_c8_t3",
+      "ar": 16040.4,
+      "sd": 4571.33,
+      "arTokens": 256,
+      "sdTokens": 214,
+      "equalText": false,
+      "arTTFT": 157.15,
+      "sdTTFT": 214.47,
+      "acceptance": 0.453
+    },
+    {
+      "gpu": "L4",
+      "task": "code",
+      "trial": 3,
+      "id": "code_0004_c8_t3",
+      "ar": 16039.72,
+      "sd": 6271.25,
+      "arTokens": 256,
+      "sdTokens": 256,
+      "equalText": true,
+      "arTTFT": 156.61,
+      "sdTTFT": 213.8,
+      "acceptance": 0.453
+    },
+    {
+      "gpu": "L4",
+      "task": "code",
+      "trial": 3,
+      "id": "code_0005_c8_t3",
+      "ar": 16040.14,
+      "sd": 5785.44,
+      "arTokens": 256,
+      "sdTokens": 256,
+      "equalText": false,
+      "arTTFT": 156.93,
+      "sdTTFT": 214.16,
+      "acceptance": 0.453
+    },
+    {
+      "gpu": "L4",
+      "task": "code",
+      "trial": 3,
+      "id": "code_0006_c8_t3",
+      "ar": 16039.62,
+      "sd": 5612.95,
+      "arTokens": 256,
+      "sdTokens": 256,
+      "equalText": true,
+      "arTTFT": 156.78,
+      "sdTTFT": 214.09,
+      "acceptance": 0.453
+    },
+    {
+      "gpu": "L4",
+      "task": "code",
+      "trial": 3,
+      "id": "code_0007_c8_t3",
+      "ar": 16040.01,
+      "sd": 5953.55,
+      "arTokens": 256,
+      "sdTokens": 256,
+      "equalText": true,
+      "arTTFT": 156.77,
+      "sdTTFT": 214.06,
+      "acceptance": 0.453
+    }
+  ]
+}
