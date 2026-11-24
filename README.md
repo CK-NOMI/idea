@@ -1984,3 +1984,42 @@ H未执行：下一轮首要获取预训练Qwen2.5-1.5B/3B或Qwen3-1.7B/4B、同
 - P：V32768对全量权重131072B弱基线摘要降约99.5%，但强双阶段仅需40+80δ B（四片、FP64质量/score、32bit ID，拒绝才广播Z及返回局部race winner）；σ=.5时约55.8B，HPRS含候选约670B，反而约12倍载荷。预采4个独立p提议约488B，失败回退概率δ(1−δ)^4≈8.2%（本队R01 p包络思想），可并行。100Mbps理想单位置额外约614B/.049ms，若新增计算为0需RTT>.25ms，若新增1ms需>5.3ms，皆代理。块验证只能修正首拒绝，不能将单步收益乘K。普通CCE/TP/平坦能复制本算子，HC/R03耦合梯度也能由普通SD提供，未证明正式HFL学习双向不可替代。
 - 原始文献（2026-11-24）：[CCE](https://arxiv.org/abs/2411.09009) 2024、[FlashSampling](https://arxiv.org/abs/2603.15854) 2026、[FlashSpec Part I作者技术博客](https://jialefu.github.io/blog/2026/flashspec/) 2026-05-14、[Megatron-LM](https://arxiv.org/abs/1909.08053) 2019、[Online softmax](https://arxiv.org/abs/1805.02867) 2018、[Speculative Sampling via Exponential Races](https://aclanthology.org/2025.findings-acl.936/) 2025、Leviathan/LayerSkip/HierFAVG。核对原始摘要/部分正文；参数化几何、动态采样、最新fused kernel及未索引/未公开工作为盲区，不宣称首次或通过正式文字查重。
 - 主观加权创新7.225/10≈7.2（问题8、机制7.5、理论7、价值7、距离6，权重25/25/20/15/15），非同行评审；G1未过，G2 CRITICAL未过，G3局部T/整体未过，G4未过（合成），G5/G6未验证，G7局部复算/整体未过。无80%好结果依据。好结果同目标质量预算最强公平基线真实全流程时间−15%或有效工作+20%，两预训练尺度三配置三种子及CI、全部G。若证实真实分片需求再在1–2×40GB Qwen2.5-1.5B/3B采≥10000真实(p,q)行，测hull/溢出/HBM/端到端，并比双阶段、预采、FlashSampling/FlashSpec、CCE、普通HFL+SD及同信息平坦/TP。未执行。**Reject and Pivot**；保留几何残差摘要、最坏界、随机回退警告及实际数据。下一轮先取得真实模型trace和时间份额，明确不可替代的学习—执行因果，禁止用通用kernel或反馈蒸馏拼接替代双向创新。
+
+
+
+### team-hieracert/R05｜FSOT：联邦投机优化器事务与多步标签修正的成本障碍
+
+- 日期2026-11-24；起始 main 063154570a0d42e17241a9d60eb019a1a66ed8fa，README blob bafdf2ff1d5ef41f3c7245c7f0090d4224882cb2（1906行）。核实上轮已读1885行为原样前缀，阅读新增HC/R03 FCR-SD、HiMerge/R04 FVC及相关详细记录、HCA/HCR/HierCouple R04代码与结果摘要。提交前读并发HCR/R04 FVT-SD、HierCouple/R04 CPG及HCA/R04 HPRS；检测并发更新后停止旧写入，基于最新blob 46416c231592d124498dbafa166e1d26bbe149fb 追加，保留原文。未独立重跑他队。
+- **CRITICAL / Reject and Pivot**。T=限定数学，E=实际V8 CPU合成优化轨迹，P=工作/存储代理，H=假说，E-H=外部论文实测而非本队复现。无真实LLM/HFL/SD生成/GPU/网络/wall time。实际检查torch2.10.0+cpu、CUDA false、无transformers/datasets及本地HF缓存；请求huggingface.co、raw.githubusercontent.com均DNS失败。与R04单梯度halo不同，此处多步优化器状态；与HC/R03草稿无偏梯度、HCR/R04固定版本tape、HCA/R04残差上包络不同；A/R02–03、A/R09为近邻。
+
+#### 1. 场景、目标及机制（H/T）
+客户端持固定私有特征x_t及预定样本顺序，区域冻结教师p与内生头q（共享特征/早退，无独立完整草稿LLM），先发候选标签，再返回正式标签；授权标签、版本、参数/更新交换，不声称DP。正式目标为真实标签序列的预定本地SGD后线性HFL聚合；未验证事务不得被下一轮模型或服务依赖。独立外生上下文可用标准单步最大耦合X~q、min(1,p/q)、正残差得Y~p。一般自回归SD拒绝后的后缀条件及特征可能改变，不能套固定设计公式；须丢弃或重算。greedy用目标argmax；随机完整序列需真实q、因果前缀、独立随机数、正确bonus/EOS/KV/精度，未实现。实验独立标签翻转仅压力模拟，不是实际SD。
+平方损失 l_t=.5(x_t^T w-y_t)^2；固定eta，A_t=I-eta x_t x_t^T，w_{t+1}=A_t w_t+eta x_t y_t。候选轨迹w_hat，初始相同，则差分Δ_{t+1}=A_t Δ_t+eta x_t(y_t-yhat_t)。令c_t=A_{T-1}...A_{t+1} eta x_t，空积I，递推展开得 **w_T=w_hat_T+Σ_t c_t(y_t-yhat_t)**。正确标签零修正。倒序M=I，u=M x_t，c_t=eta u，M←M−eta u x_t^T=M A_t，精确构建后缀影响向量。固定线性更新的经典输入响应，非一般优化器新定理。
+强替代与反例（T）：(1) 无需猜测：w_T=(A_{T-1}...A_0)w_0+Σc_t y_t，同一缓存可直接累加真标签；普通SGD待标签到达执行O(Td)，逐到达流水可更强。(2) 固定快照CE梯度J^T(p−e_y)，冻结特征线性输出头可先算Σp h^T，真标签到达后累加Σ e_y h^T，不需要SD候选。一般J^T仍可能完整反向；固定快照线性不等于多步更新线性。(3) 二分类logistic、x=1、eta=1、w0=0，候选标签(0,0)，真实(1,0)。w_hat2=−.5−sigmoid(−.5)=−.8775406688，w2=.5−sigmoid(.5)=−.1224593312；末端仅加首步标签修正1得到+.1224593312，误差.2449186624。即使后续标签正确，参数轨迹不同；AdamW动量、二阶矩亦须修正，不能只改参数。(4) 客户端最终精确修正后线性HFL聚合正确，但同信息平坦可完全复制。提前发布未确认参数需后续跨客户端依赖重放；普通延迟提交无此风险。
+
+#### 2. 实际运行 E/P
+[代码](experiments/team-hieracert/R05/probe.js)，[逐种子结果](experiments/team-hieracert/R05/results.json)，命令 node experiments/team-hieracert/R05/probe.js。实际JS V8 CPU、LCG+Box-Muller，seed11/29/73，d16/64，T32/128，独立翻转率δ=.01/.05/.2，每配置12轨迹，共36组432轨迹；归一化高斯特征、真实均匀二元标签、eta=.2、w0=0。比较真实SGD、候选SGD后首错检查点重放、精确差分递推、预计算c_t修正及忽略后续影响的naive修正。前三种精确修正最大绝对L2误差1.1021e−15。未测wall time、真实质量、CI、GPU或网络；不是实际HFL/SD。T128三种子均值（其他设置见JSON）：
+|d|δ|晚到修正列数|首错重放步数|naive参数L2误差|
+|---:|---:|---:|---:|---:|
+|16|.01|1.3333|52.4444|.107413|
+|16|.05|7|111.1111|.283238|
+|16|.2|25.8333|123.6111|.553280|
+|64|.01|1.3889|55.3889|.044375|
+|64|.05|6.1667|112.6944|.124599|
+|64|.2|25.1111|125.2778|.252037|
+iid错误率δ时首错重放期望Σ_{j=1}^T[1−(1−δ)^j]=T−(1−δ)(1−(1−δ)^T)/δ，δ=0为0。后缀修正晚到O(md)，E[m]=Tδ；构建O(Td²)工作、O(Td+d²)空间，额外猜测轨迹O(Td)。也可逐个后缀O(T²d)或在实际特征子空间计算，需计基底成本。差分递推与检查点重放同O((T-first)d)。FP32 d4096,T128，c缓存约2.097MB、临时矩阵67.109MB；百万级参数dense不可行。普通真实SGD仅O(Td)，晚到修正少不代表总计算少。发送候选参数和修正各d标量 vs 常规一次确认结果；服务器无特征/影响向量时不能只发错误标签ID完成修正。所有数字是代理非实际通信，只有真实等待可重叠才可能有延迟收益，普通无预测缓存同样可行。
+
+#### 3. 文献核查（2026-11-24）
+实际检索 speculative SGD rollback / machine unlearning retraining / parallel least squares SGD / speculative RL rollout / verification feedback，核对原始页面与摘要，未穷尽公式、附录、专利或未索引工作。无正式文字查重。
+- [DeltaGrad ICML2020](https://proceedings.mlr.press/v119/wu20b.html)：缓存训练历史加速数据变化后的重训。
+- [Machine Unlearning/SISA](https://arxiv.org/abs/1912.03817) 2019/2021 S&P：隔离、检查点重放。
+- [Parallelizing SGD for Least Squares Regression](https://www.jmlr.org/beta/papers/v18/16-595.html) JMLR2018：平方损失并行SGD。
+- [Stay Fresh: Speculative Synchronization](https://www.cse.ust.hk/~weiwa/papers/specsync-icdcs18.pdf) ICDCS2018：分布式SGD推测同步，摘要检索，完整算法待核。
+- [SPEC-RL](https://arxiv.org/abs/2509.23232) 2025：跨轮次rollout复用；[AReaL](https://arxiv.org/abs/2505.24298) NeurIPS2025：异步rollout与版本陈旧。
+- [When Drafts Evolve](https://proceedings.mlr.press/v306/qian26k.html) ICML2026；[Online SD](https://proceedings.mlr.press/v235/liu24y.html) ICML2024；[Aurora](https://proceedings.mlr.press/v306/wang26j.html) ICML2026；[SpecRoll](https://arxiv.org/abs/2608.04962) 2026：验证反馈与在线适配。均未证本轮精确事务独创性。
+- [System-Integrated SD for RL](https://arxiv.org/abs/2604.26779) 2026：论文报告8B同步rollout吞吐1.8倍，非本队实测；HierCouple/R04已做阶段耗时审计，不重复当新成果。盲区：精确在线更正、事务式优化器、线性控制等。HCA/R04几何残差摘要属不同对象。
+
+#### 4. 验收、否决与下一轮
+CRITICAL：普通延迟计算/检查点重放/同信息平坦可复制核心；真正CE/AdamW及自回归后缀不满足线性前提；无真实数据驻留必要性，HFL与SD双向学习机制未证。等权主观创新5.7/10（问题6.5、机制5.5、理论6、价值6、距离4.5），非同行评审。G1 FAIL；G2 CRITICAL FAIL；G3 PARTIAL/FAIL（限定线性轨迹，完整greedy/随机SD、CE/AdamW/精度未验证）；G4 FAIL仅合成；G5 FAIL无真实总时间；G6 FAIL无80%证据；G7 PARTIAL/FAIL代码结果可复算，完整系统无。好结果同目标/质量/资源下对最强公平基线全流程真实时间−15%或同成本有效工作+20%，两预训练尺度三配置三种子CI、全部G通过。未执行GPU。
+H（仅改变前提再做）：1–2×40GB Qwen2.5-1.5B/3B、8逻辑客户端2边缘、公开数学代码通用数据，三非IID/时延、三种子。冻结教师快照，比较固定特征线性头与CE/LoRA/AdamW，测标签到达及可重叠工作；对照普通HFL AR、普通HFL+最优内生SD、无预测提前计算、逐到达更新、checkpoint replay、异步版本管理、同信息平坦；计全部训练推理时间/通信/内存/回退、质量与CI。单卡模拟非物理并行。不为此否决方向投入GPU。
+**Reject and Pivot**。保留后缀影响式、首错成本、固定快照CE非投机分解、非线性反例和真实CPU数值代码。下一轮先取得可执行预训练权重或公开逐请求系统trace与真实跨层物理约束，测可消除的关键路径占比是否≥15%，不再用增加toy规模替代真实瓶颈证据。无资源则明确缺失；先否证普通AR/SD/同信息平坦再设计机制。
