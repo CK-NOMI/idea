@@ -2163,3 +2163,14 @@ CRITICAL：普通AR也能用相同区间验证，已有确定性训练推理kern
 H未执行：1–2×40GB NVIDIA，Qwen2.5-1.5B/3B，LoRA/GRPO，8逻辑客户端2边缘，公开数学/代码/通用任务，三种子三精度/非IID/网络设置；先同快照收集≥10000真实前缀，配对AR/SD/训练kernel的logit、采样token、logprob、梯度差及SLO，比较普通HFL AR、普通HFL+内生SD、batch-invariant/共用kernel、LLM-42、数值重要性校正、同信息平坦，严格参考有限精度合同与top-p另证。记录全训练+生成wall time、额外证书/回退、通信、质量、显存及CI。当前不推荐GPU投入本区间机制；首先获得真实权重和trace、验证数值错配是否在目标硬件和任务上造成显著额外工作及影响学习，然后再找不可替代的HFL↔SD机制。无真实数据时明确暂停候选立项，不继续扩大随机张量实验。保留证明、反例、真实CPU算子、源码/逐种子数据与强基线。
 
 - 追加时README blob f0c8975d6a453449a77e4bdf929d56d682fb60f9；使用该完整旧文本与blob保护并发。
+
+
+### team-himerge/R05｜FCMC：联邦预测间隔证书约束与随机采样不变量障碍
+
+- 2026-11-24；起始 main 1fe2fa6cf306a19953c6afc8f2118f0e26da2fcb，README blob 46416c231592d124498dbafa166e1d26bbe149fb；追加前 main 80f9db25b2081d4e288d4dfd0b822a7e3799f4ce，blob 76a457e5f874429ed56166525502ed71885388ed。核对旧前缀、阅读新增FVT/CPG/HPRS/FSOT/FIV-SD/LBS/FCRR及并发NC-FSD（同版本数值区间，与本轮参数更新约束不同），保留旧文。
+- [完整记录](experiments/team-himerge/R05/record.md)、[实际执行代码](experiments/team-himerge/R05/probe.py)、[逐种子实际指标](experiments/team-himerge/R05/results.txt)，运行 OPENBLAS_NUM_THREADS=1 python experiments/team-himerge/R05/probe.py。T=理论，E=实际CPU数值优化，P=代理，H=未验证；无CUDA、HF DNS失败，无真实LLM/HFL/SD运行。
+- T：冻结特征h、独立线性头W，旧唯一greedy胜者y的间隔m_iv>0；约束(Δ_y−Δ_v)h_i≥−(1−κ)m_iv保证新间隔≥κm_iv。共同凸约束下加权平均闭合；各区只保护自己的约束不闭合：二元w=(1,1)，各保护e1/e2，更新(1,−4)、(−4,1)均值使两旧预测翻转。全局QP投影，ray最大安全步长以局部min归约；同信息平坦可复制。A/R03零空间满秩冻结，本轮不等式较宽松。固定已认证前缀greedy可缓存，AR同样可用；新前缀命中与状态复用未证。
+- T：同温度下对几乎所有共同独立Gumbel噪声，旧/新argmax相同 iff logits仅相差公共常数。任何两词差改变可构造正概率开集使胜者不同。故greedy保护不等于随机分布保护；仍需新p标准SD或严格证书+精确回退。有限训练随机种子不能当全噪声保证，参见PRE-07/FCRR/LBS；完整解码与浮点未审计。
+- E/P：CPU FP64 SLSQP，3种子×3漂移×3锚点规模，4区32维二元模型、8/32/128锚点/区、每区256软标签样本、单步更新。全部27组满秩，null近零；globalQP零锚点翻转，最大约束违反3.14e−16。σ=2、128锚点/区时plain/local翻转10.68%/5.86%，QP保留普通单步CE下降28.88%、ray仅1.17%；QP共同U解析随机差异0.9041%，CPU QP中位2.834ms。低漂移8锚点QP保留99.34%收益。非真实LLM质量、接受率或总时间。
+- 近邻：[BCWI](https://aclanthology.org/2024.eacl-long.174/)、[Positive-Congruent Training](https://openaccess.thecvf.com/content/CVPR2021/html/Yan_Positive-Congruent_Training_Towards_Regression-Free_Model_Updates_CVPR_2021_paper.html)、GEM、[DySD](https://aclanthology.org/2026.findings-emnlp.45/)、[When Drafts Evolve](https://proceedings.mlr.press/v306/qian26k.html)；详细记录含完整引用，无正式文字查重。M锚点V−1约束/点，成本与实际命中未证。普通AR缓存、兼容学习、平坦可替代。
+- **CRITICAL / Reject and Pivot**：创新6.025/10，无80%依据；G1/G2/G4 FAIL，G3/G7部分成立/整体未过，G5/G6未验证。保留不变量区别、局部聚合反例、CPU结果；禁止兼容学习/缓存/普通投影换名立项。未执行1–2×40GB预实验。下一轮优先真实模型/trace与物理驻留约束，先检验强基线后可优化时间份额及双向因果，无资源则证据审计。
