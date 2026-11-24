@@ -2433,3 +2433,55 @@ P：27词用5位ID，示意全mask bits=min(27,5 min(k,27−k)+1)+5（列表/补
 - E：实际GitHub读取固定Gutenberg《The Yellow Wallpaper》《Alice's Adventures in Wonderland》文本，与HCA/R06同源。三区132382训练字符、33091有效留出位置，局部bigram、全局bigram、全局trigram，三平滑设置9配置。独立三级共同概率59.09–62.16%，共享60.57–62.84%，逐配置增量0.68–1.48pp；端点仍低于直接最大耦合。另3seed×2方式×100000=600000实际单步MC，合成p0=(.2,.6,.2),p1=(.6,.2,.2),p2=(.3,.3,.4)，理论相邻.6/.7不变，三级.5→.6、端点.5667→.7，实际计数在记录。非真实Transformer或端到端性能，未测CI。
 - 原始文献：[HiSpec](https://arxiv.org/abs/2510.01336)、[HSD](https://arxiv.org/abs/2510.19705)、[Cascade Speculative Drafting](https://papers.nips.cc/paper/2024/file/9cb5b083ba4f5ca6bd05dd307a2fb354-Paper-Conference.pdf)、[PipeSpec](https://arxiv.org/abs/2505.01572)、[LayerSkip](https://aclanthology.org/2024.acl-long.681/)、[ReeFL](https://proceedings.mlr.press/v235/lee24h.html)、[3-Model SD](https://arxiv.org/abs/2510.12966)、[multimaximal coupling](https://www.psych.purdue.edu/~ehtibar/publications/DzhKujQI16d.pdf)。原始摘要/出版页/检索摘要核查，未全文穷尽，无正式文字查重。多级架构非新；额外条件信息、残差、RPC/KV及正式学习成本待测。
 - **CRITICAL / Reject and Pivot**：创新6.15/10，无80%依据。G1/G2/G4 FAIL；G3/G7部分成立/整体未过；G5/G6未验证。直接端点最大耦合、已有多级SD及普通AR/平坦为强对照；实际语料概率增益小，不证双向必要性。保留闭式损失、共享条件耦合、正支持反例及实际数据。未执行1–2×40GB预实验；下一轮优先获得真正预训练多退出模型和真实物理跨层trace，先测相邻/端点概率、实际计算、通信及最强基线；无资源则做真实源码/trace审计而非重复统计LM。
+
+
+### team-hiercouple/R07｜FCIP：验证条件下的联邦学习信息预取与晚绑定查询复杂度
+
+- 日期2026-11-24；起始 main bfaad2e2838e87840c367fd5070cbad9f31aee47，README blob 4c8bf0d22364a2b9bbe7b918a3d5715178c1c46c，2384行。核验上轮 e7c33f34fc6980eda4405b0a1099c63396406bda 原样前缀；读取新增CFA/SCA/FTCD/FEC详细索引，区别于FEC的目标token条件熵，本轮是验证后所选的私有学习值查询，且允许晚到补查；与FTCD复用相同公开语料来源但研究量不同。未独立复跑他队。实际读取HierFAVG原始仓库及两份固定版公开文本。代码和结果先独立上传，再重读最新README追加；保留历史。
+- **CRITICAL / Reject and Pivot**：保留条件信息上界、源代码审计、真实字符语料结果和成本门槛；未达到双向原创立项。T=限定数学；E=实际V8字符计数拟合/概率枚举/MC和源码阅读；O=完整正式条件概率oracle；P=成本代理；H=假说。无本轮预训练Transformer/GPU/真实HFL/网络/wall time或正式CI；本轮未重新检查CUDA/模型下载环境，不能声称前轮障碍已恢复。
+
+#### 1. HFL物理与计算约束审计（T/E）
+原始[HierFL commit 8c882c17e6a7033814e0746db235ea5b0d96d83d](https://github.com/LuminLiu/HierFL/tree/8c882c17e6a7033814e0746db235ea5b0d96d83d)：实际读README、hierfavg.py、edge.py、cloud.py、average.py。hierfavg.py L296–325先区域广播再本地更新和聚合，L339–344云聚合及下发；edge.py L46–67客户端注册和样本加权聚合；cloud.py L25–42用区域全量训练样本数聚合；average.py L5–14加权平均。README为MNIST/LeNet例，不是LLM实测。仅全参与、固定一致样本权重、一次聚合、实数运算时，两级平均等价于平坦加权；部分参与/浮点/本地优化器状态需审计。边缘重复反馈会改变学习轨迹。例两客户端仿射更新U_i(w)=a_i w+b_i（等价步长1对凸二次函数 .5(1−a_i)w²−b_i w做SGD），w0=0、两次区域聚合。世界A a=(0,0),b=(0,1)，世界B a=(0,.5),b=(0,2/3)，两世界各客户端独立两步的终点皆(0,1)，严格单次上传终点的平坦算法无法区分，区域两轮结果分别.5和5/12。不能据此宣称任何平坦协议不可能：上传完整局部仿射映射或允许区域中间反馈即可复现。限定平坦基线如果可在同一物理设备、同权限和消息图、同状态与随机性下任意委托执行与候选完全相同的边缘操作，则逐事件模拟具有相同轨迹和成本；改名/取消逻辑层标签并不构成严格能力差。G2应比较允许同等资源与授权但不包含候选学习原语的强普通平坦算法、普通HFL+最优SD，并明确改变的是通信轮次、数据权限、还是学习更新规则。不得偷换为禁止任何局部协作的弱对照。CFA的表观协同结论同理。
+
+#### 2. 晚绑定学习查询问题（T/H）
+固定合法前缀h、参数快照θ。区域A驻留正式模型及验证器，区域B驻留私有训练信息；双方共享内生轻量候选X~q（无独立完整草稿LLM），或者依法交换候选ID。正式Y~p通过标准最大耦合验证，随后必须取得与Y对应的学习值W_Y才能继续一次正式更新；例如每个候选标签的私有梯度分量，可由损失 .5(w−W_v)^2 在w=0得到−W_v。抽象限定W=(W_1,...,W_V)为独立均匀b0-bit块，独立于给定前缀的模型、草稿、正式采样随机性及公有信息C。实际语言模型梯度通常非独立、可压缩且受模型/上下文影响，本模型是最坏信息边界例，不是一般LLM梯度下界。数据不出域只允许经授权查询/预取这些值；预取更多值可能违反最小授权，不宣称DP。参数快照和损失冻结，预取不反馈改变p/q/候选随机性；真正执行时按正式Y只使用一个合法学习值，其他值丢弃；不能提交错误候选或删除未命中样本。
+正式验证前，B向A发送一个最多B_bits bit的固定容量消息M（消息长度、时序和其他隐蔽信道不可额外传私有数据）。Y在消息发出后才揭示；条件于C=c，Y~p_c且与W、M独立。若接收方能仅凭M,C,Y无误恢复W_Y，则称提前命中，否则按Y补查、恢复同一训练值。候选C可含合法公共草稿X；若C还含W信息或Y依赖W/M，则以下界不适用。额外已知公共随机数条件化；零错误、独立均匀块、固定容量（或规范熵预算）是关键假设。
+
+#### 3. 条件预取容量定理（T）
+设d_j(c)=Pr[给定M,C=c可唯一确定W_j | C=c]。确定时条件熵0，其余不超过b0，故b0 d_j(c)≤I(W_j;M|C=c)。独立块给出Σ_j I(W_j;M|c)≤I(W;M|c)≤H(M|c)≤B_bits。所以Σ_j d_j≤B_bits/b0，0≤d_j≤1。因为Y与M/W条件独立，提前命中H(c)=Σ_j p_c(j)d_j(c)。令B_bits=K b0、K为整数，则
+H(c)≤Σ_{j=1}^K p_c,(j)
+（降序排列），由线性规划贪心。若发送方及接收方共同知道p_c和索引排序，直接预取条件top-K值达界，无需额外索引；否则条件分布/索引通信必须计。总体H≤E_C Σ_topK p_C；K=V时全表预取，若均匀p且没有侧信息则H≤K/V。此为经典INDEX/独立随机访问码和熵不等式的应用，不宣称新通信复杂度基础定理。若梯度块线性相关、W_Y可从共同hidden/Jacobian计算、允许近似或多轮互动，则可能突破此限定数值，不能扩展为一般HFL下界。
+对固定标准最大耦合，X=x时 a_x=min(1,p_x/q_x)，δ=TV(p,q)，R=(p−q)_+/δ（δ=0不调用），p_c(Y=v)=a_x 1{v=x}+(1−a_x)R_v。预取X及q排序的其他K−1个值是低信息基线；条件top-K为同p/q可得时oracle最优。K=1仅预取X的命中=Σ min(p,q)，不等于条件最优（拒绝后残差质量可集中于别的词）。条件选择不改变生成核；标准SD使用真实条件q、因果前缀、独立随机数、首拒绝截断及正残差/合法bonus可保持正式序列；greedy用正式argmax，实际top-p/EOS/KV/有限精度未实现。逐位置预取不能无条件跨首拒绝复用错误历史梯度。普通AR+直接晚查、AR共享随机性/提前top-K、普通HFL+SD按草稿预取、允许同信息平坦均为必需对照；若双方已共同知道p和目标随机数，则直接确定Y（或本地计算Y对应梯度）能绕开假设的通信屏障。最大耦合给出的侧信息相关性也不是HFL独有。
+
+#### 4. 实际运行（E/P/O）
+[代码](experiments/team-hiercouple/R07/probe.js)、[完整逐区域/逐种子结果](experiments/team-hiercouple/R07/results.json)。真实取得公开Gutenberg文本：[Wallpaper固定commit](https://github.com/GITenberg/The-Yellow-Wallpaper_1952/blob/ce7c5bc1a5cf0fe23bcb265545a900365dbae29c/1952.txt) blob 3a2b5f55c6f1d13a7ae623282d38fde5a6ff352b（52109字符未清洗）、[Alice固定commit](https://github.com/GITenberg/Alice-s-Adventures-in-Wonderland_11/blob/7f18748e114b994d5d9454d5793581bc0b9cf9d7/11.txt) blob 9d73b1d7447b7ddc158b1b157f5f700d21bd2fb7（167546字符未清洗）。运行 node experiments/team-hiercouple/R07/probe.js wallpaper.txt alice.txt；V8实际执行，无依赖。按Gutenberg正文marker截取、统一小写和空格（包含正文前制作说明等残余，不宣称严格纯正文）；27字符词表，Wallpaper一区、Alice按中间字符切两区，各自前80%训练/后20%测试。训练长度24273/54055/54055共132383，测试6069/13514/13514共33097。正式p为全局trigram+5×全局bigram backoff，区域q为各区bigram+20×全局bigram backoff；全局q为共同bigram（.5伪计数）。真实计数训练，不是实际神经内生头或物理FL。按留出前缀出现频数精确平均模型p的命中；另外对观察到的真实下一字符评估topQ。24配置（3区域×2草稿×4预算），每配置3种子11/29/73×4096次MC=294912次抽样组；同一上下文的不同方法相关，不是独立模型训练。概率边际最大绝对误差1.915e−15、oracle上界最大数值违反2.22e−16；MC与对应解析期望最大差.019574。三域等权平均（非按token微平均）：
+|草稿|K|普通AR top-p oracle|普通AR top-q|独立q候选+q排序|标准SD候选+q排序|SD条件top-K oracle|
+|---|---:|---:|---:|---:|---:|---:|
+|区域|1|.43285|.29748|.17354|.63939|.78168|
+|区域|2|.60653|.46120|.41084|.74248|.89369|
+|区域|4|.78160|.64871|.63314|.83437|.96845|
+|区域|8|.91624|.84913|.84664|.93086|.99622|
+|全局|1|.43285|.29767|.17290|.64220|.78505|
+|全局|2|.60653|.46091|.41064|.74507|.89636|
+|全局|4|.78160|.65259|.63638|.84052|.96978|
+|全局|8|.91624|.85200|.84932|.93469|.99669|
+区域草稿在所有K的标准SD候选预取及条件oracle均略逊共享全局草稿；真实文本topQ在部分预算有所不同，详见JSON。条件oracle相对普通SD预取K1额外14.23pp，但需正式p及残差分布；同信息平坦同样达到。没有生成完整序列、实际私有梯度、真实网络或GPU训练。字符统计LM低阶条件概率可免费读表，与Transformer不等价；不能用同一p/q表重复查询的MC估计真实HFL训练成功概率。
+
+#### 5. 成本代理、反例及强基线（P/T）
+设索引长度L=ceil(log2 V)，预取K个独立b0-bit值，公共候选集合索引免费，未命中时发送索引并取值。简单通信B=K b0+(1−H)(L+b0)，无预取B0=L+b0；B<B0 iff K b0<H(L+b0)。V27、b0=1时区域K1/2/4/8分别3.1637/3.5451/4.9938/8.4149 bit vs B0=6bit，仅理论平均载荷（实际RPC需字节和元数据）。若值为1536维FP32、b0=49152bit、索引18bit（大词表尺度示例），采用上表命中作为假设而非真实LLM命中，区域K1/2/4/8载荷约1.360/2.257/4.164/8.066倍按需查。一般向量梯度结构相关，独立bit假设不等于其实际熵；普通压缩、共享hidden及批处理按需查更强。候选ID/模型版本、预取内存、训练额外算子与消息、网络排队均未计。
+若预取与验证完全重叠，单次暴露的按需查询耗时D可理想减少H D；若预取暴露开销C则净收益≤H D−C（限定固定其他阶段成本模型），传更多字节可能反而增加时延。对强基线已经做相同K的普通SD候选预取，只能算增量(H_oracle−H_SD)D。K1区域残余查询减少39.46%，要达G5全流程−15%且额外开销0，基线暴露残余查询必须占总时间至少38.01%；K2约25.55%、K4约18.53%、K8约15.87%。真实占比、p分布/索引获取、KV及梯度驻留都未知。不能拿普通SD接受率或通信payload代理当G5。
+普通训练常可把Y下发给数据所在客户端，让它本地求梯度，然后每轮一次聚合；若此合法执行方式存在，本轮每token查值本来就是可消除的人工瓶颈。即使确实有物理晚绑定，预取与标准SD的侧信息可被公平平坦复制；尚无SD反馈改变正式HFL优化原语的特异证据。
+
+#### 6. 文献核查（2026-11-24）
+实际检索 HFL intermediate feedback、local SGD intermittent communication、graph oracle complexity、one-way INDEX、SD prefetch and distributed inference；原始页面/摘要及HierFL源码核对，非全文穷尽。
+- [HierFAVG](https://arxiv.org/abs/1905.06641) 2019/2020，[官方源码](https://github.com/LuminLiu/HierFL)；[Demystifying Why Local Aggregation Helps](https://arxiv.org/abs/2010.12998) AAAI2022，H-SGD多层同步及异质性分析。不是新发现中间聚合。
+- [Graph Oracle Models](https://arxiv.org/abs/1805.10222) NeurIPS2018、[Min-Max Complexity of Distributed Stochastic Convex Optimization with Intermittent Communication](https://proceedings.mlr.press/v134/woodworth21a.html) COLT2021、[Limits and Potentials of Local SGD](https://proceedings.mlr.press/v247/patel24a.html) COLT2024，通信轮次/依赖图下界；[Federated Learning under Arbitrary Communication Patterns](https://proceedings.mlr.press/v139/avdiukhin21a.html) ICML2021。
+- [CS369E Communication Complexity INDEX lecture](https://theory.stanford.edu/~tim/w15/l/l2.pdf) 及[Waterloo课程通信复杂度](https://cs.uwaterloo.ca/~eblais/cs860/w25/communication)作为经典理论线索（非近年原始论文，不算G1五篇）；独立块熵不等式/条件排序直接推导，不宣称INDEX新结论。
+- [PipeSD](https://proceedings.mlr.press/v306/han26k.html) ICML2026，云边通信与SD流水；[DISCO](https://arxiv.org/abs/2610.35957) 2026-10，分布式精确SD低通信；[SpecFed](https://arxiv.org/abs/2604.25777) 2026，联邦推理与压缩；[SP-MoE](https://arxiv.org/abs/2510.10302) 2025，投机候选驱动专家预取；[Speculating Experts](https://arxiv.org/abs/2603.19289) 2026；[ReeFL](https://proceedings.mlr.press/v235/lee24h.html)、[LayerSkip](https://aclanthology.org/2024.acl-long.681/)、[Hierarchical FL in Device-to-Device Networks With Learning-Topology Co-Optimization](https://ieeexplore.ieee.org/document/11433047) 2026，拓扑与学习联合；[CSAHFL](https://ijcai.org/proceedings/2025/621) 2025。普通预取、条件信息、通信依赖和分层中间反馈已知；晚绑定私有梯度查询的实际需求尚未证。未穷尽相关随机访问编码、分布式梯度通信与近期未索引研究，无正式文字查重。
+
+#### 7. 裁决、门槛与后续
+CRITICAL：条件预取理论是已有INDEX与SD耦合的限定应用，标准SD候选预取已能获得主要收益；全局草稿不逊区域；oracle需额外正式信息且公平平坦可复现；未找到真正不可替代的正式学习机制。主观加权创新6.6/10（问题7.5×25%、机制6×25%、理论7.5×20%、价值6.5×15%、距离5×15%=6.6），非同行评审。G1 FAIL，G2 CRITICAL FAIL，G3 PARTIAL/FAIL（条件信息定理、单步概率及数值检查；实际完整SD/greedy/top-p/浮点未验证），G4 FAIL（真实语料统计模型，非两预训练Transformer），G5/G6未验证（无真实总时/80%证据），G7局部可复算/完整未过。好结果同目标质量预算最强公平基线真实全流程−15%或有效工作+20%，两预训练尺度三非IID/时延三独立训练seed及CI、全部G。
+H未执行：1–2×40GB NVIDIA，Qwen2.5-1.5B/3B、LoRA/GRPO或固定版本蒸馏，8逻辑客户端2区域、公开数学/代码/通用任务。首要不是挽救本预取机制，而是在实际训练源码及部署中审计是否有不可消除的跨机构、逐已验证token的学习量查询；记录数据/模型归属与合法查询/共享权限、实际可压缩性、≥10000处正式p/q/版本、真实RTT/bytes/查询与梯度计算/回退、全部阶段wall time/质量/CI；若客户端能本地求梯度并一次聚合或普通SD预取/同信息平坦匹配即停。仅改变前提后比较普通AR+本地训练、普通HFL+生产内生SD、最优按需批处理/普通预取、PipeSD/DISCO适用子系统、同信息平坦及候选；单卡模拟非物理并行。未执行GPU，不为该否决机制投入GPU。下一轮优先真实接口证据，不再重复构造独立梯度表/通信假设；若无此查询需求，转向其他经源码和profile验证的真实学习原语。
+**Reject and Pivot**。保留HierFAVG中间反馈反例、条件信息容量定理、真实语料统计模型的区域负结果、命中/载荷/关键路径分离及强基线规范。不得将普通预取、耦合、分层聚合换名当新机制。
+
+- 追加时实际README blob aba04e21abb2333293391d83512d6e3cee4f59eb，使用完整最新旧文本及其blob保护并发。
