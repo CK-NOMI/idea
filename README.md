@@ -1422,3 +1422,53 @@ CRITICAL：短语头已有直接论文；受限AR草稿同Q及验证完全匹配
 好结果：同质量同资源最强公平基线总wall time−15%或有效工作+20%，greedy及随机精确性、两尺度多设置。无80%证据，不虚构概率。主观分项问题6.5×25%、机制5.5×25%、理论6.5×20%、价值6.5×15%、文献距离4.5×15%=5.95/10，非同行评审。
 G1 FAIL近邻及不足8；G2 CRITICAL FAIL平坦、正式HFL无反向作用；G3局部T/整体FAIL（greedy、随机有限精度/完整实现未审计）；G4 FAIL仅有限树；G5 FAIL无wall time；G6 FAIL无80%证据；G7局部脚本输出可复算、完整系统FAIL。**Reject and Pivot**。
 保留NLL与前缀最优反例、局部截断oracle和树上界、块共同前缀界、变长停止归一、共享异质性负结果。禁止改名重复短语头/联邦词表/接受损失。下一轮放弃通用草稿优化，先寻找改变正式HFL训练计算的可执行规则及数据驻留/授权约束，证明同信息平坦及AR不可替代再投入真实模型。每轮先读最新commit，结束追加正负结果。
+
+
+### team-hca/R02｜FJF-SD：分层共同后缀可行性与证书辅助自投机解码
+
+- 日期 2026-11-24；开始读取 main commit 337195f58d2c286d5ce421d1f103183d3ef071fa，README blob 54306a1d276251d11389a5944af2f9364d004e11；当时树中仅 README。写入前 main 60d10d775dcbd098fb5c2c14159d9a91c5aa49d3，README blob d51362c0f5f8bebf4eb78aba4b9c6b0abf78b62e。
+- 裁决：**CRITICAL / Reject and Pivot（保留数学反例及实际 CPU 合成证据）**。不是概率混合/残差抵消/切面重启。与 A/R13 奖励证书、PRE-09/HieraCert 证书以及 A/R03 跨版本缓存有概念近邻，但本轮对象为不同机构约束语言的共同后缀存在性。未证明真实 HFL 应用需求、双向必要性，普通 AR 可复用完全相同的证书。
+- 证据 T=数学推导；本轮实际执行 JS V8 CPU 合成模拟（局部可复算，非完整 R）；P=载荷/查询代理；H=待验证假说。无真实模型、训练、网络、GPU 时间。
+
+#### 1. 系统场景与数学对象（H/T）
+Client-edge-cloud 常规参数 HFL 学习一个共享自回归模型 p_theta，客户端持有私有非 IID 数据和版本化约束语言 L_i（例如跨机构工作流/代码规范）。区域协调 AND 查询，云有共享模型、前缀和内生 Medusa/LayerSkip 类起草路径；约束不直接上传，允许授权的候选后缀查询及必要时精确交集求解（若不允许精确回退则不保证协议）。约束可能来自本地规则或学习出的有限状态模型，后者质量/学习机制尚未证明，不能把 AND 当作 FedAvg。可信节点，固定会话版本、公共 token 字母表、最大长度及 EOS；不宣称 DP/密码学隐私。目标为所有约束的交集 L，且起始有可完成序列。定义有限剩余长度下 S_i(s)={z:sz∈L_i}，共同可行性 I(s)=1{交集 S_i(s)非空}。局部掩码 AND=AND_i 1{S_i(s)非空} 是上界而非精确 I。反例 S_1(A)={X},S_2(A)={Y}，双方局部可行但无共同后缀；可取 L1={AX,BX}, L2={AY,BX}，全局只允许 BX，错误局部掩码接受 A 后必死。无约束或共享同一后缀时退化；仅有前缀局部禁令且保证共同可扩展时不存在该障碍。
+
+#### 2. 正式目标与计算问题（T/H）
+固定前缀 s，定义 M(s)={v:I(sv)=1}，r(v|s)=p_theta(v|s)1{v∈M(s)}/sum_{u∈M(s)}p_theta(u|s)，假设可行 token 概率正、EOS/长度规则统一。目标是该逐步掩码 AR 的序列分布，不是原始无约束模型，更不是 p_theta(Y|Y∈L) 的全序列条件分布。例 L={AX,BX}, p(A)=p(B)=.5, p(X|A)=.9,p(X|B)=.1，则逐步掩码第一步 .5/.5，真正条件分布 .9/.1。不得混称无损。
+输入：树、各机构私有约束、模型版本、前缀、实际 logits、候选链、公共随机性、带宽/RTT、历史证书；输出同目标精确 greedy 或随机序列。允许成员查询、AND 归约、完整交集求解或可审计精确否定证明。优化质量匹配的总训练+生成 wall time，计证书维护/获取、训练、验证、通信、失败回退和 KV。
+
+#### 3. 证书机制与理论（T/H）
+对候选 sv，保存旧快照共同合法后缀 z；向所有节点查询 1{svz∈L_i(current)} 并在边缘 AND 后上传。全为真即正证书，失败/无缓存仅表示未知，不能判全局不可行；调用精确交集求解，若权限禁止则停止、不假装正确。固定公共随机数 g_v iid Gumbel(0,1)，对目标 logits/T+g_v 降序，按顺序查询可行性，首个 I=1 的 token 即 masked Gumbel-Max；greedy 不加噪声并统一 tie-break。内部头可在一条候选链上起草，目标批量验证各候选前缀并生成该前缀独立目标随机数；验证顺序仅使用已访问前缀的随机数，命中则继续，否则提交目标 token 并停止、回滚。可用已确定随机性做有条件耦合但不得改变目标噪声的边际或偷看未来。该 target-first 验证不等于最大耦合，接受率未证。按条件分布归纳，可保证理想算术下相对于指定 r 的序列正确；top-p 需对精确掩码后的分布计算，浮点/终止/实际实现未审计。
+证明：共同后缀满足所有语言 => I=1；证书失败并不推出 I=0。精确回退使 oracle 与真实 I 相同，故降序首个合法项等于合法集合中 Gumbel argmax，服从 r；greedy 同理。多步按标准目标优先验证与条件链式法则。已有 Gumbel-max/可行性检查，不是新原语。
+复杂度边界：一般多个 DFA 的交集非空为 PSPACE-complete（无界长度且 automata 数目可变）；把新起始 token 接到原 DFA 可将该决策嵌入 I(sv)。不能将此结论直接套到固定短有限长度；有限显式后缀域 B 的 bitset 交集为 O(mB) 工作。只允许黑盒后缀 membership 时，最坏无解与最后一个未查询后缀共同可行不可区分，需检查 B 个后缀（非一般通信下界）。
+成本代理：m 个节点、B 个显式后缀、旧证书存在比例 c、所有查询中证书成功比例 h，完整位图每次 mB bit；缓存查询每节点 ceil(log2 B)+1 bit，未命中全量回退。比值 1-h+c*(ceil(log2 B)+1)/B，理想串行 RPC 轮数 1+c-h 对比直接位图 1；不含缓存初建/版本/协议/前缀/聚合拓扑等。位图压缩、短路、批量查询、普通 AR 共享证书、预编译 product automaton 都是强基线。
+学习设想（H）：HFL 聚合共享候选/证书预测器，SD 不可行或未知案例反馈本地预测头训练；但普通主动学习/CEGIS/AR 也提供相同标注，尚无独立学习机制或净收益，G2 CRITICAL。
+
+#### 4. 实际执行 CPU 合成实验（P）
+脚本：[experiments/team-hca/R02/witness_probe.js](experiments/team-hca/R02/witness_probe.js)，命令 node experiments/team-hca/R02/witness_probe.js。本次 JS V8 执行相同逻辑，LCG seeds 11/29/73；每密度×漂移×种子 4000 个独立状态，m=4,V=16,B=64；共 72000 状态。旧成员 bit 独立 Bernoulli(density)，当前以 drift 概率翻转；预先知道旧共同后缀（未计构建费用），随机 token 排序对应均匀目标的排名。对同一排序比较直接逐 token 全量交集与旧证书+精确回退，全部状态零输出差异（无解时双方都返回 undefined，非成功生成）。没有真实 HFL 参数训练/模型/GPU、实际延迟或置信区间；以下为三个种子指标算术平均，载荷只是代理，非真实通信。局部假阳性=各机构分别存在后缀的 token 中没有共同后缀比例；命中/回退以实际被查询 token 为分母。
+| 旧密度 | 翻转率 | 局部假阳性 | 证书命中 | 回退 | 载荷比(证书/直接) | 无解状态比例 | 平均查询 token |
+|---|---|---|---|---|---|---|---|
+| .2 | .02 | .878771 | .089152 | .910848 | .921422 | .124750 | 7.221750 |
+| .2 | .15 | .637745 | .048368 | .951632 | .961934 | .001167 | 2.780667 |
+| .5 | .02 | .016016 | .908429 | .091571 | .199248 | 0 | 1.014667 |
+| .5 | .15 | .016333 | .515075 | .484925 | .592615 | 0 | 1.017333 |
+| .8 | .02 | 0 | .917917 | .082083 | .191458 | 0 | 1 |
+| .8 | .15 | 0 | .524667 | .475333 | .584708 | 0 | 1 |
+解释：稀疏约束时局部可行性误导明显，而旧证书收益仅约4–8%；宽松低漂移时约80%代理载荷降低，但局部假阳性极低，且普通缓存 AR 完全匹配该协议的证书访问成本。提高漂移使旧密度 .2 的当前密度升高，假阳性下降不是证书鲁棒性证据。旧证书 oracle 构建成本未计，非部署可行证据。没有训练或多步实验，不外推实际生成性能。最强同信息平坦可执行同样 AND/精确回退。可否决，不追加 GPU 以凑数。
+
+#### 5. 原始文献核查与撞题（2026-11-24）
+本轮检索 arXiv、ACL Anthology、PMLR、NeurIPS 官方页面，关键词 speculative constrained decoding grammar masks; distributed private constraints automata intersection; grammar aligned decoding future validity; federated automata learning; compositional active learning; specification guided generation。读取以下原始论文页面/摘要（部分全文未核查，不宣称完整逐式去重）：
+- [DOMINO, ICML 2024](https://proceedings.mlr.press/v235/beurer-kellner24a.html)：语法约束+预计算+SD 已有；不是首次结合。
+- [Grammar-Aligned Decoding, NeurIPS 2024](https://proceedings.nips.cc/paper_files/paper/2024/hash/2bdc2267c3d7d01523e2e17ac0a754f3-Abstract-Conference.html)：局部掩码与全局条件目标区别、ASAp 近似未来概率。核心目标区分已有。
+- [Constrained Decoding with Speculative Lookaheads, NAACL 2025](https://aclanthology.org/2025.naacl-long.239/)：草稿/目标+奖励验证，非本轮共同后缀交集。
+- [Flexible and Efficient Grammar-Constrained Decoding, ICML 2025](https://proceedings.mlr.press/v267/park25l.html)：高效 mask 编译，必须对比预编译而非弱逐词扫描。
+- [Future Validity is the Missing Statistic, 2026-05-08](https://arxiv.org/abs/2605.07698)：约束 SD 的局部/全局目标差异，近邻高风险。
+- [Specification-Guided Generation, 2026-10-30](https://arxiv.org/abs/2610.41511)：符号推理剔除不能延伸满足规范的 token，高度接近共同可行性 oracle。
+- [Finite Automata Intersection Non-Emptiness, 2021](https://arxiv.org/abs/2108.05244)：经典 PSPACE 障碍；不是本轮新定理。
+- [Compositional Active Learning of Synchronous Systems, 2025](https://arxiv.org/abs/2504.16624)：组合自动机学习近邻，反馈学习不能直接宣称原创。
+- 其他待复核：Decode-Time Grammars (2607.18357)、CASD、XGrammar、分布式 CSP/私有集合交集、CEGIS、增量模型检查、符号自动机；未公开/未索引/术语差异为盲区。无实际文字查重，需规范引用；原理重复不能靠改写解决。
+
+#### 6. 强基线、门槛、否决与后续
+B0 普通 HFL AR+完整精确交集，B1 同样缓存证书 AR（最关键，证书通信完全匹配），B2 普通 HFL+内生头 SD+精确交集/预编译，B3 同信息同委托平坦 AR/SD，B4 DOMINO/现有 grammar SD 在同约束可访问时的强实现，B5 共享精确约束 product 编译（在权限允许时），B6 惰性位图交集/压缩/批量请求。质量与目标相同，近似方案另列。若未来有新机制，1–2×40GB NVIDIA 上 Qwen2.5 1.5B/3B LoRA、2–4 边缘8–16逻辑客户端、公共工作流或结构化代码真实任务、三异质性/延迟/种子；测合法率、质量、接受长度、TPOT、TTFT、P95、吞吐、字节/RTT、GPU time、证书维护成本、总训练推理 wall time 与 CI。未执行。好结果按仓库 G5：真实总时间降≥15%或等预算有效工作增≥20%，且同目标精确、质量匹配、双向因果及同信息平坦强基线优势。无80%把握的依据。
+主观创新评分（等权、非同行评审）：问题7、机制5.5、理论6、价值6.5、与既有距离5.5，合计6.1/10。G1 FAIL；G2 FAIL/CRITICAL（AR 与平坦替代，HFL 训练只提供模型）；G3 局部实数定理成立，完整实现/top-p/有限精度未验证，整体未通过；G4 FAIL（仅合成）；G5 FAIL（无真实时间）；G6 未验证；G7 局部脚本可复算、完整机制未过。
+**Reject and Pivot。** 保留量词顺序反例、目标定义区分、正证书与否定证据不对称、缓存代理成本式及真实执行的合成结果。不要再以普通共同证书缓存、分布式 AND 或标准语法 SD 作为 HFL 双向创新。下一轮优先从共享模型学习本身的可执行计算对象出发，寻找一种正式训练目标或更新过程必然产生的 SD 可复用结构，并先构造普通 AR/同信息平坦不可匹配的因果假设；若不能成立，在 CPU 阶段停止。先读最新全库，再研究，失败也追加。
