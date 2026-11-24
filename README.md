@@ -1971,3 +1971,16 @@ H未执行：下一轮首要获取预训练Qwen2.5-1.5B/3B或Qwen3-1.7B/4B、同
 **Reject and Pivot**（证据审计保留，普通关键路径调度不作为新论文）。保存公开数据重算、路径必要条件、强基线与测量schema；下一轮只在真实测量揭示尚未被普通AR/SD和平坦替代的正式学习—验证共享计算后再设计机制。
 
 - 追加时实际README blob 9318fa99e5ee8c161e5304123b163c48b3ea82ec，基于重新读取的完整旧文本保留并发内容。
+
+
+### team-hca/R04｜HPRS：未知归一化常数下的参数化残差采样上包络
+
+- 2026-11-24；研究起始 main 60010389c564e5da3f61a681df38f923ae39e7e5，README blob 2e51d61014e8adc29c8dc30ba3d04092b0901aef（1781行）。验证此前已读历史前缀、读取新增记录与相关代码/结果摘要；上传前阅读NF-RSD、FLPS、FBS、FCR-SD及并发FVC/FVT-SD/CPG。发现README并发更新即停止旧写入，先保存独立文件，再基于最新README追加索引。追加前 main 1ccba02e5c828fe2e9061b3848a9d753a9d3e851、blob 4b41882464b8c4301465eef636f903a64ccc9335。保留其他团队原文。
+- **CRITICAL / Reject and Pivot（HFL×SD立项否决，保留通用SD算子线索）**。[完整研究报告](experiments/team-hca/R04/record.md)、[实际执行代码](experiments/team-hca/R04/probe.js)、[逐种子原始结果](experiments/team-hca/R04/results.json)，命令 node experiments/team-hca/R04/probe.js。T=限定数学；E=实际CPU数值/MC；P=成本代理；E-H=外部论文实测；H=假设。检查环境Python3.13.5、torch2.10.0+cpu、CUDA false、0 GPU、无HF默认缓存；无本队真实LLM/HFL训练、GPU、网络、wall time或CI。不能把外部系统实测作为本队结果。
+- 场景：HFL训练单一正式模型，额外假设输出词表不重叠分片，非概率混合/鲁棒中位数。目标p_v=a_v/Z，a_v=expℓ_v，Z=Σa_v，内生实际草稿q。CCE训练logsumexp与SD残差共需全局归一化；普通HFL不必词表切分，真实数据/权重驻留约束未证。
+- T：独立E_v~Exp(1)，L_v(t)=a_v/E_v−t q_v/E_v。拒绝后argmax L_v(Z)等于正残差r_v=(a_v−Zq_v)_+的指数竞赛，输出概率r_v/Σr；标准接受及补采恢复p。分片摘要(Z_g,H_g)的H_g是t≥Z_g上的上包络支持线；父节点合并质量及支持线并在t≥Z_A+Z_B裁剪，保持准确最大值，根取t=Z。tile可增量合并。q为点质量时退化为已知单遍race；若q也未归一化则参数改为两归一化常数之比，须合法下界。完整多步、EOS、top-p、有限精度、真实GPU融合未实现。
+- T：最坏n条线m_j=−(n−j), b_j=2n²−j(j+1)/2，相邻交点1至n−1，每条线在合法阈值域可成为正最大；局部a=εb、q=−εm，E≈ε的正概率邻域即可构造，故无固定小支持线摘要保证（非所有编码的通信下界）。硬容量溢出依赖E，精确回退必须重用同一race或证明正确条件核；两等权残差例若E1<E2就重新独立抽样，最终概率.25/.75而非.5/.5。普通排序O(n log n)，当前数组实验不是实际无物化kernel。
+- E/P：V=1024/8192/32768，σ=.1/.5/1.5，4片3种子、每配置48行，共1296行；完整race与摘要0不一致。V32768平均每片7.87–7.96条，摘要总约662–669B；任一片最终>8比例82.6–84.7%，>16为0。另216行128词tile增量合并（真实变化Z）0不一致，峰值均值9.68–9.84、最大15（不含tile临时数组），8条cap几乎总溢出、16条有限样本无溢出，未执行硬cap回退。另300000次四词单步MC，理论接受.65、实测.649913，输出TV=.00137，完整/摘要race零不一致。合成而非实际模型或时延；逐种子JSON及脚本已保存。
+- P：V32768对全量权重131072B弱基线摘要降约99.5%，但强双阶段仅需40+80δ B（四片、FP64质量/score、32bit ID，拒绝才广播Z及返回局部race winner）；σ=.5时约55.8B，HPRS含候选约670B，反而约12倍载荷。预采4个独立p提议约488B，失败回退概率δ(1−δ)^4≈8.2%（本队R01 p包络思想），可并行。100Mbps理想单位置额外约614B/.049ms，若新增计算为0需RTT>.25ms，若新增1ms需>5.3ms，皆代理。块验证只能修正首拒绝，不能将单步收益乘K。普通CCE/TP/平坦能复制本算子，HC/R03耦合梯度也能由普通SD提供，未证明正式HFL学习双向不可替代。
+- 原始文献（2026-11-24）：[CCE](https://arxiv.org/abs/2411.09009) 2024、[FlashSampling](https://arxiv.org/abs/2603.15854) 2026、[FlashSpec Part I作者技术博客](https://jialefu.github.io/blog/2026/flashspec/) 2026-05-14、[Megatron-LM](https://arxiv.org/abs/1909.08053) 2019、[Online softmax](https://arxiv.org/abs/1805.02867) 2018、[Speculative Sampling via Exponential Races](https://aclanthology.org/2025.findings-acl.936/) 2025、Leviathan/LayerSkip/HierFAVG。核对原始摘要/部分正文；参数化几何、动态采样、最新fused kernel及未索引/未公开工作为盲区，不宣称首次或通过正式文字查重。
+- 主观加权创新7.225/10≈7.2（问题8、机制7.5、理论7、价值7、距离6，权重25/25/20/15/15），非同行评审；G1未过，G2 CRITICAL未过，G3局部T/整体未过，G4未过（合成），G5/G6未验证，G7局部复算/整体未过。无80%好结果依据。好结果同目标质量预算最强公平基线真实全流程时间−15%或有效工作+20%，两预训练尺度三配置三种子及CI、全部G。若证实真实分片需求再在1–2×40GB Qwen2.5-1.5B/3B采≥10000真实(p,q)行，测hull/溢出/HBM/端到端，并比双阶段、预采、FlashSampling/FlashSpec、CCE、普通HFL+SD及同信息平坦/TP。未执行。**Reject and Pivot**；保留几何残差摘要、最坏界、随机回退警告及实际数据。下一轮先取得真实模型trace和时间份额，明确不可替代的学习—执行因果，禁止用通用kernel或反馈蒸馏拼接替代双向创新。
