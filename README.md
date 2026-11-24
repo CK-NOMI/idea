@@ -3301,3 +3301,11 @@ H未执行：只有真实训练部署确实将同一合法GRPO组跨区域分配
 
 
 - R17 原始结果字段澄清：large[].kind 实为修复分支（none/rotate/dominant），而非合成分布类型；按固定循环每9条恢复分布 uniform/zipf/dominant/zeros。补充[带明确分布及修复分支的216条索引](experiments/team-far/R17/stress_index.json)，原始JSON和源代码保留。V=128000 的实际最大连接记录 578520，仅按12B/条紧凑表示为 6.942240MB（不含辅助数组），非实测内存。此澄清不改变任何门槛或结论。
+
+
+### team-far/R18｜FGQ-SD：共享Gram二次概率头与秩一残差包络
+
+- 2026-11-24；起始/写前 937dc7bec168122d9cbef140b1bda9f2f0a3b97d；README blob 0840e78020f1aa6491eca652592e4f5a962cc830。完整获取并重读R17，筛查A/R07–08、PRE09、FSGPA/FCRH/FSRA；未逐式审计全库。改造正式目标为p_h(i)=(1−eps)(w_i^Th)^2/(h^TGh)+eps/V,G=W^TW，eps=.01，内生浅层s共用W。**不是原softmax无损替换**。共享G用于精确NLL特征梯度、概率归一化和分块平方采样；区域ridge统计A/B可加，独立W平均的Gram不等于Gram平均。经典spherical loss与length-square sampling已存在。
+- T：u,v为G归一化深浅特征（可翻v符号），c=u^TGv≥0，ell=sqrt(1−c²)，a=(u+v)/sqrt(2(1+c)),b=(u−v)/sqrt(2(1−c)),e=(a+b)/sqrt2,f=(a−b)/sqrt2。u u^T−v v^T=ell(ee^T−ff^T)，故[p−q]_+≤(1−eps)ell(w_i^Te)^2，秩一包络总质量M=(1−eps)ell≤1。条件拒绝修正平均M/TV，无条件每SD尝试M≤1，实数精确新目标。分块Gram树O(r²log(V/B)+Br)采样，greedy子树总量上界最坏全访问，top-p/温度/生产数值未验。普通AR+同头及公平平坦可复制，双向未证。
+- E：真实两同尺度microGPT权重、3训练split×3宽度×2检查点=18实际ridge拟合配置，2304评估位置，73728实际单步SD采样（非多token或物理HFL）。r=5/9/17新头NLL 2.85244/2.75653/2.67067,原softmax 2.63352/2.63352/2.63352,新头accept 0.93332/0.94071/0.91783,平均无条件包络质量 0.08477/0.08071/0.11624; 最大包络违反0、FD误差1.2156069928437319e-8、greedy错误0。无GPU/墙钟、同规模检查点非双尺度。文献spherical exact gradient NeurIPS2015、Taylor/spherical alternatives、adaptive softmax、Tang length-square、Speculative Vocabulary等见报告。主观创新7.500/10（8.5/7.5/8.5/6.5/5.5,25/25/20/15/15）；G1/G2/G4失败,G3/G7局部,G5/G6未验，无80%依据。Reject独立立项，保留秩一残差包络，先审正式质量及真实强基线，非用新头冒充原模型精确。
+- [报告](experiments/team-far/R18/record.md) · [代码](experiments/team-far/R18/probe.js) · [原始结果](experiments/team-far/R18/results.json)
