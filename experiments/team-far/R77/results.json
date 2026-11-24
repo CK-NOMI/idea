@@ -1,0 +1,6996 @@
+{
+  "results": [
+    {
+      "wi": 0,
+      "seed": 11,
+      "scenario": "repeat",
+      "mode": "aligned",
+      "method": "AR",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        4,
+        4,
+        2
+      ],
+      "initial": 2.845623116420686,
+      "final": 2.8717745592064645,
+      "losses": [
+        2.8572510516664984,
+        2.867687770928775,
+        2.8726866043660397,
+        2.8717745592064645
+      ],
+      "paramDelta": 0.08125003544042435,
+      "scopes": [
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 18,
+          "miss": 171,
+          "deep": 189,
+          "rows": 189,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 33
+        },
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 19,
+          "miss": 170,
+          "deep": 189,
+          "rows": 189,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 32
+        },
+        {
+          "refresh": 3,
+          "versions": 5,
+          "hits": 18,
+          "miss": 87,
+          "deep": 105,
+          "rows": 105,
+          "rounds": 80,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 33
+        }
+      ],
+      "refresh": 17,
+      "hits": 55,
+      "miss": 428,
+      "deep": 483,
+      "rows": 483,
+      "rounds": 368,
+      "accepted": 0,
+      "attempts": 0,
+      "tokens": 368,
+      "hit": 0.11387163561076605
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "scenario": "repeat",
+      "mode": "aligned",
+      "method": "BV",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        4,
+        4,
+        2
+      ],
+      "initial": 2.845623116420686,
+      "final": 2.8717745592064645,
+      "losses": [
+        2.8572510516664984,
+        2.867687770928775,
+        2.8726866043660397,
+        2.8717745592064645
+      ],
+      "paramDelta": 0.08125003544042435,
+      "scopes": [
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 19,
+          "miss": 184,
+          "deep": 203,
+          "rows": 203,
+          "rounds": 73,
+          "accepted": 71,
+          "attempts": 85,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 35
+        },
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 20,
+          "miss": 193,
+          "deep": 213,
+          "rows": 213,
+          "rounds": 74,
+          "accepted": 70,
+          "attempts": 94,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 37
+        },
+        {
+          "refresh": 3,
+          "versions": 5,
+          "hits": 20,
+          "miss": 93,
+          "deep": 113,
+          "rows": 113,
+          "rounds": 40,
+          "accepted": 40,
+          "attempts": 48,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 35
+        }
+      ],
+      "refresh": 17,
+      "hits": 59,
+      "miss": 470,
+      "deep": 529,
+      "rows": 529,
+      "rounds": 187,
+      "accepted": 181,
+      "attempts": 227,
+      "tokens": 368,
+      "hit": 0.11153119092627599
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "scenario": "repeat",
+      "mode": "region",
+      "method": "AR",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        4,
+        4,
+        4
+      ],
+      "initial": 2.845623116420686,
+      "final": 2.854585872488777,
+      "losses": [
+        2.8572307200804654,
+        2.854566199184522,
+        2.856610463192167,
+        2.854585872488777
+      ],
+      "paramDelta": 0.08119554400516173,
+      "scopes": [
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 18,
+          "miss": 171,
+          "deep": 189,
+          "rows": 189,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 33
+        },
+        {
+          "refresh": 6,
+          "versions": 9,
+          "hits": 30,
+          "miss": 159,
+          "deep": 189,
+          "rows": 189,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 21
+        },
+        {
+          "refresh": 5,
+          "versions": 5,
+          "hits": 0,
+          "miss": 105,
+          "deep": 105,
+          "rows": 105,
+          "rounds": 80,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 21
+        }
+      ],
+      "refresh": 18,
+      "hits": 48,
+      "miss": 435,
+      "deep": 483,
+      "rows": 483,
+      "rounds": 368,
+      "accepted": 0,
+      "attempts": 0,
+      "tokens": 368,
+      "hit": 0.09937888198757763
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "scenario": "repeat",
+      "mode": "region",
+      "method": "BV",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        4,
+        4,
+        4
+      ],
+      "initial": 2.845623116420686,
+      "final": 2.854585872488777,
+      "losses": [
+        2.8572307200804654,
+        2.854566199184522,
+        2.856610463192167,
+        2.854585872488777
+      ],
+      "paramDelta": 0.08119554400516173,
+      "scopes": [
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 18,
+          "miss": 177,
+          "deep": 195,
+          "rows": 195,
+          "rounds": 72,
+          "accepted": 72,
+          "attempts": 78,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 33
+        },
+        {
+          "refresh": 6,
+          "versions": 9,
+          "hits": 28,
+          "miss": 179,
+          "deep": 207,
+          "rows": 207,
+          "rounds": 74,
+          "accepted": 70,
+          "attempts": 88,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 25
+        },
+        {
+          "refresh": 5,
+          "versions": 5,
+          "hits": 0,
+          "miss": 114,
+          "deep": 114,
+          "rows": 114,
+          "rounds": 40,
+          "accepted": 40,
+          "attempts": 49,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 21
+        }
+      ],
+      "refresh": 18,
+      "hits": 46,
+      "miss": 470,
+      "deep": 516,
+      "rows": 516,
+      "rounds": 186,
+      "accepted": 182,
+      "attempts": 215,
+      "tokens": 368,
+      "hit": 0.08914728682170543
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "scenario": "repeat",
+      "mode": "client",
+      "method": "AR",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        8,
+        8,
+        4
+      ],
+      "initial": 2.845623116420686,
+      "final": 2.8600924395988554,
+      "losses": [
+        2.8546355566503476,
+        2.860298816619022,
+        2.8618797400182134,
+        2.8600924395988554
+      ],
+      "paramDelta": 0.07576073696429114,
+      "scopes": [
+        {
+          "refresh": 9,
+          "versions": 9,
+          "hits": 0,
+          "miss": 189,
+          "deep": 189,
+          "rows": 189,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 21
+        },
+        {
+          "refresh": 9,
+          "versions": 9,
+          "hits": 0,
+          "miss": 189,
+          "deep": 189,
+          "rows": 189,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 21
+        },
+        {
+          "refresh": 5,
+          "versions": 5,
+          "hits": 0,
+          "miss": 105,
+          "deep": 105,
+          "rows": 105,
+          "rounds": 80,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 21
+        }
+      ],
+      "refresh": 23,
+      "hits": 0,
+      "miss": 483,
+      "deep": 483,
+      "rows": 483,
+      "rounds": 368,
+      "accepted": 0,
+      "attempts": 0,
+      "tokens": 368,
+      "hit": 0
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "scenario": "repeat",
+      "mode": "client",
+      "method": "BV",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        8,
+        8,
+        4
+      ],
+      "initial": 2.845623116420686,
+      "final": 2.8600924395988554,
+      "losses": [
+        2.8546355566503476,
+        2.860298816619022,
+        2.8618797400182134,
+        2.8600924395988554
+      ],
+      "paramDelta": 0.07576073696429114,
+      "scopes": [
+        {
+          "refresh": 9,
+          "versions": 9,
+          "hits": 0,
+          "miss": 200,
+          "deep": 200,
+          "rows": 200,
+          "rounds": 74,
+          "accepted": 70,
+          "attempts": 81,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 21
+        },
+        {
+          "refresh": 9,
+          "versions": 9,
+          "hits": 0,
+          "miss": 207,
+          "deep": 207,
+          "rows": 207,
+          "rounds": 72,
+          "accepted": 72,
+          "attempts": 90,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 22
+        },
+        {
+          "refresh": 5,
+          "versions": 5,
+          "hits": 0,
+          "miss": 113,
+          "deep": 113,
+          "rows": 113,
+          "rounds": 40,
+          "accepted": 40,
+          "attempts": 48,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 23
+        }
+      ],
+      "refresh": 23,
+      "hits": 0,
+      "miss": 520,
+      "deep": 520,
+      "rows": 520,
+      "rounds": 186,
+      "accepted": 182,
+      "attempts": 219,
+      "tokens": 368,
+      "hit": 0
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "scenario": "rotate",
+      "mode": "aligned",
+      "method": "AR",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        4,
+        4,
+        2
+      ],
+      "initial": 2.845623116420686,
+      "final": 2.8717745592064645,
+      "losses": [
+        2.8572510516664984,
+        2.867687770928775,
+        2.8726866043660397,
+        2.8717745592064645
+      ],
+      "paramDelta": 0.08125003544042435,
+      "scopes": [
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 10,
+          "miss": 176,
+          "deep": 186,
+          "rows": 186,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 36
+        },
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 10,
+          "miss": 176,
+          "deep": 186,
+          "rows": 186,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 36
+        },
+        {
+          "refresh": 3,
+          "versions": 5,
+          "hits": 12,
+          "miss": 91,
+          "deep": 103,
+          "rows": 103,
+          "rounds": 80,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 35
+        }
+      ],
+      "refresh": 17,
+      "hits": 32,
+      "miss": 443,
+      "deep": 475,
+      "rows": 475,
+      "rounds": 368,
+      "accepted": 0,
+      "attempts": 0,
+      "tokens": 368,
+      "hit": 0.06736842105263158
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "scenario": "rotate",
+      "mode": "aligned",
+      "method": "BV",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        4,
+        4,
+        2
+      ],
+      "initial": 2.845623116420686,
+      "final": 2.8717745592064645,
+      "losses": [
+        2.8572510516664984,
+        2.867687770928775,
+        2.8726866043660397,
+        2.8717745592064645
+      ],
+      "paramDelta": 0.08125003544042435,
+      "scopes": [
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 10,
+          "miss": 190,
+          "deep": 200,
+          "rows": 200,
+          "rounds": 73,
+          "accepted": 71,
+          "attempts": 85,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 42
+        },
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 10,
+          "miss": 183,
+          "deep": 193,
+          "rows": 193,
+          "rounds": 72,
+          "accepted": 72,
+          "attempts": 79,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 36
+        },
+        {
+          "refresh": 3,
+          "versions": 5,
+          "hits": 11,
+          "miss": 98,
+          "deep": 109,
+          "rows": 109,
+          "rounds": 40,
+          "accepted": 40,
+          "attempts": 46,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 38
+        }
+      ],
+      "refresh": 17,
+      "hits": 31,
+      "miss": 471,
+      "deep": 502,
+      "rows": 502,
+      "rounds": 185,
+      "accepted": 183,
+      "attempts": 210,
+      "tokens": 368,
+      "hit": 0.061752988047808766
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "scenario": "rotate",
+      "mode": "region",
+      "method": "AR",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        4,
+        4,
+        4
+      ],
+      "initial": 2.845623116420686,
+      "final": 2.854585872488777,
+      "losses": [
+        2.8572307200804654,
+        2.854566199184522,
+        2.856610463192167,
+        2.854585872488777
+      ],
+      "paramDelta": 0.08119554400516173,
+      "scopes": [
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 10,
+          "miss": 176,
+          "deep": 186,
+          "rows": 186,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 36
+        },
+        {
+          "refresh": 6,
+          "versions": 9,
+          "hits": 19,
+          "miss": 167,
+          "deep": 186,
+          "rows": 186,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 20
+        },
+        {
+          "refresh": 5,
+          "versions": 5,
+          "hits": 0,
+          "miss": 103,
+          "deep": 103,
+          "rows": 103,
+          "rounds": 80,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 21
+        }
+      ],
+      "refresh": 18,
+      "hits": 29,
+      "miss": 446,
+      "deep": 475,
+      "rows": 475,
+      "rounds": 368,
+      "accepted": 0,
+      "attempts": 0,
+      "tokens": 368,
+      "hit": 0.061052631578947365
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "scenario": "rotate",
+      "mode": "region",
+      "method": "BV",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        4,
+        4,
+        4
+      ],
+      "initial": 2.845623116420686,
+      "final": 2.854585872488777,
+      "losses": [
+        2.8572307200804654,
+        2.854566199184522,
+        2.856610463192167,
+        2.854585872488777
+      ],
+      "paramDelta": 0.08119554400516173,
+      "scopes": [
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 10,
+          "miss": 189,
+          "deep": 199,
+          "rows": 199,
+          "rounds": 72,
+          "accepted": 72,
+          "attempts": 85,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 38
+        },
+        {
+          "refresh": 6,
+          "versions": 9,
+          "hits": 16,
+          "miss": 174,
+          "deep": 190,
+          "rows": 190,
+          "rounds": 72,
+          "accepted": 72,
+          "attempts": 76,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 20
+        },
+        {
+          "refresh": 5,
+          "versions": 5,
+          "hits": 0,
+          "miss": 114,
+          "deep": 114,
+          "rows": 114,
+          "rounds": 40,
+          "accepted": 40,
+          "attempts": 51,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 24
+        }
+      ],
+      "refresh": 18,
+      "hits": 26,
+      "miss": 477,
+      "deep": 503,
+      "rows": 503,
+      "rounds": 184,
+      "accepted": 184,
+      "attempts": 212,
+      "tokens": 368,
+      "hit": 0.05168986083499006
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "scenario": "rotate",
+      "mode": "client",
+      "method": "AR",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        8,
+        8,
+        4
+      ],
+      "initial": 2.845623116420686,
+      "final": 2.8600924395988554,
+      "losses": [
+        2.8546355566503476,
+        2.860298816619022,
+        2.8618797400182134,
+        2.8600924395988554
+      ],
+      "paramDelta": 0.07576073696429114,
+      "scopes": [
+        {
+          "refresh": 9,
+          "versions": 9,
+          "hits": 0,
+          "miss": 186,
+          "deep": 186,
+          "rows": 186,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 20
+        },
+        {
+          "refresh": 9,
+          "versions": 9,
+          "hits": 0,
+          "miss": 186,
+          "deep": 186,
+          "rows": 186,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 20
+        },
+        {
+          "refresh": 5,
+          "versions": 5,
+          "hits": 0,
+          "miss": 103,
+          "deep": 103,
+          "rows": 103,
+          "rounds": 80,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 21
+        }
+      ],
+      "refresh": 23,
+      "hits": 0,
+      "miss": 475,
+      "deep": 475,
+      "rows": 475,
+      "rounds": 368,
+      "accepted": 0,
+      "attempts": 0,
+      "tokens": 368,
+      "hit": 0
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "scenario": "rotate",
+      "mode": "client",
+      "method": "BV",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        8,
+        8,
+        4
+      ],
+      "initial": 2.845623116420686,
+      "final": 2.8600924395988554,
+      "losses": [
+        2.8546355566503476,
+        2.860298816619022,
+        2.8618797400182134,
+        2.8600924395988554
+      ],
+      "paramDelta": 0.07576073696429114,
+      "scopes": [
+        {
+          "refresh": 9,
+          "versions": 9,
+          "hits": 0,
+          "miss": 209,
+          "deep": 209,
+          "rows": 209,
+          "rounds": 74,
+          "accepted": 70,
+          "attempts": 93,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 21
+        },
+        {
+          "refresh": 9,
+          "versions": 9,
+          "hits": 0,
+          "miss": 199,
+          "deep": 199,
+          "rows": 199,
+          "rounds": 72,
+          "accepted": 72,
+          "attempts": 85,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 22
+        },
+        {
+          "refresh": 5,
+          "versions": 5,
+          "hits": 0,
+          "miss": 112,
+          "deep": 112,
+          "rows": 112,
+          "rounds": 40,
+          "accepted": 40,
+          "attempts": 49,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 25
+        }
+      ],
+      "refresh": 23,
+      "hits": 0,
+      "miss": 520,
+      "deep": 520,
+      "rows": 520,
+      "rounds": 186,
+      "accepted": 182,
+      "attempts": 227,
+      "tokens": 368,
+      "hit": 0
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "scenario": "repeat",
+      "mode": "aligned",
+      "method": "AR",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        4,
+        4,
+        2
+      ],
+      "initial": 2.559599576213178,
+      "final": 2.5520693102765954,
+      "losses": [
+        2.556892497362077,
+        2.5485937942540167,
+        2.5570885905813605,
+        2.5520693102765954
+      ],
+      "paramDelta": 0.10024811004787246,
+      "scopes": [
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 14,
+          "miss": 157,
+          "deep": 171,
+          "rows": 171,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 31
+        },
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 14,
+          "miss": 157,
+          "deep": 171,
+          "rows": 171,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 31
+        },
+        {
+          "refresh": 3,
+          "versions": 5,
+          "hits": 14,
+          "miss": 81,
+          "deep": 95,
+          "rows": 95,
+          "rounds": 80,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 31
+        }
+      ],
+      "refresh": 17,
+      "hits": 42,
+      "miss": 395,
+      "deep": 437,
+      "rows": 437,
+      "rounds": 368,
+      "accepted": 0,
+      "attempts": 0,
+      "tokens": 368,
+      "hit": 0.09610983981693363
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "scenario": "repeat",
+      "mode": "aligned",
+      "method": "BV",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        4,
+        4,
+        2
+      ],
+      "initial": 2.559599576213178,
+      "final": 2.5520693102765954,
+      "losses": [
+        2.556892497362077,
+        2.5485937942540167,
+        2.5570885905813605,
+        2.5520693102765954
+      ],
+      "paramDelta": 0.10024811004787246,
+      "scopes": [
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 14,
+          "miss": 163,
+          "deep": 177,
+          "rows": 177,
+          "rounds": 72,
+          "accepted": 72,
+          "attempts": 78,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 31
+        },
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 19,
+          "miss": 162,
+          "deep": 181,
+          "rows": 181,
+          "rounds": 73,
+          "accepted": 71,
+          "attempts": 81,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 30
+        },
+        {
+          "refresh": 3,
+          "versions": 5,
+          "hits": 14,
+          "miss": 86,
+          "deep": 100,
+          "rows": 100,
+          "rounds": 40,
+          "accepted": 40,
+          "attempts": 45,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 33
+        }
+      ],
+      "refresh": 17,
+      "hits": 47,
+      "miss": 411,
+      "deep": 458,
+      "rows": 458,
+      "rounds": 185,
+      "accepted": 183,
+      "attempts": 204,
+      "tokens": 368,
+      "hit": 0.10262008733624454
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "scenario": "repeat",
+      "mode": "region",
+      "method": "AR",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        4,
+        4,
+        4
+      ],
+      "initial": 2.559599576213178,
+      "final": 2.553939478469436,
+      "losses": [
+        2.5614635158756025,
+        2.553085954144172,
+        2.558036474402543,
+        2.553939478469436
+      ],
+      "paramDelta": 0.08963912642024688,
+      "scopes": [
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 14,
+          "miss": 157,
+          "deep": 171,
+          "rows": 171,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 31
+        },
+        {
+          "refresh": 6,
+          "versions": 9,
+          "hits": 22,
+          "miss": 149,
+          "deep": 171,
+          "rows": 171,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 19
+        },
+        {
+          "refresh": 5,
+          "versions": 5,
+          "hits": 0,
+          "miss": 95,
+          "deep": 95,
+          "rows": 95,
+          "rounds": 80,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 19
+        }
+      ],
+      "refresh": 18,
+      "hits": 36,
+      "miss": 401,
+      "deep": 437,
+      "rows": 437,
+      "rounds": 368,
+      "accepted": 0,
+      "attempts": 0,
+      "tokens": 368,
+      "hit": 0.08237986270022883
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "scenario": "repeat",
+      "mode": "region",
+      "method": "BV",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        4,
+        4,
+        4
+      ],
+      "initial": 2.559599576213178,
+      "final": 2.553939478469436,
+      "losses": [
+        2.5614635158756025,
+        2.553085954144172,
+        2.558036474402543,
+        2.553939478469436
+      ],
+      "paramDelta": 0.08963912642024688,
+      "scopes": [
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 16,
+          "miss": 163,
+          "deep": 179,
+          "rows": 179,
+          "rounds": 72,
+          "accepted": 72,
+          "attempts": 80,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 31
+        },
+        {
+          "refresh": 6,
+          "versions": 9,
+          "hits": 23,
+          "miss": 158,
+          "deep": 181,
+          "rows": 181,
+          "rounds": 72,
+          "accepted": 72,
+          "attempts": 82,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 20
+        },
+        {
+          "refresh": 5,
+          "versions": 5,
+          "hits": 0,
+          "miss": 99,
+          "deep": 99,
+          "rows": 99,
+          "rounds": 40,
+          "accepted": 40,
+          "attempts": 44,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 19
+        }
+      ],
+      "refresh": 18,
+      "hits": 39,
+      "miss": 420,
+      "deep": 459,
+      "rows": 459,
+      "rounds": 184,
+      "accepted": 184,
+      "attempts": 206,
+      "tokens": 368,
+      "hit": 0.08496732026143791
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "scenario": "repeat",
+      "mode": "client",
+      "method": "AR",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        8,
+        8,
+        4
+      ],
+      "initial": 2.559599576213178,
+      "final": 2.5535134288842785,
+      "losses": [
+        2.562353332415613,
+        2.556402265822655,
+        2.560704912728494,
+        2.5535134288842785
+      ],
+      "paramDelta": 0.076537154112056,
+      "scopes": [
+        {
+          "refresh": 9,
+          "versions": 9,
+          "hits": 0,
+          "miss": 171,
+          "deep": 171,
+          "rows": 171,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 19
+        },
+        {
+          "refresh": 9,
+          "versions": 9,
+          "hits": 0,
+          "miss": 171,
+          "deep": 171,
+          "rows": 171,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 19
+        },
+        {
+          "refresh": 5,
+          "versions": 5,
+          "hits": 0,
+          "miss": 95,
+          "deep": 95,
+          "rows": 95,
+          "rounds": 80,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 19
+        }
+      ],
+      "refresh": 23,
+      "hits": 0,
+      "miss": 437,
+      "deep": 437,
+      "rows": 437,
+      "rounds": 368,
+      "accepted": 0,
+      "attempts": 0,
+      "tokens": 368,
+      "hit": 0
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "scenario": "repeat",
+      "mode": "client",
+      "method": "BV",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        8,
+        8,
+        4
+      ],
+      "initial": 2.559599576213178,
+      "final": 2.5535134288842785,
+      "losses": [
+        2.562353332415613,
+        2.556402265822655,
+        2.560704912728494,
+        2.5535134288842785
+      ],
+      "paramDelta": 0.076537154112056,
+      "scopes": [
+        {
+          "refresh": 9,
+          "versions": 9,
+          "hits": 0,
+          "miss": 180,
+          "deep": 180,
+          "rows": 180,
+          "rounds": 73,
+          "accepted": 71,
+          "attempts": 80,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 19
+        },
+        {
+          "refresh": 9,
+          "versions": 9,
+          "hits": 0,
+          "miss": 183,
+          "deep": 183,
+          "rows": 183,
+          "rounds": 72,
+          "accepted": 72,
+          "attempts": 84,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 19
+        },
+        {
+          "refresh": 5,
+          "versions": 5,
+          "hits": 0,
+          "miss": 95,
+          "deep": 95,
+          "rows": 95,
+          "rounds": 40,
+          "accepted": 40,
+          "attempts": 40,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 19
+        }
+      ],
+      "refresh": 23,
+      "hits": 0,
+      "miss": 458,
+      "deep": 458,
+      "rows": 458,
+      "rounds": 185,
+      "accepted": 183,
+      "attempts": 204,
+      "tokens": 368,
+      "hit": 0
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "scenario": "rotate",
+      "mode": "aligned",
+      "method": "AR",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        4,
+        4,
+        2
+      ],
+      "initial": 2.559599576213178,
+      "final": 2.5520693102765954,
+      "losses": [
+        2.556892497362077,
+        2.5485937942540167,
+        2.5570885905813605,
+        2.5520693102765954
+      ],
+      "paramDelta": 0.10024811004787246,
+      "scopes": [
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 13,
+          "miss": 168,
+          "deep": 181,
+          "rows": 181,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 34
+        },
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 11,
+          "miss": 170,
+          "deep": 181,
+          "rows": 181,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 34
+        },
+        {
+          "refresh": 3,
+          "versions": 5,
+          "hits": 12,
+          "miss": 89,
+          "deep": 101,
+          "rows": 101,
+          "rounds": 80,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 36
+        }
+      ],
+      "refresh": 17,
+      "hits": 36,
+      "miss": 427,
+      "deep": 463,
+      "rows": 463,
+      "rounds": 368,
+      "accepted": 0,
+      "attempts": 0,
+      "tokens": 368,
+      "hit": 0.07775377969762419
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "scenario": "rotate",
+      "mode": "aligned",
+      "method": "BV",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        4,
+        4,
+        2
+      ],
+      "initial": 2.559599576213178,
+      "final": 2.5520693102765954,
+      "losses": [
+        2.556892497362077,
+        2.5485937942540167,
+        2.5570885905813605,
+        2.5520693102765954
+      ],
+      "paramDelta": 0.10024811004787246,
+      "scopes": [
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 11,
+          "miss": 178,
+          "deep": 189,
+          "rows": 189,
+          "rounds": 72,
+          "accepted": 72,
+          "attempts": 80,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 34
+        },
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 12,
+          "miss": 179,
+          "deep": 191,
+          "rows": 191,
+          "rounds": 72,
+          "accepted": 72,
+          "attempts": 82,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 34
+        },
+        {
+          "refresh": 3,
+          "versions": 5,
+          "hits": 11,
+          "miss": 90,
+          "deep": 101,
+          "rows": 101,
+          "rounds": 40,
+          "accepted": 40,
+          "attempts": 40,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 36
+        }
+      ],
+      "refresh": 17,
+      "hits": 34,
+      "miss": 447,
+      "deep": 481,
+      "rows": 481,
+      "rounds": 184,
+      "accepted": 184,
+      "attempts": 202,
+      "tokens": 368,
+      "hit": 0.07068607068607069
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "scenario": "rotate",
+      "mode": "region",
+      "method": "AR",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        4,
+        4,
+        4
+      ],
+      "initial": 2.559599576213178,
+      "final": 2.553939478469436,
+      "losses": [
+        2.5614635158756025,
+        2.553085954144172,
+        2.558036474402543,
+        2.553939478469436
+      ],
+      "paramDelta": 0.08963912642024688,
+      "scopes": [
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 13,
+          "miss": 168,
+          "deep": 181,
+          "rows": 181,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 34
+        },
+        {
+          "refresh": 6,
+          "versions": 9,
+          "hits": 15,
+          "miss": 166,
+          "deep": 181,
+          "rows": 181,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 20
+        },
+        {
+          "refresh": 5,
+          "versions": 5,
+          "hits": 0,
+          "miss": 101,
+          "deep": 101,
+          "rows": 101,
+          "rounds": 80,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 20
+        }
+      ],
+      "refresh": 18,
+      "hits": 28,
+      "miss": 435,
+      "deep": 463,
+      "rows": 463,
+      "rounds": 368,
+      "accepted": 0,
+      "attempts": 0,
+      "tokens": 368,
+      "hit": 0.06047516198704104
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "scenario": "rotate",
+      "mode": "region",
+      "method": "BV",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        4,
+        4,
+        4
+      ],
+      "initial": 2.559599576213178,
+      "final": 2.553939478469436,
+      "losses": [
+        2.5614635158756025,
+        2.553085954144172,
+        2.558036474402543,
+        2.553939478469436
+      ],
+      "paramDelta": 0.08963912642024688,
+      "scopes": [
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 12,
+          "miss": 177,
+          "deep": 189,
+          "rows": 189,
+          "rounds": 72,
+          "accepted": 72,
+          "attempts": 80,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 34
+        },
+        {
+          "refresh": 6,
+          "versions": 9,
+          "hits": 17,
+          "miss": 177,
+          "deep": 194,
+          "rows": 194,
+          "rounds": 72,
+          "accepted": 72,
+          "attempts": 85,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 23
+        },
+        {
+          "refresh": 5,
+          "versions": 5,
+          "hits": 0,
+          "miss": 101,
+          "deep": 101,
+          "rows": 101,
+          "rounds": 40,
+          "accepted": 40,
+          "attempts": 40,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 20
+        }
+      ],
+      "refresh": 18,
+      "hits": 29,
+      "miss": 455,
+      "deep": 484,
+      "rows": 484,
+      "rounds": 184,
+      "accepted": 184,
+      "attempts": 205,
+      "tokens": 368,
+      "hit": 0.05991735537190083
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "scenario": "rotate",
+      "mode": "client",
+      "method": "AR",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        8,
+        8,
+        4
+      ],
+      "initial": 2.559599576213178,
+      "final": 2.5535134288842785,
+      "losses": [
+        2.562353332415613,
+        2.556402265822655,
+        2.560704912728494,
+        2.5535134288842785
+      ],
+      "paramDelta": 0.076537154112056,
+      "scopes": [
+        {
+          "refresh": 9,
+          "versions": 9,
+          "hits": 0,
+          "miss": 181,
+          "deep": 181,
+          "rows": 181,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 20
+        },
+        {
+          "refresh": 9,
+          "versions": 9,
+          "hits": 0,
+          "miss": 181,
+          "deep": 181,
+          "rows": 181,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 20
+        },
+        {
+          "refresh": 5,
+          "versions": 5,
+          "hits": 0,
+          "miss": 101,
+          "deep": 101,
+          "rows": 101,
+          "rounds": 80,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 20
+        }
+      ],
+      "refresh": 23,
+      "hits": 0,
+      "miss": 463,
+      "deep": 463,
+      "rows": 463,
+      "rounds": 368,
+      "accepted": 0,
+      "attempts": 0,
+      "tokens": 368,
+      "hit": 0
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "scenario": "rotate",
+      "mode": "client",
+      "method": "BV",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        8,
+        8,
+        4
+      ],
+      "initial": 2.559599576213178,
+      "final": 2.5535134288842785,
+      "losses": [
+        2.562353332415613,
+        2.556402265822655,
+        2.560704912728494,
+        2.5535134288842785
+      ],
+      "paramDelta": 0.076537154112056,
+      "scopes": [
+        {
+          "refresh": 9,
+          "versions": 9,
+          "hits": 0,
+          "miss": 196,
+          "deep": 196,
+          "rows": 196,
+          "rounds": 73,
+          "accepted": 71,
+          "attempts": 86,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 20
+        },
+        {
+          "refresh": 9,
+          "versions": 9,
+          "hits": 0,
+          "miss": 191,
+          "deep": 191,
+          "rows": 191,
+          "rounds": 72,
+          "accepted": 72,
+          "attempts": 82,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 21
+        },
+        {
+          "refresh": 5,
+          "versions": 5,
+          "hits": 0,
+          "miss": 102,
+          "deep": 102,
+          "rows": 102,
+          "rounds": 40,
+          "accepted": 40,
+          "attempts": 41,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 20
+        }
+      ],
+      "refresh": 23,
+      "hits": 0,
+      "miss": 489,
+      "deep": 489,
+      "rows": 489,
+      "rounds": 185,
+      "accepted": 183,
+      "attempts": 209,
+      "tokens": 368,
+      "hit": 0
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "scenario": "repeat",
+      "mode": "aligned",
+      "method": "AR",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        4,
+        4,
+        2
+      ],
+      "initial": 2.714014258398837,
+      "final": 2.721235834360226,
+      "losses": [
+        2.712903275511946,
+        2.7195222404033377,
+        2.718022889973192,
+        2.721235834360226
+      ],
+      "paramDelta": 0.10128050622963594,
+      "scopes": [
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 19,
+          "miss": 170,
+          "deep": 189,
+          "rows": 189,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 33
+        },
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 18,
+          "miss": 171,
+          "deep": 189,
+          "rows": 189,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 33
+        },
+        {
+          "refresh": 3,
+          "versions": 5,
+          "hits": 18,
+          "miss": 87,
+          "deep": 105,
+          "rows": 105,
+          "rounds": 80,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 33
+        }
+      ],
+      "refresh": 17,
+      "hits": 55,
+      "miss": 428,
+      "deep": 483,
+      "rows": 483,
+      "rounds": 368,
+      "accepted": 0,
+      "attempts": 0,
+      "tokens": 368,
+      "hit": 0.11387163561076605
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "scenario": "repeat",
+      "mode": "aligned",
+      "method": "BV",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        4,
+        4,
+        2
+      ],
+      "initial": 2.714014258398837,
+      "final": 2.721235834360226,
+      "losses": [
+        2.712903275511946,
+        2.7195222404033377,
+        2.718022889973192,
+        2.721235834360226
+      ],
+      "paramDelta": 0.10128050622963594,
+      "scopes": [
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 21,
+          "miss": 176,
+          "deep": 197,
+          "rows": 197,
+          "rounds": 72,
+          "accepted": 72,
+          "attempts": 80,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 30
+        },
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 19,
+          "miss": 186,
+          "deep": 205,
+          "rows": 205,
+          "rounds": 72,
+          "accepted": 72,
+          "attempts": 88,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 37
+        },
+        {
+          "refresh": 3,
+          "versions": 5,
+          "hits": 18,
+          "miss": 94,
+          "deep": 112,
+          "rows": 112,
+          "rounds": 41,
+          "accepted": 39,
+          "attempts": 46,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 33
+        }
+      ],
+      "refresh": 17,
+      "hits": 58,
+      "miss": 456,
+      "deep": 514,
+      "rows": 514,
+      "rounds": 185,
+      "accepted": 183,
+      "attempts": 214,
+      "tokens": 368,
+      "hit": 0.11284046692607004
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "scenario": "repeat",
+      "mode": "region",
+      "method": "AR",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        4,
+        4,
+        4
+      ],
+      "initial": 2.714014258398837,
+      "final": 2.709844577941441,
+      "losses": [
+        2.7085873705762253,
+        2.711324077473743,
+        2.7081078675969397,
+        2.709844577941441
+      ],
+      "paramDelta": 0.08722413725592475,
+      "scopes": [
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 19,
+          "miss": 170,
+          "deep": 189,
+          "rows": 189,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 33
+        },
+        {
+          "refresh": 6,
+          "versions": 9,
+          "hits": 28,
+          "miss": 161,
+          "deep": 189,
+          "rows": 189,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 21
+        },
+        {
+          "refresh": 5,
+          "versions": 5,
+          "hits": 0,
+          "miss": 105,
+          "deep": 105,
+          "rows": 105,
+          "rounds": 80,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 21
+        }
+      ],
+      "refresh": 18,
+      "hits": 47,
+      "miss": 436,
+      "deep": 483,
+      "rows": 483,
+      "rounds": 368,
+      "accepted": 0,
+      "attempts": 0,
+      "tokens": 368,
+      "hit": 0.09730848861283643
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "scenario": "repeat",
+      "mode": "region",
+      "method": "BV",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        4,
+        4,
+        4
+      ],
+      "initial": 2.714014258398837,
+      "final": 2.709844577941441,
+      "losses": [
+        2.7085873705762253,
+        2.711324077473743,
+        2.7081078675969397,
+        2.709844577941441
+      ],
+      "paramDelta": 0.08722413725592475,
+      "scopes": [
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 20,
+          "miss": 179,
+          "deep": 199,
+          "rows": 199,
+          "rounds": 72,
+          "accepted": 72,
+          "attempts": 82,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 33
+        },
+        {
+          "refresh": 6,
+          "versions": 9,
+          "hits": 29,
+          "miss": 172,
+          "deep": 201,
+          "rows": 201,
+          "rounds": 73,
+          "accepted": 71,
+          "attempts": 83,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 21
+        },
+        {
+          "refresh": 5,
+          "versions": 5,
+          "hits": 0,
+          "miss": 112,
+          "deep": 112,
+          "rows": 112,
+          "rounds": 41,
+          "accepted": 39,
+          "attempts": 46,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 23
+        }
+      ],
+      "refresh": 18,
+      "hits": 49,
+      "miss": 463,
+      "deep": 512,
+      "rows": 512,
+      "rounds": 186,
+      "accepted": 182,
+      "attempts": 211,
+      "tokens": 368,
+      "hit": 0.095703125
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "scenario": "repeat",
+      "mode": "client",
+      "method": "AR",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        8,
+        8,
+        4
+      ],
+      "initial": 2.714014258398837,
+      "final": 2.7086928435062174,
+      "losses": [
+        2.7017874113191227,
+        2.707634745947946,
+        2.708066767782299,
+        2.7086928435062174
+      ],
+      "paramDelta": 0.08084904903870326,
+      "scopes": [
+        {
+          "refresh": 9,
+          "versions": 9,
+          "hits": 0,
+          "miss": 189,
+          "deep": 189,
+          "rows": 189,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 21
+        },
+        {
+          "refresh": 9,
+          "versions": 9,
+          "hits": 0,
+          "miss": 189,
+          "deep": 189,
+          "rows": 189,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 21
+        },
+        {
+          "refresh": 5,
+          "versions": 5,
+          "hits": 0,
+          "miss": 105,
+          "deep": 105,
+          "rows": 105,
+          "rounds": 80,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 21
+        }
+      ],
+      "refresh": 23,
+      "hits": 0,
+      "miss": 483,
+      "deep": 483,
+      "rows": 483,
+      "rounds": 368,
+      "accepted": 0,
+      "attempts": 0,
+      "tokens": 368,
+      "hit": 0
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "scenario": "repeat",
+      "mode": "client",
+      "method": "BV",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        8,
+        8,
+        4
+      ],
+      "initial": 2.714014258398837,
+      "final": 2.7086928435062174,
+      "losses": [
+        2.7017874113191227,
+        2.707634745947946,
+        2.708066767782299,
+        2.7086928435062174
+      ],
+      "paramDelta": 0.08084904903870326,
+      "scopes": [
+        {
+          "refresh": 9,
+          "versions": 9,
+          "hits": 0,
+          "miss": 206,
+          "deep": 206,
+          "rows": 206,
+          "rounds": 73,
+          "accepted": 71,
+          "attempts": 88,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 25
+        },
+        {
+          "refresh": 9,
+          "versions": 9,
+          "hits": 0,
+          "miss": 203,
+          "deep": 203,
+          "rows": 203,
+          "rounds": 73,
+          "accepted": 71,
+          "attempts": 85,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 26
+        },
+        {
+          "refresh": 5,
+          "versions": 5,
+          "hits": 0,
+          "miss": 112,
+          "deep": 112,
+          "rows": 112,
+          "rounds": 41,
+          "accepted": 39,
+          "attempts": 46,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 21
+        }
+      ],
+      "refresh": 23,
+      "hits": 0,
+      "miss": 521,
+      "deep": 521,
+      "rows": 521,
+      "rounds": 187,
+      "accepted": 181,
+      "attempts": 219,
+      "tokens": 368,
+      "hit": 0
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "scenario": "rotate",
+      "mode": "aligned",
+      "method": "AR",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        4,
+        4,
+        2
+      ],
+      "initial": 2.714014258398837,
+      "final": 2.721235834360226,
+      "losses": [
+        2.712903275511946,
+        2.7195222404033377,
+        2.718022889973192,
+        2.721235834360226
+      ],
+      "paramDelta": 0.10128050622963594,
+      "scopes": [
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 10,
+          "miss": 174,
+          "deep": 184,
+          "rows": 184,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 36
+        },
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 10,
+          "miss": 174,
+          "deep": 184,
+          "rows": 184,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 36
+        },
+        {
+          "refresh": 3,
+          "versions": 5,
+          "hits": 10,
+          "miss": 92,
+          "deep": 102,
+          "rows": 102,
+          "rounds": 80,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 35
+        }
+      ],
+      "refresh": 17,
+      "hits": 30,
+      "miss": 440,
+      "deep": 470,
+      "rows": 470,
+      "rounds": 368,
+      "accepted": 0,
+      "attempts": 0,
+      "tokens": 368,
+      "hit": 0.06382978723404255
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "scenario": "rotate",
+      "mode": "aligned",
+      "method": "BV",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        4,
+        4,
+        2
+      ],
+      "initial": 2.714014258398837,
+      "final": 2.721235834360226,
+      "losses": [
+        2.712903275511946,
+        2.7195222404033377,
+        2.718022889973192,
+        2.721235834360226
+      ],
+      "paramDelta": 0.10128050622963594,
+      "scopes": [
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 11,
+          "miss": 183,
+          "deep": 194,
+          "rows": 194,
+          "rounds": 72,
+          "accepted": 72,
+          "attempts": 82,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 37
+        },
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 10,
+          "miss": 188,
+          "deep": 198,
+          "rows": 198,
+          "rounds": 72,
+          "accepted": 72,
+          "attempts": 86,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 40
+        },
+        {
+          "refresh": 3,
+          "versions": 5,
+          "hits": 11,
+          "miss": 100,
+          "deep": 111,
+          "rows": 111,
+          "rounds": 43,
+          "accepted": 37,
+          "attempts": 46,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 41
+        }
+      ],
+      "refresh": 17,
+      "hits": 32,
+      "miss": 471,
+      "deep": 503,
+      "rows": 503,
+      "rounds": 187,
+      "accepted": 181,
+      "attempts": 214,
+      "tokens": 368,
+      "hit": 0.0636182902584493
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "scenario": "rotate",
+      "mode": "region",
+      "method": "AR",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        4,
+        4,
+        4
+      ],
+      "initial": 2.714014258398837,
+      "final": 2.709844577941441,
+      "losses": [
+        2.7085873705762253,
+        2.711324077473743,
+        2.7081078675969397,
+        2.709844577941441
+      ],
+      "paramDelta": 0.08722413725592475,
+      "scopes": [
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 10,
+          "miss": 174,
+          "deep": 184,
+          "rows": 184,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 36
+        },
+        {
+          "refresh": 6,
+          "versions": 9,
+          "hits": 15,
+          "miss": 169,
+          "deep": 184,
+          "rows": 184,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 21
+        },
+        {
+          "refresh": 5,
+          "versions": 5,
+          "hits": 0,
+          "miss": 102,
+          "deep": 102,
+          "rows": 102,
+          "rounds": 80,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 20
+        }
+      ],
+      "refresh": 18,
+      "hits": 25,
+      "miss": 445,
+      "deep": 470,
+      "rows": 470,
+      "rounds": 368,
+      "accepted": 0,
+      "attempts": 0,
+      "tokens": 368,
+      "hit": 0.05319148936170213
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "scenario": "rotate",
+      "mode": "region",
+      "method": "BV",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        4,
+        4,
+        4
+      ],
+      "initial": 2.714014258398837,
+      "final": 2.709844577941441,
+      "losses": [
+        2.7085873705762253,
+        2.711324077473743,
+        2.7081078675969397,
+        2.709844577941441
+      ],
+      "paramDelta": 0.08722413725592475,
+      "scopes": [
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 11,
+          "miss": 181,
+          "deep": 192,
+          "rows": 192,
+          "rounds": 72,
+          "accepted": 72,
+          "attempts": 80,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 35
+        },
+        {
+          "refresh": 6,
+          "versions": 9,
+          "hits": 16,
+          "miss": 179,
+          "deep": 195,
+          "rows": 195,
+          "rounds": 73,
+          "accepted": 71,
+          "attempts": 82,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 22
+        },
+        {
+          "refresh": 5,
+          "versions": 5,
+          "hits": 0,
+          "miss": 106,
+          "deep": 106,
+          "rows": 106,
+          "rounds": 41,
+          "accepted": 39,
+          "attempts": 43,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 20
+        }
+      ],
+      "refresh": 18,
+      "hits": 27,
+      "miss": 466,
+      "deep": 493,
+      "rows": 493,
+      "rounds": 186,
+      "accepted": 182,
+      "attempts": 205,
+      "tokens": 368,
+      "hit": 0.05476673427991886
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "scenario": "rotate",
+      "mode": "client",
+      "method": "AR",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        8,
+        8,
+        4
+      ],
+      "initial": 2.714014258398837,
+      "final": 2.7086928435062174,
+      "losses": [
+        2.7017874113191227,
+        2.707634745947946,
+        2.708066767782299,
+        2.7086928435062174
+      ],
+      "paramDelta": 0.08084904903870326,
+      "scopes": [
+        {
+          "refresh": 9,
+          "versions": 9,
+          "hits": 0,
+          "miss": 184,
+          "deep": 184,
+          "rows": 184,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 21
+        },
+        {
+          "refresh": 9,
+          "versions": 9,
+          "hits": 0,
+          "miss": 184,
+          "deep": 184,
+          "rows": 184,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 21
+        },
+        {
+          "refresh": 5,
+          "versions": 5,
+          "hits": 0,
+          "miss": 102,
+          "deep": 102,
+          "rows": 102,
+          "rounds": 80,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 20
+        }
+      ],
+      "refresh": 23,
+      "hits": 0,
+      "miss": 470,
+      "deep": 470,
+      "rows": 470,
+      "rounds": 368,
+      "accepted": 0,
+      "attempts": 0,
+      "tokens": 368,
+      "hit": 0
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "scenario": "rotate",
+      "mode": "client",
+      "method": "BV",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        8,
+        8,
+        4
+      ],
+      "initial": 2.714014258398837,
+      "final": 2.7086928435062174,
+      "losses": [
+        2.7017874113191227,
+        2.707634745947946,
+        2.708066767782299,
+        2.7086928435062174
+      ],
+      "paramDelta": 0.08084904903870326,
+      "scopes": [
+        {
+          "refresh": 9,
+          "versions": 9,
+          "hits": 0,
+          "miss": 199,
+          "deep": 199,
+          "rows": 199,
+          "rounds": 73,
+          "accepted": 71,
+          "attempts": 86,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 21
+        },
+        {
+          "refresh": 9,
+          "versions": 9,
+          "hits": 0,
+          "miss": 196,
+          "deep": 196,
+          "rows": 196,
+          "rounds": 72,
+          "accepted": 72,
+          "attempts": 84,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 23
+        },
+        {
+          "refresh": 5,
+          "versions": 5,
+          "hits": 0,
+          "miss": 111,
+          "deep": 111,
+          "rows": 111,
+          "rounds": 41,
+          "accepted": 39,
+          "attempts": 48,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 22
+        }
+      ],
+      "refresh": 23,
+      "hits": 0,
+      "miss": 506,
+      "deep": 506,
+      "rows": 506,
+      "rounds": 186,
+      "accepted": 182,
+      "attempts": 218,
+      "tokens": 368,
+      "hit": 0
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "scenario": "repeat",
+      "mode": "aligned",
+      "method": "AR",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        4,
+        4,
+        2
+      ],
+      "initial": 2.9298572749150082,
+      "final": 2.9421914850157163,
+      "losses": [
+        2.9345159864827353,
+        2.9398994468746342,
+        2.939726204216001,
+        2.9421914850157163
+      ],
+      "paramDelta": 0.08544233051835694,
+      "scopes": [
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 19,
+          "miss": 170,
+          "deep": 189,
+          "rows": 189,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 32
+        },
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 19,
+          "miss": 170,
+          "deep": 189,
+          "rows": 189,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 32
+        },
+        {
+          "refresh": 3,
+          "versions": 5,
+          "hits": 20,
+          "miss": 85,
+          "deep": 105,
+          "rows": 105,
+          "rounds": 80,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 33
+        }
+      ],
+      "refresh": 17,
+      "hits": 58,
+      "miss": 425,
+      "deep": 483,
+      "rows": 483,
+      "rounds": 368,
+      "accepted": 0,
+      "attempts": 0,
+      "tokens": 368,
+      "hit": 0.12008281573498965
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "scenario": "repeat",
+      "mode": "aligned",
+      "method": "BV",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        4,
+        4,
+        2
+      ],
+      "initial": 2.9298572749150082,
+      "final": 2.9421914850157163,
+      "losses": [
+        2.9345159864827353,
+        2.9398994468746342,
+        2.939726204216001,
+        2.9421914850157163
+      ],
+      "paramDelta": 0.08544233051835694,
+      "scopes": [
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 19,
+          "miss": 177,
+          "deep": 196,
+          "rows": 196,
+          "rounds": 73,
+          "accepted": 71,
+          "attempts": 78,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 34
+        },
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 19,
+          "miss": 187,
+          "deep": 206,
+          "rows": 206,
+          "rounds": 73,
+          "accepted": 71,
+          "attempts": 88,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 38
+        },
+        {
+          "refresh": 3,
+          "versions": 5,
+          "hits": 19,
+          "miss": 90,
+          "deep": 109,
+          "rows": 109,
+          "rounds": 40,
+          "accepted": 40,
+          "attempts": 44,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 32
+        }
+      ],
+      "refresh": 17,
+      "hits": 57,
+      "miss": 454,
+      "deep": 511,
+      "rows": 511,
+      "rounds": 186,
+      "accepted": 182,
+      "attempts": 210,
+      "tokens": 368,
+      "hit": 0.11154598825831702
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "scenario": "repeat",
+      "mode": "region",
+      "method": "AR",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        4,
+        4,
+        4
+      ],
+      "initial": 2.9298572749150082,
+      "final": 2.9357353539167286,
+      "losses": [
+        2.938887244848471,
+        2.93613286446675,
+        2.9369839341404638,
+        2.9357353539167286
+      ],
+      "paramDelta": 0.08806815358681626,
+      "scopes": [
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 19,
+          "miss": 170,
+          "deep": 189,
+          "rows": 189,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 32
+        },
+        {
+          "refresh": 6,
+          "versions": 9,
+          "hits": 28,
+          "miss": 161,
+          "deep": 189,
+          "rows": 189,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 21
+        },
+        {
+          "refresh": 5,
+          "versions": 5,
+          "hits": 0,
+          "miss": 105,
+          "deep": 105,
+          "rows": 105,
+          "rounds": 80,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 21
+        }
+      ],
+      "refresh": 18,
+      "hits": 47,
+      "miss": 436,
+      "deep": 483,
+      "rows": 483,
+      "rounds": 368,
+      "accepted": 0,
+      "attempts": 0,
+      "tokens": 368,
+      "hit": 0.09730848861283643
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "scenario": "repeat",
+      "mode": "region",
+      "method": "BV",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        4,
+        4,
+        4
+      ],
+      "initial": 2.9298572749150082,
+      "final": 2.9357353539167286,
+      "losses": [
+        2.938887244848471,
+        2.93613286446675,
+        2.9369839341404638,
+        2.9357353539167286
+      ],
+      "paramDelta": 0.08806815358681626,
+      "scopes": [
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 20,
+          "miss": 186,
+          "deep": 206,
+          "rows": 206,
+          "rounds": 75,
+          "accepted": 69,
+          "attempts": 86,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 39
+        },
+        {
+          "refresh": 6,
+          "versions": 9,
+          "hits": 27,
+          "miss": 174,
+          "deep": 201,
+          "rows": 201,
+          "rounds": 74,
+          "accepted": 70,
+          "attempts": 82,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 21
+        },
+        {
+          "refresh": 5,
+          "versions": 5,
+          "hits": 0,
+          "miss": 116,
+          "deep": 116,
+          "rows": 116,
+          "rounds": 40,
+          "accepted": 40,
+          "attempts": 51,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 21
+        }
+      ],
+      "refresh": 18,
+      "hits": 47,
+      "miss": 476,
+      "deep": 523,
+      "rows": 523,
+      "rounds": 189,
+      "accepted": 179,
+      "attempts": 219,
+      "tokens": 368,
+      "hit": 0.08986615678776291
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "scenario": "repeat",
+      "mode": "client",
+      "method": "AR",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        8,
+        8,
+        4
+      ],
+      "initial": 2.9298572749150082,
+      "final": 2.936880451441228,
+      "losses": [
+        2.9333431763475226,
+        2.9335720963571297,
+        2.9329680932886686,
+        2.936880451441228
+      ],
+      "paramDelta": 0.08613845111583039,
+      "scopes": [
+        {
+          "refresh": 9,
+          "versions": 9,
+          "hits": 0,
+          "miss": 189,
+          "deep": 189,
+          "rows": 189,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 21
+        },
+        {
+          "refresh": 9,
+          "versions": 9,
+          "hits": 0,
+          "miss": 189,
+          "deep": 189,
+          "rows": 189,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 21
+        },
+        {
+          "refresh": 5,
+          "versions": 5,
+          "hits": 0,
+          "miss": 105,
+          "deep": 105,
+          "rows": 105,
+          "rounds": 80,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 21
+        }
+      ],
+      "refresh": 23,
+      "hits": 0,
+      "miss": 483,
+      "deep": 483,
+      "rows": 483,
+      "rounds": 368,
+      "accepted": 0,
+      "attempts": 0,
+      "tokens": 368,
+      "hit": 0
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "scenario": "repeat",
+      "mode": "client",
+      "method": "BV",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        8,
+        8,
+        4
+      ],
+      "initial": 2.9298572749150082,
+      "final": 2.936880451441228,
+      "losses": [
+        2.9333431763475226,
+        2.9335720963571297,
+        2.9329680932886686,
+        2.936880451441228
+      ],
+      "paramDelta": 0.08613845111583039,
+      "scopes": [
+        {
+          "refresh": 9,
+          "versions": 9,
+          "hits": 0,
+          "miss": 199,
+          "deep": 199,
+          "rows": 199,
+          "rounds": 73,
+          "accepted": 71,
+          "attempts": 81,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 21
+        },
+        {
+          "refresh": 9,
+          "versions": 9,
+          "hits": 0,
+          "miss": 206,
+          "deep": 206,
+          "rows": 206,
+          "rounds": 74,
+          "accepted": 70,
+          "attempts": 87,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 28
+        },
+        {
+          "refresh": 5,
+          "versions": 5,
+          "hits": 0,
+          "miss": 107,
+          "deep": 107,
+          "rows": 107,
+          "rounds": 40,
+          "accepted": 40,
+          "attempts": 42,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 21
+        }
+      ],
+      "refresh": 23,
+      "hits": 0,
+      "miss": 512,
+      "deep": 512,
+      "rows": 512,
+      "rounds": 187,
+      "accepted": 181,
+      "attempts": 210,
+      "tokens": 368,
+      "hit": 0
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "scenario": "rotate",
+      "mode": "aligned",
+      "method": "AR",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        4,
+        4,
+        2
+      ],
+      "initial": 2.9298572749150082,
+      "final": 2.9421914850157163,
+      "losses": [
+        2.9345159864827353,
+        2.9398994468746342,
+        2.939726204216001,
+        2.9421914850157163
+      ],
+      "paramDelta": 0.08544233051835694,
+      "scopes": [
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 10,
+          "miss": 175,
+          "deep": 185,
+          "rows": 185,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 36
+        },
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 11,
+          "miss": 175,
+          "deep": 186,
+          "rows": 186,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 36
+        },
+        {
+          "refresh": 3,
+          "versions": 5,
+          "hits": 10,
+          "miss": 93,
+          "deep": 103,
+          "rows": 103,
+          "rounds": 80,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 35
+        }
+      ],
+      "refresh": 17,
+      "hits": 31,
+      "miss": 443,
+      "deep": 474,
+      "rows": 474,
+      "rounds": 368,
+      "accepted": 0,
+      "attempts": 0,
+      "tokens": 368,
+      "hit": 0.06540084388185655
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "scenario": "rotate",
+      "mode": "aligned",
+      "method": "BV",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        4,
+        4,
+        2
+      ],
+      "initial": 2.9298572749150082,
+      "final": 2.9421914850157163,
+      "losses": [
+        2.9345159864827353,
+        2.9398994468746342,
+        2.939726204216001,
+        2.9421914850157163
+      ],
+      "paramDelta": 0.08544233051835694,
+      "scopes": [
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 11,
+          "miss": 185,
+          "deep": 196,
+          "rows": 196,
+          "rounds": 72,
+          "accepted": 72,
+          "attempts": 82,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 38
+        },
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 10,
+          "miss": 190,
+          "deep": 200,
+          "rows": 200,
+          "rounds": 74,
+          "accepted": 70,
+          "attempts": 84,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 40
+        },
+        {
+          "refresh": 3,
+          "versions": 5,
+          "hits": 10,
+          "miss": 96,
+          "deep": 106,
+          "rows": 106,
+          "rounds": 40,
+          "accepted": 40,
+          "attempts": 43,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 35
+        }
+      ],
+      "refresh": 17,
+      "hits": 31,
+      "miss": 471,
+      "deep": 502,
+      "rows": 502,
+      "rounds": 186,
+      "accepted": 182,
+      "attempts": 209,
+      "tokens": 368,
+      "hit": 0.061752988047808766
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "scenario": "rotate",
+      "mode": "region",
+      "method": "AR",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        4,
+        4,
+        4
+      ],
+      "initial": 2.9298572749150082,
+      "final": 2.9357353539167286,
+      "losses": [
+        2.938887244848471,
+        2.93613286446675,
+        2.9369839341404638,
+        2.9357353539167286
+      ],
+      "paramDelta": 0.08806815358681626,
+      "scopes": [
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 10,
+          "miss": 175,
+          "deep": 185,
+          "rows": 185,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 36
+        },
+        {
+          "refresh": 6,
+          "versions": 9,
+          "hits": 16,
+          "miss": 170,
+          "deep": 186,
+          "rows": 186,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 20
+        },
+        {
+          "refresh": 5,
+          "versions": 5,
+          "hits": 0,
+          "miss": 103,
+          "deep": 103,
+          "rows": 103,
+          "rounds": 80,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 21
+        }
+      ],
+      "refresh": 18,
+      "hits": 26,
+      "miss": 448,
+      "deep": 474,
+      "rows": 474,
+      "rounds": 368,
+      "accepted": 0,
+      "attempts": 0,
+      "tokens": 368,
+      "hit": 0.05485232067510549
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "scenario": "rotate",
+      "mode": "region",
+      "method": "BV",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        4,
+        4,
+        4
+      ],
+      "initial": 2.9298572749150082,
+      "final": 2.9357353539167286,
+      "losses": [
+        2.938887244848471,
+        2.93613286446675,
+        2.9369839341404638,
+        2.9357353539167286
+      ],
+      "paramDelta": 0.08806815358681626,
+      "scopes": [
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 12,
+          "miss": 194,
+          "deep": 206,
+          "rows": 206,
+          "rounds": 73,
+          "accepted": 71,
+          "attempts": 91,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 39
+        },
+        {
+          "refresh": 6,
+          "versions": 9,
+          "hits": 17,
+          "miss": 177,
+          "deep": 194,
+          "rows": 194,
+          "rounds": 72,
+          "accepted": 72,
+          "attempts": 80,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 22
+        },
+        {
+          "refresh": 5,
+          "versions": 5,
+          "hits": 0,
+          "miss": 106,
+          "deep": 106,
+          "rows": 106,
+          "rounds": 40,
+          "accepted": 40,
+          "attempts": 43,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 21
+        }
+      ],
+      "refresh": 18,
+      "hits": 29,
+      "miss": 477,
+      "deep": 506,
+      "rows": 506,
+      "rounds": 185,
+      "accepted": 183,
+      "attempts": 214,
+      "tokens": 368,
+      "hit": 0.05731225296442688
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "scenario": "rotate",
+      "mode": "client",
+      "method": "AR",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        8,
+        8,
+        4
+      ],
+      "initial": 2.9298572749150082,
+      "final": 2.936880451441228,
+      "losses": [
+        2.9333431763475226,
+        2.9335720963571297,
+        2.9329680932886686,
+        2.936880451441228
+      ],
+      "paramDelta": 0.08613845111583039,
+      "scopes": [
+        {
+          "refresh": 9,
+          "versions": 9,
+          "hits": 0,
+          "miss": 185,
+          "deep": 185,
+          "rows": 185,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 20
+        },
+        {
+          "refresh": 9,
+          "versions": 9,
+          "hits": 0,
+          "miss": 186,
+          "deep": 186,
+          "rows": 186,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 20
+        },
+        {
+          "refresh": 5,
+          "versions": 5,
+          "hits": 0,
+          "miss": 103,
+          "deep": 103,
+          "rows": 103,
+          "rounds": 80,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 21
+        }
+      ],
+      "refresh": 23,
+      "hits": 0,
+      "miss": 474,
+      "deep": 474,
+      "rows": 474,
+      "rounds": 368,
+      "accepted": 0,
+      "attempts": 0,
+      "tokens": 368,
+      "hit": 0
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "scenario": "rotate",
+      "mode": "client",
+      "method": "BV",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        8,
+        8,
+        4
+      ],
+      "initial": 2.9298572749150082,
+      "final": 2.936880451441228,
+      "losses": [
+        2.9333431763475226,
+        2.9335720963571297,
+        2.9329680932886686,
+        2.936880451441228
+      ],
+      "paramDelta": 0.08613845111583039,
+      "scopes": [
+        {
+          "refresh": 9,
+          "versions": 9,
+          "hits": 0,
+          "miss": 194,
+          "deep": 194,
+          "rows": 194,
+          "rounds": 72,
+          "accepted": 72,
+          "attempts": 80,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 21
+        },
+        {
+          "refresh": 9,
+          "versions": 9,
+          "hits": 0,
+          "miss": 195,
+          "deep": 195,
+          "rows": 195,
+          "rounds": 72,
+          "accepted": 72,
+          "attempts": 81,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 20
+        },
+        {
+          "refresh": 5,
+          "versions": 5,
+          "hits": 0,
+          "miss": 108,
+          "deep": 108,
+          "rows": 108,
+          "rounds": 40,
+          "accepted": 40,
+          "attempts": 45,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 23
+        }
+      ],
+      "refresh": 23,
+      "hits": 0,
+      "miss": 497,
+      "deep": 497,
+      "rows": 497,
+      "rounds": 184,
+      "accepted": 184,
+      "attempts": 206,
+      "tokens": 368,
+      "hit": 0
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "scenario": "repeat",
+      "mode": "aligned",
+      "method": "AR",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        4,
+        4,
+        2
+      ],
+      "initial": 2.4874207908887613,
+      "final": 2.487834467943944,
+      "losses": [
+        2.4921653698379447,
+        2.4851569961084645,
+        2.486881651703652,
+        2.487834467943944
+      ],
+      "paramDelta": 0.07698527480552192,
+      "scopes": [
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 15,
+          "miss": 156,
+          "deep": 171,
+          "rows": 171,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 30
+        },
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 16,
+          "miss": 155,
+          "deep": 171,
+          "rows": 171,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 30
+        },
+        {
+          "refresh": 3,
+          "versions": 5,
+          "hits": 16,
+          "miss": 79,
+          "deep": 95,
+          "rows": 95,
+          "rounds": 80,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 30
+        }
+      ],
+      "refresh": 17,
+      "hits": 47,
+      "miss": 390,
+      "deep": 437,
+      "rows": 437,
+      "rounds": 368,
+      "accepted": 0,
+      "attempts": 0,
+      "tokens": 368,
+      "hit": 0.10755148741418764
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "scenario": "repeat",
+      "mode": "aligned",
+      "method": "BV",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        4,
+        4,
+        2
+      ],
+      "initial": 2.4874207908887613,
+      "final": 2.487834467943944,
+      "losses": [
+        2.4921653698379447,
+        2.4851569961084645,
+        2.486881651703652,
+        2.487834467943944
+      ],
+      "paramDelta": 0.07698527480552192,
+      "scopes": [
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 14,
+          "miss": 163,
+          "deep": 177,
+          "rows": 177,
+          "rounds": 73,
+          "accepted": 71,
+          "attempts": 77,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 32
+        },
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 17,
+          "miss": 168,
+          "deep": 185,
+          "rows": 185,
+          "rounds": 73,
+          "accepted": 71,
+          "attempts": 85,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 31
+        },
+        {
+          "refresh": 3,
+          "versions": 5,
+          "hits": 15,
+          "miss": 86,
+          "deep": 101,
+          "rows": 101,
+          "rounds": 41,
+          "accepted": 39,
+          "attempts": 45,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 34
+        }
+      ],
+      "refresh": 17,
+      "hits": 46,
+      "miss": 417,
+      "deep": 463,
+      "rows": 463,
+      "rounds": 187,
+      "accepted": 181,
+      "attempts": 207,
+      "tokens": 368,
+      "hit": 0.09935205183585313
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "scenario": "repeat",
+      "mode": "region",
+      "method": "AR",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        4,
+        4,
+        4
+      ],
+      "initial": 2.4874207908887613,
+      "final": 2.4836860266249032,
+      "losses": [
+        2.489961180565279,
+        2.4806738985869097,
+        2.481941167469274,
+        2.4836860266249032
+      ],
+      "paramDelta": 0.08301777077508565,
+      "scopes": [
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 15,
+          "miss": 156,
+          "deep": 171,
+          "rows": 171,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 30
+        },
+        {
+          "refresh": 6,
+          "versions": 9,
+          "hits": 21,
+          "miss": 150,
+          "deep": 171,
+          "rows": 171,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 19
+        },
+        {
+          "refresh": 5,
+          "versions": 5,
+          "hits": 0,
+          "miss": 95,
+          "deep": 95,
+          "rows": 95,
+          "rounds": 80,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 19
+        }
+      ],
+      "refresh": 18,
+      "hits": 36,
+      "miss": 401,
+      "deep": 437,
+      "rows": 437,
+      "rounds": 368,
+      "accepted": 0,
+      "attempts": 0,
+      "tokens": 368,
+      "hit": 0.08237986270022883
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "scenario": "repeat",
+      "mode": "region",
+      "method": "BV",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        4,
+        4,
+        4
+      ],
+      "initial": 2.4874207908887613,
+      "final": 2.4836860266249032,
+      "losses": [
+        2.489961180565279,
+        2.4806738985869097,
+        2.481941167469274,
+        2.4836860266249032
+      ],
+      "paramDelta": 0.08301777077508565,
+      "scopes": [
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 15,
+          "miss": 162,
+          "deep": 177,
+          "rows": 177,
+          "rounds": 73,
+          "accepted": 71,
+          "attempts": 77,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 31
+        },
+        {
+          "refresh": 6,
+          "versions": 9,
+          "hits": 23,
+          "miss": 154,
+          "deep": 177,
+          "rows": 177,
+          "rounds": 72,
+          "accepted": 72,
+          "attempts": 78,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 19
+        },
+        {
+          "refresh": 5,
+          "versions": 5,
+          "hits": 0,
+          "miss": 97,
+          "deep": 97,
+          "rows": 97,
+          "rounds": 40,
+          "accepted": 40,
+          "attempts": 42,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 19
+        }
+      ],
+      "refresh": 18,
+      "hits": 38,
+      "miss": 413,
+      "deep": 451,
+      "rows": 451,
+      "rounds": 185,
+      "accepted": 183,
+      "attempts": 197,
+      "tokens": 368,
+      "hit": 0.08425720620842572
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "scenario": "repeat",
+      "mode": "client",
+      "method": "AR",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        8,
+        8,
+        4
+      ],
+      "initial": 2.4874207908887613,
+      "final": 2.4748655380764535,
+      "losses": [
+        2.4847216645766674,
+        2.473464019843148,
+        2.475318317582941,
+        2.4748655380764535
+      ],
+      "paramDelta": 0.07874045182720615,
+      "scopes": [
+        {
+          "refresh": 9,
+          "versions": 9,
+          "hits": 0,
+          "miss": 171,
+          "deep": 171,
+          "rows": 171,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 19
+        },
+        {
+          "refresh": 9,
+          "versions": 9,
+          "hits": 0,
+          "miss": 171,
+          "deep": 171,
+          "rows": 171,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 19
+        },
+        {
+          "refresh": 5,
+          "versions": 5,
+          "hits": 0,
+          "miss": 95,
+          "deep": 95,
+          "rows": 95,
+          "rounds": 80,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 19
+        }
+      ],
+      "refresh": 23,
+      "hits": 0,
+      "miss": 437,
+      "deep": 437,
+      "rows": 437,
+      "rounds": 368,
+      "accepted": 0,
+      "attempts": 0,
+      "tokens": 368,
+      "hit": 0
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "scenario": "repeat",
+      "mode": "client",
+      "method": "BV",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        8,
+        8,
+        4
+      ],
+      "initial": 2.4874207908887613,
+      "final": 2.4748655380764535,
+      "losses": [
+        2.4847216645766674,
+        2.473464019843148,
+        2.475318317582941,
+        2.4748655380764535
+      ],
+      "paramDelta": 0.07874045182720615,
+      "scopes": [
+        {
+          "refresh": 9,
+          "versions": 9,
+          "hits": 0,
+          "miss": 180,
+          "deep": 180,
+          "rows": 180,
+          "rounds": 72,
+          "accepted": 72,
+          "attempts": 81,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 19
+        },
+        {
+          "refresh": 9,
+          "versions": 9,
+          "hits": 0,
+          "miss": 178,
+          "deep": 178,
+          "rows": 178,
+          "rounds": 72,
+          "accepted": 72,
+          "attempts": 79,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 20
+        },
+        {
+          "refresh": 5,
+          "versions": 5,
+          "hits": 0,
+          "miss": 104,
+          "deep": 104,
+          "rows": 104,
+          "rounds": 41,
+          "accepted": 39,
+          "attempts": 48,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 23
+        }
+      ],
+      "refresh": 23,
+      "hits": 0,
+      "miss": 462,
+      "deep": 462,
+      "rows": 462,
+      "rounds": 185,
+      "accepted": 183,
+      "attempts": 208,
+      "tokens": 368,
+      "hit": 0
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "scenario": "rotate",
+      "mode": "aligned",
+      "method": "AR",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        4,
+        4,
+        2
+      ],
+      "initial": 2.4874207908887613,
+      "final": 2.487834467943944,
+      "losses": [
+        2.4921653698379447,
+        2.4851569961084645,
+        2.486881651703652,
+        2.487834467943944
+      ],
+      "paramDelta": 0.07698527480552192,
+      "scopes": [
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 12,
+          "miss": 169,
+          "deep": 181,
+          "rows": 181,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 34
+        },
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 11,
+          "miss": 170,
+          "deep": 181,
+          "rows": 181,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 34
+        },
+        {
+          "refresh": 3,
+          "versions": 5,
+          "hits": 12,
+          "miss": 89,
+          "deep": 101,
+          "rows": 101,
+          "rounds": 80,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 36
+        }
+      ],
+      "refresh": 17,
+      "hits": 35,
+      "miss": 428,
+      "deep": 463,
+      "rows": 463,
+      "rounds": 368,
+      "accepted": 0,
+      "attempts": 0,
+      "tokens": 368,
+      "hit": 0.0755939524838013
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "scenario": "rotate",
+      "mode": "aligned",
+      "method": "BV",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        4,
+        4,
+        2
+      ],
+      "initial": 2.4874207908887613,
+      "final": 2.487834467943944,
+      "losses": [
+        2.4921653698379447,
+        2.4851569961084645,
+        2.486881651703652,
+        2.487834467943944
+      ],
+      "paramDelta": 0.07698527480552192,
+      "scopes": [
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 11,
+          "miss": 179,
+          "deep": 190,
+          "rows": 190,
+          "rounds": 72,
+          "accepted": 72,
+          "attempts": 81,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 39
+        },
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 12,
+          "miss": 174,
+          "deep": 186,
+          "rows": 186,
+          "rounds": 72,
+          "accepted": 72,
+          "attempts": 77,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 35
+        },
+        {
+          "refresh": 3,
+          "versions": 5,
+          "hits": 11,
+          "miss": 93,
+          "deep": 104,
+          "rows": 104,
+          "rounds": 40,
+          "accepted": 40,
+          "attempts": 43,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 39
+        }
+      ],
+      "refresh": 17,
+      "hits": 34,
+      "miss": 446,
+      "deep": 480,
+      "rows": 480,
+      "rounds": 184,
+      "accepted": 184,
+      "attempts": 201,
+      "tokens": 368,
+      "hit": 0.07083333333333333
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "scenario": "rotate",
+      "mode": "region",
+      "method": "AR",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        4,
+        4,
+        4
+      ],
+      "initial": 2.4874207908887613,
+      "final": 2.4836860266249032,
+      "losses": [
+        2.489961180565279,
+        2.4806738985869097,
+        2.481941167469274,
+        2.4836860266249032
+      ],
+      "paramDelta": 0.08301777077508565,
+      "scopes": [
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 12,
+          "miss": 169,
+          "deep": 181,
+          "rows": 181,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 34
+        },
+        {
+          "refresh": 6,
+          "versions": 9,
+          "hits": 15,
+          "miss": 166,
+          "deep": 181,
+          "rows": 181,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 20
+        },
+        {
+          "refresh": 5,
+          "versions": 5,
+          "hits": 0,
+          "miss": 101,
+          "deep": 101,
+          "rows": 101,
+          "rounds": 80,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 20
+        }
+      ],
+      "refresh": 18,
+      "hits": 27,
+      "miss": 436,
+      "deep": 463,
+      "rows": 463,
+      "rounds": 368,
+      "accepted": 0,
+      "attempts": 0,
+      "tokens": 368,
+      "hit": 0.058315334773218146
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "scenario": "rotate",
+      "mode": "region",
+      "method": "BV",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        4,
+        4,
+        4
+      ],
+      "initial": 2.4874207908887613,
+      "final": 2.4836860266249032,
+      "losses": [
+        2.489961180565279,
+        2.4806738985869097,
+        2.481941167469274,
+        2.4836860266249032
+      ],
+      "paramDelta": 0.08301777077508565,
+      "scopes": [
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 11,
+          "miss": 178,
+          "deep": 189,
+          "rows": 189,
+          "rounds": 72,
+          "accepted": 72,
+          "attempts": 80,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 36
+        },
+        {
+          "refresh": 6,
+          "versions": 9,
+          "hits": 18,
+          "miss": 172,
+          "deep": 190,
+          "rows": 190,
+          "rounds": 72,
+          "accepted": 72,
+          "attempts": 81,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 22
+        },
+        {
+          "refresh": 5,
+          "versions": 5,
+          "hits": 0,
+          "miss": 106,
+          "deep": 106,
+          "rows": 106,
+          "rounds": 41,
+          "accepted": 39,
+          "attempts": 44,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 22
+        }
+      ],
+      "refresh": 18,
+      "hits": 29,
+      "miss": 456,
+      "deep": 485,
+      "rows": 485,
+      "rounds": 185,
+      "accepted": 183,
+      "attempts": 205,
+      "tokens": 368,
+      "hit": 0.05979381443298969
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "scenario": "rotate",
+      "mode": "client",
+      "method": "AR",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        8,
+        8,
+        4
+      ],
+      "initial": 2.4874207908887613,
+      "final": 2.4748655380764535,
+      "losses": [
+        2.4847216645766674,
+        2.473464019843148,
+        2.475318317582941,
+        2.4748655380764535
+      ],
+      "paramDelta": 0.07874045182720615,
+      "scopes": [
+        {
+          "refresh": 9,
+          "versions": 9,
+          "hits": 0,
+          "miss": 181,
+          "deep": 181,
+          "rows": 181,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 20
+        },
+        {
+          "refresh": 9,
+          "versions": 9,
+          "hits": 0,
+          "miss": 181,
+          "deep": 181,
+          "rows": 181,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 20
+        },
+        {
+          "refresh": 5,
+          "versions": 5,
+          "hits": 0,
+          "miss": 101,
+          "deep": 101,
+          "rows": 101,
+          "rounds": 80,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 20
+        }
+      ],
+      "refresh": 23,
+      "hits": 0,
+      "miss": 463,
+      "deep": 463,
+      "rows": 463,
+      "rounds": 368,
+      "accepted": 0,
+      "attempts": 0,
+      "tokens": 368,
+      "hit": 0
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "scenario": "rotate",
+      "mode": "client",
+      "method": "BV",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        8,
+        8,
+        4
+      ],
+      "initial": 2.4874207908887613,
+      "final": 2.4748655380764535,
+      "losses": [
+        2.4847216645766674,
+        2.473464019843148,
+        2.475318317582941,
+        2.4748655380764535
+      ],
+      "paramDelta": 0.07874045182720615,
+      "scopes": [
+        {
+          "refresh": 9,
+          "versions": 9,
+          "hits": 0,
+          "miss": 191,
+          "deep": 191,
+          "rows": 191,
+          "rounds": 72,
+          "accepted": 72,
+          "attempts": 82,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 22
+        },
+        {
+          "refresh": 9,
+          "versions": 9,
+          "hits": 0,
+          "miss": 192,
+          "deep": 192,
+          "rows": 192,
+          "rounds": 72,
+          "accepted": 72,
+          "attempts": 83,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 20
+        },
+        {
+          "refresh": 5,
+          "versions": 5,
+          "hits": 0,
+          "miss": 105,
+          "deep": 105,
+          "rows": 105,
+          "rounds": 41,
+          "accepted": 39,
+          "attempts": 43,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 24
+        }
+      ],
+      "refresh": 23,
+      "hits": 0,
+      "miss": 488,
+      "deep": 488,
+      "rows": 488,
+      "rounds": 185,
+      "accepted": 183,
+      "attempts": 208,
+      "tokens": 368,
+      "hit": 0
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "scenario": "repeat",
+      "mode": "aligned",
+      "method": "AR",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        4,
+        4,
+        2
+      ],
+      "initial": 2.617771581354133,
+      "final": 2.603525873479485,
+      "losses": [
+        2.6078741575699733,
+        2.602345959273821,
+        2.602368905463616,
+        2.603525873479485
+      ],
+      "paramDelta": 0.08796755802070554,
+      "scopes": [
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 20,
+          "miss": 169,
+          "deep": 189,
+          "rows": 189,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 32
+        },
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 20,
+          "miss": 169,
+          "deep": 189,
+          "rows": 189,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 32
+        },
+        {
+          "refresh": 3,
+          "versions": 5,
+          "hits": 18,
+          "miss": 87,
+          "deep": 105,
+          "rows": 105,
+          "rounds": 80,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 33
+        }
+      ],
+      "refresh": 17,
+      "hits": 58,
+      "miss": 425,
+      "deep": 483,
+      "rows": 483,
+      "rounds": 368,
+      "accepted": 0,
+      "attempts": 0,
+      "tokens": 368,
+      "hit": 0.12008281573498965
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "scenario": "repeat",
+      "mode": "aligned",
+      "method": "BV",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        4,
+        4,
+        2
+      ],
+      "initial": 2.617771581354133,
+      "final": 2.603525873479485,
+      "losses": [
+        2.6078741575699733,
+        2.602345959273821,
+        2.602368905463616,
+        2.603525873479485
+      ],
+      "paramDelta": 0.08796755802070554,
+      "scopes": [
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 19,
+          "miss": 181,
+          "deep": 200,
+          "rows": 200,
+          "rounds": 73,
+          "accepted": 71,
+          "attempts": 82,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 35
+        },
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 19,
+          "miss": 181,
+          "deep": 200,
+          "rows": 200,
+          "rounds": 72,
+          "accepted": 72,
+          "attempts": 83,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 34
+        },
+        {
+          "refresh": 3,
+          "versions": 5,
+          "hits": 18,
+          "miss": 93,
+          "deep": 111,
+          "rows": 111,
+          "rounds": 40,
+          "accepted": 40,
+          "attempts": 46,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 38
+        }
+      ],
+      "refresh": 17,
+      "hits": 56,
+      "miss": 455,
+      "deep": 511,
+      "rows": 511,
+      "rounds": 185,
+      "accepted": 183,
+      "attempts": 211,
+      "tokens": 368,
+      "hit": 0.1095890410958904
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "scenario": "repeat",
+      "mode": "region",
+      "method": "AR",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        4,
+        4,
+        4
+      ],
+      "initial": 2.617771581354133,
+      "final": 2.5951803700907226,
+      "losses": [
+        2.605257171441526,
+        2.5974266793510163,
+        2.597066746251333,
+        2.5951803700907226
+      ],
+      "paramDelta": 0.07876496683127049,
+      "scopes": [
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 20,
+          "miss": 169,
+          "deep": 189,
+          "rows": 189,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 32
+        },
+        {
+          "refresh": 6,
+          "versions": 9,
+          "hits": 30,
+          "miss": 159,
+          "deep": 189,
+          "rows": 189,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 21
+        },
+        {
+          "refresh": 5,
+          "versions": 5,
+          "hits": 0,
+          "miss": 105,
+          "deep": 105,
+          "rows": 105,
+          "rounds": 80,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 21
+        }
+      ],
+      "refresh": 18,
+      "hits": 50,
+      "miss": 433,
+      "deep": 483,
+      "rows": 483,
+      "rounds": 368,
+      "accepted": 0,
+      "attempts": 0,
+      "tokens": 368,
+      "hit": 0.10351966873706005
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "scenario": "repeat",
+      "mode": "region",
+      "method": "BV",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        4,
+        4,
+        4
+      ],
+      "initial": 2.617771581354133,
+      "final": 2.5951803700907226,
+      "losses": [
+        2.605257171441526,
+        2.5974266793510163,
+        2.597066746251333,
+        2.5951803700907226
+      ],
+      "paramDelta": 0.07876496683127049,
+      "scopes": [
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 21,
+          "miss": 183,
+          "deep": 204,
+          "rows": 204,
+          "rounds": 73,
+          "accepted": 71,
+          "attempts": 86,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 33
+        },
+        {
+          "refresh": 6,
+          "versions": 9,
+          "hits": 27,
+          "miss": 169,
+          "deep": 196,
+          "rows": 196,
+          "rounds": 72,
+          "accepted": 72,
+          "attempts": 79,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 21
+        },
+        {
+          "refresh": 5,
+          "versions": 5,
+          "hits": 0,
+          "miss": 110,
+          "deep": 110,
+          "rows": 110,
+          "rounds": 40,
+          "accepted": 40,
+          "attempts": 45,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 23
+        }
+      ],
+      "refresh": 18,
+      "hits": 48,
+      "miss": 462,
+      "deep": 510,
+      "rows": 510,
+      "rounds": 185,
+      "accepted": 183,
+      "attempts": 210,
+      "tokens": 368,
+      "hit": 0.09411764705882353
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "scenario": "repeat",
+      "mode": "client",
+      "method": "AR",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        8,
+        8,
+        4
+      ],
+      "initial": 2.617771581354133,
+      "final": 2.5960824743824067,
+      "losses": [
+        2.6066933387741136,
+        2.5996399426142323,
+        2.5974960110619523,
+        2.5960824743824067
+      ],
+      "paramDelta": 0.08319171336577297,
+      "scopes": [
+        {
+          "refresh": 9,
+          "versions": 9,
+          "hits": 0,
+          "miss": 189,
+          "deep": 189,
+          "rows": 189,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 21
+        },
+        {
+          "refresh": 9,
+          "versions": 9,
+          "hits": 0,
+          "miss": 189,
+          "deep": 189,
+          "rows": 189,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 21
+        },
+        {
+          "refresh": 5,
+          "versions": 5,
+          "hits": 0,
+          "miss": 105,
+          "deep": 105,
+          "rows": 105,
+          "rounds": 80,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 21
+        }
+      ],
+      "refresh": 23,
+      "hits": 0,
+      "miss": 483,
+      "deep": 483,
+      "rows": 483,
+      "rounds": 368,
+      "accepted": 0,
+      "attempts": 0,
+      "tokens": 368,
+      "hit": 0
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "scenario": "repeat",
+      "mode": "client",
+      "method": "BV",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        8,
+        8,
+        4
+      ],
+      "initial": 2.617771581354133,
+      "final": 2.5960824743824067,
+      "losses": [
+        2.6066933387741136,
+        2.5996399426142323,
+        2.5974960110619523,
+        2.5960824743824067
+      ],
+      "paramDelta": 0.08319171336577297,
+      "scopes": [
+        {
+          "refresh": 9,
+          "versions": 9,
+          "hits": 0,
+          "miss": 203,
+          "deep": 203,
+          "rows": 203,
+          "rounds": 73,
+          "accepted": 71,
+          "attempts": 85,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 21
+        },
+        {
+          "refresh": 9,
+          "versions": 9,
+          "hits": 0,
+          "miss": 198,
+          "deep": 198,
+          "rows": 198,
+          "rounds": 72,
+          "accepted": 72,
+          "attempts": 81,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 23
+        },
+        {
+          "refresh": 5,
+          "versions": 5,
+          "hits": 0,
+          "miss": 112,
+          "deep": 112,
+          "rows": 112,
+          "rounds": 41,
+          "accepted": 39,
+          "attempts": 46,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 24
+        }
+      ],
+      "refresh": 23,
+      "hits": 0,
+      "miss": 513,
+      "deep": 513,
+      "rows": 513,
+      "rounds": 186,
+      "accepted": 182,
+      "attempts": 212,
+      "tokens": 368,
+      "hit": 0
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "scenario": "rotate",
+      "mode": "aligned",
+      "method": "AR",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        4,
+        4,
+        2
+      ],
+      "initial": 2.617771581354133,
+      "final": 2.603525873479485,
+      "losses": [
+        2.6078741575699733,
+        2.602345959273821,
+        2.602368905463616,
+        2.603525873479485
+      ],
+      "paramDelta": 0.08796755802070554,
+      "scopes": [
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 10,
+          "miss": 174,
+          "deep": 184,
+          "rows": 184,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 36
+        },
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 10,
+          "miss": 174,
+          "deep": 184,
+          "rows": 184,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 36
+        },
+        {
+          "refresh": 3,
+          "versions": 5,
+          "hits": 10,
+          "miss": 92,
+          "deep": 102,
+          "rows": 102,
+          "rounds": 80,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 35
+        }
+      ],
+      "refresh": 17,
+      "hits": 30,
+      "miss": 440,
+      "deep": 470,
+      "rows": 470,
+      "rounds": 368,
+      "accepted": 0,
+      "attempts": 0,
+      "tokens": 368,
+      "hit": 0.06382978723404255
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "scenario": "rotate",
+      "mode": "aligned",
+      "method": "BV",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        4,
+        4,
+        2
+      ],
+      "initial": 2.617771581354133,
+      "final": 2.603525873479485,
+      "losses": [
+        2.6078741575699733,
+        2.602345959273821,
+        2.602368905463616,
+        2.603525873479485
+      ],
+      "paramDelta": 0.08796755802070554,
+      "scopes": [
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 10,
+          "miss": 186,
+          "deep": 196,
+          "rows": 196,
+          "rounds": 74,
+          "accepted": 70,
+          "attempts": 82,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 36
+        },
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 10,
+          "miss": 184,
+          "deep": 194,
+          "rows": 194,
+          "rounds": 72,
+          "accepted": 72,
+          "attempts": 82,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 36
+        },
+        {
+          "refresh": 3,
+          "versions": 5,
+          "hits": 10,
+          "miss": 96,
+          "deep": 106,
+          "rows": 106,
+          "rounds": 40,
+          "accepted": 40,
+          "attempts": 44,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 37
+        }
+      ],
+      "refresh": 17,
+      "hits": 30,
+      "miss": 466,
+      "deep": 496,
+      "rows": 496,
+      "rounds": 186,
+      "accepted": 182,
+      "attempts": 208,
+      "tokens": 368,
+      "hit": 0.06048387096774194
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "scenario": "rotate",
+      "mode": "region",
+      "method": "AR",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        4,
+        4,
+        4
+      ],
+      "initial": 2.617771581354133,
+      "final": 2.5951803700907226,
+      "losses": [
+        2.605257171441526,
+        2.5974266793510163,
+        2.597066746251333,
+        2.5951803700907226
+      ],
+      "paramDelta": 0.07876496683127049,
+      "scopes": [
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 10,
+          "miss": 174,
+          "deep": 184,
+          "rows": 184,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 36
+        },
+        {
+          "refresh": 6,
+          "versions": 9,
+          "hits": 16,
+          "miss": 168,
+          "deep": 184,
+          "rows": 184,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 21
+        },
+        {
+          "refresh": 5,
+          "versions": 5,
+          "hits": 0,
+          "miss": 102,
+          "deep": 102,
+          "rows": 102,
+          "rounds": 80,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 20
+        }
+      ],
+      "refresh": 18,
+      "hits": 26,
+      "miss": 444,
+      "deep": 470,
+      "rows": 470,
+      "rounds": 368,
+      "accepted": 0,
+      "attempts": 0,
+      "tokens": 368,
+      "hit": 0.05531914893617021
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "scenario": "rotate",
+      "mode": "region",
+      "method": "BV",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        4,
+        4,
+        4
+      ],
+      "initial": 2.617771581354133,
+      "final": 2.5951803700907226,
+      "losses": [
+        2.605257171441526,
+        2.5974266793510163,
+        2.597066746251333,
+        2.5951803700907226
+      ],
+      "paramDelta": 0.07876496683127049,
+      "scopes": [
+        {
+          "refresh": 7,
+          "versions": 9,
+          "hits": 11,
+          "miss": 187,
+          "deep": 198,
+          "rows": 198,
+          "rounds": 74,
+          "accepted": 70,
+          "attempts": 84,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 39
+        },
+        {
+          "refresh": 6,
+          "versions": 9,
+          "hits": 16,
+          "miss": 183,
+          "deep": 199,
+          "rows": 199,
+          "rounds": 72,
+          "accepted": 72,
+          "attempts": 87,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 22
+        },
+        {
+          "refresh": 5,
+          "versions": 5,
+          "hits": 0,
+          "miss": 104,
+          "deep": 104,
+          "rows": 104,
+          "rounds": 40,
+          "accepted": 40,
+          "attempts": 42,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 20
+        }
+      ],
+      "refresh": 18,
+      "hits": 27,
+      "miss": 474,
+      "deep": 501,
+      "rows": 501,
+      "rounds": 186,
+      "accepted": 182,
+      "attempts": 213,
+      "tokens": 368,
+      "hit": 0.05389221556886228
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "scenario": "rotate",
+      "mode": "client",
+      "method": "AR",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        8,
+        8,
+        4
+      ],
+      "initial": 2.617771581354133,
+      "final": 2.5960824743824067,
+      "losses": [
+        2.6066933387741136,
+        2.5996399426142323,
+        2.5974960110619523,
+        2.5960824743824067
+      ],
+      "paramDelta": 0.08319171336577297,
+      "scopes": [
+        {
+          "refresh": 9,
+          "versions": 9,
+          "hits": 0,
+          "miss": 184,
+          "deep": 184,
+          "rows": 184,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 21
+        },
+        {
+          "refresh": 9,
+          "versions": 9,
+          "hits": 0,
+          "miss": 184,
+          "deep": 184,
+          "rows": 184,
+          "rounds": 144,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 21
+        },
+        {
+          "refresh": 5,
+          "versions": 5,
+          "hits": 0,
+          "miss": 102,
+          "deep": 102,
+          "rows": 102,
+          "rounds": 80,
+          "accepted": 0,
+          "attempts": 0,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 20
+        }
+      ],
+      "refresh": 23,
+      "hits": 0,
+      "miss": 470,
+      "deep": 470,
+      "rows": 470,
+      "rounds": 368,
+      "accepted": 0,
+      "attempts": 0,
+      "tokens": 368,
+      "hit": 0
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "scenario": "rotate",
+      "mode": "client",
+      "method": "BV",
+      "active": [
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "changes": [
+        8,
+        8,
+        4
+      ],
+      "initial": 2.617771581354133,
+      "final": 2.5960824743824067,
+      "losses": [
+        2.6066933387741136,
+        2.5996399426142323,
+        2.5974960110619523,
+        2.5960824743824067
+      ],
+      "paramDelta": 0.08319171336577297,
+      "scopes": [
+        {
+          "refresh": 9,
+          "versions": 9,
+          "hits": 0,
+          "miss": 196,
+          "deep": 196,
+          "rows": 196,
+          "rounds": 73,
+          "accepted": 71,
+          "attempts": 83,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 23
+        },
+        {
+          "refresh": 9,
+          "versions": 9,
+          "hits": 0,
+          "miss": 201,
+          "deep": 201,
+          "rows": 201,
+          "rounds": 72,
+          "accepted": 72,
+          "attempts": 89,
+          "tokens": 144,
+          "drift": 0,
+          "cacheEntries": 24
+        },
+        {
+          "refresh": 5,
+          "versions": 5,
+          "hits": 0,
+          "miss": 112,
+          "deep": 112,
+          "rows": 112,
+          "rounds": 42,
+          "accepted": 38,
+          "attempts": 48,
+          "tokens": 80,
+          "drift": 0,
+          "cacheEntries": 28
+        }
+      ],
+      "refresh": 23,
+      "hits": 0,
+      "miss": 509,
+      "deep": 509,
+      "rows": 509,
+      "rounds": 187,
+      "accepted": 181,
+      "attempts": 220,
+      "tokens": 368,
+      "hit": 0
+    }
+  ],
+  "summary": [
+    {
+      "scenario": "repeat",
+      "mode": "aligned",
+      "method": "AR",
+      "n": 6,
+      "initial": 2.6923810996984336,
+      "final": 2.696438588380405,
+      "paramDelta": 0.0888623025104195,
+      "refresh": 17,
+      "hits": 52.5,
+      "miss": 415.1666666666667,
+      "deep": 467.6666666666667,
+      "rows": 467.6666666666667,
+      "rounds": 368,
+      "accepted": 0,
+      "attempts": 0,
+      "tokens": 368,
+      "hit": 0.11192837165377212,
+      "changes": [
+        4,
+        4,
+        2
+      ]
+    },
+    {
+      "scenario": "repeat",
+      "mode": "aligned",
+      "method": "BV",
+      "n": 6,
+      "initial": 2.6923810996984336,
+      "final": 2.696438588380405,
+      "paramDelta": 0.0888623025104195,
+      "refresh": 17,
+      "hits": 53.833333333333336,
+      "miss": 443.8333333333333,
+      "deep": 497.6666666666667,
+      "rows": 497.6666666666667,
+      "rounds": 185.83333333333334,
+      "accepted": 182.16666666666666,
+      "attempts": 212.16666666666666,
+      "tokens": 368,
+      "hit": 0.10791313772977519,
+      "changes": [
+        4,
+        4,
+        2
+      ]
+    },
+    {
+      "scenario": "repeat",
+      "mode": "region",
+      "method": "AR",
+      "n": 6,
+      "initial": 2.6923810996984336,
+      "final": 2.688828613255335,
+      "paramDelta": 0.0846516164790843,
+      "refresh": 18,
+      "hits": 44,
+      "miss": 423.6666666666667,
+      "deep": 467.6666666666667,
+      "rows": 467.6666666666667,
+      "rounds": 368,
+      "accepted": 0,
+      "attempts": 0,
+      "tokens": 368,
+      "hit": 0.09371254222512804,
+      "changes": [
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "scenario": "repeat",
+      "mode": "region",
+      "method": "BV",
+      "n": 6,
+      "initial": 2.6923810996984336,
+      "final": 2.688828613255335,
+      "paramDelta": 0.0846516164790843,
+      "refresh": 18,
+      "hits": 44.5,
+      "miss": 450.6666666666667,
+      "deep": 495.1666666666667,
+      "rows": 495.1666666666667,
+      "rounds": 185.83333333333334,
+      "accepted": 182.16666666666666,
+      "attempts": 209.66666666666666,
+      "tokens": 368,
+      "hit": 0.08967645702302592,
+      "changes": [
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "scenario": "repeat",
+      "mode": "client",
+      "method": "AR",
+      "n": 6,
+      "initial": 2.6923810996984336,
+      "final": 2.688354529314907,
+      "paramDelta": 0.08020292607064332,
+      "refresh": 23,
+      "hits": 0,
+      "miss": 467.6666666666667,
+      "deep": 467.6666666666667,
+      "rows": 467.6666666666667,
+      "rounds": 368,
+      "accepted": 0,
+      "attempts": 0,
+      "tokens": 368,
+      "hit": 0,
+      "changes": [
+        8,
+        8,
+        4
+      ]
+    },
+    {
+      "scenario": "repeat",
+      "mode": "client",
+      "method": "BV",
+      "n": 6,
+      "initial": 2.6923810996984336,
+      "final": 2.688354529314907,
+      "paramDelta": 0.08020292607064332,
+      "refresh": 23,
+      "hits": 0,
+      "miss": 497.6666666666667,
+      "deep": 497.6666666666667,
+      "rows": 497.6666666666667,
+      "rounds": 186,
+      "accepted": 182,
+      "attempts": 212,
+      "tokens": 368,
+      "hit": 0,
+      "changes": [
+        8,
+        8,
+        4
+      ]
+    },
+    {
+      "scenario": "rotate",
+      "mode": "aligned",
+      "method": "AR",
+      "n": 6,
+      "initial": 2.6923810996984336,
+      "final": 2.696438588380405,
+      "paramDelta": 0.0888623025104195,
+      "refresh": 17,
+      "hits": 32.333333333333336,
+      "miss": 436.8333333333333,
+      "deep": 469.1666666666667,
+      "rows": 469.1666666666667,
+      "rounds": 368,
+      "accepted": 0,
+      "attempts": 0,
+      "tokens": 368,
+      "hit": 0.06896276193066646,
+      "changes": [
+        4,
+        4,
+        2
+      ]
+    },
+    {
+      "scenario": "rotate",
+      "mode": "aligned",
+      "method": "BV",
+      "n": 6,
+      "initial": 2.6923810996984336,
+      "final": 2.696438588380405,
+      "paramDelta": 0.0888623025104195,
+      "refresh": 17,
+      "hits": 32,
+      "miss": 462,
+      "deep": 494,
+      "rows": 494,
+      "rounds": 185.33333333333334,
+      "accepted": 182.66666666666666,
+      "attempts": 207.33333333333334,
+      "tokens": 368,
+      "hit": 0.06485459022353547,
+      "changes": [
+        4,
+        4,
+        2
+      ]
+    },
+    {
+      "scenario": "rotate",
+      "mode": "region",
+      "method": "AR",
+      "n": 6,
+      "initial": 2.6923810996984336,
+      "final": 2.688828613255335,
+      "paramDelta": 0.0846516164790843,
+      "refresh": 18,
+      "hits": 26.833333333333332,
+      "miss": 442.3333333333333,
+      "deep": 469.1666666666667,
+      "rows": 469.1666666666667,
+      "rounds": 368,
+      "accepted": 0,
+      "attempts": 0,
+      "tokens": 368,
+      "hit": 0.05720101455203073,
+      "changes": [
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "scenario": "rotate",
+      "mode": "region",
+      "method": "BV",
+      "n": 6,
+      "initial": 2.6923810996984336,
+      "final": 2.688828613255335,
+      "paramDelta": 0.0846516164790843,
+      "refresh": 18,
+      "hits": 27.833333333333332,
+      "miss": 467.5,
+      "deep": 495.3333333333333,
+      "rows": 495.3333333333333,
+      "rounds": 185,
+      "accepted": 183,
+      "attempts": 209,
+      "tokens": 368,
+      "hit": 0.056228705575514765,
+      "changes": [
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "scenario": "rotate",
+      "mode": "client",
+      "method": "AR",
+      "n": 6,
+      "initial": 2.6923810996984336,
+      "final": 2.688354529314907,
+      "paramDelta": 0.08020292607064332,
+      "refresh": 23,
+      "hits": 0,
+      "miss": 469.1666666666667,
+      "deep": 469.1666666666667,
+      "rows": 469.1666666666667,
+      "rounds": 368,
+      "accepted": 0,
+      "attempts": 0,
+      "tokens": 368,
+      "hit": 0,
+      "changes": [
+        8,
+        8,
+        4
+      ]
+    },
+    {
+      "scenario": "rotate",
+      "mode": "client",
+      "method": "BV",
+      "n": 6,
+      "initial": 2.6923810996984336,
+      "final": 2.688354529314907,
+      "paramDelta": 0.08020292607064332,
+      "refresh": 23,
+      "hits": 0,
+      "miss": 501.5,
+      "deep": 501.5,
+      "rows": 501.5,
+      "rounds": 185.5,
+      "accepted": 182.5,
+      "attempts": 214.66666666666666,
+      "tokens": 368,
+      "hit": 0,
+      "changes": [
+        8,
+        8,
+        4
+      ]
+    }
+  ],
+  "training": 1152,
+  "trajectories": 6624,
+  "tokens": 26496,
+  "forwardCalls": 56927,
+  "backCalls": 12216,
+  "maxPQ": 0
+}

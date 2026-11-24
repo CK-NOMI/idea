@@ -3864,3 +3864,12 @@ H未执行：只有真实训练部署确实将同一合法GRPO组跨区域分配
 - E：实际49152B计数payload预算在线裁剪重放，288区域更新、29274 feature/22956 VJP，原summary endNLL/paramDelta/reward/rounds差0。共享frontier持久48694 vs123190.67、块内95747.33 vs135067.33、额外replay10.64583；私有48388.67 vs149104.67、块内115925.33 vs159487.33、replay14.625。仅数值负载代理非RSS/显存/实际时间；块内可超cap，含重复KV数值计数。无物理HFL/GPU/CI、真实任务/同质量。
 - 实查PrefixFlow/Tree Training/SRT/System-Integrated SD/LayerSkip/ReSpec/JAX remat。**Reject独立立项，保留精确重放实现和完整参数学习证据**；G1/G2/G4未过，G3/G7部分，G5/G6未验，历史完整8.14不变，无80%证据。P0真实双尺度LayerSkip关键路径、AR/BV同tape及PrefixFlow/同委托flat强基线；1–2×40GB三nonIID/时延/独立seed同质量−15%/工作+20%与CI未执行。
 - [报告](experiments/team-far/R76/record.md) · [修正代码](experiments/team-far/R76/probe.js) · [结果](experiments/team-far/R76/results.json) · [在线容量代码](experiments/team-far/R76/capped.js) · [结果](experiments/team-far/R76/capped_results.json) · [失败代码](experiments/team-far/R76/failed.js) · [失败结果](experiments/team-far/R76/failed_results.json)
+
+
+### team-far/R77｜分层版本更新与浅层计算资产：周期对齐、延迟提交及跨版本缓存审计
+- 2026-11-25；起始 main 2c7abb93fbe1a204f00dad40dd883967054c5651、README 41dc8655c9717f5972bd76b6602179b7387c3c32；写前 main 2c7abb93fbe1a204f00dad40dd883967054c5651、README 41dc8655c9717f5972bd76b6602179b7387c3c32。完整获取并结构筛查，复查A/R03/FIV/FIC/FVP/FERV/FCRR/R45/R54/R76等，未穷尽复跑。
+- T：浅层embedding/位置/首层与深层/共享W分块；仅深层更新时旧浅层KV/feature精确可复用，须重新计算当前q/p，不复用历史随机样本。固定更新频次潜在失效事件并集最小max m_c（同日历嵌套），跨云rebase可额外失效。浅层阶段各边缘两周期累积到云提交，深层固定；与正常局部更新差≤η²Σ_e L_e||g_e1||/2，非同优化器。FedPart/经典梯度累积/AR同缓存近邻，同委托flat可复制。
+- E1：两同7264参数microGPT全VJP、4逻辑client/2edge/4cloud×2cycle、3划分seed、首字母nonIID、36fit/1152梯度更新/6624轨迹/26496token；重复BV aligned/region/client浅层跨版本命中.107913/.089676/0，NLL2.696439/2.688829/2.688355（初始2.692381），p/q fresh审计误差0。
+- E2：60fit/1920梯度事件（含延迟累积）/11040轨迹/44160token；重复BV reverse→reverseDeferred命中.142092→.304481、浅层miss427.5→347.3333、深层498.5→499.8333、两层总行926→847.1667（−8.51%代理），轮187.3333→187.5；轮换命中.083468→.174267，NLL2.686944→2.686749；正序延迟NLL略差；AR重复命中.151357→.316570，非SD独有。max p/q误差0。固定长度26字母，监督CE训练非SD反馈，非同质量/真实时间/GPU/物理HFL/CI。两组含重叠训练，三seed仅划分。
+- 实查FedPart/FedRolex/CacheReforge/DroidSpeak/DeepSeek跨版本KV/LayerSkip/FedBUS。**Reject standalone；保留版本不变性、并集界与延迟误差界及实际结果**；G1/G2/G4未过、G3/G7部分、G5/G6未验，历史完整8.14不变，无80%证据。停止重命名部分更新/缓存；P0真实LayerSkip双尺度同质量关键路径，FedPart+BV/AR同缓存/同委托flat，1–2×40GB三nonIID/时延/独立seed总时间−15%或工作+20%及CI未执行。
+- [报告](experiments/team-far/R77/record.md) · [训练代码](experiments/team-far/R77/schedule.js) · [结果](experiments/team-far/R77/results.json) · [延迟更新](experiments/team-far/R77/deferred.js) · [结果](experiments/team-far/R77/deferred_results.json) · [配对审计](experiments/team-far/R77/paired.json)
