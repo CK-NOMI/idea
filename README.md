@@ -1472,3 +1472,99 @@ Client-edge-cloud 常规参数 HFL 学习一个共享自回归模型 p_theta，�
 B0 普通 HFL AR+完整精确交集，B1 同样缓存证书 AR（最关键，证书通信完全匹配），B2 普通 HFL+内生头 SD+精确交集/预编译，B3 同信息同委托平坦 AR/SD，B4 DOMINO/现有 grammar SD 在同约束可访问时的强实现，B5 共享精确约束 product 编译（在权限允许时），B6 惰性位图交集/压缩/批量请求。质量与目标相同，近似方案另列。若未来有新机制，1–2×40GB NVIDIA 上 Qwen2.5 1.5B/3B LoRA、2–4 边缘8–16逻辑客户端、公共工作流或结构化代码真实任务、三异质性/延迟/种子；测合法率、质量、接受长度、TPOT、TTFT、P95、吞吐、字节/RTT、GPU time、证书维护成本、总训练推理 wall time 与 CI。未执行。好结果按仓库 G5：真实总时间降≥15%或等预算有效工作增≥20%，且同目标精确、质量匹配、双向因果及同信息平坦强基线优势。无80%把握的依据。
 主观创新评分（等权、非同行评审）：问题7、机制5.5、理论6、价值6.5、与既有距离5.5，合计6.1/10。G1 FAIL；G2 FAIL/CRITICAL（AR 与平坦替代，HFL 训练只提供模型）；G3 局部实数定理成立，完整实现/top-p/有限精度未验证，整体未通过；G4 FAIL（仅合成）；G5 FAIL（无真实时间）；G6 未验证；G7 局部脚本可复算、完整机制未过。
 **Reject and Pivot。** 保留量词顺序反例、目标定义区分、正证书与否定证据不对称、缓存代理成本式及真实执行的合成结果。不要再以普通共同证书缓存、分布式 AND 或标准语法 SD 作为 HFL 双向创新。下一轮优先从共享模型学习本身的可执行计算对象出发，寻找一种正式训练目标或更新过程必然产生的 SD 可复用结构，并先构造普通 AR/同信息平坦不可匹配的因果假设；若不能成立，在 CPU 阶段停止。先读最新全库，再研究，失败也追加。
+
+
+### HIERASPEC/R02｜PFSC：公开草稿和私有目标的条件隐私约束耦合
+
+- 日期2026-11-24；研究起始 main commit 337195f58d2c286d5ce421d1f103183d3ef071fa、README blob 54306a1d276251d11389a5944af2f9364d004e11；全文1039行、递归树仅README，代码内嵌。对照PRE、A/R01–13及全部R01。提交前读并发HiMerge/R02、HieraCert/R02、HCR/R02、A/R14，读取A/R14实验脚本及结果摘要。前两队固定p、私有q；后两队固定公开q、私有p但隐藏未提交X，本轮额外公开X，故其仅对(Y,A)的闭式不可直接用。本轮相邻但有不同约束，不能把同轮多个隐私边界当独立顶刊创新。
+- 裁决 **CRITICAL / Reject and Pivot**，保留数学边界。T=限定推导，实际CPU LP为合成O/P证据，非真实加速；H=假说。无真实预训练LLM、HFL训练、GPU、网络或wall time。
+
+#### 1. 场景、问题、数学结果
+
+客户端非IID数据经HFL学习公共主干/内部候选头，区域保留私有目标适配器。固定公开前缀h、快照和q，秘密e为同一授权边缘服务可能的适配器状态（非已公开路由ID），目标p_e全支持且非混合。观察者见X、真实复用A、正式Y，不见私有随机数/logits。不保护训练消息/真实时序等额外通道，不宣称训练数据DP；若q受秘密影响须另外保护或条件固定。
+Γ_e(x,y)≥0，行边际q、列边际p_e；A=1 iff X=Y（相同token可复用），给定Y后A由X决定。对所有e,f,x,y要求 Γ_e(x,y)/p_e(y)≤exp(ε)Γ_f(x,y)/p_f(y)，最大化Σ_e w_eΣ_xΓ_e(x,x)。固定p,q为LP，E V²变量、O(E²V²)约束；须全知私有分布，仅oracle。给定X从Γ_e(X,·)/q(X)采样保持边际。若Y本身对相同邻接满足ε_out-DP，联合(Y,X,A)满足(ε_out+ε)-DP；未证明ε_out，不等于用户级DP。
+
+T1：标准最大耦合若p_e(x)≥q(x)>p_f(x)，事件X=x,A=0在e为零、f为正，有限ε条件隐私不成立。二元p+=(.51,.49),p-=(.49,.51),q=(.5,.5)，标准接受.99，输出最大概率比仅.51/.49≈1.040816；公开拒绝支持不同。
+T2（秩障碍）：ε=0时K(x|y)=Γ_e(x,y)/p_e(y)对e共同。行边际给出Σ_y(p_e(y)−p_1(y))K(x|y)=0。若差向量张成V−1维零和空间，K(x|·)只能常数，由边际该常数=q(x)，唯一Γ_e=q⊗p_e，最优接受Σ_e w_e p_e·q。独立target-first匹配达界。二元例.5；任意小满秩扰动仍成立，完全相同分布则普通最大耦合可达。E≪V一般不满秩，不能外推真实LLM。线性代数非全新隐私原理。
+T3（低秩构造）：p_e(v)=a_e(g(v))r_g(v)，q(v)=b(g(v))r_g(v)，组内r_g严格共享。给定X独立采样G~a_e，若G=g(X)提交X，否则Y~r_G。边际Y精确；给定Y=y，X以b(g(y))概率等于y，其余组h按b(h)r_h(x)，与e无关。ε=0，接受Σ_g a_e(g)b(g)。p1=(.4,.4,.2),p2=(.3,.3,.4),q=(.35,.35,.3)，{A,B}/{C}组接受.62/.54，均值.58；独立.335，无约束.9，LP确认.58最优。共享组内比例必须严格成立，近似低秩参数不保证；普通分层AR也可用因子分解。若改变目标架构，精确仅针对新目标，需测质量。
+真实条件核、因果草稿和固定目标可逐位置归纳序列边际；真实块预采样、未提交后缀、EOS、bonus、greedy、top-p、浮点、物理计时及完整trace未审计；单步ε不等于请求级ε（基本组合Σ ε_t）。若完整可见依赖是DP发布模型的后处理，训练DP预算不另耗；与本轮输出条件要求不同。
+
+#### 2. 实际CPU实验（O/P）
+
+Python3.13.5 NumPy2.3.5 SciPy1.17.0，HiGHS；两个固定例及5词5模型合成Dirichlet(1)，p=(1−δ)q+δ随机分布，均匀q，种子20261124/25/26。无wall time、真实数据或正式CI。固定例最大边际误差1.67e−16、约束违反2.78e−17，非严格浮点隐私证明。以下实际执行代码的等价版本，复制为pfsc_probe.py，运行python pfsc_probe.py，依赖上述版本：
+
+~~~python
+import numpy as np, scipy, scipy.optimize as so, sys
+def solve(p,q,eps):
+    E,V=p.shape
+    eq=[];rhs=[]
+    for e in range(E):
+        for x in range(V):
+            a=np.zeros((E,V,V));a[e,x,:]=1;eq.append(a.ravel());rhs.append(q[x])
+        for y in range(V):
+            a=np.zeros((E,V,V));a[e,:,y]=1;eq.append(a.ravel());rhs.append(p[e,y])
+    ub=[]
+    for e in range(E):
+        for f in range(E):
+            if e==f:continue
+            for x in range(V):
+                for y in range(V):
+                    a=np.zeros((E,V,V));a[e,x,y]=p[f,y];a[f,x,y]=-np.exp(eps)*p[e,y];ub.append(a.ravel())
+    c=np.broadcast_to(-np.eye(V)/E,(E,V,V)).copy()
+    r=so.linprog(c.ravel(),A_ub=ub,b_ub=np.zeros(len(ub)),A_eq=eq,b_eq=rhs,bounds=(0,None),method="highs")
+    assert r.success,r.message
+    g=r.x.reshape(E,V,V)
+    return -r.fun,max(np.max(abs(g.sum(1)-p)),np.max(abs(g.sum(2)-q))),max(0,np.max(np.asarray(ub)@r.x))
+print(sys.version.split()[0],np.__version__,scipy.__version__)
+eps=[0,.01,.05,.1,.25,.5,1]
+for p,q in [(np.array([[.51,.49],[.49,.51]]),np.array([.5,.5])),(np.array([[.4,.4,.2],[.3,.3,.4]]),np.array([.35,.35,.3]))]:
+    print("ind",np.mean(p@q),"max",np.minimum(p,q).sum(1).mean(),"rank",np.linalg.matrix_rank(p[1:]-p[0]))
+    print([(e,*solve(p,q,e)) for e in eps])
+for delta in [.01,.1,.3]:
+    vals=[]
+    for seed in [20261124,20261125,20261126]:
+        rng=np.random.default_rng(seed);V=5;q=np.full(V,1/V)
+        p=(1-delta)*q+delta*rng.dirichlet(np.ones(V),size=V)
+        vals.append([np.mean(p@q),np.minimum(p,q).sum(1).mean()]+[solve(p,q,e)[0] for e in [0,.01,.1,.5,1]])
+    print(delta,np.round(np.mean(vals,axis=0),6),"range",np.round(np.min(vals,axis=0),6),np.round(np.max(vals,axis=0),6))
+~~~
+
+实际LP最优平均接受率：
+|ε|二词|三词|
+|---:|---:|---:|
+|0|.500000|.580000|
+|.01|.599959|.585994|
+|.05|.777641|.609862|
+|.1|.856915|.639500|
+|.25|.930553|.715106|
+|.5|.962068|.780044|
+|1|.979066|.840864|
+|无约束|.990000|.900000|
+
+5词5模型三种子均值（独立/无约束/ε=0/.01/.1/.5/1）：
+- δ=.01: .200000/.996922/.200000/.626905/.918078/.982585/.991550。
+- δ=.1: .200000/.969225/.200000/.302723/.627539/.865537/.926435。
+- δ=.3: .200000/.907674/.200000/.237895/.443313/.717220/.820306。
+这些是LP代理接受率，不是采样频率、真实模型接受长度或加速。
+
+#### 3. 原始文献（2026-11-24）
+
+检索 speculative decoding privacy leakage acceptance timing; privacy-aware rejection sampling; output-conditioned timing privacy; perfect privacy null space; private GPT speculative verification; federated personalization differential privacy; conditional optimal transport。实际打开原始页面/摘要及部分正文，未穷尽附录。
+- [Privacy Risks of Speculative Decoding in Large Language Models](https://arxiv.org/abs/2411.01076) 2024-11：接受模式泄漏、聚合/填充。
+- [Privacy-Aware Rejection Sampling](https://www.jmlr.org/papers/v24/21-0870.html) 2023：拒绝计时泄漏、数据无关时间采样。
+- [A Framework for Differential Privacy Against Timing Attacks](https://arxiv.org/abs/2409.05623) 2024-09：明确输出条件timing privacy；本轮借用定义思想，额外固定边际对角耦合。
+- [An Efficient Private GPT Never Autoregressively Decodes](https://proceedings.mlr.press/v267/li25q.html) ICML2025：公开起草+私有安全验证、蒸馏；密码学强基线。
+- [On Perfect Privacy](https://arxiv.org/abs/1712.08500) 2017预印/2021修订：披露核、完美隐私效用及零空间近邻。
+- [SpecTr](https://arxiv.org/abs/2310.15141) 2023：SD最优传输；新增跨秘密条件约束但未证明原创性。
+- [Personalization Improves Privacy-Accuracy Tradeoffs in Federated Learning](https://proceedings.mlr.press/v162/bietti22a) ICML2022：局部/全局个性化隐私。
+- [Privacy-Aware Split Inference with Speculative Decoding for Large Language Models over Wide-Area Networks](https://arxiv.org/abs/2602.16760) 2026-02：隐私切分和lookahead。
+盲区：近期安全SD、Pufferfish、密码学oblivious verification、OT隐私约束、未公开未索引工作；无商业文字查重。不能以改写解决内容重复。A/R14及HCR/R02均有隐藏X的条件接受闭式和oracle q优化，本轮全公开X导致更强约束；两者不得直接比较接受率。
+
+#### 4. 成本、强基线、验收
+
+CRITICAL：满秩零额外泄露普通独立target-first达界；低秩分组被普通分层AR及同信息平坦学习替代，无SD反向学习贡献。E=4,V=128000时LP变量65,536,000,000，不可部署。可信边缘若能隐藏X/A并固定可见时序，普通SD保留内部接受率，需公平计缓冲、填充、排队及安全通信。公共q获取、组内严格共享的个性化质量代价、跨位置隐私预算未解决。四候选且恒定独立α=.5时理想提交1.9375，α=.99时4.900995，仅代理。
+H（未执行）：若新证据改变前提，在1–2×40GB、Qwen2.5-1.5B/3B、8逻辑客户端2区域、公共内生头/私有LoRA、GSM8K/MBPP/公开文本三域三种子三非IID或RTT设置，测真实概率差谱、组内比例偏差及输出条件trace，比较HFL AR、独立匹配、普通HFL+Medusa/LayerSkip、固定节拍/缓冲、同目标分层AR、安全验证及同信息平坦。计任务质量、全部训练推理时间、字节/RPC、接受长度、P95、隐私会计、CI；单卡逻辑模拟不称并行。若普通基线可替代立即否决。
+主观评分：问题7.5×25%、机制6×25%、理论7×20%、价值7×15%、距离5×15%=6.575≈6.6/10；并发近邻使风险更高，不上调。好结果须同目标/威胁模型/质量/隐私预算下总真实wall time降≥15%或同成本有效工作增≥20%，其余G门槛不降低；无80%把握依据。G1 FAIL；G2 CRITICAL FAIL；G3 PARTIAL/FAIL（单步T，greedy/完整多步/精度未验）；G4 FAIL（CPU合成）；G5 FAIL（无真实总时间）；G6 FAIL（未知80%）；G7 PARTIAL/FAIL（内联脚本和数值可复算，完整系统未复现）。
+**Reject and Pivot。** 保留固定边际条件隐私LP、支持反例、满秩零泄露障碍、共享组构造及强基线。下一轮从真正HFL学习对象和可执行规则出发，先证普通AR、同信息平坦、本地执行不可替代；用真实小模型或trace证实问题再投入训练。禁止以隐私模块换名重启。本轮追加使用最新blob保护并发，不覆盖原文。
+
+- 实际写入前 README blob：db2f19d6f3a13d5d63c1501be8fd0d8a06df66f2；保留原文全部内容。
