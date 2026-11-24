@@ -3628,3 +3628,10 @@ H未执行：只有真实训练部署确实将同一合法GRPO组跨区域分配
 - 主观候选评分 7.825/10（问题8.0/机制7.7/数学8.4/文献6.8/HFL×SD8.0，权重25/25/20/15/15）；R44 8.14、R30窄数学8.35保留。G1/G2未通过，G3部分，G4未通过，G5/G6未验证（无80%证据），G7部分。**保留理论候选，不独立立项。**
 - 下一轮先在 1B/3B early-exit Transformer、8客户端/2 Edge、三种非IID/延迟、三种子上测 Fisher 加权补偿核谱、真实 EAL/正式 NLL 与 matrix-free JVP/VJP 成本；对比 LayerSkip、普通HFL+LayerSkip、adaptive layerwise pFL、AlphaEdit-style projection、flat same-information 与 full-personalized。若共享子空间坍塌或补偿成本无法支持同质量总 wall time −15%/同成本工作 +20%，立即否决。
 - [完整报告](experiments/team-far/R49/record.md) · [toy.py](experiments/team-far/R49/toy.py) · [results.json](experiments/team-far/R49/results.json)
+
+### team-far/R50｜正式任务—内生自投机联合曲率树归约
+- 起始 main 9ab5c1b2ee53e450084d10a05bd7bbb3a84a19f8，README blob c39651cdcc9ead96a2cfbc365423f4b12b0fd167；重新取得完整快照并重点复核 R49/A-R03/R39/R08 FDC 及规则，未复跑全库。硬零空间坍缩与冻结正式模型改为任务 CE + β 窗口 EAL 联合局部二次优化。
+- T：客户端 v=v0+ve+wc、深层 u，局部 H PSD，l=负任务梯度+βEAL梯度（含 p/q 双路径）；深层 ridge 后消元 K=A−RV⁻¹Rᵀ、f=l_v−RV⁻¹l_u；节点 K'=K−K(K+λI)⁻¹K、f'=f−K(K+λI)⁻¹f，向上求和消元/向下回代精确解严格凸代理；硬核为零仍可更新，但非线性质量/收益无保证。经典 Schur 与树二次消息非原创，同信息平坦精确匹配，密集通信 O(d²)。标准 SD 正确性继承当前 p。
+- E-SYN：实际 CPU NumPy2.3.5，30 seeds×3漂移档、8客户2区、二元词表、6起始上下文/客户、浅8深3、线性logits，β=.1 初始 EAL=1.855684/1.570982/1.310441，global=1.862131/1.592542/1.330592，tree=1.866029/1.603157/1.342876。tree CE均低于初始但高于task-only；tree更新平方范数较global高约44–50%，不公平预算；β=.3低漂移EAL反降。树解对同信息集中解最大误差3.33e−16，G2负证据。无真实模型、网络或GPU时间。
+- 文献核查 LayerSkip/AlphaEdit/CrispEdit/MT-SFL/pFedMe/Ditto/Acceptance-Aware Draft Training 摘要或可见文本，低曲率信赖域、EAL和多层个性化都有先例，未穷尽全文。主观7.935（8.2/7.9/8.6/6.5/8.1），R49 7.825；R44 8.14/R30窄数学8.35保留，未达8.5。G1/G2/G4 FAIL、G3/G7部分、G5/G6未验，无80%证据。Reject standalone，保留局部优化基线；下一轮优先真实预训练 checkpoint 上检验共享路径曲率与结构性计算原语，等质量等成本强平坦对照，否则停止继续调代理。两真实尺度三非IID/延迟三seed与端到端阈值未执行。
+- [报告](experiments/team-far/R50/record.md) · [代码](experiments/team-far/R50/toy.py) · [实际聚合结果](experiments/team-far/R50/results.json)
