@@ -3812,3 +3812,11 @@ H未执行：只有真实训练部署确实将同一合法GRPO组跨区域分配
 - T/H：固定p、群体损失1-overlap(Q,P)，非tie局部草稿梯度=-E_Q[1{log P-log Q>0} Σlocal ∇log q_i]，区域可归约标量比率及广播gate；真实联合目标不变。N8 p(.5,.3,.2)，qA(.5,.05,.45) TV.25、group overlap.2523858561；qB(.3,.6,.1) TV.30、overlap.36777475，群体目标与单token TV排序可反转（实际有限枚举），未训练。异质独立乘积可分层归约但多次RPC代价、隐私及flat同委托对照未解决；无暴露固定修复成本即失去收益。
 - 实查SpecTr/List-Level Coupling/Multi-Sample SD/UniVer/LayerSkip/Tree Training/HierFAVG及经典最大耦合原始摘要或索引，非全文穷尽。**Revise核与群体学习目标，Reject最终独立立项**；G1/G2/G4未过、G3/G7部分、G5/G6未验，历史完整8.14不变，无80%证据。P0真实固定事务成本/双尺度LayerSkip、普通SD+去重、AR、同委托flat、群体损失vs单token TV/CE训练；1–2×40GB三nonIID/时延三独立seed、同质量总时间−15%或工作+20%与CI未执行。
 - [报告](experiments/team-far/R70/record.md) · [实际采样代码](experiments/team-far/R70/online.js) · [结果](experiments/team-far/R70/results.json)
+
+
+### team-far/R71｜HPM-SD 3.0：群体TV条件梯度、分层阈值归约与泛化反例
+- 2026-11-25；起始 main ab63e4c6048d41b70d113ef9c227b100f198de13、README b653ca735ae04d880e6e79a0ca470bfc555903e8；写前 main ab63e4c6048d41b70d113ef9c227b100f198de13、README b653ca735ae04d880e6e79a0ca470bfc555903e8。完整取得并结构筛查，重开R70报告/R69概率表，未穷尽复跑。
+- T：S_-i=Σ_{j≠i} log(p_j/q_j)(X_j)，g_i(S)=-Σ_v q_i(v)1{log(p_i(v)/q_i(v))>−S}∇log q_i(v)；对单槽score条件积分保持无偏且协方差PSD不增，不能直接推广至所有重叠估计器之和；同质随机一槽×N无偏。softmax梯度q_i(v)(G_i−gate_v)，区域归约总log比并广播、客户端减本槽比，免全logit传输但有M标量往返及版本/隐私限制，同委托flat可复制。经典Rao-Blackwell非原创，product TV精确计算#P-complete文献约束。
+- E：R69 K27 48历史表，2同尺寸权重、3划分seed、2交替fold 4train/4test，固定p，三参数logit校准；5方法 KL/TV/Hellinger/单槽score/RB、3固定ridge、N8/32/64，540实际fit/54000更新、24 MC/训练行步、4096 MC/评估行。144×1024方差审计，RB/score迹比.028439/.019589/.016381。无ridge RB N32 train .599546、heldout .526756<原 .537454；N64 .384828<原 .400858；所有无ridge方法heldout退化，ridge完整结果见json，不能挑test宣布成功。相同步数非同计算、无新模型前向/真实FL/GPU/网络/CI。
+- 实查LayerSkip/Online SD/DistillSpec/VSD/Acceptance-Aware Draft Training WTV Eq14/RB gradients/product TV complexity/HierFAVG；**Revise条件梯度，Reject已验证学习增益或独立立项**；G1/G2/G4未过，G3/G7部分，G5/G6未验，历史完整8.14不变，无80%证据。P0实际固定区域修复成本与更大异质留出集、同计算KL/TV/Hellinger/WTV/flat，双尺度1–2×40GB、三nonIID/时延三独立seed、同质量总时间−15%或工作+20%与CI未执行。
+- [报告](experiments/team-far/R71/record.md) · [训练代码](experiments/team-far/R71/train.js) · [原始结果](experiments/team-far/R71/results.json)
