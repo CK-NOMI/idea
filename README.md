@@ -3274,3 +3274,11 @@ H未执行：只有真实训练部署确实将同一合法GRPO组跨区域分配
 
 
 - team-far/R14 评分算术更正：分项7.5/6/7.5/6/4，权重25/25/20/15/15，加权结果为 **6.375/10**（此前6.425是计算笔误）；所有门槛及Reject裁决不变。原记录保留。
+
+
+### team-far/R15｜UCR：投机拒绝动作的并集纳入概率与反事实奖励学习
+
+- 2026-11-24；起始/写前 f79cf2c34f577cc87a8e88387cde462766b2db49，README blob dc6df9209d79391929aa6daaf39f2b1f6b0ddf5a；完整获取，重审A/R04/R12/R13、HC/R09 FQAC、FSP-DPO、FVT/FVR、FCTG、FAR/R02/R03/R14。未逐式复核全部历史。区别FQAC等价动作复用与FSP-DPO联合偏好对，本轮固定单状态加性策略梯度，保留合法沙箱内未提交动作的奖励。
+- T：X~q,Y~p标准最大耦合，I_a=1{X=a或Y=a}，π_a=p_a+q_a−Γ_aa=max(p_a,q_a)。独立合法工具随机性下，Σ I_a(p_a/π_a)R_a∇log p_a条件无偏；distinct成本1+TV；最大接受同时最小化各动作纳入概率，学习覆盖与推理复用冲突。固定p=q=(.5,.5)、确定性R=(1,0)时最大耦合方差迹.125、两反对偶动作方差0（两工具）。非独立偏好/多步GRPO等价，不允许根据已观测奖励选择提交或重抽。普通AR+同候选/沙箱、HT/MIS、all-action PG与公平平坦可复制。
+- E/O：实际两同尺度microGPT检查点、256上下文前向、3人工Bernoulli奖励profile、768配置、四耦合的27²联合矩精确枚举（非真实工具/生成/SGD/GPU）。最大均值误差8.881784197001252e-16，纳入概率误差4.440892098500626e-16。CV=方差×期望distinct工具数代理：sparse AR/SD/indPQ/indPP=0.105246/0.105182/0.095225/0.095011; dense AR/SD/indPQ/indPP=0.549671/0.547930/0.495222/0.489251; constant AR/SD/indPQ/indPP=0.426484/0.427294/0.398165/0.393407。仅logit梯度，不是完整模型收敛或实际速度。文献BunshinRL、Atomix、EfficientRollout、Expected PG、MIS、CCA等见报告。主观创新7.225/10（8/7/8/7/5.5；25/25/20/15/15），G1/G2/G4失败、G3/G7局部、G5/G6未验证，无80%证据。Reject独立立项，保留覆盖-复用冲突与无偏估计。下一步只有真实授权沙箱、工具成本及匹配强基线证据才继续。此前声称历史最高R12 7.10不准确，R04记录7.3，但仍未达门槛。
+- [报告](experiments/team-far/R15/record.md) · [代码](experiments/team-far/R15/probe.js) · [768组结果](experiments/team-far/R15/results.json)
