@@ -1,0 +1,797 @@
+{
+  "summary": [
+    {
+      "K": 2,
+      "n": 24,
+      "crossInfeasible": 24,
+      "treeInfeasible": 0,
+      "meanDeficit": 0.02962514187022744,
+      "maxDeficit": 0.06909655280126259,
+      "maxCertError": 8.881784197001252e-16
+    },
+    {
+      "K": 3,
+      "n": 24,
+      "crossInfeasible": 24,
+      "treeInfeasible": 0,
+      "meanDeficit": 0.02602883194891113,
+      "maxDeficit": 0.07700528033765575,
+      "maxCertError": 1.3322676295501878e-15
+    }
+  ],
+  "counter": {
+    "deficit": 0.28125,
+    "hall": 0.28125,
+    "certificateError": 0
+  },
+  "rows": [
+    {
+      "wi": 0,
+      "seed": 11,
+      "K": 2,
+      "alloc": 0,
+      "tree": {
+        "deficit": 1.1102230246251565e-16,
+        "hall": 0,
+        "certificateError": 1.1102230246251565e-16
+      },
+      "cross": {
+        "deficit": 0.017590757720193584,
+        "hall": 0.017590757720193695,
+        "certificateError": 1.1102230246251565e-16
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "K": 2,
+      "alloc": 1,
+      "tree": {
+        "deficit": 2.220446049250313e-16,
+        "hall": 0,
+        "certificateError": 2.220446049250313e-16
+      },
+      "cross": {
+        "deficit": 0.017258314718315848,
+        "hall": 0.01725831471831557,
+        "certificateError": 2.7755575615628914e-16
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "K": 2,
+      "alloc": 2,
+      "tree": {
+        "deficit": 3.3306690738754696e-16,
+        "hall": 0,
+        "certificateError": 3.3306690738754696e-16
+      },
+      "cross": {
+        "deficit": 0.020373958999223563,
+        "hall": 0.02037395899922345,
+        "certificateError": 1.1102230246251565e-16
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "K": 2,
+      "alloc": 3,
+      "tree": {
+        "deficit": 2.220446049250313e-16,
+        "hall": 0,
+        "certificateError": 2.220446049250313e-16
+      },
+      "cross": {
+        "deficit": 0.019100433560206742,
+        "hall": 0.019100433560206964,
+        "certificateError": 2.220446049250313e-16
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "K": 3,
+      "alloc": 0,
+      "tree": {
+        "deficit": 0,
+        "hall": 0,
+        "certificateError": 6.661338147750939e-16
+      },
+      "cross": {
+        "deficit": 0.016284944958766756,
+        "hall": 0.016284944958766756,
+        "certificateError": 0
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "K": 3,
+      "alloc": 1,
+      "tree": {
+        "deficit": 1.1102230246251565e-16,
+        "hall": 0,
+        "certificateError": 1.1102230246251565e-16
+      },
+      "cross": {
+        "deficit": 0.013715535836154258,
+        "hall": 0.013715535836154147,
+        "certificateError": 1.1102230246251565e-16
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "K": 3,
+      "alloc": 2,
+      "tree": {
+        "deficit": 5.551115123125783e-16,
+        "hall": 0,
+        "certificateError": 5.551115123125783e-16
+      },
+      "cross": {
+        "deficit": 0.022024035011120602,
+        "hall": 0.022024035011119825,
+        "certificateError": 7.771561172376096e-16
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "K": 3,
+      "alloc": 3,
+      "tree": {
+        "deficit": 5.551115123125783e-16,
+        "hall": 0,
+        "certificateError": 5.551115123125783e-16
+      },
+      "cross": {
+        "deficit": 0.018407778154327592,
+        "hall": 0.01840777815432762,
+        "certificateError": 2.7755575615628914e-17
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "K": 2,
+      "alloc": 0,
+      "tree": {
+        "deficit": 4.440892098500626e-16,
+        "hall": 0,
+        "certificateError": 4.440892098500626e-16
+      },
+      "cross": {
+        "deficit": 0.010942680072755007,
+        "hall": 0.010942680072754729,
+        "certificateError": 2.7755575615628914e-16
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "K": 2,
+      "alloc": 1,
+      "tree": {
+        "deficit": 0,
+        "hall": 0,
+        "certificateError": 2.220446049250313e-16
+      },
+      "cross": {
+        "deficit": 0.023279516804589284,
+        "hall": 0.02327951680458995,
+        "certificateError": 6.661338147750939e-16
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "K": 2,
+      "alloc": 2,
+      "tree": {
+        "deficit": 0,
+        "hall": 0,
+        "certificateError": 0
+      },
+      "cross": {
+        "deficit": 0.004868004264661052,
+        "hall": 0.004868004264661718,
+        "certificateError": 6.661338147750939e-16
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "K": 2,
+      "alloc": 3,
+      "tree": {
+        "deficit": 2.220446049250313e-16,
+        "hall": 0,
+        "certificateError": 2.220446049250313e-16
+      },
+      "cross": {
+        "deficit": 0.020190750914379385,
+        "hall": 0.02019075091437944,
+        "certificateError": 5.551115123125783e-17
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "K": 3,
+      "alloc": 0,
+      "tree": {
+        "deficit": 3.3306690738754696e-16,
+        "hall": 0,
+        "certificateError": 3.3306690738754696e-16
+      },
+      "cross": {
+        "deficit": 0.012452569032463834,
+        "hall": 0.012452569032463695,
+        "certificateError": 1.3877787807814457e-16
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "K": 3,
+      "alloc": 1,
+      "tree": {
+        "deficit": 0,
+        "hall": 0,
+        "certificateError": 8.881784197001252e-16
+      },
+      "cross": {
+        "deficit": 0.021089848448134108,
+        "hall": 0.021089848448134663,
+        "certificateError": 5.551115123125783e-16
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "K": 3,
+      "alloc": 2,
+      "tree": {
+        "deficit": 0,
+        "hall": 0,
+        "certificateError": 6.661338147750939e-16
+      },
+      "cross": {
+        "deficit": 0.0027993601643790944,
+        "hall": 0.0027993601643796218,
+        "certificateError": 5.273559366969494e-16
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "K": 3,
+      "alloc": 3,
+      "tree": {
+        "deficit": 2.220446049250313e-16,
+        "hall": 0,
+        "certificateError": 2.220446049250313e-16
+      },
+      "cross": {
+        "deficit": 0.02740882791584598,
+        "hall": 0.02740882791584609,
+        "certificateError": 1.1102230246251565e-16
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "K": 2,
+      "alloc": 0,
+      "tree": {
+        "deficit": 2.220446049250313e-16,
+        "hall": 0,
+        "certificateError": 2.220446049250313e-16
+      },
+      "cross": {
+        "deficit": 0.03417992615410781,
+        "hall": 0.03417992615410759,
+        "certificateError": 2.220446049250313e-16
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "K": 2,
+      "alloc": 1,
+      "tree": {
+        "deficit": 0,
+        "hall": 0,
+        "certificateError": 4.440892098500626e-16
+      },
+      "cross": {
+        "deficit": 0.05990177310724054,
+        "hall": 0.059901773107240874,
+        "certificateError": 3.3306690738754696e-16
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "K": 2,
+      "alloc": 2,
+      "tree": {
+        "deficit": 0,
+        "hall": 0,
+        "certificateError": 0
+      },
+      "cross": {
+        "deficit": 0.040089615807881396,
+        "hall": 0.04008961580788167,
+        "certificateError": 2.7755575615628914e-16
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "K": 2,
+      "alloc": 3,
+      "tree": {
+        "deficit": 6.661338147750939e-16,
+        "hall": 0,
+        "certificateError": 6.661338147750939e-16
+      },
+      "cross": {
+        "deficit": 0.02160817108559343,
+        "hall": 0.021608171085592653,
+        "certificateError": 7.771561172376096e-16
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "K": 3,
+      "alloc": 0,
+      "tree": {
+        "deficit": 6.661338147750939e-16,
+        "hall": 0,
+        "certificateError": 6.661338147750939e-16
+      },
+      "cross": {
+        "deficit": 0.025705232673768563,
+        "hall": 0.025705232673768785,
+        "certificateError": 2.220446049250313e-16
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "K": 3,
+      "alloc": 1,
+      "tree": {
+        "deficit": 0,
+        "hall": 0,
+        "certificateError": 4.440892098500626e-16
+      },
+      "cross": {
+        "deficit": 0.025652715639322365,
+        "hall": 0.02565271563932281,
+        "certificateError": 4.440892098500626e-16
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "K": 3,
+      "alloc": 2,
+      "tree": {
+        "deficit": 3.3306690738754696e-16,
+        "hall": 0,
+        "certificateError": 3.3306690738754696e-16
+      },
+      "cross": {
+        "deficit": 0.027209583440558904,
+        "hall": 0.027209583440558682,
+        "certificateError": 2.220446049250313e-16
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "K": 3,
+      "alloc": 3,
+      "tree": {
+        "deficit": 1.3322676295501878e-15,
+        "hall": 0,
+        "certificateError": 1.3322676295501878e-15
+      },
+      "cross": {
+        "deficit": 0.015910498553671992,
+        "hall": 0.01591049855367077,
+        "certificateError": 1.2212453270876722e-15
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "K": 2,
+      "alloc": 0,
+      "tree": {
+        "deficit": 0,
+        "hall": 0,
+        "certificateError": 0
+      },
+      "cross": {
+        "deficit": 0.028885075001139016,
+        "hall": 0.0288850750011391,
+        "certificateError": 8.326672684688674e-17
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "K": 2,
+      "alloc": 1,
+      "tree": {
+        "deficit": 0,
+        "hall": 0,
+        "certificateError": 0
+      },
+      "cross": {
+        "deficit": 0.023636015414552514,
+        "hall": 0.023636015414552347,
+        "certificateError": 1.6653345369377348e-16
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "K": 2,
+      "alloc": 2,
+      "tree": {
+        "deficit": 0,
+        "hall": 0,
+        "certificateError": 2.220446049250313e-16
+      },
+      "cross": {
+        "deficit": 0.04383164810986995,
+        "hall": 0.04383164810986995,
+        "certificateError": 0
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "K": 2,
+      "alloc": 3,
+      "tree": {
+        "deficit": 1.1102230246251565e-16,
+        "hall": 0,
+        "certificateError": 1.1102230246251565e-16
+      },
+      "cross": {
+        "deficit": 0.02187281152466114,
+        "hall": 0.02187281152466114,
+        "certificateError": 0
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "K": 3,
+      "alloc": 0,
+      "tree": {
+        "deficit": 1.1102230246251565e-16,
+        "hall": 0,
+        "certificateError": 1.1102230246251565e-16
+      },
+      "cross": {
+        "deficit": 0.023639079920250272,
+        "hall": 0.023639079920249828,
+        "certificateError": 4.440892098500626e-16
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "K": 3,
+      "alloc": 1,
+      "tree": {
+        "deficit": 1.1102230246251565e-16,
+        "hall": 0,
+        "certificateError": 1.1102230246251565e-16
+      },
+      "cross": {
+        "deficit": 0.021589158163447086,
+        "hall": 0.021589158163447197,
+        "certificateError": 1.1102230246251565e-16
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "K": 3,
+      "alloc": 2,
+      "tree": {
+        "deficit": 0,
+        "hall": 0,
+        "certificateError": 4.440892098500626e-16
+      },
+      "cross": {
+        "deficit": 0.030364078487775226,
+        "hall": 0.030364078487774893,
+        "certificateError": 3.3306690738754696e-16
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "K": 3,
+      "alloc": 3,
+      "tree": {
+        "deficit": 0,
+        "hall": 0,
+        "certificateError": 2.220446049250313e-16
+      },
+      "cross": {
+        "deficit": 0.027216365149963395,
+        "hall": 0.027216365149963284,
+        "certificateError": 1.1102230246251565e-16
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "K": 2,
+      "alloc": 0,
+      "tree": {
+        "deficit": 2.220446049250313e-16,
+        "hall": 0,
+        "certificateError": 2.220446049250313e-16
+      },
+      "cross": {
+        "deficit": 0.06458638128842698,
+        "hall": 0.06458638128842673,
+        "certificateError": 2.498001805406602e-16
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "K": 2,
+      "alloc": 1,
+      "tree": {
+        "deficit": 3.3306690738754696e-16,
+        "hall": 0,
+        "certificateError": 3.3306690738754696e-16
+      },
+      "cross": {
+        "deficit": 0.024871721666835267,
+        "hall": 0.024871721666834712,
+        "certificateError": 5.551115123125783e-16
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "K": 2,
+      "alloc": 2,
+      "tree": {
+        "deficit": 4.440892098500626e-16,
+        "hall": 0,
+        "certificateError": 4.440892098500626e-16
+      },
+      "cross": {
+        "deficit": 0.022771244639188115,
+        "hall": 0.02277124463918756,
+        "certificateError": 5.551115123125783e-16
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "K": 2,
+      "alloc": 3,
+      "tree": {
+        "deficit": 5.551115123125783e-16,
+        "hall": 0,
+        "certificateError": 5.551115123125783e-16
+      },
+      "cross": {
+        "deficit": 0.06909655280126259,
+        "hall": 0.06909655280126226,
+        "certificateError": 3.3306690738754696e-16
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "K": 3,
+      "alloc": 0,
+      "tree": {
+        "deficit": 4.440892098500626e-16,
+        "hall": 0,
+        "certificateError": 4.440892098500626e-16
+      },
+      "cross": {
+        "deficit": 0.07700528033765575,
+        "hall": 0.07700528033765619,
+        "certificateError": 4.440892098500626e-16
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "K": 3,
+      "alloc": 1,
+      "tree": {
+        "deficit": 6.661338147750939e-16,
+        "hall": 0,
+        "certificateError": 6.661338147750939e-16
+      },
+      "cross": {
+        "deficit": 0.02590569862894121,
+        "hall": 0.025905698628940432,
+        "certificateError": 7.771561172376096e-16
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "K": 3,
+      "alloc": 2,
+      "tree": {
+        "deficit": 0,
+        "hall": 0,
+        "certificateError": 2.220446049250313e-16
+      },
+      "cross": {
+        "deficit": 0.0257596616870982,
+        "hall": 0.02575966168709809,
+        "certificateError": 1.1102230246251565e-16
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "K": 3,
+      "alloc": 3,
+      "tree": {
+        "deficit": 3.3306690738754696e-16,
+        "hall": 0,
+        "certificateError": 3.3306690738754696e-16
+      },
+      "cross": {
+        "deficit": 0.056526761508888135,
+        "hall": 0.05652676150888794,
+        "certificateError": 1.942890293094024e-16
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "K": 2,
+      "alloc": 0,
+      "tree": {
+        "deficit": 3.3306690738754696e-16,
+        "hall": 0,
+        "certificateError": 3.3306690738754696e-16
+      },
+      "cross": {
+        "deficit": 0.01850041842139427,
+        "hall": 0.01850041842139416,
+        "certificateError": 1.1102230246251565e-16
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "K": 2,
+      "alloc": 1,
+      "tree": {
+        "deficit": 7.771561172376096e-16,
+        "hall": 0,
+        "certificateError": 7.771561172376096e-16
+      },
+      "cross": {
+        "deficit": 0.009764727760372849,
+        "hall": 0.00976472776037196,
+        "certificateError": 8.881784197001252e-16
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "K": 2,
+      "alloc": 2,
+      "tree": {
+        "deficit": 2.220446049250313e-16,
+        "hall": 0,
+        "certificateError": 2.220446049250313e-16
+      },
+      "cross": {
+        "deficit": 0.04918235426641315,
+        "hall": 0.049182354266412986,
+        "certificateError": 1.6653345369377348e-16
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "K": 2,
+      "alloc": 3,
+      "tree": {
+        "deficit": 0,
+        "hall": 0,
+        "certificateError": 0
+      },
+      "cross": {
+        "deficit": 0.04462055078219507,
+        "hall": 0.04462055078219537,
+        "certificateError": 3.0531133177191805e-16
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "K": 3,
+      "alloc": 0,
+      "tree": {
+        "deficit": 1.1102230246251565e-16,
+        "hall": 0,
+        "certificateError": 1.1102230246251565e-16
+      },
+      "cross": {
+        "deficit": 0.019154430075090878,
+        "hall": 0.01915443007509071,
+        "certificateError": 1.6653345369377348e-16
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "K": 3,
+      "alloc": 1,
+      "tree": {
+        "deficit": 8.881784197001252e-16,
+        "hall": 0,
+        "certificateError": 8.881784197001252e-16
+      },
+      "cross": {
+        "deficit": 0.012555781676371613,
+        "hall": 0.012555781676370836,
+        "certificateError": 7.771561172376096e-16
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "K": 3,
+      "alloc": 2,
+      "tree": {
+        "deficit": 0,
+        "hall": 0,
+        "certificateError": 0
+      },
+      "cross": {
+        "deficit": 0.0367616436195104,
+        "hall": 0.03676164361951029,
+        "certificateError": 1.1102230246251565e-16
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "K": 3,
+      "alloc": 3,
+      "tree": {
+        "deficit": 0,
+        "hall": 0,
+        "certificateError": 2.220446049250313e-16
+      },
+      "cross": {
+        "deficit": 0.03955309769036086,
+        "hall": 0.03955309769036133,
+        "certificateError": 4.718447854656915e-16
+      }
+    }
+  ]
+}
