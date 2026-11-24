@@ -1,0 +1,9 @@
+{
+  "cases": 120,
+  "maxMeanErr": 5.551115123125783e-17,
+  "maxBoundViolation": 0,
+  "wins": 98,
+  "valid": 119,
+  "meanVarianceRatio": 0.8458594751321161,
+  "maxVarianceRatio": 5.475506774183451
+}
