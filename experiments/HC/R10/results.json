@@ -1,0 +1,3122 @@
+{
+  "environment": "V8 CPU FP64, external two same-architecture checkpoints; restricted first-coordinate input embedding finite difference supervised updates; no GPU/network",
+  "poolSizes": [
+    5963,
+    5028,
+    5124,
+    3808
+  ],
+  "counts": [
+    82,
+    1,
+    5,
+    19,
+    46,
+    0,
+    5,
+    11,
+    39,
+    10,
+    7,
+    26,
+    13,
+    47,
+    16,
+    4,
+    0,
+    29,
+    23,
+    16,
+    4,
+    2,
+    0,
+    0,
+    21,
+    3,
+    64
+  ],
+  "order": [
+    0,
+    13,
+    4,
+    8,
+    17,
+    11,
+    18,
+    24,
+    3,
+    14,
+    19,
+    12,
+    7,
+    9,
+    10,
+    2,
+    6,
+    15,
+    20,
+    25,
+    21,
+    1,
+    5,
+    16,
+    22,
+    23
+  ],
+  "rows": [
+    {
+      "name": "weights",
+      "seed": 11,
+      "mode": "rare4",
+      "mask": [
+        5,
+        16,
+        22,
+        23
+      ],
+      "versions": [
+        {
+          "rnd": 0,
+          "changed": [],
+          "localK": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "edgeK": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "newCE": 2.60753006140721,
+          "freshCE": 2.60753006140721,
+          "error": 0,
+          "staleTV": 0,
+          "clean": 1,
+          "first": [
+            128,
+            192,
+            219
+          ],
+          "total": [
+            128,
+            192,
+            219
+          ],
+          "warm": {
+            "new1": 0,
+            "new2": 0,
+            "reuse1": 79,
+            "reuse2": 79
+          },
+          "base": {
+            "new1": 162,
+            "new2": 162,
+            "reuse1": 0,
+            "reuse2": 0
+          },
+          "pair": {
+            "sd": 0,
+            "ar": 0,
+            "greedy": 0,
+            "sdAttempts": 37,
+            "sdAccepts": 35,
+            "sdBlocks": 24,
+            "arBlocks": 48
+          },
+          "sdNew": [
+            66,
+            128
+          ],
+          "arNew": [
+            62,
+            122
+          ]
+        },
+        {
+          "rnd": 1,
+          "changed": [],
+          "localK": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "edgeK": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "newCE": 2.60753006140721,
+          "freshCE": 2.60753006140721,
+          "error": 0,
+          "staleTV": 0,
+          "clean": 1,
+          "first": [
+            128,
+            192,
+            219
+          ],
+          "total": [
+            128,
+            192,
+            219
+          ],
+          "warm": {
+            "new1": 0,
+            "new2": 0,
+            "reuse1": 79,
+            "reuse2": 79
+          },
+          "base": {
+            "new1": 162,
+            "new2": 162,
+            "reuse1": 0,
+            "reuse2": 0
+          },
+          "pair": {
+            "sd": 0,
+            "ar": 0,
+            "greedy": 0,
+            "sdAttempts": 36,
+            "sdAccepts": 35,
+            "sdBlocks": 24,
+            "arBlocks": 48
+          },
+          "sdNew": [
+            104,
+            126
+          ],
+          "arNew": [
+            100,
+            122
+          ]
+        }
+      ],
+      "localUpdates": 16,
+      "fdCalls": 0,
+      "startCE": 2.60753006140721
+    },
+    {
+      "name": "weights",
+      "seed": 11,
+      "mode": "common4",
+      "mask": [
+        0,
+        13,
+        4,
+        8
+      ],
+      "versions": [
+        {
+          "rnd": 0,
+          "changed": [
+            0,
+            4,
+            8,
+            13
+          ],
+          "localK": [
+            3,
+            1,
+            3,
+            4,
+            2,
+            3,
+            1,
+            3
+          ],
+          "edgeK": [
+            3,
+            4,
+            3,
+            4
+          ],
+          "newCE": 2.607533377312331,
+          "freshCE": 2.607533377312331,
+          "error": 0,
+          "staleTV": 0.00004438322684047634,
+          "clean": 0.052083333333333336,
+          "first": [
+            72,
+            76,
+            76
+          ],
+          "total": [
+            128,
+            192,
+            219
+          ],
+          "warm": {
+            "new1": 135,
+            "new2": 135,
+            "reuse1": 27,
+            "reuse2": 27
+          },
+          "base": {
+            "new1": 162,
+            "new2": 162,
+            "reuse1": 0,
+            "reuse2": 0
+          },
+          "pair": {
+            "sd": 0,
+            "ar": 0,
+            "greedy": 0,
+            "sdAttempts": 37,
+            "sdAccepts": 35,
+            "sdBlocks": 24,
+            "arBlocks": 48
+          },
+          "sdNew": [
+            110,
+            128
+          ],
+          "arNew": [
+            104,
+            122
+          ]
+        },
+        {
+          "rnd": 1,
+          "changed": [
+            0,
+            4,
+            8,
+            13
+          ],
+          "localK": [
+            4,
+            3,
+            2,
+            4,
+            2,
+            4,
+            3,
+            3
+          ],
+          "edgeK": [
+            4,
+            4,
+            4,
+            4
+          ],
+          "newCE": 2.607496407186375,
+          "freshCE": 2.607496407186375,
+          "error": 0,
+          "staleTV": 0.000048994310195415156,
+          "clean": 0.052083333333333336,
+          "first": [
+            72,
+            76,
+            76
+          ],
+          "total": [
+            128,
+            192,
+            219
+          ],
+          "warm": {
+            "new1": 135,
+            "new2": 135,
+            "reuse1": 27,
+            "reuse2": 27
+          },
+          "base": {
+            "new1": 162,
+            "new2": 162,
+            "reuse1": 0,
+            "reuse2": 0
+          },
+          "pair": {
+            "sd": 0,
+            "ar": 0,
+            "greedy": 0,
+            "sdAttempts": 36,
+            "sdAccepts": 35,
+            "sdBlocks": 24,
+            "arBlocks": 48
+          },
+          "sdNew": [
+            108,
+            126
+          ],
+          "arNew": [
+            104,
+            122
+          ]
+        }
+      ],
+      "localUpdates": 16,
+      "fdCalls": 90,
+      "startCE": 2.60753006140721
+    },
+    {
+      "name": "weights",
+      "seed": 11,
+      "mode": "all",
+      "mask": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "versions": [
+        {
+          "rnd": 0,
+          "changed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            17,
+            18,
+            19,
+            21,
+            24,
+            26
+          ],
+          "localK": [
+            8,
+            6,
+            6,
+            9,
+            11,
+            8,
+            8,
+            9
+          ],
+          "edgeK": [
+            11,
+            11,
+            14,
+            14
+          ],
+          "newCE": 2.607503380247436,
+          "freshCE": 2.607503380247436,
+          "error": 0,
+          "staleTV": 0.00008090458002892295,
+          "clean": 0,
+          "first": [
+            0,
+            0,
+            0
+          ],
+          "total": [
+            128,
+            192,
+            219
+          ],
+          "warm": {
+            "new1": 162,
+            "new2": 162,
+            "reuse1": 0,
+            "reuse2": 0
+          },
+          "base": {
+            "new1": 162,
+            "new2": 162,
+            "reuse1": 0,
+            "reuse2": 0
+          },
+          "pair": {
+            "sd": 0,
+            "ar": 0,
+            "greedy": 0,
+            "sdAttempts": 37,
+            "sdAccepts": 35,
+            "sdBlocks": 24,
+            "arBlocks": 48
+          },
+          "sdNew": [
+            128,
+            128
+          ],
+          "arNew": [
+            122,
+            122
+          ]
+        },
+        {
+          "rnd": 1,
+          "changed": [
+            0,
+            2,
+            3,
+            4,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            17,
+            18,
+            19,
+            20,
+            24,
+            25,
+            26
+          ],
+          "localK": [
+            8,
+            9,
+            5,
+            9,
+            8,
+            9,
+            9,
+            8
+          ],
+          "edgeK": [
+            12,
+            10,
+            13,
+            13
+          ],
+          "newCE": 2.6073878044312466,
+          "freshCE": 2.6073878044312466,
+          "error": 0,
+          "staleTV": 0.00009014164457194953,
+          "clean": 0,
+          "first": [
+            0,
+            0,
+            0
+          ],
+          "total": [
+            128,
+            192,
+            219
+          ],
+          "warm": {
+            "new1": 162,
+            "new2": 162,
+            "reuse1": 0,
+            "reuse2": 0
+          },
+          "base": {
+            "new1": 162,
+            "new2": 162,
+            "reuse1": 0,
+            "reuse2": 0
+          },
+          "pair": {
+            "sd": 0,
+            "ar": 0,
+            "greedy": 0,
+            "sdAttempts": 36,
+            "sdAccepts": 35,
+            "sdBlocks": 24,
+            "arBlocks": 48
+          },
+          "sdNew": [
+            126,
+            126
+          ],
+          "arNew": [
+            122,
+            122
+          ]
+        }
+      ],
+      "localUpdates": 16,
+      "fdCalls": 260,
+      "startCE": 2.60753006140721
+    },
+    {
+      "name": "weights",
+      "seed": 29,
+      "mode": "rare4",
+      "mask": [
+        5,
+        16,
+        22,
+        23
+      ],
+      "versions": [
+        {
+          "rnd": 0,
+          "changed": [],
+          "localK": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "edgeK": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "newCE": 2.60753006140721,
+          "freshCE": 2.60753006140721,
+          "error": 0,
+          "staleTV": 0,
+          "clean": 1,
+          "first": [
+            128,
+            192,
+            219
+          ],
+          "total": [
+            128,
+            192,
+            219
+          ],
+          "warm": {
+            "new1": 0,
+            "new2": 0,
+            "reuse1": 79,
+            "reuse2": 79
+          },
+          "base": {
+            "new1": 162,
+            "new2": 162,
+            "reuse1": 0,
+            "reuse2": 0
+          },
+          "pair": {
+            "sd": 0,
+            "ar": 0,
+            "greedy": 0,
+            "sdAttempts": 37,
+            "sdAccepts": 35,
+            "sdBlocks": 24,
+            "arBlocks": 48
+          },
+          "sdNew": [
+            64,
+            124
+          ],
+          "arNew": [
+            62,
+            122
+          ]
+        },
+        {
+          "rnd": 1,
+          "changed": [],
+          "localK": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "edgeK": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "newCE": 2.60753006140721,
+          "freshCE": 2.60753006140721,
+          "error": 0,
+          "staleTV": 0,
+          "clean": 1,
+          "first": [
+            128,
+            192,
+            219
+          ],
+          "total": [
+            128,
+            192,
+            219
+          ],
+          "warm": {
+            "new1": 0,
+            "new2": 0,
+            "reuse1": 79,
+            "reuse2": 79
+          },
+          "base": {
+            "new1": 162,
+            "new2": 162,
+            "reuse1": 0,
+            "reuse2": 0
+          },
+          "pair": {
+            "sd": 0,
+            "ar": 0,
+            "greedy": 0,
+            "sdAttempts": 37,
+            "sdAccepts": 35,
+            "sdBlocks": 24,
+            "arBlocks": 48
+          },
+          "sdNew": [
+            106,
+            128
+          ],
+          "arNew": [
+            100,
+            122
+          ]
+        }
+      ],
+      "localUpdates": 16,
+      "fdCalls": 0,
+      "startCE": 2.60753006140721
+    },
+    {
+      "name": "weights",
+      "seed": 29,
+      "mode": "common4",
+      "mask": [
+        0,
+        13,
+        4,
+        8
+      ],
+      "versions": [
+        {
+          "rnd": 0,
+          "changed": [
+            0,
+            4,
+            8,
+            13
+          ],
+          "localK": [
+            3,
+            4,
+            4,
+            2,
+            2,
+            3,
+            2,
+            2
+          ],
+          "edgeK": [
+            4,
+            4,
+            4,
+            3
+          ],
+          "newCE": 2.607538542036756,
+          "freshCE": 2.607538542036756,
+          "error": 0,
+          "staleTV": 0.000038342825401554126,
+          "clean": 0.052083333333333336,
+          "first": [
+            72,
+            76,
+            76
+          ],
+          "total": [
+            128,
+            192,
+            219
+          ],
+          "warm": {
+            "new1": 135,
+            "new2": 135,
+            "reuse1": 27,
+            "reuse2": 27
+          },
+          "base": {
+            "new1": 162,
+            "new2": 162,
+            "reuse1": 0,
+            "reuse2": 0
+          },
+          "pair": {
+            "sd": 0,
+            "ar": 0,
+            "greedy": 0,
+            "sdAttempts": 37,
+            "sdAccepts": 35,
+            "sdBlocks": 24,
+            "arBlocks": 48
+          },
+          "sdNew": [
+            106,
+            124
+          ],
+          "arNew": [
+            104,
+            122
+          ]
+        },
+        {
+          "rnd": 1,
+          "changed": [
+            0,
+            4,
+            8,
+            13
+          ],
+          "localK": [
+            2,
+            3,
+            3,
+            3,
+            2,
+            4,
+            1,
+            1
+          ],
+          "edgeK": [
+            4,
+            4,
+            4,
+            1
+          ],
+          "newCE": 2.607578798886221,
+          "freshCE": 2.607578798886221,
+          "error": 0,
+          "staleTV": 0.000058192899026498044,
+          "clean": 0.052083333333333336,
+          "first": [
+            72,
+            76,
+            76
+          ],
+          "total": [
+            128,
+            192,
+            219
+          ],
+          "warm": {
+            "new1": 135,
+            "new2": 135,
+            "reuse1": 27,
+            "reuse2": 27
+          },
+          "base": {
+            "new1": 162,
+            "new2": 162,
+            "reuse1": 0,
+            "reuse2": 0
+          },
+          "pair": {
+            "sd": 0,
+            "ar": 0,
+            "greedy": 0,
+            "sdAttempts": 37,
+            "sdAccepts": 35,
+            "sdBlocks": 24,
+            "arBlocks": 48
+          },
+          "sdNew": [
+            110,
+            128
+          ],
+          "arNew": [
+            104,
+            122
+          ]
+        }
+      ],
+      "localUpdates": 16,
+      "fdCalls": 82,
+      "startCE": 2.60753006140721
+    },
+    {
+      "name": "weights",
+      "seed": 29,
+      "mode": "all",
+      "mask": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "versions": [
+        {
+          "rnd": 0,
+          "changed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            17,
+            18,
+            19,
+            24,
+            25,
+            26
+          ],
+          "localK": [
+            6,
+            9,
+            10,
+            8,
+            8,
+            10,
+            8,
+            7
+          ],
+          "edgeK": [
+            11,
+            13,
+            13,
+            13
+          ],
+          "newCE": 2.6074878324773096,
+          "freshCE": 2.6074878324773096,
+          "error": 0,
+          "staleTV": 0.00010139611851611541,
+          "clean": 0,
+          "first": [
+            0,
+            0,
+            0
+          ],
+          "total": [
+            128,
+            192,
+            219
+          ],
+          "warm": {
+            "new1": 162,
+            "new2": 162,
+            "reuse1": 0,
+            "reuse2": 0
+          },
+          "base": {
+            "new1": 162,
+            "new2": 162,
+            "reuse1": 0,
+            "reuse2": 0
+          },
+          "pair": {
+            "sd": 0,
+            "ar": 0,
+            "greedy": 0,
+            "sdAttempts": 37,
+            "sdAccepts": 35,
+            "sdBlocks": 24,
+            "arBlocks": 48
+          },
+          "sdNew": [
+            124,
+            124
+          ],
+          "arNew": [
+            122,
+            122
+          ]
+        },
+        {
+          "rnd": 1,
+          "changed": [
+            0,
+            3,
+            4,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            17,
+            18,
+            19,
+            20,
+            24,
+            26
+          ],
+          "localK": [
+            9,
+            6,
+            7,
+            8,
+            8,
+            9,
+            7,
+            8
+          ],
+          "edgeK": [
+            12,
+            11,
+            13,
+            11
+          ],
+          "newCE": 2.607487159134304,
+          "freshCE": 2.607487159134304,
+          "error": 0,
+          "staleTV": 0.00007991072824865978,
+          "clean": 0,
+          "first": [
+            0,
+            0,
+            0
+          ],
+          "total": [
+            128,
+            192,
+            219
+          ],
+          "warm": {
+            "new1": 162,
+            "new2": 162,
+            "reuse1": 0,
+            "reuse2": 0
+          },
+          "base": {
+            "new1": 162,
+            "new2": 162,
+            "reuse1": 0,
+            "reuse2": 0
+          },
+          "pair": {
+            "sd": 0,
+            "ar": 0,
+            "greedy": 0,
+            "sdAttempts": 37,
+            "sdAccepts": 35,
+            "sdBlocks": 24,
+            "arBlocks": 48
+          },
+          "sdNew": [
+            128,
+            128
+          ],
+          "arNew": [
+            122,
+            122
+          ]
+        }
+      ],
+      "localUpdates": 16,
+      "fdCalls": 256,
+      "startCE": 2.60753006140721
+    },
+    {
+      "name": "weights",
+      "seed": 73,
+      "mode": "rare4",
+      "mask": [
+        5,
+        16,
+        22,
+        23
+      ],
+      "versions": [
+        {
+          "rnd": 0,
+          "changed": [],
+          "localK": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "edgeK": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "newCE": 2.60753006140721,
+          "freshCE": 2.60753006140721,
+          "error": 0,
+          "staleTV": 0,
+          "clean": 1,
+          "first": [
+            128,
+            192,
+            219
+          ],
+          "total": [
+            128,
+            192,
+            219
+          ],
+          "warm": {
+            "new1": 0,
+            "new2": 0,
+            "reuse1": 79,
+            "reuse2": 79
+          },
+          "base": {
+            "new1": 162,
+            "new2": 162,
+            "reuse1": 0,
+            "reuse2": 0
+          },
+          "pair": {
+            "sd": 0,
+            "ar": 0,
+            "greedy": 0,
+            "sdAttempts": 37,
+            "sdAccepts": 34,
+            "sdBlocks": 24,
+            "arBlocks": 48
+          },
+          "sdNew": [
+            68,
+            128
+          ],
+          "arNew": [
+            62,
+            122
+          ]
+        },
+        {
+          "rnd": 1,
+          "changed": [],
+          "localK": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "edgeK": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "newCE": 2.60753006140721,
+          "freshCE": 2.60753006140721,
+          "error": 0,
+          "staleTV": 0,
+          "clean": 1,
+          "first": [
+            128,
+            192,
+            219
+          ],
+          "total": [
+            128,
+            192,
+            219
+          ],
+          "warm": {
+            "new1": 0,
+            "new2": 0,
+            "reuse1": 79,
+            "reuse2": 79
+          },
+          "base": {
+            "new1": 162,
+            "new2": 162,
+            "reuse1": 0,
+            "reuse2": 0
+          },
+          "pair": {
+            "sd": 0,
+            "ar": 0,
+            "greedy": 0,
+            "sdAttempts": 38,
+            "sdAccepts": 35,
+            "sdBlocks": 24,
+            "arBlocks": 48
+          },
+          "sdNew": [
+            108,
+            130
+          ],
+          "arNew": [
+            100,
+            122
+          ]
+        }
+      ],
+      "localUpdates": 16,
+      "fdCalls": 0,
+      "startCE": 2.60753006140721
+    },
+    {
+      "name": "weights",
+      "seed": 73,
+      "mode": "common4",
+      "mask": [
+        0,
+        13,
+        4,
+        8
+      ],
+      "versions": [
+        {
+          "rnd": 0,
+          "changed": [
+            0,
+            4,
+            8,
+            13
+          ],
+          "localK": [
+            3,
+            2,
+            3,
+            2,
+            4,
+            3,
+            2,
+            2
+          ],
+          "edgeK": [
+            4,
+            3,
+            4,
+            2
+          ],
+          "newCE": 2.607549249057451,
+          "freshCE": 2.607549249057451,
+          "error": 0,
+          "staleTV": 0.00003127062537760286,
+          "clean": 0.052083333333333336,
+          "first": [
+            72,
+            76,
+            76
+          ],
+          "total": [
+            128,
+            192,
+            219
+          ],
+          "warm": {
+            "new1": 135,
+            "new2": 135,
+            "reuse1": 27,
+            "reuse2": 27
+          },
+          "base": {
+            "new1": 162,
+            "new2": 162,
+            "reuse1": 0,
+            "reuse2": 0
+          },
+          "pair": {
+            "sd": 0,
+            "ar": 0,
+            "greedy": 0,
+            "sdAttempts": 37,
+            "sdAccepts": 34,
+            "sdBlocks": 24,
+            "arBlocks": 48
+          },
+          "sdNew": [
+            110,
+            128
+          ],
+          "arNew": [
+            104,
+            122
+          ]
+        },
+        {
+          "rnd": 1,
+          "changed": [
+            0,
+            4,
+            8,
+            13
+          ],
+          "localK": [
+            4,
+            2,
+            3,
+            2,
+            2,
+            2,
+            2,
+            4
+          ],
+          "edgeK": [
+            4,
+            3,
+            3,
+            4
+          ],
+          "newCE": 2.6075416256381145,
+          "freshCE": 2.6075416256381145,
+          "error": 0,
+          "staleTV": 0.000019567733221375753,
+          "clean": 0.052083333333333336,
+          "first": [
+            72,
+            76,
+            76
+          ],
+          "total": [
+            128,
+            192,
+            219
+          ],
+          "warm": {
+            "new1": 135,
+            "new2": 135,
+            "reuse1": 27,
+            "reuse2": 27
+          },
+          "base": {
+            "new1": 162,
+            "new2": 162,
+            "reuse1": 0,
+            "reuse2": 0
+          },
+          "pair": {
+            "sd": 0,
+            "ar": 0,
+            "greedy": 0,
+            "sdAttempts": 38,
+            "sdAccepts": 35,
+            "sdBlocks": 24,
+            "arBlocks": 48
+          },
+          "sdNew": [
+            112,
+            130
+          ],
+          "arNew": [
+            104,
+            122
+          ]
+        }
+      ],
+      "localUpdates": 16,
+      "fdCalls": 84,
+      "startCE": 2.60753006140721
+    },
+    {
+      "name": "weights",
+      "seed": 73,
+      "mode": "all",
+      "mask": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "versions": [
+        {
+          "rnd": 0,
+          "changed": [
+            0,
+            2,
+            3,
+            4,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            17,
+            18,
+            19,
+            21,
+            24,
+            26
+          ],
+          "localK": [
+            8,
+            8,
+            8,
+            9,
+            10,
+            10,
+            7,
+            9
+          ],
+          "edgeK": [
+            13,
+            13,
+            13,
+            10
+          ],
+          "newCE": 2.6075977839624156,
+          "freshCE": 2.6075977839624156,
+          "error": 0,
+          "staleTV": 0.00007377636043978495,
+          "clean": 0,
+          "first": [
+            0,
+            0,
+            0
+          ],
+          "total": [
+            128,
+            192,
+            219
+          ],
+          "warm": {
+            "new1": 162,
+            "new2": 162,
+            "reuse1": 0,
+            "reuse2": 0
+          },
+          "base": {
+            "new1": 162,
+            "new2": 162,
+            "reuse1": 0,
+            "reuse2": 0
+          },
+          "pair": {
+            "sd": 0,
+            "ar": 0,
+            "greedy": 0,
+            "sdAttempts": 37,
+            "sdAccepts": 34,
+            "sdBlocks": 24,
+            "arBlocks": 48
+          },
+          "sdNew": [
+            128,
+            128
+          ],
+          "arNew": [
+            122,
+            122
+          ]
+        },
+        {
+          "rnd": 1,
+          "changed": [
+            0,
+            2,
+            3,
+            4,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            17,
+            18,
+            19,
+            24,
+            25,
+            26
+          ],
+          "localK": [
+            10,
+            8,
+            9,
+            8,
+            8,
+            7,
+            7,
+            6
+          ],
+          "edgeK": [
+            13,
+            12,
+            13,
+            10
+          ],
+          "newCE": 2.6074918911954414,
+          "freshCE": 2.6074918911954414,
+          "error": 0,
+          "staleTV": 0.0001207090968792776,
+          "clean": 0,
+          "first": [
+            0,
+            0,
+            0
+          ],
+          "total": [
+            128,
+            192,
+            219
+          ],
+          "warm": {
+            "new1": 162,
+            "new2": 162,
+            "reuse1": 0,
+            "reuse2": 0
+          },
+          "base": {
+            "new1": 162,
+            "new2": 162,
+            "reuse1": 0,
+            "reuse2": 0
+          },
+          "pair": {
+            "sd": 0,
+            "ar": 0,
+            "greedy": 0,
+            "sdAttempts": 38,
+            "sdAccepts": 35,
+            "sdBlocks": 24,
+            "arBlocks": 48
+          },
+          "sdNew": [
+            130,
+            130
+          ],
+          "arNew": [
+            122,
+            122
+          ]
+        }
+      ],
+      "localUpdates": 16,
+      "fdCalls": 264,
+      "startCE": 2.60753006140721
+    },
+    {
+      "name": "checkpoint",
+      "seed": 11,
+      "mode": "rare4",
+      "mask": [
+        5,
+        16,
+        22,
+        23
+      ],
+      "versions": [
+        {
+          "rnd": 0,
+          "changed": [],
+          "localK": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "edgeK": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "newCE": 2.5941700328663932,
+          "freshCE": 2.5941700328663932,
+          "error": 0,
+          "staleTV": 0,
+          "clean": 1,
+          "first": [
+            128,
+            192,
+            219
+          ],
+          "total": [
+            128,
+            192,
+            219
+          ],
+          "warm": {
+            "new1": 0,
+            "new2": 0,
+            "reuse1": 79,
+            "reuse2": 79
+          },
+          "base": {
+            "new1": 162,
+            "new2": 162,
+            "reuse1": 0,
+            "reuse2": 0
+          },
+          "pair": {
+            "sd": 0,
+            "ar": 0,
+            "greedy": 0,
+            "sdAttempts": 36,
+            "sdAccepts": 33,
+            "sdBlocks": 24,
+            "arBlocks": 48
+          },
+          "sdNew": [
+            64,
+            126
+          ],
+          "arNew": [
+            60,
+            122
+          ]
+        },
+        {
+          "rnd": 1,
+          "changed": [],
+          "localK": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "edgeK": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "newCE": 2.5941700328663932,
+          "freshCE": 2.5941700328663932,
+          "error": 0,
+          "staleTV": 0,
+          "clean": 1,
+          "first": [
+            128,
+            192,
+            219
+          ],
+          "total": [
+            128,
+            192,
+            219
+          ],
+          "warm": {
+            "new1": 0,
+            "new2": 0,
+            "reuse1": 79,
+            "reuse2": 79
+          },
+          "base": {
+            "new1": 162,
+            "new2": 162,
+            "reuse1": 0,
+            "reuse2": 0
+          },
+          "pair": {
+            "sd": 0,
+            "ar": 0,
+            "greedy": 0,
+            "sdAttempts": 36,
+            "sdAccepts": 35,
+            "sdBlocks": 24,
+            "arBlocks": 48
+          },
+          "sdNew": [
+            102,
+            126
+          ],
+          "arNew": [
+            98,
+            122
+          ]
+        }
+      ],
+      "localUpdates": 16,
+      "fdCalls": 0,
+      "startCE": 2.5941700328663932
+    },
+    {
+      "name": "checkpoint",
+      "seed": 11,
+      "mode": "common4",
+      "mask": [
+        0,
+        13,
+        4,
+        8
+      ],
+      "versions": [
+        {
+          "rnd": 0,
+          "changed": [
+            0,
+            4,
+            8,
+            13
+          ],
+          "localK": [
+            3,
+            1,
+            3,
+            4,
+            2,
+            3,
+            1,
+            3
+          ],
+          "edgeK": [
+            3,
+            4,
+            3,
+            4
+          ],
+          "newCE": 2.594179172310043,
+          "freshCE": 2.594179172310043,
+          "error": 0,
+          "staleTV": 0.00003618690819741777,
+          "clean": 0.052083333333333336,
+          "first": [
+            72,
+            76,
+            76
+          ],
+          "total": [
+            128,
+            192,
+            219
+          ],
+          "warm": {
+            "new1": 135,
+            "new2": 135,
+            "reuse1": 27,
+            "reuse2": 27
+          },
+          "base": {
+            "new1": 162,
+            "new2": 162,
+            "reuse1": 0,
+            "reuse2": 0
+          },
+          "pair": {
+            "sd": 0,
+            "ar": 0,
+            "greedy": 0,
+            "sdAttempts": 36,
+            "sdAccepts": 33,
+            "sdBlocks": 24,
+            "arBlocks": 48
+          },
+          "sdNew": [
+            108,
+            126
+          ],
+          "arNew": [
+            104,
+            122
+          ]
+        },
+        {
+          "rnd": 1,
+          "changed": [
+            0,
+            4,
+            8,
+            13
+          ],
+          "localK": [
+            4,
+            3,
+            2,
+            4,
+            2,
+            4,
+            3,
+            3
+          ],
+          "edgeK": [
+            4,
+            4,
+            4,
+            4
+          ],
+          "newCE": 2.5941853291331007,
+          "freshCE": 2.5941853291331007,
+          "error": 0,
+          "staleTV": 0.00005182600560691238,
+          "clean": 0.052083333333333336,
+          "first": [
+            72,
+            76,
+            76
+          ],
+          "total": [
+            128,
+            192,
+            219
+          ],
+          "warm": {
+            "new1": 135,
+            "new2": 135,
+            "reuse1": 27,
+            "reuse2": 27
+          },
+          "base": {
+            "new1": 162,
+            "new2": 162,
+            "reuse1": 0,
+            "reuse2": 0
+          },
+          "pair": {
+            "sd": 0,
+            "ar": 0,
+            "greedy": 0,
+            "sdAttempts": 36,
+            "sdAccepts": 35,
+            "sdBlocks": 24,
+            "arBlocks": 48
+          },
+          "sdNew": [
+            108,
+            126
+          ],
+          "arNew": [
+            104,
+            122
+          ]
+        }
+      ],
+      "localUpdates": 16,
+      "fdCalls": 90,
+      "startCE": 2.5941700328663932
+    },
+    {
+      "name": "checkpoint",
+      "seed": 11,
+      "mode": "all",
+      "mask": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "versions": [
+        {
+          "rnd": 0,
+          "changed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            17,
+            18,
+            19,
+            21,
+            24,
+            26
+          ],
+          "localK": [
+            8,
+            6,
+            6,
+            9,
+            11,
+            8,
+            8,
+            9
+          ],
+          "edgeK": [
+            11,
+            11,
+            14,
+            14
+          ],
+          "newCE": 2.594193354599584,
+          "freshCE": 2.594193354599584,
+          "error": 0,
+          "staleTV": 0.0000517254643769705,
+          "clean": 0,
+          "first": [
+            0,
+            0,
+            0
+          ],
+          "total": [
+            128,
+            192,
+            219
+          ],
+          "warm": {
+            "new1": 162,
+            "new2": 162,
+            "reuse1": 0,
+            "reuse2": 0
+          },
+          "base": {
+            "new1": 162,
+            "new2": 162,
+            "reuse1": 0,
+            "reuse2": 0
+          },
+          "pair": {
+            "sd": 0,
+            "ar": 0,
+            "greedy": 0,
+            "sdAttempts": 36,
+            "sdAccepts": 33,
+            "sdBlocks": 24,
+            "arBlocks": 48
+          },
+          "sdNew": [
+            126,
+            126
+          ],
+          "arNew": [
+            122,
+            122
+          ]
+        },
+        {
+          "rnd": 1,
+          "changed": [
+            0,
+            2,
+            3,
+            4,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            17,
+            18,
+            19,
+            20,
+            24,
+            25,
+            26
+          ],
+          "localK": [
+            8,
+            9,
+            5,
+            9,
+            8,
+            9,
+            9,
+            8
+          ],
+          "edgeK": [
+            12,
+            10,
+            13,
+            13
+          ],
+          "newCE": 2.594194525931093,
+          "freshCE": 2.594194525931093,
+          "error": 0,
+          "staleTV": 0.00007253065921456304,
+          "clean": 0,
+          "first": [
+            0,
+            0,
+            0
+          ],
+          "total": [
+            128,
+            192,
+            219
+          ],
+          "warm": {
+            "new1": 162,
+            "new2": 162,
+            "reuse1": 0,
+            "reuse2": 0
+          },
+          "base": {
+            "new1": 162,
+            "new2": 162,
+            "reuse1": 0,
+            "reuse2": 0
+          },
+          "pair": {
+            "sd": 0,
+            "ar": 0,
+            "greedy": 0,
+            "sdAttempts": 36,
+            "sdAccepts": 35,
+            "sdBlocks": 24,
+            "arBlocks": 48
+          },
+          "sdNew": [
+            126,
+            126
+          ],
+          "arNew": [
+            122,
+            122
+          ]
+        }
+      ],
+      "localUpdates": 16,
+      "fdCalls": 260,
+      "startCE": 2.5941700328663932
+    },
+    {
+      "name": "checkpoint",
+      "seed": 29,
+      "mode": "rare4",
+      "mask": [
+        5,
+        16,
+        22,
+        23
+      ],
+      "versions": [
+        {
+          "rnd": 0,
+          "changed": [],
+          "localK": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "edgeK": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "newCE": 2.5941700328663932,
+          "freshCE": 2.5941700328663932,
+          "error": 0,
+          "staleTV": 0,
+          "clean": 1,
+          "first": [
+            128,
+            192,
+            219
+          ],
+          "total": [
+            128,
+            192,
+            219
+          ],
+          "warm": {
+            "new1": 0,
+            "new2": 0,
+            "reuse1": 79,
+            "reuse2": 79
+          },
+          "base": {
+            "new1": 162,
+            "new2": 162,
+            "reuse1": 0,
+            "reuse2": 0
+          },
+          "pair": {
+            "sd": 0,
+            "ar": 0,
+            "greedy": 0,
+            "sdAttempts": 40,
+            "sdAccepts": 33,
+            "sdBlocks": 24,
+            "arBlocks": 48
+          },
+          "sdNew": [
+            76,
+            138
+          ],
+          "arNew": [
+            62,
+            122
+          ]
+        },
+        {
+          "rnd": 1,
+          "changed": [],
+          "localK": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "edgeK": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "newCE": 2.5941700328663932,
+          "freshCE": 2.5941700328663932,
+          "error": 0,
+          "staleTV": 0,
+          "clean": 1,
+          "first": [
+            128,
+            192,
+            219
+          ],
+          "total": [
+            128,
+            192,
+            219
+          ],
+          "warm": {
+            "new1": 0,
+            "new2": 0,
+            "reuse1": 79,
+            "reuse2": 79
+          },
+          "base": {
+            "new1": 162,
+            "new2": 162,
+            "reuse1": 0,
+            "reuse2": 0
+          },
+          "pair": {
+            "sd": 0,
+            "ar": 0,
+            "greedy": 0,
+            "sdAttempts": 38,
+            "sdAccepts": 32,
+            "sdBlocks": 25,
+            "arBlocks": 48
+          },
+          "sdNew": [
+            110,
+            132
+          ],
+          "arNew": [
+            100,
+            122
+          ]
+        }
+      ],
+      "localUpdates": 16,
+      "fdCalls": 0,
+      "startCE": 2.5941700328663932
+    },
+    {
+      "name": "checkpoint",
+      "seed": 29,
+      "mode": "common4",
+      "mask": [
+        0,
+        13,
+        4,
+        8
+      ],
+      "versions": [
+        {
+          "rnd": 0,
+          "changed": [
+            0,
+            4,
+            8,
+            13
+          ],
+          "localK": [
+            3,
+            4,
+            4,
+            2,
+            2,
+            3,
+            2,
+            2
+          ],
+          "edgeK": [
+            4,
+            4,
+            4,
+            3
+          ],
+          "newCE": 2.594216129633493,
+          "freshCE": 2.594216129633493,
+          "error": 0,
+          "staleTV": 0.000056614826595964857,
+          "clean": 0.052083333333333336,
+          "first": [
+            72,
+            76,
+            76
+          ],
+          "total": [
+            128,
+            192,
+            219
+          ],
+          "warm": {
+            "new1": 135,
+            "new2": 135,
+            "reuse1": 27,
+            "reuse2": 27
+          },
+          "base": {
+            "new1": 162,
+            "new2": 162,
+            "reuse1": 0,
+            "reuse2": 0
+          },
+          "pair": {
+            "sd": 0,
+            "ar": 0,
+            "greedy": 0,
+            "sdAttempts": 40,
+            "sdAccepts": 33,
+            "sdBlocks": 24,
+            "arBlocks": 48
+          },
+          "sdNew": [
+            120,
+            138
+          ],
+          "arNew": [
+            104,
+            122
+          ]
+        },
+        {
+          "rnd": 1,
+          "changed": [
+            0,
+            4,
+            8,
+            13
+          ],
+          "localK": [
+            2,
+            3,
+            3,
+            3,
+            2,
+            4,
+            1,
+            1
+          ],
+          "edgeK": [
+            4,
+            4,
+            4,
+            1
+          ],
+          "newCE": 2.594311970206379,
+          "freshCE": 2.594311970206379,
+          "error": 0,
+          "staleTV": 0.00011793590254851283,
+          "clean": 0.052083333333333336,
+          "first": [
+            72,
+            76,
+            76
+          ],
+          "total": [
+            128,
+            192,
+            219
+          ],
+          "warm": {
+            "new1": 135,
+            "new2": 135,
+            "reuse1": 27,
+            "reuse2": 27
+          },
+          "base": {
+            "new1": 162,
+            "new2": 162,
+            "reuse1": 0,
+            "reuse2": 0
+          },
+          "pair": {
+            "sd": 0,
+            "ar": 0,
+            "greedy": 0,
+            "sdAttempts": 38,
+            "sdAccepts": 32,
+            "sdBlocks": 25,
+            "arBlocks": 48
+          },
+          "sdNew": [
+            114,
+            132
+          ],
+          "arNew": [
+            104,
+            122
+          ]
+        }
+      ],
+      "localUpdates": 16,
+      "fdCalls": 82,
+      "startCE": 2.5941700328663932
+    },
+    {
+      "name": "checkpoint",
+      "seed": 29,
+      "mode": "all",
+      "mask": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "versions": [
+        {
+          "rnd": 0,
+          "changed": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            17,
+            18,
+            19,
+            24,
+            25,
+            26
+          ],
+          "localK": [
+            6,
+            9,
+            10,
+            8,
+            8,
+            10,
+            8,
+            7
+          ],
+          "edgeK": [
+            11,
+            13,
+            13,
+            13
+          ],
+          "newCE": 2.5942141400115992,
+          "freshCE": 2.5942141400115992,
+          "error": 0,
+          "staleTV": 0.00006876980984559804,
+          "clean": 0,
+          "first": [
+            0,
+            0,
+            0
+          ],
+          "total": [
+            128,
+            192,
+            219
+          ],
+          "warm": {
+            "new1": 162,
+            "new2": 162,
+            "reuse1": 0,
+            "reuse2": 0
+          },
+          "base": {
+            "new1": 162,
+            "new2": 162,
+            "reuse1": 0,
+            "reuse2": 0
+          },
+          "pair": {
+            "sd": 0,
+            "ar": 0,
+            "greedy": 0,
+            "sdAttempts": 40,
+            "sdAccepts": 33,
+            "sdBlocks": 24,
+            "arBlocks": 48
+          },
+          "sdNew": [
+            138,
+            138
+          ],
+          "arNew": [
+            122,
+            122
+          ]
+        },
+        {
+          "rnd": 1,
+          "changed": [
+            0,
+            3,
+            4,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            17,
+            18,
+            19,
+            20,
+            24,
+            26
+          ],
+          "localK": [
+            9,
+            6,
+            7,
+            8,
+            8,
+            9,
+            7,
+            8
+          ],
+          "edgeK": [
+            12,
+            11,
+            13,
+            11
+          ],
+          "newCE": 2.5942505116046166,
+          "freshCE": 2.5942505116046166,
+          "error": 0,
+          "staleTV": 0.00015695138164613595,
+          "clean": 0,
+          "first": [
+            0,
+            0,
+            0
+          ],
+          "total": [
+            128,
+            192,
+            219
+          ],
+          "warm": {
+            "new1": 162,
+            "new2": 162,
+            "reuse1": 0,
+            "reuse2": 0
+          },
+          "base": {
+            "new1": 162,
+            "new2": 162,
+            "reuse1": 0,
+            "reuse2": 0
+          },
+          "pair": {
+            "sd": 0,
+            "ar": 0,
+            "greedy": 0,
+            "sdAttempts": 38,
+            "sdAccepts": 32,
+            "sdBlocks": 25,
+            "arBlocks": 48
+          },
+          "sdNew": [
+            132,
+            132
+          ],
+          "arNew": [
+            122,
+            122
+          ]
+        }
+      ],
+      "localUpdates": 16,
+      "fdCalls": 256,
+      "startCE": 2.5941700328663932
+    },
+    {
+      "name": "checkpoint",
+      "seed": 73,
+      "mode": "rare4",
+      "mask": [
+        5,
+        16,
+        22,
+        23
+      ],
+      "versions": [
+        {
+          "rnd": 0,
+          "changed": [],
+          "localK": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "edgeK": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "newCE": 2.5941700328663932,
+          "freshCE": 2.5941700328663932,
+          "error": 0,
+          "staleTV": 0,
+          "clean": 1,
+          "first": [
+            128,
+            192,
+            219
+          ],
+          "total": [
+            128,
+            192,
+            219
+          ],
+          "warm": {
+            "new1": 0,
+            "new2": 0,
+            "reuse1": 79,
+            "reuse2": 79
+          },
+          "base": {
+            "new1": 162,
+            "new2": 162,
+            "reuse1": 0,
+            "reuse2": 0
+          },
+          "pair": {
+            "sd": 0,
+            "ar": 0,
+            "greedy": 0,
+            "sdAttempts": 37,
+            "sdAccepts": 33,
+            "sdBlocks": 24,
+            "arBlocks": 48
+          },
+          "sdNew": [
+            72,
+            132
+          ],
+          "arNew": [
+            60,
+            122
+          ]
+        },
+        {
+          "rnd": 1,
+          "changed": [],
+          "localK": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "edgeK": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "newCE": 2.5941700328663932,
+          "freshCE": 2.5941700328663932,
+          "error": 0,
+          "staleTV": 0,
+          "clean": 1,
+          "first": [
+            128,
+            192,
+            219
+          ],
+          "total": [
+            128,
+            192,
+            219
+          ],
+          "warm": {
+            "new1": 0,
+            "new2": 0,
+            "reuse1": 79,
+            "reuse2": 79
+          },
+          "base": {
+            "new1": 162,
+            "new2": 162,
+            "reuse1": 0,
+            "reuse2": 0
+          },
+          "pair": {
+            "sd": 0,
+            "ar": 0,
+            "greedy": 0,
+            "sdAttempts": 39,
+            "sdAccepts": 34,
+            "sdBlocks": 24,
+            "arBlocks": 48
+          },
+          "sdNew": [
+            114,
+            136
+          ],
+          "arNew": [
+            100,
+            122
+          ]
+        }
+      ],
+      "localUpdates": 16,
+      "fdCalls": 0,
+      "startCE": 2.5941700328663932
+    },
+    {
+      "name": "checkpoint",
+      "seed": 73,
+      "mode": "common4",
+      "mask": [
+        0,
+        13,
+        4,
+        8
+      ],
+      "versions": [
+        {
+          "rnd": 0,
+          "changed": [
+            0,
+            4,
+            8,
+            13
+          ],
+          "localK": [
+            3,
+            2,
+            3,
+            2,
+            4,
+            3,
+            2,
+            2
+          ],
+          "edgeK": [
+            4,
+            3,
+            4,
+            2
+          ],
+          "newCE": 2.594191272852011,
+          "freshCE": 2.594191272852011,
+          "error": 0,
+          "staleTV": 0.00002958524232854777,
+          "clean": 0.052083333333333336,
+          "first": [
+            72,
+            76,
+            76
+          ],
+          "total": [
+            128,
+            192,
+            219
+          ],
+          "warm": {
+            "new1": 135,
+            "new2": 135,
+            "reuse1": 27,
+            "reuse2": 27
+          },
+          "base": {
+            "new1": 162,
+            "new2": 162,
+            "reuse1": 0,
+            "reuse2": 0
+          },
+          "pair": {
+            "sd": 0,
+            "ar": 0,
+            "greedy": 0,
+            "sdAttempts": 37,
+            "sdAccepts": 33,
+            "sdBlocks": 24,
+            "arBlocks": 48
+          },
+          "sdNew": [
+            114,
+            132
+          ],
+          "arNew": [
+            104,
+            122
+          ]
+        },
+        {
+          "rnd": 1,
+          "changed": [
+            0,
+            4,
+            8,
+            13
+          ],
+          "localK": [
+            4,
+            2,
+            3,
+            2,
+            2,
+            2,
+            2,
+            4
+          ],
+          "edgeK": [
+            4,
+            3,
+            3,
+            4
+          ],
+          "newCE": 2.5942138931704184,
+          "freshCE": 2.5942138931704184,
+          "error": 0,
+          "staleTV": 0.00006583207118104462,
+          "clean": 0.052083333333333336,
+          "first": [
+            72,
+            76,
+            76
+          ],
+          "total": [
+            128,
+            192,
+            219
+          ],
+          "warm": {
+            "new1": 135,
+            "new2": 135,
+            "reuse1": 27,
+            "reuse2": 27
+          },
+          "base": {
+            "new1": 162,
+            "new2": 162,
+            "reuse1": 0,
+            "reuse2": 0
+          },
+          "pair": {
+            "sd": 0,
+            "ar": 0,
+            "greedy": 0,
+            "sdAttempts": 39,
+            "sdAccepts": 34,
+            "sdBlocks": 24,
+            "arBlocks": 48
+          },
+          "sdNew": [
+            118,
+            136
+          ],
+          "arNew": [
+            104,
+            122
+          ]
+        }
+      ],
+      "localUpdates": 16,
+      "fdCalls": 84,
+      "startCE": 2.5941700328663932
+    },
+    {
+      "name": "checkpoint",
+      "seed": 73,
+      "mode": "all",
+      "mask": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "versions": [
+        {
+          "rnd": 0,
+          "changed": [
+            0,
+            2,
+            3,
+            4,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            17,
+            18,
+            19,
+            21,
+            24,
+            26
+          ],
+          "localK": [
+            8,
+            8,
+            8,
+            9,
+            10,
+            10,
+            7,
+            9
+          ],
+          "edgeK": [
+            13,
+            13,
+            13,
+            10
+          ],
+          "newCE": 2.594165293893914,
+          "freshCE": 2.594165293893914,
+          "error": 0,
+          "staleTV": 0.00005442174590733292,
+          "clean": 0,
+          "first": [
+            0,
+            0,
+            0
+          ],
+          "total": [
+            128,
+            192,
+            219
+          ],
+          "warm": {
+            "new1": 162,
+            "new2": 162,
+            "reuse1": 0,
+            "reuse2": 0
+          },
+          "base": {
+            "new1": 162,
+            "new2": 162,
+            "reuse1": 0,
+            "reuse2": 0
+          },
+          "pair": {
+            "sd": 0,
+            "ar": 0,
+            "greedy": 0,
+            "sdAttempts": 37,
+            "sdAccepts": 33,
+            "sdBlocks": 24,
+            "arBlocks": 48
+          },
+          "sdNew": [
+            132,
+            132
+          ],
+          "arNew": [
+            122,
+            122
+          ]
+        },
+        {
+          "rnd": 1,
+          "changed": [
+            0,
+            2,
+            3,
+            4,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            17,
+            18,
+            19,
+            24,
+            25,
+            26
+          ],
+          "localK": [
+            10,
+            8,
+            9,
+            8,
+            8,
+            7,
+            7,
+            6
+          ],
+          "edgeK": [
+            13,
+            12,
+            13,
+            10
+          ],
+          "newCE": 2.5941841792118856,
+          "freshCE": 2.5941841792118856,
+          "error": 0,
+          "staleTV": 0.00008310494708386,
+          "clean": 0,
+          "first": [
+            0,
+            0,
+            0
+          ],
+          "total": [
+            128,
+            192,
+            219
+          ],
+          "warm": {
+            "new1": 162,
+            "new2": 162,
+            "reuse1": 0,
+            "reuse2": 0
+          },
+          "base": {
+            "new1": 162,
+            "new2": 162,
+            "reuse1": 0,
+            "reuse2": 0
+          },
+          "pair": {
+            "sd": 0,
+            "ar": 0,
+            "greedy": 0,
+            "sdAttempts": 39,
+            "sdAccepts": 34,
+            "sdBlocks": 24,
+            "arBlocks": 48
+          },
+          "sdNew": [
+            136,
+            136
+          ],
+          "arNew": [
+            122,
+            122
+          ]
+        }
+      ],
+      "localUpdates": 16,
+      "fdCalls": 264,
+      "startCE": 2.5941700328663932
+    }
+  ],
+  "source": {
+    "repo": "sanchayan7432/microGPT",
+    "ref": "aa28d7c0aa66704ce56b263dfd3270579f3d5f6d",
+    "files": [
+      {
+        "path": "weights.json",
+        "sha": "df323b7e714ceeb10ca070f9945a82c51b2c233c"
+      },
+      {
+        "path": "checkpoint.json",
+        "sha": "7f0b4968c56290ebad706ab740de942c369f42a5"
+      },
+      {
+        "path": "input.txt",
+        "sha": "736d88e18b70b292750a30e5cca6a92b0b333bd2"
+      }
+    ]
+  }
+}
