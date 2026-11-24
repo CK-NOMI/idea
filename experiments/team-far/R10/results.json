@@ -1,0 +1,733 @@
+{
+  "environment": "V8 FP64 deterministic attention arithmetic; actual public log replay for prompt/output lengths only, no GPU, network, HFL training or measured latency",
+  "source": {
+    "repo": "shreyansh26/Speculative-Decoding",
+    "ref": "76335be2f8f1a7bf25739310ae80435b83782b23"
+  },
+  "logRows": 100,
+  "model": {
+    "Hq": 28,
+    "Hkv": 4,
+    "d": 128,
+    "Dq": 3584,
+    "Dkv": 512,
+    "L": 28,
+    "wireBytes": 2
+  },
+  "math": [
+    {
+      "seed": 11,
+      "m": 16,
+      "n": 1,
+      "errors": {
+        "o": 1.1102230246251565e-16,
+        "q": 1.214306433183765e-17,
+        "k": 1.0408340855860843e-17,
+        "v": 2.0816681711721685e-17,
+        "sk": 3.469446951953614e-18,
+        "sv": 1.3877787807814457e-17,
+        "fd": 1.4894285637327047e-12
+      }
+    },
+    {
+      "seed": 11,
+      "m": 16,
+      "n": 4,
+      "errors": {
+        "o": 1.1102230246251565e-16,
+        "q": 1.474514954580286e-17,
+        "k": 1.5612511283791264e-17,
+        "v": 4.85722573273506e-17,
+        "sk": 6.071532165918825e-18,
+        "sv": 1.734723475976807e-17,
+        "fd": 3.4491489525612096e-12
+      }
+    },
+    {
+      "seed": 11,
+      "m": 16,
+      "n": 16,
+      "errors": {
+        "o": 2.220446049250313e-16,
+        "q": 2.42861286636753e-17,
+        "k": 4.163336342344337e-17,
+        "v": 9.71445146547012e-17,
+        "sk": 6.938893903907228e-18,
+        "sv": 1.734723475976807e-17,
+        "fd": 1.9414540504761324e-12
+      }
+    },
+    {
+      "seed": 11,
+      "m": 64,
+      "n": 1,
+      "errors": {
+        "o": 1.1102230246251565e-16,
+        "q": 1.2278589603398338e-17,
+        "k": 4.336808689942018e-18,
+        "v": 1.214306433183765e-17,
+        "sk": 8.673617379884035e-19,
+        "sv": 3.0357660829594124e-18,
+        "fd": 8.888064980186461e-13
+      }
+    },
+    {
+      "seed": 11,
+      "m": 64,
+      "n": 4,
+      "errors": {
+        "o": 1.942890293094024e-16,
+        "q": 1.951563910473908e-17,
+        "k": 1.0408340855860843e-17,
+        "v": 2.6020852139652106e-17,
+        "sk": 2.168404344971009e-18,
+        "sv": 3.903127820947816e-18,
+        "fd": 1.9959710967354383e-12
+      }
+    },
+    {
+      "seed": 11,
+      "m": 64,
+      "n": 16,
+      "errors": {
+        "o": 2.3592239273284576e-16,
+        "q": 2.6020852139652106e-17,
+        "k": 2.0816681711721685e-17,
+        "v": 5.204170427930421e-17,
+        "sk": 3.469446951953614e-18,
+        "sv": 7.806255641895632e-18,
+        "fd": 1.055814723843751e-12
+      }
+    },
+    {
+      "seed": 11,
+      "m": 256,
+      "n": 1,
+      "errors": {
+        "o": 1.249000902703301e-16,
+        "q": 1.83772268236293e-17,
+        "k": 2.168404344971009e-18,
+        "v": 3.686287386450715e-18,
+        "sk": 4.87890977618477e-19,
+        "sv": 1.1926223897340549e-18,
+        "fd": 1.2268294019568415e-12
+      }
+    },
+    {
+      "seed": 11,
+      "m": 256,
+      "n": 4,
+      "errors": {
+        "o": 1.249000902703301e-16,
+        "q": 9.486769009248164e-18,
+        "k": 2.439454888092385e-18,
+        "v": 6.5052130349130266e-18,
+        "sk": 7.589415207398531e-19,
+        "sv": 2.168404344971009e-18,
+        "fd": 5.542458852980658e-13
+      }
+    },
+    {
+      "seed": 11,
+      "m": 256,
+      "n": 16,
+      "errors": {
+        "o": 1.5265566588595902e-16,
+        "q": 1.485356976305141e-17,
+        "k": 9.540979117872439e-18,
+        "v": 2.168404344971009e-17,
+        "sk": 3.0357660829594124e-18,
+        "sv": 3.469446951953614e-18,
+        "fd": 2.0676086710802455e-12
+      }
+    },
+    {
+      "seed": 29,
+      "m": 16,
+      "n": 1,
+      "errors": {
+        "o": 1.6653345369377348e-16,
+        "q": 9.974659986866641e-18,
+        "k": 1.0408340855860843e-17,
+        "v": 2.7755575615628914e-17,
+        "sk": 5.204170427930421e-18,
+        "sv": 6.938893903907228e-18,
+        "fd": 1.7945737398276235e-12
+      }
+    },
+    {
+      "seed": 29,
+      "m": 16,
+      "n": 4,
+      "errors": {
+        "o": 2.220446049250313e-16,
+        "q": 1.5612511283791264e-17,
+        "k": 2.42861286636753e-17,
+        "v": 5.551115123125783e-17,
+        "sk": 6.938893903907228e-18,
+        "sv": 1.3877787807814457e-17,
+        "fd": 6.525249091060559e-13
+      }
+    },
+    {
+      "seed": 29,
+      "m": 16,
+      "n": 16,
+      "errors": {
+        "o": 2.220446049250313e-16,
+        "q": 1.9081958235744878e-17,
+        "k": 6.938893903907228e-17,
+        "v": 1.1796119636642288e-16,
+        "sk": 7.806255641895632e-18,
+        "sv": 1.3877787807814457e-17,
+        "fd": 1.1823424184154163e-12
+      }
+    },
+    {
+      "seed": 29,
+      "m": 64,
+      "n": 1,
+      "errors": {
+        "o": 1.3877787807814457e-16,
+        "q": 1.5612511283791264e-17,
+        "k": 5.637851296924623e-18,
+        "v": 1.0408340855860843e-17,
+        "sk": 1.5178830414797062e-18,
+        "sv": 2.6020852139652106e-18,
+        "fd": 5.197745445856272e-13
+      }
+    },
+    {
+      "seed": 29,
+      "m": 64,
+      "n": 4,
+      "errors": {
+        "o": 1.942890293094024e-16,
+        "q": 2.688821387764051e-17,
+        "k": 1.734723475976807e-17,
+        "v": 2.7755575615628914e-17,
+        "sk": 2.168404344971009e-18,
+        "sv": 6.938893903907228e-18,
+        "fd": 1.0364192143397233e-12
+      }
+    },
+    {
+      "seed": 29,
+      "m": 64,
+      "n": 16,
+      "errors": {
+        "o": 1.942890293094024e-16,
+        "q": 2.644098048149024e-17,
+        "k": 2.7755575615628914e-17,
+        "v": 6.591949208711867e-17,
+        "sk": 4.336808689942018e-18,
+        "sv": 6.071532165918825e-18,
+        "fd": 8.396148359901545e-13
+      }
+    },
+    {
+      "seed": 29,
+      "m": 256,
+      "n": 1,
+      "errors": {
+        "o": 2.3592239273284576e-16,
+        "q": 6.5052130349130266e-18,
+        "k": 1.734723475976807e-18,
+        "v": 4.662069341687669e-18,
+        "sk": 6.505213034913027e-19,
+        "sv": 8.673617379884035e-19,
+        "fd": 4.888322819446289e-13
+      }
+    },
+    {
+      "seed": 29,
+      "m": 256,
+      "n": 4,
+      "errors": {
+        "o": 8.326672684688674e-17,
+        "q": 1.043544591017298e-17,
+        "k": 2.8189256484623115e-18,
+        "v": 6.938893903907228e-18,
+        "sk": 5.421010862427522e-19,
+        "sv": 1.5178830414797062e-18,
+        "fd": 1.0735288526186881e-12
+      }
+    },
+    {
+      "seed": 29,
+      "m": 256,
+      "n": 16,
+      "errors": {
+        "o": 1.5959455978986625e-16,
+        "q": 1.5829351718288365e-17,
+        "k": 7.806255641895632e-18,
+        "v": 2.0816681711721685e-17,
+        "sk": 1.5178830414797062e-18,
+        "sv": 2.168404344971009e-18,
+        "fd": 1.0167541721756157e-12
+      }
+    },
+    {
+      "seed": 73,
+      "m": 16,
+      "n": 1,
+      "errors": {
+        "o": 1.6653345369377348e-16,
+        "q": 1.3444106938820255e-17,
+        "k": 1.0408340855860843e-17,
+        "v": 2.7755575615628914e-17,
+        "sk": 2.6020852139652106e-18,
+        "sv": 1.0408340855860843e-17,
+        "fd": 9.134197304777603e-13
+      }
+    },
+    {
+      "seed": 73,
+      "m": 16,
+      "n": 4,
+      "errors": {
+        "o": 1.6653345369377348e-16,
+        "q": 1.9949319973733282e-17,
+        "k": 2.0816681711721685e-17,
+        "v": 8.326672684688674e-17,
+        "sk": 6.938893903907228e-18,
+        "sv": 1.0408340855860843e-17,
+        "fd": 6.232037455533579e-13
+      }
+    },
+    {
+      "seed": 73,
+      "m": 16,
+      "n": 16,
+      "errors": {
+        "o": 2.220446049250313e-16,
+        "q": 2.7755575615628914e-17,
+        "k": 4.163336342344337e-17,
+        "v": 1.3877787807814457e-16,
+        "sk": 7.806255641895632e-18,
+        "sv": 1.3877787807814457e-17,
+        "fd": 4.905032543328636e-13
+      }
+    },
+    {
+      "seed": 73,
+      "m": 64,
+      "n": 1,
+      "errors": {
+        "o": 1.3877787807814457e-16,
+        "q": 2.0491421059976034e-17,
+        "k": 5.244828009398628e-18,
+        "v": 1.0733601507606494e-17,
+        "sk": 8.673617379884035e-19,
+        "sv": 3.0357660829594124e-18,
+        "fd": 1.0454757719269292e-12
+      }
+    },
+    {
+      "seed": 73,
+      "m": 64,
+      "n": 4,
+      "errors": {
+        "o": 1.942890293094024e-16,
+        "q": 2.168404344971009e-17,
+        "k": 7.37257477290143e-18,
+        "v": 2.0816681711721685e-17,
+        "sk": 4.336808689942018e-18,
+        "sv": 5.204170427930421e-18,
+        "fd": 7.838457801671167e-13
+      }
+    },
+    {
+      "seed": 73,
+      "m": 64,
+      "n": 16,
+      "errors": {
+        "o": 2.498001805406602e-16,
+        "q": 1.5612511283791264e-17,
+        "k": 1.734723475976807e-17,
+        "v": 9.71445146547012e-17,
+        "sk": 3.469446951953614e-18,
+        "sv": 7.806255641895632e-18,
+        "fd": 1.4456101246618225e-12
+      }
+    },
+    {
+      "seed": 73,
+      "m": 256,
+      "n": 1,
+      "errors": {
+        "o": 8.326672684688674e-17,
+        "q": 1.0516761073109393e-17,
+        "k": 2.6020852139652106e-18,
+        "v": 3.469446951953614e-18,
+        "sk": 2.710505431213761e-19,
+        "sv": 8.673617379884035e-19,
+        "fd": 5.816011734716131e-13
+      }
+    },
+    {
+      "seed": 73,
+      "m": 256,
+      "n": 4,
+      "errors": {
+        "o": 1.3877787807814457e-16,
+        "q": 1.1104601938503877e-17,
+        "k": 3.469446951953614e-18,
+        "v": 6.938893903907228e-18,
+        "sk": 6.505213034913027e-19,
+        "sv": 1.1926223897340549e-18,
+        "fd": 1.657389503417761e-12
+      }
+    },
+    {
+      "seed": 73,
+      "m": 256,
+      "n": 16,
+      "errors": {
+        "o": 1.8041124150158794e-16,
+        "q": 1.6588293239028218e-17,
+        "k": 7.806255641895632e-18,
+        "v": 2.42861286636753e-17,
+        "sk": 1.6263032587282567e-18,
+        "sv": 3.903127820947816e-18,
+        "fd": 1.0837632874460823e-12
+      }
+    }
+  ],
+  "scenarios": [
+    {
+      "share": 0.25,
+      "cohort": 1,
+      "over": 1,
+      "n": 100,
+      "remoteToRep": 4.792959114130739,
+      "oracleSwitchToRep": 0.9993493598278859,
+      "remoteWins": 1,
+      "meanResidentKV_MiB": 9.754609375,
+      "meanRepBytes": 20456898.56,
+      "meanRemoteBytes": 98049078.4
+    },
+    {
+      "share": 0.25,
+      "cohort": 1,
+      "over": 1.5,
+      "n": 100,
+      "remoteToRep": 5.9892661891363455,
+      "oracleSwitchToRep": 1,
+      "remoteWins": 0,
+      "meanResidentKV_MiB": 9.754609375,
+      "meanRepBytes": 20456898.56,
+      "meanRemoteBytes": 122521810.88
+    },
+    {
+      "share": 0.25,
+      "cohort": 1,
+      "over": 2,
+      "n": 100,
+      "remoteToRep": 7.184785312832876,
+      "oracleSwitchToRep": 1,
+      "remoteWins": 0,
+      "meanResidentKV_MiB": 9.754609375,
+      "meanRepBytes": 20456898.56,
+      "meanRemoteBytes": 146978424.32
+    },
+    {
+      "share": 0.25,
+      "cohort": 4,
+      "over": 1,
+      "n": 100,
+      "remoteToRep": 19.171836456522957,
+      "oracleSwitchToRep": 1,
+      "remoteWins": 0,
+      "meanResidentKV_MiB": 9.754609375,
+      "meanRepBytes": 20456898.56,
+      "meanRemoteBytes": 392196313.6
+    },
+    {
+      "share": 0.25,
+      "cohort": 4,
+      "over": 1.5,
+      "n": 100,
+      "remoteToRep": 23.957064756545382,
+      "oracleSwitchToRep": 1,
+      "remoteWins": 0,
+      "meanResidentKV_MiB": 9.754609375,
+      "meanRepBytes": 20456898.56,
+      "meanRemoteBytes": 490087243.52
+    },
+    {
+      "share": 0.25,
+      "cohort": 4,
+      "over": 2,
+      "n": 100,
+      "remoteToRep": 28.739141251331503,
+      "oracleSwitchToRep": 1,
+      "remoteWins": 0,
+      "meanResidentKV_MiB": 9.754609375,
+      "meanRepBytes": 20456898.56,
+      "meanRemoteBytes": 587913697.28
+    },
+    {
+      "share": 0.25,
+      "cohort": 8,
+      "over": 1,
+      "n": 100,
+      "remoteToRep": 38.343672913045914,
+      "oracleSwitchToRep": 1,
+      "remoteWins": 0,
+      "meanResidentKV_MiB": 9.754609375,
+      "meanRepBytes": 20456898.56,
+      "meanRemoteBytes": 784392627.2
+    },
+    {
+      "share": 0.25,
+      "cohort": 8,
+      "over": 1.5,
+      "n": 100,
+      "remoteToRep": 47.914129513090764,
+      "oracleSwitchToRep": 1,
+      "remoteWins": 0,
+      "meanResidentKV_MiB": 9.754609375,
+      "meanRepBytes": 20456898.56,
+      "meanRemoteBytes": 980174487.04
+    },
+    {
+      "share": 0.25,
+      "cohort": 8,
+      "over": 2,
+      "n": 100,
+      "remoteToRep": 57.478282502663006,
+      "oracleSwitchToRep": 1,
+      "remoteWins": 0,
+      "meanResidentKV_MiB": 9.754609375,
+      "meanRepBytes": 20456898.56,
+      "meanRemoteBytes": 1175827394.56
+    },
+    {
+      "share": 0.5,
+      "cohort": 1,
+      "over": 1,
+      "n": 100,
+      "remoteToRep": 2.3942647581356598,
+      "oracleSwitchToRep": 0.9913779598538102,
+      "remoteWins": 2,
+      "meanResidentKV_MiB": 19.527265625,
+      "meanRepBytes": 40951644.16,
+      "meanRemoteBytes": 98049078.4
+    },
+    {
+      "share": 0.5,
+      "cohort": 1,
+      "over": 1.5,
+      "n": 100,
+      "remoteToRep": 2.9918654889972554,
+      "oracleSwitchToRep": 0.9939364349077212,
+      "remoteWins": 2,
+      "meanResidentKV_MiB": 19.527265625,
+      "meanRepBytes": 40951644.16,
+      "meanRemoteBytes": 122521810.88
+    },
+    {
+      "share": 0.5,
+      "cohort": 1,
+      "over": 2,
+      "n": 100,
+      "remoteToRep": 3.5890726083120956,
+      "oracleSwitchToRep": 0.9959912447139216,
+      "remoteWins": 1,
+      "meanResidentKV_MiB": 19.527265625,
+      "meanRepBytes": 40951644.16,
+      "meanRemoteBytes": 146978424.32
+    },
+    {
+      "share": 0.5,
+      "cohort": 4,
+      "over": 1,
+      "n": 100,
+      "remoteToRep": 9.577059032542639,
+      "oracleSwitchToRep": 1,
+      "remoteWins": 0,
+      "meanResidentKV_MiB": 19.527265625,
+      "meanRepBytes": 40951644.16,
+      "meanRemoteBytes": 392196313.6
+    },
+    {
+      "share": 0.5,
+      "cohort": 4,
+      "over": 1.5,
+      "n": 100,
+      "remoteToRep": 11.967461955989021,
+      "oracleSwitchToRep": 1,
+      "remoteWins": 0,
+      "meanResidentKV_MiB": 19.527265625,
+      "meanRepBytes": 40951644.16,
+      "meanRemoteBytes": 490087243.52
+    },
+    {
+      "share": 0.5,
+      "cohort": 4,
+      "over": 2,
+      "n": 100,
+      "remoteToRep": 14.356290433248382,
+      "oracleSwitchToRep": 1,
+      "remoteWins": 0,
+      "meanResidentKV_MiB": 19.527265625,
+      "meanRepBytes": 40951644.16,
+      "meanRemoteBytes": 587913697.28
+    },
+    {
+      "share": 0.5,
+      "cohort": 8,
+      "over": 1,
+      "n": 100,
+      "remoteToRep": 19.154118065085278,
+      "oracleSwitchToRep": 1,
+      "remoteWins": 0,
+      "meanResidentKV_MiB": 19.527265625,
+      "meanRepBytes": 40951644.16,
+      "meanRemoteBytes": 784392627.2
+    },
+    {
+      "share": 0.5,
+      "cohort": 8,
+      "over": 1.5,
+      "n": 100,
+      "remoteToRep": 23.934923911978043,
+      "oracleSwitchToRep": 1,
+      "remoteWins": 0,
+      "meanResidentKV_MiB": 19.527265625,
+      "meanRepBytes": 40951644.16,
+      "meanRemoteBytes": 980174487.04
+    },
+    {
+      "share": 0.5,
+      "cohort": 8,
+      "over": 2,
+      "n": 100,
+      "remoteToRep": 28.712580866496765,
+      "oracleSwitchToRep": 1,
+      "remoteWins": 0,
+      "meanResidentKV_MiB": 19.527265625,
+      "meanRepBytes": 40951644.16,
+      "meanRemoteBytes": 1175827394.56
+    },
+    {
+      "share": 1,
+      "cohort": 1,
+      "over": 1,
+      "n": 100,
+      "remoteToRep": 1.1965961945910197,
+      "oracleSwitchToRep": 0.9325503756770848,
+      "remoteWins": 39,
+      "meanResidentKV_MiB": 39.07203125,
+      "meanRepBytes": 81939988.48,
+      "meanRemoteBytes": 98049078.4
+    },
+    {
+      "share": 1,
+      "cohort": 1,
+      "over": 1.5,
+      "n": 100,
+      "remoteToRep": 1.4952627301126025,
+      "oracleSwitchToRep": 0.9867032444083643,
+      "remoteWins": 3,
+      "meanResidentKV_MiB": 39.07203125,
+      "meanRepBytes": 81939988.48,
+      "meanRemoteBytes": 122521810.88
+    },
+    {
+      "share": 1,
+      "cohort": 1,
+      "over": 2,
+      "n": 100,
+      "remoteToRep": 1.793732548008286,
+      "oracleSwitchToRep": 0.9884737030414579,
+      "remoteWins": 3,
+      "meanResidentKV_MiB": 39.07203125,
+      "meanRepBytes": 81939988.48,
+      "meanRemoteBytes": 146978424.32
+    },
+    {
+      "share": 1,
+      "cohort": 4,
+      "over": 1,
+      "n": 100,
+      "remoteToRep": 4.786384778364079,
+      "oracleSwitchToRep": 0.9993362557036083,
+      "remoteWins": 1,
+      "meanResidentKV_MiB": 39.07203125,
+      "meanRepBytes": 81939988.48,
+      "meanRemoteBytes": 392196313.6
+    },
+    {
+      "share": 1,
+      "cohort": 4,
+      "over": 1.5,
+      "n": 100,
+      "remoteToRep": 5.98105092045041,
+      "oracleSwitchToRep": 1,
+      "remoteWins": 0,
+      "meanResidentKV_MiB": 39.07203125,
+      "meanRepBytes": 81939988.48,
+      "meanRemoteBytes": 490087243.52
+    },
+    {
+      "share": 1,
+      "cohort": 4,
+      "over": 2,
+      "n": 100,
+      "remoteToRep": 7.174930192033144,
+      "oracleSwitchToRep": 1,
+      "remoteWins": 0,
+      "meanResidentKV_MiB": 39.07203125,
+      "meanRepBytes": 81939988.48,
+      "meanRemoteBytes": 587913697.28
+    },
+    {
+      "share": 1,
+      "cohort": 8,
+      "over": 1,
+      "n": 100,
+      "remoteToRep": 9.572769556728158,
+      "oracleSwitchToRep": 1,
+      "remoteWins": 0,
+      "meanResidentKV_MiB": 39.07203125,
+      "meanRepBytes": 81939988.48,
+      "meanRemoteBytes": 784392627.2
+    },
+    {
+      "share": 1,
+      "cohort": 8,
+      "over": 1.5,
+      "n": 100,
+      "remoteToRep": 11.96210184090082,
+      "oracleSwitchToRep": 1,
+      "remoteWins": 0,
+      "meanResidentKV_MiB": 39.07203125,
+      "meanRepBytes": 81939988.48,
+      "meanRemoteBytes": 980174487.04
+    },
+    {
+      "share": 1,
+      "cohort": 8,
+      "over": 2,
+      "n": 100,
+      "remoteToRep": 14.349860384066288,
+      "oracleSwitchToRep": 1,
+      "remoteWins": 0,
+      "meanResidentKV_MiB": 39.07203125,
+      "meanRepBytes": 81939988.48,
+      "meanRemoteBytes": 1175827394.56
+    }
+  ],
+  "maxErrors": {
+    "o": 2.498001805406602e-16,
+    "q": 2.7755575615628914e-17,
+    "k": 6.938893903907228e-17,
+    "v": 1.3877787807814457e-16,
+    "sk": 7.806255641895632e-18,
+    "sv": 1.734723475976807e-17,
+    "fd": 3.4491489525612096e-12
+  },
+  "note": "All remote scenario byte counts are hypothetical. Repeated cohorts assume same prompt length and one common prefix; no proof any trace prompt has actual shared public prefix. Treat full prompt as optimistic upper-bound m, not actual common prefix. Scalars are counted at BF16-sized 2 bytes solely for model; real LSE/adjoint normalizer typically FP32. No rollout or model update ran."
+}
