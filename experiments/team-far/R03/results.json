@@ -1,0 +1,1945 @@
+{
+  "environment": "V8 CPU FP64, external two checkpoints same 7264-parameter character Transformer, one-step probabilities; exact weighted calibration/test moment enumeration; proxy correct-next-character reward, not expensive labels; no real rollout, training GPU or timing",
+  "rows": [
+    {
+      "wi": 0,
+      "seed": 11,
+      "budget": 0.1,
+      "scope": "global",
+      "nTrain": 1024,
+      "nTest": 512,
+      "methods": [
+        {
+          "query": 0.1,
+          "variance": 11.871763404869032,
+          "rbVariance": 11.871763404869032,
+          "uniformWithRBPrediction": 12.790434248608179,
+          "maxMean": 8.881784197001252e-16,
+          "maxIneq": 2.6645352591003757e-15
+        },
+        {
+          "query": 0.1,
+          "variance": 11.87414993734071,
+          "rbVariance": 11.87414993734071,
+          "uniformWithRBPrediction": 12.826954279936597,
+          "maxMean": 8.881784197001252e-16,
+          "maxIneq": 8.881784197001252e-16
+        },
+        {
+          "query": 0.09999999999999999,
+          "variance": 11.921229267509663,
+          "rbVariance": 11.905616504089497,
+          "uniformWithRBPrediction": 12.829639224719013,
+          "maxMean": 7.105427357601002e-15,
+          "maxIneq": 0
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "budget": 0.1,
+      "scope": "region",
+      "nTrain": 1024,
+      "nTest": 512,
+      "methods": [
+        {
+          "query": 0.1,
+          "variance": 11.850014102036951,
+          "rbVariance": 11.850014102036951,
+          "uniformWithRBPrediction": 12.755365904113972,
+          "maxMean": 2.220446049250313e-16,
+          "maxIneq": 6.661338147750939e-16
+        },
+        {
+          "query": 0.1,
+          "variance": 11.92562016885407,
+          "rbVariance": 11.92562016885407,
+          "uniformWithRBPrediction": 12.814120231371371,
+          "maxMean": 1.7763568394002505e-15,
+          "maxIneq": 5.329070518200751e-15
+        },
+        {
+          "query": 0.1,
+          "variance": 12.002144159681542,
+          "rbVariance": 11.982570384435814,
+          "uniformWithRBPrediction": 12.828867724152593,
+          "maxMean": 3.552713678800501e-15,
+          "maxIneq": 8.881784197001252e-16
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "budget": 0.1,
+      "scope": "client",
+      "nTrain": 1024,
+      "nTest": 512,
+      "methods": [
+        {
+          "query": 0.1,
+          "variance": 11.890598780691542,
+          "rbVariance": 11.89059878069154,
+          "uniformWithRBPrediction": 12.734509188574322,
+          "maxMean": 8.881784197001252e-16,
+          "maxIneq": 2.220446049250313e-15
+        },
+        {
+          "query": 0.1,
+          "variance": 12.046558450741927,
+          "rbVariance": 12.046558450741927,
+          "uniformWithRBPrediction": 12.820709964033846,
+          "maxMean": 8.881784197001252e-16,
+          "maxIneq": 4.263256414560601e-14
+        },
+        {
+          "query": 0.1,
+          "variance": 12.13945336105116,
+          "rbVariance": 12.113999797501354,
+          "uniformWithRBPrediction": 12.846674432013058,
+          "maxMean": 7.105427357601002e-15,
+          "maxIneq": 4.440892098500626e-16
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "budget": 0.25,
+      "scope": "global",
+      "nTrain": 1024,
+      "nTest": 512,
+      "methods": [
+        {
+          "query": 0.25,
+          "variance": 3.8960097453737044,
+          "rbVariance": 3.8960097453737044,
+          "uniformWithRBPrediction": 4.2634780828693915,
+          "maxMean": 1.1102230246251565e-16,
+          "maxIneq": 0
+        },
+        {
+          "query": 0.25,
+          "variance": 3.894529689607145,
+          "rbVariance": 3.894529689607145,
+          "uniformWithRBPrediction": 4.275651426645487,
+          "maxMean": 2.220446049250313e-16,
+          "maxIneq": 0
+        },
+        {
+          "query": 0.24999999999999997,
+          "variance": 3.912868578949141,
+          "rbVariance": 3.9070163341931035,
+          "uniformWithRBPrediction": 4.276655719764917,
+          "maxMean": 1.7763568394002505e-15,
+          "maxIneq": 3.3306690738754696e-16
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "budget": 0.25,
+      "scope": "region",
+      "nTrain": 1024,
+      "nTest": 512,
+      "methods": [
+        {
+          "query": 0.24999999999999997,
+          "variance": 3.889647913873815,
+          "rbVariance": 3.889647913873815,
+          "uniformWithRBPrediction": 4.25178863470467,
+          "maxMean": 2.220446049250313e-16,
+          "maxIneq": 0
+        },
+        {
+          "query": 0.24999999999999997,
+          "variance": 3.9159733854501972,
+          "rbVariance": 3.9159733854501972,
+          "uniformWithRBPrediction": 4.271373410457127,
+          "maxMean": 2.220446049250313e-16,
+          "maxIneq": 2.220446049250313e-16
+        },
+        {
+          "query": 0.25,
+          "variance": 3.945210011698119,
+          "rbVariance": 3.937839150680052,
+          "uniformWithRBPrediction": 4.276395108285213,
+          "maxMean": 1.7763568394002505e-15,
+          "maxIneq": 2.220446049250313e-16
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "budget": 0.25,
+      "scope": "client",
+      "nTrain": 1024,
+      "nTest": 512,
+      "methods": [
+        {
+          "query": 0.24999999999999997,
+          "variance": 3.9072722330383187,
+          "rbVariance": 3.9072722330383187,
+          "uniformWithRBPrediction": 4.244836396191434,
+          "maxMean": 8.881784197001252e-16,
+          "maxIneq": 1.4210854715202004e-14
+        },
+        {
+          "query": 0.25,
+          "variance": 3.9639093826945344,
+          "rbVariance": 3.9639093826945344,
+          "uniformWithRBPrediction": 4.273569988011272,
+          "maxMean": 8.881784197001252e-16,
+          "maxIneq": 7.105427357601002e-15
+        },
+        {
+          "query": 0.24999999999999997,
+          "variance": 3.998695541109594,
+          "rbVariance": 3.9892128356733734,
+          "uniformWithRBPrediction": 4.282323882104721,
+          "maxMean": 1.7763568394002505e-15,
+          "maxIneq": 1.4210854715202004e-14
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "budget": 0.5,
+      "scope": "global",
+      "nTrain": 1024,
+      "nTest": 512,
+      "methods": [
+        {
+          "query": 0.5,
+          "variance": 1.2374251922086201,
+          "rbVariance": 1.2374251922086201,
+          "uniformWithRBPrediction": 1.4211593609564623,
+          "maxMean": 1.1102230246251565e-16,
+          "maxIneq": 0
+        },
+        {
+          "query": 0.5,
+          "variance": 1.23465627369599,
+          "rbVariance": 1.23465627369599,
+          "uniformWithRBPrediction": 1.42521714221517,
+          "maxMean": 2.220446049250313e-16,
+          "maxIneq": 0
+        },
+        {
+          "query": 0.49999999999999994,
+          "variance": 1.2434150160956474,
+          "rbVariance": 1.240817156640709,
+          "uniformWithRBPrediction": 1.425685448912608,
+          "maxMean": 8.881784197001252e-16,
+          "maxIneq": 5.551115123125783e-17
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "budget": 0.5,
+      "scope": "region",
+      "nTrain": 1024,
+      "nTest": 512,
+      "methods": [
+        {
+          "query": 0.49999999999999994,
+          "variance": 1.2361925178194544,
+          "rbVariance": 1.2361925178194544,
+          "uniformWithRBPrediction": 1.4172628782348955,
+          "maxMean": 2.220446049250313e-16,
+          "maxIneq": 1.7763568394002505e-15
+        },
+        {
+          "query": 0.49999999999999994,
+          "variance": 1.246091124315575,
+          "rbVariance": 1.246091124315575,
+          "uniformWithRBPrediction": 1.4237911368190415,
+          "maxMean": 1.1102230246251565e-16,
+          "maxIneq": 5.551115123125783e-17
+        },
+        {
+          "query": 0.5,
+          "variance": 1.2595652957036845,
+          "rbVariance": 1.2562638575530571,
+          "uniformWithRBPrediction": 1.4255976577575524,
+          "maxMean": 8.881784197001252e-16,
+          "maxIneq": 5.551115123125783e-17
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "budget": 0.5,
+      "scope": "client",
+      "nTrain": 1024,
+      "nTest": 512,
+      "methods": [
+        {
+          "query": 0.49999999999999994,
+          "variance": 1.2461633838205894,
+          "rbVariance": 1.2461633838205894,
+          "uniformWithRBPrediction": 1.414945465397142,
+          "maxMean": 2.220446049250313e-16,
+          "maxIneq": 0
+        },
+        {
+          "query": 0.5,
+          "variance": 1.269693026678735,
+          "rbVariance": 1.269693026678735,
+          "uniformWithRBPrediction": 1.4245233293370887,
+          "maxMean": 2.220446049250313e-16,
+          "maxIneq": 4.440892098500626e-16
+        },
+        {
+          "query": 0.49999999999999994,
+          "variance": 1.2851096011290717,
+          "rbVariance": 1.2809537539506841,
+          "uniformWithRBPrediction": 1.427567433476638,
+          "maxMean": 1.3322676295501878e-15,
+          "maxIneq": 5.551115123125783e-17
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "budget": 0.1,
+      "scope": "global",
+      "nTrain": 1024,
+      "nTest": 512,
+      "methods": [
+        {
+          "query": 0.1,
+          "variance": 11.565749681108668,
+          "rbVariance": 11.565749681108668,
+          "uniformWithRBPrediction": 12.345908904489177,
+          "maxMean": 1.1102230246251565e-16,
+          "maxIneq": 0
+        },
+        {
+          "query": 0.1,
+          "variance": 11.513121156184923,
+          "rbVariance": 11.513121156184923,
+          "uniformWithRBPrediction": 12.342247205133274,
+          "maxMean": 8.881784197001252e-16,
+          "maxIneq": 3.552713678800501e-15
+        },
+        {
+          "query": 0.1,
+          "variance": 11.528239003753752,
+          "rbVariance": 11.521074974119292,
+          "uniformWithRBPrediction": 12.329542451983013,
+          "maxMean": 7.105427357601002e-15,
+          "maxIneq": 3.552713678800501e-14
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "budget": 0.1,
+      "scope": "region",
+      "nTrain": 1024,
+      "nTest": 512,
+      "methods": [
+        {
+          "query": 0.09999999999999999,
+          "variance": 11.604290064577535,
+          "rbVariance": 11.604290064577535,
+          "uniformWithRBPrediction": 12.358258248186429,
+          "maxMean": 1.1102230246251565e-16,
+          "maxIneq": 6.661338147750939e-16
+        },
+        {
+          "query": 0.09999999999999998,
+          "variance": 11.57287585697468,
+          "rbVariance": 11.57287585697468,
+          "uniformWithRBPrediction": 12.356852405093523,
+          "maxMean": 4.440892098500626e-16,
+          "maxIneq": 2.6645352591003757e-15
+        },
+        {
+          "query": 0.1,
+          "variance": 11.60500533109848,
+          "rbVariance": 11.593029259895449,
+          "uniformWithRBPrediction": 12.342868929665576,
+          "maxMean": 3.552713678800501e-15,
+          "maxIneq": 3.552713678800501e-15
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "budget": 0.1,
+      "scope": "client",
+      "nTrain": 1024,
+      "nTest": 512,
+      "methods": [
+        {
+          "query": 0.1,
+          "variance": 11.641905163852455,
+          "rbVariance": 11.641905163852455,
+          "uniformWithRBPrediction": 12.361684213424557,
+          "maxMean": 8.881784197001252e-16,
+          "maxIneq": 2.220446049250313e-16
+        },
+        {
+          "query": 0.1,
+          "variance": 11.664442564678335,
+          "rbVariance": 11.664442564678335,
+          "uniformWithRBPrediction": 12.376932573517207,
+          "maxMean": 8.881784197001252e-16,
+          "maxIneq": 1.7763568394002505e-15
+        },
+        {
+          "query": 0.1,
+          "variance": 11.721540615269054,
+          "rbVariance": 11.704924431555263,
+          "uniformWithRBPrediction": 12.37054193210421,
+          "maxMean": 3.552713678800501e-15,
+          "maxIneq": 1.3322676295501878e-15
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "budget": 0.25,
+      "scope": "global",
+      "nTrain": 1024,
+      "nTest": 512,
+      "methods": [
+        {
+          "query": 0.24999999999999997,
+          "variance": 3.8032392788107883,
+          "rbVariance": 3.8032392788107883,
+          "uniformWithRBPrediction": 4.115302968163028,
+          "maxMean": 1.1102230246251565e-16,
+          "maxIneq": 0
+        },
+        {
+          "query": 0.25,
+          "variance": 3.7824319821317425,
+          "rbVariance": 3.7824319821317425,
+          "uniformWithRBPrediction": 4.114082401711072,
+          "maxMean": 2.220446049250313e-16,
+          "maxIneq": 2.220446049250313e-16
+        },
+        {
+          "query": 0.25,
+          "variance": 3.7891047287396193,
+          "rbVariance": 3.7864337593924544,
+          "uniformWithRBPrediction": 4.109823149817031,
+          "maxMean": 1.7763568394002505e-15,
+          "maxIneq": 4.440892098500626e-16
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "budget": 0.25,
+      "scope": "region",
+      "nTrain": 1024,
+      "nTest": 512,
+      "methods": [
+        {
+          "query": 0.25,
+          "variance": 3.817832142618632,
+          "rbVariance": 3.817832142618632,
+          "uniformWithRBPrediction": 4.119419416062171,
+          "maxMean": 2.220446049250313e-16,
+          "maxIneq": 4.440892098500626e-16
+        },
+        {
+          "query": 0.25,
+          "variance": 3.80536018245034,
+          "rbVariance": 3.80536018245034,
+          "uniformWithRBPrediction": 4.118950801697829,
+          "maxMean": 4.440892098500626e-16,
+          "maxIneq": 1.4210854715202004e-14
+        },
+        {
+          "query": 0.25,
+          "variance": 3.8187660951745146,
+          "rbVariance": 3.8143220811917775,
+          "uniformWithRBPrediction": 4.1142716552136855,
+          "maxMean": 1.7763568394002505e-15,
+          "maxIneq": 5.551115123125783e-17
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "budget": 0.25,
+      "scope": "client",
+      "nTrain": 1024,
+      "nTest": 512,
+      "methods": [
+        {
+          "query": 0.25,
+          "variance": 3.8326497846459966,
+          "rbVariance": 3.8326497846459966,
+          "uniformWithRBPrediction": 4.120561404474839,
+          "maxMean": 2.220446049250313e-16,
+          "maxIneq": 0
+        },
+        {
+          "query": 0.25,
+          "variance": 3.8406481876368557,
+          "rbVariance": 3.8406481876368557,
+          "uniformWithRBPrediction": 4.125644191172402,
+          "maxMean": 2.220446049250313e-16,
+          "maxIneq": 2.220446049250313e-16
+        },
+        {
+          "query": 0.25,
+          "variance": 3.8633171098532832,
+          "rbVariance": 3.857219409086391,
+          "uniformWithRBPrediction": 4.123490220739364,
+          "maxMean": 1.7763568394002505e-15,
+          "maxIneq": 8.881784197001252e-16
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "budget": 0.5,
+      "scope": "global",
+      "nTrain": 1024,
+      "nTest": 512,
+      "methods": [
+        {
+          "query": 0.49999999999999994,
+          "variance": 1.21573581137823,
+          "rbVariance": 1.21573581137823,
+          "uniformWithRBPrediction": 1.3717676560543504,
+          "maxMean": 2.7755575615628914e-17,
+          "maxIneq": 0
+        },
+        {
+          "query": 0.5,
+          "variance": 1.2055355907806926,
+          "rbVariance": 1.2055355907806926,
+          "uniformWithRBPrediction": 1.3713608005703477,
+          "maxMean": 1.1102230246251565e-16,
+          "maxIneq": 1.1102230246251565e-16
+        },
+        {
+          "query": 0.5,
+          "variance": 1.2093933037348092,
+          "rbVariance": 1.2082204270966026,
+          "uniformWithRBPrediction": 1.3699150262667414,
+          "maxMean": 4.440892098500626e-16,
+          "maxIneq": 0
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "budget": 0.5,
+      "scope": "region",
+      "nTrain": 1024,
+      "nTest": 512,
+      "methods": [
+        {
+          "query": 0.5,
+          "variance": 1.2223461686322843,
+          "rbVariance": 1.2223461686322843,
+          "uniformWithRBPrediction": 1.373139805354051,
+          "maxMean": 2.220446049250313e-16,
+          "maxIneq": 0
+        },
+        {
+          "query": 0.5,
+          "variance": 1.2161882909422035,
+          "rbVariance": 1.2161882909422035,
+          "uniformWithRBPrediction": 1.372983600565932,
+          "maxMean": 2.220446049250313e-16,
+          "maxIneq": 5.551115123125783e-17
+        },
+        {
+          "query": 0.5,
+          "variance": 1.2233530165331554,
+          "rbVariance": 1.221420768819741,
+          "uniformWithRBPrediction": 1.371412497408694,
+          "maxMean": 8.881784197001252e-16,
+          "maxIneq": 5.551115123125783e-17
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "budget": 0.5,
+      "scope": "client",
+      "nTrain": 1024,
+      "nTest": 512,
+      "methods": [
+        {
+          "query": 0.5,
+          "variance": 1.2295646582438706,
+          "rbVariance": 1.2295646582438706,
+          "uniformWithRBPrediction": 1.373520468158283,
+          "maxMean": 2.220446049250313e-16,
+          "maxIneq": 1.7763568394002505e-15
+        },
+        {
+          "query": 0.5,
+          "variance": 1.2327167286230134,
+          "rbVariance": 1.2327167286230134,
+          "uniformWithRBPrediction": 1.3752147303908022,
+          "maxMean": 2.220446049250313e-16,
+          "maxIneq": 2.7755575615628914e-17
+        },
+        {
+          "query": 0.5,
+          "variance": 1.2439092747147475,
+          "rbVariance": 1.2413192972649296,
+          "uniformWithRBPrediction": 1.3744829399851706,
+          "maxMean": 8.881784197001252e-16,
+          "maxIneq": 1.7763568394002505e-15
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "budget": 0.1,
+      "scope": "global",
+      "nTrain": 1024,
+      "nTest": 512,
+      "methods": [
+        {
+          "query": 0.09999999999999998,
+          "variance": 11.2549365274618,
+          "rbVariance": 11.2549365274618,
+          "uniformWithRBPrediction": 12.003714918165736,
+          "maxMean": 8.881784197001252e-16,
+          "maxIneq": 0
+        },
+        {
+          "query": 0.09999999999999999,
+          "variance": 11.149777225482342,
+          "rbVariance": 11.149777225482342,
+          "uniformWithRBPrediction": 11.922517348116468,
+          "maxMean": 1.7763568394002505e-15,
+          "maxIneq": 5.684341886080802e-14
+        },
+        {
+          "query": 0.1,
+          "variance": 11.189660223816821,
+          "rbVariance": 11.179242911873551,
+          "uniformWithRBPrediction": 11.932274589528802,
+          "maxMean": 3.552713678800501e-15,
+          "maxIneq": 0
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "budget": 0.1,
+      "scope": "region",
+      "nTrain": 1024,
+      "nTest": 512,
+      "methods": [
+        {
+          "query": 0.1,
+          "variance": 11.275719506362464,
+          "rbVariance": 11.275719506362464,
+          "uniformWithRBPrediction": 11.999060688663812,
+          "maxMean": 2.220446049250313e-16,
+          "maxIneq": 0
+        },
+        {
+          "query": 0.1,
+          "variance": 11.192928483110535,
+          "rbVariance": 11.192928483110535,
+          "uniformWithRBPrediction": 11.93053413792038,
+          "maxMean": 2.220446049250313e-16,
+          "maxIneq": 8.881784197001252e-16
+        },
+        {
+          "query": 0.1,
+          "variance": 11.250992791718641,
+          "rbVariance": 11.236371948759164,
+          "uniformWithRBPrediction": 11.94704228159898,
+          "maxMean": 3.552713678800501e-15,
+          "maxIneq": 8.881784197001252e-16
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "budget": 0.1,
+      "scope": "client",
+      "nTrain": 1024,
+      "nTest": 512,
+      "methods": [
+        {
+          "query": 0.1,
+          "variance": 11.404816516295933,
+          "rbVariance": 11.404816516295933,
+          "uniformWithRBPrediction": 12.05737686331588,
+          "maxMean": 2.220446049250313e-16,
+          "maxIneq": 0
+        },
+        {
+          "query": 0.1,
+          "variance": 11.405787758092291,
+          "rbVariance": 11.405787758092291,
+          "uniformWithRBPrediction": 12.004567912020534,
+          "maxMean": 8.881784197001252e-16,
+          "maxIneq": 1.7763568394002505e-15
+        },
+        {
+          "query": 0.1,
+          "variance": 11.474892383139636,
+          "rbVariance": 11.451189723599366,
+          "uniformWithRBPrediction": 12.030151486359836,
+          "maxMean": 7.105427357601002e-15,
+          "maxIneq": 3.552713678800501e-15
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "budget": 0.25,
+      "scope": "global",
+      "nTrain": 1024,
+      "nTest": 512,
+      "methods": [
+        {
+          "query": 0.24999999999999994,
+          "variance": 3.7017269497737377,
+          "rbVariance": 3.7017269497737377,
+          "uniformWithRBPrediction": 4.001238306055255,
+          "maxMean": 1.1102230246251565e-16,
+          "maxIneq": 0
+        },
+        {
+          "query": 0.24999999999999997,
+          "variance": 3.665076400318444,
+          "rbVariance": 3.665076400318444,
+          "uniformWithRBPrediction": 3.974172449372143,
+          "maxMean": 4.440892098500626e-16,
+          "maxIneq": 7.105427357601002e-15
+        },
+        {
+          "query": 0.24999999999999997,
+          "variance": 3.6801851868610522,
+          "rbVariance": 3.6762113357153705,
+          "uniformWithRBPrediction": 3.9774428165039746,
+          "maxMean": 1.7763568394002505e-15,
+          "maxIneq": 1.4210854715202004e-14
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "budget": 0.25,
+      "scope": "region",
+      "nTrain": 1024,
+      "nTest": 512,
+      "methods": [
+        {
+          "query": 0.24999999999999997,
+          "variance": 3.710350423300812,
+          "rbVariance": 3.710350423300812,
+          "uniformWithRBPrediction": 3.999686896221279,
+          "maxMean": 1.1102230246251565e-16,
+          "maxIneq": 4.440892098500626e-16
+        },
+        {
+          "query": 0.25,
+          "variance": 3.6818024507161895,
+          "rbVariance": 3.6818024507161895,
+          "uniformWithRBPrediction": 3.976844712640109,
+          "maxMean": 2.220446049250313e-16,
+          "maxIneq": 2.220446049250313e-16
+        },
+        {
+          "query": 0.24999999999999997,
+          "variance": 3.7035410942707805,
+          "rbVariance": 3.6980317544119155,
+          "uniformWithRBPrediction": 3.9823216538411725,
+          "maxMean": 1.7763568394002505e-15,
+          "maxIneq": 6.661338147750939e-16
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "budget": 0.25,
+      "scope": "client",
+      "nTrain": 1024,
+      "nTest": 512,
+      "methods": [
+        {
+          "query": 0.25,
+          "variance": 3.7581014822973526,
+          "rbVariance": 3.7581014822973526,
+          "uniformWithRBPrediction": 4.019125621105319,
+          "maxMean": 4.440892098500626e-16,
+          "maxIneq": 2.220446049250313e-16
+        },
+        {
+          "query": 0.25,
+          "variance": 3.7620105757688678,
+          "rbVariance": 3.7620105757688678,
+          "uniformWithRBPrediction": 4.001522637340139,
+          "maxMean": 8.881784197001252e-16,
+          "maxIneq": 4.440892098500626e-16
+        },
+        {
+          "query": 0.25,
+          "variance": 3.787150635735095,
+          "rbVariance": 3.7783722644762974,
+          "uniformWithRBPrediction": 4.009970304951899,
+          "maxMean": 1.7763568394002505e-15,
+          "maxIneq": 4.440892098500626e-16
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "budget": 0.5,
+      "scope": "global",
+      "nTrain": 1024,
+      "nTest": 512,
+      "methods": [
+        {
+          "query": 0.4999999999999999,
+          "variance": 1.1839904238776564,
+          "rbVariance": 1.1839904238776564,
+          "uniformWithRBPrediction": 1.3337461020184045,
+          "maxMean": 1.1102230246251565e-16,
+          "maxIneq": 0
+        },
+        {
+          "query": 0.49999999999999994,
+          "variance": 1.170176125263879,
+          "rbVariance": 1.170176125263879,
+          "uniformWithRBPrediction": 1.3247241497907194,
+          "maxMean": 2.220446049250313e-16,
+          "maxIneq": 1.6653345369377348e-16
+        },
+        {
+          "query": 0.49999999999999994,
+          "variance": 1.1770268412091376,
+          "rbVariance": 1.1752015537929963,
+          "uniformWithRBPrediction": 1.3258448408606454,
+          "maxMean": 8.881784197001252e-16,
+          "maxIneq": 3.552713678800501e-15
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "budget": 0.5,
+      "scope": "region",
+      "nTrain": 1024,
+      "nTest": 512,
+      "methods": [
+        {
+          "query": 0.49999999999999994,
+          "variance": 1.1885607289468416,
+          "rbVariance": 1.1885607289468416,
+          "uniformWithRBPrediction": 1.3332289654070892,
+          "maxMean": 1.1102230246251565e-16,
+          "maxIneq": 0
+        },
+        {
+          "query": 0.5,
+          "variance": 1.1780937732513994,
+          "rbVariance": 1.1780937732513994,
+          "uniformWithRBPrediction": 1.325614904213378,
+          "maxMean": 2.220446049250313e-16,
+          "maxIneq": 1.7763568394002505e-15
+        },
+        {
+          "query": 0.49999999999999994,
+          "variance": 1.1877238617881412,
+          "rbVariance": 1.1852532522312147,
+          "uniformWithRBPrediction": 1.3274250950976998,
+          "maxMean": 8.881784197001252e-16,
+          "maxIneq": 1.6653345369377348e-16
+        }
+      ]
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "budget": 0.5,
+      "scope": "client",
+      "nTrain": 1024,
+      "nTest": 512,
+      "methods": [
+        {
+          "query": 0.5,
+          "variance": 1.209196470964445,
+          "rbVariance": 1.209196470964445,
+          "uniformWithRBPrediction": 1.3397085403684432,
+          "maxMean": 1.1102230246251565e-16,
+          "maxIneq": 1.6653345369377348e-16
+        },
+        {
+          "query": 0.5,
+          "variance": 1.2140848483277296,
+          "rbVariance": 1.2140848483277296,
+          "uniformWithRBPrediction": 1.3338408791133902,
+          "maxMean": 2.220446049250313e-16,
+          "maxIneq": 2.220446049250313e-16
+        },
+        {
+          "query": 0.5,
+          "variance": 1.2245700532669408,
+          "rbVariance": 1.2207694802005968,
+          "uniformWithRBPrediction": 1.3365760678259488,
+          "maxMean": 8.881784197001252e-16,
+          "maxIneq": 8.881784197001252e-16
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "budget": 0.1,
+      "scope": "global",
+      "nTrain": 1024,
+      "nTest": 512,
+      "methods": [
+        {
+          "query": 0.09999999999999999,
+          "variance": 11.796692565883815,
+          "rbVariance": 11.796692565883815,
+          "uniformWithRBPrediction": 12.937169464694916,
+          "maxMean": 1.1102230246251565e-16,
+          "maxIneq": 0
+        },
+        {
+          "query": 0.1,
+          "variance": 11.767822923900832,
+          "rbVariance": 11.767822923900832,
+          "uniformWithRBPrediction": 12.947283136847096,
+          "maxMean": 8.881784197001252e-16,
+          "maxIneq": 0
+        },
+        {
+          "query": 0.1,
+          "variance": 11.790099417116881,
+          "rbVariance": 11.783718693320616,
+          "uniformWithRBPrediction": 12.946707732880053,
+          "maxMean": 5.329070518200751e-15,
+          "maxIneq": 0
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "budget": 0.1,
+      "scope": "region",
+      "nTrain": 1024,
+      "nTest": 512,
+      "methods": [
+        {
+          "query": 0.1,
+          "variance": 11.81768774245541,
+          "rbVariance": 11.81768774245541,
+          "uniformWithRBPrediction": 12.934731716572541,
+          "maxMean": 8.881784197001252e-16,
+          "maxIneq": 3.552713678800501e-15
+        },
+        {
+          "query": 0.1,
+          "variance": 11.78943687203598,
+          "rbVariance": 11.78943687203598,
+          "uniformWithRBPrediction": 12.937066903739382,
+          "maxMean": 2.220446049250313e-16,
+          "maxIneq": 3.552713678800501e-15
+        },
+        {
+          "query": 0.09999999999999995,
+          "variance": 11.827734974073268,
+          "rbVariance": 11.813876931641014,
+          "uniformWithRBPrediction": 12.939231347718358,
+          "maxMean": 3.552713678800501e-15,
+          "maxIneq": 1.3322676295501878e-15
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "budget": 0.1,
+      "scope": "client",
+      "nTrain": 1024,
+      "nTest": 512,
+      "methods": [
+        {
+          "query": 0.09999999999999999,
+          "variance": 11.826879172759824,
+          "rbVariance": 11.826879172759824,
+          "uniformWithRBPrediction": 12.912121148326879,
+          "maxMean": 8.881784197001252e-16,
+          "maxIneq": 2.1316282072803006e-14
+        },
+        {
+          "query": 0.1,
+          "variance": 11.873398230657735,
+          "rbVariance": 11.873398230657735,
+          "uniformWithRBPrediction": 12.950765601932966,
+          "maxMean": 8.881784197001252e-16,
+          "maxIneq": 3.552713678800501e-15
+        },
+        {
+          "query": 0.1,
+          "variance": 11.912721423426849,
+          "rbVariance": 11.88592645433286,
+          "uniformWithRBPrediction": 12.944682554478057,
+          "maxMean": 3.552713678800501e-15,
+          "maxIneq": 8.881784197001252e-16
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "budget": 0.25,
+      "scope": "global",
+      "nTrain": 1024,
+      "nTest": 512,
+      "methods": [
+        {
+          "query": 0.25,
+          "variance": 3.856199062040541,
+          "rbVariance": 3.856199062040541,
+          "uniformWithRBPrediction": 4.312389821565,
+          "maxMean": 1.1102230246251565e-16,
+          "maxIneq": 2.7755575615628914e-17
+        },
+        {
+          "query": 0.25,
+          "variance": 3.8439769604372773,
+          "rbVariance": 3.8439769604372773,
+          "uniformWithRBPrediction": 4.315761045615726,
+          "maxMean": 2.220446049250313e-16,
+          "maxIneq": 0
+        },
+        {
+          "query": 0.25,
+          "variance": 3.8528153232628553,
+          "rbVariance": 3.850343058430785,
+          "uniformWithRBPrediction": 4.315551390879514,
+          "maxMean": 1.7763568394002505e-15,
+          "maxIneq": 0
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "budget": 0.25,
+      "scope": "region",
+      "nTrain": 1024,
+      "nTest": 512,
+      "methods": [
+        {
+          "query": 0.25,
+          "variance": 3.864759649210632,
+          "rbVariance": 3.864759649210632,
+          "uniformWithRBPrediction": 4.31157723885754,
+          "maxMean": 2.220446049250313e-16,
+          "maxIneq": 0
+        },
+        {
+          "query": 0.25,
+          "variance": 3.8533036218984185,
+          "rbVariance": 3.8533036218984185,
+          "uniformWithRBPrediction": 4.3123556345797915,
+          "maxMean": 2.220446049250313e-16,
+          "maxIneq": 1.1102230246251565e-16
+        },
+        {
+          "query": 0.25,
+          "variance": 3.868094612849132,
+          "rbVariance": 3.8628831157127728,
+          "uniformWithRBPrediction": 4.313042448705067,
+          "maxMean": 1.7763568394002505e-15,
+          "maxIneq": 1.1102230246251565e-16
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "budget": 0.25,
+      "scope": "client",
+      "nTrain": 1024,
+      "nTest": 512,
+      "methods": [
+        {
+          "query": 0.25,
+          "variance": 3.8699435925487764,
+          "rbVariance": 3.8699435925487764,
+          "uniformWithRBPrediction": 4.304040382775613,
+          "maxMean": 2.220446049250313e-16,
+          "maxIneq": 5.551115123125783e-17
+        },
+        {
+          "query": 0.25,
+          "variance": 3.8859749188008648,
+          "rbVariance": 3.8859749188008648,
+          "uniformWithRBPrediction": 4.316921867310952,
+          "maxMean": 4.440892098500626e-16,
+          "maxIneq": 3.3306690738754696e-16
+        },
+        {
+          "query": 0.25,
+          "variance": 3.900987056375726,
+          "rbVariance": 3.891281270219874,
+          "uniformWithRBPrediction": 4.314803120989776,
+          "maxMean": 1.7763568394002505e-15,
+          "maxIneq": 3.3306690738754696e-16
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "budget": 0.5,
+      "scope": "global",
+      "nTrain": 1024,
+      "nTest": 512,
+      "methods": [
+        {
+          "query": 0.5,
+          "variance": 1.2093678940927726,
+          "rbVariance": 1.2093678940927726,
+          "uniformWithRBPrediction": 1.4374632738549962,
+          "maxMean": 1.1102230246251565e-16,
+          "maxIneq": 0
+        },
+        {
+          "query": 0.5,
+          "variance": 1.2026949726160105,
+          "rbVariance": 1.2026949726160105,
+          "uniformWithRBPrediction": 1.4385870152052316,
+          "maxMean": 2.220446049250313e-16,
+          "maxIneq": 4.440892098500626e-16
+        },
+        {
+          "query": 0.5,
+          "variance": 1.2070539586448696,
+          "rbVariance": 1.2058856605722768,
+          "uniformWithRBPrediction": 1.4385026230019404,
+          "maxMean": 1.3322676295501878e-15,
+          "maxIneq": 0
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "budget": 0.5,
+      "scope": "region",
+      "nTrain": 1024,
+      "nTest": 512,
+      "methods": [
+        {
+          "query": 0.5,
+          "variance": 1.2137836181290598,
+          "rbVariance": 1.2137836181290598,
+          "uniformWithRBPrediction": 1.4371924129525167,
+          "maxMean": 2.7755575615628914e-17,
+          "maxIneq": 2.220446049250313e-16
+        },
+        {
+          "query": 0.5,
+          "variance": 1.207925871852578,
+          "rbVariance": 1.207925871852578,
+          "uniformWithRBPrediction": 1.437451878193259,
+          "maxMean": 2.220446049250313e-16,
+          "maxIneq": 4.440892098500626e-16
+        },
+        {
+          "query": 0.5,
+          "variance": 1.2148811591076991,
+          "rbVariance": 1.2125540229813667,
+          "uniformWithRBPrediction": 1.4376518270219825,
+          "maxMean": 8.881784197001252e-16,
+          "maxIneq": 1.6653345369377348e-16
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "budget": 0.5,
+      "scope": "client",
+      "nTrain": 1024,
+      "nTest": 512,
+      "methods": [
+        {
+          "query": 0.5,
+          "variance": 1.2176317324784716,
+          "rbVariance": 1.2176317324784716,
+          "uniformWithRBPrediction": 1.4346801275918686,
+          "maxMean": 2.220446049250313e-16,
+          "maxIneq": 2.220446049250313e-16
+        },
+        {
+          "query": 0.5,
+          "variance": 1.2235004815152823,
+          "rbVariance": 1.2235004815152823,
+          "uniformWithRBPrediction": 1.4389739557703247,
+          "maxMean": 2.220446049250313e-16,
+          "maxIneq": 2.220446049250313e-16
+        },
+        {
+          "query": 0.5,
+          "variance": 1.2304089340253457,
+          "rbVariance": 1.2264059027777383,
+          "uniformWithRBPrediction": 1.4381832406451893,
+          "maxMean": 8.881784197001252e-16,
+          "maxIneq": 3.552713678800501e-15
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "budget": 0.1,
+      "scope": "global",
+      "nTrain": 1024,
+      "nTest": 512,
+      "methods": [
+        {
+          "query": 0.09999999999999999,
+          "variance": 12.032028566779283,
+          "rbVariance": 12.032028566779283,
+          "uniformWithRBPrediction": 13.009863266241876,
+          "maxMean": 1.1102230246251565e-16,
+          "maxIneq": 0
+        },
+        {
+          "query": 0.1,
+          "variance": 11.957559194448075,
+          "rbVariance": 11.957559194448075,
+          "uniformWithRBPrediction": 12.962560381920124,
+          "maxMean": 2.220446049250313e-16,
+          "maxIneq": 0
+        },
+        {
+          "query": 0.1,
+          "variance": 11.97924924212614,
+          "rbVariance": 11.965884170096654,
+          "uniformWithRBPrediction": 12.96757400660496,
+          "maxMean": 7.105427357601002e-15,
+          "maxIneq": 0
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "budget": 0.1,
+      "scope": "region",
+      "nTrain": 1024,
+      "nTest": 512,
+      "methods": [
+        {
+          "query": 0.1,
+          "variance": 12.038899118542625,
+          "rbVariance": 12.038899118542624,
+          "uniformWithRBPrediction": 12.995508128109847,
+          "maxMean": 8.881784197001252e-16,
+          "maxIneq": 2.6645352591003757e-15
+        },
+        {
+          "query": 0.09999999999999999,
+          "variance": 12.061781501341098,
+          "rbVariance": 12.061781501341098,
+          "uniformWithRBPrediction": 12.980712938479945,
+          "maxMean": 2.220446049250313e-16,
+          "maxIneq": 2.6645352591003757e-15
+        },
+        {
+          "query": 0.09999999999999998,
+          "variance": 12.079880018758939,
+          "rbVariance": 12.062192235156576,
+          "uniformWithRBPrediction": 12.987832382566422,
+          "maxMean": 3.552713678800501e-15,
+          "maxIneq": 2.6645352591003757e-15
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "budget": 0.1,
+      "scope": "client",
+      "nTrain": 1024,
+      "nTest": 512,
+      "methods": [
+        {
+          "query": 0.09999999999999999,
+          "variance": 12.133784565703323,
+          "rbVariance": 12.133784565703323,
+          "uniformWithRBPrediction": 13.010540094874766,
+          "maxMean": 8.881784197001252e-16,
+          "maxIneq": 1.4210854715202004e-14
+        },
+        {
+          "query": 0.1,
+          "variance": 12.125212713124341,
+          "rbVariance": 12.125212713124341,
+          "uniformWithRBPrediction": 12.976622690316924,
+          "maxMean": 1.7763568394002505e-15,
+          "maxIneq": 2.1316282072803006e-14
+        },
+        {
+          "query": 0.1,
+          "variance": 12.167042294910244,
+          "rbVariance": 12.142226739588654,
+          "uniformWithRBPrediction": 12.997014628051266,
+          "maxMean": 5.329070518200751e-15,
+          "maxIneq": 0
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "budget": 0.25,
+      "scope": "global",
+      "nTrain": 1024,
+      "nTest": 512,
+      "methods": [
+        {
+          "query": 0.24999999999999994,
+          "variance": 3.9454872089622333,
+          "rbVariance": 3.9454872089622333,
+          "uniformWithRBPrediction": 4.336621088747269,
+          "maxMean": 2.220446049250313e-16,
+          "maxIneq": 0
+        },
+        {
+          "query": 0.25,
+          "variance": 3.91885298565125,
+          "rbVariance": 3.91885298565125,
+          "uniformWithRBPrediction": 4.3208534606399995,
+          "maxMean": 2.220446049250313e-16,
+          "maxIneq": 8.881784197001252e-16
+        },
+        {
+          "query": 0.25,
+          "variance": 3.9270391003331464,
+          "rbVariance": 3.9218393861337386,
+          "uniformWithRBPrediction": 4.32252477911297,
+          "maxMean": 1.7763568394002505e-15,
+          "maxIneq": 0
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "budget": 0.25,
+      "scope": "region",
+      "nTrain": 1024,
+      "nTest": 512,
+      "methods": [
+        {
+          "query": 0.25,
+          "variance": 3.949192438876426,
+          "rbVariance": 3.949192438876426,
+          "uniformWithRBPrediction": 4.331836042703296,
+          "maxMean": 2.220446049250313e-16,
+          "maxIneq": 0
+        },
+        {
+          "query": 0.25,
+          "variance": 3.959331737971101,
+          "rbVariance": 3.959331737971101,
+          "uniformWithRBPrediction": 4.3269043128266045,
+          "maxMean": 2.220446049250313e-16,
+          "maxIneq": 3.3306690738754696e-16
+        },
+        {
+          "query": 0.25,
+          "variance": 3.9657681485541456,
+          "rbVariance": 3.9589830934222867,
+          "uniformWithRBPrediction": 4.329254444283417,
+          "maxMean": 1.7763568394002505e-15,
+          "maxIneq": 4.440892098500626e-16
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "budget": 0.25,
+      "scope": "client",
+      "nTrain": 1024,
+      "nTest": 512,
+      "methods": [
+        {
+          "query": 0.25,
+          "variance": 3.9861444866230378,
+          "rbVariance": 3.9861444866230378,
+          "uniformWithRBPrediction": 4.336846698291584,
+          "maxMean": 2.220446049250313e-16,
+          "maxIneq": 0
+        },
+        {
+          "query": 0.25,
+          "variance": 3.984976905895285,
+          "rbVariance": 3.984976905895285,
+          "uniformWithRBPrediction": 4.325540896772305,
+          "maxMean": 2.220446049250313e-16,
+          "maxIneq": 4.440892098500626e-16
+        },
+        {
+          "query": 0.25,
+          "variance": 3.999642087063183,
+          "rbVariance": 3.990362213049664,
+          "uniformWithRBPrediction": 4.3323055512686315,
+          "maxMean": 1.7763568394002505e-15,
+          "maxIneq": 4.440892098500626e-16
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "budget": 0.5,
+      "scope": "global",
+      "nTrain": 1024,
+      "nTest": 512,
+      "methods": [
+        {
+          "query": 0.4999999999999999,
+          "variance": 1.249973423023231,
+          "rbVariance": 1.249973423023231,
+          "uniformWithRBPrediction": 1.445540362915764,
+          "maxMean": 1.3877787807814457e-17,
+          "maxIneq": 0
+        },
+        {
+          "query": 0.5,
+          "variance": 1.2392842493856264,
+          "rbVariance": 1.2392842493856264,
+          "uniformWithRBPrediction": 1.4402844868800115,
+          "maxMean": 2.220446049250313e-16,
+          "maxIneq": 0
+        },
+        {
+          "query": 0.5,
+          "variance": 1.2429690530688187,
+          "rbVariance": 1.2404926009688166,
+          "uniformWithRBPrediction": 1.4408453753757329,
+          "maxMean": 1.7763568394002505e-15,
+          "maxIneq": 0
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "budget": 0.5,
+      "scope": "region",
+      "nTrain": 1024,
+      "nTest": 512,
+      "methods": [
+        {
+          "query": 0.5,
+          "variance": 1.2526235456543304,
+          "rbVariance": 1.2526235456543304,
+          "uniformWithRBPrediction": 1.4439453475677682,
+          "maxMean": 2.220446049250313e-16,
+          "maxIneq": 0
+        },
+        {
+          "query": 0.5,
+          "variance": 1.2585151501811098,
+          "rbVariance": 1.2585151501811098,
+          "uniformWithRBPrediction": 1.4423014376088708,
+          "maxMean": 2.220446049250313e-16,
+          "maxIneq": 0
+        },
+        {
+          "query": 0.5,
+          "variance": 1.261064191819181,
+          "rbVariance": 1.2579160330945718,
+          "uniformWithRBPrediction": 1.4430680982868684,
+          "maxMean": 1.3322676295501878e-15,
+          "maxIneq": 0
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "budget": 0.5,
+      "scope": "client",
+      "nTrain": 1024,
+      "nTest": 512,
+      "methods": [
+        {
+          "query": 0.5,
+          "variance": 1.2702644602629038,
+          "rbVariance": 1.2702644602629038,
+          "uniformWithRBPrediction": 1.445615566097195,
+          "maxMean": 1.1102230246251565e-16,
+          "maxIneq": 8.326672684688674e-17
+        },
+        {
+          "query": 0.5,
+          "variance": 1.2715649701522471,
+          "rbVariance": 1.2715649701522471,
+          "uniformWithRBPrediction": 1.441846965590771,
+          "maxMean": 2.220446049250313e-16,
+          "maxIneq": 2.220446049250313e-16
+        },
+        {
+          "query": 0.5,
+          "variance": 1.2771753511141628,
+          "rbVariance": 1.2730789024414535,
+          "uniformWithRBPrediction": 1.4440848347953987,
+          "maxMean": 8.881784197001252e-16,
+          "maxIneq": 0
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "budget": 0.1,
+      "scope": "global",
+      "nTrain": 1024,
+      "nTest": 512,
+      "methods": [
+        {
+          "query": 0.1,
+          "variance": 12.224830304547648,
+          "rbVariance": 12.224830304547648,
+          "uniformWithRBPrediction": 13.2546389507902,
+          "maxMean": 1.1102230246251565e-16,
+          "maxIneq": 0
+        },
+        {
+          "query": 0.1,
+          "variance": 12.208673501401742,
+          "rbVariance": 12.208673501401742,
+          "uniformWithRBPrediction": 13.247976532315127,
+          "maxMean": 2.220446049250313e-16,
+          "maxIneq": 1.7763568394002505e-15
+        },
+        {
+          "query": 0.09999999999999999,
+          "variance": 12.235691625798527,
+          "rbVariance": 12.226404244118918,
+          "uniformWithRBPrediction": 13.255142159597575,
+          "maxMean": 3.552713678800501e-15,
+          "maxIneq": 8.881784197001252e-16
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "budget": 0.1,
+      "scope": "region",
+      "nTrain": 1024,
+      "nTest": 512,
+      "methods": [
+        {
+          "query": 0.1,
+          "variance": 12.250044776778982,
+          "rbVariance": 12.250044776778982,
+          "uniformWithRBPrediction": 13.254946597185327,
+          "maxMean": 8.881784197001252e-16,
+          "maxIneq": 0
+        },
+        {
+          "query": 0.1,
+          "variance": 12.249238318306848,
+          "rbVariance": 12.249238318306848,
+          "uniformWithRBPrediction": 13.27055772906744,
+          "maxMean": 2.220446049250313e-16,
+          "maxIneq": 0
+        },
+        {
+          "query": 0.1,
+          "variance": 12.29702509733089,
+          "rbVariance": 12.283852988662519,
+          "uniformWithRBPrediction": 13.287072328956521,
+          "maxMean": 7.105427357601002e-15,
+          "maxIneq": 2.6645352591003757e-15
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "budget": 0.1,
+      "scope": "client",
+      "nTrain": 1024,
+      "nTest": 512,
+      "methods": [
+        {
+          "query": 0.1,
+          "variance": 12.343819245236428,
+          "rbVariance": 12.343819245236428,
+          "uniformWithRBPrediction": 13.297138071875409,
+          "maxMean": 4.440892098500626e-16,
+          "maxIneq": 1.7763568394002505e-15
+        },
+        {
+          "query": 0.1,
+          "variance": 12.436420832925595,
+          "rbVariance": 12.436420832925595,
+          "uniformWithRBPrediction": 13.343555470722471,
+          "maxMean": 1.7763568394002505e-15,
+          "maxIneq": 8.881784197001252e-16
+        },
+        {
+          "query": 0.1,
+          "variance": 12.51500861163807,
+          "rbVariance": 12.486521752794802,
+          "uniformWithRBPrediction": 13.370453204656403,
+          "maxMean": 3.552713678800501e-15,
+          "maxIneq": 1.4210854715202004e-14
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "budget": 0.25,
+      "scope": "global",
+      "nTrain": 1024,
+      "nTest": 512,
+      "methods": [
+        {
+          "query": 0.25,
+          "variance": 4.0062895250997554,
+          "rbVariance": 4.0062895250997554,
+          "uniformWithRBPrediction": 4.41821298359673,
+          "maxMean": 2.220446049250313e-16,
+          "maxIneq": 0
+        },
+        {
+          "query": 0.25,
+          "variance": 4.000270965072994,
+          "rbVariance": 4.000270965072994,
+          "uniformWithRBPrediction": 4.415992177438358,
+          "maxMean": 2.220446049250313e-16,
+          "maxIneq": 1.1102230246251565e-16
+        },
+        {
+          "query": 0.25,
+          "variance": 4.010430186937036,
+          "rbVariance": 4.006847779859632,
+          "uniformWithRBPrediction": 4.418362864174758,
+          "maxMean": 1.7763568394002505e-15,
+          "maxIneq": 4.440892098500626e-16
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "budget": 0.25,
+      "scope": "region",
+      "nTrain": 1024,
+      "nTest": 512,
+      "methods": [
+        {
+          "query": 0.25,
+          "variance": 4.016354804232541,
+          "rbVariance": 4.016354804232541,
+          "uniformWithRBPrediction": 4.418315532395126,
+          "maxMean": 4.440892098500626e-16,
+          "maxIneq": 1.4210854715202004e-14
+        },
+        {
+          "query": 0.25,
+          "variance": 4.014991478718248,
+          "rbVariance": 4.014991478718248,
+          "uniformWithRBPrediction": 4.423519243022489,
+          "maxMean": 4.440892098500626e-16,
+          "maxIneq": 8.881784197001252e-16
+        },
+        {
+          "query": 0.25,
+          "variance": 4.0326908114192195,
+          "rbVariance": 4.027670744680364,
+          "uniformWithRBPrediction": 4.428994659335075,
+          "maxMean": 1.7763568394002505e-15,
+          "maxIneq": 1.3322676295501878e-15
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "budget": 0.25,
+      "scope": "client",
+      "nTrain": 1024,
+      "nTest": 512,
+      "methods": [
+        {
+          "query": 0.25,
+          "variance": 4.051051826636181,
+          "rbVariance": 4.051051826636181,
+          "uniformWithRBPrediction": 4.4323793572917936,
+          "maxMean": 4.440892098500626e-16,
+          "maxIneq": 4.440892098500626e-16
+        },
+        {
+          "query": 0.25,
+          "variance": 4.084997968455358,
+          "rbVariance": 4.084997968455358,
+          "uniformWithRBPrediction": 4.44785182357418,
+          "maxMean": 4.440892098500626e-16,
+          "maxIneq": 7.105427357601002e-15
+        },
+        {
+          "query": 0.25,
+          "variance": 4.113829497189291,
+          "rbVariance": 4.103261769185333,
+          "uniformWithRBPrediction": 4.456895686368452,
+          "maxMean": 1.7763568394002505e-15,
+          "maxIneq": 1.1102230246251565e-16
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "budget": 0.5,
+      "scope": "global",
+      "nTrain": 1024,
+      "nTest": 512,
+      "methods": [
+        {
+          "query": 0.5,
+          "variance": 1.2667759319504204,
+          "rbVariance": 1.2667759319504204,
+          "uniformWithRBPrediction": 1.4727376611989091,
+          "maxMean": 2.220446049250313e-16,
+          "maxIneq": 1.0408340855860843e-17
+        },
+        {
+          "query": 0.5,
+          "variance": 1.2641367862967887,
+          "rbVariance": 1.2641367862967887,
+          "uniformWithRBPrediction": 1.4719973924794472,
+          "maxMean": 2.220446049250313e-16,
+          "maxIneq": 2.7755575615628914e-17
+        },
+        {
+          "query": 0.5,
+          "variance": 1.268676373983161,
+          "rbVariance": 1.266997424763862,
+          "uniformWithRBPrediction": 1.4727758088062326,
+          "maxMean": 8.881784197001252e-16,
+          "maxIneq": 0
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "budget": 0.5,
+      "scope": "region",
+      "nTrain": 1024,
+      "nTest": 512,
+      "methods": [
+        {
+          "query": 0.5,
+          "variance": 1.2717914800504193,
+          "rbVariance": 1.2717914800504193,
+          "uniformWithRBPrediction": 1.4727718441317126,
+          "maxMean": 2.220446049250313e-16,
+          "maxIneq": 2.220446049250313e-16
+        },
+        {
+          "query": 0.5,
+          "variance": 1.2702425321887099,
+          "rbVariance": 1.2702425321887099,
+          "uniformWithRBPrediction": 1.474506414340826,
+          "maxMean": 2.220446049250313e-16,
+          "maxIneq": 0
+        },
+        {
+          "query": 0.5,
+          "variance": 1.2779127161153525,
+          "rbVariance": 1.2756129198328006,
+          "uniformWithRBPrediction": 1.476316204750853,
+          "maxMean": 8.881784197001252e-16,
+          "maxIneq": 1.3877787807814457e-17
+        }
+      ]
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "budget": 0.5,
+      "scope": "client",
+      "nTrain": 1024,
+      "nTest": 512,
+      "methods": [
+        {
+          "query": 0.5,
+          "variance": 1.2867960204361306,
+          "rbVariance": 1.2867960204361306,
+          "uniformWithRBPrediction": 1.4774597857639364,
+          "maxMean": 2.220446049250313e-16,
+          "maxIneq": 1.1102230246251565e-16
+        },
+        {
+          "query": 0.5,
+          "variance": 1.3011903469653279,
+          "rbVariance": 1.3011903469653279,
+          "uniformWithRBPrediction": 1.482617274524728,
+          "maxMean": 2.220446049250313e-16,
+          "maxIneq": 5.551115123125783e-17
+        },
+        {
+          "query": 0.5,
+          "variance": 1.3134364590397711,
+          "rbVariance": 1.3088477175355206,
+          "uniformWithRBPrediction": 1.485750361412408,
+          "maxMean": 8.881784197001252e-16,
+          "maxIneq": 0
+        }
+      ]
+    }
+  ],
+  "summaries": [
+    {
+      "budget": 0.1,
+      "scope": "global",
+      "p": 11.791000175108374,
+      "pq": 11.745183989793105,
+      "sd": 11.774028130020298,
+      "rb": 11.763656916269753,
+      "rbVsSD": 0.9991191448129717,
+      "rbVsPQ": 1.0015728086075706,
+      "sdVsPQ": 1.0024558270225703
+    },
+    {
+      "budget": 0.1,
+      "scope": "region",
+      "p": 11.806109218458994,
+      "pq": 11.798646866770534,
+      "sd": 11.843797062110292,
+      "rb": 11.828648958091755,
+      "rbVsSD": 0.9987210094922178,
+      "rbVsPQ": 1.002542841705494,
+      "sdVsPQ": 1.0038267265602225
+    },
+    {
+      "budget": 0.1,
+      "scope": "client",
+      "p": 11.87363390742325,
+      "pq": 11.925303425036704,
+      "sd": 11.988443114905834,
+      "rb": 11.964131483228718,
+      "rbVsSD": 0.99797207765478,
+      "rbVsPQ": 1.0032559388057578,
+      "sdVsPQ": 1.0052945981849462
+    },
+    {
+      "budget": 0.25,
+      "scope": "global",
+      "p": 3.86815862834346,
+      "pq": 3.8508564972031416,
+      "sd": 3.862073850847142,
+      "rb": 3.858115275620848,
+      "rbVsSD": 0.9989750130683219,
+      "rbVsPQ": 1.0018849776466556,
+      "sdVsPQ": 1.0029129503143386
+    },
+    {
+      "budget": 0.25,
+      "scope": "region",
+      "p": 3.87468956201881,
+      "pq": 3.8717938095340823,
+      "sd": 3.8890117956609846,
+      "rb": 3.8832883233498614,
+      "rbVsSD": 0.9985282964897384,
+      "rbVsPQ": 1.0029687825285207,
+      "sdVsPQ": 1.0044470307495466
+    },
+    {
+      "budget": 0.25,
+      "scope": "client",
+      "p": 3.900860567631611,
+      "pq": 3.9204196565419607,
+      "sd": 3.9439369878876955,
+      "rb": 3.934951626948489,
+      "rbVsSD": 0.9977217280684754,
+      "rbVsPQ": 1.0037067384820089,
+      "sdVsPQ": 1.0059986770310396
+    },
+    {
+      "budget": 0.5,
+      "scope": "global",
+      "p": 1.2272114460884884,
+      "pq": 1.2194139996731643,
+      "sd": 1.224755757789407,
+      "rb": 1.222935803972544,
+      "rbVsSD": 0.9985140271394617,
+      "rbVsPQ": 1.0028881120770499,
+      "sdVsPQ": 1.0043805943819526
+    },
+    {
+      "budget": 0.5,
+      "scope": "region",
+      "p": 1.2308830098720651,
+      "pq": 1.2295094571219292,
+      "sd": 1.2374167068445356,
+      "rb": 1.2348368090854587,
+      "rbVsSD": 0.9979150938040462,
+      "rbVsPQ": 1.0043329084885608,
+      "sdVsPQ": 1.0064312231815735
+    },
+    {
+      "budget": 0.5,
+      "scope": "client",
+      "p": 1.2432694543677354,
+      "pq": 1.2521250670437225,
+      "sd": 1.26243494554834,
+      "rb": 1.2585625090284873,
+      "rbVsSD": 0.9969325654890118,
+      "rbVsPQ": 1.0051412132495388,
+      "sdVsPQ": 1.0082339047240378
+    }
+  ],
+  "maxConditionalError": 7.105427357601002e-15,
+  "maxViolation": 5.684341886080802e-14,
+  "maxBudgetError": 1.1102230246251565e-16
+}
