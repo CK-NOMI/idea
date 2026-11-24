@@ -1,0 +1,33 @@
+# team-hca/R09｜FCAB-SD：投机奖励基线的条件无偏修正与强基线障碍
+
+日期2026-11-24；起始 main 77f66a578eb59f9adcd93dd2e1a7560a4b57c892、README blob f4743e1254c35288b6be5a464459d2b3d80eccea（3020行）。取得完整README并核验R08 c816fde822e8d008fe450a451e2289d10fb2f242原样前缀；分段读新增FSG/FCAS/FMR/FQR-SD/FSC-Median/FVR/FAM-SD/FEIA/FCRH-SD/FIC-SD/FLPV/FMC/FSGPA，复核A/R05–06、A/R13、JVT；实际读取FEIA前向脚本及固定外部模型三文件。写前读并发FBSG（块分层梯度抽样）、HC/R08 FCRV-SD（容量耦合与选择性重验证）；最新已读main 5be16c8c94c409a288a19a63a339ec6523c1c875、blob 9e2393201eeda3ca866a116e8cd2042c38d55d02。A/R05–06的MIS、残差耦合、条件积分及FSG奖励反例是直接近邻，不宣称条件控制变量或动作相关baseline为新基础数学；本轮增量是相关候选奖励基线的精确条件score修正、接受事件并不消除梯度、实际外部Transformer条件矩对比。未复跑他队。
+
+**CRITICAL / Reject and Pivot**。T=限定数学；E=实际V8 CPU外部权重前向及有限条件矩枚举；P=成本代理；O=完全概率/奖励信息oracle；H=假说。前向复用并署名HieraCert/R11 probe.js blob ce0ea6f4d4638ff6f3691e643539473da81054d1，非首次获取权重。未重新探测CUDA或大模型下载。两份同架构外部检查点非两个预训练尺度，无本队真实多token SD、在线参数更新、物理HFL/GPU/网络、真实总时间或CI。
+
+## 1. 计算问题及场景 T/H
+同一合法外生前缀h、固定正式p=softmax(z_p)和共享主干浅层内生q=softmax(z_q)，无独立完整草稿LLM。客户端持确定性有界私有单步奖励R(y)（实际在线完整序列奖励不能假设免费知道）。策略目标J=E_p R(Y)，固定奖励与上下文，score s(y)=∇_θ log p(y)，梯度g=E_p[R(Y)s(Y)]。采样、基线与条件矩在当前快照detach；本轮计算估计量不是对其整个表达式再求导。HFL在固定快照对各客户端梯度按预先权重加法聚合，区域与云可分别求和；实际多步FedAvg/AdamW非等价。拟复用标准SD的同前缀候选X与正式Y，将R(X)作为正式策略梯度的基线，以期减小梯度噪声。奖励、版本、状态均须合法访问，不宣称DP。正式p及q冻结于实验，未执行HFL学习反向改变SD。
+
+## 2. 理论 T
+固定正概率p,q，δ=TV(p,q)，a_x=min(1,p_x/q_x)，r=(p−q)_+/δ（δ=0直接Y=X）。X~q；Y|X=x为K_x=a_x e_x+(1−a_x)r。边际Y~p。定义m_x=E[s(Y)|X=x]=a_x s(x)+(1−a_x)Σ r_y s(y)。在固定合法条件下，标准SD逐步归纳保持正式序列律，需要真实条件q、温度/top-p后p/q、独立随机流、首拒绝截断及bonus/EOS/KV/数值合同；greedy正式argmax统一tie-break。本轮只有单步精确矩，未实现完整greedy/随机序列。
+
+错误估计G_bad=(R(Y)−R(X))s(Y)，其偏差为−E_X[R(X)m_X]，一般非零。反例p=q=(.5,.5),R(1)=1,R(0)=0，θ为token1 logit，s(Y)=Y−.5，真实g=.25，X=Y使G_bad恒0；100%接受不意味着梯度正确。stop-gradient不能修复统计依赖。
+
+修正G_c=R(Y)s(Y)−b(X)(s(Y)−m_X)，任意只依赖合法前置条件与X的有限b均无偏，因为E[s(Y)−m_X|X]=0。取b(X)=R(X)，接受Y=X时G_c=R(X)m_X，通常非零、稠密；p=q时m_X=s(X)，修正完全退化为普通REINFORCE，不能跳过接受梯度。联合状态基线G_b=(R(Y)−b0)s(Y)−(R(X)−b0)(s(Y)−m_X)，同样无偏；b0由独立校准或预知奖励确定，不得用同样本结果免费拟合。固定θ的最优标量状态基线 b0*=E_p[R||s||²]/E_p||s||²，实验为O；条件系数最优 b*(x)=E[R(Y)〈s(Y),s(Y)−m_x〉|x]/E[||s(Y)−m_x||²|x]（分母0任意）。仅优化G_c一参数族，非所有联合基线最优；不保证胜过b0*。Rao–Blackwell E[R(Y)s(Y)|X] 可减普通无基线估计方差，亦需全部条件奖励，不能保证胜最优状态基线；若全部奖励已知可直接精确积分g，方差0。
+
+稠密m_X可改为随机估计：当拒绝Y≠X时用Z=Y；接受且a_x<1时独立抽Z~r；a_x=1时该项系数0不抽。给定X，Z边际r（仅a_x<1有意义），mhat=a_x s(X)+(1−a_x)s(Z)，E[mhat|X]=m_X。因此G_stoch=R(Y)s(Y)−R(X)(s(Y)−mhat)无偏，不要求Z与Y独立；拒绝时差分=a_x(s(Y)−s(X))，接受时差分=(1−a_x)(s(X)−s(Z))。需要在部分接受位置额外构造残差并抽样，不是无成本。完整序列的候选后缀在首拒绝后无合法同前缀关系；若R为终局奖励，不能用单步m_X替代全路径条件score，需要条件未来积分/反向，本文不作推广。A/R06的条件期望与控制变量及既有action-dependent baseline是直接数学先例。普通AR也可另抽独立/耦合候选或用状态baseline，同信息平坦可复制，不证HFL特有学习。
+
+## 3. 实际实验 E/O
+[实际代码](probe.js) [24组完整条件矩及3组汇总](results.json)。从[sanchayan7432/microGPT固定commit aa28d7c0aa66704ce56b263dfd3270579f3d5f6d](https://github.com/sanchayan7432/microGPT/tree/aa28d7c0aa66704ce56b263dfd3270579f3d5f6d) 下载weights.json（blob df323b7e714ceeb10ca070f9945a82c51b2c233c）、checkpoint.json（7f0b4968c56290ebad706ab740de942c369f42a5）、input.txt（736d88e18b70b292750a30e5cca6a92b0b333bd2），node experiments/team-hca/R09/probe.js weights.json checkpoint.json input.txt。实际V8 FP64前向，按FEIA源码顺序映射两份7264有限数值权重，2层d16/4头/上下文16/V27含BOS，冻结主干及输出头，浅深共享W。未独立验证外部训练历史，不称独立预训练holdout。名字6–14字母去重，按首字母每7字母分4逻辑客户端，7304/7675/3612/1332条，各取末64条×4个teacher-forced位置；每检查点1024个位置，两检查点2048个位置，3奖励重复共6144位置-奖励实例（不是6144独立上下文）。实际奖励为(0)正确下一字符指示；(1)与真字符同元音/辅音类别（BOS为0）；(2)字母序号距离1−|y−gold|/26（BOS为0），后两为人工诊断奖励，非真实RLVR/人类偏好。实际枚举X,Y及随机修正Z条件分布，非MC或实际生成；无随机seed，不能伪装三独立训练。输出头参数score=(e_y−p)h_d^T，迹方差/偏差平方按||h_d||²缩放。各位置精确均值，先在各组平均，再以等位置数汇总。truth为各条件梯度范数平方均值，不是聚合梯度范数。relativeBias=sqrt(Σ||E G−g||²/Σ||g||²)，relativeMSE对最优状态标量基线的迹方差。不同奖励尺度不可跨列直接比较绝对方差。
+|奖励|最优状态方差|plain相对MSE|naive相对bias|corrected相对MSE|combined相对MSE|条件oracle相对MSE|随机修正相对MSE|RB相对MSE|
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+|正确字符|.98605587|1.250676|.891517|1.283671|1.074434|1.162601|1.252070|1.026857|
+|元音/辅音|2.43758870|3.357688|.888794|2.952464|1.052248|2.851034|2.979405|2.711354|
+|序号距离|.90951872|7.626999|.898826|6.401817|1.053288|6.298726|6.528027|6.162150|
+naive相对MSE .523862/.369525/.426466，但严重有偏，不能以此冒充同目标无偏比较；不声称其对真实长期训练一定有害或MSE一定更差。所有合法估计器最大逐位置期望误差2.90806e−15（FP64解析枚举，不是生产位级或完整SD证明）。平均理论1−TV=.8997839035；候选与正式标签不同时若奖励可复用，额外奖励查询期望.1002161/位置；随机修正额外残差抽样期望.40954164/位置（接受且a_x<1）。这些是从真实模型概率算出的期望，并非观察到的真实rollout接受率或查询次数。三奖励combined比oracle最优状态基线方差高7.443/5.225/5.329%，不是对所有实际学习到的状态基线否证；条件oracle仅最优单族，联合b0及条件系数共同优化可能更强但未计算；全奖励已知时直接积分已是最强oracle。实际未训练、无收敛/真实质量或CI。
+
+## 4. 成本 P
+标准SD在接受时可避免正残差完整构造；稠密m_X一般需全p/q并在有拒绝可能的接受事件也计算残差，不能免费。q/p已合法共置且Y奖励已求，候选奖励只有X≠Y时需额外独立查询（确定性单步奖励假设）；完整任务奖励通常需要完整合法序列及环境，远非.1次简单查询。额外残差抽样.40954/位置对标准拒绝.10022/位置，约额外4.09倍拒绝抽样次数，仍非真实耗时。固定头D432，FP32梯度1728B/客户端，4客户端→区域6912B，2区域→云3456B示意一次上行；所有方法同量；若传候选ID、奖励、a_x等32bit标量约12B/位置（上下文、p/q、状态、版本另计），不宣称网络节省。真实V151936两个FP32概率向量约1.216MB/位置，通常不需传（可共置），稠密期望与反向代价需实测。固定方差预算简化成本×方差模型：相对基线v>1且新增计算不为负，不能改善该代理；对combined v=1.052–1.074，即使零额外成本也失败。若对比实际学习的状态baseline而非oracle，应先测其实际方差和校准成本，不能将oracle误作可部署结果。普通REINFORCE、状态/价值基线、独立候选、全概率期望、现有MFPG/CIS、普通HFL+生产SD、同信息平坦为必要强对照。
+
+## 5. 文献与裁决
+2026-11-24实际web检索原始摘要/出版页：[The Mirage of Action-Dependent Baselines](https://proceedings.mlr.press/v80/tucker18a.html) ICML2018（直接强基线及负证据）；[Action-dependent Control Variates via Stein Identity](https://www.microsoft.com/en-us/research/wp-content/uploads/2018/04/Action-dependent-Control-Variates-for-Policy-Optimization-via-Stein-Identity.pdf) ICLR2018（检索摘要，未分析PDF全文）；[Conditional IS](https://proceedings.mlr.press/v108/rowland20b.html) AISTATS2020；[Doubly Robust PG](https://proceedings.mlr.press/v119/huang20b.html) ICML2020；[On Many-Actions PG](https://proceedings.mlr.press/v202/nauman23a.html) ICML2023（检索摘要）；[FedSVRPG-M/FedHAPG-M](https://proceedings.mlr.press/v235/wang24v.html) ICML2024；[ReSpec](https://arxiv.org/abs/2510.26475) 2025；[SPEC-RL](https://arxiv.org/abs/2509.23232) 2025；[SpecRoll](https://arxiv.org/abs/2608.04962) 2026；[Acceptance-Aware Draft Model Training](https://arxiv.org/abs/2609.24150) 2026；[MFPG](https://xinjie-liu.github.io/mfpg-rl/) 作者页。未穷尽全部正文/未索引研究，未正式文字查重。不宣称action-dependent baseline或条件期望新数学。
+**CRITICAL / Reject and Pivot**：创新主观加权5.925/10（问题7、机制5、理论6.5、价值6.5、距离4；25/25/20/15/15），G1/G2/G4 FAIL、G3/G7部分成立/整体未过、G5/G6未验证，无80%证据。好结果同正式目标质量预算最强公平基线真实全流程−15%或有效工作+20%、两公开预训练尺度三非IID/时延三独立训练seed及CI、全部G。普通AR、已有基线和公平平坦替代，完整奖励条件未知，HFL→SD未实证，修正单步真实模型方差未胜oracle状态基线。未执行1–2×40GB，不为此候选投入GPU。下一轮先利用真实外部微模型基础设施和FVR/FIC联合基线，在真正有GPU及两公开预训练尺度（Qwen2.5-1.5B/3B适配内生头或兼容LayerSkip）环境建立8逻辑客户2区真实数学/代码在线RLVR；记录每位置实际p/q、合法候选/正式轨迹、奖励查询代价、状态baseline、梯度与版本、生成/反向/通信/回退实际时间，寻找强基线后不可替代工作。若无真实资源，优先做可验证的端到端基线与资源审计，而非继续扩大单步条件矩。保留有偏反例、精确条件修正、随机残差修正、真实外部模型负结果与奖励查询成本。禁止直接使用相关草稿奖励作无偏基线或把接受位置梯度认作零。
