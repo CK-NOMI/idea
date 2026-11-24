@@ -3635,3 +3635,10 @@ H未执行：只有真实训练部署确实将同一合法GRPO组跨区域分配
 - E-SYN：实际 CPU NumPy2.3.5，30 seeds×3漂移档、8客户2区、二元词表、6起始上下文/客户、浅8深3、线性logits，β=.1 初始 EAL=1.855684/1.570982/1.310441，global=1.862131/1.592542/1.330592，tree=1.866029/1.603157/1.342876。tree CE均低于初始但高于task-only；tree更新平方范数较global高约44–50%，不公平预算；β=.3低漂移EAL反降。树解对同信息集中解最大误差3.33e−16，G2负证据。无真实模型、网络或GPU时间。
 - 文献核查 LayerSkip/AlphaEdit/CrispEdit/MT-SFL/pFedMe/Ditto/Acceptance-Aware Draft Training 摘要或可见文本，低曲率信赖域、EAL和多层个性化都有先例，未穷尽全文。主观7.935（8.2/7.9/8.6/6.5/8.1），R49 7.825；R44 8.14/R30窄数学8.35保留，未达8.5。G1/G2/G4 FAIL、G3/G7部分、G5/G6未验，无80%证据。Reject standalone，保留局部优化基线；下一轮优先真实预训练 checkpoint 上检验共享路径曲率与结构性计算原语，等质量等成本强平坦对照，否则停止继续调代理。两真实尺度三非IID/延迟三seed与端到端阈值未执行。
 - [报告](experiments/team-far/R50/record.md) · [代码](experiments/team-far/R50/toy.py) · [实际聚合结果](experiments/team-far/R50/results.json)
+
+### team-far/R51｜等更新能量的区域结构因果消融（审计）
+- 起始 main 5b8a311c60c212d029f95a5c6670db53351db0f7，README blob 413a0ecf31986d6613a3a15ad45f4bd19cf41513；重新获取整份README、筛查共享VJP/验证复用/分层概率，复查R50源码与R46–50、A/R07/R39/R40/R48相关记录；未复跑全库或R50 Python。
+- T：等权直积内积下全局、区域、客户端残差梯度正交。固定RMS步长的分层shrinkage一阶联合收益≤直接本地精确梯度收益 r||g||（Cauchy–Schwarz），所以层级优势必须来自噪声/泛化/通信成本而非投影代数。同信息平坦可复制；非非凸全局定理。经典ANOVA非原创。
+- E-SYN：实际V8 FP64，60 seeds×3区域漂移×3β×5臂=2700逐seed行；8客户2区，二元词表两token EAL、12维线性logits共享方向，32训练/128独立留出上下文每client，RMS步长均.25，固定shrinkage。β=.3 漂移0/.5/1.5：aligned ΔEAL=.009363/.009802/.003503，flat=.009872/.009081/.002841，shuffled=.009301/.008325/.002488；aligned ΔCE=−.003694/−.003376/−.003289，flat=−.003696/−.003490/−.003335。两指标同胜flat仅1/60、5/60、21/60；β=.1为0/60、1/60、3/60。区域信号有条件但无Pareto保证，不等实际质量/成本、无真实Transformer/GPU/物理HFL/CI。
+- 查新 LayerSkip/MTGC/MT-SFL/WTV/FedCM/CHPFL/ReSpec/System-integrated SD 原始摘要或出版页，非全文查重。R51为证伪审计不另报虚高机制分；R50主观7.935、R44 8.14、R30窄数学8.35历史分保留，未达8.5。G1/G2/G4未过、G3/G7部分、G5/G6未验，无80%证据。停止shrinkage standalone；下一轮只在真实early-exit模型和训练/推理trace发现相对AR/LayerSkip/同信息平坦可消除的实际重复计算后再设计新机制。1–2×40GB两尺度三非IID/延迟/独立seed真实总时间−15%或有效工作+20%未执行。
+- [报告](experiments/team-far/R51/record.md) · [代码](experiments/team-far/R51/probe.js) · [2700行实际逐seed结果](experiments/team-far/R51/results.json)
