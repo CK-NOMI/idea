@@ -3588,3 +3588,6 @@ H未执行：只有真实训练部署确实将同一合法GRPO组跨区域分配
 - E：两同7264参数microGPT、三hash seed、四逻辑客户、三人工漂移；旧正式10步再10步；3264实际特征、1440正式输出头步、972浅头KL步、216 diagonal优化步，18配置。未来版本不再训练传输算子，固定同一p。低/中/高漂移 EAL：共享旧头1.679636/1.421068/1.126682，刷新独立头1.763307/1.724680/1.627888，16参数window传输1.759780/1.752868/1.721423，普通残差dense bridge1.760142/1.754087/1.727382，普通W_eB feature-regression lens-like1.770901/1.768302/1.752631（最强）。window胜diagKL 15/18、freshLocal13/18但未赢普通bridge均值。无等预算rank头、在线强调参、真实HFL/正式反馈/GPU/生成/通信/CI；同p只保证proposal arms正式质量相同，未验证个性化p质量。
 - 实核pFedHN/HierFedEHN/FedPissa/Tuned Lens/LayerSkip/WTV/When Drafts Evolve/EAGLE-3原始摘要或出版页；非穷尽/查重。独立主观7.75（8.5/7.5/8.5/6.5/7，25/25/20/15/15），R44 8.14及R30窄数学8.35保留。G1/G2/G4 FAIL、G3/G7部分、G5未验、G6无80%证据。**Reject standalone，保留跨版本兼容性和强基线负结果**。停止简单映射；P0质量约束正式反向学习、聚合后仍有效的SD方向与R39/FSGPA/PCGrad/WTV/LoRA/同委托平坦强对照；真实1–2×40GB两尺度三非IID/独立训练seed同质量全流程−15%或有效工作+20%和CI未执行。
 - [完整报告](experiments/team-far/R45/record.md) · [代码](experiments/team-far/R45/transport.js) · [原始结果](experiments/team-far/R45/transport_results.json)
+
+
+**R45 arithmetic correction / 评分算术更正：** weights 25/25/20/15/15 with component scores 8.5/7.5/8.5/6.5/7.0 give **7.725/10**, not 7.75; component scores, evidence and verdict unchanged.
