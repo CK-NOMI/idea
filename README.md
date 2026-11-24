@@ -2381,3 +2381,45 @@ CFA预登记任务DAG及同信息独立组合零模型M0，测各算子、通信
 - E-H/P：R05真实Qwen2.5-7B greedy日志仅作通信代理，MTP1/2的target_forwards F=12204/12188、accepted A=3272/4912、steps S=4466/3638；假设免费重现候选，B=18(F−A)+S ceil(log2(K+1))为165242/138244bit，较18F降24.78%/36.99%。F含末端截断前额外计算；原实现逐token验证，非实际通信或完整协议，无p/q不能测本轮熵。若只减少通信36.99%，暴露通信须占全流程≥40.55%才可能达15%总节省（忽略额外成本）。1024个18bit ID仅2304B，100Mbps理想传输.184ms；BF16 d1536 hidden却需3072B/位置。码表/随机性/候选重算不可免费。
 - 文献2026-11-24：[ERSS ACL2025](https://aclanthology.org/2025.findings-acl.936/) SD与信道模拟；[Minimum Entropy Couplings](https://arxiv.org/abs/1901.07530) NP-hard及近似；[Language Modeling Is Compression](https://arxiv.org/abs/2309.10668)；[DISD](https://arxiv.org/abs/2408.07978) 公共随机性；[Distributed LLM Inference via Communication-Efficient SD](https://arxiv.org/abs/2610.35957) 服务端草稿副本；[SpecFed](https://arxiv.org/abs/2604.25777)、[TK-SLT](https://arxiv.org/abs/2509.04576)、[CFD](https://arxiv.org/abs/2012.00632)、[FedKD](https://www.nature.com/articles/s41467-022-29763-x)、[Wyner-Ziv Estimators](https://proceedings.mlr.press/v130/mayekar21a.html)。原始摘要/页面及部分正文，非全文穷尽，无正式文字查重。
 - **CRITICAL / Reject and Pivot**：已知熵耦合/普通AR算术编码/普通SD修正ID、DISD/ERSS、联邦蒸馏、同信息平坦可替代；码表分发和真实跨层需求未证，正式HFL学习无不可替代反向机制。主观创新6.475≈6.5/10（问题7.5、机制6.5、理论7、价值6、距离4.5；权重25/25/20/15/15）；G1/G2/G4 FAIL，G3/G7局部成立/整体未过，G5/G6未验证，无80%依据。好结果同质量预算最强公平基线真实全流程−15%或有效工作+20%，两预训练尺度三配置三训练seed及CI、全部G。未执行1–2×40GB Qwen2.5-1.5B/3B预实验。不为否决机制投入GPU；保留双目标冲突、同最大接受面反例、实际枚举和信息边界。下一轮先获取真实HFL数据驻留约束、授权传输需求及学习/验证阶段profile，再创造新原语；禁止把普通预测编码或蒸馏重新命名立项。
+
+
+
+### team-hieracert/R08｜FNSC：联邦采样支持集证书与top-p截断不连续性
+
+- 日期2026-11-24；起始 main bfaad2e2838e87840c367fd5070cbad9f31aee47，README blob 4c8bf0d22364a2b9bbe7b918a3d5715178c1c46c（2384行）。完整获取README并核验此前2349行原样前缀，阅读新增SCA、FTCD、FEC，检索历史私有头、Bernoulli factory、FCMC、NC-FSD及G3限制；本轮不是再次研究一般概率一致性/耦合/缓存。FTCD提供公开语料取得途径，本轮重取固定文本并独立计数训练，问题是采样支持而非序列梯度。追加前 main eb680895fcf0b15a9f093d4a19e7da38af8d487d、blob 4c8bf0d22364a2b9bbe7b918a3d5715178c1c46c，保留旧文。未独立复跑他队。
+- **CRITICAL / Reject and Pivot**。T=限定数学；E=实际V8确定性公开语料字符统计LM计算；P=通信/成本代理；O=真实分布漂移已知oracle；H=假说。没有本队预训练Transformer、GPU/物理HFL/真实SD rollout、网络实测、wall time或CI；本轮未重新探测硬件，不能把真实语料字符模型当预训练LLM。相对FCMC的greedy保持与FEC通信熵，本轮对象是top-p最小质量集合、真实行为支持和掩码回放。
+
+#### 1. 系统及候选机制（H/T）
+区域持固定请求快照旧正式p和内生浅层/辅助头q，训练端随后得到同一前缀的新正式r（版本由HFL合法更新）；禁止假定训练端能免费获取私有旧头或旧概率。允许授权的已提交轨迹、旧行为logprob、采样掩码及版本传输，不声称DP/密码安全。真实的跨机构旧模型不可访问而训练端可重建当前分布这一约束尚未证实；通常HFL本地训练可共置。目标一：对正式采样策略保持精确SD；目标二：保持既有Keep Sampling Mask（KSM）训练语义，使用旧掩码对当前logits归一化（不宣称这是新模型重新top-p后的目标，或全支持policy无偏训练）。双方需固定tokenizer、前缀、温度、tie-break、掩码规则、数值合同、旧/新版本。
+对阈值τ∈(0,1)，令Sτ(p)为按概率降序（确定性ID tie-break）累加达到≥τ的最短前缀集合，Nτ(p)_i=p_i 1{i∈S}/p(S)。标准单步精确SD必须以实际提议Q=Nτ(q)和实际目标P=Nτ(p)执行X~Q，a(X)=min(1,P_X/Q_X)，拒绝按(P−Q)_+归一化补采。接受质量min(P,Q)，正式Y~P；逐位置真实条件、独立随机性、首拒绝截断及合法bonus/EOS/KV可链式归纳整序列精确。温度>0先纳入p/q，greedy用正式argmax统一tie-break。实际生产top-p/float数值合同与完整序列未实现，本轮仅计算有限分布。不能用截断前q作为实际提议比值或截断前p作为正式目标。
+掩码证书：旧发送端知道p、旧S、合法的d≥TV(p,r)，新接收端可计算r但无旧p。若证书成立，发flag即可由Sτ(r)重建旧S；否则发完整旧mask。若界是在未来更新前预定的公共界，flag可一次随轨迹发送；界若更新后才可得，需再通信/保留旧状态，不能忽略。训练仍需旧logprob及合法同快照其他信息；仅mask一致不保证logprob/梯度一致。若可获得旧模型、两掩码或共置训练，直接重建/比较/差分是更强基线。这里信任发送端证明界，未做加密、证明系统或DP；不因不发送mask而宣称保护隐私。
+
+#### 2. 数学（T）
+(1) 不连续反例：p=(.5+ε,.5−ε)，q反向，TV=2ε→0，而τ=.5时Nτ(p),Nτ(q)为不同点质量，TV=1，截断前接受率1−2ε趋1、实际最大接受率0。常用τ=.9也可有有限跳变：10词均匀附近，p一个词概率.1−9ε，其他.1+ε，q交换低概率词（充分小ε>0）。原TV=10ε→0，双方保留不同9词，截断TV=1/9。故普通全支持KL/TV接近不能普遍保证截断后的接受率或旧支持稳定。
+(2) 全局上界：设S=Sτ(p),T=Sτ(q)，m=p(S),n=q(T)，M=max(m,n)，δ=TV(p,q)。交集未归一重叠Σ_{i∈S∩T}min(p_i,q_i)≥1−δ−(1−m)−(1−n)=m+n−1−δ；归一重叠≥上述量除M（若负则用0）。因此 TV(Nτ(p),Nτ(q))≤min(1,(1−min(m,n)+δ)/M)≤min(1,(1−τ+δ)/τ)。τ=.9、δ→0时上述10词例逼近1/9，τ=.5例逼近1；不宣称所有τ的紧性。同一S=T时Σ_{S} min(p,q)≥M−δ，故TV截断≤δ/M≤δ/τ；这说明支持固定时才有连续性控制。
+(3) 可检验充分证书：令旧k=|S|，m_k为前k质量，m_{k−1}为前k−1质量，g=p_(k)−p_(k+1)（k=V时g=∞）。对任何r满足TV(p,r)≤d，若 g>2d，m_k−d≥τ，m_{k−1}+d<τ，则Sτ(r)=S。证明：单坐标误差≤d，故跨边界排序不变；任一集合质量误差≤d，前k集合仍达阈值，任一k−1集合旧质量≤m_{k−1}、新质量<τ，因此最小k不变。仅充分、可保守；tie与阈值浮点必须使用严格数值外包界，不以FP64测试保证生产位级正确。若合法HFL更新由多级分布凸组合 r=(1−α)p+αu，则d≤α（真实Transformer参数FedAvg不能套用此概率线性界）；一般需实证/认证logit或分布漂移，跨层上界可用三角不等式但通常很松。约束学习维持所有anchor支持可能限制正式优化，与FCMC兼容性约束近邻，不保证学习质量。
+(4) 训练目标障碍：二元τ=.5，奖励仅token1得1，旧行为点质量token0、新目标点质量token1，任何仅基于旧样本且不访问缺失奖励的普通重要性比无法恢复新目标期望；同一个旧观察过程对应两个未观察奖励不同的环境。KSM固定旧支持可避免比值支持不一致，但改变了可优化分布，不等于恢复新top-p/full-support目标。单纯接受率高也不能保证训练目标一致。普通AR同样产生需要回放的mask，故证书不依赖SD；SD若正确已使用实际截断分布，不能把修bug当新HFL机制。同信息平坦完全可复制。
+
+#### 3. 实际执行（E/P/O）
+[代码](experiments/team-hieracert/R08/probe.js)、[48组逐区域结果及16组位置加权汇总](experiments/team-hieracert/R08/results.json)。读取固定GitHub公开文本：[Wallpaper](https://github.com/GITenberg/The-Yellow-Wallpaper_1952/blob/ce7c5bc1a5cf0fe23bcb265545a900365dbae29c/1952.txt) blob 3a2b5f55c6f1d13a7ae623282d38fde5a6ff352b、[Alice](https://github.com/GITenberg/Alice-s-Adventures-in-Wonderland_11/blob/7f18748e114b994d5d9454d5793581bc0b9cf9d7/11.txt) blob 9d73b1d7447b7ddc158b1b157f5f700d21bd2fb7；下载原文命名wallpaper.txt alice.txt，node experiments/team-hieracert/R08/probe.js wallpaper.txt alice.txt。脚本输出逐区域rows，结果JSON另有按positions加权的groups汇总。实际V8确定性计算，无随机种子/训练重复，不伪装为三独立种子。保留Gutenberg START/END之间文本（含可能的书名/制作信息），小写、非字母连续段替换空格，27字符。Wallpaper一区，Alice等长两区，各前80%计数训练、后20%留出；区域长度30342/67569/67569，训练24273/54055/54055、测试6069/13514/13514，共132383训练、33097测试字符（有效预测位置33091）。
+全局bigram用uniform伪计数1，pooled trigram用5×全局bigram平滑；区域旧p=local trigram+5×全局bigram，q=local bigram+20×全局bigram（内生统计backoff代理，非真实Transformer头），新r=(1−α)p+α global_trigram；α=.001/.01/.05/.2，τ=.5/.8/.9/.95。48区域配置，所有留出出现的上下文按出现次数加权，不实际生成rollout。检查截断TV界、证书成功时集合相等、标准理论接受率及错误使用raw概率的单步输出TV。错误核以X~Nτ(q)，却使用min(1,r_X/q_X)和归一化(r−q)_+补采，直接枚举其输出而非MC，和正式Nτ(r)比较；不是生产SD实测bug。最大界数值违反1.088e−16（舍入），证书假阳性0（有限数据非普适浮点证明）。字段oldDraftRawAccept实际表示1−TV(r,q)，不是旧p与q；newDraftTopAccept=1−TV(Nτ(r),Nτ(q))。
+位置加权汇总（τ=.9）：
+|α|raw TV|截断TV|mask变化%|已知d=α证书%|oracle真δ证书%|全mask bits/位置(P)|证书+回退 bits(P)|
+|---:|---:|---:|---:|---:|---:|---:|---:|
+|.001|.00009616|.00008108|.0151|74.1531|94.0286|28.6539|8.9495|
+|.01|.00096164|.00197122|4.9711|27.5755|75.0778|28.6539|22.6681|
+|.05|.00480821|.00671697|10.5618|2.5415|49.4727|28.6539|29.2208|
+|.2|.01923285|.02264709|25.7381|0|17.0318|28.6539|29.6539|
+τ=.9的raw接受约64.008–64.339%，实际截断接受61.459–61.777%，错误raw验证输出TV约.053925–.055434；τ=.5错误TV约.2351–.2357，τ=.95约.0281–.0283。不是LLM指标；小模型字符统计和确定性计数无真实GPU/训练收敛/CI。τ=.9,α=.05时直接证书传输代理比全mask多约1.98%；全局漂移界即使实际raw TV仅.0048也覆盖低。α=.001时节约约68.77%，但只减掩码bits，不减整个训练时间。
+P：27词用5位ID，示意全mask bits=min(27,5 min(k,27−k)+1)+5（列表/补集/bitmap格式示意，不是实际编码器）；证书额外1bit/位置，不认证则传完整mask；oracle已知双方掩码时差分代理5+5|S△T|，τ=.9四α分别5.0009/5.3997/5.7658/6.7790bit，优于本证书（需要双掩码或其重建、费用不可免费）。真实V151936需要18位ID；若每位置旧mask有100词，示意1800bit=225B，1024位置230400B，100Mbps理想串行约18.432ms（不含协议）；若mask需数千词成本可更高，但可bitmap/补集/熵编码、缓存或共置。若可节约mask通信比例s且其暴露占总时间f，理想净降幅≤fs−额外开销/T；要达15%即使α=.001的字符代理s=.6877也需f≥.2181，真实未知且不可外推。实际计算全部旧/新/草稿概率、认证、归一化、排序、界传输、版本、训练反向和回退必须计；本轮不测物理通信/总时间。不得将理论掩码压缩当实际wall time。
+
+#### 4. 文献与裁决
+2026-11-24实际检索top-p support mismatch / sampling mask replay / exact speculative sampling / TV draft training / adaptive decoding，并打开原始页面：
+- [The Curious Case of Neural Text Degeneration](https://arxiv.org/abs/1904.09751) ICLR2020，nucleus sampling原始定义。
+- [Fast Inference from Transformers via Speculative Decoding](https://proceedings.mlr.press/v202/leviathan23a.html) ICML2023，精确耦合。
+- [DeepSeek-V3.2](https://arxiv.org/abs/2512.02556) 2025，Keep Sampling Mask；[vLLM Sampling Mask](https://docs.vllm.ai/en/v0.34.0/training/sampling_mask/) 生产回放，直接强基线。
+- [TVP](https://arxiv.org/abs/2611.00588) 2026-10/11，TV与接受长度训练，不能把普通TV优化称新。
+- [Adaptive Decoding Methods for Token-Efficient RL](https://arxiv.org/abs/2610.25860) 2026-10，rollout支持调节与学习质量。
+- [Rethinking Training-Inference Mismatch](https://arxiv.org/abs/2609.32444) 2026-09，重要性比校正；[Nucleus Speculative Decoding](https://arxiv.org/abs/2610.07822) 2026-10，明确探索超出严格分布一致的验证，本轮不混淆目标。
+- [Supported Trust Region Optimization](https://proceedings.mlr.press/v202/mao23c.html) ICML2023，行为支持约束。核对摘要/部分正文及vLLM文档，不穷尽相关区间证书、通信压缩、所有附录/未公开工作，无正式文字查重。FCMC/NC-FSD/SCA/FEC/FTCD为内部近邻。
+**CRITICAL：** KSM已有，普通AR掩码回放/共置/重建/差分及同信息平坦可替代；仅在很小且可认证的漂移下可能省mask通信，正式HFL学习与SD无不可替代交叉机制，真实Transformer漂移界及跨层掩码驻留未证。主观等权创新6.4/10（问题7.5、机制5.5、理论7、价值7、距离5），非同行评审；G1 FAIL，G2 CRITICAL FAIL，G3 PARTIAL/FAIL（限定数学和有限分布，完整greedy/随机SD及数值未实现），G4 FAIL（真实语料非预训练Transformer），G5/G6未验证，无80%依据；G7局部可复算/整体未过。好结果同目标质量预算最强公平基线真实全流程−15%或有效工作+20%，两尺度三非IID/时延三独立种子CI及全部G。H未执行：1–2×40GB，Qwen2.5-1.5B/3B LoRA RL，8逻辑客户端2区域，真实top-p=.8/.9/.95及至少10000逐位置(p,q,oldmask,newmask,version,gradient/timing)记录；测试标准KSM、真实AR、普通HFL+精确内生SD、支持集重建/差分、同信息平坦，测原始mask字节及暴露时间、校验认证界/回退、正式质量和CI；不得人工禁止旧模型重建以虚构优势。若f不足、证书覆盖低或AR/平坦匹配，停。**Reject and Pivot**，保留top-p不连续反例、截断TV界、支持证书、错误核与真实语料结果，禁止普通KSM+联邦聚合换名立项。下一轮优先验证真实跨机构mask/梯度权限与物理成本及两条因果介入，缺数据不声称顶刊方案。
