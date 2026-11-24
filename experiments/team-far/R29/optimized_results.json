@@ -1,0 +1,3693 @@
+{
+  "rows": [
+    {
+      "wi": 0,
+      "seed": 11,
+      "c": 0,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5426569669085433,
+        "standard": 0.735776942514058,
+        "optimized": 0.7379878799940486,
+        "upper": 0.8115027390890797
+      },
+      "block": {
+        "independent": 1.0240790757632254,
+        "standard": 1.3888142880508283,
+        "optimized": 1.3931533710517439,
+        "upper": 1.5317276286589485
+      },
+      "events": 2
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "c": 0,
+      "mode": "count",
+      "first": {
+        "independent": 0.5426569669085433,
+        "standard": 0.6873907189893064,
+        "optimized": 0.6925482791721724,
+        "upper": 0.802043228240468
+      },
+      "block": {
+        "independent": 1.0240790757632254,
+        "standard": 1.297373980652832,
+        "optimized": 1.3071343447462944,
+        "upper": 1.5137098905784498
+      },
+      "events": 5
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "c": 1,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5355504601743606,
+        "standard": 0.7545985848053541,
+        "optimized": 0.7594412126590973,
+        "upper": 0.8132456653127663
+      },
+      "block": {
+        "independent": 1.013451976951979,
+        "standard": 1.4262765843035958,
+        "optimized": 1.4356730122902823,
+        "upper": 1.5368733291690686
+      },
+      "events": 2
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "c": 1,
+      "mode": "count",
+      "first": {
+        "independent": 0.5355504601743606,
+        "standard": 0.694408312067489,
+        "optimized": 0.7009726270974721,
+        "upper": 0.7948184230629456
+      },
+      "block": {
+        "independent": 1.0134519769519792,
+        "standard": 1.3129219310995137,
+        "optimized": 1.3256967013921193,
+        "upper": 1.502208548964258
+      },
+      "events": 5
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "c": 2,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5287913543845368,
+        "standard": 0.7213749523951032,
+        "optimized": 0.7253226485233393,
+        "upper": 0.8037465647098643
+      },
+      "block": {
+        "independent": 0.9891147132168476,
+        "standard": 1.3520778434922267,
+        "optimized": 1.3591964083665686,
+        "upper": 1.5058975509230554
+      },
+      "events": 2
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "c": 2,
+      "mode": "count",
+      "first": {
+        "independent": 0.5287913543845367,
+        "standard": 0.6753922983505739,
+        "optimized": 0.6814106399406991,
+        "upper": 0.7871505455030171
+      },
+      "block": {
+        "independent": 0.9891147132168479,
+        "standard": 1.2657762193208355,
+        "optimized": 1.2765767012510516,
+        "upper": 1.4751236272924741
+      },
+      "events": 5
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "c": 3,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5208609290760557,
+        "standard": 0.7255884475916238,
+        "optimized": 0.7313885430983501,
+        "upper": 0.8135112791919927
+      },
+      "block": {
+        "independent": 0.9939039135000612,
+        "standard": 1.3841867176269116,
+        "optimized": 1.3953156736630974,
+        "upper": 1.55206289043258
+      },
+      "events": 2
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "c": 3,
+      "mode": "count",
+      "first": {
+        "independent": 0.5208609290760556,
+        "standard": 0.6740663454804559,
+        "optimized": 0.683058938852719,
+        "upper": 0.7916290040435705
+      },
+      "block": {
+        "independent": 0.993903913500061,
+        "standard": 1.2859954973788328,
+        "optimized": 1.30340245877177,
+        "upper": 1.5101683377514652
+      },
+      "events": 5
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "c": 4,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5289957596185442,
+        "standard": 0.72992714737631,
+        "optimized": 0.7343518084141065,
+        "upper": 0.8047948535074675
+      },
+      "block": {
+        "independent": 0.9760675134101278,
+        "standard": 1.348576217947892,
+        "optimized": 1.3568640043208011,
+        "upper": 1.4867629805262133
+      },
+      "events": 2
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "c": 4,
+      "mode": "count",
+      "first": {
+        "independent": 0.5289957596185442,
+        "standard": 0.6798033092549292,
+        "optimized": 0.6862674753705108,
+        "upper": 0.781857786449702
+      },
+      "block": {
+        "independent": 0.9760675134101279,
+        "standard": 1.2558013951910019,
+        "optimized": 1.2680189515733142,
+        "upper": 1.444548746493081
+      },
+      "events": 5
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "c": 5,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5193336206378365,
+        "standard": 0.7564500973073836,
+        "optimized": 0.7583383948561822,
+        "upper": 0.8126364425659356
+      },
+      "block": {
+        "independent": 0.9696450583260314,
+        "standard": 1.412515853922785,
+        "optimized": 1.4160142006492513,
+        "upper": 1.5167735294312727
+      },
+      "events": 2
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "c": 5,
+      "mode": "count",
+      "first": {
+        "independent": 0.5193336206378365,
+        "standard": 0.6991881775865627,
+        "optimized": 0.7024340978586442,
+        "upper": 0.8007683323395761
+      },
+      "block": {
+        "independent": 0.9696450583260314,
+        "standard": 1.3058657176165887,
+        "optimized": 1.3118710244947354,
+        "upper": 1.495094582405594
+      },
+      "events": 5
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "c": 6,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5300024019618128,
+        "standard": 0.7456557006700278,
+        "optimized": 0.7483636127035912,
+        "upper": 0.8189940987552234
+      },
+      "block": {
+        "independent": 0.9993129747421057,
+        "standard": 1.4074858392822547,
+        "optimized": 1.412499683611468,
+        "upper": 1.5456612154837526
+      },
+      "events": 2
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "c": 6,
+      "mode": "count",
+      "first": {
+        "independent": 0.5300024019618127,
+        "standard": 0.6965202549320174,
+        "optimized": 0.7002265492089954,
+        "upper": 0.8032749312593491
+      },
+      "block": {
+        "independent": 0.9993129747421058,
+        "standard": 1.3145245214457948,
+        "optimized": 1.321396070670709,
+        "upper": 1.5159015937365257
+      },
+      "events": 5
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "c": 7,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.562029189634611,
+        "standard": 0.7311824843367059,
+        "optimized": 0.7342527105954725,
+        "upper": 0.8082496586148152
+      },
+      "block": {
+        "independent": 1.050609757948835,
+        "standard": 1.365391228482924,
+        "optimized": 1.3714920407924842,
+        "upper": 1.5095067609587591
+      },
+      "events": 2
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "c": 7,
+      "mode": "count",
+      "first": {
+        "independent": 0.562029189634611,
+        "standard": 0.6820679314026954,
+        "optimized": 0.6903268211075165,
+        "upper": 0.7957340192773974
+      },
+      "block": {
+        "independent": 1.0506097579488347,
+        "standard": 1.27371298432737,
+        "optimized": 1.2893858644971885,
+        "upper": 1.486128966199915
+      },
+      "events": 5
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "c": 8,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5225349629786269,
+        "standard": 0.7261905627761706,
+        "optimized": 0.7283973690740858,
+        "upper": 0.7957456970974275
+      },
+      "block": {
+        "independent": 0.9731360048640774,
+        "standard": 1.3509932112498457,
+        "optimized": 1.3554715497931418,
+        "upper": 1.480486923194679
+      },
+      "events": 2
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "c": 8,
+      "mode": "count",
+      "first": {
+        "independent": 0.5225349629786269,
+        "standard": 0.6779425404122683,
+        "optimized": 0.6816500023494223,
+        "upper": 0.7770098328486875
+      },
+      "block": {
+        "independent": 0.9731360048640775,
+        "standard": 1.2614197633030795,
+        "optimized": 1.268739207092794,
+        "upper": 1.4456433319745017
+      },
+      "events": 5
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "c": 9,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5421259917062496,
+        "standard": 0.7252049785320132,
+        "optimized": 0.7277955949984136,
+        "upper": 0.8085495665276607
+      },
+      "block": {
+        "independent": 1.025367895661858,
+        "standard": 1.3715593552348742,
+        "optimized": 1.3767205137536527,
+        "upper": 1.52827242638417
+      },
+      "events": 2
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "c": 9,
+      "mode": "count",
+      "first": {
+        "independent": 0.5421259917062499,
+        "standard": 0.6799813582812163,
+        "optimized": 0.6843214286984279,
+        "upper": 0.7885600855703819
+      },
+      "block": {
+        "independent": 1.0253678956618582,
+        "standard": 1.285852033991286,
+        "optimized": 1.2941398790181324,
+        "upper": 1.490602811091293
+      },
+      "events": 5
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "c": 10,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5300876014122102,
+        "standard": 0.7427640838563694,
+        "optimized": 0.7452845051935355,
+        "upper": 0.8162556972020972
+      },
+      "block": {
+        "independent": 1.0053872250766707,
+        "standard": 1.409731548998419,
+        "optimized": 1.414688268354567,
+        "upper": 1.5489250864049156
+      },
+      "events": 2
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "c": 10,
+      "mode": "count",
+      "first": {
+        "independent": 0.5300876014122103,
+        "standard": 0.6930221548780477,
+        "optimized": 0.6971567425220226,
+        "upper": 0.8014398511634443
+      },
+      "block": {
+        "independent": 1.0053872250766704,
+        "standard": 1.315154320823338,
+        "optimized": 1.3231970698327296,
+        "upper": 1.5209277340066585
+      },
+      "events": 5
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "c": 11,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5306987540336645,
+        "standard": 0.7143511245658442,
+        "optimized": 0.7204414194030963,
+        "upper": 0.7826790515603652
+      },
+      "block": {
+        "independent": 0.985604335151548,
+        "standard": 1.3291486903669303,
+        "optimized": 1.340533739286177,
+        "upper": 1.4564852071809027
+      },
+      "events": 2
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "c": 11,
+      "mode": "count",
+      "first": {
+        "independent": 0.5306987540336645,
+        "standard": 0.6608704373545673,
+        "optimized": 0.6697261127714318,
+        "upper": 0.7603782217723433
+      },
+      "block": {
+        "independent": 0.985604335151548,
+        "standard": 1.2294368402270919,
+        "optimized": 1.2460045116610925,
+        "upper": 1.4152459139430722
+      },
+      "events": 5
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "c": 12,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5576282875165467,
+        "standard": 0.7187061151283214,
+        "optimized": 0.7224482241245915,
+        "upper": 0.80137365227039
+      },
+      "block": {
+        "independent": 1.056965427915014,
+        "standard": 1.3630922735568516,
+        "optimized": 1.3703321920871567,
+        "upper": 1.5196397020336578
+      },
+      "events": 2
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "c": 12,
+      "mode": "count",
+      "first": {
+        "independent": 0.5576282875165467,
+        "standard": 0.6752576473021447,
+        "optimized": 0.6816678063176992,
+        "upper": 0.7782870516669549
+      },
+      "block": {
+        "independent": 1.0569654279150142,
+        "standard": 1.2806991624224087,
+        "optimized": 1.2928014285177176,
+        "upper": 1.4757458314776395
+      },
+      "events": 5
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "c": 13,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5630881017853018,
+        "standard": 0.7127545817921987,
+        "optimized": 0.7158063279823256,
+        "upper": 0.7906415988499076
+      },
+      "block": {
+        "independent": 1.0425400872767425,
+        "standard": 1.3208813758856062,
+        "optimized": 1.3266818332382293,
+        "upper": 1.4646592120787953
+      },
+      "events": 2
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "c": 13,
+      "mode": "count",
+      "first": {
+        "independent": 0.5630881017853019,
+        "standard": 0.6621264397317638,
+        "optimized": 0.6732948150416339,
+        "upper": 0.7750628746103428
+      },
+      "block": {
+        "independent": 1.042540087276743,
+        "standard": 1.2266970301180058,
+        "optimized": 1.2472896886212381,
+        "upper": 1.4359586110721771
+      },
+      "events": 5
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "c": 14,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5268172815199862,
+        "standard": 0.7381413194046399,
+        "optimized": 0.740801178462121,
+        "upper": 0.8034964336985875
+      },
+      "block": {
+        "independent": 0.985217002001282,
+        "standard": 1.381903725653391,
+        "optimized": 1.3868660383961056,
+        "upper": 1.5046565965880276
+      },
+      "events": 2
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "c": 14,
+      "mode": "count",
+      "first": {
+        "independent": 0.5268172815199863,
+        "standard": 0.6824263318736583,
+        "optimized": 0.686562679619856,
+        "upper": 0.77978244340345
+      },
+      "block": {
+        "independent": 0.9852170020012821,
+        "standard": 1.2774726348096344,
+        "optimized": 1.285224044624657,
+        "upper": 1.460180083388384
+      },
+      "events": 5
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "c": 15,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5333944923989972,
+        "standard": 0.7220609820616577,
+        "optimized": 0.7236595847083409,
+        "upper": 0.8026972419215064
+      },
+      "block": {
+        "independent": 1.0059722494178083,
+        "standard": 1.3610723238857274,
+        "optimized": 1.3646044585486043,
+        "upper": 1.512496045845289
+      },
+      "events": 2
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "c": 15,
+      "mode": "count",
+      "first": {
+        "independent": 0.5333944923989973,
+        "standard": 0.6744563869828739,
+        "optimized": 0.6808515026889634,
+        "upper": 0.7895559027651735
+      },
+      "block": {
+        "independent": 1.0059722494178083,
+        "standard": 1.2713472371239956,
+        "optimized": 1.2834837326624702,
+        "upper": 1.4879654011755439
+      },
+      "events": 5
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "c": 0,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5306753721455499,
+        "standard": 0.73857630725214,
+        "optimized": 0.7445400258012485,
+        "upper": 0.8192506035150251
+      },
+      "block": {
+        "independent": 1.0094781131444117,
+        "standard": 1.4063665935755487,
+        "optimized": 1.4176305769245867,
+        "upper": 1.5606479337951562
+      },
+      "events": 2
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "c": 0,
+      "mode": "count",
+      "first": {
+        "independent": 0.53067537214555,
+        "standard": 0.678984543910276,
+        "optimized": 0.6870238136024859,
+        "upper": 0.7855670984908547
+      },
+      "block": {
+        "independent": 1.0094781131444117,
+        "standard": 1.2927683076110166,
+        "optimized": 1.3079884909842574,
+        "upper": 1.4960889619954856
+      },
+      "events": 5
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "c": 1,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5373158726561988,
+        "standard": 0.7040074226144306,
+        "optimized": 0.7096337185306273,
+        "upper": 0.7771972081932047
+      },
+      "block": {
+        "independent": 1.006070996983605,
+        "standard": 1.3195904830720064,
+        "optimized": 1.33023467304068,
+        "upper": 1.4558507460125036
+      },
+      "events": 2
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "c": 1,
+      "mode": "count",
+      "first": {
+        "independent": 0.537315872656199,
+        "standard": 0.6556154106965885,
+        "optimized": 0.6642525486901794,
+        "upper": 0.7557423540160675
+      },
+      "block": {
+        "independent": 1.0060709969836052,
+        "standard": 1.2290946641557061,
+        "optimized": 1.2453615991617177,
+        "upper": 1.4163467842563
+      },
+      "events": 5
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "c": 2,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5453126125511792,
+        "standard": 0.697762173633819,
+        "optimized": 0.7032070387452711,
+        "upper": 0.7758249855433961
+      },
+      "block": {
+        "independent": 1.0271645787623636,
+        "standard": 1.315669315834834,
+        "optimized": 1.3259895596036588,
+        "upper": 1.4616706180852097
+      },
+      "events": 2
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "c": 2,
+      "mode": "count",
+      "first": {
+        "independent": 0.5453126125511792,
+        "standard": 0.6547736150324398,
+        "optimized": 0.6652094830086872,
+        "upper": 0.7576491103945131
+      },
+      "block": {
+        "independent": 1.0271645787623633,
+        "standard": 1.2345247379541129,
+        "optimized": 1.2540968011912634,
+        "upper": 1.4278179726983993
+      },
+      "events": 5
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "c": 3,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5222841505396796,
+        "standard": 0.7369215654059982,
+        "optimized": 0.7387840351307242,
+        "upper": 0.802761771873442
+      },
+      "block": {
+        "independent": 0.9859388054615436,
+        "standard": 1.393334443158378,
+        "optimized": 1.3966258612449851,
+        "upper": 1.517538141748952
+      },
+      "events": 2
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "c": 3,
+      "mode": "count",
+      "first": {
+        "independent": 0.5222841505396795,
+        "standard": 0.6858920415202867,
+        "optimized": 0.6899796153396212,
+        "upper": 0.7875589438520059
+      },
+      "block": {
+        "independent": 0.9859388054615436,
+        "standard": 1.2967188928400033,
+        "optimized": 1.3040712138783404,
+        "upper": 1.488634845791165
+      },
+      "events": 5
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "c": 4,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5502466473464721,
+        "standard": 0.7346635824263571,
+        "optimized": 0.7371662239154033,
+        "upper": 0.8045476494294923
+      },
+      "block": {
+        "independent": 1.037503203954402,
+        "standard": 1.3848923892542528,
+        "optimized": 1.3898903007635346,
+        "upper": 1.5159054370814482
+      },
+      "events": 2
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "c": 4,
+      "mode": "count",
+      "first": {
+        "independent": 0.5502466473464721,
+        "standard": 0.6849520002278102,
+        "optimized": 0.6942254220232543,
+        "upper": 0.796259607245565
+      },
+      "block": {
+        "independent": 1.0375032039544019,
+        "standard": 1.2913368233819802,
+        "optimized": 1.308605121524537,
+        "upper": 1.500629243929459
+      },
+      "events": 5
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "c": 5,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5706027578652805,
+        "standard": 0.7418186632096513,
+        "optimized": 0.7462459386164415,
+        "upper": 0.811879879458366
+      },
+      "block": {
+        "independent": 1.0882555149448265,
+        "standard": 1.414658203958189,
+        "optimized": 1.423200557173594,
+        "upper": 1.5475398377057363
+      },
+      "events": 2
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "c": 5,
+      "mode": "count",
+      "first": {
+        "independent": 0.5706027578652804,
+        "standard": 0.6935915635181161,
+        "optimized": 0.699304814078414,
+        "upper": 0.7897900398098407
+      },
+      "block": {
+        "independent": 1.0882555149448268,
+        "standard": 1.3229869694111926,
+        "optimized": 1.3339742066721891,
+        "upper": 1.5059313365075606
+      },
+      "events": 5
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "c": 6,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.4980974620445683,
+        "standard": 0.684518748176606,
+        "optimized": 0.6919477717849236,
+        "upper": 0.7690587538342294
+      },
+      "block": {
+        "independent": 0.9195561560097455,
+        "standard": 1.2648246577310929,
+        "optimized": 1.2783182870372167,
+        "upper": 1.42122762743091
+      },
+      "events": 2
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "c": 6,
+      "mode": "count",
+      "first": {
+        "independent": 0.4980974620445684,
+        "standard": 0.6201482076451835,
+        "optimized": 0.6326997945074665,
+        "upper": 0.7245685230549718
+      },
+      "block": {
+        "independent": 0.9195561560097457,
+        "standard": 1.1459749049948271,
+        "optimized": 1.1689202854098055,
+        "upper": 1.3380154857048836
+      },
+      "events": 5
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "c": 7,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5204455496811499,
+        "standard": 0.7532191701500357,
+        "optimized": 0.7574895050418997,
+        "upper": 0.8191240899753439
+      },
+      "block": {
+        "independent": 0.9874500644051796,
+        "standard": 1.428335196066928,
+        "optimized": 1.4364771789241721,
+        "upper": 1.5533794129997616
+      },
+      "events": 2
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "c": 7,
+      "mode": "count",
+      "first": {
+        "independent": 0.52044554968115,
+        "standard": 0.6794666725599654,
+        "optimized": 0.6851380566538866,
+        "upper": 0.7743175804591602
+      },
+      "block": {
+        "independent": 0.9874500644051795,
+        "standard": 1.2886282125075685,
+        "optimized": 1.2994199359213556,
+        "upper": 1.4682083769051384
+      },
+      "events": 5
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "c": 8,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5610319560417771,
+        "standard": 0.7650159292609887,
+        "optimized": 0.7692441557672677,
+        "upper": 0.8272585523922935
+      },
+      "block": {
+        "independent": 1.058041604354243,
+        "standard": 1.4408867001628296,
+        "optimized": 1.4494432599458094,
+        "upper": 1.5585038438945518
+      },
+      "events": 2
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "c": 8,
+      "mode": "count",
+      "first": {
+        "independent": 0.5610319560417771,
+        "standard": 0.7069106346698069,
+        "optimized": 0.7129437073614535,
+        "upper": 0.8009138037516752
+      },
+      "block": {
+        "independent": 1.0580416043542433,
+        "standard": 1.3316756883790346,
+        "optimized": 1.3434173199634638,
+        "upper": 1.5085005274735088
+      },
+      "events": 5
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "c": 9,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5264880887248143,
+        "standard": 0.7152845704212693,
+        "optimized": 0.7241504294723003,
+        "upper": 0.7993995973525981
+      },
+      "block": {
+        "independent": 0.985813676117808,
+        "standard": 1.340058740965115,
+        "optimized": 1.356709352421484,
+        "upper": 1.497271398088078
+      },
+      "events": 2
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "c": 9,
+      "mode": "count",
+      "first": {
+        "independent": 0.5264880887248142,
+        "standard": 0.66664263332387,
+        "optimized": 0.6792260039412767,
+        "upper": 0.7772754491394147
+      },
+      "block": {
+        "independent": 0.9858136761178082,
+        "standard": 1.2488808948818089,
+        "optimized": 1.272409300454666,
+        "upper": 1.4561058113217022
+      },
+      "events": 5
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "c": 10,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5298136356169378,
+        "standard": 0.7333230053541488,
+        "optimized": 0.737033688359294,
+        "upper": 0.808813668363136
+      },
+      "block": {
+        "independent": 0.9868426578848247,
+        "standard": 1.3655371365258817,
+        "optimized": 1.3725046333368878,
+        "upper": 1.5064804979511917
+      },
+      "events": 2
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "c": 10,
+      "mode": "count",
+      "first": {
+        "independent": 0.5298136356169378,
+        "standard": 0.6767285553881001,
+        "optimized": 0.6833192498487988,
+        "upper": 0.7808737366717299
+      },
+      "block": {
+        "independent": 0.9868426578848247,
+        "standard": 1.2603767516816942,
+        "optimized": 1.2726571159192326,
+        "upper": 1.4541881352282235
+      },
+      "events": 5
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "c": 11,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5339697444929346,
+        "standard": 0.7457982730212376,
+        "optimized": 0.7473646249464279,
+        "upper": 0.8050203297227916
+      },
+      "block": {
+        "independent": 1.0091528395141665,
+        "standard": 1.4110122547974568,
+        "optimized": 1.4141549639849302,
+        "upper": 1.5232141417130367
+      },
+      "events": 2
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "c": 11,
+      "mode": "count",
+      "first": {
+        "independent": 0.5339697444929346,
+        "standard": 0.6946432438795078,
+        "optimized": 0.7004991743873316,
+        "upper": 0.7964126428577312
+      },
+      "block": {
+        "independent": 1.0091528395141665,
+        "standard": 1.3140298385947677,
+        "optimized": 1.3250624394354014,
+        "upper": 1.5068217223412992
+      },
+      "events": 5
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "c": 12,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5522968410756209,
+        "standard": 0.7223277967352805,
+        "optimized": 0.7234784296377103,
+        "upper": 0.7837081619596542
+      },
+      "block": {
+        "independent": 1.0459227860044147,
+        "standard": 1.370070673582079,
+        "optimized": 1.372373598639372,
+        "upper": 1.4858080428223877
+      },
+      "events": 2
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "c": 12,
+      "mode": "count",
+      "first": {
+        "independent": 0.5522968410756213,
+        "standard": 0.6722007242309244,
+        "optimized": 0.6784486589847334,
+        "upper": 0.7742116716773482
+      },
+      "block": {
+        "independent": 1.0459227860044147,
+        "standard": 1.2746103943051659,
+        "optimized": 1.286323435013903,
+        "upper": 1.468105943200887
+      },
+      "events": 5
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "c": 13,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5381841463914754,
+        "standard": 0.7439080912123698,
+        "optimized": 0.7466352705610098,
+        "upper": 0.8061434837453185
+      },
+      "block": {
+        "independent": 1.0195967604903677,
+        "standard": 1.408955940591204,
+        "optimized": 1.4144955809754103,
+        "upper": 1.5262709826865026
+      },
+      "events": 2
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "c": 13,
+      "mode": "count",
+      "first": {
+        "independent": 0.5381841463914754,
+        "standard": 0.6942284735768738,
+        "optimized": 0.7003754969555951,
+        "upper": 0.7957861723578868
+      },
+      "block": {
+        "independent": 1.0195967604903675,
+        "standard": 1.314793778003226,
+        "optimized": 1.32663803101003,
+        "upper": 1.50682412647916
+      },
+      "events": 5
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "c": 14,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5342046729496677,
+        "standard": 0.7511449589741852,
+        "optimized": 0.7549223834538095,
+        "upper": 0.8177815698269211
+      },
+      "block": {
+        "independent": 1.0155830037081777,
+        "standard": 1.428156395587374,
+        "optimized": 1.4354794851830335,
+        "upper": 1.555174546285893
+      },
+      "events": 2
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "c": 14,
+      "mode": "count",
+      "first": {
+        "independent": 0.5342046729496676,
+        "standard": 0.6984799258518176,
+        "optimized": 0.7046696537977045,
+        "upper": 0.8068661780572894
+      },
+      "block": {
+        "independent": 1.0155830037081777,
+        "standard": 1.327958805037276,
+        "optimized": 1.3398652123708008,
+        "upper": 1.5343762570047645
+      },
+      "events": 5
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "c": 15,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5591400663348167,
+        "standard": 0.8170314299344685,
+        "optimized": 0.8180775751511477,
+        "upper": 0.8763660475592234
+      },
+      "block": {
+        "independent": 1.0599266838237589,
+        "standard": 1.5479828040153532,
+        "optimized": 1.5500465237873833,
+        "upper": 1.6602993762148492
+      },
+      "events": 2
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "c": 15,
+      "mode": "count",
+      "first": {
+        "independent": 0.5591400663348167,
+        "standard": 0.7024155076207292,
+        "optimized": 0.7063212471442241,
+        "upper": 0.787245481081541
+      },
+      "block": {
+        "independent": 1.0599266838237589,
+        "standard": 1.3312981876168557,
+        "optimized": 1.3387208411291442,
+        "upper": 1.4918662004746484
+      },
+      "events": 5
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "c": 0,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5537914260168212,
+        "standard": 0.8198373690090038,
+        "optimized": 0.8216694924260914,
+        "upper": 0.8541877593560959
+      },
+      "block": {
+        "independent": 1.0406992120265897,
+        "standard": 1.53996846403869,
+        "optimized": 1.5435242559370024,
+        "upper": 1.6044309802787342
+      },
+      "events": 2
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "c": 0,
+      "mode": "count",
+      "first": {
+        "independent": 0.5537914260168213,
+        "standard": 0.6944735612592261,
+        "optimized": 0.7023601983078107,
+        "upper": 0.7932469340140438
+      },
+      "block": {
+        "independent": 1.0406992120265899,
+        "standard": 1.3046690763608033,
+        "optimized": 1.319634732059126,
+        "upper": 1.4900220948674985
+      },
+      "events": 5
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "c": 1,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.53411991895012,
+        "standard": 0.75075549676896,
+        "optimized": 0.7554765260970326,
+        "upper": 0.8085423302280641
+      },
+      "block": {
+        "independent": 1.0054286415354257,
+        "standard": 1.4156304604582681,
+        "optimized": 1.424755115550966,
+        "upper": 1.5241952150536342
+      },
+      "events": 2
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "c": 1,
+      "mode": "count",
+      "first": {
+        "independent": 0.5341199189501201,
+        "standard": 0.6758586655633687,
+        "optimized": 0.6857461137480457,
+        "upper": 0.7771926956274353
+      },
+      "block": {
+        "independent": 1.0054286415354257,
+        "standard": 1.2736888764354994,
+        "optimized": 1.2924132444153384,
+        "upper": 1.4646288443258246
+      },
+      "events": 5
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "c": 2,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5592240016074912,
+        "standard": 0.7680298759118709,
+        "optimized": 0.7721792080156431,
+        "upper": 0.829102750313153
+      },
+      "block": {
+        "independent": 1.0479705954440413,
+        "standard": 1.4399548617176294,
+        "optimized": 1.4478286769057271,
+        "upper": 1.5538820913023823
+      },
+      "events": 2
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "c": 2,
+      "mode": "count",
+      "first": {
+        "independent": 0.5592240016074911,
+        "standard": 0.6816975807284334,
+        "optimized": 0.6894151663988188,
+        "upper": 0.7679964156869159
+      },
+      "block": {
+        "independent": 1.047970595444041,
+        "standard": 1.2776675901667611,
+        "optimized": 1.2922766889607722,
+        "upper": 1.4392630205136383
+      },
+      "events": 5
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "c": 3,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5452667621577107,
+        "standard": 0.7977447732240587,
+        "optimized": 0.8005577017438653,
+        "upper": 0.8474924401789462
+      },
+      "block": {
+        "independent": 1.0199646812753569,
+        "standard": 1.49145211337673,
+        "optimized": 1.496841833944662,
+        "upper": 1.584166537026378
+      },
+      "events": 2
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "c": 3,
+      "mode": "count",
+      "first": {
+        "independent": 0.5452667621577107,
+        "standard": 0.6851280433622551,
+        "optimized": 0.692218885363951,
+        "upper": 0.7768936941385902
+      },
+      "block": {
+        "independent": 1.0199646812753567,
+        "standard": 1.2810326671235603,
+        "optimized": 1.2944477569559563,
+        "upper": 1.4519444804155641
+      },
+      "events": 5
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "c": 4,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5111556150195432,
+        "standard": 0.7309583952094842,
+        "optimized": 0.7343782677819131,
+        "upper": 0.7882988075297463
+      },
+      "block": {
+        "independent": 0.9499346162848579,
+        "standard": 1.3568541035644843,
+        "optimized": 1.3633764774044193,
+        "upper": 1.462607367763916
+      },
+      "events": 2
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "c": 4,
+      "mode": "count",
+      "first": {
+        "independent": 0.5111556150195433,
+        "standard": 0.6450334695708879,
+        "optimized": 0.6552884240303887,
+        "upper": 0.7435056253455283
+      },
+      "block": {
+        "independent": 0.949934616284858,
+        "standard": 1.1976427374854464,
+        "optimized": 1.2170160809543964,
+        "upper": 1.3797784692811244
+      },
+      "events": 5
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "c": 5,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5155516225963538,
+        "standard": 0.7576461909890635,
+        "optimized": 0.7609472191386566,
+        "upper": 0.8031902894055655
+      },
+      "block": {
+        "independent": 0.9731472461169192,
+        "standard": 1.42903818172685,
+        "optimized": 1.4353200776844044,
+        "upper": 1.5148116599306856
+      },
+      "events": 2
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "c": 5,
+      "mode": "count",
+      "first": {
+        "independent": 0.5155516225963538,
+        "standard": 0.6486326764305471,
+        "optimized": 0.6588544924090083,
+        "upper": 0.7594576224135944
+      },
+      "block": {
+        "independent": 0.973147246116919,
+        "standard": 1.2236975252174713,
+        "optimized": 1.2431819100976957,
+        "upper": 1.4318528233264591
+      },
+      "events": 5
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "c": 6,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5457193118679642,
+        "standard": 0.77978018796524,
+        "optimized": 0.7814979534623718,
+        "upper": 0.8398583765108284
+      },
+      "block": {
+        "independent": 1.0381613306230442,
+        "standard": 1.4835596705354153,
+        "optimized": 1.4869302216289235,
+        "upper": 1.598590269673068
+      },
+      "events": 2
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "c": 6,
+      "mode": "count",
+      "first": {
+        "independent": 0.5457193118679642,
+        "standard": 0.6959546083974474,
+        "optimized": 0.7021823554987676,
+        "upper": 0.7907275360037667
+      },
+      "block": {
+        "independent": 1.038161330623044,
+        "standard": 1.3241650248671393,
+        "optimized": 1.3360988100859874,
+        "upper": 1.5048763717972617
+      },
+      "events": 5
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "c": 7,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5241092045851072,
+        "standard": 0.7979318046389416,
+        "optimized": 0.8000455234511972,
+        "upper": 0.8413658567416075
+      },
+      "block": {
+        "independent": 0.993906067882438,
+        "standard": 1.5127873127573832,
+        "optimized": 1.5168855472300995,
+        "upper": 1.5951970445643162
+      },
+      "events": 2
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "c": 7,
+      "mode": "count",
+      "first": {
+        "independent": 0.5241092045851073,
+        "standard": 0.6864711367502897,
+        "optimized": 0.6926777074159763,
+        "upper": 0.7771952128962191
+      },
+      "block": {
+        "independent": 0.9939060678824378,
+        "standard": 1.3015902058258912,
+        "optimized": 1.3135022332799704,
+        "upper": 1.473544740802986
+      },
+      "events": 5
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "c": 8,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5189596112098765,
+        "standard": 0.7899560592171552,
+        "optimized": 0.7921833860117995,
+        "upper": 0.8437639216295908
+      },
+      "block": {
+        "independent": 0.9914007607136165,
+        "standard": 1.5095976411198817,
+        "optimized": 1.513927906217833,
+        "upper": 1.6124772232630096
+      },
+      "events": 2
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "c": 8,
+      "mode": "count",
+      "first": {
+        "independent": 0.5189596112098765,
+        "standard": 0.6925429595014022,
+        "optimized": 0.6974272533549513,
+        "upper": 0.7935778568741092
+      },
+      "block": {
+        "independent": 0.9914007607136165,
+        "standard": 1.3232792132304318,
+        "optimized": 1.3326762138707133,
+        "upper": 1.5163242431257584
+      },
+      "events": 5
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "c": 9,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.526455154298561,
+        "standard": 0.7973005607637618,
+        "optimized": 0.7993097750348637,
+        "upper": 0.8446996254022786
+      },
+      "block": {
+        "independent": 0.9933391451060103,
+        "standard": 1.5058640983926779,
+        "optimized": 1.5097708082022527,
+        "upper": 1.5962803670315808
+      },
+      "events": 2
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "c": 9,
+      "mode": "count",
+      "first": {
+        "independent": 0.526455154298561,
+        "standard": 0.7072865077549927,
+        "optimized": 0.7120394577666083,
+        "upper": 0.8048273087818213
+      },
+      "block": {
+        "independent": 0.9933391451060103,
+        "standard": 1.335423191871258,
+        "optimized": 1.3445622523506557,
+        "upper": 1.519990427763916
+      },
+      "events": 5
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "c": 10,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.531462923825784,
+        "standard": 0.7434014859539926,
+        "optimized": 0.7490115689790453,
+        "upper": 0.8121554910201432
+      },
+      "block": {
+        "independent": 0.999934783458601,
+        "standard": 1.3989668497423626,
+        "optimized": 1.4096992581630865,
+        "upper": 1.527917414151161
+      },
+      "events": 2
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "c": 10,
+      "mode": "count",
+      "first": {
+        "independent": 0.5314629238257839,
+        "standard": 0.6789790411203759,
+        "optimized": 0.689062124070076,
+        "upper": 0.784083266057076
+      },
+      "block": {
+        "independent": 0.9999347834586011,
+        "standard": 1.277473395102836,
+        "optimized": 1.2967106453692145,
+        "upper": 1.4751132608684805
+      },
+      "events": 5
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "c": 11,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5367959587258901,
+        "standard": 0.7755463507148626,
+        "optimized": 0.7796872706124802,
+        "upper": 0.8252699107634146
+      },
+      "block": {
+        "independent": 1.0189674024461957,
+        "standard": 1.4717636549468123,
+        "optimized": 1.4796389980523978,
+        "upper": 1.566011853806945
+      },
+      "events": 2
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "c": 11,
+      "mode": "count",
+      "first": {
+        "independent": 0.5367959587258903,
+        "standard": 0.6674560994542071,
+        "optimized": 0.6784947765263076,
+        "upper": 0.7684825478473489
+      },
+      "block": {
+        "independent": 1.0189674024461957,
+        "standard": 1.2668068313512975,
+        "optimized": 1.2880006946544915,
+        "upper": 1.4580927321796646
+      },
+      "events": 5
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "c": 12,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.508716693829605,
+        "standard": 0.7609540228539969,
+        "optimized": 0.7648749374396484,
+        "upper": 0.8139984988659346
+      },
+      "block": {
+        "independent": 0.9655022427891728,
+        "standard": 1.4444881313722804,
+        "optimized": 1.4519942769942462,
+        "upper": 1.545070791968278
+      },
+      "events": 2
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "c": 12,
+      "mode": "count",
+      "first": {
+        "independent": 0.508716693829605,
+        "standard": 0.6760603065057305,
+        "optimized": 0.682964556067404,
+        "upper": 0.77775397903398
+      },
+      "block": {
+        "independent": 0.9655022427891732,
+        "standard": 1.2834858736239576,
+        "optimized": 1.2966842815562918,
+        "upper": 1.4764391799670342
+      },
+      "events": 5
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "c": 13,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5512615826368454,
+        "standard": 0.8027634527950974,
+        "optimized": 0.8044963497403951,
+        "upper": 0.846154544144605
+      },
+      "block": {
+        "independent": 1.0461481919058968,
+        "standard": 1.5255408317614096,
+        "optimized": 1.5290667538334815,
+        "upper": 1.6077787165440487
+      },
+      "events": 2
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "c": 13,
+      "mode": "count",
+      "first": {
+        "independent": 0.5512615826368454,
+        "standard": 0.6859349553377357,
+        "optimized": 0.6930081104878798,
+        "upper": 0.7817097836534073
+      },
+      "block": {
+        "independent": 1.046148191905897,
+        "standard": 1.3026524514000881,
+        "optimized": 1.3163608014770487,
+        "upper": 1.48528354440655
+      },
+      "events": 5
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "c": 14,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5570565516774423,
+        "standard": 0.7880324960339143,
+        "optimized": 0.7918163990412425,
+        "upper": 0.845000905687892
+      },
+      "block": {
+        "independent": 1.0534383322651029,
+        "standard": 1.4917564870723168,
+        "optimized": 1.4990780273762536,
+        "upper": 1.5997789047350512
+      },
+      "events": 2
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "c": 14,
+      "mode": "count",
+      "first": {
+        "independent": 0.5570565516774422,
+        "standard": 0.7025700617296112,
+        "optimized": 0.7106033874034912,
+        "upper": 0.7933123909633025
+      },
+      "block": {
+        "independent": 1.0534383322651026,
+        "standard": 1.3295635464275726,
+        "optimized": 1.344859722069284,
+        "upper": 1.5016691992876354
+      },
+      "events": 5
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "c": 15,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5188539181733448,
+        "standard": 0.7470374429335935,
+        "optimized": 0.7522140566444248,
+        "upper": 0.805639885437611
+      },
+      "block": {
+        "independent": 0.9789448924828733,
+        "standard": 1.410227798337472,
+        "optimized": 1.4203122769037304,
+        "upper": 1.5216337173050332
+      },
+      "events": 2
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "c": 15,
+      "mode": "count",
+      "first": {
+        "independent": 0.5188539181733448,
+        "standard": 0.6855606690874592,
+        "optimized": 0.693756325376222,
+        "upper": 0.7941415380457219
+      },
+      "block": {
+        "independent": 0.9789448924828733,
+        "standard": 1.2939471393677926,
+        "optimized": 1.3095757745000822,
+        "upper": 1.4994764365057112
+      },
+      "events": 5
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "c": 0,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.536908384950737,
+        "standard": 0.754017066009261,
+        "optimized": 0.7588122289611523,
+        "upper": 0.832469502757652
+      },
+      "block": {
+        "independent": 1.0263317574131572,
+        "standard": 1.4404977609267793,
+        "optimized": 1.4497500222128858,
+        "upper": 1.5900528146541921
+      },
+      "events": 2
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "c": 0,
+      "mode": "count",
+      "first": {
+        "independent": 0.5369083849507369,
+        "standard": 0.6898899208798427,
+        "optimized": 0.6988717576487751,
+        "upper": 0.7969883579164007
+      },
+      "block": {
+        "independent": 1.0263317574131572,
+        "standard": 1.3182983938901125,
+        "optimized": 1.3355593716893202,
+        "upper": 1.5226060116741802
+      },
+      "events": 5
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "c": 1,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.6268207741101848,
+        "standard": 0.7794425336767791,
+        "optimized": 0.785117913870218,
+        "upper": 0.8399857683038818
+      },
+      "block": {
+        "independent": 1.174755780186511,
+        "standard": 1.4631155474509936,
+        "optimized": 1.4738202231218251,
+        "upper": 1.5774249842347383
+      },
+      "events": 2
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "c": 1,
+      "mode": "count",
+      "first": {
+        "independent": 0.626820774110185,
+        "standard": 0.7362205578987304,
+        "optimized": 0.7440724986140497,
+        "upper": 0.8275501607103006
+      },
+      "block": {
+        "independent": 1.174755780186511,
+        "standard": 1.3814385708955397,
+        "optimized": 1.3961937398043527,
+        "upper": 1.5536643418865301
+      },
+      "events": 5
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "c": 2,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5811905913904557,
+        "standard": 0.7320756580567451,
+        "optimized": 0.7380762225293828,
+        "upper": 0.8054401868967784
+      },
+      "block": {
+        "independent": 1.0751134423910766,
+        "standard": 1.360024182603098,
+        "optimized": 1.3711306860356356,
+        "upper": 1.4965487779539763
+      },
+      "events": 2
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "c": 2,
+      "mode": "count",
+      "first": {
+        "independent": 0.5811905913904557,
+        "standard": 0.6810687858482461,
+        "optimized": 0.6922777944650996,
+        "upper": 0.7751793364332532
+      },
+      "block": {
+        "independent": 1.0751134423910764,
+        "standard": 1.2642108120934576,
+        "optimized": 1.2848290915996754,
+        "upper": 1.440027515694415
+      },
+      "events": 5
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "c": 3,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.578122417484512,
+        "standard": 0.7658776658912773,
+        "optimized": 0.7690959288961372,
+        "upper": 0.8308317106604773
+      },
+      "block": {
+        "independent": 1.0873328696075417,
+        "standard": 1.4410132095238277,
+        "optimized": 1.4474140088779468,
+        "upper": 1.563077358501883
+      },
+      "events": 2
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "c": 3,
+      "mode": "count",
+      "first": {
+        "independent": 0.578122417484512,
+        "standard": 0.7194696773140794,
+        "optimized": 0.7254335125979063,
+        "upper": 0.8205077355772101
+      },
+      "block": {
+        "independent": 1.0873328696075422,
+        "standard": 1.353591248721366,
+        "optimized": 1.365109335086993,
+        "upper": 1.5437086321375022
+      },
+      "events": 5
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "c": 4,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5811551048320487,
+        "standard": 0.7740468940522923,
+        "optimized": 0.777092242856159,
+        "upper": 0.8271262261032845
+      },
+      "block": {
+        "independent": 1.09975118764777,
+        "standard": 1.4660287505155407,
+        "optimized": 1.4718614201421734,
+        "upper": 1.5671361228295166
+      },
+      "events": 2
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "c": 4,
+      "mode": "count",
+      "first": {
+        "independent": 0.5811551048320488,
+        "standard": 0.7264961923731971,
+        "optimized": 0.7310613717115803,
+        "upper": 0.8202703889065439
+      },
+      "block": {
+        "independent": 1.0997511876477697,
+        "standard": 1.375684049804836,
+        "optimized": 1.3843777886813946,
+        "upper": 1.55405606916642
+      },
+      "events": 5
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "c": 5,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5527323816902158,
+        "standard": 0.7490890256442982,
+        "optimized": 0.7513556573383434,
+        "upper": 0.8025365189496279
+      },
+      "block": {
+        "independent": 1.046059943256417,
+        "standard": 1.4172693576018986,
+        "optimized": 1.4217548151069723,
+        "upper": 1.5185511405783898
+      },
+      "events": 2
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "c": 5,
+      "mode": "count",
+      "first": {
+        "independent": 0.5527323816902157,
+        "standard": 0.7022966632661362,
+        "optimized": 0.7060448945532835,
+        "upper": 0.7963224955052641
+      },
+      "block": {
+        "independent": 1.0460599432564168,
+        "standard": 1.3287776141759664,
+        "optimized": 1.3360279709620815,
+        "upper": 1.5067461043907935
+      },
+      "events": 5
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "c": 6,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5545951625002993,
+        "standard": 0.7448693559805406,
+        "optimized": 0.7489367517752972,
+        "upper": 0.8112496296129574
+      },
+      "block": {
+        "independent": 1.0578651249448277,
+        "standard": 1.4208669595311552,
+        "optimized": 1.4286411311165375,
+        "upper": 1.547324550333809
+      },
+      "events": 2
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "c": 6,
+      "mode": "count",
+      "first": {
+        "independent": 0.5545951625002994,
+        "standard": 0.6916164127050785,
+        "optimized": 0.6999849479733103,
+        "upper": 0.7957513493758124
+      },
+      "block": {
+        "independent": 1.0578651249448272,
+        "standard": 1.3193331428629627,
+        "optimized": 1.335518811672968,
+        "upper": 1.5178576869978753
+      },
+      "events": 5
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "c": 7,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5800336178604183,
+        "standard": 0.7351476595900336,
+        "optimized": 0.7407805760573661,
+        "upper": 0.8085515488092718
+      },
+      "block": {
+        "independent": 1.0928056400578994,
+        "standard": 1.3829443600914981,
+        "optimized": 1.3944988687370932,
+        "upper": 1.5192193466894341
+      },
+      "events": 2
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "c": 7,
+      "mode": "count",
+      "first": {
+        "independent": 0.5800336178604183,
+        "standard": 0.6928039091249009,
+        "optimized": 0.7013992713188013,
+        "upper": 0.7941305406727132
+      },
+      "block": {
+        "independent": 1.0928056400578998,
+        "standard": 1.3032576863723642,
+        "optimized": 1.3203104023772894,
+        "upper": 1.4927097312474351
+      },
+      "events": 5
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "c": 8,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.544635701966346,
+        "standard": 0.7515266578197514,
+        "optimized": 0.7584141547076555,
+        "upper": 0.8192836082323471
+      },
+      "block": {
+        "independent": 1.0295829538107053,
+        "standard": 1.4213846453331593,
+        "optimized": 1.434515801879842,
+        "upper": 1.5486997708455406
+      },
+      "events": 2
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "c": 8,
+      "mode": "count",
+      "first": {
+        "independent": 0.5446357019663459,
+        "standard": 0.6970456073949358,
+        "optimized": 0.7064253971923613,
+        "upper": 0.8012073822096687
+      },
+      "block": {
+        "independent": 1.029582953810705,
+        "standard": 1.3182311759568504,
+        "optimized": 1.3360406456023877,
+        "upper": 1.515093089611101
+      },
+      "events": 5
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "c": 9,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.60327001684874,
+        "standard": 0.7973126301899993,
+        "optimized": 0.8004482230692862,
+        "upper": 0.8477807527406407
+      },
+      "block": {
+        "independent": 1.1572289934471829,
+        "standard": 1.529803155688755,
+        "optimized": 1.5359739514767954,
+        "upper": 1.6264819855750017
+      },
+      "events": 2
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "c": 9,
+      "mode": "count",
+      "first": {
+        "independent": 0.6032700168487402,
+        "standard": 0.738278769956194,
+        "optimized": 0.7430845804352824,
+        "upper": 0.8220676837814073
+      },
+      "block": {
+        "independent": 1.1572289934471833,
+        "standard": 1.4163263389418506,
+        "optimized": 1.4256745844007142,
+        "upper": 1.576995005671028
+      },
+      "events": 5
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "c": 10,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5458975939390963,
+        "standard": 0.7612519196077154,
+        "optimized": 0.7631921606784886,
+        "upper": 0.8245663398182113
+      },
+      "block": {
+        "independent": 1.0379352680003608,
+        "standard": 1.444345591352377,
+        "optimized": 1.4481871309676906,
+        "upper": 1.5643301324317356
+      },
+      "events": 2
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "c": 10,
+      "mode": "count",
+      "first": {
+        "independent": 0.5458975939390963,
+        "standard": 0.7064337574433072,
+        "optimized": 0.7104302863233699,
+        "upper": 0.8054589164951174
+      },
+      "block": {
+        "independent": 1.0379352680003606,
+        "standard": 1.3409785745737635,
+        "optimized": 1.3487556415964537,
+        "upper": 1.5282927580037302
+      },
+      "events": 5
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "c": 11,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5985256759875145,
+        "standard": 0.7561201811200333,
+        "optimized": 0.7623163290298998,
+        "upper": 0.826386000658343
+      },
+      "block": {
+        "independent": 1.140550811959421,
+        "standard": 1.4417637062635318,
+        "optimized": 1.4538891796128284,
+        "upper": 1.5759677145362694
+      },
+      "events": 2
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "c": 11,
+      "mode": "count",
+      "first": {
+        "independent": 0.5985256759875146,
+        "standard": 0.7116620317042354,
+        "optimized": 0.7212180814604685,
+        "upper": 0.8144958084016481
+      },
+      "block": {
+        "independent": 1.1405508119594208,
+        "standard": 1.3567747583934069,
+        "optimized": 1.3752924452342057,
+        "upper": 1.5533487040686267
+      },
+      "events": 5
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "c": 12,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5418733350431434,
+        "standard": 0.7489134673743914,
+        "optimized": 0.7523988060852557,
+        "upper": 0.8233219466759977
+      },
+      "block": {
+        "independent": 1.0389132343420373,
+        "standard": 1.4368106523969273,
+        "optimized": 1.4437022696356796,
+        "upper": 1.5790947221011082
+      },
+      "events": 2
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "c": 12,
+      "mode": "count",
+      "first": {
+        "independent": 0.5418733350431434,
+        "standard": 0.6834852889519119,
+        "optimized": 0.6918905314494201,
+        "upper": 0.7872430183609221
+      },
+      "block": {
+        "independent": 1.0389132343420375,
+        "standard": 1.3109746405613416,
+        "optimized": 1.327292176239467,
+        "upper": 1.5099784327833567
+      },
+      "events": 5
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "c": 13,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5806404195430243,
+        "standard": 0.7370315386260181,
+        "optimized": 0.7447224958142344,
+        "upper": 0.8168830033136842
+      },
+      "block": {
+        "independent": 1.0955214837976073,
+        "standard": 1.3923924172061837,
+        "optimized": 1.406783067827546,
+        "upper": 1.5428966335133905
+      },
+      "events": 2
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "c": 13,
+      "mode": "count",
+      "first": {
+        "independent": 0.5806404195430244,
+        "standard": 0.695450398979004,
+        "optimized": 0.7062825870490029,
+        "upper": 0.7966885961330981
+      },
+      "block": {
+        "independent": 1.0955214837976073,
+        "standard": 1.3137380234021878,
+        "optimized": 1.333942631288919,
+        "upper": 1.5051192645783171
+      },
+      "events": 5
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "c": 14,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5785357786248139,
+        "standard": 0.752374238965769,
+        "optimized": 0.7577079893890517,
+        "upper": 0.8221082781491176
+      },
+      "block": {
+        "independent": 1.0983096045419438,
+        "standard": 1.4281722484614379,
+        "optimized": 1.4383871174754397,
+        "upper": 1.5602544363296476
+      },
+      "events": 2
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "c": 14,
+      "mode": "count",
+      "first": {
+        "independent": 0.5785357786248138,
+        "standard": 0.7071269956834607,
+        "optimized": 0.7148591234427688,
+        "upper": 0.8098399291032065
+      },
+      "block": {
+        "independent": 1.0983096045419438,
+        "standard": 1.342362792268742,
+        "optimized": 1.3570845617572553,
+        "upper": 1.5369146332646764
+      },
+      "events": 5
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "c": 15,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5461139606901728,
+        "standard": 0.7976582263361933,
+        "optimized": 0.7999542078616225,
+        "upper": 0.8525293246260865
+      },
+      "block": {
+        "independent": 1.0383255485696168,
+        "standard": 1.5160793115348106,
+        "optimized": 1.520481365696304,
+        "upper": 1.6206856080124026
+      },
+      "events": 2
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "c": 15,
+      "mode": "count",
+      "first": {
+        "independent": 0.5461139606901728,
+        "standard": 0.7132569703902292,
+        "optimized": 0.7177475272041338,
+        "upper": 0.8080571657433124
+      },
+      "block": {
+        "independent": 1.0383255485696168,
+        "standard": 1.355682827843684,
+        "optimized": 1.3642674560076165,
+        "upper": 1.5355632968539616
+      },
+      "events": 5
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "c": 0,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5244420462479141,
+        "standard": 0.7606956636403701,
+        "optimized": 0.7639165877204592,
+        "upper": 0.8155951141923666
+      },
+      "block": {
+        "independent": 0.9994489033617981,
+        "standard": 1.4519518692375963,
+        "optimized": 1.4580516933030097,
+        "upper": 1.5565946087268698
+      },
+      "events": 2
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "c": 0,
+      "mode": "count",
+      "first": {
+        "independent": 0.524442046247914,
+        "standard": 0.7038222636102611,
+        "optimized": 0.7091658152017002,
+        "upper": 0.8075663275067194
+      },
+      "block": {
+        "independent": 0.9994489033617983,
+        "standard": 1.34313642725701,
+        "optimized": 1.3532552990894038,
+        "upper": 1.5412308047441112
+      },
+      "events": 5
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "c": 1,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5275536084001639,
+        "standard": 0.7208846842723402,
+        "optimized": 0.7277265410396029,
+        "upper": 0.7962580838714325
+      },
+      "block": {
+        "independent": 0.9863872985475073,
+        "standard": 1.3473885506808876,
+        "optimized": 1.3607754352125276,
+        "upper": 1.4880685393458561
+      },
+      "events": 2
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "c": 1,
+      "mode": "count",
+      "first": {
+        "independent": 0.527553608400164,
+        "standard": 0.6718408585943615,
+        "optimized": 0.681530175052691,
+        "upper": 0.7794963660407618
+      },
+      "block": {
+        "independent": 0.9863872985475073,
+        "standard": 1.255589498798862,
+        "optimized": 1.274330799682258,
+        "upper": 1.4571091281606203
+      },
+      "events": 5
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "c": 2,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5364087064232224,
+        "standard": 0.7542088051388129,
+        "optimized": 0.7584636165460283,
+        "upper": 0.8085575890484027
+      },
+      "block": {
+        "independent": 1.0104077414157828,
+        "standard": 1.4240428659829063,
+        "optimized": 1.432058406150847,
+        "upper": 1.526541492158764
+      },
+      "events": 2
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "c": 2,
+      "mode": "count",
+      "first": {
+        "independent": 0.5364087064232224,
+        "standard": 0.7023207611200545,
+        "optimized": 0.7092506853186608,
+        "upper": 0.8028923918894697
+      },
+      "block": {
+        "independent": 1.010407741415783,
+        "standard": 1.3256741516725163,
+        "optimized": 1.3387105538813684,
+        "upper": 1.5159628212831406
+      },
+      "events": 5
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "c": 3,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5404667649024288,
+        "standard": 0.7547439849251014,
+        "optimized": 0.7595577737826045,
+        "upper": 0.8109555949317396
+      },
+      "block": {
+        "independent": 1.0200990664252043,
+        "standard": 1.424859736073708,
+        "optimized": 1.4340341760208026,
+        "upper": 1.5313221202668992
+      },
+      "events": 2
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "c": 3,
+      "mode": "count",
+      "first": {
+        "independent": 0.540466764902429,
+        "standard": 0.703926936885969,
+        "optimized": 0.7113990508501064,
+        "upper": 0.806188797073119
+      },
+      "block": {
+        "independent": 1.020099066425204,
+        "standard": 1.3289047013953446,
+        "optimized": 1.3430399603822651,
+        "upper": 1.5222799262326863
+      },
+      "events": 5
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "c": 4,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5159757463535952,
+        "standard": 0.733989531200399,
+        "optimized": 0.7380418697670104,
+        "upper": 0.7966342863518971
+      },
+      "block": {
+        "independent": 0.9804386419540518,
+        "standard": 1.3953338095206986,
+        "optimized": 1.403078895252234,
+        "upper": 1.5145836574460216
+      },
+      "events": 2
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "c": 4,
+      "mode": "count",
+      "first": {
+        "independent": 0.5159757463535952,
+        "standard": 0.6814337602860796,
+        "optimized": 0.6880473709261147,
+        "upper": 0.7859975828381992
+      },
+      "block": {
+        "independent": 0.980438641954052,
+        "standard": 1.295396154676553,
+        "optimized": 1.3079549032135953,
+        "upper": 1.4943672140940467
+      },
+      "events": 5
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "c": 5,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5238598901518208,
+        "standard": 0.7370684677276484,
+        "optimized": 0.743687345633113,
+        "upper": 0.8092731218919554
+      },
+      "block": {
+        "independent": 0.9869972533825719,
+        "standard": 1.390281568577803,
+        "optimized": 1.4028445187398744,
+        "upper": 1.525762079098574
+      },
+      "events": 2
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "c": 5,
+      "mode": "count",
+      "first": {
+        "independent": 0.5238598901518208,
+        "standard": 0.6764443621033824,
+        "optimized": 0.6860301012139278,
+        "upper": 0.7847318314016485
+      },
+      "block": {
+        "independent": 0.9869972533825719,
+        "standard": 1.2757442034467326,
+        "optimized": 1.2939199762536158,
+        "upper": 1.4797629203582356
+      },
+      "events": 5
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "c": 6,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5159343608403099,
+        "standard": 0.7332207577006707,
+        "optimized": 0.7390748025399076,
+        "upper": 0.8023264747420669
+      },
+      "block": {
+        "independent": 0.9823928482929589,
+        "standard": 1.3970484844872255,
+        "optimized": 1.4082163461679091,
+        "upper": 1.529042771232309
+      },
+      "events": 2
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "c": 6,
+      "mode": "count",
+      "first": {
+        "independent": 0.5159343608403096,
+        "standard": 0.6798604447574853,
+        "optimized": 0.6882909157382322,
+        "upper": 0.789310790366344
+      },
+      "block": {
+        "independent": 0.9823928482929591,
+        "standard": 1.2952822458842372,
+        "optimized": 1.3113519609774995,
+        "upper": 1.5040833765537842
+      },
+      "events": 5
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "c": 7,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5391632687990594,
+        "standard": 0.7511668079544387,
+        "optimized": 0.755161451066098,
+        "upper": 0.810536723706881
+      },
+      "block": {
+        "independent": 1.0072507566236544,
+        "standard": 1.4041783414915532,
+        "optimized": 1.4117044656360058,
+        "upper": 1.5156384802821457
+      },
+      "events": 2
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "c": 7,
+      "mode": "count",
+      "first": {
+        "independent": 0.5391632687990594,
+        "standard": 0.70134257012596,
+        "optimized": 0.7074906849433764,
+        "upper": 0.8029034240288789
+      },
+      "block": {
+        "independent": 1.0072507566236542,
+        "standard": 1.3110299527777896,
+        "optimized": 1.3224961140206388,
+        "upper": 1.5011719715218446
+      },
+      "events": 5
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "c": 8,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5212290070856557,
+        "standard": 0.7214164238745545,
+        "optimized": 0.728530435614169,
+        "upper": 0.7868350538086375
+      },
+      "block": {
+        "independent": 0.9737566707735384,
+        "standard": 1.3503211838469162,
+        "optimized": 1.3636356997071448,
+        "upper": 1.4724029234745935
+      },
+      "events": 2
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "c": 8,
+      "mode": "count",
+      "first": {
+        "independent": 0.5212290070856558,
+        "standard": 0.6671400901536196,
+        "optimized": 0.6779760240793997,
+        "upper": 0.7712311900581369
+      },
+      "block": {
+        "independent": 0.9737566707735383,
+        "standard": 1.2483405296056882,
+        "optimized": 1.2685955318341888,
+        "upper": 1.443384416015251
+      },
+      "events": 5
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "c": 9,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5219054502886894,
+        "standard": 0.7215819884131094,
+        "optimized": 0.7289682645737073,
+        "upper": 0.7927994936846608
+      },
+      "block": {
+        "independent": 0.9823471928004944,
+        "standard": 1.3625156671773937,
+        "optimized": 1.3761825616881838,
+        "upper": 1.496346303589805
+      },
+      "events": 2
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "c": 9,
+      "mode": "count",
+      "first": {
+        "independent": 0.5219054502886894,
+        "standard": 0.6712258515191644,
+        "optimized": 0.6822323456514149,
+        "upper": 0.7788816022714976
+      },
+      "block": {
+        "independent": 0.9823471928004945,
+        "standard": 1.2670124648681484,
+        "optimized": 1.287285786284393,
+        "upper": 1.4701816771558243
+      },
+      "events": 5
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "c": 10,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5275752495454296,
+        "standard": 0.7629994012970762,
+        "optimized": 0.7688245490360609,
+        "upper": 0.8200196393979015
+      },
+      "block": {
+        "independent": 1.014877658278575,
+        "standard": 1.4673000147538375,
+        "optimized": 1.4785641879978038,
+        "upper": 1.5770482262737502
+      },
+      "events": 2
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "c": 10,
+      "mode": "count",
+      "first": {
+        "independent": 0.5275752495454297,
+        "standard": 0.6972914336682138,
+        "optimized": 0.7055132146158822,
+        "upper": 0.7990829584115144
+      },
+      "block": {
+        "independent": 1.014877658278575,
+        "standard": 1.3410162146203954,
+        "optimized": 1.3568734423870465,
+        "upper": 1.5365720458822156
+      },
+      "events": 5
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "c": 11,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5159175677143822,
+        "standard": 0.7469758219888023,
+        "optimized": 0.7510316328918475,
+        "upper": 0.8122599484233911
+      },
+      "block": {
+        "independent": 0.9623886478014687,
+        "standard": 1.3936201854531782,
+        "optimized": 1.4012362489269143,
+        "upper": 1.5164835874126859
+      },
+      "events": 2
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "c": 11,
+      "mode": "count",
+      "first": {
+        "independent": 0.5159175677143821,
+        "standard": 0.6921512628447076,
+        "optimized": 0.6980078590346557,
+        "upper": 0.7974324782757762
+      },
+      "block": {
+        "independent": 0.9623886478014686,
+        "standard": 1.2913588577216557,
+        "optimized": 1.3022598051840466,
+        "upper": 1.4884036319457055
+      },
+      "events": 5
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "c": 12,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5191176551239788,
+        "standard": 0.7412005742694247,
+        "optimized": 0.7464846512466157,
+        "upper": 0.8043762238581292
+      },
+      "block": {
+        "independent": 0.9927778311362588,
+        "standard": 1.4178868669782578,
+        "optimized": 1.4280973614021804,
+        "upper": 1.53842000370346
+      },
+      "events": 2
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "c": 12,
+      "mode": "count",
+      "first": {
+        "independent": 0.5191176551239787,
+        "standard": 0.6870175573280424,
+        "optimized": 0.6946698616238576,
+        "upper": 0.7911424524002773
+      },
+      "block": {
+        "independent": 0.992777831136259,
+        "standard": 1.3141814776068281,
+        "optimized": 1.3289077989644997,
+        "upper": 1.5132558178755304
+      },
+      "events": 5
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "c": 13,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5297523080498805,
+        "standard": 0.7507712990418298,
+        "optimized": 0.7556378479453161,
+        "upper": 0.812006058211426
+      },
+      "block": {
+        "independent": 1.0093853177723984,
+        "standard": 1.430304961230763,
+        "optimized": 1.439698714279452,
+        "upper": 1.5475630213503089
+      },
+      "events": 2
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "c": 13,
+      "mode": "count",
+      "first": {
+        "independent": 0.5297523080498805,
+        "standard": 0.6903907630979411,
+        "optimized": 0.697894470618926,
+        "upper": 0.7934302830138948
+      },
+      "block": {
+        "independent": 1.0093853177723984,
+        "standard": 1.3153962932124996,
+        "optimized": 1.3298875702307849,
+        "upper": 1.5123555344313768
+      },
+      "events": 5
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "c": 14,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5161957338039239,
+        "standard": 0.7422199145125585,
+        "optimized": 0.7480074205034108,
+        "upper": 0.807965314066152
+      },
+      "block": {
+        "independent": 0.9675257914001224,
+        "standard": 1.3900603236195381,
+        "optimized": 1.4010986711574371,
+        "upper": 1.5142598199831925
+      },
+      "events": 2
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "c": 14,
+      "mode": "count",
+      "first": {
+        "independent": 0.5161957338039241,
+        "standard": 0.6847036528725382,
+        "optimized": 0.6930145475914682,
+        "upper": 0.7917890833622734
+      },
+      "block": {
+        "independent": 0.9675257914001228,
+        "standard": 1.2824348092217648,
+        "optimized": 1.2982052321670678,
+        "upper": 1.483522760192629
+      },
+      "events": 5
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "c": 15,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5387859668341528,
+        "standard": 0.7721343198938407,
+        "optimized": 0.774091284126644,
+        "upper": 0.8108997731380472
+      },
+      "block": {
+        "independent": 1.0288003007373014,
+        "standard": 1.475084507990675,
+        "optimized": 1.4789054554771768,
+        "upper": 1.5490645830870535
+      },
+      "events": 2
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "c": 15,
+      "mode": "count",
+      "first": {
+        "independent": 0.5387859668341529,
+        "standard": 0.7187846898442155,
+        "optimized": 0.7221807164594723,
+        "upper": 0.8086415251201063
+      },
+      "block": {
+        "independent": 1.0288003007373014,
+        "standard": 1.3730596288309311,
+        "optimized": 1.3795580540549515,
+        "upper": 1.5447610342092633
+      },
+      "events": 5
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "c": 0,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5259218205489825,
+        "standard": 0.7378321324519869,
+        "optimized": 0.7428462991545957,
+        "upper": 0.8074378868638112
+      },
+      "block": {
+        "independent": 1.004848172966677,
+        "standard": 1.4111871546211883,
+        "optimized": 1.4208491446880334,
+        "upper": 1.5439437028191838
+      },
+      "events": 2
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "c": 0,
+      "mode": "count",
+      "first": {
+        "independent": 0.5259218205489825,
+        "standard": 0.6861361833705217,
+        "optimized": 0.694082844682588,
+        "upper": 0.7930334788588332
+      },
+      "block": {
+        "independent": 1.004848172966677,
+        "standard": 1.3121442592275803,
+        "optimized": 1.3273679334508532,
+        "upper": 1.516480941641811
+      },
+      "events": 5
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "c": 1,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5165355021042193,
+        "standard": 0.7504739387391708,
+        "optimized": 0.7545838345628937,
+        "upper": 0.8018625461702789
+      },
+      "block": {
+        "independent": 0.978247107690671,
+        "standard": 1.4210345416452341,
+        "optimized": 1.42907507060818,
+        "upper": 1.518660634230577
+      },
+      "events": 2
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "c": 1,
+      "mode": "count",
+      "first": {
+        "independent": 0.5165355021042193,
+        "standard": 0.6857843570705285,
+        "optimized": 0.692259278690355,
+        "upper": 0.7889127846441839
+      },
+      "block": {
+        "independent": 0.9782471076906711,
+        "standard": 1.2984198076953928,
+        "optimized": 1.3109665682524012,
+        "upper": 1.4938363537066717
+      },
+      "events": 5
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "c": 2,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5244505200190194,
+        "standard": 0.7769857483381428,
+        "optimized": 0.7804281271358504,
+        "upper": 0.8219518436635329
+      },
+      "block": {
+        "independent": 0.9921938623929343,
+        "standard": 1.4729868010231995,
+        "optimized": 1.4796183462088848,
+        "upper": 1.5580526499208411
+      },
+      "events": 2
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "c": 2,
+      "mode": "count",
+      "first": {
+        "independent": 0.5244505200190195,
+        "standard": 0.6985042925878778,
+        "optimized": 0.7048121106099352,
+        "upper": 0.7992741212008109
+      },
+      "block": {
+        "independent": 0.9921938623929346,
+        "standard": 1.32355666059025,
+        "optimized": 1.3354831743302842,
+        "upper": 1.5147291833269032
+      },
+      "events": 5
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "c": 3,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5164667559046262,
+        "standard": 0.7388366374355497,
+        "optimized": 0.743637513291357,
+        "upper": 0.8041847103033067
+      },
+      "block": {
+        "independent": 0.9778048570732618,
+        "standard": 1.4002922568512255,
+        "optimized": 1.4094765500059536,
+        "upper": 1.5242446648932773
+      },
+      "events": 2
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "c": 3,
+      "mode": "count",
+      "first": {
+        "independent": 0.5164667559046263,
+        "standard": 0.6784381525977721,
+        "optimized": 0.6854632322920182,
+        "upper": 0.7870401101565468
+      },
+      "block": {
+        "independent": 0.9778048570732618,
+        "standard": 1.2855916862747596,
+        "optimized": 1.2990087325287158,
+        "upper": 1.4916644773645626
+      },
+      "events": 5
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "c": 4,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.51317350750115,
+        "standard": 0.7431129035660456,
+        "optimized": 0.74958811052606,
+        "upper": 0.8063240377675254
+      },
+      "block": {
+        "independent": 0.9783464709864562,
+        "standard": 1.4184411693350316,
+        "optimized": 1.4308135926659824,
+        "upper": 1.538396811899549
+      },
+      "events": 2
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "c": 4,
+      "mode": "count",
+      "first": {
+        "independent": 0.51317350750115,
+        "standard": 0.6823989376703785,
+        "optimized": 0.6916582702383277,
+        "upper": 0.7873018973414514
+      },
+      "block": {
+        "independent": 0.9783464709864561,
+        "standard": 1.302362086663926,
+        "optimized": 1.3199986189426693,
+        "upper": 1.502302821695284
+      },
+      "events": 5
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "c": 5,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5143702038528124,
+        "standard": 0.7776666279599969,
+        "optimized": 0.780983681705468,
+        "upper": 0.8309081183021252
+      },
+      "block": {
+        "independent": 0.9822775868293232,
+        "standard": 1.4863103688943584,
+        "optimized": 1.492666846843732,
+        "upper": 1.5880240429071433
+      },
+      "events": 2
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "c": 5,
+      "mode": "count",
+      "first": {
+        "independent": 0.5143702038528125,
+        "standard": 0.6953432707556744,
+        "optimized": 0.7014227704419825,
+        "upper": 0.7976133344629096
+      },
+      "block": {
+        "independent": 0.9822775868293233,
+        "standard": 1.3287146666780414,
+        "optimized": 1.3403057348475884,
+        "upper": 1.524280386683833
+      },
+      "events": 5
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "c": 6,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.530303406756182,
+        "standard": 0.7654200295324827,
+        "optimized": 0.7695533336400034,
+        "upper": 0.8141343378844599
+      },
+      "block": {
+        "independent": 1.0153210854379005,
+        "standard": 1.4664070858871714,
+        "optimized": 1.474477277307889,
+        "upper": 1.5592837763128973
+      },
+      "events": 2
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "c": 6,
+      "mode": "count",
+      "first": {
+        "independent": 0.5303034067561819,
+        "standard": 0.6990098760787797,
+        "optimized": 0.7050730332479336,
+        "upper": 0.7997492821024813
+      },
+      "block": {
+        "independent": 1.0153210854379007,
+        "standard": 1.3389320382316636,
+        "optimized": 1.3506596154402057,
+        "upper": 1.5317550480133182
+      },
+      "events": 5
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "c": 7,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5111266516058932,
+        "standard": 0.7185612677298508,
+        "optimized": 0.7262349864280544,
+        "upper": 0.7847504090326741
+      },
+      "block": {
+        "independent": 0.9386940464911122,
+        "standard": 1.3188843616745043,
+        "optimized": 1.3335499695406035,
+        "upper": 1.4406938710545067
+      },
+      "events": 2
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "c": 7,
+      "mode": "count",
+      "first": {
+        "independent": 0.5111266516058932,
+        "standard": 0.6516797301606118,
+        "optimized": 0.6633659860165589,
+        "upper": 0.7660212572317561
+      },
+      "block": {
+        "independent": 0.9386940464911123,
+        "standard": 1.195534421246575,
+        "optimized": 1.2177199798571756,
+        "upper": 1.4056313874206856
+      },
+      "events": 5
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "c": 8,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5183446970467308,
+        "standard": 0.7683137374595495,
+        "optimized": 0.772275628408164,
+        "upper": 0.8122389424783965
+      },
+      "block": {
+        "independent": 0.9811904859246364,
+        "standard": 1.4562529145964018,
+        "optimized": 1.463805585221718,
+        "upper": 1.5399614587454415
+      },
+      "events": 2
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "c": 8,
+      "mode": "count",
+      "first": {
+        "independent": 0.5183446970467307,
+        "standard": 0.7005373111328788,
+        "optimized": 0.7060513641880339,
+        "upper": 0.7989102839587373
+      },
+      "block": {
+        "independent": 0.9811904859246362,
+        "standard": 1.3275845709987268,
+        "optimized": 1.3380748029104943,
+        "upper": 1.5143717202428104
+      },
+      "events": 5
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "c": 9,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5163020253436441,
+        "standard": 0.7504166158557206,
+        "optimized": 0.7559634032738536,
+        "upper": 0.8083303296435197
+      },
+      "block": {
+        "independent": 0.9518647220873009,
+        "standard": 1.3844841309754858,
+        "optimized": 1.3949192594538333,
+        "upper": 1.4921846058732313
+      },
+      "events": 2
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "c": 9,
+      "mode": "count",
+      "first": {
+        "independent": 0.5163020253436442,
+        "standard": 0.6790708991610316,
+        "optimized": 0.6877823727862701,
+        "upper": 0.7838710093716699
+      },
+      "block": {
+        "independent": 0.9518647220873009,
+        "standard": 1.2524318160718826,
+        "optimized": 1.2686545590799836,
+        "upper": 1.4465045441486049
+      },
+      "events": 5
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "c": 10,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5129584692325834,
+        "standard": 0.7490507444897506,
+        "optimized": 0.7542765804720074,
+        "upper": 0.8073779759287387
+      },
+      "block": {
+        "independent": 0.9831248804481675,
+        "standard": 1.4358987671766181,
+        "optimized": 1.4461063788127122,
+        "upper": 1.547659928226142
+      },
+      "events": 2
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "c": 10,
+      "mode": "count",
+      "first": {
+        "independent": 0.5129584692325834,
+        "standard": 0.6860999550538481,
+        "optimized": 0.6939530236151935,
+        "upper": 0.7933450991717561
+      },
+      "block": {
+        "independent": 0.9831248804481676,
+        "standard": 1.3151644663755762,
+        "optimized": 1.3303405073751158,
+        "upper": 1.5206500563163985
+      },
+      "events": 5
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "c": 11,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5093510773118526,
+        "standard": 0.7306021073873948,
+        "optimized": 0.7385554786608823,
+        "upper": 0.8069893351916968
+      },
+      "block": {
+        "independent": 0.9608951123659871,
+        "standard": 1.3791479166032174,
+        "optimized": 1.3942190248027202,
+        "upper": 1.5232340107299525
+      },
+      "events": 2
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "c": 11,
+      "mode": "count",
+      "first": {
+        "independent": 0.5093510773118526,
+        "standard": 0.663788030986125,
+        "optimized": 0.6751376349203879,
+        "upper": 0.7769103457078704
+      },
+      "block": {
+        "independent": 0.9608951123659871,
+        "standard": 1.252652975648065,
+        "optimized": 1.274133531352361,
+        "upper": 1.465842403094006
+      },
+      "events": 5
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "c": 12,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5086202147376234,
+        "standard": 0.7594313213190282,
+        "optimized": 0.7639385809893892,
+        "upper": 0.8022515472627103
+      },
+      "block": {
+        "independent": 0.9342507872700067,
+        "standard": 1.3962108426483752,
+        "optimized": 1.4045587314112444,
+        "upper": 1.4743463783319417
+      },
+      "events": 2
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "c": 12,
+      "mode": "count",
+      "first": {
+        "independent": 0.5086202147376234,
+        "standard": 0.6687557691744902,
+        "optimized": 0.6772824201491535,
+        "upper": 0.7770251135553193
+      },
+      "block": {
+        "independent": 0.9342507872700067,
+        "standard": 1.228976509316754,
+        "optimized": 1.2447893386591289,
+        "upper": 1.4270850474871413
+      },
+      "events": 5
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "c": 13,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5186217891634555,
+        "standard": 0.7028315358717516,
+        "optimized": 0.7097008048642381,
+        "upper": 0.7625922894378263
+      },
+      "block": {
+        "independent": 0.9828469245140314,
+        "standard": 1.3329561105563608,
+        "optimized": 1.346106432346983,
+        "upper": 1.4458042342742983
+      },
+      "events": 2
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "c": 13,
+      "mode": "count",
+      "first": {
+        "independent": 0.5186217891634555,
+        "standard": 0.6437907980583708,
+        "optimized": 0.6547872757313797,
+        "upper": 0.7491547756408768
+      },
+      "block": {
+        "independent": 0.9828469245140317,
+        "standard": 1.2207944767075085,
+        "optimized": 1.2417215184554058,
+        "upper": 1.4203610177769619
+      },
+      "events": 5
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "c": 14,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5208136875530732,
+        "standard": 0.750633845696461,
+        "optimized": 0.756268099535746,
+        "upper": 0.8071787351305141
+      },
+      "block": {
+        "independent": 0.9894962037762834,
+        "standard": 1.4271732520905167,
+        "optimized": 1.4380614087650312,
+        "upper": 1.5346873894140853
+      },
+      "events": 2
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "c": 14,
+      "mode": "count",
+      "first": {
+        "independent": 0.5208136875530732,
+        "standard": 0.6820952795045384,
+        "optimized": 0.6902421709529692,
+        "upper": 0.7856609386435546
+      },
+      "block": {
+        "independent": 0.9894962037762833,
+        "standard": 1.2965933535269618,
+        "optimized": 1.312219738086349,
+        "upper": 1.4936156503574807
+      },
+      "events": 5
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "c": 15,
+      "mode": "threshold",
+      "first": {
+        "independent": 0.5488509742705737,
+        "standard": 0.7614902709258716,
+        "optimized": 0.7644004534673853,
+        "upper": 0.8090511294933586
+      },
+      "block": {
+        "independent": 1.0446739140733672,
+        "standard": 1.4499390454693726,
+        "optimized": 1.455619564672682,
+        "upper": 1.5409107789009882
+      },
+      "events": 2
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "c": 15,
+      "mode": "count",
+      "first": {
+        "independent": 0.5488509742705739,
+        "standard": 0.7115785337586346,
+        "optimized": 0.7165121838096689,
+        "upper": 0.8024421894267044
+      },
+      "block": {
+        "independent": 1.0446739140733672,
+        "standard": 1.3548041459315043,
+        "optimized": 1.3642914660736745,
+        "upper": 1.5281606693277232
+      },
+      "events": 5
+    }
+  ],
+  "summary": [
+    {
+      "mode": "threshold",
+      "n": 96,
+      "first": {
+        "independent": 0.5372369952121167,
+        "standard": 0.7491397748690688,
+        "optimized": 0.753366774420781,
+        "upper": 0.812675947927322
+      },
+      "block": {
+        "independent": 1.01409690191823,
+        "standard": 1.4148311164726397,
+        "optimized": 1.4229325934751917,
+        "upper": 1.5346820529093321
+      }
+    },
+    {
+      "mode": "count",
+      "n": 96,
+      "first": {
+        "independent": 0.5372369952121168,
+        "standard": 0.6865160970514,
+        "optimized": 0.6939153809156383,
+        "upper": 0.7888670760951797
+      },
+      "block": {
+        "independent": 1.0140969019182302,
+        "standard": 1.2964580278188147,
+        "optimized": 1.3105056263997528,
+        "upper": 1.4896903508290533
+      }
+    }
+  ],
+  "audit": {
+    "maxMarginalError": 8.326672684688674e-17,
+    "maxRNormalization": 2.4424906541753444e-15,
+    "maxBelowStandard": 6.661338147750939e-16,
+    "maxUpperViolation": 8.881784197001252e-16,
+    "maxTargetVoteTV": 3.226585665316861e-16
+  }
+}
