@@ -1,0 +1,1169 @@
+{
+  "environment": "JS V8 CPU; exact enumeration, synthetic latent segmentation product posterior, no GPU or time",
+  "p": [
+    0.45,
+    0.35,
+    0.2
+  ],
+  "seeds": [
+    11,
+    29,
+    73
+  ],
+  "ks": [
+    4,
+    8,
+    12
+  ],
+  "sigmas": [
+    0.1,
+    0.6,
+    1.2
+  ],
+  "rows": [
+    {
+      "k": 4,
+      "sigma": 0.1,
+      "seed": 11,
+      "projected": 0.9110057292770719,
+      "independent": 0.3575239837551364,
+      "invalidTV": 0.13879001348694078,
+      "maxerr": 1.1102230246251565e-16,
+      "maxViolation": 1.1102230246251565e-16,
+      "methods": {
+        "canonical": {
+          "accept": 0.07150080294628275,
+          "elboGap": 2.843142185748471,
+          "lossBound": 0.8469643381866361
+        },
+        "uniform": {
+          "accept": 0.7473524479718441,
+          "elboGap": 0.19215679222208218,
+          "lossBound": 0.21864178875296283
+        },
+        "global": {
+          "accept": 0.8634158386509421,
+          "elboGap": 0.03113003076036852,
+          "lossBound": 0.09259512749155309
+        },
+        "edge": {
+          "accept": 0.8747827572959971,
+          "elboGap": 0.025175939886363186,
+          "lossBound": 0.08188526845601282
+        },
+        "flat_same_groups": {
+          "accept": 0.8747827572959971,
+          "elboGap": 0.025175939886363186,
+          "lossBound": 0.08188526845601282
+        },
+        "posterior_oracle": {
+          "accept": 0.9110057292770719,
+          "elboGap": 0,
+          "lossBound": 0
+        }
+      }
+    },
+    {
+      "k": 4,
+      "sigma": 0.1,
+      "seed": 29,
+      "projected": 0.870526025473732,
+      "independent": 0.3607962349572516,
+      "invalidTV": 0.0982256600550715,
+      "maxerr": 1.1102230246251565e-16,
+      "maxViolation": 0,
+      "methods": {
+        "canonical": {
+          "accept": 0.043383009323995005,
+          "elboGap": 3.2401071433205364,
+          "lossBound": 0.8335671282645042
+        },
+        "uniform": {
+          "accept": 0.7198059427356447,
+          "elboGap": 0.19927460106448344,
+          "lossBound": 0.22736990213303004
+        },
+        "global": {
+          "accept": 0.8412267431968883,
+          "elboGap": 0.028490748555987738,
+          "lossBound": 0.08365437607149459
+        },
+        "edge": {
+          "accept": 0.848265287090465,
+          "elboGap": 0.02362685188832668,
+          "lossBound": 0.07699723472424053
+        },
+        "flat_same_groups": {
+          "accept": 0.848265287090465,
+          "elboGap": 0.02362685188832668,
+          "lossBound": 0.07699723472424053
+        },
+        "posterior_oracle": {
+          "accept": 0.870526025473732,
+          "elboGap": 0,
+          "lossBound": 0
+        }
+      }
+    },
+    {
+      "k": 4,
+      "sigma": 0.1,
+      "seed": 73,
+      "projected": 0.9178799695717027,
+      "independent": 0.3623441469766659,
+      "invalidTV": 0.13718509222191388,
+      "maxerr": 1.1102230246251565e-16,
+      "maxViolation": 1.1102230246251565e-16,
+      "methods": {
+        "canonical": {
+          "accept": 0.08829274684957349,
+          "elboGap": 2.620004572483275,
+          "lossBound": 0.837677770608367
+        },
+        "uniform": {
+          "accept": 0.746586367189572,
+          "elboGap": 0.1997863731052122,
+          "lossBound": 0.22346786370679345
+        },
+        "global": {
+          "accept": 0.8746238936679966,
+          "elboGap": 0.029181290640880722,
+          "lossBound": 0.08899495537137894
+        },
+        "edge": {
+          "accept": 0.8890777039984068,
+          "elboGap": 0.020638484775945487,
+          "lossBound": 0.0712926758091714
+        },
+        "flat_same_groups": {
+          "accept": 0.8890777039984068,
+          "elboGap": 0.020638484775945487,
+          "lossBound": 0.0712926758091714
+        },
+        "posterior_oracle": {
+          "accept": 0.9178799695717028,
+          "elboGap": 0,
+          "lossBound": 0
+        }
+      }
+    },
+    {
+      "k": 4,
+      "sigma": 0.6,
+      "seed": 11,
+      "projected": 0.9110057292770719,
+      "independent": 0.3575239837551364,
+      "invalidTV": 0.15242546022177658,
+      "maxerr": 1.6653345369377348e-16,
+      "maxViolation": 1.1102230246251565e-16,
+      "methods": {
+        "canonical": {
+          "accept": 0.0735407727105092,
+          "elboGap": 3.1046379028493747,
+          "lossBound": 0.8445141904838065
+        },
+        "uniform": {
+          "accept": 0.7078770417747822,
+          "elboGap": 0.32903107427857786,
+          "lossBound": 0.2530491742095614
+        },
+        "global": {
+          "accept": 0.7850988737859557,
+          "elboGap": 0.12062370268395536,
+          "lossBound": 0.17749793919954898
+        },
+        "edge": {
+          "accept": 0.8771524084307343,
+          "elboGap": 0.023735604257153303,
+          "lossBound": 0.07895678869216537
+        },
+        "flat_same_groups": {
+          "accept": 0.8771524084307343,
+          "elboGap": 0.023735604257153303,
+          "lossBound": 0.07895678869216537
+        },
+        "posterior_oracle": {
+          "accept": 0.9110057292770718,
+          "elboGap": 0,
+          "lossBound": 0
+        }
+      }
+    },
+    {
+      "k": 4,
+      "sigma": 0.6,
+      "seed": 29,
+      "projected": 0.870526025473732,
+      "independent": 0.3607962349572516,
+      "invalidTV": 0.13374387051892445,
+      "maxerr": 1.1102230246251565e-16,
+      "maxViolation": 2.220446049250313e-16,
+      "methods": {
+        "canonical": {
+          "accept": 0.026548276063735374,
+          "elboGap": 3.8085580348584984,
+          "lossBound": 0.8471148248773184
+        },
+        "uniform": {
+          "accept": 0.6128547829914803,
+          "elboGap": 0.45214900536981895,
+          "lossBound": 0.3226679657111124
+        },
+        "global": {
+          "accept": 0.8074918468624797,
+          "elboGap": 0.06518665941044244,
+          "lossBound": 0.12413433019438488
+        },
+        "edge": {
+          "accept": 0.850857237043388,
+          "elboGap": 0.021551150511307543,
+          "lossBound": 0.07217855741775145
+        },
+        "flat_same_groups": {
+          "accept": 0.850857237043388,
+          "elboGap": 0.021551150511307543,
+          "lossBound": 0.07217855741775145
+        },
+        "posterior_oracle": {
+          "accept": 0.870526025473732,
+          "elboGap": 0,
+          "lossBound": 0
+        }
+      }
+    },
+    {
+      "k": 4,
+      "sigma": 0.6,
+      "seed": 73,
+      "projected": 0.9178799695717027,
+      "independent": 0.3623441469766659,
+      "invalidTV": 0.10553915039946607,
+      "maxerr": 1.1102230246251565e-16,
+      "maxViolation": 1.1102230246251565e-16,
+      "methods": {
+        "canonical": {
+          "accept": 0.10393902222659368,
+          "elboGap": 2.4066849819317966,
+          "lossBound": 0.8236366182899503
+        },
+        "uniform": {
+          "accept": 0.6870821030283061,
+          "elboGap": 0.37881773536144553,
+          "lossBound": 0.2818061297539254
+        },
+        "global": {
+          "accept": 0.8005829663946324,
+          "elboGap": 0.10697755327677588,
+          "lossBound": 0.16590400159258198
+        },
+        "edge": {
+          "accept": 0.8901664398001995,
+          "elboGap": 0.01927960970828843,
+          "lossBound": 0.06848145477814599
+        },
+        "flat_same_groups": {
+          "accept": 0.8901664398001995,
+          "elboGap": 0.01927960970828843,
+          "lossBound": 0.06848145477814599
+        },
+        "posterior_oracle": {
+          "accept": 0.9178799695717028,
+          "elboGap": 0,
+          "lossBound": 0
+        }
+      }
+    },
+    {
+      "k": 4,
+      "sigma": 1.2,
+      "seed": 11,
+      "projected": 0.9110057292770719,
+      "independent": 0.3575239837551364,
+      "invalidTV": 0.17164276004964402,
+      "maxerr": 1.1102230246251565e-16,
+      "maxViolation": 2.220446049250313e-16,
+      "methods": {
+        "canonical": {
+          "accept": 0.07419280885068902,
+          "elboGap": 3.6806364265042655,
+          "lossBound": 0.8425231521189883
+        },
+        "uniform": {
+          "accept": 0.5906738949106196,
+          "elboGap": 0.7554838758801797,
+          "lossBound": 0.36485825388565807
+        },
+        "global": {
+          "accept": 0.6630693288003477,
+          "elboGap": 0.3570688634325237,
+          "lossBound": 0.2992437109511069
+        },
+        "edge": {
+          "accept": 0.8825216896886383,
+          "elboGap": 0.01956222761411614,
+          "lossBound": 0.06932051937261857
+        },
+        "flat_same_groups": {
+          "accept": 0.8825216896886383,
+          "elboGap": 0.01956222761411614,
+          "lossBound": 0.06932051937261857
+        },
+        "posterior_oracle": {
+          "accept": 0.9110057292770719,
+          "elboGap": 0,
+          "lossBound": 0
+        }
+      }
+    },
+    {
+      "k": 4,
+      "sigma": 1.2,
+      "seed": 29,
+      "projected": 0.870526025473732,
+      "independent": 0.3607962349572516,
+      "invalidTV": 0.1681271134822919,
+      "maxerr": 1.1102230246251565e-16,
+      "maxViolation": 2.220446049250313e-16,
+      "methods": {
+        "canonical": {
+          "accept": 0.016604105987260663,
+          "elboGap": 4.782634589486726,
+          "lossBound": 0.8554262423770297
+        },
+        "uniform": {
+          "accept": 0.4861622590867041,
+          "elboGap": 1.0475337753188954,
+          "lossBound": 0.43591729015493463
+        },
+        "global": {
+          "accept": 0.7595896963857723,
+          "elboGap": 0.14235184317527064,
+          "lossBound": 0.173909250889706
+        },
+        "edge": {
+          "accept": 0.8556587979293822,
+          "elboGap": 0.01750822039064984,
+          "lossBound": 0.06231689029706487
+        },
+        "flat_same_groups": {
+          "accept": 0.8556587979293822,
+          "elboGap": 0.01750822039064984,
+          "lossBound": 0.06231689029706487
+        },
+        "posterior_oracle": {
+          "accept": 0.870526025473732,
+          "elboGap": 0,
+          "lossBound": 0
+        }
+      }
+    },
+    {
+      "k": 4,
+      "sigma": 1.2,
+      "seed": 73,
+      "projected": 0.9178799695717027,
+      "independent": 0.3623441469766659,
+      "invalidTV": 0.11346859199324591,
+      "maxerr": 1.6653345369377348e-16,
+      "maxViolation": 2.220446049250313e-16,
+      "methods": {
+        "canonical": {
+          "accept": 0.10731827294808854,
+          "elboGap": 2.4205670602600806,
+          "lossBound": 0.8209370390679113
+        },
+        "uniform": {
+          "accept": 0.5500727357682831,
+          "elboGap": 0.8635209570589827,
+          "lossBound": 0.40765644070034296
+        },
+        "global": {
+          "accept": 0.688184491766837,
+          "elboGap": 0.30394491422779935,
+          "lossBound": 0.2789100086553768
+        },
+        "edge": {
+          "accept": 0.8963922488587059,
+          "elboGap": 0.015417894158374525,
+          "lossBound": 0.06132362443748034
+        },
+        "flat_same_groups": {
+          "accept": 0.8963922488587059,
+          "elboGap": 0.015417894158374525,
+          "lossBound": 0.06132362443748034
+        },
+        "posterior_oracle": {
+          "accept": 0.9178799695717027,
+          "elboGap": 0,
+          "lossBound": 0
+        }
+      }
+    },
+    {
+      "k": 8,
+      "sigma": 0.1,
+      "seed": 11,
+      "projected": 0.8835175249657219,
+      "independent": 0.3710865862470847,
+      "invalidTV": 0.13208591081003201,
+      "maxerr": 8.881784197001252e-16,
+      "maxViolation": 8.881784197001252e-16,
+      "methods": {
+        "canonical": {
+          "accept": 0.0022993723259655124,
+          "elboGap": 6.310464028950879,
+          "lossBound": 0.8815448954366397
+        },
+        "uniform": {
+          "accept": 0.6261111387713632,
+          "elboGap": 0.45247285927337605,
+          "lossBound": 0.3154888974875366
+        },
+        "global": {
+          "accept": 0.8192581094821731,
+          "elboGap": 0.05948770159676578,
+          "lossBound": 0.12306865432920194
+        },
+        "edge": {
+          "accept": 0.8354940055806164,
+          "elboGap": 0.043535092597091846,
+          "lossBound": 0.10381095330725168
+        },
+        "flat_same_groups": {
+          "accept": 0.8354940055806164,
+          "elboGap": 0.043535092597091846,
+          "lossBound": 0.10381095330725168
+        },
+        "posterior_oracle": {
+          "accept": 0.883517524965722,
+          "elboGap": 0,
+          "lossBound": 0
+        }
+      }
+    },
+    {
+      "k": 8,
+      "sigma": 0.1,
+      "seed": 29,
+      "projected": 0.8895401607666641,
+      "independent": 0.3638858395384722,
+      "invalidTV": 0.1497808040642677,
+      "maxerr": 1.0547118733938987e-15,
+      "maxViolation": 5.551115123125783e-16,
+      "methods": {
+        "canonical": {
+          "accept": 0.001409063418915657,
+          "elboGap": 6.930793327161281,
+          "lossBound": 0.8882766025230396
+        },
+        "uniform": {
+          "accept": 0.5979974643383994,
+          "elboGap": 0.5171730007472719,
+          "lossBound": 0.34381887439740166
+        },
+        "global": {
+          "accept": 0.8204977596838249,
+          "elboGap": 0.06061836458401086,
+          "lossBound": 0.1227661517725923
+        },
+        "edge": {
+          "accept": 0.8380121454927291,
+          "elboGap": 0.04534596102358554,
+          "lossBound": 0.10456664595980411
+        },
+        "flat_same_groups": {
+          "accept": 0.8380121454927291,
+          "elboGap": 0.04534596102358554,
+          "lossBound": 0.10456664595980411
+        },
+        "posterior_oracle": {
+          "accept": 0.889540160766664,
+          "elboGap": 0,
+          "lossBound": 0
+        }
+      }
+    },
+    {
+      "k": 8,
+      "sigma": 0.1,
+      "seed": 73,
+      "projected": 0.8785207819588843,
+      "independent": 0.3705882464214981,
+      "invalidTV": 0.20228249798412215,
+      "maxerr": 9.992007221626409e-16,
+      "maxViolation": 3.3306690738754696e-16,
+      "methods": {
+        "canonical": {
+          "accept": 0.011468397854758762,
+          "elboGap": 5.091186867555569,
+          "lossBound": 0.8688978162360275
+        },
+        "uniform": {
+          "accept": 0.6124004798633426,
+          "elboGap": 0.4974977188645564,
+          "lossBound": 0.32589482620135035
+        },
+        "global": {
+          "accept": 0.8299800680692366,
+          "elboGap": 0.04656172535027081,
+          "lossBound": 0.10862763829618183
+        },
+        "edge": {
+          "accept": 0.8357272628845509,
+          "elboGap": 0.03988127259289456,
+          "lossBound": 0.09899318631243757
+        },
+        "flat_same_groups": {
+          "accept": 0.8357272628845509,
+          "elboGap": 0.03988127259289456,
+          "lossBound": 0.09899318631243757
+        },
+        "posterior_oracle": {
+          "accept": 0.8785207819588842,
+          "elboGap": 0,
+          "lossBound": 0
+        }
+      }
+    },
+    {
+      "k": 8,
+      "sigma": 0.6,
+      "seed": 11,
+      "projected": 0.8835175249657219,
+      "independent": 0.3710865862470847,
+      "invalidTV": 0.14690144452094653,
+      "maxerr": 7.216449660063518e-16,
+      "maxViolation": 4.440892098500626e-16,
+      "methods": {
+        "canonical": {
+          "accept": 0.0035999459205604484,
+          "elboGap": 6.277812042403695,
+          "lossBound": 0.8805042267416602
+        },
+        "uniform": {
+          "accept": 0.5254129134642043,
+          "elboGap": 0.8532626222182494,
+          "lossBound": 0.4083627999889549
+        },
+        "global": {
+          "accept": 0.7043512539735992,
+          "elboGap": 0.2512136642645304,
+          "lossBound": 0.23855569165802462
+        },
+        "edge": {
+          "accept": 0.8385424711555842,
+          "elboGap": 0.04009229603939922,
+          "lossBound": 0.09982608296287643
+        },
+        "flat_same_groups": {
+          "accept": 0.8385424711555842,
+          "elboGap": 0.04009229603939922,
+          "lossBound": 0.09982608296287643
+        },
+        "posterior_oracle": {
+          "accept": 0.883517524965722,
+          "elboGap": 0,
+          "lossBound": 0
+        }
+      }
+    },
+    {
+      "k": 8,
+      "sigma": 0.6,
+      "seed": 29,
+      "projected": 0.8895401607666641,
+      "independent": 0.3638858395384722,
+      "invalidTV": 0.18292088061951248,
+      "maxerr": 7.216449660063518e-16,
+      "maxViolation": 2.220446049250313e-16,
+      "methods": {
+        "canonical": {
+          "accept": 0.0010053428116413355,
+          "elboGap": 7.625755498357865,
+          "lossBound": 0.8886682344023441
+        },
+        "uniform": {
+          "accept": 0.5097100438081956,
+          "elboGap": 0.8564982770388959,
+          "lossBound": 0.4248781674322366
+        },
+        "global": {
+          "accept": 0.6940310106698945,
+          "elboGap": 0.26243137500954145,
+          "lossBound": 0.25272211128328753
+        },
+        "edge": {
+          "accept": 0.8390404300376655,
+          "elboGap": 0.04311392036737205,
+          "lossBound": 0.10202686690695575
+        },
+        "flat_same_groups": {
+          "accept": 0.8390404300376655,
+          "elboGap": 0.04311392036737205,
+          "lossBound": 0.10202686690695575
+        },
+        "posterior_oracle": {
+          "accept": 0.8895401607666641,
+          "elboGap": 0,
+          "lossBound": 0
+        }
+      }
+    },
+    {
+      "k": 8,
+      "sigma": 0.6,
+      "seed": 73,
+      "projected": 0.8785207819588843,
+      "independent": 0.3705882464214981,
+      "invalidTV": 0.18824794686153548,
+      "maxerr": 9.43689570931383e-16,
+      "maxViolation": 2.220446049250313e-16,
+      "methods": {
+        "canonical": {
+          "accept": 0.012292689439561548,
+          "elboGap": 4.981976319828448,
+          "lossBound": 0.8682677728681778
+        },
+        "uniform": {
+          "accept": 0.5297745479039914,
+          "elboGap": 0.882394608683087,
+          "lossBound": 0.4018378510159985
+        },
+        "global": {
+          "accept": 0.7504666917944516,
+          "elboGap": 0.16453098931291216,
+          "lossBound": 0.19381183999170737
+        },
+        "edge": {
+          "accept": 0.8380818390352456,
+          "elboGap": 0.03743113568757494,
+          "lossBound": 0.09599625728559309
+        },
+        "flat_same_groups": {
+          "accept": 0.8380818390352456,
+          "elboGap": 0.03743113568757494,
+          "lossBound": 0.09599625728559309
+        },
+        "posterior_oracle": {
+          "accept": 0.8785207819588844,
+          "elboGap": 0,
+          "lossBound": 0
+        }
+      }
+    },
+    {
+      "k": 8,
+      "sigma": 1.2,
+      "seed": 11,
+      "projected": 0.8835175249657219,
+      "independent": 0.3710865862470847,
+      "invalidTV": 0.2029484186211872,
+      "maxerr": 4.996003610813204e-16,
+      "maxViolation": 6.661338147750939e-16,
+      "methods": {
+        "canonical": {
+          "accept": 0.00541430356169775,
+          "elboGap": 6.739861711600408,
+          "lossBound": 0.8790740771993558
+        },
+        "uniform": {
+          "accept": 0.37248338452554175,
+          "elboGap": 1.8354423908054358,
+          "lossBound": 0.5482110131101728
+        },
+        "global": {
+          "accept": 0.547870565972689,
+          "elboGap": 0.7395374793525014,
+          "lossBound": 0.38468087256546385
+        },
+        "edge": {
+          "accept": 0.8446620671098609,
+          "elboGap": 0.03394466466559373,
+          "lossBound": 0.09147533717416692
+        },
+        "flat_same_groups": {
+          "accept": 0.8446620671098609,
+          "elboGap": 0.03394466466559373,
+          "lossBound": 0.09147533717416692
+        },
+        "posterior_oracle": {
+          "accept": 0.8835175249657219,
+          "elboGap": 0,
+          "lossBound": 0
+        }
+      }
+    },
+    {
+      "k": 8,
+      "sigma": 1.2,
+      "seed": 29,
+      "projected": 0.8895401607666641,
+      "independent": 0.3638858395384722,
+      "invalidTV": 0.20003197123704985,
+      "maxerr": 3.3306690738754696e-16,
+      "maxViolation": 2.220446049250313e-16,
+      "methods": {
+        "canonical": {
+          "accept": 0.0005033197899480989,
+          "elboGap": 8.952231118463475,
+          "lossBound": 0.889117658028931
+        },
+        "uniform": {
+          "accept": 0.37588649490160586,
+          "elboGap": 1.7562096232585511,
+          "lossBound": 0.5485052438570156
+        },
+        "global": {
+          "accept": 0.5276419536398623,
+          "elboGap": 0.7672714569656123,
+          "lossBound": 0.4124760107828413
+        },
+        "edge": {
+          "accept": 0.8435011656938238,
+          "elboGap": 0.03768052791179096,
+          "lossBound": 0.09441705667714097
+        },
+        "flat_same_groups": {
+          "accept": 0.8435011656938238,
+          "elboGap": 0.03768052791179096,
+          "lossBound": 0.09441705667714097
+        },
+        "posterior_oracle": {
+          "accept": 0.889540160766664,
+          "elboGap": 0,
+          "lossBound": 0
+        }
+      }
+    },
+    {
+      "k": 8,
+      "sigma": 1.2,
+      "seed": 73,
+      "projected": 0.8785207819588843,
+      "independent": 0.3705882464214981,
+      "invalidTV": 0.17148899000230808,
+      "maxerr": 3.885780586188048e-16,
+      "maxViolation": 3.3306690738754696e-16,
+      "methods": {
+        "canonical": {
+          "accept": 0.00852229793210536,
+          "elboGap": 5.371409726212742,
+          "lossBound": 0.8713910848437307
+        },
+        "uniform": {
+          "accept": 0.37472791800424426,
+          "elboGap": 1.8647569401221644,
+          "lossBound": 0.542100855087978
+        },
+        "global": {
+          "accept": 0.6203354669265833,
+          "elboGap": 0.5036874473749722,
+          "lossBound": 0.31825789548254085
+        },
+        "edge": {
+          "accept": 0.8449039184703865,
+          "elboGap": 0.03125533730018796,
+          "lossBound": 0.08734908835615682
+        },
+        "flat_same_groups": {
+          "accept": 0.8449039184703865,
+          "elboGap": 0.03125533730018796,
+          "lossBound": 0.08734908835615682
+        },
+        "posterior_oracle": {
+          "accept": 0.8785207819588842,
+          "elboGap": 0,
+          "lossBound": 0
+        }
+      }
+    },
+    {
+      "k": 12,
+      "sigma": 0.1,
+      "seed": 11,
+      "projected": 0.8858887283085097,
+      "independent": 0.3630207383731226,
+      "invalidTV": 0.23149183224994008,
+      "maxerr": 7.993605777301127e-15,
+      "maxViolation": 1.2212453270876722e-15,
+      "methods": {
+        "canonical": {
+          "accept": 0.00021956351956989938,
+          "elboGap": 9.014174928383252,
+          "lossBound": 0.8856912975475475
+        },
+        "uniform": {
+          "accept": 0.5350680731496474,
+          "elboGap": 0.7912920693792842,
+          "lossBound": 0.4000513920040887
+        },
+        "global": {
+          "accept": 0.8082036467809041,
+          "elboGap": 0.07287927060247064,
+          "lossBound": 0.1340504697749494
+        },
+        "edge": {
+          "accept": 0.821800907270663,
+          "elboGap": 0.05794531606465851,
+          "lossBound": 0.11970702341321891
+        },
+        "flat_same_groups": {
+          "accept": 0.821800907270663,
+          "elboGap": 0.05794531606465851,
+          "lossBound": 0.11970702341321891
+        },
+        "posterior_oracle": {
+          "accept": 0.8858887283085095,
+          "elboGap": 0,
+          "lossBound": 0
+        }
+      }
+    },
+    {
+      "k": 12,
+      "sigma": 0.1,
+      "seed": 29,
+      "projected": 0.9171749360394652,
+      "independent": 0.36274122351018845,
+      "invalidTV": 0.23457745436188077,
+      "maxerr": 9.825473767932635e-15,
+      "maxViolation": 7.771561172376096e-16,
+      "methods": {
+        "canonical": {
+          "accept": 0.000052131250639522476,
+          "elboGap": 10.502898145852976,
+          "lossBound": 0.9171248251065748
+        },
+        "uniform": {
+          "accept": 0.503550720984729,
+          "elboGap": 0.907924881983569,
+          "lossBound": 0.4495841977289593
+        },
+        "global": {
+          "accept": 0.8230920132806541,
+          "elboGap": 0.07698083038609449,
+          "lossBound": 0.14089928318859524
+        },
+        "edge": {
+          "accept": 0.8388626390757747,
+          "elboGap": 0.05946419402925772,
+          "lossBound": 0.1236548782987291
+        },
+        "flat_same_groups": {
+          "accept": 0.8388626390757747,
+          "elboGap": 0.05946419402925772,
+          "lossBound": 0.1236548782987291
+        },
+        "posterior_oracle": {
+          "accept": 0.9171749360394651,
+          "elboGap": 0,
+          "lossBound": 0
+        }
+      }
+    },
+    {
+      "k": 12,
+      "sigma": 0.1,
+      "seed": 73,
+      "projected": 0.8989283695053178,
+      "independent": 0.35351517036290553,
+      "invalidTV": 0.10736428677077228,
+      "maxerr": 9.270362255620057e-15,
+      "maxViolation": 8.881784197001252e-16,
+      "methods": {
+        "canonical": {
+          "accept": 0.0006057960051827871,
+          "elboGap": 7.564216646362385,
+          "lossBound": 0.8983979610587306
+        },
+        "uniform": {
+          "accept": 0.5043907023296215,
+          "elboGap": 0.8916304035586947,
+          "lossBound": 0.4366232564518109
+        },
+        "global": {
+          "accept": 0.8082284464903368,
+          "elboGap": 0.07746728415728432,
+          "lossBound": 0.14129030279298885
+        },
+        "edge": {
+          "accept": 0.8261175554026001,
+          "elboGap": 0.057729228296431345,
+          "lossBound": 0.12205607693002908
+        },
+        "flat_same_groups": {
+          "accept": 0.8261175554026001,
+          "elboGap": 0.057729228296431345,
+          "lossBound": 0.12205607693002908
+        },
+        "posterior_oracle": {
+          "accept": 0.8989283695053178,
+          "elboGap": 0,
+          "lossBound": 0
+        }
+      }
+    },
+    {
+      "k": 12,
+      "sigma": 0.6,
+      "seed": 11,
+      "projected": 0.8858887283085097,
+      "independent": 0.3630207383731226,
+      "invalidTV": 0.23407110262822833,
+      "maxerr": 8.43769498715119e-15,
+      "maxViolation": 9.992007221626409e-16,
+      "methods": {
+        "canonical": {
+          "accept": 0.00021317934893225752,
+          "elboGap": 9.150104943773936,
+          "lossBound": 0.8856963144584362
+        },
+        "uniform": {
+          "accept": 0.4516866293732317,
+          "elboGap": 1.210714755630474,
+          "lossBound": 0.47650194716004035
+        },
+        "global": {
+          "accept": 0.6764203438602806,
+          "elboGap": 0.3016977563090271,
+          "lossBound": 0.26743446544179134
+        },
+        "edge": {
+          "accept": 0.8248823690681486,
+          "elboGap": 0.05449961266823988,
+          "lossBound": 0.11624254083447269
+        },
+        "flat_same_groups": {
+          "accept": 0.8248823690681486,
+          "elboGap": 0.05449961266823988,
+          "lossBound": 0.11624254083447269
+        },
+        "posterior_oracle": {
+          "accept": 0.8858887283085098,
+          "elboGap": 0,
+          "lossBound": 0
+        }
+      }
+    },
+    {
+      "k": 12,
+      "sigma": 0.6,
+      "seed": 29,
+      "projected": 0.9171749360394652,
+      "independent": 0.36274122351018845,
+      "invalidTV": 0.22906898381922164,
+      "maxerr": 5.828670879282072e-15,
+      "maxViolation": 1.3322676295501878e-15,
+      "methods": {
+        "canonical": {
+          "accept": 0.0000869155712288155,
+          "elboGap": 10.677439133865152,
+          "lossBound": 0.9170910164341429
+        },
+        "uniform": {
+          "accept": 0.4323355945347745,
+          "elboGap": 1.2768462134689802,
+          "lossBound": 0.5162195651672717
+        },
+        "global": {
+          "accept": 0.713526726381401,
+          "elboGap": 0.25055946562471265,
+          "lossBound": 0.2501551996595575
+        },
+        "edge": {
+          "accept": 0.8405098737207622,
+          "elboGap": 0.05731507065373886,
+          "lossBound": 0.121779573938672
+        },
+        "flat_same_groups": {
+          "accept": 0.8405098737207622,
+          "elboGap": 0.05731507065373886,
+          "lossBound": 0.121779573938672
+        },
+        "posterior_oracle": {
+          "accept": 0.9171749360394655,
+          "elboGap": 0,
+          "lossBound": 0
+        }
+      }
+    },
+    {
+      "k": 12,
+      "sigma": 0.6,
+      "seed": 73,
+      "projected": 0.8989283695053178,
+      "independent": 0.35351517036290553,
+      "invalidTV": 0.11613637775848237,
+      "maxerr": 9.048317650695026e-15,
+      "maxViolation": 6.661338147750939e-16,
+      "methods": {
+        "canonical": {
+          "accept": 0.00047472327403764547,
+          "elboGap": 7.819004403138832,
+          "lossBound": 0.8984989148039259
+        },
+        "uniform": {
+          "accept": 0.43236939760777193,
+          "elboGap": 1.3059983526756072,
+          "lossBound": 0.5031165662014778
+        },
+        "global": {
+          "accept": 0.6995688258731301,
+          "elboGap": 0.2811349705769448,
+          "lossBound": 0.25258448248271964
+        },
+        "edge": {
+          "accept": 0.8282621580246976,
+          "elboGap": 0.05572488167634394,
+          "lossBound": 0.11984356387043744
+        },
+        "flat_same_groups": {
+          "accept": 0.8282621580246976,
+          "elboGap": 0.05572488167634394,
+          "lossBound": 0.11984356387043744
+        },
+        "posterior_oracle": {
+          "accept": 0.8989283695053178,
+          "elboGap": 0,
+          "lossBound": 0
+        }
+      }
+    },
+    {
+      "k": 12,
+      "sigma": 1.2,
+      "seed": 11,
+      "projected": 0.8858887283085097,
+      "independent": 0.3630207383731226,
+      "invalidTV": 0.24117950411059458,
+      "maxerr": 5.88418203051333e-15,
+      "maxViolation": 1.5543122344752192e-15,
+      "methods": {
+        "canonical": {
+          "accept": 0.00016200532576015489,
+          "elboGap": 10.023350908924714,
+          "lossBound": 0.8857431296160462
+        },
+        "uniform": {
+          "accept": 0.3087417130731558,
+          "elboGap": 2.4241519258138595,
+          "lossBound": 0.6067134602748766
+        },
+        "global": {
+          "accept": 0.490057866542975,
+          "elboGap": 0.9200507475712417,
+          "lossBound": 0.4409102041164012
+        },
+        "edge": {
+          "accept": 0.8312317430157762,
+          "elboGap": 0.047397522046638565,
+          "lossBound": 0.10806631795930093
+        },
+        "flat_same_groups": {
+          "accept": 0.8312317430157762,
+          "elboGap": 0.047397522046638565,
+          "lossBound": 0.10806631795930093
+        },
+        "posterior_oracle": {
+          "accept": 0.8858887283085098,
+          "elboGap": 0,
+          "lossBound": 0
+        }
+      }
+    },
+    {
+      "k": 12,
+      "sigma": 1.2,
+      "seed": 29,
+      "projected": 0.9171749360394652,
+      "independent": 0.36274122351018845,
+      "invalidTV": 0.21157981316293556,
+      "maxerr": 2.0539125955565396e-15,
+      "maxViolation": 2.7755575615628914e-15,
+      "methods": {
+        "canonical": {
+          "accept": 0.00015872434183621773,
+          "elboGap": 11.620168086206137,
+          "lossBound": 0.9170202564871176
+        },
+        "uniform": {
+          "accept": 0.29880541623864326,
+          "elboGap": 2.452831577977851,
+          "lossBound": 0.6399624457949304
+        },
+        "global": {
+          "accept": 0.5514891500886484,
+          "elboGap": 0.7204615193441563,
+          "lossBound": 0.4043634708095033
+        },
+        "edge": {
+          "accept": 0.8456384228167935,
+          "elboGap": 0.05157279784017399,
+          "lossBound": 0.1161909466216509
+        },
+        "flat_same_groups": {
+          "accept": 0.8456384228167935,
+          "elboGap": 0.05157279784017399,
+          "lossBound": 0.1161909466216509
+        },
+        "posterior_oracle": {
+          "accept": 0.917174936039465,
+          "elboGap": 0,
+          "lossBound": 0
+        }
+      }
+    },
+    {
+      "k": 12,
+      "sigma": 1.2,
+      "seed": 73,
+      "projected": 0.8989283695053178,
+      "independent": 0.35351517036290553,
+      "invalidTV": 0.16880093945133953,
+      "maxerr": 3.0531133177191805e-15,
+      "maxViolation": 7.771561172376096e-16,
+      "methods": {
+        "canonical": {
+          "accept": 0.000283284568859756,
+          "elboGap": 8.70297132307439,
+          "lossBound": 0.8986641213437162
+        },
+        "uniform": {
+          "accept": 0.3146155132816884,
+          "elboGap": 2.38146150341972,
+          "lossBound": 0.6116373563884957
+        },
+        "global": {
+          "accept": 0.5390692157575654,
+          "elboGap": 0.8094317182780675,
+          "lossBound": 0.4061583157502793
+        },
+        "edge": {
+          "accept": 0.8341912508591399,
+          "elboGap": 0.049895164244034076,
+          "lossBound": 0.11322048048151148
+        },
+        "flat_same_groups": {
+          "accept": 0.8341912508591399,
+          "elboGap": 0.049895164244034076,
+          "lossBound": 0.11322048048151148
+        },
+        "posterior_oracle": {
+          "accept": 0.8989283695053181,
+          "elboGap": 0,
+          "lossBound": 0
+        }
+      }
+    }
+  ],
+  "mc": {
+    "N": 200000,
+    "count": [
+      99672,
+      100328
+    ],
+    "accepted": 130056,
+    "attempts": 199987,
+    "theoryAcceptance": 0.6499999999999999
+  }
+}
