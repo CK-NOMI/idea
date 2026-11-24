@@ -1,0 +1,142 @@
+{
+  "evidence": "synthetic linearized CPU experiment; not a Transformer, HFL deployment, GPU run, or real SD serving benchmark",
+  "environment": {
+    "python": "3.13.5",
+    "numpy": "2.3.5",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41"
+  },
+  "two_token_eal_experiment": {
+    "seeds": 100,
+    "clients": 4,
+    "regions": 2,
+    "vocabulary": 2,
+    "early_parameter_dimension": 12,
+    "suffix_compensator_rank": 2,
+    "matched_total_early_update_norm": 0.1,
+    "summary": {
+      "global_unconstrained": {
+        "mean_delta_eal_mean": 0.013122200942211379,
+        "mean_delta_eal_sd": 0.004105028064792638,
+        "mean_formal_kl_mean": 0.00004762953273777239,
+        "max_linearized_residual_max": 0.045282562259367574,
+        "mean_suffix_compensation_norm_mean": 0.06692707584664426
+      },
+      "edge_unconstrained": {
+        "mean_delta_eal_mean": 0.018610382823902028,
+        "mean_delta_eal_sd": 0.004975686086115166,
+        "mean_formal_kl_mean": 0.00007316508728985173,
+        "max_linearized_residual_max": 0.05538913760160852,
+        "mean_suffix_compensation_norm_mean": 0.07018438926350423
+      },
+      "client_unconstrained": {
+        "mean_delta_eal_mean": 0.025734108355746906,
+        "mean_delta_eal_sd": 0.006758182296702765,
+        "mean_formal_kl_mean": 0.00012120975067556377,
+        "max_linearized_residual_max": 0.07425979887837164,
+        "mean_suffix_compensation_norm_mean": 0.07367999908279375
+      },
+      "global_safe": {
+        "mean_delta_eal_mean": 0.009522783959222,
+        "mean_delta_eal_sd": 0.0030616805340454847,
+        "mean_formal_kl_mean": 3.6768713126494255e-18,
+        "max_linearized_residual_max": 8.951912716271179e-17,
+        "mean_suffix_compensation_norm_mean": 0.07120667794983868
+      },
+      "edge_safe": {
+        "mean_delta_eal_mean": 0.011493983942152387,
+        "mean_delta_eal_sd": 0.0032474634808690485,
+        "mean_formal_kl_mean": -1.9341150922479995e-18,
+        "max_linearized_residual_max": 5.864802221775325e-17,
+        "mean_suffix_compensation_norm_mean": 0.07174644413033016
+      },
+      "hierarchy_safe": {
+        "mean_delta_eal_mean": 0.013530687871288971,
+        "mean_delta_eal_sd": 0.0034893130768759873,
+        "mean_formal_kl_mean": 1.6509583695140113e-18,
+        "max_linearized_residual_max": 3.5282917290794813e-16,
+        "mean_suffix_compensation_norm_mean": 0.07098248779202622
+      }
+    }
+  },
+  "rank_collapse_stress": {
+    "seeds_per_setting": 20,
+    "early_parameter_dimension": 24,
+    "formal_logit_dimension_per_context": 6,
+    "clients": 4,
+    "regions": 2,
+    "summary": {
+      "suffix_rank_3_contexts_1": {
+        "client_null_dimension_mean": 21,
+        "edge_null_dimension_mean": 18,
+        "cloud_null_dimension_mean": 12,
+        "rank_seeds": 20
+      },
+      "suffix_rank_3_contexts_2": {
+        "client_null_dimension_mean": 15,
+        "edge_null_dimension_mean": 6,
+        "cloud_null_dimension_mean": 0,
+        "rank_seeds": 20
+      },
+      "suffix_rank_3_contexts_3": {
+        "client_null_dimension_mean": 9,
+        "edge_null_dimension_mean": 0,
+        "cloud_null_dimension_mean": 0,
+        "rank_seeds": 20
+      },
+      "suffix_rank_3_contexts_4": {
+        "client_null_dimension_mean": 3,
+        "edge_null_dimension_mean": 0,
+        "cloud_null_dimension_mean": 0,
+        "rank_seeds": 20
+      },
+      "suffix_rank_6_contexts_1": {
+        "client_null_dimension_mean": 24,
+        "edge_null_dimension_mean": 24,
+        "cloud_null_dimension_mean": 24,
+        "rank_seeds": 20
+      },
+      "suffix_rank_6_contexts_2": {
+        "client_null_dimension_mean": 18,
+        "edge_null_dimension_mean": 12,
+        "cloud_null_dimension_mean": 0,
+        "rank_seeds": 20
+      },
+      "suffix_rank_6_contexts_3": {
+        "client_null_dimension_mean": 12,
+        "edge_null_dimension_mean": 0,
+        "cloud_null_dimension_mean": 0,
+        "rank_seeds": 20
+      },
+      "suffix_rank_6_contexts_4": {
+        "client_null_dimension_mean": 6,
+        "edge_null_dimension_mean": 0,
+        "cloud_null_dimension_mean": 0,
+        "rank_seeds": 20
+      },
+      "suffix_rank_12_contexts_1": {
+        "client_null_dimension_mean": 24,
+        "edge_null_dimension_mean": 24,
+        "cloud_null_dimension_mean": 24,
+        "rank_seeds": 20
+      },
+      "suffix_rank_12_contexts_2": {
+        "client_null_dimension_mean": 24,
+        "edge_null_dimension_mean": 24,
+        "cloud_null_dimension_mean": 24,
+        "rank_seeds": 20
+      },
+      "suffix_rank_12_contexts_3": {
+        "client_null_dimension_mean": 18,
+        "edge_null_dimension_mean": 12,
+        "cloud_null_dimension_mean": 0,
+        "rank_seeds": 20
+      },
+      "suffix_rank_12_contexts_4": {
+        "client_null_dimension_mean": 12,
+        "edge_null_dimension_mean": 0,
+        "cloud_null_dimension_mean": 0,
+        "rank_seeds": 20
+      }
+    }
+  }
+}

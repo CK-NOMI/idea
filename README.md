@@ -3618,3 +3618,13 @@ H未执行：只有真实训练部署确实将同一合法GRPO组跨区域分配
 - E：两同7264参数microGPT、3 hash split、4逻辑client/2区、3人工漂移；3648特征、864 CE梯度、360辅助步/guard检查；同客户端自有提示、相同初始化和归一化步长，固定gate表校准拟合。低中高EAL adaptive MM1.721693/1.644312/1.474507 vs local direct1.728085/1.726957/1.725750，仅1/18胜；MM与direct微小差异，adaptive MM guard18/18但独立test 7/18超限，local direct6/18；FD误差3.26e−11、下界无观测违反。真实通信、GPU、生产生成、R47采样学习、两尺度/独立训练seed/CI未执行，非同质量/实际算力预算。
 - 实查LayerSkip/MT-SFL/HierFedEHN/VSD/WTV/SpecFed/HSD/When Drafts Evolve/S2D原始摘要或出版页，非全文穷尽/查重。独立主观7.635（8.3/7.3/8.4/6.3/7.4，25/25/20/15/15），R44 8.14/R46 8.045/R30窄数学8.35保留。G1/G2/G4 FAIL、G3/G7部分、G5未验、G6无80%证据。**Reject整合共享首token方案作为独立立项**，保留继承式头、梯度归约和明确成本门槛；下一轮改变主干层级参数学习结构，先实测合法共前缀/区域参数驻留的实际成本，与同架构普通pFL+LayerSkip及同委托flat比较，不以共享头数代替真实开销。1–2×40GB两真实尺度三非IID/独立seed同质量总时间−15%或工作+20%与CI未执行。
 - [报告](experiments/team-far/R48/record.md) · [代码](experiments/team-far/R48/integrated.js) · [原始结果](experiments/team-far/R48/results.json)
+
+### team-far/R49｜HVC-SD：分层正式验证可补偿子空间与生存目标更新
+- 起始 main d505fc2920c10622e1928520851d6c98957cc5cb；README blob 7026195e84c98d7ca4e70f8e48c73ed163f1fa48（3621 行/510468 字符）。重点复核 R43–R48、R08 FDC 与 R06 FCF 相关约束；未独立复跑所有团队代码。
+- **T：** 定义正式输出 Jacobian 的深层补偿核 B_c=(I−J_dJ_d†)J_s；ker(B_c) 中的浅层更新可由客户端深层参数一阶抵消。client/edge/cloud 交集形成嵌套可补偿空间；在限定局部二次代理下，分层投影 EAL 梯度为最优更新。Fisher 加权近似核给出局部 KL 漂移界。
+- **E-SYN：** 实际 Python CPU 线性 logits toy，100 seeds、4 clients/2 edges、二元词表、精确 2-token EAL、浅层维度12/深层补偿秩2、匹配浅层总更新范数0.1。Global/Edge/Client unconstrained ΔEAL=0.01312/0.01861/0.02573，对应正式 KL=4.76e−5/7.32e−5/1.21e−4；HVC global/edge/hierarchy safe ΔEAL=0.00952/0.01149/0.01353，KL约0，最大线性残差≤3.53e−16。仅合成线性模型，不是真实 Transformer/HFL/SD。
+- **P：** 20 seeds/setting 随机 Jacobian 秩压力测试；suffix rank3时 context数1→4，client/edge/cloud null维度从21/18/12降至3/0/0；context数2时 cloud 已为0。过低补偿秩使共享空间坍塌，过高秩则层级区分消失。该风险是当前主要否决点。
+- 文献威胁：MT-SFL（WCNC2026）、Adaptive layerwise pFL（Neurocomputing2026）、LayerSkip（ACL2024）、AlphaEdit（ICLR2025）；R08 FDC 已证明接受率不能识别深层 Jacobian，本轮要求实际 JVP/VJP。零空间、分层个性化和多出口本身不新；候选差异在“EAL 驱动的早层更新 + 深层正式输出补偿 + HFL 嵌套可补偿核”，全文撞题未排除。
+- 主观候选评分 7.825/10（问题8.0/机制7.7/数学8.4/文献6.8/HFL×SD8.0，权重25/25/20/15/15）；R44 8.14、R30窄数学8.35保留。G1/G2未通过，G3部分，G4未通过，G5/G6未验证（无80%证据），G7部分。**保留理论候选，不独立立项。**
+- 下一轮先在 1B/3B early-exit Transformer、8客户端/2 Edge、三种非IID/延迟、三种子上测 Fisher 加权补偿核谱、真实 EAL/正式 NLL 与 matrix-free JVP/VJP 成本；对比 LayerSkip、普通HFL+LayerSkip、adaptive layerwise pFL、AlphaEdit-style projection、flat same-information 与 full-personalized。若共享子空间坍塌或补偿成本无法支持同质量总 wall time −15%/同成本工作 +20%，立即否决。
+- [完整报告](experiments/team-far/R49/record.md) · [toy.py](experiments/team-far/R49/toy.py) · [results.json](experiments/team-far/R49/results.json)
