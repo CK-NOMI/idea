@@ -1,0 +1,308 @@
+{
+  "env": {
+    "python": "3.13.5",
+    "torch": "2.10.0+cpu",
+    "device": "CPU",
+    "threads": 1
+  },
+  "settings": {
+    "V": 16,
+    "D": 24,
+    "N": 128,
+    "B": 4,
+    "S": 32,
+    "L": 2,
+    "train_steps": 30,
+    "timing_repeats": 5
+  },
+  "rows": [
+    {
+      "w": 4,
+      "seed": 11,
+      "R": 6,
+      "params": 13600,
+      "metrics": {
+        "full": {
+          "loss": 2.4105206435281703,
+          "rel_grad_error": 0,
+          "median_ms": 9.506971000064368
+        },
+        "halo": {
+          "loss": 2.4105206435281694,
+          "rel_grad_error": 7.736786449834473e-16,
+          "median_ms": 9.795555999971839
+        },
+        "defer": {
+          "loss": 2.41052064352817,
+          "rel_grad_error": 7.47978776666337e-16,
+          "median_ms": 12.702763000106643
+        },
+        "truncate": {
+          "loss": 2.407344340231797,
+          "rel_grad_error": 0.12238123018109913,
+          "median_ms": 8.668558999943343
+        }
+      },
+      "halo_exact": 0,
+      "halo_token_acc": 0.06944444444444445,
+      "boundary_greedy_agree": 0.875,
+      "interior_max_logit_err": 1.1102230246251565e-15
+    },
+    {
+      "w": 4,
+      "seed": 29,
+      "R": 6,
+      "params": 13600,
+      "metrics": {
+        "full": {
+          "loss": 2.406993309638285,
+          "rel_grad_error": 0,
+          "median_ms": 9.390226000050461
+        },
+        "halo": {
+          "loss": 2.406993309638285,
+          "rel_grad_error": 7.958717040946903e-16,
+          "median_ms": 9.691389999716193
+        },
+        "defer": {
+          "loss": 2.4069933096382856,
+          "rel_grad_error": 8.044242727513788e-16,
+          "median_ms": 13.56107499987047
+        },
+        "truncate": {
+          "loss": 2.408659376723816,
+          "rel_grad_error": 0.08546176672325878,
+          "median_ms": 8.782140999755939
+        }
+      },
+      "halo_exact": 0,
+      "halo_token_acc": 0.125,
+      "boundary_greedy_agree": 0.8611111111111112,
+      "interior_max_logit_err": 8.881784197001252e-16
+    },
+    {
+      "w": 4,
+      "seed": 73,
+      "R": 6,
+      "params": 13600,
+      "metrics": {
+        "full": {
+          "loss": 2.434172407394071,
+          "rel_grad_error": 0,
+          "median_ms": 10.122258000137663
+        },
+        "halo": {
+          "loss": 2.4341724073940707,
+          "rel_grad_error": 8.471882689085498e-16,
+          "median_ms": 11.909068000022671
+        },
+        "defer": {
+          "loss": 2.434172407394071,
+          "rel_grad_error": 7.967314790774136e-16,
+          "median_ms": 16.345836999789753
+        },
+        "truncate": {
+          "loss": 2.4309526471307885,
+          "rel_grad_error": 0.1301448379881968,
+          "median_ms": 10.509866000120383
+        }
+      },
+      "halo_exact": 0,
+      "halo_token_acc": 0.05555555555555555,
+      "boundary_greedy_agree": 0.8611111111111112,
+      "interior_max_logit_err": 8.881784197001252e-16
+    },
+    {
+      "w": 8,
+      "seed": 11,
+      "R": 14,
+      "params": 13600,
+      "metrics": {
+        "full": {
+          "loss": 2.426855138008815,
+          "rel_grad_error": 0,
+          "median_ms": 9.312990000125865
+        },
+        "halo": {
+          "loss": 2.426855138008815,
+          "rel_grad_error": 8.204835873125844e-16,
+          "median_ms": 11.788605999754509
+        },
+        "defer": {
+          "loss": 2.4268551380088144,
+          "rel_grad_error": 7.86045473968309e-16,
+          "median_ms": 15.106520999779605
+        },
+        "truncate": {
+          "loss": 2.423372575925843,
+          "rel_grad_error": 0.1601684837861273,
+          "median_ms": 8.753036999678443
+        }
+      },
+      "halo_exact": 0,
+      "halo_token_acc": 0.09523809523809523,
+      "boundary_greedy_agree": 0.9107142857142857,
+      "interior_max_logit_err": 8.881784197001252e-16
+    },
+    {
+      "w": 8,
+      "seed": 29,
+      "R": 14,
+      "params": 13600,
+      "metrics": {
+        "full": {
+          "loss": 2.4259201136479254,
+          "rel_grad_error": 0,
+          "median_ms": 9.596145999694272
+        },
+        "halo": {
+          "loss": 2.425920113647926,
+          "rel_grad_error": 7.525508123787588e-16,
+          "median_ms": 11.005227000168816
+        },
+        "defer": {
+          "loss": 2.425920113647926,
+          "rel_grad_error": 7.223619760314133e-16,
+          "median_ms": 16.562222000175097
+        },
+        "truncate": {
+          "loss": 2.429378685141781,
+          "rel_grad_error": 0.11644776847665805,
+          "median_ms": 8.591332999912993
+        }
+      },
+      "halo_exact": 0,
+      "halo_token_acc": 0.07738095238095238,
+      "boundary_greedy_agree": 0.9345238095238095,
+      "interior_max_logit_err": 1.3322676295501878e-15
+    },
+    {
+      "w": 8,
+      "seed": 73,
+      "R": 14,
+      "params": 13600,
+      "metrics": {
+        "full": {
+          "loss": 2.451875582652668,
+          "rel_grad_error": 0,
+          "median_ms": 9.940324000126566
+        },
+        "halo": {
+          "loss": 2.451875582652668,
+          "rel_grad_error": 8.532721218517936e-16,
+          "median_ms": 11.428644999796234
+        },
+        "defer": {
+          "loss": 2.451875582652668,
+          "rel_grad_error": 7.811723132470765e-16,
+          "median_ms": 14.606219000143028
+        },
+        "truncate": {
+          "loss": 2.447231853332871,
+          "rel_grad_error": 0.1622089767217678,
+          "median_ms": 8.30853700017542
+        }
+      },
+      "halo_exact": 0,
+      "halo_token_acc": 0.06547619047619048,
+      "boundary_greedy_agree": 0.9107142857142857,
+      "interior_max_logit_err": 8.881784197001252e-16
+    },
+    {
+      "w": 16,
+      "seed": 11,
+      "R": 30,
+      "params": 13600,
+      "metrics": {
+        "full": {
+          "loss": 2.4272365353167245,
+          "rel_grad_error": 0,
+          "median_ms": 9.163565000108065
+        },
+        "halo": {
+          "loss": 2.4272365353167245,
+          "rel_grad_error": 7.826257502941987e-16,
+          "median_ms": 13.174823000099423
+        },
+        "defer": {
+          "loss": 2.4272365353167245,
+          "rel_grad_error": 8.010268299839529e-16,
+          "median_ms": 18.380160000106116
+        },
+        "truncate": {
+          "loss": 2.4334473793901763,
+          "rel_grad_error": 0.20889625053892757,
+          "median_ms": 8.216758999878948
+        }
+      },
+      "halo_exact": 0,
+      "halo_token_acc": 0.05555555555555555,
+      "boundary_greedy_agree": 0.9416666666666667,
+      "interior_max_logit_err": 8.881784197001252e-16
+    },
+    {
+      "w": 16,
+      "seed": 29,
+      "R": 30,
+      "params": 13600,
+      "metrics": {
+        "full": {
+          "loss": 2.4279031320054973,
+          "rel_grad_error": 0,
+          "median_ms": 9.691669999938313
+        },
+        "halo": {
+          "loss": 2.4279031320054973,
+          "rel_grad_error": 7.6214467531876335e-16,
+          "median_ms": 13.68397999976878
+        },
+        "defer": {
+          "loss": 2.427903132005498,
+          "rel_grad_error": 7.667110921060458e-16,
+          "median_ms": 19.19208199979039
+        },
+        "truncate": {
+          "loss": 2.4366546733762178,
+          "rel_grad_error": 0.15807680105732258,
+          "median_ms": 9.208512999975937
+        }
+      },
+      "halo_exact": 0,
+      "halo_token_acc": 0.07222222222222222,
+      "boundary_greedy_agree": 0.9444444444444444,
+      "interior_max_logit_err": 8.881784197001252e-16
+    },
+    {
+      "w": 16,
+      "seed": 73,
+      "R": 30,
+      "params": 13600,
+      "metrics": {
+        "full": {
+          "loss": 2.441754646679255,
+          "rel_grad_error": 0,
+          "median_ms": 9.20719099985945
+        },
+        "halo": {
+          "loss": 2.4417546466792546,
+          "rel_grad_error": 8.846682165181156e-16,
+          "median_ms": 13.32535999972606
+        },
+        "defer": {
+          "loss": 2.4417546466792546,
+          "rel_grad_error": 9.075590951407283e-16,
+          "median_ms": 18.80038199988121
+        },
+        "truncate": {
+          "loss": 2.4482291644484384,
+          "rel_grad_error": 0.2110383824219454,
+          "median_ms": 8.445102999758092
+        }
+      },
+      "halo_exact": 0,
+      "halo_token_acc": 0.06666666666666667,
+      "boundary_greedy_agree": 0.9361111111111111,
+      "interior_max_logit_err": 5.551115123125783e-16
+    }
+  ]
+}
