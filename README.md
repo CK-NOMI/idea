@@ -3309,3 +3309,11 @@ H未执行：只有真实训练部署确实将同一合法GRPO组跨区域分配
 - T：u,v为G归一化深浅特征（可翻v符号），c=u^TGv≥0，ell=sqrt(1−c²)，a=(u+v)/sqrt(2(1+c)),b=(u−v)/sqrt(2(1−c)),e=(a+b)/sqrt2,f=(a−b)/sqrt2。u u^T−v v^T=ell(ee^T−ff^T)，故[p−q]_+≤(1−eps)ell(w_i^Te)^2，秩一包络总质量M=(1−eps)ell≤1。条件拒绝修正平均M/TV，无条件每SD尝试M≤1，实数精确新目标。分块Gram树O(r²log(V/B)+Br)采样，greedy子树总量上界最坏全访问，top-p/温度/生产数值未验。普通AR+同头及公平平坦可复制，双向未证。
 - E：真实两同尺度microGPT权重、3训练split×3宽度×2检查点=18实际ridge拟合配置，2304评估位置，73728实际单步SD采样（非多token或物理HFL）。r=5/9/17新头NLL 2.85244/2.75653/2.67067,原softmax 2.63352/2.63352/2.63352,新头accept 0.93332/0.94071/0.91783,平均无条件包络质量 0.08477/0.08071/0.11624; 最大包络违反0、FD误差1.2156069928437319e-8、greedy错误0。无GPU/墙钟、同规模检查点非双尺度。文献spherical exact gradient NeurIPS2015、Taylor/spherical alternatives、adaptive softmax、Tang length-square、Speculative Vocabulary等见报告。主观创新7.500/10（8.5/7.5/8.5/6.5/5.5,25/25/20/15/15）；G1/G2/G4失败,G3/G7局部,G5/G6未验，无80%依据。Reject独立立项，保留秩一残差包络，先审正式质量及真实强基线，非用新头冒充原模型精确。
 - [报告](experiments/team-far/R18/record.md) · [代码](experiments/team-far/R18/probe.js) · [原始结果](experiments/team-far/R18/results.json)
+
+
+### team-far/R19｜FLDN：多秩密度状态学习、合并与压缩审计
+
+- 2026-11-24；起始 991c76676aa2570585ded1c33a5bcb43bffc213e，写前 e8e31f0c0c9bd3f35e3906306c0a272a3b1a5dee，README blob c511797841ea8140487e050c060ab920b0103ec0。完整取得并重读R18，筛查density/Born/spherical等；未逐式审计或复跑全部。首次扩大实验超时，无可核验结果；缩小后的18配置已实际运行，代码/原始结果先存于写前commit。
+- T：共同W，F=[B_k h]，A=FFᵀ/tr(GFFᵀ)，rho=WAWᵀ为trace1 PSD；p=(1−eps)diag(rho)+eps/V，新正式目标非原softmax无损。归一密度加权平均恰等于普通概率ensemble。Delta=rho−sigma正谱部给残差包络M=(1−eps)||Delta||_1/2，正秩≤rank(rho)；合并M≤平均本地M，经典迹范数三角不等式。已知rank-K最优迹距离tau=1−ΣtopK lambda，测量TV≤(1−eps)tau。局部diag(.51,.49,0),diag(0,.49,.51)先rank1截断丢失全局最大e2，不能宣称有损截断分层闭合。Born/LPS、量子低秩近似、MoS、Mixtape、FedDF已有直接先例。
+- E：两同尺度microGPT、3 split×K1/2/4=18配置；固定r17与字典W，48 pooled+四组各8 local Adam步、batch8，共1440更新/11520样本使用，288重复评估位置。原softmax NLL 2.81382，K1/2/4 NLL 2.86213/2.86332/2.86556,teacher KL 0.02720/0.02327/0.02225; 合并包络相对local均值下降 0.435%/0.821%/1.585%, global截断TV 0.001004/0.002460/0.003049, local先截断TV 0.001004/0.012729/0.010122. max包络违反0,mix误差8.326672684688674e-17,tail违反0,cancellation违反0。无真实SD生成/物理HFL/GPU/时间；原softmax头参数更少但非等训练预算。主观创新7.000/10（8/7/8/6.5/4.5，25/25/20/15/15），G1/G2/G4失败，G3/G7局部,G5/G6未验，无80%依据。Reject独立立项；保留低秩校正及谱截断反例，停止盲目增加秩，寻找真实不可替代执行约束。
+- [报告](experiments/team-far/R19/record.md) · [实际代码](experiments/team-far/R19/probe.js) · [原始结果](experiments/team-far/R19/results.json)
