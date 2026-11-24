@@ -1,0 +1,82 @@
+{
+  "python": "3.13.5",
+  "torch": "2.10.0+cpu",
+  "cuda": false,
+  "threads": 2,
+  "corpus": {
+    "email": [
+      298207,
+      74552
+    ],
+    "json": [
+      39078,
+      9770
+    ],
+    "urllib": [
+      129748,
+      32437
+    ]
+  },
+  "raw_local_json_sha256": "1ce0cd8484551d0751725e5cdddc3fe5a12dbfc1df6d22ad462f6bfe356804e4",
+  "probe_blob": "c93b2a79a377f9685c4e2c35b97540bd49c6d41c",
+  "csv_blob": "710f8a6f312c0754c492e0b36895afef0f97d10c",
+  "fourier": [
+    [
+      3,
+      -0.5,
+      0.125,
+      1.75
+    ],
+    [
+      5,
+      0.375,
+      0.03125,
+      4.359375
+    ],
+    [
+      7,
+      -0.3125,
+      0.0078125,
+      12.40234375
+    ],
+    [
+      9,
+      0.2734375,
+      0.001953125,
+      38.20648193359375
+    ]
+  ],
+  "manifest": {
+    "email/__init__.py": "e4f46e3414c4602c9abb8b404a45e84412fc49dbe38a3d163f9575132dc7c93e",
+    "email/_encoded_words.py": "4178321600c0a19ca04cfe8542ce44487f339d15d89a473b58cea63c0b230217",
+    "email/_header_value_parser.py": "cb79aaf3b57072daa004339a824db51e7029539afb1b07d1d807bdbd30495ca1",
+    "email/_parseaddr.py": "83c6229ce2dff4d1fd1176eae8c6993a5fbea45558f4a6450f41e816e23524e3",
+    "email/_policybase.py": "284be073d7fe99d1021958e6dbeefe4c98a6c00021ea465d01aac71338d1579f",
+    "email/base64mime.py": "e2b4b87a5f42a8c5780e343f675513bbcc6abdd23fa14f8f1a7d4f7d72304770",
+    "email/charset.py": "a90653f13a4dc5eb3205079dda1d62561a8bf9a7b45585f5dbf90aa31a966680",
+    "email/contentmanager.py": "2d81026aef17e4786b15d9ec0629304987e3f275a0fd0a421a81b4ed87234b2c",
+    "email/encoders.py": "690b275529788cc48e8f541a2aef321dc31e92f75764ac7924896db72d8a9555",
+    "email/errors.py": "dbfb4bbfc85e9d556d3385dc6356518846d8a122bc643b171ea61b6e8dc42c8b",
+    "email/feedparser.py": "f7f31589333a66e6746cedb086b729b356cf4f9b0eed67681e088379d3f56ccd",
+    "email/generator.py": "e5b7a15b4ae8208991d3ed8358c0a4482f727d393285dafeb2a0d77df9ee627e",
+    "email/header.py": "4d9baa908ad5288dd8fad8cf20b3802ffac77ba1642727804a633b201c56e5ca",
+    "email/headerregistry.py": "fada56c25b6a457c6a62af43f9f929bbc29424103ce65f40f114adb4fdf3d39f",
+    "email/iterators.py": "1080a2d03779176d6d45f6ecd976dbe69f5579f7e4e83b75224c3f92fd258102",
+    "email/message.py": "57fc451e7bc431389706dc00c0ff2456aee2c41f4786a5bce8475b9870f70684",
+    "email/parser.py": "88890ea9994c55ff7d6c1fd570fece2785f51ed407ee95df4aff946e250bcd66",
+    "email/policy.py": "35fcbece24fac56fdefe15c93351eefda47c3440204746b8519e71d4633b0f3e",
+    "email/quoprimime.py": "77b454bd3ba3b5e3776be28ae3a0fd8de5d1e50d5b8ee10dd539c37c2bd68082",
+    "email/utils.py": "bd4c9b529ab5d4f586871571456fc5587d7e79b2ba6bf67ae4475ac67e265a03",
+    "json/__init__.py": "d5d41e2c29049515d295d81a6d40b4890fbec8d8482cfb401630f8ef2f77e4d5",
+    "json/decoder.py": "6d95679fccf178f2af9e9eead42f8efb084c58735951dc47fce89aec11d44955",
+    "json/encoder.py": "4b24ae9c0efbe73272f6a891054b2f40cc6e07c3c9957b33a2ebc8da130e671e",
+    "json/scanner.py": "572958017eae8842eeddd0e3d18d3c56cc0a197348224915e1d87ce937841764",
+    "json/tool.py": "d8cc5326c37a495b45c7a448ff0dda3ebc7ccc1c94639861d989bfd56ad9160a",
+    "urllib/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "urllib/error.py": "d12b3cc66af3f42a8ebe63e1c91d24f92c6237b6a93a3702938dffabd812d77b",
+    "urllib/parse.py": "e6af7f475262f1de335bb2e41e26adb94d6103977cf5fe1ddc430dc6a3b1623f",
+    "urllib/request.py": "7353b9d47f51fa495839328f79c4f24bc1feaea70f7c3377c521159db34fa1aa",
+    "urllib/response.py": "7e6c3b6d7a95f0d74f5968f51a87adae8a51bf42390cdfec98c7a99203e7bb76",
+    "urllib/robotparser.py": "644cc6d2b09948e8782cb1e7dea3bb39a2d83932c67e7a8eae65a711318c002c"
+  }
+}
