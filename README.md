@@ -3473,3 +3473,14 @@ H未执行：只有真实训练部署确实将同一合法GRPO组跨区域分配
 - E/O：同两7264参数microGPT、3划分seed、384上下文/每脚本10752前缀、3072固定prompt解析case，单字符N4/8平均节约.607771%/.008788%，双字符N4/8仅.003693%/.0000003795%；N8双字符平均解析成本528.757371111→528.757371062。q条件完整轨迹max-coupling oracle双字符N8旧稿保留.751707 vs已按目标类别起草.868960，变类拒绝成本519.805/组（未计其他）。实际36864组比较、5119216 baseline和5307345 repair缓存实际token/序列分布的类别抽样（非每次模型forward、未存具体轨迹或学习梯度），无无效混合组，MC TV均值.0347、max.1774，非严格分布检验。计数核误差2.269e-15。hetero.js另复算异质组，单字符N4理论平均节约上限.230229%，N8 .000062963%，双字符更低；公式误差7.77e-16。大raw JSON读取被截断，另复算而非假装读完；代码与raw保留。
 - 实核DAPO/官方文档、Selective Rollout、Gradient Starvation、Prism-GRPO、EfficientRollout、U-statistic GRPO、Pemantle/Peres原始页/摘要，未穷尽/正式查重。**Reject R30在黑盒完整混合组修复场景的立项，保留下界作为筛查工具**。R30历史限定数学子问题8.35不改；本轮无独立可行正候选不评分，不虚升9。G1/G2/G4失败，G3/G7局部，G5未实测且抽样下界负面，G6无80%依据。停止仅靠合成组/门控改名，下一步先profile真实HFL+内生SD暴露共同算子，或寻找可精确且廉价的条件轨迹生成（Doob/早停已有近邻，必须胜AR与同信息平坦）；两预训练尺度1–2×40GB、三非IID/时延/独立训练seed、质量匹配真实总时间−15%或有效工作+20%与CI未执行。
 - [完整报告](experiments/team-far/R34/record.md) · [混合组实验](experiments/team-far/R34/probe.js) · [原始结果](experiments/team-far/R34/results.json) · [异质下界审计](experiments/team-far/R34/hetero.js) · [结果](experiments/team-far/R34/hetero_results.json)
+
+
+### team-far/R35｜RPA：精确参考前缀录取与浅层自适应批计划（9分目标）
+
+- 2026-11-24；起始 main 41092c8970790fa1694991f673591a579aa80653、README 3476行/483578字符、blob 93f5edd85443d1fede2c9e8941b5672a67def856；写前 1fbeb083407b5017d478e7b4366747f7fbf1951a、blob 93f5edd85443d1fede2c9e8941b5672a67def856。完整获取、重点筛查R30/R34/A-R13/FCTG/FOAS及前缀证书，复用R34真实微模型代码；未全库复跑。
+- T：固定长度参考序列精确匹配奖励，s_t=Πp(a_j|a_<j)，首偏离P(τ=t)=s_{t−1}−s_t；独立U_i，若全U_i≥s_t可精确判定全错丢组，无需继续前缀；混合组按首偏离位置从p排除参考token采样并补完所有合法后缀。保持原正式联合组律、Z及prompt录取D(x)Z(x)，非近似提前丢样；仅固定单答案任务，非开放数学/代码RLVR，R34黑盒完整抽样下界不适用。A/R13/FOAS已有相关基础，R30无需强行拼接。
+- T/P：正式概率位置代理，完整NL，非共享早停NΣs_t+S，共享前缀AR Σ[1−(1−s_t)^N]+S，完整参考批L+S，S=N[1−(1−pi)^(N−1)]Σ(s_{t−1}−s_t)(L−t)。不计后缀重复共享/缓存/实际GPU；强共享AR可完整复制，非SD专属收益。
+- E：两同7264参数microGPT、3划分seed、384上下文真实后续2/4字符参考路径，2304有限解析case，589824实际缓存概率组阈值抽样（非实际生成后缀/训练/每样本forward）。归一误差2.22e-16；L4 N16平均正式位置完整64→非共享18.72436→共享2.17834（相对朴素−96.60%），完整参考4.21568；L4成功率.000330668，极稀疏toy，不代表真实RLVR。强共享AR等价。
+- T/P/E：t,m存活计数状态，批k成本a+k，下一存活Bin(m,Πp)，固定状态类DP精确求解；q规划而以p真实概率执行，不改变录取律。384上下文×3N×4a=4608有限DP配置；N8 a1最佳固定3.325993→q计划3.069615（−7.708%）→p oracle3.056725，未计q开销；12配置最高q允许额外成本.431929目标位置单位，假设4浅层位置×.5=2成本全部失败，非实测。不是完整SD，AR也能同信息计划。
+- 实核Selective Rollout/SARA/Grammar-Aligned Decoding/Adaptive Weighted Rejection/ EfficientRollout/SpecRoll/Sampling for Quality原始页摘要，SGLang HTML镜像摘录，未穷尽/文字查重。**保留精确录取和成本判据，Reject独立立项**，本轮无新可行正候选评分，R30历史数学8.35不变，9未达。G1/G2/G4失败，G3/G7局部，G5未验且SD增量代理负，G6无80%依据。停止参考序列toy扩张，P0真实两尺度预训练HFL+SD profile，比较共享AR、最优普通SD、同信息平坦、SARA/Selective Rollout（精确与近似区分）；1–2×40GB、三非IID/时延/训练seed、同质量真实总时间−15%或有效工作+20%和CI未执行。
+- [报告](experiments/team-far/R35/record.md) · [前缀实验](experiments/team-far/R35/probe.js) · [原始结果](experiments/team-far/R35/results.json) · [批计划](experiments/team-far/R35/batch.js) · [批计划结果](experiments/team-far/R35/batch_results.json)
