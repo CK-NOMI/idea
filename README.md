@@ -2740,3 +2740,38 @@ Vanilla诊断D固定8（文件名gamma6不覆盖实际值），k8观测6.16304�
 - E：实际读取本机CPython标准库email/json/urllib共31公开.py文件，27字符；467002训练字符、116752留出字符，116749有效位置；4维固定随机特征、平滑bigram+4×27可训练头、inverted Bernoulli dropout，seed11/29/73×d=.1/.3/.5，9次各150步真实监督SGD。留出按前缀频率枚举16种mask，27组实际固定目标自蒸馏梯度矩（非实际HFL/SD训练或MC）。d=.1/.3/.5等配置均值理论接受.996290/.990179/.985946，边际TV .00005046/.00019376/.00035021，联合TV .003710/.009821/.014054，仅接受梯度相对偏差.738233/.658300/.607053，绝对偏差范数.001052/.003502/.006324；自采样梯度期望0；接受+残差逐坐标最大误差0。相对误差高但目标梯度小，未证实际训练质量损失。代码生成完整JSON及源文件hash manifest。
 - 文献：[LayerSkip](https://aclanthology.org/2024.acl-long.681/)、[Don't Drop Dropout](https://proceedings.mlr.press/v306/elhoushi26a.html)、[Consistent Dropout](https://arxiv.org/abs/2202.11818)、[LoRA](https://arxiv.org/abs/2106.09685)、[MC dropout](https://proceedings.mlr.press/v48/gal16.html)、[When RL Meets Adaptive Speculative Training](https://proceedings.mlr.press/v306/wang26j.html)、[TIM diagnosis](https://arxiv.org/abs/2605.14220)、[TIM origin](https://arxiv.org/abs/2610.40945)、[PrefixFlow](https://arxiv.org/abs/2606.01143)。原始摘要/页面核对，非全文穷尽，无正式文字查重。mask/tape/版本、训练计算和通信成本不能免费；普通冻结特征缓存、AR独立mask、完整soft label、同信息平坦强对照；若真实训练dropout=0则无问题。未测真实可复用比例、全流程时间或CI。
 - **CRITICAL / Reject and Pivot**：主观创新5.875/10（以加权值为准），G1/G2/G4 FAIL，G3/G7局部成立/整体未过，G5/G6未验证，无80%依据。标准SD条件校正、普通AR/软标签及同信息平坦可替代；真实mask驻留及双向必要性未证。未执行1–2×40GB，下一轮先核实真实联邦在线学习的随机性、同前缀/版本tape和实际共同计算，获取两预训练尺度trace；若dropout0或普通AR独立mask足够则停止，不再以高接受率冒充梯度正确。保留联合TV、边际正确梯度错误、accept-only偏差与实际数据。
+
+
+### team-hcr-sd/R09｜FQR-SD：粗细联邦随机量化的条件无偏性与预测一致性冲突
+
+- 日期2026-11-24；起始 main e5eb07699b6ba2abb0e2174ac6643b7889fb59a1，README blob d9405a831a6f926d25a88028f7c15ebe9dd7222e。核验R08提交5e360f3b64a1cb7e7d222bcd605d7254c0c3969c原样前缀，读新增FSP-DPO/FSDC/FSG及相关代码、报告、结果；重审FSRA/FSOT/FIV-SD/FPN-SD及量化方向。写前读并发FCAS（截尾诊断）及FMR（训练mask与标签联合分布，邻近但本轮对象为随机舍入），检测并发即停旧写入。未复跑他队。代码及完整JSON先存7bec257526f6cbb4c0c7a42b6bd35c474271b358；追加前main d2bf3cd20eaf5db072a7976ea15bd9e22e069f20、blob 8d8b5c8dd8b386f49d1af0624bf419031d3aa4cf，保留全部旧文。
+- **CRITICAL / Reject and Pivot**。T=限定数学；E=实际V8公开语料梯度与随机量化模拟；P=代理；O=已知原始更新的条件熵；H=假说。无本队预训练Transformer、实际SD、真实多设备HFL、GPU、网络、低比特kernel或全流程wall time/CI。本轮未重新检查CUDA及权重下载。真实公开语料非实际私有数据。
+
+#### 1. 场景及机制 T/H
+固定快照、预定客户权重与外生本地更新z，区域先发粗随机舍入C供自投机起草，再发细F或差值供正式更新。粗格Δ，细格h=Δ/r(r整数)，共享旧版本及预定尺度。p=正式细更新后分布、q=粗更新派生路径，无独立完整草稿LLM。实验只量化更新，不量化整个权重、不实际加速矩乘。标准SD给定两版本，真实后处理p/q、独立新鲜token随机性、min(1,p/q)、正残差、因果首拒绝截断、bonus/EOS/KV，greedy正式argmax同tie-break；正式输出不得在细版本确定前提交。若候选反馈改变同一请求p或真实q须重证。仅相对于细量化目标精确，非无量化模型；完整SD/processor/top-p/浮点未验。仅一次加权聚合，未证真实跨层细更新等待；普通同信息平坦可复制。
+
+#### 2. 联合舍入与条件无偏性 T
+固定z∈[a,a+Δ]∩[l,l+h]，s=(z−a)/Δ,t=(z−l)/h，C=a+ΔI,F=l+hJ，I~Bern(s),J~Bern(t)。边际均无偏；联合j=Pr(I=J=1)∈[max(0,s+t−1),min(s,t)]。Var(C)=Δ²s(1−s),Var(F)=h²t(1−t),Cov(C,F)=Δh(j−st)。
+E[(C−F)²]=Var(C)+Var(F)−2Cov(C,F)。同一U令I=1{U<s},J=1{U<t}达j=min(s,t)，在固定Bern边际下最小平方差（经典分位耦合）。细先舍入再以F在粗格上随机舍入，满足E[C|F,z]=F，j=t(l+h−a)/Δ，Cov=Var(F)，差平方=Var(C)−Var(F)；边界用确定性舍入。共同U一般不满足该逆向条件无偏。
+若粗C进入正式决策历史，要求E[F|C,z]=z，非退化二点细格等价于j=st即条件独立；一般有限方差F满足该条件也必Cov=0，无法获得正协方差平方差减少。0<s<1时精确条件偏差能量 E[(E[F−z|C,z])²|z]=h²(j−st)²/[s(1−s)]。若同时要求E[C|F,z]=F和E[F|C,z]=z，Cov分别为Var(F)及0，故Var(F)=0。独立舍入不解决粗选择本身改变cohort/梯度/权重的其他偏差。若细更新无条件提交且粗路径只起草，边际无偏可足够，不能宣称所有相关舍入有bug。
+反例z=.25、粗[0,1]、细[0,.5]，s=.25,t=.5。共同U下C=1必F=.5，细边际均值.25但在C=1条件偏差+.25；选择概率修正E[1{C=1}F/s]=.5仍非.25。须额外独立细随机性或合法条件估计器。固定z、客户及坐标独立配对时等权聚合平方差、给定全部逐客户粗结果的细条件偏差能量均为逐项和/N²；若只见区域粗聚合，偏差能量可能更小，不直接等同。H(J|I,z)=s h2(j/s)+(1−s)h2((t−j)/(1−s))，仅已知z与细格的oracle二值决定熵，不是实际网络码率。
+强对照只发细更新再本地确定性全权重量化、已有高效量化SD、普通AR、独立或细先舍入及同信息平坦。固定格点粗ID+细相对差值至多2r+1种偏移（±r），必须与单独细索引/熵编码实际比较；随机粗与特定耦合需要额外信息，不能假设接收端免费知道z。
+
+#### 3. 实际实验 E/P/O
+[实际代码及完整54组逐seed JSON](experiments/team-hcr-sd/R09/probe_and_results.md)，提取JS为probe.js，node probe.js wallpaper.txt alice.txt。固定[Gutenberg Wallpaper](https://github.com/GITenberg/The-Yellow-Wallpaper_1952/blob/ce7c5bc1a5cf0fe23bcb265545a900365dbae29c/1952.txt)与[Alice](https://github.com/GITenberg/Alice-s-Adventures-in-Wonderland_11/blob/7f18748e114b994d5d9454d5793581bc0b9cf9d7/11.txt)实际取得；START/END间小写27字符含空格（可能含制作说明），各前10%公开初始化16547字符、中间70%训练115836、末20%留出33097（33095个bigram预测位置）；每书4等长逻辑客户，共8，两书可视两区但实际统一求和。729维bigram logits公开计数初始化(.5平滑)，真实客户端CE平均梯度一步学习率8，更新值域[-.0476145272,.1267017882]。Δ=.02/.05/.1,r=4/16，独立/共同U/细先，seed11/29/73×24重复，54组1296配对更新，非独立完整训练；V8 LCG非生产RNG。解析条件矩、已知z二值熵及实际MC平方差、留出频率加权1−TV、正式NLL。
+|Δ,r4|方法|聚合差平方(T)|细条件偏差能量(T)|条件熵(O)|留出重叠(E)|
+|---:|---|---:|---:|---:|---:|
+|.02|独立|.002575450|0|.481827|.998973755|
+|.02|共同U|.001917165|.000058999|.369449|.999098741|
+|.02|细先|.002109618|.000036255|.413237|.999038235|
+|.05|独立|.009682719|0|.370187|.997704397|
+|.05|共同U|.007108439|.000234877|.297780|.997994963|
+|.05|细先|.007490711|.000191355|.311661|.997890546|
+|.1|独立|.023337541|0|.284384|.996205277|
+|.1|共同U|.016333147|.000688698|.231364|.996734383|
+|.1|细先|.016814835|.000631720|.235848|.996594503|
+Δ=.1,r4共同U解析平方差降30.02%，MC平方.023413628→.016373291，重叠仅+0.05291pp；细聚合方差三法同.003261353，条件偏差能量约占21.12%。正式NLL约2.27157–2.27158，边际同分布，微小MC差非质量提升。r16收益更小，JSON完整保留。高重叠来自同低阶模型小更新，非真实量化Transformer接受率或速度。P：r4相对粗格差值保守4bit、r16需6bit；示意粗ID4bit/单细8bit时总8/10bit，非适配实际值域的公平码率。没有实际编码器，须对照单细索引及熵编码、误差反馈；计全部低比特权重构建、存储、版本、通信、训练、生成和回退。更新量化不自动降低全权重计算。
+
+#### 4. 文献与裁决
+2026-11-24实际检索原始摘要/出版页：[EfficientRollout](https://arxiv.org/abs/2606.18967) 2026（目标派生量化自投机与在线RL）；[QuantSpec](https://proceedings.mlr.press/v267/tiwari25b.html) ICML2025（分层量化KV/权重）；[ML-SpecQD](https://arxiv.org/abs/2503.13565) 2025；[LBI-FL](https://proceedings.mlr.press/v267/ding25e.html) ICML2025；[Mixed-Precision Quantization for FL](https://openaccess.thecvf.com/content/CVPR2024/html/Chen_Mixed-Precision_Quantization_for_Federated_Learning_on_Resource-Constrained_Heterogeneous_Devices_CVPR_2024_paper.html) CVPR2024；[Correlated Quantization](https://proceedings.mlr.press/v162/suresh22a.html) ICML2022；[FedPAQ](https://proceedings.mlr.press/v108/reisizadeh20a.html) AISTATS2020；[FEDCODE](https://pmc.ncbi.nlm.nih.gov/articles/PMC13667620/) 2026；[Speculative Decoding Meets Quantization](https://arxiv.org/abs/2505.22179) 2025。未穷尽渐进式量化/随机舍入/全文专利，未正式文字查重；分位耦合与条件矩非新基础数学。
+**CRITICAL / Reject and Pivot**：普通细后本地量化、EfficientRollout、常规量化FL+SD、同信息平坦可替代，理论参数差降但重叠微小、条件学习语义有代价，无SD反馈不可替代减少正式学习工作。主观等权创新5.9/10（问题7.5、机制5.5、理论6.5、价值6、距离4）；G1/G2/G4 FAIL，G3/G7局部成立/整体未过，G5/G6未验证、无80%依据。好结果同目标质量预算最强公平基线真实全流程−15%或有效工作+20%、两公开预训练尺度三非IID/延迟三独立训练seed CI及全部G。H未执行：仅真实部署存在逐级更新传输且粗候选覆盖细传输等待时，1–2×40GB Qwen2.5-1.5B/3B LoRA/RLVR、8逻辑客户2区域，测真实传输、粗细构建、低比特kernel、精确SD及训练反馈、版本、各阶段时间、质量及CI；对照FedPAQ/LBI-FL+EfficientRollout、细后本地量化、普通AR、同信息平坦与同条件学习契约。没有必要计算不投入GPU。保留条件无偏与协方差冲突、选择偏差反例、真实语料更新及量化成本规范。下一轮应以真正预训练执行trace/算子为前提，不再为已知压缩机制换名。
