@@ -1,0 +1,47 @@
+// R54 adapted feature evaluator from R44/gate.js at 499741a35805fce575435e37a64e2e53a4ef0157
+function probe(raws,names){
+const V=27,d=16,sum=a=>a.reduce((s,v)=>s+v,0),mean=a=>sum(a)/a.length,dot=(a,b)=>sum(a.map((v,i)=>v*b[i])),mat=(a,x)=>a.map(r=>dot(r,x)),add=(a,b)=>a.map((v,i)=>v+b[i]),scale=(a,s)=>a.map(v=>v*s),zero=n=>Array(n).fill(0),rms=x=>scale(x,1/Math.sqrt(dot(x,x)/d+1e-5)),sm=x=>{let v=x.map(t=>Math.exp(t-Math.max(...x)));return scale(v,1/sum(v))},copy=A=>A.map(r=>r.slice()),over=(a,b)=>sum(a.map((v,i)=>Math.min(v,b[i]))),hash=(x,s)=>{let h=s>>>0;for(let c of x)h=Math.imul(h^c.charCodeAt(0),16777619)>>>0;return h};
+let features=0,formalSteps=0,headSteps=0;
+function model(raw){let off=0;const take=(n,m)=>Array.from({length:n},()=>Array.from({length:m},()=>raw[off++]));let E=take(V,d),P=take(16,d),W=take(V,d),layers=Array.from({length:2},()=>({q:take(d,d),k:take(d,d),v:take(d,d),o:take(d,d),f1:take(4*d,d),f2:take(d,4*d)}));if(off!==7264)throw Error("shape");return {W,feature:h=>{features++;let seq=h.map((t,i)=>rms(add(E[t],P[i]))),s;for(let b of layers){let z=seq.map(rms),Q=z.map(x=>mat(b.q,x)),K=z.map(x=>mat(b.k,x)),v=z.map(x=>mat(b.v,x));seq=seq.map((x,i)=>{let a=[];for(let j=0;j<4;j++){let t=j*4,w=sm(K.slice(0,i+1).map(x=>dot(Q[i].slice(t,t+4),x.slice(t,t+4))/2));for(let l=t;l<t+4;l++)a.push(sum(w.map((p,s)=>p*v[s][l])))}let y=add(x,mat(b.o,a));return add(y,mat(b.f2,mat(b.f1,rms(y)).map(v=>Math.max(0,v))))});if(!s)s=seq.at(-1)}return {y:seq.at(-1),x:s}}}}
+
+const sub=(a,b)=>a.map((x,i)=>x-b[i]),norm=a=>Math.sqrt(dot(a,a)),outer=(a,b)=>a.map(x=>scale(b,x)),madd=(a,b)=>a.map((r,i)=>add(r,b[i])),mscale=(a,s)=>a.map(r=>scale(r,s)),mz=()=>Array.from({length:V},()=>zero(d)),mavg=a=>mscale(a.reduce(madd,mz()),1/a.length),project=(x,B)=>B.reduce((v,b)=>add(v,scale(b,dot(x,b))),zero(d)),projM=(M,B)=>M.map(x=>project(x,B)),maxabs=a=>Math.max(...a.flat().map(Math.abs)),avg=a=>sum(a)/a.length;
+let steps=0,gradCalls=0,checks=0,maxInvariant=0,maxFD=0,maxOrth=0,rows=[];
+function basis(xs,k,prior,seed,random=false){let out=prior.slice();function remove(x){return sub(x,project(x,out))}
+for(let j=0;j<k;j++){let v=remove(Array.from({length:d},(_,i)=>Math.sin((i+1)*(j+2)*(seed+1)+.31*j)));v=scale(v,1/(norm(v)||1));
+if(!random)for(let n=0;n<25;n++){let w=remove(xs.reduce((a,x)=>add(a,scale(x,dot(x,v))),zero(d)));if(norm(w)<1e-10)break;v=scale(w,1/norm(w))}
+v=remove(v);if(norm(v)<1e-9){for(let i=0;i<d;i++){v=remove(Array.from({length:d},(_,j)=>+(i===j)));if(norm(v)>1e-9)break;}}v=scale(v,1/norm(v));for(let w of out)maxOrth=Math.max(maxOrth,Math.abs(dot(v,w)));out.push(v)}return out.slice(prior.length)}
+
+const center=A=>{let a=scale(A.reduce(add,zero(d)),1/V);return A.map(x=>sub(x,a))};
+const diff=(A,B)=>madd(A,mscale(B,-1)),energy=A=>sum(A.flat().map(x=>x*x));
+function cov(xs){return Array.from({length:d},(_,i)=>Array.from({length:d},(_,j)=>sum(xs.map(x=>x[i]*x[j]))))}
+function eigen(S){let A=copy(S),B=Array.from({length:d},(_,i)=>Array.from({length:d},(_,j)=>+(i===j)));for(let it=0;it<100*d*d;it++){let p=0,q=1,m=0;for(let i=0;i<d;i++)for(let j=i+1;j<d;j++)if(Math.abs(A[i][j])>m){m=Math.abs(A[i][j]);p=i;q=j}if(m<1e-14)break;let a=A[p][p],b=A[q][q],z=A[p][q],t=.5*Math.atan2(2*z,b-a),c=Math.cos(t),s=Math.sin(t);for(let k=0;k<d;k++)if(k!==p&&k!==q){let u=A[k][p],v=A[k][q];A[k][p]=A[p][k]=c*u-s*v;A[k][q]=A[q][k]=s*u+c*v}A[p][p]=c*c*a-2*s*c*z+s*s*b;A[q][q]=s*s*a+2*s*c*z+c*c*b;A[p][q]=A[q][p]=0;for(let k=0;k<d;k++){let u=B[k][p],v=B[k][q];B[k][p]=c*u-s*v;B[k][q]=s*u+c*v}}return Array.from({length:d},(_,i)=>({v:A[i][i],b:B.map(x=>x[i])})).sort((a,b)=>a.v-b.v)}
+function rankAudit(A){let mu=mavg(A),R=A.map(a=>center(diff(a,mu))),ev=eigen(cov(R.flat())),total=sum(ev.map(x=>Math.max(0,x.v))),max=ev.at(-1).v;return {mu,R,ev,total,rank:ev.filter(x=>x.v>max*1e-10).length}}
+let gsteps=0,evals=0,maxRecon=0,maxEigenErr=0;
+function fitFormal(W,cs,eta){let A=mz();for(let t=0;t<16;t++){let g=mz();for(let s of cs){let p=sm(mat(madd(W,A),s.y)),r=p.map((v,i)=>v-+(i===s.label));g=madd(g,outer(r,s.y))}A=madd(A,mscale(g,-eta/cs.length));gsteps++}return A}
+function fitDraft(W,B,cs,start){let A=copy(start);for(let t=0;t<20;t++){let g=mz();for(let s of cs){let x=project(s.x,B),q=sm(add(mat(W,s.x),mat(A,x)));g=madd(g,outer(sub(q,s.p),x))}A=madd(A,mscale(g,-.2/cs.length));gsteps++}return projM(A,B)}
+function eal(W,Q,cs){let val=0;for(let s of cs){let q=sm(mat(madd(W,Q),s.x));val+=over(s.p,q);for(let i=0;i<V;i++){let f=s.fs[i];val+=Math.min(s.p[i],q[i])*over(f.p,sm(mat(madd(W,Q),f.x)))}evals++}return val/cs.length}
+function nll(W,A,cs){return avg(cs.map(s=>-Math.log(sm(mat(madd(W,A),s.y))[s.label])))}
+function select(W,mu,B,cs,r){let picked=[];for(let j=0;j<r;j++){let best=-Infinity,bi=-1;for(let i=0;i<B.length;i++)if(!picked.includes(i)){let Q=projM(mu,picked.concat(i).map(k=>B[k]));let score=avg(cs.map(s=>over(s.p,sm(mat(madd(W,Q),s.x)))));if(score>best){best=score;bi=i}}picked.push(bi)}return picked.map(i=>B[i])}
+let words=[...new Set(names.toLowerCase().split(/\s+/).filter(w=>/^[a-z]{6,14}$/.test(w)))];
+for(let wi=0;wi<raws.length;wi++){let {W,feature}=model(raws[wi]),cache=new Map(),F=h=>{let k=h.join(",");if(!cache.has(k))cache.set(k,feature(h));return cache.get(k)};for(let seed of [11,29,73]){
+let pools=Array.from({length:4},(_,c)=>words.filter(x=>Math.min(3,Math.floor((x.charCodeAt(0)-97)/7))===c).sort((a,b)=>hash(a,seed)-hash(b,seed)).slice(0,36));
+let sample=w=>{let h=[26,...w.slice(0,3).split("").map(c=>c.charCodeAt(0)-97)];return {...F(h),h,label:w.charCodeAt(3)-97}};
+let train=pools.map(p=>p.slice(0,18).map(sample)),cal=pools.map(p=>p.slice(18,24).map(sample)),test=pools.map(p=>p.slice(24,36).map(w=>{let s=sample(w);return {...s,fs:Array.from({length:V},(_,i)=>F(s.h.concat(i)))}}));
+for(let eta of [.02,.1,.4]){let A=train.map(cs=>fitFormal(W,cs,eta)),P=A.map(a=>madd(W,a));let prep=(cs,c,tree)=>cs.map(s=>({...s,p:sm(mat(P[c],s.y)),...(tree?{fs:s.fs.map(f=>({...f,p:sm(mat(P[c],f.y))}))}:{})}));let C=cal.map((cs,c)=>prep(cs,c,false)),T=test.map((cs,c)=>prep(cs,c,true));let tr=train.map((cs,c)=>prep(cs,c,false));let glob=rankAudit(A),regs=[rankAudit(A.slice(0,2)),rankAudit(A.slice(2,4))];
+for(let a of [glob,...regs]){let S=cov(a.R.flat());for(let ev of a.ev)maxEigenErr=Math.max(maxEigenErr,norm(sub(mat(S,ev.b),scale(ev.b,ev.v))))}
+for(let r of [8]){
+for(let e=0;e<2;e++){let inds=[2*e,2*e+1],a=regs[e],trainE=inds.flatMap(c=>tr[c]),calE=inds.flatMap(c=>C[c]),pca=eigen(cov(trainE.map(s=>s.x))).reverse().map(x=>x.b),min=a.ev.slice(0,r).map(x=>x.b),greedy=select(W,a.mu,pca,calE,r),bp=pca.slice(0,r);
+
+function qhead(c,ids){let B=ids.map(k=>bp[k]),privateB=bp.filter((_,k)=>!ids.includes(k));return madd(projM(a.mu,B),projM(A[c],privateB))}
+function calScore(ids){return avg(inds.map(c=>avg(C[c].map(s=>over(s.p,sm(mat(madd(W,qhead(c,ids)),s.x)))))))}
+let selection=[],fixed=[];let ds=bp.map((b,k)=>({k,v:sum(a.R.map(R=>sum(mat(R,b).map(x=>x*x))))})).sort((x,y)=>x.v-y.v).map(x=>x.k);
+for(let s=1;s<=8;s++){let best=-Infinity,kbest=-1;for(let k=0;k<8;k++)if(!selection.includes(k)){let val=calScore(selection.concat(k));if(val>best){best=val;kbest=k}}selection.push(kbest)}
+let ls=inds.map(c=>fitDraft(W,bp,tr[c],projM(A[c],bp))),regKL=fitDraft(W,bp,trainE,projM(a.mu,bp));
+for(let s of [2,4,6])for(let c of inds){let row={wi,seed,eta,r,s,c,local:eal(W,projM(A[c],bp),T[c]),localKL:eal(W,ls[c%2],T[c]),regionalKL:eal(W,regKL,T[c]),full:eal(W,A[c],T[c]),arms:{}};
+let choices={adaptive:selection.slice(0,s),leastDisagree:ds.slice(0,s),top:Array.from({length:s},(_,i)=>i),bottom:Array.from({length:s},(_,i)=>8-s+i)};
+for(let [k,ids] of Object.entries(choices)){let Q=qhead(c,ids),residual=diff(A[c],Q),recon=madd(Q,residual);for(let x of T[c])maxRecon=Math.max(maxRecon,...sub(sm(mat(madd(W,recon),x.y)),x.p).map(Math.abs));row.arms[k]={eal:eal(W,Q,T[c]),duplication:energy(diff(projM(A[c],ids.map(i=>bp[i])),projM(a.mu,ids.map(i=>bp[i])))),ids};}rows.push(row)}
+
+}
+}}}}
+let summary=[];for(let eta of [.02,.1,.4])for(let s of [2,4,6]){let a=rows.filter(x=>x.eta===eta&&x.s===s);summary.push({eta,s,n:a.length,...Object.fromEntries(["local","localKL","regionalKL","full"].map(k=>[k,avg(a.map(x=>x[k]))])),arms:Object.fromEntries(Object.keys(a[0].arms).map(k=>[k,{eal:avg(a.map(x=>x.arms[k].eal)),duplication:avg(a.map(x=>x.arms[k].duplication))}]))})}return {features,gsteps,evals,maxRecon,maxEigenErr,summary,rows};}
+const fs=require('node:fs');console.log(JSON.stringify(probe([JSON.parse(fs.readFileSync(process.argv[2],'utf8')),JSON.parse(fs.readFileSync(process.argv[3],'utf8')).weights],fs.readFileSync(process.argv[4],'utf8')),null,2));
