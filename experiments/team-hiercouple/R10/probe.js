@@ -1,0 +1,37 @@
+function run(weights,docs){
+ const D=16,V=27,BOS=26,zero=(n=D)=>Array(n).fill(0),mat=(n=D,m=D)=>Array.from({length:n},()=>zero(m)),sum=a=>a.reduce((s,x)=>s+x,0),dot=(a,b)=>sum(a.map((v,i)=>v*b[i])),add=(a,b)=>a.map((x,i)=>x+b[i]),lin=(m,x)=>m.map(r=>dot(r,x)),trans=(m,x)=>m[0].map((_,j)=>sum(m.map((r,i)=>r[j]*x[i]))),rms=x=>x.map(v=>v/Math.sqrt(dot(x,x)/D+1e-5)),soft=x=>{let m=Math.max(...x),a=x.map(v=>Math.exp(v-m)),s=sum(a);return a.map(v=>v/s)},clone=m=>m.map(r=>r.slice()),diff=(a,b)=>Math.max(...a.flatMap((r,i)=>r.map((v,j)=>Math.abs(v-b[i][j])))),avg=(a,b)=>a.map((r,i)=>r.map((v,j)=>(v+b[i][j])/2)),id=c=>c.charCodeAt(0)-97;
+ const hash=s=>{let h=2166136261;for(const c of s)h=Math.imul(h^c.charCodeAt(0),16777619);return h>>>0};
+ const pool=Array.from({length:4},(_,i)=>[...new Set(docs)].filter(n=>/^[a-z]{6,14}$/.test(n)&&id(n[0])%4===i).sort((a,b)=>hash(a)-hash(b)).slice(0,400));
+ function build(w){let at=0;const take=(r,c)=>Array.from({length:r},()=>{let a=w.slice(at,at+c);at+=c;return a});let e=take(V,D),pos=take(16,D),head=take(V,D),layers=Array.from({length:2},()=>({q:take(D,D),k:take(D,D),v:take(D,D),o:take(D,D),a:take(4*D,D),b:take(D,4*D)}));if(at!==w.length)throw Error("weights length");return {e,pos,head,layers}}
+ function attention(layer,x,anc){let z=rms(x),q=lin(layer.q,z),k=lin(layer.k,z),v=lin(layer.v,z),ks=anc.map(n=>n.k).concat([k]),vs=anc.map(n=>n.v).concat([v]),a=[];for(let h=0;h<4;h++){let f=4*h,t=f+4,p=soft(ks.map(k=>dot(q.slice(f,t),k.slice(f,t))/2));for(let j=f;j<t;j++)a.push(sum(p.map((p,i)=>p*vs[i][j])))}return {x,k,v,a}}
+ function tail(layer,n,O){let t=add(n.x,lin(O,n.a)),z=rms(t),pre=lin(layer.a,z),f=pre.map(v=>Math.max(0,v)),y=add(t,lin(layer.b,f));return {t,z,pre,y}}
+ function cache(m){let c1=new Map,c2=new Map,need1=new Set,need2=new Set,counts={one:0,two:0};const key=x=>x.join(",");function get1(x){let k=key(x);if(c1.has(k))return c1.get(k);let anc=x.slice(0,-1).map((_,i)=>get1(x.slice(0,i+1))),h=rms(add(m.e[x.at(-1)],m.pos[x.length-1])),n=attention(m.layers[0],h,anc);n.y=tail(m.layers[0],n,m.layers[0].o).y;c1.set(k,n);counts.one++;return n}function get2(x){let k=key(x);if(c2.has(k))return c2.get(k);let anc=x.slice(0,-1).map((_,i)=>get2(x.slice(0,i+1))),n=attention(m.layers[1],get1(x).y,anc);c2.set(k,n);counts.two++;return n}return {counts,c1,c2,reset(){need1.clear();need2.clear()},demand(){return [need1.size,need2.size]},sh(x){for(let j=1;j<=x.length;j++)need1.add(key(x.slice(0,j)));return get1(x)},deep(x){for(let j=1;j<=x.length;j++){let k=key(x.slice(0,j));need1.add(k);need2.add(k)}return get2(x)}}}
+ function out(m,n,O){return soft(lin(m.head,tail(m.layers[1],n,O).y))}
+ function grad(m,n,O,tok,A){let f=tail(m.layers[1],n,O),p=soft(lin(m.head,f.y)),gz=trans(m.head,p.map((v,j)=>A*(v-Number(j===tok)))),u=trans(m.layers[1].b,gz).map((v,j)=>f.pre[j]>0?v:0),b=trans(m.layers[1].a,u),r=Math.sqrt(dot(f.t,f.t)/D+1e-5),a=dot(b,f.t)/(D*r*r*r),g=gz.map((v,j)=>v+b[j]/r-f.t[j]*a);return {g:g.map(v=>n.a.map(x=>v*x)),loss:-A*Math.log(p[tok]),p}}
+
+ let state=0;const U=()=>{state=(Math.imul(1664525,state)+1013904223)>>>0;return(state+.5)/4294967296};
+ const mix=(q,w)=>q[0].map((v,i)=>w[0]*v+w[1]*q[1][i]),over=(p,q)=>sum(p.map((v,i)=>Math.min(v,q[i]))),tv=(p,q)=>1-over(p,q);
+ const prob=(W,h)=>soft(lin(W,h)),scale=(w)=>w.map(v=>v/sum(w));
+ const train=(W,examples,steps,lr,labelMix)=>{W=clone(W);for(let t=0;t<steps;t++){const ex=examples[Math.floor(U()*examples.length)],q=prob(W,ex.h),target=ex.p.map((v,i)=>(1-labelMix)*v+labelMix*Number(i===ex.y));for(let i=0;i<V;i++)for(let j=0;j<D;j++)W[i][j]-=lr*(q[i]-target[i])*ex.h[j]}return W};
+ const post=(s,q,v)=>scale(s.map((w,j)=>w*q[j][v]));
+ function stepMass(s,p,q,kind,v){if(kind==="C")return s.map((w,j)=>w*Math.min(p[v],q[j][v]));let a=sum(s),m=mix(q,s.map(x=>x/a)),acc=Math.min(1,p[v]/m[v]);return s.map((w,j)=>w*q[j][v]*acc)}
+ function wrong(p,actual,assumed){let accept=assumed.map((v,i)=>Math.min(1,p[i]/v)),m=actual.map((v,i)=>v*accept[i]),res=p.map((v,i)=>Math.max(0,v-assumed[i])),z=sum(res),delta=1-sum(m);return z>1e-15?m.map((v,i)=>v+delta*res[i]/z):m}
+ const results=[],checks=[];let maxCorrectTV=0,maxHybridViolation=0;
+ for(const [name,weightsRaw] of weights){let w=Array.isArray(weightsRaw)?weightsRaw:Object.keys(weightsRaw).sort((a,b)=>+a-+b).map(k=>weightsRaw[k]),m=build(w),c=cache(m);
+ const feature=x=>{let n=c.deep(x);return {h:c.sh(x).y,p:out(m,n,m.layers[1].o)}};
+ const examples=pool.map(ns=>ns.slice(0,48).flatMap(n=>{let ids=[BOS,...Array.from(n,id)];return Array.from({length:Math.min(5,ids.length-2)},(_,i)=>({...feature(ids.slice(0,i+2)),y:ids[i+2]}))}));
+ for(let seed of [11,29,73])for(let labelMix of [0,.7]){state=seed;let a=examples[0].concat(examples[1]),b=examples[2].concat(examples[3]),W=[train(m.head,a,500,.04,labelMix),train(m.head,b,500,.04,labelMix)],global=train(m.head,a.concat(b),1000,.04,labelMix);
+ for(let region=0;region<2;region++){let sums={A1C:0,A1M:0,A2CC:0,A2MM:0,A2CM:0,A2MC:0,A2Reset:0,A2Global:0,A1Global:0,wrongSecondTV:0,wrongWeight:0,posteriorShift:0,localEAL:0,perPromptMMworse:0,oracleEAL:0},N=0;
+ for(let client=2*region;client<2*region+2;client++)for(let n of pool[client].slice(80,86)){let x=[BOS,id(n[0]),id(n[1])],z=feature(x),p=z.p,q=W.map(w=>prob(w,z.h)),prior=[.5,.5],mix0=mix(q,prior),g=prob(global,z.h),l=q[region];let row={A1C:0,A1M:0,A2CC:0,A2MM:0,A2CM:0,A2MC:0,A2Reset:0,A2Global:0,A1Global:over(p,g),wrongSecondTV:0,wrongWeight:0,posteriorShift:0,localEAL:over(p,l)};
+ for(let v=0;v<V;v++){let sc=stepMass(prior,p,q,"C",v),sm=stepMass(prior,p,q,"M",v),C=sum(sc),M=sum(sm);row.A1C+=C;row.A1M+=M;let zz=feature(x.concat([v])),pp=zz.p,qq=W.map(w=>prob(w,zz.h)),pc=scale(sc),pm=scale(sm),qc=mix(qq,pc),qm=mix(qq,pm),qr=mix(qq,prior),gg=prob(global,zz.h),ll=qq[region];
+ row.A2CC+=sum(sc.map((s,j)=>s*over(pp,qq[j])));row.A2MM+=M*over(pp,qm);row.A2CM+=C*over(pp,qc);row.A2MC+=sum(sm.map((s,j)=>s*over(pp,qq[j])));row.A2Reset+=M*over(pp,qr);row.A2Global+=Math.min(p[v],g[v])*over(pp,gg);row.localEAL+=Math.min(p[v],l[v])*over(pp,ll);
+ row.wrongSecondTV+=M*tv(pp,wrong(pp,qm,qr));row.wrongWeight+=M;row.posteriorShift+=M*Math.abs(pm[0]-.5);maxCorrectTV=Math.max(maxCorrectTV,Math.abs(tv(pp,wrong(pp,qm,qm))),Math.abs(tv(pp,wrong(pp,qc,qc))));}
+ maxHybridViolation=Math.max(maxHybridViolation,row.A2CC-row.A2CM,row.A2MC-row.A2MM);for(let k of Object.keys(row))sums[k]+=row[k];sums.perPromptMMworse+=Number(row.A1M+row.A2MM<row.A1C+row.A2CC-1e-12);sums.oracleEAL+=Math.max(row.A1M+row.A2MM,row.A1C+row.A2CM);N++}
+ results.push({name,seed,labelMix,region,N,...Object.fromEntries(Object.entries(sums).map(([k,v])=>[k,v/N])),headTrainSteps:2000,examples:examples.map(x=>x.length)})
+ }
+ }
+ }
+ // hand-constructed two-token case, exact enumeration, zero entries allowed for this example
+ const p=[.5,.5],q=[[.9,.1],[.5,.5]],s=[.5,.5],c0=stepMass(s,p,q,"C",0),m0=stepMass(s,p,q,"M",0);const ex={A1C:.8,A1M:.8,A2CC:.55,A2MM:.3+sum(m0)*scale(m0)[1],A2CM:.3+sum(c0)*scale(c0)[1]};return {environment:"V8 FP64 actual external weights and trained linear heads; exact depth-2 probability enumeration, no actual generation or GPU",results,maxCorrectTV,maxHybridViolation,example:ex}
+}
+if(typeof module!=="undefined"&&require.main===module){const fs=require("fs");let a=JSON.parse(fs.readFileSync(process.argv[2],"utf8")),b=JSON.parse(fs.readFileSync(process.argv[3],"utf8")),d=fs.readFileSync(process.argv[4],"utf8").split(/\r?\n/).map(x=>x.trim()).filter(Boolean);console.log(JSON.stringify(run([["weights",a],["checkpoint",b.weights]],d),null,2))}
