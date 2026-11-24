@@ -3567,3 +3567,14 @@ H未执行：只有真实训练部署确实将同一合法GRPO组跨区域分配
 - E：另跑配对正式学习5臂×5步×18配置，450逻辑同步云/区更新、1800个client CE梯度另720 pooled预拟合、180共享头步、4896重复特征；同初始p/q，q冻结，CE/root overlap/window EAL beta .1/1，云lr .1区.05。中漂移CE EAL/NLL1.622318/2.483906、root1 1.666566/2.479922、window1 1.697506/2.475544；高漂移1.476924/2.574396、1.506536/2.571483、1.540843/2.563191；低漂移window1 EAL1.744785但NLL2.475397劣于CE2.469421。等beta不等梯度范数或计算；未调root/KL/WTV强基线、无真实SD/物理HFL/全主干/长期质量/CI。结果仅联合学习局部证据。
 - 实核WTV Acceptance-Aware、VSD ICML26、S2D、LayerSkip、FedRep、Ditto、clustered HFL等原始摘要/出版页，非全文穷尽/正式查重。独立主观8.025（8.5/8/9/6.5/7.5，25/25/20/15/15）；R37 8.075、历史数学8.35不改。G1/G2/G4 FAIL、G3/G7部分、G5未验、G6无80%依据。**Revise架构数学子问题/Reject独立顶刊立项**；保留双区域双token精确前沿及配对学习结果。下一轮探索区域条件内生参数路径，必须胜同预算低秩区域头/普通HFL+WTV/同委托平坦，禁止再以资源调度当核心；1–2×40GB两预训练尺度三异质/时延三独立seed同质量真实全流程−15%或有效工作+20%与CI未执行。
 - [完整报告](experiments/team-far/R43/record.md) · [主代码](experiments/team-far/R43/probe.js) · [结果](experiments/team-far/R43/results.json) · [联合学习](experiments/team-far/R43/joint.js) · [结果](experiments/team-far/R43/joint_results.json)
+
+
+
+### team-far/R44｜SCP-SD：生存条件分层内生预测切面与多步精确前沿
+
+- 2026-11-24；起始 main 8019df06a97c75357fba3dcefa70d409d8e0aa10，README a014f29de19d2f5971f1e7ea13414fcffc151ea2；写前 8019df06a97c75357fba3dcefa70d409d8e0aa10 / a014f29de19d2f5971f1e7ea13414fcffc151ea2。完整取得README并筛查相关标题与关键词，复核R43报告/代码/结果、R39/R40和HiCut近邻，非全库逐条证明或复跑。
+- T/O：任意有限E,V,K，存活权重a的共同q最大剩余EAL为F_k(h,a)=max_q Σ_x[Σ_e a_e min(p_e(x),q_x)+F_{k−1}(hx,a⊙min(p(x),q_x))]。F为固定政策族线性函数上确界，凸/齐次；q simplex按p_e(x)坐标切分，每格目标凸，存在顶点最优（除最多一坐标外皆breakpoint）。二元可枚举0/1/p_e；指数oracle、非廉价部署。300二元四目标K3树，33300非零节点访问，R43 K2核验误差4.44e−16，最大观察逐步贪心gap .128368。
+- T/O：两固定兄弟组、固定首token q_g、最后位置最多3个活跃分布；拆分组g恢复L_g(x)=min(a_i,a_j)TV(p_i,p_j)。动态收益Σ_x max_g L_g(x)≥固定max_g Σ_x L_g(x)，交叉唯一最大严格。反例共享/固定/动态/全分EAL1.75/1.875/2/2。300概率树155次严格收益，非真实计算。与HiCut混合正式目标固定验证切面不同；同信息平坦可复制。
+- E：两同7264参数microGPT、三hash seed、四逻辑client、两edge、三人工漂移，12672真实特征、1440正式本地输出头步、1296浅层KL步。固定同一6头bank，33特征ridge离线估计两组拆分收益，在线只看浅层。双token EAL低/中/高漂移：静态1.705064/1.487753/1.167357，动态1.706013/1.493833/1.173152，动态胜17/18配置；高漂移全分1.188903、动态oracle1.177184。优势小，所有6头保留，活跃头数不是实际显存、通信或计算公平；无真实生成、GPU/物理HFL/正式质量反馈/CI。数据按名字拆分，前缀可能重合，非独立训练seed。
+- 实核WTV/VSD/S2D/CHPFL/D-PAL/VAT原始摘要或出版页，非全文穷尽/查重。主观8.14（8.6/8.2/9.2/6.5/7.5，25/25/20/15/15）；G1/G2/G4 FAIL，G3/G7部分，G5未验，G6无80%证据。**Revise数学与小幅正门控结果，Reject独立立项**。P0紧凑区域条件低秩头、同预算自适应平坦、普通HFL+WTV/D-PAL、公平质量约束的反向学习与真实GPU全链路；不能以活跃头数量代理宣称端到端加速。
+- [报告](experiments/team-far/R44/record.md) · [概率实验](experiments/team-far/R44/probability.js) · [原始结果](experiments/team-far/R44/probability_results.json) · [门控实验](experiments/team-far/R44/gate.js) · [原始结果](experiments/team-far/R44/gate_results.json)

@@ -1,0 +1,25 @@
+function gateProbe(raws,names){
+const V=27,d=16,sum=a=>a.reduce((s,v)=>s+v,0),mean=a=>sum(a)/a.length,dot=(a,b)=>sum(a.map((v,i)=>v*b[i])),mat=(a,x)=>a.map(r=>dot(r,x)),add=(a,b)=>a.map((v,i)=>v+b[i]),scale=(a,s)=>a.map(v=>v*s),zero=n=>Array(n).fill(0),rms=x=>scale(x,1/Math.sqrt(dot(x,x)/d+1e-5)),sm=x=>{let v=x.map(t=>Math.exp(t-Math.max(...x)));return scale(v,1/sum(v))},copy=A=>A.map(r=>r.slice()),over=(a,b)=>sum(a.map((v,i)=>Math.min(v,b[i]))),hash=(x,s)=>{let h=s>>>0;for(let c of x)h=Math.imul(h^c.charCodeAt(0),16777619)>>>0;return h};
+let features=0,formalSteps=0,headSteps=0;
+function model(raw){let off=0;const take=(n,m)=>Array.from({length:n},()=>Array.from({length:m},()=>raw[off++]));let E=take(V,d),P=take(16,d),W=take(V,d),layers=Array.from({length:2},()=>({q:take(d,d),k:take(d,d),v:take(d,d),o:take(d,d),f1:take(4*d,d),f2:take(d,4*d)}));if(off!==7264)throw Error("shape");return {W,feature:h=>{features++;let seq=h.map((t,i)=>rms(add(E[t],P[i]))),s;for(let b of layers){let z=seq.map(rms),Q=z.map(x=>mat(b.q,x)),K=z.map(x=>mat(b.k,x)),v=z.map(x=>mat(b.v,x));seq=seq.map((x,i)=>{let a=[];for(let j=0;j<4;j++){let t=j*4,w=sm(K.slice(0,i+1).map(x=>dot(Q[i].slice(t,t+4),x.slice(t,t+4))/2));for(let l=t;l<t+4;l++)a.push(sum(w.map((p,s)=>p*v[s][l])))}let y=add(x,mat(b.o,a));return add(y,mat(b.f2,mat(b.f1,rms(y)).map(v=>Math.max(0,v))))});if(!s)s=seq.at(-1)}return {y:seq.at(-1),x:s}}}}
+function fit(W,examples,steps,lr){let U=copy(W);for(let t=0;t<steps;t++){let g=Array.from({length:V},()=>zero(d));let z=0;for(let {x,p,w} of examples){let q=sm(mat(U,x));z+=w;for(let i=0;i<V;i++)for(let j=0;j<d;j++)g[i][j]+=w*(p[i]-q[i])*x[j];}for(let i=0;i<V;i++)for(let j=0;j<d;j++)U[i][j]+=lr*g[i][j]/z;}return U}
+function ridge(data,k,lambda){let n=data[0].z.length;let a=Array.from({length:n},()=>zero(n+1));for(let o of data)for(let i=0;i<n;i++){a[i][n]+=o.z[i]*o.g[k];for(let j=0;j<n;j++)a[i][j]+=o.z[i]*o.z[j]}for(let i=0;i<n;i++)a[i][i]+=lambda;for(let i=0;i<n;i++){let b=a[i][i];for(let j=i;j<=n;j++)a[i][j]/=b;for(let k=0;k<n;k++)if(k!==i){let c=a[k][i];for(let j=i;j<=n;j++)a[k][j]-=c*a[i][j]}}return a.map(r=>r[n]);}
+let words=[...new Set(names.toLowerCase().split(/\s+/).filter(w=>/^[a-z]{6,14}$/.test(w)))],rows=[];
+for(let wi=0;wi<raws.length;wi++){let {W,feature}=model(raws[wi]);for(let seed of [11,29,73]){
+let pools=Array.from({length:4},(_,c)=>words.filter(x=>Math.min(3,Math.floor((x.charCodeAt(0)-97)/7))===c).sort((a,b)=>hash(a,seed)-hash(b,seed)).slice(0,52));
+const sample=w=>{let h=[26,...w.slice(0,3).split("").map(c=>c.charCodeAt(0)-97)];return {...feature(h),h,label:w.charCodeAt(3)-97}};
+let clients=pools.map(p=>p.slice(0,24).map(sample));
+const tree=w=>{let s=sample(w);return {...s,fs:[s,...Array.from({length:V},(_,i)=>feature(s.h.concat(i)))]}};
+let train=pools.flatMap(p=>p.slice(24,30).map(tree)),cal=pools.flatMap(p=>p.slice(30,36).map(tree)),test=pools.flatMap(p=>p.slice(36,42).map(tree));
+for(let eta of [.02,.1,.4]){
+let P=clients.map(cs=>fit(W,cs.map(s=>({x:s.y,p:Array.from({length:V},(_,j)=>+(j===s.label)),w:1})),20,eta));formalSteps+=80;
+const prep=data=>data.map(s=>({...s,p:P.map(w=>s.fs.map(t=>sm(mat(w,t.y))))}));let D=prep(train),C=prep(cal),T=prep(test);
+const trainHead=es=>{let egs=[];for(let s of D)for(let e of es)for(let j=0;j<=V;j++)egs.push({x:s.fs[j].x,p:s.p[e][j],w:j===0?1:s.p[e][0][j-1]});headSteps+=12;return fit(W,egs,12,.15);};
+let U=[trainHead([0,1]),trainHead([2,3])],L=[0,1,2,3].map(e=>trainHead([e]));
+function evaluate(data){let r=[];for(let s of data){let root=U.map(u=>sm(mat(u,s.x)));for(let j=0;j<V;j++){let f=s.fs[j+1],a=[0,1,2,3].map(e=>.25*Math.min(s.p[e][0][j],root[e>>1][j])),g=[0,0],base=sum(a);for(let e=0;e<4;e++){let t=over(s.p[e][j+1],sm(mat(U[e>>1],f.x))),v=over(s.p[e][j+1],sm(mat(L[e],f.x)));base+=a[e]*t;g[e>>1]+=a[e]*(v-t);}r.push({z:[1,...rms(s.x),...rms(f.x)],g,base});}}return r;}
+let c=evaluate(C),t=evaluate(T),coef=[0,1].map(k=>ridge(c,k,1)),staticChoice=[-1,0,1].sort((i,j)=>sum(c.map(o=>j<0?0:o.g[j]))-sum(c.map(o=>i<0?0:o.g[i])))[0];
+let pred=o=>{let v=coef.map(b=>dot(b,o.z));return Math.max(...v)>0?v.indexOf(Math.max(...v)):-1;}, gain=(o,k)=>k<0?0:o.g[k], score=fn=>sum(t.map(o=>o.base+fn(o)))/test.length;
+rows.push({wi,seed,eta,base:score(()=>0),static:score(o=>gain(o,staticChoice)),staticOracle:Math.max(score(()=>0),score(o=>o.g[0]),score(o=>o.g[1])),learned:score(o=>gain(o,pred(o))),oracle:score(o=>Math.max(0,...o.g)),full:score(o=>sum(o.g)),active:mean(t.map(o=>+(pred(o)>=0))),staticChoice});
+}}}
+let summary=[.02,.1,.4].map(eta=>{let r=rows.filter(o=>o.eta===eta);return {eta,...Object.fromEntries(["base","static","staticOracle","learned","oracle","full","active"].map(k=>[k,mean(r.map(o=>o[k]))])),wins:r.filter(o=>o.learned>o.static+1e-12).length}});return {features,formalSteps,headSteps,summary,rows};}
+const fs=require('node:fs');console.log(JSON.stringify(gateProbe([JSON.parse(fs.readFileSync(process.argv[2],'utf8')),JSON.parse(fs.readFileSync(process.argv[3],'utf8')).weights],fs.readFileSync(process.argv[4],'utf8')),null,2));
