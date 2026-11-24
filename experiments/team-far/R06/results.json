@@ -1,0 +1,1984 @@
+{
+  "environment": "V8 CPU FP64 external same-architecture microGPT; true 4-token paired rollout, 2 cloud rounds/2 local regional synchronizations, deterministic reference checks; not GPU or physical HFL",
+  "rows": [
+    {
+      "wi": 0,
+      "seed": 11,
+      "K": 2,
+      "eps": 0.005,
+      "updates": 16,
+      "init": 2.5165726961051083,
+      "final": 2.5165726961051083,
+      "maxCoeff": 0,
+      "overlap": 0,
+      "coeffMom": {
+        "shared": 0,
+        "ind": 130000
+      },
+      "counts": {
+        "sharedSD": {
+          "base": 68,
+          "draft": 68,
+          "direction": 136,
+          "uncertain": 65,
+          "calls": 128,
+          "zeroPairs": 32,
+          "greedyAudits": 128,
+          "formal": 256
+        },
+        "sharedAR": {
+          "base": 64,
+          "draft": 0,
+          "direction": 136,
+          "uncertain": 65,
+          "calls": 128,
+          "zeroPairs": 32,
+          "greedyAudits": 128,
+          "formal": 256
+        },
+        "pairIndependentAR": {
+          "base": 130,
+          "draft": 0,
+          "direction": 104,
+          "uncertain": 60,
+          "calls": 130,
+          "zeroPairs": 30,
+          "greedyAudits": 130,
+          "formal": 256
+        }
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "K": 2,
+      "eps": 0.04,
+      "updates": 16,
+      "init": 2.5165726961051083,
+      "final": 2.516815544791329,
+      "maxCoeff": 0,
+      "overlap": 0,
+      "coeffMom": {
+        "shared": 8593.75,
+        "ind": 2031.25
+      },
+      "counts": {
+        "sharedSD": {
+          "base": 85,
+          "draft": 85,
+          "direction": 226,
+          "uncertain": 92,
+          "calls": 149,
+          "zeroPairs": 20,
+          "greedyAudits": 149,
+          "formal": 256
+        },
+        "sharedAR": {
+          "base": 80,
+          "draft": 0,
+          "direction": 226,
+          "uncertain": 92,
+          "calls": 149,
+          "zeroPairs": 20,
+          "greedyAudits": 149,
+          "formal": 256
+        },
+        "pairIndependentAR": {
+          "base": 148,
+          "draft": 0,
+          "direction": 159,
+          "uncertain": 82,
+          "calls": 148,
+          "zeroPairs": 18,
+          "greedyAudits": 148,
+          "formal": 256
+        }
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "K": 4,
+      "eps": 0.005,
+      "updates": 16,
+      "init": 2.5165726961051083,
+      "final": 2.5165726961051083,
+      "maxCoeff": 0,
+      "overlap": 0,
+      "coeffMom": {
+        "shared": 0,
+        "ind": 70000
+      },
+      "counts": {
+        "sharedSD": {
+          "base": 67,
+          "draft": 67,
+          "direction": 84,
+          "uncertain": 65,
+          "calls": 256,
+          "zeroPairs": 64,
+          "greedyAudits": 256,
+          "formal": 512
+        },
+        "sharedAR": {
+          "base": 64,
+          "draft": 0,
+          "direction": 84,
+          "uncertain": 65,
+          "calls": 256,
+          "zeroPairs": 64,
+          "greedyAudits": 256,
+          "formal": 512
+        },
+        "pairIndependentAR": {
+          "base": 261,
+          "draft": 0,
+          "direction": 83,
+          "uncertain": 62,
+          "calls": 261,
+          "zeroPairs": 62,
+          "greedyAudits": 261,
+          "formal": 512
+        }
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "K": 4,
+      "eps": 0.04,
+      "updates": 16,
+      "init": 2.5165726961051083,
+      "final": 2.5170522609377146,
+      "maxCoeff": 0,
+      "overlap": 0,
+      "coeffMom": {
+        "shared": 4062.5,
+        "ind": 7500
+      },
+      "counts": {
+        "sharedSD": {
+          "base": 73,
+          "draft": 73,
+          "direction": 114,
+          "uncertain": 82,
+          "calls": 266,
+          "zeroPairs": 57,
+          "greedyAudits": 266,
+          "formal": 512
+        },
+        "sharedAR": {
+          "base": 70,
+          "draft": 0,
+          "direction": 114,
+          "uncertain": 82,
+          "calls": 266,
+          "zeroPairs": 57,
+          "greedyAudits": 266,
+          "formal": 512
+        },
+        "pairIndependentAR": {
+          "base": 274,
+          "draft": 0,
+          "direction": 118,
+          "uncertain": 83,
+          "calls": 274,
+          "zeroPairs": 53,
+          "greedyAudits": 274,
+          "formal": 512
+        }
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "K": 8,
+      "eps": 0.005,
+      "updates": 16,
+      "init": 2.5165726961051083,
+      "final": 2.5165726961051083,
+      "maxCoeff": 0,
+      "overlap": 0,
+      "coeffMom": {
+        "shared": 0,
+        "ind": 0
+      },
+      "counts": {
+        "sharedSD": {
+          "base": 67,
+          "draft": 67,
+          "direction": 76,
+          "uncertain": 67,
+          "calls": 512,
+          "zeroPairs": 127,
+          "greedyAudits": 512,
+          "formal": 1024
+        },
+        "sharedAR": {
+          "base": 64,
+          "draft": 0,
+          "direction": 76,
+          "uncertain": 67,
+          "calls": 512,
+          "zeroPairs": 127,
+          "greedyAudits": 512,
+          "formal": 1024
+        },
+        "pairIndependentAR": {
+          "base": 512,
+          "draft": 0,
+          "direction": 72,
+          "uncertain": 65,
+          "calls": 512,
+          "zeroPairs": 126,
+          "greedyAudits": 512,
+          "formal": 1024
+        }
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 11,
+      "K": 8,
+      "eps": 0.04,
+      "updates": 16,
+      "init": 2.5165726961051083,
+      "final": 2.5165808562778604,
+      "maxCoeff": 0,
+      "overlap": 0,
+      "coeffMom": {
+        "shared": 1093.75,
+        "ind": 625
+      },
+      "counts": {
+        "sharedSD": {
+          "base": 82,
+          "draft": 82,
+          "direction": 111,
+          "uncertain": 94,
+          "calls": 534,
+          "zeroPairs": 113,
+          "greedyAudits": 534,
+          "formal": 1024
+        },
+        "sharedAR": {
+          "base": 80,
+          "draft": 0,
+          "direction": 111,
+          "uncertain": 94,
+          "calls": 534,
+          "zeroPairs": 113,
+          "greedyAudits": 534,
+          "formal": 1024
+        },
+        "pairIndependentAR": {
+          "base": 523,
+          "draft": 0,
+          "direction": 94,
+          "uncertain": 83,
+          "calls": 523,
+          "zeroPairs": 116,
+          "greedyAudits": 523,
+          "formal": 1024
+        }
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "K": 2,
+      "eps": 0.005,
+      "updates": 16,
+      "init": 2.5165726961051083,
+      "final": 2.516883289957064,
+      "maxCoeff": 0,
+      "overlap": 0,
+      "coeffMom": {
+        "shared": 140000,
+        "ind": 140000
+      },
+      "counts": {
+        "sharedSD": {
+          "base": 71,
+          "draft": 71,
+          "direction": 139,
+          "uncertain": 65,
+          "calls": 131,
+          "zeroPairs": 31,
+          "greedyAudits": 131,
+          "formal": 256
+        },
+        "sharedAR": {
+          "base": 67,
+          "draft": 0,
+          "direction": 139,
+          "uncertain": 65,
+          "calls": 131,
+          "zeroPairs": 31,
+          "greedyAudits": 131,
+          "formal": 256
+        },
+        "pairIndependentAR": {
+          "base": 134,
+          "draft": 0,
+          "direction": 150,
+          "uncertain": 73,
+          "calls": 134,
+          "zeroPairs": 30,
+          "greedyAudits": 134,
+          "formal": 256
+        }
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "K": 2,
+      "eps": 0.04,
+      "updates": 16,
+      "init": 2.5165726961051083,
+      "final": 2.516606477455322,
+      "maxCoeff": 0,
+      "overlap": 0,
+      "coeffMom": {
+        "shared": 2187.5,
+        "ind": 25000
+      },
+      "counts": {
+        "sharedSD": {
+          "base": 82,
+          "draft": 82,
+          "direction": 182,
+          "uncertain": 85,
+          "calls": 144,
+          "zeroPairs": 26,
+          "greedyAudits": 144,
+          "formal": 256
+        },
+        "sharedAR": {
+          "base": 78,
+          "draft": 0,
+          "direction": 182,
+          "uncertain": 85,
+          "calls": 144,
+          "zeroPairs": 26,
+          "greedyAudits": 144,
+          "formal": 256
+        },
+        "pairIndependentAR": {
+          "base": 152,
+          "draft": 0,
+          "direction": 217,
+          "uncertain": 95,
+          "calls": 152,
+          "zeroPairs": 16,
+          "greedyAudits": 152,
+          "formal": 256
+        }
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "K": 4,
+      "eps": 0.005,
+      "updates": 16,
+      "init": 2.5165726961051083,
+      "final": 2.5177807587742,
+      "maxCoeff": 0,
+      "overlap": 0,
+      "coeffMom": {
+        "shared": 140000,
+        "ind": 280000
+      },
+      "counts": {
+        "sharedSD": {
+          "base": 77,
+          "draft": 77,
+          "direction": 91,
+          "uncertain": 69,
+          "calls": 265,
+          "zeroPairs": 60,
+          "greedyAudits": 265,
+          "formal": 512
+        },
+        "sharedAR": {
+          "base": 71,
+          "draft": 0,
+          "direction": 91,
+          "uncertain": 69,
+          "calls": 265,
+          "zeroPairs": 60,
+          "greedyAudits": 265,
+          "formal": 512
+        },
+        "pairIndependentAR": {
+          "base": 257,
+          "draft": 0,
+          "direction": 93,
+          "uncertain": 74,
+          "calls": 257,
+          "zeroPairs": 62,
+          "greedyAudits": 257,
+          "formal": 512
+        }
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "K": 4,
+      "eps": 0.04,
+      "updates": 16,
+      "init": 2.5165726961051083,
+      "final": 2.5165108578069124,
+      "maxCoeff": 0,
+      "overlap": 0,
+      "coeffMom": {
+        "shared": 13906.25,
+        "ind": 7500
+      },
+      "counts": {
+        "sharedSD": {
+          "base": 85,
+          "draft": 85,
+          "direction": 131,
+          "uncertain": 93,
+          "calls": 275,
+          "zeroPairs": 56,
+          "greedyAudits": 275,
+          "formal": 512
+        },
+        "sharedAR": {
+          "base": 82,
+          "draft": 0,
+          "direction": 131,
+          "uncertain": 93,
+          "calls": 275,
+          "zeroPairs": 56,
+          "greedyAudits": 275,
+          "formal": 512
+        },
+        "pairIndependentAR": {
+          "base": 273,
+          "draft": 0,
+          "direction": 138,
+          "uncertain": 100,
+          "calls": 273,
+          "zeroPairs": 52,
+          "greedyAudits": 273,
+          "formal": 512
+        }
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "K": 8,
+      "eps": 0.005,
+      "updates": 16,
+      "init": 2.5165726961051083,
+      "final": 2.5165726961051083,
+      "maxCoeff": 0,
+      "overlap": 0,
+      "coeffMom": {
+        "shared": 0,
+        "ind": 0
+      },
+      "counts": {
+        "sharedSD": {
+          "base": 73,
+          "draft": 73,
+          "direction": 77,
+          "uncertain": 69,
+          "calls": 515,
+          "zeroPairs": 127,
+          "greedyAudits": 515,
+          "formal": 1024
+        },
+        "sharedAR": {
+          "base": 67,
+          "draft": 0,
+          "direction": 77,
+          "uncertain": 69,
+          "calls": 515,
+          "zeroPairs": 127,
+          "greedyAudits": 515,
+          "formal": 1024
+        },
+        "pairIndependentAR": {
+          "base": 512,
+          "draft": 0,
+          "direction": 72,
+          "uncertain": 67,
+          "calls": 512,
+          "zeroPairs": 127,
+          "greedyAudits": 512,
+          "formal": 1024
+        }
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "K": 8,
+      "eps": 0.04,
+      "updates": 16,
+      "init": 2.5165726961051083,
+      "final": 2.5164929916269942,
+      "maxCoeff": 0,
+      "overlap": 0,
+      "coeffMom": {
+        "shared": 1406.25,
+        "ind": 937.5
+      },
+      "counts": {
+        "sharedSD": {
+          "base": 93,
+          "draft": 93,
+          "direction": 117,
+          "uncertain": 102,
+          "calls": 547,
+          "zeroPairs": 112,
+          "greedyAudits": 547,
+          "formal": 1024
+        },
+        "sharedAR": {
+          "base": 90,
+          "draft": 0,
+          "direction": 117,
+          "uncertain": 102,
+          "calls": 547,
+          "zeroPairs": 112,
+          "greedyAudits": 547,
+          "formal": 1024
+        },
+        "pairIndependentAR": {
+          "base": 530,
+          "draft": 0,
+          "direction": 97,
+          "uncertain": 87,
+          "calls": 530,
+          "zeroPairs": 117,
+          "greedyAudits": 530,
+          "formal": 1024
+        }
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "K": 2,
+      "eps": 0.005,
+      "updates": 16,
+      "init": 2.5165726961051083,
+      "final": 2.5165726961051083,
+      "maxCoeff": 0,
+      "overlap": 0,
+      "coeffMom": {
+        "shared": 0,
+        "ind": 140000
+      },
+      "counts": {
+        "sharedSD": {
+          "base": 71,
+          "draft": 71,
+          "direction": 136,
+          "uncertain": 67,
+          "calls": 131,
+          "zeroPairs": 31,
+          "greedyAudits": 131,
+          "formal": 256
+        },
+        "sharedAR": {
+          "base": 67,
+          "draft": 0,
+          "direction": 136,
+          "uncertain": 67,
+          "calls": 131,
+          "zeroPairs": 31,
+          "greedyAudits": 131,
+          "formal": 256
+        },
+        "pairIndependentAR": {
+          "base": 133,
+          "draft": 0,
+          "direction": 135,
+          "uncertain": 72,
+          "calls": 133,
+          "zeroPairs": 28,
+          "greedyAudits": 133,
+          "formal": 256
+        }
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "K": 2,
+      "eps": 0.04,
+      "updates": 16,
+      "init": 2.5165726961051083,
+      "final": 2.5165506784331075,
+      "maxCoeff": 0,
+      "overlap": 0,
+      "coeffMom": {
+        "shared": 6406.25,
+        "ind": 6093.75
+      },
+      "counts": {
+        "sharedSD": {
+          "base": 80,
+          "draft": 80,
+          "direction": 194,
+          "uncertain": 83,
+          "calls": 140,
+          "zeroPairs": 23,
+          "greedyAudits": 140,
+          "formal": 256
+        },
+        "sharedAR": {
+          "base": 78,
+          "draft": 0,
+          "direction": 194,
+          "uncertain": 83,
+          "calls": 140,
+          "zeroPairs": 23,
+          "greedyAudits": 140,
+          "formal": 256
+        },
+        "pairIndependentAR": {
+          "base": 148,
+          "draft": 0,
+          "direction": 196,
+          "uncertain": 97,
+          "calls": 148,
+          "zeroPairs": 19,
+          "greedyAudits": 148,
+          "formal": 256
+        }
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "K": 4,
+      "eps": 0.005,
+      "updates": 16,
+      "init": 2.5165726961051083,
+      "final": 2.5165726961051083,
+      "maxCoeff": 0,
+      "overlap": 0,
+      "coeffMom": {
+        "shared": 0,
+        "ind": 0
+      },
+      "counts": {
+        "sharedSD": {
+          "base": 68,
+          "draft": 68,
+          "direction": 89,
+          "uncertain": 67,
+          "calls": 256,
+          "zeroPairs": 62,
+          "greedyAudits": 256,
+          "formal": 512
+        },
+        "sharedAR": {
+          "base": 64,
+          "draft": 0,
+          "direction": 89,
+          "uncertain": 67,
+          "calls": 256,
+          "zeroPairs": 62,
+          "greedyAudits": 256,
+          "formal": 512
+        },
+        "pairIndependentAR": {
+          "base": 256,
+          "draft": 0,
+          "direction": 84,
+          "uncertain": 64,
+          "calls": 256,
+          "zeroPairs": 64,
+          "greedyAudits": 256,
+          "formal": 512
+        }
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "K": 4,
+      "eps": 0.04,
+      "updates": 16,
+      "init": 2.5165726961051083,
+      "final": 2.516625545335056,
+      "maxCoeff": 0,
+      "overlap": 0,
+      "coeffMom": {
+        "shared": 3125,
+        "ind": 3281.25
+      },
+      "counts": {
+        "sharedSD": {
+          "base": 81,
+          "draft": 81,
+          "direction": 130,
+          "uncertain": 91,
+          "calls": 276,
+          "zeroPairs": 49,
+          "greedyAudits": 276,
+          "formal": 512
+        },
+        "sharedAR": {
+          "base": 80,
+          "draft": 0,
+          "direction": 130,
+          "uncertain": 91,
+          "calls": 276,
+          "zeroPairs": 49,
+          "greedyAudits": 276,
+          "formal": 512
+        },
+        "pairIndependentAR": {
+          "base": 283,
+          "draft": 0,
+          "direction": 124,
+          "uncertain": 88,
+          "calls": 283,
+          "zeroPairs": 53,
+          "greedyAudits": 283,
+          "formal": 512
+        }
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "K": 8,
+      "eps": 0.005,
+      "updates": 16,
+      "init": 2.5165726961051083,
+      "final": 2.5173831922557506,
+      "maxCoeff": 0,
+      "overlap": 0,
+      "coeffMom": {
+        "shared": 70000,
+        "ind": 0
+      },
+      "counts": {
+        "sharedSD": {
+          "base": 72,
+          "draft": 72,
+          "direction": 75,
+          "uncertain": 68,
+          "calls": 518,
+          "zeroPairs": 126,
+          "greedyAudits": 518,
+          "formal": 1024
+        },
+        "sharedAR": {
+          "base": 67,
+          "draft": 0,
+          "direction": 75,
+          "uncertain": 68,
+          "calls": 518,
+          "zeroPairs": 126,
+          "greedyAudits": 518,
+          "formal": 1024
+        },
+        "pairIndependentAR": {
+          "base": 512,
+          "draft": 0,
+          "direction": 87,
+          "uncertain": 76,
+          "calls": 512,
+          "zeroPairs": 128,
+          "greedyAudits": 512,
+          "formal": 1024
+        }
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 73,
+      "K": 8,
+      "eps": 0.04,
+      "updates": 16,
+      "init": 2.5165726961051083,
+      "final": 2.5168436340931986,
+      "maxCoeff": 0,
+      "overlap": 0,
+      "coeffMom": {
+        "shared": 3125,
+        "ind": 2968.75
+      },
+      "counts": {
+        "sharedSD": {
+          "base": 85,
+          "draft": 85,
+          "direction": 99,
+          "uncertain": 87,
+          "calls": 538,
+          "zeroPairs": 114,
+          "greedyAudits": 538,
+          "formal": 1024
+        },
+        "sharedAR": {
+          "base": 81,
+          "draft": 0,
+          "direction": 99,
+          "uncertain": 87,
+          "calls": 538,
+          "zeroPairs": 114,
+          "greedyAudits": 538,
+          "formal": 1024
+        },
+        "pairIndependentAR": {
+          "base": 537,
+          "draft": 0,
+          "direction": 116,
+          "uncertain": 100,
+          "calls": 537,
+          "zeroPairs": 109,
+          "greedyAudits": 537,
+          "formal": 1024
+        }
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "K": 2,
+      "eps": 0.005,
+      "updates": 16,
+      "init": 2.51139528138383,
+      "final": 2.510918659992906,
+      "maxCoeff": 0,
+      "overlap": 0,
+      "coeffMom": {
+        "shared": 140000,
+        "ind": 0
+      },
+      "counts": {
+        "sharedSD": {
+          "base": 74,
+          "draft": 74,
+          "direction": 157,
+          "uncertain": 70,
+          "calls": 136,
+          "zeroPairs": 28,
+          "greedyAudits": 136,
+          "formal": 256
+        },
+        "sharedAR": {
+          "base": 69,
+          "draft": 0,
+          "direction": 157,
+          "uncertain": 70,
+          "calls": 136,
+          "zeroPairs": 28,
+          "greedyAudits": 136,
+          "formal": 256
+        },
+        "pairIndependentAR": {
+          "base": 128,
+          "draft": 0,
+          "direction": 112,
+          "uncertain": 64,
+          "calls": 128,
+          "zeroPairs": 32,
+          "greedyAudits": 128,
+          "formal": 256
+        }
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "K": 2,
+      "eps": 0.04,
+      "updates": 16,
+      "init": 2.51139528138383,
+      "final": 2.511402879988531,
+      "maxCoeff": 0,
+      "overlap": 0,
+      "coeffMom": {
+        "shared": 8593.75,
+        "ind": 2187.5
+      },
+      "counts": {
+        "sharedSD": {
+          "base": 84,
+          "draft": 84,
+          "direction": 231,
+          "uncertain": 91,
+          "calls": 144,
+          "zeroPairs": 18,
+          "greedyAudits": 144,
+          "formal": 256
+        },
+        "sharedAR": {
+          "base": 80,
+          "draft": 0,
+          "direction": 231,
+          "uncertain": 91,
+          "calls": 144,
+          "zeroPairs": 18,
+          "greedyAudits": 144,
+          "formal": 256
+        },
+        "pairIndependentAR": {
+          "base": 135,
+          "draft": 0,
+          "direction": 150,
+          "uncertain": 79,
+          "calls": 135,
+          "zeroPairs": 26,
+          "greedyAudits": 135,
+          "formal": 256
+        }
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "K": 4,
+      "eps": 0.005,
+      "updates": 16,
+      "init": 2.51139528138383,
+      "final": 2.51139528138383,
+      "maxCoeff": 0,
+      "overlap": 0,
+      "coeffMom": {
+        "shared": 0,
+        "ind": 140000
+      },
+      "counts": {
+        "sharedSD": {
+          "base": 66,
+          "draft": 66,
+          "direction": 89,
+          "uncertain": 64,
+          "calls": 256,
+          "zeroPairs": 64,
+          "greedyAudits": 256,
+          "formal": 512
+        },
+        "sharedAR": {
+          "base": 64,
+          "draft": 0,
+          "direction": 89,
+          "uncertain": 64,
+          "calls": 256,
+          "zeroPairs": 64,
+          "greedyAudits": 256,
+          "formal": 512
+        },
+        "pairIndependentAR": {
+          "base": 259,
+          "draft": 0,
+          "direction": 77,
+          "uncertain": 62,
+          "calls": 259,
+          "zeroPairs": 61,
+          "greedyAudits": 259,
+          "formal": 512
+        }
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "K": 4,
+      "eps": 0.04,
+      "updates": 16,
+      "init": 2.51139528138383,
+      "final": 2.5114186765852082,
+      "maxCoeff": 0,
+      "overlap": 0,
+      "coeffMom": {
+        "shared": 2031.25,
+        "ind": 5312.5
+      },
+      "counts": {
+        "sharedSD": {
+          "base": 74,
+          "draft": 74,
+          "direction": 130,
+          "uncertain": 89,
+          "calls": 271,
+          "zeroPairs": 55,
+          "greedyAudits": 271,
+          "formal": 512
+        },
+        "sharedAR": {
+          "base": 73,
+          "draft": 0,
+          "direction": 130,
+          "uncertain": 89,
+          "calls": 271,
+          "zeroPairs": 55,
+          "greedyAudits": 271,
+          "formal": 512
+        },
+        "pairIndependentAR": {
+          "base": 284,
+          "draft": 0,
+          "direction": 122,
+          "uncertain": 89,
+          "calls": 284,
+          "zeroPairs": 49,
+          "greedyAudits": 284,
+          "formal": 512
+        }
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "K": 8,
+      "eps": 0.005,
+      "updates": 16,
+      "init": 2.51139528138383,
+      "final": 2.51139528138383,
+      "maxCoeff": 0,
+      "overlap": 0,
+      "coeffMom": {
+        "shared": 0,
+        "ind": 30000
+      },
+      "counts": {
+        "sharedSD": {
+          "base": 70,
+          "draft": 70,
+          "direction": 77,
+          "uncertain": 70,
+          "calls": 518,
+          "zeroPairs": 126,
+          "greedyAudits": 518,
+          "formal": 1024
+        },
+        "sharedAR": {
+          "base": 67,
+          "draft": 0,
+          "direction": 77,
+          "uncertain": 70,
+          "calls": 518,
+          "zeroPairs": 126,
+          "greedyAudits": 518,
+          "formal": 1024
+        },
+        "pairIndependentAR": {
+          "base": 519,
+          "draft": 0,
+          "direction": 80,
+          "uncertain": 68,
+          "calls": 519,
+          "zeroPairs": 123,
+          "greedyAudits": 519,
+          "formal": 1024
+        }
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 11,
+      "K": 8,
+      "eps": 0.04,
+      "updates": 16,
+      "init": 2.51139528138383,
+      "final": 2.51139528138383,
+      "maxCoeff": 0,
+      "overlap": 0,
+      "coeffMom": {
+        "shared": 0,
+        "ind": 2031.25
+      },
+      "counts": {
+        "sharedSD": {
+          "base": 77,
+          "draft": 77,
+          "direction": 104,
+          "uncertain": 92,
+          "calls": 525,
+          "zeroPairs": 118,
+          "greedyAudits": 525,
+          "formal": 1024
+        },
+        "sharedAR": {
+          "base": 74,
+          "draft": 0,
+          "direction": 104,
+          "uncertain": 92,
+          "calls": 525,
+          "zeroPairs": 118,
+          "greedyAudits": 525,
+          "formal": 1024
+        },
+        "pairIndependentAR": {
+          "base": 528,
+          "draft": 0,
+          "direction": 106,
+          "uncertain": 92,
+          "calls": 528,
+          "zeroPairs": 112,
+          "greedyAudits": 528,
+          "formal": 1024
+        }
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "K": 2,
+      "eps": 0.005,
+      "updates": 16,
+      "init": 2.51139528138383,
+      "final": 2.51139528138383,
+      "maxCoeff": 0,
+      "overlap": 0,
+      "coeffMom": {
+        "shared": 0,
+        "ind": 140000
+      },
+      "counts": {
+        "sharedSD": {
+          "base": 69,
+          "draft": 69,
+          "direction": 133,
+          "uncertain": 65,
+          "calls": 129,
+          "zeroPairs": 30,
+          "greedyAudits": 129,
+          "formal": 256
+        },
+        "sharedAR": {
+          "base": 65,
+          "draft": 0,
+          "direction": 133,
+          "uncertain": 65,
+          "calls": 129,
+          "zeroPairs": 30,
+          "greedyAudits": 129,
+          "formal": 256
+        },
+        "pairIndependentAR": {
+          "base": 133,
+          "draft": 0,
+          "direction": 170,
+          "uncertain": 80,
+          "calls": 133,
+          "zeroPairs": 30,
+          "greedyAudits": 133,
+          "formal": 256
+        }
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "K": 2,
+      "eps": 0.04,
+      "updates": 16,
+      "init": 2.51139528138383,
+      "final": 2.5114805747891054,
+      "maxCoeff": 0,
+      "overlap": 0,
+      "coeffMom": {
+        "shared": 2187.5,
+        "ind": 2187.5
+      },
+      "counts": {
+        "sharedSD": {
+          "base": 82,
+          "draft": 82,
+          "direction": 200,
+          "uncertain": 88,
+          "calls": 142,
+          "zeroPairs": 23,
+          "greedyAudits": 142,
+          "formal": 256
+        },
+        "sharedAR": {
+          "base": 77,
+          "draft": 0,
+          "direction": 200,
+          "uncertain": 88,
+          "calls": 142,
+          "zeroPairs": 23,
+          "greedyAudits": 142,
+          "formal": 256
+        },
+        "pairIndependentAR": {
+          "base": 143,
+          "draft": 0,
+          "direction": 221,
+          "uncertain": 95,
+          "calls": 143,
+          "zeroPairs": 22,
+          "greedyAudits": 143,
+          "formal": 256
+        }
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "K": 4,
+      "eps": 0.005,
+      "updates": 16,
+      "init": 2.51139528138383,
+      "final": 2.51139528138383,
+      "maxCoeff": 0,
+      "overlap": 0,
+      "coeffMom": {
+        "shared": 0,
+        "ind": 0
+      },
+      "counts": {
+        "sharedSD": {
+          "base": 67,
+          "draft": 67,
+          "direction": 86,
+          "uncertain": 68,
+          "calls": 256,
+          "zeroPairs": 64,
+          "greedyAudits": 256,
+          "formal": 512
+        },
+        "sharedAR": {
+          "base": 64,
+          "draft": 0,
+          "direction": 86,
+          "uncertain": 68,
+          "calls": 256,
+          "zeroPairs": 64,
+          "greedyAudits": 256,
+          "formal": 512
+        },
+        "pairIndependentAR": {
+          "base": 258,
+          "draft": 0,
+          "direction": 108,
+          "uncertain": 77,
+          "calls": 258,
+          "zeroPairs": 61,
+          "greedyAudits": 258,
+          "formal": 512
+        }
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "K": 4,
+      "eps": 0.04,
+      "updates": 16,
+      "init": 2.51139528138383,
+      "final": 2.511591866308644,
+      "maxCoeff": 0,
+      "overlap": 0,
+      "coeffMom": {
+        "shared": 6250,
+        "ind": 1093.75
+      },
+      "counts": {
+        "sharedSD": {
+          "base": 92,
+          "draft": 92,
+          "direction": 148,
+          "uncertain": 104,
+          "calls": 291,
+          "zeroPairs": 45,
+          "greedyAudits": 291,
+          "formal": 512
+        },
+        "sharedAR": {
+          "base": 90,
+          "draft": 0,
+          "direction": 148,
+          "uncertain": 104,
+          "calls": 291,
+          "zeroPairs": 45,
+          "greedyAudits": 291,
+          "formal": 512
+        },
+        "pairIndependentAR": {
+          "base": 269,
+          "draft": 0,
+          "direction": 149,
+          "uncertain": 102,
+          "calls": 269,
+          "zeroPairs": 53,
+          "greedyAudits": 269,
+          "formal": 512
+        }
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "K": 8,
+      "eps": 0.005,
+      "updates": 16,
+      "init": 2.51139528138383,
+      "final": 2.511275657662783,
+      "maxCoeff": 0,
+      "overlap": 0,
+      "coeffMom": {
+        "shared": 140000,
+        "ind": 40000
+      },
+      "counts": {
+        "sharedSD": {
+          "base": 79,
+          "draft": 79,
+          "direction": 78,
+          "uncertain": 69,
+          "calls": 525,
+          "zeroPairs": 123,
+          "greedyAudits": 525,
+          "formal": 1024
+        },
+        "sharedAR": {
+          "base": 72,
+          "draft": 0,
+          "direction": 78,
+          "uncertain": 69,
+          "calls": 525,
+          "zeroPairs": 123,
+          "greedyAudits": 525,
+          "formal": 1024
+        },
+        "pairIndependentAR": {
+          "base": 514,
+          "draft": 0,
+          "direction": 77,
+          "uncertain": 70,
+          "calls": 514,
+          "zeroPairs": 127,
+          "greedyAudits": 514,
+          "formal": 1024
+        }
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "K": 8,
+      "eps": 0.04,
+      "updates": 16,
+      "init": 2.51139528138383,
+      "final": 2.5109534518008783,
+      "maxCoeff": 0,
+      "overlap": 0,
+      "coeffMom": {
+        "shared": 8125,
+        "ind": 1562.5
+      },
+      "counts": {
+        "sharedSD": {
+          "base": 99,
+          "draft": 99,
+          "direction": 130,
+          "uncertain": 114,
+          "calls": 558,
+          "zeroPairs": 106,
+          "greedyAudits": 558,
+          "formal": 1024
+        },
+        "sharedAR": {
+          "base": 94,
+          "draft": 0,
+          "direction": 130,
+          "uncertain": 114,
+          "calls": 558,
+          "zeroPairs": 106,
+          "greedyAudits": 558,
+          "formal": 1024
+        },
+        "pairIndependentAR": {
+          "base": 539,
+          "draft": 0,
+          "direction": 106,
+          "uncertain": 95,
+          "calls": 539,
+          "zeroPairs": 113,
+          "greedyAudits": 539,
+          "formal": 1024
+        }
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "K": 2,
+      "eps": 0.005,
+      "updates": 16,
+      "init": 2.51139528138383,
+      "final": 2.51139528138383,
+      "maxCoeff": 0,
+      "overlap": 0,
+      "coeffMom": {
+        "shared": 0,
+        "ind": 0
+      },
+      "counts": {
+        "sharedSD": {
+          "base": 66,
+          "draft": 66,
+          "direction": 121,
+          "uncertain": 64,
+          "calls": 128,
+          "zeroPairs": 32,
+          "greedyAudits": 128,
+          "formal": 256
+        },
+        "sharedAR": {
+          "base": 64,
+          "draft": 0,
+          "direction": 121,
+          "uncertain": 64,
+          "calls": 128,
+          "zeroPairs": 32,
+          "greedyAudits": 128,
+          "formal": 256
+        },
+        "pairIndependentAR": {
+          "base": 131,
+          "draft": 0,
+          "direction": 124,
+          "uncertain": 69,
+          "calls": 131,
+          "zeroPairs": 31,
+          "greedyAudits": 131,
+          "formal": 256
+        }
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "K": 2,
+      "eps": 0.04,
+      "updates": 16,
+      "init": 2.51139528138383,
+      "final": 2.5116515132146406,
+      "maxCoeff": 0,
+      "overlap": 0,
+      "coeffMom": {
+        "shared": 6250,
+        "ind": 17031.25
+      },
+      "counts": {
+        "sharedSD": {
+          "base": 81,
+          "draft": 81,
+          "direction": 185,
+          "uncertain": 88,
+          "calls": 142,
+          "zeroPairs": 24,
+          "greedyAudits": 142,
+          "formal": 256
+        },
+        "sharedAR": {
+          "base": 79,
+          "draft": 0,
+          "direction": 185,
+          "uncertain": 88,
+          "calls": 142,
+          "zeroPairs": 24,
+          "greedyAudits": 142,
+          "formal": 256
+        },
+        "pairIndependentAR": {
+          "base": 147,
+          "draft": 0,
+          "direction": 189,
+          "uncertain": 89,
+          "calls": 147,
+          "zeroPairs": 19,
+          "greedyAudits": 147,
+          "formal": 256
+        }
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "K": 4,
+      "eps": 0.005,
+      "updates": 16,
+      "init": 2.51139528138383,
+      "final": 2.51139528138383,
+      "maxCoeff": 0,
+      "overlap": 0,
+      "coeffMom": {
+        "shared": 0,
+        "ind": 0
+      },
+      "counts": {
+        "sharedSD": {
+          "base": 72,
+          "draft": 72,
+          "direction": 92,
+          "uncertain": 66,
+          "calls": 258,
+          "zeroPairs": 62,
+          "greedyAudits": 258,
+          "formal": 512
+        },
+        "sharedAR": {
+          "base": 66,
+          "draft": 0,
+          "direction": 92,
+          "uncertain": 66,
+          "calls": 258,
+          "zeroPairs": 62,
+          "greedyAudits": 258,
+          "formal": 512
+        },
+        "pairIndependentAR": {
+          "base": 256,
+          "draft": 0,
+          "direction": 84,
+          "uncertain": 64,
+          "calls": 256,
+          "zeroPairs": 64,
+          "greedyAudits": 256,
+          "formal": 512
+        }
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "K": 4,
+      "eps": 0.04,
+      "updates": 16,
+      "init": 2.51139528138383,
+      "final": 2.51139528138383,
+      "maxCoeff": 0,
+      "overlap": 0,
+      "coeffMom": {
+        "shared": 0,
+        "ind": 5468.75
+      },
+      "counts": {
+        "sharedSD": {
+          "base": 78,
+          "draft": 78,
+          "direction": 137,
+          "uncertain": 87,
+          "calls": 269,
+          "zeroPairs": 56,
+          "greedyAudits": 269,
+          "formal": 512
+        },
+        "sharedAR": {
+          "base": 73,
+          "draft": 0,
+          "direction": 137,
+          "uncertain": 87,
+          "calls": 269,
+          "zeroPairs": 56,
+          "greedyAudits": 269,
+          "formal": 512
+        },
+        "pairIndependentAR": {
+          "base": 274,
+          "draft": 0,
+          "direction": 121,
+          "uncertain": 82,
+          "calls": 274,
+          "zeroPairs": 56,
+          "greedyAudits": 274,
+          "formal": 512
+        }
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "K": 8,
+      "eps": 0.005,
+      "updates": 16,
+      "init": 2.51139528138383,
+      "final": 2.51139528138383,
+      "maxCoeff": 0,
+      "overlap": 0,
+      "coeffMom": {
+        "shared": 0,
+        "ind": 30000
+      },
+      "counts": {
+        "sharedSD": {
+          "base": 70,
+          "draft": 70,
+          "direction": 74,
+          "uncertain": 69,
+          "calls": 514,
+          "zeroPairs": 127,
+          "greedyAudits": 514,
+          "formal": 1024
+        },
+        "sharedAR": {
+          "base": 66,
+          "draft": 0,
+          "direction": 74,
+          "uncertain": 69,
+          "calls": 514,
+          "zeroPairs": 127,
+          "greedyAudits": 514,
+          "formal": 1024
+        },
+        "pairIndependentAR": {
+          "base": 516,
+          "draft": 0,
+          "direction": 82,
+          "uncertain": 72,
+          "calls": 516,
+          "zeroPairs": 124,
+          "greedyAudits": 516,
+          "formal": 1024
+        }
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 73,
+      "K": 8,
+      "eps": 0.04,
+      "updates": 16,
+      "init": 2.51139528138383,
+      "final": 2.5114091718822915,
+      "maxCoeff": 0,
+      "overlap": 0,
+      "coeffMom": {
+        "shared": 1875,
+        "ind": 2343.75
+      },
+      "counts": {
+        "sharedSD": {
+          "base": 94,
+          "draft": 94,
+          "direction": 120,
+          "uncertain": 103,
+          "calls": 548,
+          "zeroPairs": 112,
+          "greedyAudits": 548,
+          "formal": 1024
+        },
+        "sharedAR": {
+          "base": 91,
+          "draft": 0,
+          "direction": 120,
+          "uncertain": 103,
+          "calls": 548,
+          "zeroPairs": 112,
+          "greedyAudits": 548,
+          "formal": 1024
+        },
+        "pairIndependentAR": {
+          "base": 526,
+          "draft": 0,
+          "direction": 118,
+          "uncertain": 101,
+          "calls": 526,
+          "zeroPairs": 114,
+          "greedyAudits": 526,
+          "formal": 1024
+        }
+      }
+    }
+  ],
+  "summary": [
+    {
+      "K": 2,
+      "eps": 0.005,
+      "updates": 96,
+      "init": 2.5139839887444695,
+      "final": 2.5139563174879744,
+      "counts": {
+        "sharedSD": {
+          "base": 419,
+          "draft": 419,
+          "direction": 822,
+          "uncertain": 396,
+          "calls": 783,
+          "zeroPairs": 184,
+          "greedyAudits": 783,
+          "formal": 1536,
+          "headRows": 23448
+        },
+        "sharedAR": {
+          "base": 396,
+          "draft": 0,
+          "direction": 822,
+          "uncertain": 396,
+          "calls": 783,
+          "zeroPairs": 184,
+          "greedyAudits": 783,
+          "formal": 1536,
+          "headRows": 11514
+        },
+        "pairIndependentAR": {
+          "base": 789,
+          "draft": 0,
+          "direction": 795,
+          "uncertain": 418,
+          "calls": 789,
+          "zeroPairs": 181,
+          "greedyAudits": 789,
+          "formal": 1536,
+          "headRows": 22098
+        }
+      },
+      "sharedSDvsIndependent": 1.0610915014933477,
+      "sharedARvsIndependent": 0.5210426282921531,
+      "SDvsSharedAR": 2.0364773319437206,
+      "sharedSecondMoment": 280000,
+      "indSecondMoment": 550000
+    },
+    {
+      "K": 2,
+      "eps": 0.04,
+      "updates": 96,
+      "init": 2.5139839887444695,
+      "final": 2.5140846114453392,
+      "counts": {
+        "sharedSD": {
+          "base": 494,
+          "draft": 494,
+          "direction": 1218,
+          "uncertain": 527,
+          "calls": 861,
+          "zeroPairs": 134,
+          "greedyAudits": 861,
+          "formal": 1536,
+          "headRows": 27894
+        },
+        "sharedAR": {
+          "base": 472,
+          "draft": 0,
+          "direction": 1218,
+          "uncertain": 527,
+          "calls": 861,
+          "zeroPairs": 134,
+          "greedyAudits": 861,
+          "formal": 1536,
+          "headRows": 13962
+        },
+        "pairIndependentAR": {
+          "base": 873,
+          "draft": 0,
+          "direction": 1132,
+          "uncertain": 537,
+          "calls": 873,
+          "zeroPairs": 120,
+          "greedyAudits": 873,
+          "formal": 1536,
+          "headRows": 24703
+        }
+      },
+      "sharedSDvsIndependent": 1.1291745941788447,
+      "sharedARvsIndependent": 0.5651945107881634,
+      "SDvsSharedAR": 1.9978513107004727,
+      "sharedSecondMoment": 34218.75,
+      "indSecondMoment": 54531.25
+    },
+    {
+      "K": 4,
+      "eps": 0.005,
+      "updates": 96,
+      "init": 2.5139839887444695,
+      "final": 2.514185332522651,
+      "counts": {
+        "sharedSD": {
+          "base": 417,
+          "draft": 417,
+          "direction": 531,
+          "uncertain": 399,
+          "calls": 1547,
+          "zeroPairs": 376,
+          "greedyAudits": 1547,
+          "formal": 3072,
+          "headRows": 23049
+        },
+        "sharedAR": {
+          "base": 393,
+          "draft": 0,
+          "direction": 531,
+          "uncertain": 399,
+          "calls": 1547,
+          "zeroPairs": 376,
+          "greedyAudits": 1547,
+          "formal": 3072,
+          "headRows": 11142
+        },
+        "pairIndependentAR": {
+          "base": 1547,
+          "draft": 0,
+          "direction": 529,
+          "uncertain": 403,
+          "calls": 1547,
+          "zeroPairs": 374,
+          "greedyAudits": 1547,
+          "formal": 3072,
+          "headRows": 42298
+        }
+      },
+      "sharedSDvsIndependent": 0.5449193815310417,
+      "sharedARvsIndependent": 0.26341671000992956,
+      "SDvsSharedAR": 2.0686591276252018,
+      "sharedSecondMoment": 140000,
+      "indSecondMoment": 490000
+    },
+    {
+      "K": 4,
+      "eps": 0.04,
+      "updates": 96,
+      "init": 2.5139839887444695,
+      "final": 2.5140990813928945,
+      "counts": {
+        "sharedSD": {
+          "base": 483,
+          "draft": 483,
+          "direction": 790,
+          "uncertain": 546,
+          "calls": 1648,
+          "zeroPairs": 318,
+          "greedyAudits": 1648,
+          "formal": 3072,
+          "headRows": 26872
+        },
+        "sharedAR": {
+          "base": 468,
+          "draft": 0,
+          "direction": 790,
+          "uncertain": 546,
+          "calls": 1648,
+          "zeroPairs": 318,
+          "greedyAudits": 1648,
+          "formal": 3072,
+          "headRows": 13426
+        },
+        "pairIndependentAR": {
+          "base": 1657,
+          "draft": 0,
+          "direction": 772,
+          "uncertain": 544,
+          "calls": 1657,
+          "zeroPairs": 316,
+          "greedyAudits": 1657,
+          "formal": 3072,
+          "headRows": 45511
+        }
+      },
+      "sharedSDvsIndependent": 0.5904506602799323,
+      "sharedARvsIndependent": 0.295005603041023,
+      "SDvsSharedAR": 2.001489646953672,
+      "sharedSecondMoment": 29375,
+      "indSecondMoment": 30156.25
+    },
+    {
+      "K": 8,
+      "eps": 0.005,
+      "updates": 96,
+      "init": 2.5139839887444695,
+      "final": 2.5140991341494017,
+      "counts": {
+        "sharedSD": {
+          "base": 431,
+          "draft": 431,
+          "direction": 457,
+          "uncertain": 412,
+          "calls": 3102,
+          "zeroPairs": 756,
+          "greedyAudits": 3102,
+          "formal": 6144,
+          "headRows": 23731
+        },
+        "sharedAR": {
+          "base": 403,
+          "draft": 0,
+          "direction": 457,
+          "uncertain": 412,
+          "calls": 3102,
+          "zeroPairs": 756,
+          "greedyAudits": 3102,
+          "formal": 6144,
+          "headRows": 11338
+        },
+        "pairIndependentAR": {
+          "base": 3085,
+          "draft": 0,
+          "direction": 470,
+          "uncertain": 418,
+          "calls": 3085,
+          "zeroPairs": 755,
+          "greedyAudits": 3085,
+          "formal": 6144,
+          "headRows": 83765
+        }
+      },
+      "sharedSDvsIndependent": 0.2833044827792037,
+      "sharedARvsIndependent": 0.13535486181579418,
+      "SDvsSharedAR": 2.093049920620921,
+      "sharedSecondMoment": 210000,
+      "indSecondMoment": 100000
+    },
+    {
+      "K": 8,
+      "eps": 0.04,
+      "updates": 96,
+      "init": 2.5139839887444695,
+      "final": 2.5139458978441755,
+      "counts": {
+        "sharedSD": {
+          "base": 530,
+          "draft": 530,
+          "direction": 681,
+          "uncertain": 592,
+          "calls": 3250,
+          "zeroPairs": 675,
+          "greedyAudits": 3250,
+          "formal": 6144,
+          "headRows": 29301
+        },
+        "sharedAR": {
+          "base": 510,
+          "draft": 0,
+          "direction": 681,
+          "uncertain": 592,
+          "calls": 3250,
+          "zeroPairs": 675,
+          "greedyAudits": 3250,
+          "formal": 6144,
+          "headRows": 14451
+        },
+        "pairIndependentAR": {
+          "base": 3183,
+          "draft": 0,
+          "direction": 637,
+          "uncertain": 558,
+          "calls": 3183,
+          "zeroPairs": 681,
+          "greedyAudits": 3183,
+          "formal": 6144,
+          "headRows": 86578
+        }
+      },
+      "sharedSDvsIndependent": 0.33843470627642125,
+      "sharedARvsIndependent": 0.16691307260504978,
+      "SDvsSharedAR": 2.0276105459829767,
+      "sharedSecondMoment": 15625,
+      "indSecondMoment": 10468.75
+    }
+  ],
+  "maxCoeff": 0,
+  "maxOrthogonalityError": 0,
+  "note": "Sparse directions have disjoint rows; sharedSD prefetch counts speculative base rows; evaluates direction certificate only on actually visited rows. All sequence and greedy audits passed. Head row count proxy; no timing. Pair-independent vs shared noise uses different random draws and is not quality-matched training comparison."
+}
