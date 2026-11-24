@@ -3050,3 +3050,43 @@ P：d16每头432参数FP32 1728B，4客户上行共享6912B、独立13824B；2�
 - T/P：AR需NT行，预计算NT+R；C1 stress选择性1.1224NT、barrier1.283565NT（减少约12.56%行代理），AR1NT；主实验C1约15.24%相对barrier行代理，非真实FLOPs/延迟或全流程节省。局部前C候选可精确合并为全局前C（严格总序），普通分布式top-k强基线；示意专家/分数/ID32bit各12B/行，另计状态、版本、通信、隐状态/梯度/同步；真实成本未知。普通AR、dropless、同信息平坦皆强替代。
 - 2026-11-24核查原始摘要/页面：[Switch](https://www.jmlr.org/beta/papers/v23/21-0998.html)、[Expert Choice](https://papers.neurips.cc/paper_files/paper/2022/hash/2f00ecd787b432c1d36f3de9800728eb-Abstract-Conference.html)、[MegaBlocks](https://proceedings.mlsys.org/paper_files/paper/2023/hash/5a54f79333768effe7e8927bcccffe40-Abstract-mlsys2023.html)、[MoE-Spec](https://arxiv.org/abs/2602.16052)、[Limits of Speculation](https://arxiv.org/abs/2609.22156)、[Opportunistic Expert Activation](https://arxiv.org/abs/2511.02237)、[HFedMoE](https://arxiv.org/abs/2601.00583)、[FedAlign-MoE](https://arxiv.org/abs/2603.21276)、[Expert Bytes](https://arxiv.org/abs/2610.34440)。非逐式穷尽全文，无正式文字查重。
 - 主观创新6.225/10（问题7.5、机制5.5、理论7、价值6、距离4.5；25/25/20/15/15）；G1/G2/G4 FAIL、G3/G7局部成立/整体未过、G5/G6未验证，无80%依据。好结果同正式目标质量预算最强公平基线真实全流程−15%或有效工作+20%、两预训练尺度三非IID/时延三训练seed CI及全部G。未执行1–2×40GB。不为人工容量机制投入GPU；仅真实必须跨客户竞争容量且dropless/分波不可满足时，先获得两可加载小MoE真实内生SD与在线HFL联合trace，记录逐层路由/溢出/拒绝导致的其他行失效、真实梯度和总时间，对比dropless、同步AR、生产SD、全组/选择性重验、普通HFL+SD、同信息平坦。保留联合核、失效反例、外部权重负证据与成本边界；若真实无竞争容量则停止。
+
+
+### team-hiercouple/R11｜FCTG：连续奖励联邦GRPO的裁剪梯度晚绑定、均值区间证书与通信障碍
+
+- 2026-11-24；起始 main 82884a9550a1727b94bba7fe93811e8380588b4c，README blob f4743e1254c35288b6be5a464459d2b3d80eccea，3020行。取得完整README，核验R10提交2507648eb168131a862a887b1c834d5511a3c223原样前缀；读FMC/FSGPA及FMC详细报告，重审FRGB/R06、FVR、FAM-SD、A/R05/R09/R12、FCRR、FSG、FSDC。写前读取并发FBSG（已提交块内分层抽样）和FCRV-SD（容量耦合重验证），区别于本轮跨区域连续reward均值改变PPO裁剪分支。R06二元奖励的正负分支已知（非退化时），连续奖励不满足该条件，本轮给出任意奖励的阈值分解、通信下界和真实生成证据。未复跑他队；前向/缓存函数继承[HCR/R11](https://github.com/CK-NOMI/idea/blob/82884a9550a1727b94bba7fe93811e8380588b4c/experiments/team-hcr-sd/R11/probe_and_results.md)经本队R10复用，不声称独立实现所有算子或首次加载权重。
+- **CRITICAL / Reject and Pivot**。T=限定理论，E=实际V8外部权重前向、真实多token AR/SD、头部CE更新与正式裁剪解析梯度计算；P=完成顺序及成本代理；H=假说。无本队真实物理HFL、公开预训练LLM两尺度、在线PPO/GRPO续训、完整参数autograd、GPU/网络/wall time/CI；未重新检查CUDA或下载大型模型。公开微型同架构两检查点不满足G4。真实生成及梯度计算不等于实际提前反向或训练收敛。
+
+#### 1. 场景、问题和机制 T/H
+固定外生合法同prompt组、同正式行为策略p_old及训练快照p_theta、固定样本权重/长度归一；N个正式独立轨迹跨区域完成，客户端持有私有奖励r_i∈[0,1]和正式训练信息。假设合法共享奖励统计及同组prompt，非声称隐私或DP；不同机构奖励尺度必须一致，完整预定组不能丢弃慢轨迹或用局部均值替代。μ=Σr_i/N，s=sqrt(Σ(r_i−μ)^2/N)+eps，A_i=(r_i−μ)/s detach。仅考虑token-level PPO/GRPO裁剪surrogate最大化项，KL/entropy/其他项另计，非完整生产GRPO。ρ_it=p_theta(y_it|h_it)/p_old(y_it|h_it)为正式行为比，非FMC已否决的联合比；u=1+eps_hi,l=1−eps_lo；固定参数时定义 b_i^+=Σ_t c_it 1{ρ_it≤u}∇ρ_it，b_i^−=Σ_t c_it 1{ρ_it≥l}∇ρ_it，c_it为预定权重，边界任选一致合法次梯度。对固定r及版本，正式梯度G=(Ns)^−1 Σ_i(r_i−μ)b_i^sign(r_i−μ)。普通同版本on-policy首步ρ=1，b^+=b^-，不存在裁剪分支障碍；后续epoch/不同训练快照才可能出现，必须实测比例。若训练参数在等待时改变，早算梯度失效，不能无条件跨epoch复用。SD使用真实q,p、独立随机流、min(1,p/q)、正残差、首拒绝截断、合法bonus；固定快照及因果前缀下逐步条件正确；greedy用正式argmax同tie-break。实验FP64 LCG完整softmax、固定4token、BOS作普通token，无生产KV/EOS/top-p、未执行greedy或完整随机序列分布统计认证。
+
+#### 2. 精确阈值统计与下界 T
+每区域e设B0_e=Σ_i b_i^-，B1_e=Σ_i r_i b_i^-，D_e(a)=Σ_{i:r_i=a}(b_i^+−b_i^-)，则
+Ns G = Σ_e [B1_e−μ B0_e + Σ_{a>μ}(a−μ)D_e(a)]。
+证明：按r_i−μ正负将b_i^sign拆为b_i^-+1{r_i>μ}(b_i^+−b_i^-)；同奖励桶可合并，空差桶可删。树可逐级加和N、Σr、Σr²、B0/B1、各奖励桶D；中心解精确，固定实数运算。排序桶用后缀ΣD、ΣaD两数组可二分后O(D)查询（额外O(BD)存储），不必声称新基础前缀和。若b^+=b^-，仅两梯度矩即可；二元奖励R06的两分支可进一步简化。局部标准化不等于全局，局部均值不同导致符号变化且尺度不同。例某已完成r=.5、另一个待完成r=0或1，μ=.25/.75，ρ=1.3>u=1.2时正优势分支被clip为0、负优势仍有梯度。无法在未知后者时选定唯一分支。
+均值区间：已完成k项和S、其余奖励已知[0,1]，μ∈[S/N,(S+N−k)/N]。若r_i≥上界或≤下界，其正/负分支已确定（等于均值时贡献0），或者b^+=b^-则无需符号；否则可先计算两分支/等待。对区间内且两种完成值可达、b^+≠b^-的情况，任何仅依赖当前观测的唯一分支决定在一世界失败。证书只确定梯度单位分支，不确定最后系数/标准差，仍须最终组完成且固定快照才能正式提交更新。等待期不允许丢轨迹。若区域掌握更紧奖励上下界可收窄；需计传输及信息权限。
+限定一消息下界：已知互异奖励结点a_1<...<a_n，已知B0/B1及奖励标量统计，抽象差向量D(a_i)每坐标独立取0或1（不假设真实神经梯度独立），区域须在未知μ前发固定容量消息，接收方仅凭消息及任意可行μ零误差恢复F(μ)=Σ(a_i−μ)_+ D(a_i)。取μ在相邻结点间（首结点左侧也取点），从最大结点向下逐项减已知高结点贡献并除a_i−μ，可恢复全部nD个二元值；故不同输入不能同消息，至少nD bit。可让a_i∈[.25,.75]，远端至少3n个[0,1]奖励，使查询区间可覆盖所有结点，s由已知统计求出，远端梯度已知或0。仅适用于一般独立差向量、固定容量、任意可行均值、零误差、无额外侧信息/往返的模型；真实PPO梯度相关、允许压缩/近似/低秩/交互、固定某个均值时不适用，不宣称真实梯度通信普适下界。实际枚举标量n4/8/12的16/256/4096模式及阈值查询向量，全部可区分。此为经典信息计数与hinge基函数线性独立应用，非新通信复杂度理论。
+强基线：每组每区域上报(N,Σr,Σr²)，云广播(μ,s)，区域使用同一正式批量teacher forcing反向，仅上报一个梯度向量；或直接送合法reward标量、普通完整组流水RolloutPipe、提前缓存前向/PrefixFlow、同信息平坦。可早算的梯度分支与奖励矩不依赖SD；SD仅改变组到达时间，普通AR同样可做。若每客户端各自完整组训练而非跨机构组，本屏障不存在；无证据证明当前真实HFL必须跨区组成同一组。固定共同梯度目标，不等价任意多步FedAvg。
+
+#### 3. 实际执行 E/P
+[代码](experiments/team-hiercouple/R11/probe.js)、[48行原始配置指标及汇总JSON](experiments/team-hiercouple/R11/results.json)。node experiments/team-hiercouple/R11/probe.js weights.json checkpoint.json input.txt。实际重取[microGPT固定commit aa28d7c0aa66704ce56b263dfd3270579f3d5f6d](https://github.com/sanchayan7432/microGPT/tree/aa28d7c0aa66704ce56b263dfd3270579f3d5f6d)：weights.json blob df323b7e714ceeb10ca070f9945a82c51b2c233c，checkpoint.json blob 7f0b4968c56290ebad706ab740de942c369f42a5，input.txt blob 736d88e18b70b292750a30e5cca6a92b0b333bd2。2层d16、4头、V27、7264参数、上下文16，FP64 V8；非独立验证源训练日志，评估名字可能被源模型见过。沿R10前向，姓名6–14字母去重按首字母mod4分4逻辑客户端，各hash排序取最多400；每客户端前40姓名各5位置合800 CE训练例；每检查点×seed11/29/73实际500步正式线性头CE SGD η=.04（共3000步），冻结主干，构造训练快照漂移；行为p为原头，q为共享原头浅层路径。此较大监督漂移是人工stress，非真实GRPO更新频率。
+每权重/seed/生成法AR或SD各24个固定prompt组，取各client pool[80:86]共24姓名；每组BOS+前2字母，8条独立4token轨迹，每客户2条、两区各4条。共288个实际生成组、2304轨迹、9216正式token，其中SD 144组1152条4608正式token，3220/3582实际accept/attempt=.89893914，均值2.03993块/轨迹，AR4步。两生成法随机调用顺序不同、轨迹/奖励不同，不能视为配对同路径因果差。每组在same/updated训练快照、weighted/dense两种奖励下重复计算（1152 group-audits，36864位置实例）；weighted=Σ2^j 1{生成j==真实j}/15，dense=mean(1−|生成字符ID−真实ID|/26)，后者是任意字符ID的密集有界代理、非真实语义reward。固定全组N8，长度4，eps_std=1e−6，eps_clip=.2；解析头梯度ρ(e_y−p_new)h^T/4，非完整网络反向或实际PPO训练。分支相等以差平方<1e−26的数值容差判断；证书端点1e−14。完成顺序P=实际块数+人为客户端延迟(client%2)*.3，同时间全部到达后更新区间，非实测时间/并发；首尾网络、奖励计算时延、backward/optimizer未计。所有完整梯度先算再审计早算条件，未真实省算。表为跨两权重三seed聚合：
+|生成|训练快照|奖励|rho超裁剪区间位置率|完成时唯一分支可定比例|严格早于组完成可定比例|每区域有效差桶|一消息向量数/普通1向量|局部归一相对L2误差|
+|---|---|---|---:|---:|---:|---:|---:|---:|
+|AR|same|weighted|0|1|.5|0|2|.464250|
+|AR|same|dense|0|1|.5|0|2|.402332|
+|SD|same|weighted|0|1|.584201|0|2|.491728|
+|SD|same|dense|0|1|.584201|0|2|.447911|
+|AR|updated|weighted|.784288|.860243|.360243|2.135417|4.135417|.430368|
+|AR|updated|dense|.784288|.529514|.029514|3.902778|5.902778|.460728|
+|SD|updated|weighted|.788845|.873264|.457465|2.052083|4.052083|.481232|
+|SD|updated|dense|.788845|.508681|.092882|3.885417|5.885417|.399430|
+rho超区间率不等于真正被clip的损失比例（还需优势符号）。SD updated dense在完成时仍需等符号或计算两分支的轨迹比例.491319；weighted .126736。所有阈值摘要重建梯度最大L2误差2.8819055767727814e−15，证书分支误差0（排除零优势，数值容差）。局部归一相对误差为sqrt(Σ组||G_local−G_global||²/Σ组||G_global||²)，非实际训练质量。组内distinct reward weighted AR/SD2.9861/2.8403，dense7.6181/7.5556。仅两种压力奖励，不外推真实任务。无CI，3seed是头训练/生成随机性非独立预训练。
+
+#### 4. 成本 P、文献、裁决
+普通区域上行N/Σr/Σr²三个标量+一个D维FP32梯度，云下发μ,s；一消息方案同3标量+2个D维基矩+每个非零差桶D维及其奖励索引。实际头D432，每向量1728B；示意D10M每向量40MB，SD updated weighted/dense每区平均4.052/5.885向量→162.08/235.42MB vs40MB，未计标量/协议/下行/压缩；不是实际网络或所有可能摘要下界。若只想早反向可本地缓存而不上传这些向量，等待均值后聚合，仍需额外梯度存储及分支计算；按桶做批量VJP可降低成本，普通单次批量反向/训练缓存为更强对照。仅当重叠的真实暴露等待或计算比例f足够且额外存储/计算/通信h可控时，理想全程收益≤f−h，G5需≥.15；本轮早分支比例不是实际可重叠时间份额。未测f或h，未证明真实收益。
+2026-11-24实际核对原始论文页：[DeepSeekMath](https://arxiv.org/abs/2402.03300) GRPO；[DAPO](https://arxiv.org/abs/2503.14476) 裁剪/动态采样；[RolloutPipe](https://arxiv.org/abs/2606.26997) 完整组流水及frontier调度（直接强对照）；[PrefixFlow](https://arxiv.org/abs/2606.01143) 训练KV及延迟前缀反向；[FedGRPO](https://arxiv.org/abs/2602.12014) 标量reward聚合；[Fed-GRPO](https://arxiv.org/abs/2610.11502) reward统计引导聚合、校准及通信；[EfficientRollout](https://arxiv.org/abs/2606.18967) 自投机RL；[System-Integrated SD](https://arxiv.org/abs/2604.26779) 精确RL rollout。原始摘要/部分正文，非逐式穷尽；经典阈值查询和统计归约非新基础数学，无正式文字查重。
+**CRITICAL / Reject and Pivot**。主观加权创新6.4/10（问题7.5×25%、机制5.5×25%、理论7.5×20%、价值6.5×15%、距离4.5×15%=6.4）；G1 FAIL（已有组流水、统计聚合及hinge原语），G2 CRITICAL FAIL（AR、普通HFL+SD及公平平坦可替代，无SD改变正式梯度必要计算的证据），G3 PARTIAL（限定梯度恒等、区间及标准SD理论；生产完整随机/greedy/top-p/精度未验），G4 FAIL（微型同架构外部权重、无真实HFL/RL续训），G5/G6未验证无80%依据，G7局部可复算/整体未过。好结果同目标质量预算最强公平基线真实全流程−15%或有效工作+20%，两公开预训练尺度三nonIID/延迟三独立训练seed及CI、全部G。
+H未执行：只有真实训练部署确实将同一合法GRPO组跨区域分配、奖励有界且后续clip激活、标量往返/组内等待占关键路径大比例时再测。1–2×40GB NVIDIA，Qwen2.5-1.5B/3B或兼容内生头两尺度、8逻辑客户端2区、真实数学/代码RLVR及部分得分，3nonIID/延迟3seed；先取得固定组真实reward、p_old/p_new、clip率、实际完成时间、可缓存前向/反向、版本及物理通信profile。比较普通HFL+生产SD、同组标量同步+批量反向、RolloutPipe/PrefixFlow、AR+提前矩、同信息平坦；质量、预算、显存、聚合/回退/所有阶段时延与CI。若不存在跨区组或普通标量交换足够即停止；不为本候选投入GPU，不再以数学统计归约换名。保留精确阈值公式、条件信息下界、区间分支证书、真实轨迹条件矩及强基线成本负结果。
+
+- 追加时实际README blob 9e2393201eeda3ca866a116e8cd2042c38d55d02，完整保留最新旧文本并以该blob保护并发。
