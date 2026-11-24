@@ -1,0 +1,14 @@
+function audit(){
+const sum=a=>a.reduce((s,v)=>s+v,0);let seed=45137;const u=()=>((seed=Math.imul(seed,1664525)+1013904223>>>0)+.5)/4294967296;
+let err=0,proj=0,costErr=0,diagErr=0,count=0,wins=0,improvements=[];
+for(let trial=0;trial<120;trial++){
+let K=trial%2?2:3,n=4,ps=[],qs=[],js=[];for(let i=0;i<n;i++){let p=Array.from({length:K},()=>.05+u()),q=Array.from({length:K},()=>.05+u()),a=sum(p),b=sum(q);p=p.map(v=>v/a);q=q.map(v=>v/b);let d=sum(p.map((v,k)=>Math.max(0,v-q[k])));ps.push(p);qs.push(q);js.push(q.map((v,k)=>p.map((w,j)=>k===j?Math.min(v,w):Math.max(0,v-p[k])*Math.max(0,w-q[j])/d)))}
+let xs=[[]];for(let i=0;i<n;i++)xs=xs.flatMap(x=>Array.from({length:K},(_,j)=>x.concat(j)));let S=xs.length,P=xs.map(x=>x.reduce((v,j,i)=>v*ps[i][j],1)),Q=xs.map(x=>x.reduce((v,j,i)=>v*qs[i][j],1)),J0=xs.map(x=>xs.map(y=>x.reduce((v,j,i)=>v*js[i][j][y[i]],1))),D=xs.map((_,i)=>J0[i][i]),T=P.map((p,i)=>Math.min(p-D[i],Q[i]-D[i])),rank=xs.map(x=>sum(x.map((v,i)=>+(ps[i][v]>qs[i][v])))),order=xs.map((_,i)=>i).sort((a,b)=>rank[a]-rank[b]);let H=xs.map(x=>xs.map(y=>sum(x.map((v,i)=>+(v!==y[i])))));
+function build(ts){let J=xs.map((_,i)=>xs.map((_,j)=>i===j?D[i]+ts[i]:0));for(let i=0;i<S;i++){let flow=Array(S).fill(0);let O=Q[i]-D[i];if(O>0)for(let z=0;z<S;z++)if(z!==i)flow[z]+=(O-ts[i])*J0[i][z]/O;for(let z of order){if(!flow[z])continue;let I=P[z]-D[z],O=Q[z]-D[z],pass=I>0?ts[z]/I:0;J[i][z]+=flow[z]*(1-pass);if(O>0)for(let y=0;y<S;y++)if(y!==z)flow[y]+=flow[z]*pass*J0[z][y]/O}}
+let diag=sum(J.map((a,i)=>a[i])),c2=sum(J.map((a,i)=>sum(a.map((v,j)=>v*H[i][j]**2))));for(let i=0;i<S;i++)err=Math.max(err,Math.abs(sum(J[i])-Q[i]),Math.abs(sum(J.map(a=>a[i]))-P[i]));for(let k=0;k<n;k++){let a=Array.from({length:K},()=>Array(K).fill(0));for(let i=0;i<S;i++)for(let j=0;j<S;j++)a[xs[i][k]][xs[j][k]]+=J[i][j];for(let i=0;i<K;i++)for(let j=0;j<K;j++)proj=Math.max(proj,Math.abs(a[i][j]-js[k][i][j]))}return {diag,c2}}
+let base=build(T.map(()=>0)),full=build(T),ab=xs.map((_,z)=>{let I=P[z]-D[z],O=Q[z]-D[z];return I>0&&O>0?2*sum(J0.map((a,i)=>i===z?0:a[z]*H[i][z]))/I*sum(J0[z].map((v,j)=>z===j?0:v*H[z][j]))/O:0});let candidates=[];
+for(let rankValue=1;rankValue<n;rankValue++){let ts=T.map((v,i)=>rank[i]===rankValue&&ab[i]<3?v:0),gain=sum(ts),pred=sum(ts.map((v,i)=>v*ab[i]));let b=build(ts);costErr=Math.max(costErr,Math.abs(b.c2-base.c2-pred));diagErr=Math.max(diagErr,Math.abs(b.diag-base.diag-gain));let mixCost=base.c2+(full.c2-base.c2)*gain/Math.max(1e-30,full.diag-base.diag);candidates.push({gain,benefit:mixCost-b.c2})}
+let best=candidates.reduce((a,b)=>a.benefit>b.benefit?a:b);if(best.benefit>1e-10)wins++;improvements.push(best.benefit);count++}
+return {count,maxMarginalError:err,maxChildPairError:proj,maxAntichainCostIdentityError:costErr,maxDiagonalGainError:diagErr,oracleBestRankWins:wins,meanOracleImprovement:sum(improvements)/count}
+}
+if(require.main===module)console.log(JSON.stringify(audit(),null,2));

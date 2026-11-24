@@ -3829,3 +3829,11 @@ H未执行：只有真实训练部署确实将同一合法GRPO组跨区域分配
 - T/E负结果：E[R²]≥μ²/Pr(R>0)，最大根耦合可能增加突发，N32独立→嵌套方差2.627366→11.418263、Pr(R≥8) .011746→.124051、区最大修复1.662164→1.784939，star1.392171。提出成本加权树TV学习、R71祖先阈值归约、按实测成本选择层级cut，未训练。同委托flat可复制，云端若无暴露修复事务不强制云验证。实查SpecTr/UniVer/Multi-Sample SD/LayerSkip/HierFAVG/HiRef/product-TV complexity/analytic proxy，非穷尽查重。
 - **Revise层级核，Reject完整独立立项**；G1/G2/G4未过，G3/G7部分，G5/G6未验，历史完整8.14不变，无80%证据。P0真实LayerSkip双尺度暴露事务与尾延迟、普通SD+去重/异步/AR/同委托flat，1–2×40GB三nonIID/时延三独立seed、同质量总时间−15%或工作+20%与CI未执行。
 - [报告](experiments/team-far/R72/record.md) · [递归核](experiments/team-far/R72/nested.js) · [精确审计](experiments/team-far/R72/audit.js) · [结果](experiments/team-far/R72/results.json)
+
+
+### team-far/R73｜HPM-SD 5.0：选择性概率流接力、区域耦合保持与突发负载前沿
+- 2026-11-25；起始 main 8352ed53c8fb0a09f3caa7f0b170aed43048af59、README 5971c23cb08911ffad51c0afb0c15b9802214e94；写前 main 8352ed53c8fb0a09f3caa7f0b170aed43048af59、README 5971c23cb08911ffad51c0afb0c15b9802214e94。完整获取并结构筛查，重开R72记录/R69表，未穷尽复跑。
+- T：父节点基础子最大核乘积J0，D=diag，I=P-D/O=Q-D。任意预先固定状态规则0≤t≤min(I,O)，初始保留(D+t)/Q，非恒等边采样，抵达z以t/I继续；拓扑流量守恒，目标P及各子完整耦合律不变，根接受率增Σt，平均root hop不变。仅根部分化，不能直接递归任意部分核。限定单rank接力，每条根路径≤2 hop（非修复token数/全树延迟）。单rank下区域修复数E二阶矩增Σ2tab，a/b为入/出非恒等边条件修复区数均值，B Pr(根修复)+d E[E²]最优固定rank规则t=min(I,O) iff B>2dab；多rank仅启发式。
+- E1：R69历史48 K27表，4逻辑区N32/64、3人工分配、36配置、7方法、4096 X/配置，1032192实际V8抽样，0 checked donor违反，单rank最大2 root hop。N32 cheap多rank固定阈值ab≤1.35：根修复.613390，区域1.045858，叶3.000122；匹配端点混合权重.449133，叶E[R²]18.086711 vs18.565469、Pr(R≥8).085002 vs.095654，最忙区2.025377 vs2.007552反而更差。N64二阶矩57.247097 vs57.967130，尾近持平，最忙区仍差。混合为MC端点线性组合，非独立采样；无CI/独立调参。
+- E2：120四子二元/三元显式矩阵审计，边际/子pair/二阶矩公式最大误差≤1.24e−15；事后最佳rank在116/120胜匹配混合，oracle诊断非泛化。实查SmartSpec/BASS/LAPS-SD/latency model/collective adaptive SD/vLLM，未穷尽全文。**Revise子核，Reject完整独立立项**；G1/G2/G4未过，G3/G7部分，G5/G6未验，历史完整8.14不变，无80%证据。无实际新模型/物理HFL/GPU/训练/真实时延。P0实测LayerSkip双尺度多步、区域修复暴露成本、异步SD/直接AR/同委托flat；无固定事务成本则不启用云耦合。
+- [报告](experiments/team-far/R73/record.md) · [抽样](experiments/team-far/R73/selective.js) · [审计](experiments/team-far/R73/audit.js) · [结果](experiments/team-far/R73/results.json)
