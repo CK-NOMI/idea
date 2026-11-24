@@ -1778,3 +1778,55 @@ CRITICAL：同信息平坦精确复制完整集合与部署，普通MoE batch超
 - T质量反例：r=(.8,.2)、固定受限q=(.2,.8)、p=(t,1−t)，NLL−λ(1−|t−.2|)在λ≥3.75时最优p=q，接受.4→1但额外NLL=.831777 nat/token。与FSRA不同，本例来自优化目标本身。
 - E/P：实际V8 CPU有限树枚举，3种子×3异质性×150树×4区域=5400深4二元区域树，均值误差≤1.34e−15；trace/q/p方差迹低4.0170/3.3979/3.4053，中3.3044/2.1341/2.1489，高2.2483/1.2334/1.2410。q比trace平均降15.4/35.4/45.1%；同MSE成本优势需trace每样本成本低于q的84.6/64.6/54.9%，仅代理。无GPU/真实训练/网络/wall time/CI。
 - **CRITICAL / Reject and Pivot**：普通AR路径、完整候选路径、同信息平坦和已有在线学习可替代；质量障碍，无双向必要性。创新5.95/10，无80%证据；G1/G2/G4/G5/G6 FAIL，G3/G7部分成立/整体未过。保留反例与实验，不重复联邦REAL/EDR或接受损失。下一轮先用真实模型trace测量共同重复算子、实际时间份额、区域驻留/异步约束，再创造机制。
+
+
+### team-hiercouple/R03｜NF-RSD：非线性鲁棒概率聚合的无归一化常数精确投机解码
+
+- 日期 2026-11-24；起始 main commit 23d38083e8db9d9da2274f59a3f5ee343d776188，README blob 11af5f16375b12850c7e97fe8bafc8bbc1e34e14，1618行。读取固定快照和5个独立实验文件（A/R14脚本与结果、HC/R02脚本与CSV、team-hca/R02脚本），对照PRE、A/R01–14与各队R01–02；未独立重跑他队。提交前多次检查并发，读取新增HieraCert/R03预测状态商空间、HCA/R03坐标对齐、HCR/R03专家集合高阶信息、HiMerge/R03联合验证轨迹梯度及质量障碍；与本轮非线性归一化不同。最后追加基于 README blob 2e51d61014e8adc29c8dc30ba3d04092b0901aef，保留全部旧内容。代码与原始结果另存，见下。
+- **CRITICAL / Reject and Pivot**。T=限定数学推导；E=本轮实际CPU JS V8随机模拟；P=查询工作/成本代理；O=全知oracle；H=未验证。无真实LLM/HFL训练、GPU/网络或wall time。普通AR和同信息平坦为强替代；不重启R01线性残差或R02短语头。
+
+#### 1. 场景与目标（H/T）
+客户端私有非IID数据训练区域模型，边缘持固定快照p_i(.|h)，云训练学生s_theta及用其已有hidden state生成的轻量内生候选头q，无独立完整草稿LLM。正式学习教师与集成服务目标为n=2j−1个等权专家的坐标中位数归一化：m(v)=median_i p_i(v)，Z=Σ_v m(v)>0，p(v)=m(v)/Z。非参数FedAvg、非线性概率聚合，不宣称对原模型无损，真实鲁棒性和质量价值未证。固定合法概率向量与可信查询/抽样（可有固定偏斜向量），不处理动态撒谎/掉线，非Byzantine安全协议。允许查询同token全部专家概率、本地随机采样及全量回退，不承诺隐私。median-of-medians非精确：三组[0,0,1],[0,0,1],[1,1,1]局部median为0/0/1而全体median=1，可对应二元概率；须保留全局秩信息。
+目标：同正式目标、质量与资源下最小化总训练+生成wall time/有效工作，精确随机序列与greedy，计查询、前向、缓存、候选及蒸馏。Y~p时−∇log s_theta(Y|h)是固定教师CE(p,s_theta)无偏梯度，SD若加速采样可降低学习成本；但普通AR也能采样，完整分布蒸馏可降低方差，不是已建立的反向学习机制。
+
+#### 2. 归一化障碍与基础采样（T）
+r(v)=平均p_i(v)，C=n/j。至少j个专家概率≥m(v)，故m≤Cr，Z≤C。均匀选专家并本地抽v~r，再查询所有专家概率，以m(v)/(Cr(v))接受；成功率Z/C，成功v严格服从p，平均C/Z次提议。单次成功bit就是Z/C coin。普通AR可直接用此标准拒绝采样，无需草稿。反例：三专家分别为(1−2ε,ε,ε)的排列，Z=3ε；ε趋0时成本发散，ε=0时目标未定义。中位数不自动保证质量。
+标准最大耦合a(x)=min(1,m(x)/(Zq(x)))。若只访问独立Z/C coin、固定已知m(x),q(x)>0且允许的Z区间跨越m(x)/q(x)并位于(0,C)，无几乎必然有限停止的精确coin算法：某内部参数有正拒绝概率，存在有限拒绝历史（内部随机性正测度）；该历史在另一内部参数仍正概率，却要求接受率1，矛盾。经典Bernoulli factory边界应用；仅coin-only模型，不排除全量查询、确定性界、额外信息或回退，不是一般通信下界。
+
+#### 3. NF-RSD机制（T）
+t=p(v)/q(v)，up coin概率s=m/(m+Zq)=t/(1+t)。每迭代以m/(m+Cq)直接up，否则调用独立Z/C coin，成功down、失败重试。两成功质量比例m:Zq，平均迭代(m+Cq)/(m+Zq)。q=0,p>0时up=1；p=0,q>0时up=0；双零不采。
+整数K≥1，吸收随机游走0..K+1。候选x~q，从K出发，命中上界接受，a_K(t)=t(1−t^K)/(1−t^(K+1))；t=1时K/(K+1)。拒绝后反复用直接包络采Y~p，从1出发游走，命中上界才提交，概率b_K(t)=t^K(1−t)/(1−t^(K+1))=1−a_K(t)/t；t=1时1/(K+1)。q=0,p>0时b=1。gambler's ruin经典公式给出两者。修正质量p b=p−q a，ρ=1−Σqa，最终修正条件分布pb/ρ，输出总概率qa+pb=p。固定快照、真实条件q、因果前缀、独立随机数、标准截断和bonus时可链式归纳保持随机序列。greedy可全量argmax m并统一tie-break，低通信greedy、top-p、浮点、EOS/KV未实现。K→∞时a趋min(1,t)，有限K通常非最大；K1为Barker形式。不能随意截断后使用标准残差；若全量回退，需从当前游走状态按真实条件吸收概率完成，补采仍用p−qa_K。未实现。
+q=p压力测试：接受率K/(K+1)，公平游走从K或1出发期望K步；拒绝率1/(K+1)，修正提议成功率1/(K+1)，每到达候选位置摊销平均一次target提议与2K步。每步平均C/(2Z)次normalizer coin调用；总包络提议(K+1)C/Z，直接AR为C/Z，故该机制多K+1倍，未计每步m查询。重复token缓存可减少通信但不消除随机依赖；非全部SD算法延迟下界。
+
+#### 4. 实际CPU实验（E/P/O）
+[代码](experiments/team-hiercouple/R03/probe.js)，[逐种子原始计数与汇总](experiments/team-hiercouple/R03/results.json)，执行 node experiments/team-hiercouple/R03/probe.js。JS V8，LCG seeds11/29/47，V=32,n=5,C=5/3，N=12000每方法/种子/场景，共720000单步抽样。4专家共享正态logits+独立扰动σ、1固定污染向量（词0 logit8，其他−2）。matched的q=p为oracle；其他q=基础softmax。k=0直接AR包络，k=-1全量标准最大耦合，k1/4/8本机制。raw为每次同token全部专家概率查询调用数，unique为每位置完美去重不同token数；模拟用oracle数组答复，不是实际网络。经验TV约.0141–.0206，有限采样误差不能认定某方法更精确。无CI/实际时延。
+|场景|Z|最大接受率|方法|实测接受率|raw|unique|
+|---|---:|---:|---|---:|---:|---:|
+|matched|.830434|1|AR|—|2.011|1.814|
+|matched|.830434|1|K1|.497111|6.006|3.766|
+|matched|.830434|1|K4|.802000|18.209|5.409|
+|matched|.830434|1|K8|.890222|33.539|6.074|
+|low σ=.15|.958945|.968597|AR|—|1.741|1.599|
+|low|.958945|.968597|K8|.884806|31.714|5.803|
+|mid σ=.6|.787287|.866768|AR|—|2.120|1.901|
+|mid|.787287|.866768|K1|.481583|6.250|3.918|
+|mid|.787287|.866768|K4|.755528|18.701|5.823|
+|mid|.787287|.866768|K8|.822583|35.176|6.910|
+|high σ=1.5|.406419|.621682|AR|—|4.149|3.228|
+|high|.406419|.621682|K8|.605556|53.603|10.427|
+dense每位置32查询可批量一次RPC，实测接受matched/low/mid/high=1/.969944/.868167/.620694。matched K8理论.888889，实测.890222；包络提议17.772 vs AR2.011（理论9倍），raw33.539。high K8 raw比AR约12.92倍，理想去重约3.23倍。不能推出实际必慢；前向批量可能摊薄，但无wall-time证据。
+
+#### 5. 文献查重（2026-11-24）
+检索 robust federated ensemble distillation coordinate median predictions; Byzantine median; Bernoulli factory impossibility/rational function; Barker two-coin MCMC; speculative decoding block verification。核对原始摘要和部分HTML正文，非全篇公式审查。
+- [Yin et al. Byzantine-Robust Distributed Learning](https://proceedings.mlr.press/v80/yin18a.html) ICML2018，中位数/trimmed mean鲁棒优化。
+- [FedDF](https://proceedings.neurips.cc/paper_files/paper/2020/hash/18df51b97ccd68128e994804f3eccc87-Abstract.html) NeurIPS2020，集成蒸馏联邦融合。
+- [FedEMA-Distill](https://arxiv.org/abs/2603.04422) 2026，鲁棒联邦蒸馏及logits median/trimmed mean；不同于本轮概率median。
+- [Vats et al. Efficient Bernoulli factory MCMC](https://arxiv.org/abs/2004.07471) 2020预印、2021 DOI 10.1093/biomet/asab031，Barker与two-coin等直接机制近邻。
+- [Morina et al. From the Bernoulli factory to a dice enterprise](https://doi.org/10.1214/21-AAP1679) Annals of Applied Probability2022，有理函数factory、完美采样；Keane & O'Brien A Bernoulli factory (1994) ACM TOMACS4:213–219经典可解性背景（未取得全文）。
+- [Leviathan SD](https://proceedings.mlr.press/v202/leviathan23a.html) ICML2023，精确验证；[Block Verification](https://arxiv.org/abs/2403.10444) ICLR2025，强块耦合；[SpecFed](https://arxiv.org/abs/2604.25777) 2026-04 v1/07 v2，线性加权联邦推理与top-K近似。盲区：分布式鲁棒采样、lazy normalization、更高效factory、未公开/未索引论文。无实际文字查重。
+
+#### 6. 强基线、成本、裁决、后续
+CRITICAL：直接AR包络可精确采样，查询工作显著更低，即使q=p；同信息平坦能复制median与教师学生训练；SD未改变正式学习更新。非IID下Z可能极小；动态恶意节点未处理。dense全量nV概率可批量一次RPC，获Z与残差；随机游走多轮依赖，需计全部前向/logits、区域内通信、RPC、KV、候选头与蒸馏摊销。比较普通HFL AR/HFL+Medusa（单一目标质量参照）、同目标直接AR、dense TokenVerify/Block Verification、渐进Z确定性界及精确回退、同信息平坦、缓存/批处理、FedDF及完整软标签蒸馏、质量匹配学生本地推理。不可将WAN载荷代理冒充速度。
+主观分项问题7×25%、机制6×25%、理论7×20%、价值5.5×15%、文献距离5×15%=6.225≈6.2/10，非同行评审。G1 FAIL；G2 CRITICAL FAIL；G3 PARTIAL/FAIL（限定实数理论及单步采样，完整greedy/多步实现/精度未验）；G4 FAIL仅合成；G5 FAIL无真实时间；G6 FAIL无80%依据；G7 PARTIAL/FAIL代码逐种子输出已保存、完整系统未复现。
+仅新证据改变前提时做1–2×40GB NVIDIA真实预实验（未执行）：Qwen2.5-1.5B/3B，8逻辑客户端2–4边缘，代码/数学/通用公开数据，三非IID/时延三种子，测真实Z分位数、鲁棒教师相对单模型与FedDF质量、采样/全量蒸馏时间、TPOT/P95/吞吐、字节/RPC、峰值显存、CI及总训练生成时间。单卡模拟不冒充物理并行。好结果同质量资源对最强基线总wall time−15%或同成本有效工作+20%，全部G门槛；无80%证据，不投入GPU救此方案。
+**Reject and Pivot**。保留非线性归一化问题、median不可直接层级归约、Z退化、coin-only最大接受障碍、有限游走精确耦合及成本反例和实际合成结果。禁止将经典Bernoulli factory/鲁棒蒸馏包装为双向创新。下一轮优先真实瓶颈辨识：测公开可获得小模型/执行trace中局部训练、目标验证、网络屏障、缓存重算份额，先找到至少15%可消除的全流程工作，再创造针对该瓶颈的学习原语；不能取得真实证据则明确缺失，不靠toy提高立项评分。
