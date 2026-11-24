@@ -1,0 +1,101 @@
+{
+  "evidence": {
+    "ctrl": {
+      "url": "https://arxiv.org/html/2611.27119v1",
+      "date": "2026-11-20",
+      "throughputRange": [
+        1.11,
+        2.24
+      ],
+      "table1": [
+        [
+          "4090 8B-B DAPO",
+          39,
+          56,
+          5
+        ],
+        [
+          "A800 8B-B DAPO",
+          19,
+          71,
+          10
+        ],
+        [
+          "H100 14B-NT DAPO",
+          42,
+          52,
+          7
+        ],
+        [
+          "A800 8B-T DAPO",
+          28,
+          70,
+          1
+        ],
+        [
+          "H100 14B-T DAPO",
+          44,
+          55,
+          1
+        ],
+        [
+          "4090 8B-B MBPP",
+          47,
+          32,
+          21
+        ],
+        [
+          "A800 8B-T MBPP",
+          34,
+          63,
+          3
+        ],
+        [
+          "H100 14B-T MBPP",
+          37,
+          59,
+          4
+        ]
+      ]
+    },
+    "nemo": {
+      "url": "https://docs.nvidia.com/nemo/rl/nightly/design-docs/te-nvfp4-per-token-rollout.html",
+      "bf16": {
+        "step": 276.4,
+        "generate": 220.5,
+        "refit": 1.8
+      },
+      "nvfp4": {
+        "step": 237.2,
+        "generate": 154.6,
+        "refit": 19.2
+      },
+      "profile": [
+        13.13,
+        3.8,
+        0.66
+      ],
+      "fusedPrototype": [
+        18.42,
+        6.31
+      ]
+    },
+    "tpu": {
+      "url": "https://vllm-project.github.io/2026/11/12/rl-small-dense-tpu-v7.html",
+      "kvPersistence": [
+        60.3,
+        57.9
+      ]
+    }
+  },
+  "derived": {
+    "nvfp4OverBF16": 0.1418234442836469,
+    "refitFraction": 0.08094435075885328,
+    "requiredSave": 35.58,
+    "shortfall": 16.38,
+    "quantFraction": 0.016020236087689713,
+    "bf16Threshold": 234.93999999999997,
+    "extraToBF16Gate": 2.2600000000000193,
+    "kvPersistenceImprovement": 0.03980099502487555
+  }
+}
