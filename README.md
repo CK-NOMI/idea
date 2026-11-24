@@ -883,3 +883,89 @@ CRITICAL：PRE-09 高度重合；同信息平坦和普通 AR 能使用同样证�
 | FAIL，6.8且重合 | FAIL，平坦/AR可替代 | 局部greedy定理成立；随机及精度实现未完成，FAIL | FAIL | FAIL，仅载荷代理 | FAIL，未知80% | FAIL，仅CPU局部可复算 |
 
 **Reject and Pivot。** 保留反例、区间充分性/限定最小性、margin关系、通信分界、实际CPU数据和退化规律；不得换名复活 PRE-09 或 HieraCert。原拟下一步为利用低秩相关性超越独立区间、证明通信下界及近下界协议、真实1.5B预实验、跨领域查重；现仅在新证据打破平坦/AR替代性时考虑重启。下一轮从全部跨团队最新成果开始，优先创造新的学习对象及真正双向必要机制，不直接投入完整 EAGLE-3 训练。
+
+- team-hiercouple/R01 写入前最新 README blob SHA：ede10bcf2bb7869a637f2e81792b172c88a43042（文件 SHA，非 commit SHA；保留此前所有并发追加记录）。
+
+### team-hiercouple/R01｜HierCouple-SD：分层残差耦合无损自投机解码
+
+- 日期：2026-11-24；独立研究对话第一轮。原研究结束后同步共享库，已阅读 A/R01–A/R13、PRE-01–PRE-11、HC/R01、team-hcr-sd/R01、HiMerge-SD、HIERASPEC/R01 等并发新增记录。
+- 裁决：**CRITICAL / Reject and Pivot**。原报告暂定保留、创新度6.6/10；共享库交叉审查发现核心与 HCR-SD、HIERASPEC 高度重合，且 A/R11 已有关键负证据。保留全部数学、历史数值、反例、风险及实验计划，不批准独立立项。
+- T=明确假设下推导；E-H=历史对话报告的CPU模拟数字，原始脚本/日志/环境当前不可审核；H=未验证假说；P=代理或理论成本，非实测延迟。无GPU/真实网络结果，无完整R级证据。
+
+#### 1. 场景和计算问题（T/H）
+
+个性化 client-edge-cloud HFL：客户端 i 私有非IID数据 D_i，F_i=E_{D_i}ℓ，边缘 F_g=Σ_i a_{i|g}F_i，云 F=Σ_g W_g F_g，w_i=W_g a_{i|g}。共享冻结LLM基座，保留不同区域/本地LoRA/Adapter，模型实例可部署在边缘而非终端。云全局模型附Medusa风格预测头 q_j=softmax(W_o H_j(h))，按实际q_j采样单路径多token候选，不另部署独立草稿LLM；EAGLE也有轻量草稿组件。首次拒绝后丢弃后缀并回滚KV，树状多路径尚未证明。
+
+固定前缀 s、版本、权重、词表：p_i(v|s)=softmax(f_i(s))_v，区域 p_g=Σ_i a_{i|g}p_i，正式目标 p=Σ_g W_g p_g。概率混合不是普通HFL参数平均模型；联合推理质量未证。云持有q、权重、候选，边缘持有区域概率；跨域完整向量昂贵。无额外隐私保证，prompt与模型预测交换可能泄露。
+
+标准SD：X~q，接受 min(1,p(X)/q(X))；拒绝按 R(v)/ρ 补采，R=(p−q)_+，ρ=ΣR=TV(p,q)。核心矛盾：[Σ_i w_i(p_i−q)]_+≠Σ_i w_i[p_i−q]_+。手算例：q=(.4,.3,.3)，p1=(.7,.1,.2)，p2=(.1,.5,.4)，等权p=q；局部最大耦合接受率均70%，联合100%。由TV凸性，Δ=Σ_i w_i TV(p_i,q)−TV(p,q)≥0，局部独立验证可能损失抵消收益；集中验证全量通信昂贵。此不等式已知，非新定理。
+
+计算问题：给定层级树、分布式p_i、q、权重、带宽、RTT及通信预算，设计局部计算、标量查询、随机采样、有限轮通信及精确回退协议，最小化期望计算+网络+回滚时间，约束 Y|s~p 且到达候选位置接受率=1−TV(p,q)。同信息平坦可委托同样区域计算，必须公平比较。
+
+#### 2. 核心机制与证明（T）
+
+1. 全模型并行验证候选 x_1…x_γ；区域仅返回候选token对应聚合标量p_g(x_j)，云端聚合p(x_j)，顺序执行标准精确接受检验。
+2. 拒绝后区域计算 d_g(v)=W_g(p_g(v)−q(v))，S(v)=Σ_g[d_g(v)]_+≥R(v)=[Σ_g d_g(v)]_+；m_g=Σ_v[d_g(v)]_+，M=Σ_g m_g。云按 m_g/M 选区域，区域按 [d_g(v)]_+/m_g 采样Z，提议分布S/M；对Z查询各区域标量d_g(Z)，以R(Z)/S(Z)接受，否则重试。零质量区域不抽；ρ=0无初次拒绝。
+3. 正确性：一次成功且输出v的概率=(S/M)(R/S)=R/M，条件分布R/ρ；与初次接受质量min(p,q)相加即p。固定快照、准确概率、独立随机数及真实条件q_j下，对已提交前缀归纳可保持完整单路径随机序列分布。不能宣称相同seed逐位一致；greedy argmax、temperature/top-p顺序、有限精度、EOS和KV实现待审计。
+4. 若ρ>0，N|reject~Geom(ρ/M)，E[N|reject]=M/ρ，摊销E[1_reject N]=M；ρ=0时实际次数为0，即使M>0。最多K次失败后必须从真正R/ρ精确回退，不能从p补采。P(reject and fallback)=ρ(1−ρ/M)^K≤M K^K/(K+1)^(K+1)，K≥1，由t=ρ/M最大化t(1−t)^K得到。并行预采K个修正候选并按固定顺序选首个成功者可减串行RTT，须计批量查询。
+5. M_leaf=Σ_i w_i TV(p_i,q)≥M_edge=Σ_g W_g TV(p_g,q)≥M_root=TV(p,q)。任意覆盖叶节点的不重叠树切面C有 M_C=Σ_{u∈C}W_u TV(p_u,q)。上移切面减包络但可能增加全向量通信。最优在线切面、通信下界、学习—验证联合优化均未完成；HC/R01已有标准树形可加代理DP。
+6. 草稿q的下行通信不可忽略。共享W_o、数值和采样设置完全一致时，云下发头特征z，边缘重建q=softmax(W_o z)。d=1536、V=151936时元素数约1/99，未计重复输出投影计算、数据类型、报头、局域网传输，非实测加速。
+
+#### 3. 历史CPU模拟（E-H）及解析值（T）
+
+q=(.40,.30,.20,.10)，四等权节点 p1=(.70,.10,.10,.10)，p2=(.20,.40,.30,.10)，p3=(.10,.60,.20,.10)，p4=(.50,.15,.25,.10)，分组(1,2)/(3,4)。p=(.375,.3125,.2125,.10)，ρ=.025。历史报告每方法100万次、seed=20261124、K=4，均精确全量回退。无原脚本/输出/环境可上传，按E-H转录，不认定独立复现。
+
+| 指标 | p包络 | 叶节点残差 | 边缘残差 |
+|---|---:|---:|---:|
+| M（T） | 1 | .2375 | .075 |
+| 报告草稿接受率 | 97.50% | 97.50% | 97.50% |
+| 拒绝后最多4次平均尝试（E-H） | 3.846 | 3.412 | 2.414 |
+| 拒绝后实测回退率（E-H） | 90.22% | 64.09% | 19.95% |
+| 理论回退率（T，约） | 90.37% | 64.09% | 19.75% |
+| 经验输出TV（E-H） | .000519 | .000314 | .000193 |
+
+历史边缘输出=(.374807,.312530,.212639,.100024)，条件回退相对叶节点约降68.9%。人为构造强抵消，不外推LLM/网络/端到端收益；经验TV差异为有限采样波动，非正确性差异。理论值可按公式复核，历史随机数字需独立重跑。HCR及HIERASPEC各自JS检查不是本团队历史原始日志。
+
+#### 4. 失败经验与跨团队去重
+
+- A/R11 FSV已覆盖混合目标、局部/全局TV凸性、逐token区域路由，平坦配对匹配或胜出。PRE-06区域混合、A/R06有符号差值及残差耦合、A/R10聚合抵消依赖为前序限制。
+- HC/R01已否决随机验证切面并给出代理DP及批内覆盖反例。本轮全局最大耦合后对拒绝残差选提议组，不等于随机验证组。但 team-hcr-sd/R01 已提出同样的分散正残差包络、几何摊销、精确回退、任意切面，并扩展异构q_i和块候选后验；本团队固定共享q为其特例。HIERASPEC/R01同样推导有限K回退上界，HiMerge-SD提供稀疏q支持集内外分解的另一强通信基线。多个团队独立发现不构成多个创新。
+- CRITICAL：同信息平坦可委托同样区域残差计算和采样；HFL学习没有不可替代性，SD未反向改变HFL学习。普通分布式ensemble亦可用此机制。
+- CRITICAL：最强无SD基线先抽 I~Categorical(w_i)，再抽 Y~p_I，即精确单步p，无需全模型前向；整块固定目标索引改变联合分布（A/R11）。逐位置正确路由，公平计KV同步/补算；全模型验证SD未证实胜过它。
+- 相同p_i或逐token偏差同向时各层M相同；真实HFL相似数据聚类可能使组内偏差同向，人造互补不构成证据。
+- ρ很小M较大时条件重试长尾；多RTT可能比一次全量传输慢；回退非零，不能声称永远不传词表级向量。
+- 标量验证+首次拒绝全量回退是简单强精确基线；下行q、区域聚合、额外输出投影、训练与回滚须计入。
+- 已排除仅换Medusa、增加边缘层、动态长度、Top-K压缩、切面或普通联邦训练。经典拒绝采样、TV凸性及混合采样非新定理。
+
+#### 5. 近邻文献、来源及检索盲区
+
+原轮检索2026-11-24：client-edge-cloud HFL; personalized HFL; hierarchical federated LLM LoRA; distributed speculative decoding exact sampling; federated inference residual sampling; distributed maximal coupling mixture distributions; signed mixture exact sampling; hierarchical SD verification; edge-cloud SD latency。来源arXiv、PMLR、ACL、IEEE、NeurIPS、机构/出版社。归档补核部分近邻原始来源页面（非全面公式审查）：
+- [SpecFed](https://arxiv.org/abs/2604.25777)（2026）：历史报告称多模型联合验证、Top-K概率重建；精确/近似区别待全文复核。
+- [DISCO: Distributed LLM Inference via Communication-Efficient Speculative Decoding](https://arxiv.org/abs/2610.35957)（2026-10-25）：精确低通信SD；须比对分散混合目标与单目标、复制草稿及残差协议。
+- [Robert & Stoehr, Simulating signed mixtures](https://wrap.warwick.ac.uk/id/eprint/192370/)（2025）：正负成分配对、分层拒绝采样，核心数学高度相关。
+- [Coupling without Communication and Drafter-Invariant Speculative Decoding](https://arxiv.org/abs/2408.07978)（2024预印本/2025会议）：无通信耦合，相关共享随机数基线。
+- [SpecTr](https://arxiv.org/abs/2310.15141)（2023）：最优传输耦合。
+- [PipeSpec](https://aclanthology.org/2025.findings-acl.669/)（2025）：多模型分层异步流水线。
+- [Speculation at a Distance](https://arxiv.org/abs/2606.25091)（2026）：网络RTT性能边界。
+- 新增归档线索：[Fast collaborative inference via distributed speculative decoding](https://doi.org/10.1016/j.jiixd.2025.12.008)（具体出版日期待核），TSLT低通信策略。
+- 基础七篇：[Leviathan et al.](https://proceedings.mlr.press/v202/leviathan23a.html)、[SD survey](https://aclanthology.org/2024.findings-acl.456/)、[EAGLE](https://arxiv.org/abs/2401.15077)、[EAGLE-2](https://arxiv.org/abs/2406.16858)、[EAGLE-3](https://arxiv.org/abs/2503.01840)、[Medusa](https://arxiv.org/abs/2401.10774)、SpecFed见上。
+- 其他历史线索：HierFAVG、PHE-FL、CHPFL、HRL-FLLM、LayerSkip、SpecInfer、Block Verification、Multi-Draft Speculative Sampling、PipeSD、List-Level Distribution Coupling；未逐条核验者仅作检索线索，另见共享库§5及其他团队的CoS、远程采样等近邻。
+- 盲区：未公开投稿、付费全文、未索引论文、分布式采样通信复杂度、有符号测度。无正式文字查重；规范引用和独立撰写不替代机制去重。
+
+#### 6. 原实验计划与否决标准（H，未执行）
+
+1–2×40GB NVIDIA：Qwen2.5-1.5B/3B，4–8逻辑客户端、2–4边缘组，共享基座不同LoRA、2–4内生预测头；可扩展7B（BF16权重约14GB，不含激活/KV/训练）。原拟200–500 prompt、数千真实token位置，比较相似/随机/互补误差分组，测η_edge=1−M_edge/M_leaf、η_global=1−M_root/M_edge（零分母特判），对比普通全局与联合模型质量，再离线采样、实测网络校准。逻辑节点非真实物理并行。完整实验需两尺度、三异质性/延迟设置、三种子、公开任务与CI。
+
+原拟基线B0普通全局HFL AR（目标不同，仅质量参照）；B1联合全量AR；B2按模型索引精确采样AR；B3 HFL+Medusa全量SD；B4 SpecFed Top-K近似；B5标量验证+全量回退；B6 p包络；B7局部最大耦合混合；B8 DISCO思想多模型适配；B9本方案；新增B10同信息同区域委托平坦、B11 HiMerge稀疏草稿精确残差（接受率/草稿分布差异须公平）。消融区域残差、切面、批量重试、特征重建、个性化。指标每token字节/RTT、TPOT/tokens/s、P95/P99、GPU时间/FLOPs、总训练+推理耗时、KV/显存、接受长度、正确性、下游质量。
+
+原拟好结果：最强同目标精确基线跨广域字节降≥50%、端到端延迟降≥20%、吞吐升≥25%、尾延迟无明显恶化；必须额外满足共享G5质量/预算匹配下总时间降≥15%或有效工作增≥20%。真实抵消弱、联合质量无优势、平坦/普通混合采样/简单基线匹配或更好即否决。核心重复，现不建议投入GPU重做，除非有改变核心前提的新证据。
+
+#### 7. G1–G7、保留资产及后续
+
+原主观分项：问题7.5×25%、机制6×25%、理论6.5×20%、价值7×15%、已有距离6×15%，合计6.625≈6.6/10；跨团队去重后原评分不代表当前原创性，不虚构新分数；无80%成功把握依据。
+
+| G1 | G2 | G3 | G4 | G5 | G6 | G7 |
+|---|---|---|---|---|---|---|
+| FAIL：核心重复且原分不足8 | FAIL：无双向必要性，平坦模拟 | PARTIAL/FAIL：随机采样局部T，greedy/精度/完整实现未审计 | FAIL：无真实LLM | FAIL：无实际总时间 | FAIL：无80%依据 | FAIL：历史原脚本/日志缺失 |
+
+保留全局残差精确性、K次回退概率上界、ρ=0边界、下行q成本、历史四节点数字和强基线。原下一步假说为HFL训练最优分组与SD推理抵消最优分组冲突；共享失败证据说明不能仅重新分组、调度或普通候选头训练就重启。下一轮优先读取最新README全文并记录版本，遵循Supervisor-Skills，去重其他团队正负结果，寻找真正新的学习对象及双向不可替代计算规则。每轮追加正负结果、证据等级和裁决，不覆盖他人、不强推、不降低门槛。仅在收到新研究任务时执行，非后台工作。
