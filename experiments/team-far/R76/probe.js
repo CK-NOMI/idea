@@ -1,0 +1,58 @@
+function run(raws,names){
+const d=16,V=26,T=4,B=2,N=4,sum=a=>a.reduce((s,v)=>s+v,0),dot=(a,b)=>sum(a.map((v,i)=>v*b[i])),avg=a=>sum(a)/a.length,zero=n=>new Float64Array(n),maxdiff=(a,b)=>Math.max(...a.map((v,i)=>Math.abs(v-b[i])));
+const soft=a=>{let m=Math.max(...a),b=Array.from(a,v=>Math.exp(v-m)),s=sum(b);return b.map(v=>v/s)};
+function rng(seed){let a=seed>>>0;return ()=>{a=(a+0x6D2B79F5)|0;let t=Math.imul(a^a>>>15,1|a);t^=t+Math.imul(t^t>>>7,61|t);return (((t^t>>>14)>>>0)+.5)/4294967296}}
+function draw(p,r){let u=r()*sum(p);for(let j=0;j<p.length;j++){u-=p[j];if(u<0)return j}return p.findLastIndex(v=>v>0)}
+let off=0;function take(n,m){let z={o:off,n,m};off+=n*m;return z}let E=take(27,d),P=take(16,d),W=take(27,d),L=Array.from({length:2},()=>({q:take(d,d),k:take(d,d),v:take(d,d),o:take(d,d),f1:take(64,d),f2:take(d,64)}));if(off!==7264)throw Error("layout");
+let forwardCalls=0,backCalls=0,maxGradErr=0,maxFDErr=0,maxReplay=0,updates=0,rows=[];
+function local(raw,h,anc){
+let ops=[],bytes=0;function node(v,b){let o={v:Array.from(v),g:zero(v.length),b};ops.push(o);bytes+=8*v.length;return o}
+function plus(a,b){return node(a.v.map((v,j)=>v+b.v[j]),g=>{for(let j=0;j<g.length;j++){a.g[j]+=g[j];b.g[j]+=g[j]}})}
+function row(A,i){return node(raw.slice(A.o+i*A.m,A.o+(i+1)*A.m),(g,G)=>{for(let j=0;j<g.length;j++)G[A.o+i*A.m+j]+=g[j]})}
+function mat(A,x,n=A.n){return node(Array.from({length:n},(_,i)=>dot(raw.slice(A.o+i*A.m,A.o+(i+1)*A.m),x.v)),(g,G)=>{for(let i=0;i<n;i++)for(let j=0;j<A.m;j++){let k=A.o+i*A.m+j;G[k]+=g[i]*x.v[j];x.g[j]+=g[i]*raw[k]}})}
+function rms(a){let f=1/Math.sqrt(dot(a.v,a.v)/d+1e-5);return node(a.v.map(v=>v*f),g=>{let c=dot(Array.from(g),a.v)*f*f*f/d;for(let j=0;j<d;j++)a.g[j]+=f*g[j]-c*a.v[j]})}
+function relu(a){return node(a.v.map(v=>Math.max(0,v)),g=>{for(let j=0;j<g.length;j++)a.g[j]+=g[j]*(a.v[j]>0)})}
+function attention(q,ks,vs){let out=[],as=[];for(let head=0;head<4;head++){let o=head*4,a=soft(ks.map(k=>dot(q.v.slice(o,o+4),k.v.slice(o,o+4))/2));as.push(a);for(let j=o;j<o+4;j++)out.push(sum(a.map((w,i)=>w*vs[i].v[j])))}bytes+=8*sum(as.map(a=>a.length));return node(out,g=>{for(let head=0;head<4;head++){let o=head*4,a=as[head],v=vs.map(x=>dot(Array.from(g.slice(o,o+4)),x.v.slice(o,o+4))),mu=dot(a,v);for(let i=0;i<ks.length;i++){let c=a[i]*(v[i]-mu)/2;for(let j=o;j<o+4;j++){q.g[j]+=c*ks[i].v[j];ks[i].g[j]+=c*q.v[j];vs[i].g[j]+=a[i]*g[j]}}}})}
+let x=rms(plus(row(E,h.at(-1)),row(P,h.length-1))),kv=[],refs=[],sh;
+for(let l=0;l<2;l++){let b=L[l],z=rms(x),q=mat(b.q,z),k=mat(b.k,z),v=mat(b.v,z),ks=[],vs=[];for(let a of anc){let pk=node(a.kv[l].k),pv=node(a.kv[l].v);refs.push({a,l,pk,pv});ks.push(pk);vs.push(pv)}ks.push(k);vs.push(v);let y=plus(x,mat(b.o,attention(q,ks,vs)));x=plus(y,mat(b.f2,relu(mat(b.f1,rms(y)))));kv.push({k,v});if(l===0)sh=x}
+let logits=mat(W,x,V),draft=mat(W,sh,V),p=soft(logits.v),q=soft(draft.v);forwardCalls++;
+return {p,q,kv:kv.map(a=>({k:a.k.v,v:a.v.v})),bytes,back(g,adj,G){for(let o of ops)o.g.fill(0);for(let j=0;j<V;j++)logits.g[j]+=g[j];for(let l=0;l<2;l++)for(let j=0;j<d;j++){kv[l].k.g[j]+=adj[l].k[j];kv[l].v.g[j]+=adj[l].v[j]}for(let i=ops.length-1;i>=0;i--)if(ops[i].b)ops[i].b(ops[i].g,G);backCalls++;return refs.map(r=>({a:r.a,l:r.l,k:r.pk.g,v:r.pv.g}))}}}
+function engine(raw){let cache=new Map(),calls=0;
+function get(h){let key=h.join(",");if(cache.has(key))return cache.get(key);let anc=[];for(let j=1;j<h.length;j++)anc.push(get(h.slice(0,j)));let tape=local(raw,h,anc),a={key,h:h.slice(),anc,kv:tape.kv,p:tape.p,q:tape.q,tape,bytes:tape.bytes};cache.set(key,a);calls++;return a}
+return {raw,cache,get,calls:()=>calls}}
+function couple(items,rr,kind){let y=items.map(a=>a.x);
+function lr(ids){return sum(ids.map(i=>Math.log(items[i].p[y[i]]/items[i].q[y[i]])))}
+function force(ids){if(ids.length===1){let i=ids[0],a=items[i];y[i]=draw(a.p.map((v,j)=>Math.max(0,v-a.q[j])),rr);return}
+for(let t=0;t<ids.length;t++){let logs=ids.map(i=>lr([i])),pref=1,w=logs.map(v=>{let a=Math.exp(Math.min(0,v)),z=pref*(1-a);pref*=a;return z});let f=draw(w,rr);for(let j=f;j<ids.length;j++)if(j===f||rr()>=Math.exp(Math.min(0,logs[j])))force([ids[j]]);let now=ids.map(i=>lr([i])),s=sum(now),den=-Math.expm1(sum(now.map(v=>Math.min(0,-v))));if(rr()<Math.min(1,s>0?-Math.expm1(-s)/den:0))return}throw Error("flow")}
+if(kind==="frontier"){let ids=items.map((_,i)=>i);if(rr()>=Math.exp(Math.min(0,lr(ids))))force(ids)}else for(let i=0;i<items.length;i++)if(rr()>=Math.exp(Math.min(0,lr([i]))))force([i]);return y}
+function rollout(raw,anchors,method,rr){let eng=engine(raw),lanes=anchors.map(h=>({h:h.slice(),out:[],comm:[]})),rounds=0,repairs=0,peak=0;
+function emit(a,j,x){let l=lanes[a.i],s=a.ss[j];if(s.key!==l.h.join(","))throw Error("prefix");l.comm.push({h:l.h.slice(),x,s});l.h.push(x);l.out.push(x)}
+while(lanes.some(l=>l.out.length<T)){rounds++;let plans=[];for(let i=0;i<N;i++){let l=lanes[i];if(l.out.length===T)continue;let k=method==="AR"?0:Math.min(B,T-l.out.length-1),h=l.h.slice(),ss=[],xs=[];for(let j=0;j<=k;j++){let s=eng.get(h);ss.push(s);if(j<k){let x=draw(s.q,rr);xs.push(x);h=h.concat(x)}}plans.push({i,k,ss,xs,alive:true})}
+if(method==="BV"){for(let a of plans){let w=[1];for(let j=0;j<a.k;j++)w.push(Math.min(1,w[j]*a.ss[j].p[a.xs[j]]/a.ss[j].q[a.xs[j]]));let t=a.k,x;if(rr()<w[t])x=draw(a.ss[t].p,rr);else {for(t=a.k-1;t>=0;t--){let s=a.ss[t],p=s.p.map((v,j)=>Math.max(0,w[t]*v-s.q[j])),z=sum(p);if(rr()<z/(z+1-w[t])){x=draw(p,rr);break}}if(t<0)throw Error("BV");repairs++}for(let j=0;j<t;j++)emit(a,j,a.xs[j]);emit(a,t,x)}}else for(let j=0;j<=B;j++){let g=plans.filter(a=>a.alive&&j<a.k);if(g.length){let y=couple(g.map(a=>({p:a.ss[j].p,q:a.ss[j].q,x:a.xs[j]})),rr,method);for(let i=0;i<g.length;i++){let a=g[i];emit(a,j,y[i]);if(y[i]!==a.xs[j]){repairs++;a.alive=false}}}for(let a of plans)if(a.alive&&j===a.k){emit(a,j,draw(a.ss[j].p,rr));a.alive=false}}
+peak=Math.max(peak,sum([...eng.cache.values()].map(s=>s.bytes)))}
+return {eng,lanes,rounds,repairs,peak}}
+function gradient(eng,lanes,mode,limit=Infinity){
+let all=new Map(),g0=new Map(),G=zero(7264),reward=lanes.map((l,i)=>sum(l.out.map(x=>+([0,4,8,14,20].includes(x))))/T),a=reward.map(v=>v-avg(reward));
+for(let i=0;i<lanes.length;i++)for(let c of lanes[i].comm){let s=eng.get(c.h);for(let p of s.anc)all.set(p.key,p);all.set(s.key,s);if(!g0.has(s.key))g0.set(s.key,zero(V));let g=g0.get(s.key);for(let j=0;j<V;j++)g[j]-=a[i]*(+(c.x===j)-s.p[j])/(lanes.length*T)}
+let nodes=[...all.values()],retained=0,replays=0,kvBytes=nodes.length*2*2*d*8,kept=new Set();
+if(mode==="all")for(let s of nodes){kept.add(s.key);retained+=s.bytes}
+if(mode==="budget"){for(let s of nodes.slice().sort((a,b)=>b.h.length-a.h.length||a.key.localeCompare(b.key))){if(retained+s.bytes<=limit){kept.add(s.key);retained+=s.bytes}}}
+let adj=new Map(nodes.map(s=>[s.key,Array.from({length:2},()=>({k:zero(d),v:zero(d)}))]));
+for(let s of nodes.slice().sort((a,b)=>b.h.length-a.h.length)){let tp;if(kept.has(s.key))tp=s.tape;else {tp=local(eng.raw,s.h,s.anc);replays++;maxReplay=Math.max(maxReplay,maxdiff(tp.p,s.p));}for(let o of tp.back(g0.get(s.key)||zero(V),adj.get(s.key),G)){let v=adj.get(o.a.key)[o.l];for(let j=0;j<d;j++){v.k[j]+=o.k[j];v.v[j]+=o.v[j]}}}
+return {G:Array.from(G),nodes:nodes.length,retained,kvBytes,replays,reward:avg(reward),loss:sum(lanes.map((l,i)=>-a[i]*sum(l.comm.map(c=>Math.log(c.s.p[c.x])))))/(lanes.length*T)}}
+function fresh(raw,lanes){let G=zero(7264),nodes=0,rew=lanes.map(l=>sum(l.out.map(x=>+([0,4,8,14,20].includes(x))))/T);for(let i=0;i<lanes.length;i++){let e=engine(raw),l=lanes[i],s0=l.comm.map(c=>({h:c.h,x:c.x,s:e.get(c.h)})),g=new Map();for(let c of s0)g.set(c.s.key,c.s.p.map((v,j)=>-(rew[i]-avg(rew))*(+(j===c.x)-v)/(N*T)));let a=[...e.cache.values()],adj=new Map(a.map(s=>[s.key,Array.from({length:2},()=>({k:zero(d),v:zero(d)}))]));nodes+=a.length;for(let s of a.reverse())for(let o of s.tape.back(g.get(s.key)||zero(V),adj.get(s.key),G)){let z=adj.get(o.a.key)[o.l];for(let j=0;j<d;j++){z.k[j]+=o.k[j];z.v[j]+=o.v[j]}}}return {G:Array.from(G),nodes}}
+let words=[...new Set(names.split(/\s+/).filter(x=>/^[a-z]{7,14}$/.test(x)))],hash=(x,seed)=>{let h=seed>>>0;for(let c of x)h=Math.imul(h^c.charCodeAt(0),16777619)>>>0;return h};
+for(let wi=0;wi<raws.length;wi++)for(let seed of [11,29,73])for(let scenario of ["shared","private"])for(let method of ["AR","BV","frontier"]){
+let raw=raws[wi].slice(),data=words.slice().sort((a,b)=>hash(a,seed)-hash(b,seed)),tr=data.slice(960,1024),te=data.slice(1024,1040),rr=rng(seed+wi*5003+scenario.length*111+["AR","BV","frontier"].indexOf(method)*11003),metrics=[];
+function evalNLL(w){let en=engine(w),z=[];for(let s of te){let h=[26,...s.slice(0,2).split("").map(c=>c.charCodeAt(0)-97)];z.push(-Math.log(en.get(h).p[s.charCodeAt(2)-97]))}return avg(z)}
+let initialNLL=evalNLL(raw);
+for(let cloud=0;cloud<2;cloud++){let edges=[raw.slice(),raw.slice()];for(let cy=0;cy<2;cy++)for(let e=0;e<2;e++){let w=edges[e],base=cloud*16+cy*8+e*4,anchors=Array.from({length:N},(_,i)=>{let s=tr[base+(scenario==="shared"?i>>1:i)];return [26,...s.slice(0,2).split("").map(c=>c.charCodeAt(0)-97)]}),a=rollout(w,anchors,method,rr),full=gradient(a.eng,a.lanes,"all"),replay=gradient(a.eng,a.lanes,"none"),budget=gradient(a.eng,a.lanes,"budget",full.retained/2),ref=fresh(w,a.lanes);
+let replayErr=maxdiff(full.G,replay.G),budgetErr=maxdiff(full.G,budget.G),refErr=maxdiff(full.G,ref.G),er=Math.max(replayErr,budgetErr,refErr);maxGradErr=Math.max(maxGradErr,er);
+if(cloud===0&&cy===0&&e===0){let j=full.G.map(Math.abs).indexOf(Math.max(...full.G.map(Math.abs))),eps=1e-5;function loss(v){let en=engine(v),rew=a.lanes.map(l=>sum(l.out.map(x=>+([0,4,8,14,20].includes(x))))/T);return sum(a.lanes.map((l,i)=>-(rew[i]-avg(rew))*sum(l.comm.map(c=>Math.log(en.get(c.h).p[c.x])))))/(N*T)}let p=w.slice(),q=w.slice();p[j]+=eps;q[j]-=eps;maxFDErr=Math.max(maxFDErr,Math.abs((loss(p)-loss(q))/(2*eps)-full.G[j]))}
+edges[e]=w.map((v,j)=>v-.015*full.G[j]);updates++;
+metrics.push({cloud,cy,e,rounds:a.rounds,repairs:a.repairs,verifyNodes:a.eng.calls(),committedNodes:full.nodes,denseNodes:ref.nodes,verifyTape:a.peak,fullTape:full.retained,kvBytes:full.kvBytes,budgetTape:budget.retained,budgetReplays:budget.replays,replayNodes:replay.replays,reward:full.reward,gradErr:er,replayErr,budgetErr,refErr})}
+raw=edges[0].map((v,j)=>(v+edges[1][j])/2)}
+let endNLL=evalNLL(raw),z={wi,seed,scenario,method,initialNLL,endNLL,paramDelta:Math.sqrt(sum(raw.map((v,j)=>(v-raws[wi][j])**2))),metrics};for(let k of Object.keys(metrics[0]).filter(k=>!["cloud","cy","e"].includes(k)))z[k]=avg(metrics.map(a=>a[k]));rows.push(z)}
+let summary=[];for(let scenario of ["shared","private"])for(let method of ["AR","BV","frontier"]){let a=rows.filter(r=>r.scenario===scenario&&r.method===method),z={scenario,method,n:a.length};for(let k of Object.keys(a[0]).filter(k=>!["wi","seed","scenario","method","metrics"].includes(k)))z[k]=avg(a.map(v=>v[k]));summary.push(z)}
+return {rows,summary,forwardCalls,backCalls,maxGradErr,maxFDErr,maxReplay,updates,rollouts:updates*N,tokens:updates*N*T}}
+if(require.main===module){const fs=require('fs');console.log(JSON.stringify(run([JSON.parse(fs.readFileSync(process.argv[2],'utf8')),JSON.parse(fs.readFileSync(process.argv[3],'utf8')).weights],fs.readFileSync(process.argv[4],'utf8')),null,2))}
