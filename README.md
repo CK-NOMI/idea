@@ -2268,3 +2268,55 @@ H未执行：仅真实驻留约束或成本模型改变前提时考虑1–2×40G
 - E/P/O：V12、80合成上下文×3种子×3扰动=720配置，精确枚举两对联合矩。σ=.1/.5/1.5时直接两样本方差迹均.718596，单score .634007，最大耦合 .094226/.406807/.790915，最优系数oracle .090966/.350515/.603397，同U .292497/.851727/1.116035。相对直接两样本方差降86.9/43.4/负10.1%；非PSD概率下界.9524%/3.7392%/6.0361%；两对匹配92.991/68.740/32.986%。非真实学习或时延。已读公开日志500条、全greedy、缺同前缀随机对与Jacobian，不能用于曲率验证。强基线精确HVP、FedFisher/K-FAC、对角/低秩sketch、AR耦合、普通HFL+SD和平坦。
 - 近邻：[FedFisher](https://proceedings.mlr.press/v238/jhunjhunwala24a.html)、[FedFish](https://arxiv.org/abs/2311.10291)、[FedFiOT](https://arxiv.org/abs/2611.06783)、[多保真协方差](https://doi.org/10.1137/23M1607994)、[h-statistics MLMC](https://arxiv.org/abs/2311.01336)、[Empirical Fisher limitations](https://arxiv.org/abs/1905.12558)、[OnlineSPEC](https://proceedings.mlr.press/v306/qian26k.html)。原始页面/摘要核对，非全文穷尽，无正式文字查重。
 - **CRITICAL / Reject and Pivot**：主观创新6.025/10，无80%证据；G1/G2/G4 FAIL，G3/G7局部成立/整体未过，G5/G6未验证。精确HVP、普通AR和同信息平坦替代；不定曲率及额外独立采样成本，高差异方差劣化。保留二阶估计、PSD反例、实际数值与公开日志缺失字段审计。不投入GPU挽救，下一轮优先获取真正随机逐位置(p,q,token,版本,JVP/VJP及时间)trace，明确真实数据驻留与强基线后的可消除工作占比及双向因果。
+
+
+### team-hiercouple/R06｜FRGB：二元奖励下的精确流式GRPO反传与分层组屏障
+
+- 日期2026-11-24；起始 main a3275153e6ef986077749d8d5fd90d0bf9d8fe7b，README blob 994dbc520ccbaf7d88febee50f25105d650301f6，2225行。确认上一轮80f9db25b2081d4e288d4dfd0b822a7e3799f4ce的README原样前缀；读新增FCMC、FOAS、HCA/R05详细记录、HIERASPEC/R05原始数值及脚本/结果、HC/R05部分trace与历史A/R04–10/R12。提交前再次读取新增FCKG、CGE，与本轮跨客户端同组二元奖励梯度等待不同；CGE数据为本轮外部时间锚。未独立复跑他队全部实验。
+- **CRITICAL / Reject and Pivot（保留精确流式反传分解及强基线负结果）**。T=限定数学，E=实际JS数值检查/队列回放，E-H=公开第三方实测记录非本队复现，P=模拟/成本代理，H=未验证。无真实预训练模型、HFL训练、真实SD rollout、GPU/网络实测或正式CI。本轮未重新探测CUDA/下载模型，前轮环境阻碍仍未取得解决证据。禁止把trace回放当真实RL/HFL运行。
+
+#### 1. 场景与问题（T/H）
+Client私有prompt/reward，授权同一prompt的固定N个独立rollout可分布在多个机构，reward二元且意义/量表一致，固定行为策略及优化快照，区域与云只需传授权组ID、奖励统计和梯度摘要。若不同prompt或奖励语义不可比，则不能组成同一GRPO组。常规本地完整组HFL不天然有此屏障；跨机构组是否必要未证。不声称DP。采用共享模型内生头/早退起草，无独立完整草稿LLM；精确标准SD需真实条件q、min(1,p/q)和正残差、因果前缀、独立组随机性、bonus/EOS/KV；greedy正式argmax与统一tie-break。完整随机序列、top-p、温度、有限精度未实现。本轮仅对固定已经合法验证的轨迹、奖励及旧策略logprob证明学习梯度分解，不能先用尚未确认的轨迹或按完成时间选择样本。各区域在同一固定优化快照计算，同批最后才执行一次预定聚合/优化器更新，不是任意多步FedAvg，也非通过改变训练目标获益。优化同质量预算的总训练+推理时间，包含缓存、通信、训练、验证与回退。
+
+#### 2. 精确二元奖励分解及限制（T）
+定义完整组大小N，r_i∈{0,1}，m=Σr_i，μ=m/N，s=√(μ(1−μ))+ε（采用总体标准差；若原算法用样本std/其他固定约定，则使用该原约定）。A_i=(r_i−μ)/s，视为detach。令每个合法token的重要性比ρ_it=πθ/π_old，c(ρ)=clip(ρ,l,u)。最大化clipped surrogate min(A_i ρ,A_i c(ρ))；当A≥0用A min(ρ,c)，当A≤0用A max(ρ,c)。二元非退化组的A符号只由r决定，最终均值不改变符号。设g_i^+=∇Σ_t w_it min(ρ_it,c(ρ_it)), g_i^−=∇Σ_t w_it max(ρ_it,c(ρ_it))，w固定、允许response内token平均；若原目标有共享token分母则在最后严格按原分母缩放。将两类向量分别汇总 G_+=Σ_{r=1}g_i^+, G_−=Σ_{r=0}g_i^−。完整组的reward-policy梯度严格为
+g_group=((1−μ)G_+−μG_−)/(N s).
+组内/跨机构线性归约充分统计为(N,m,G_+,G_−)，可增加固定分母/损失统计；这是clipped loss的分段线性和充分统计应用，不是新优化器。若m=0或N，reward梯度严格0（ε>0）。KL/熵/其他独立正则不一定为0，不得跳过；动态重新采样会改变训练数据，非本轮目标。实际浮点归约顺序需审计。
+门控：只在首次已见两种奖励时（t_gate）启动该组已经完成轨迹的反传，此后每个正式验证+评分完成的轨迹直接进入队列；最终N个轨迹全部到齐再按公式合成梯度，不提前更新参数。对没有见到两类的非终局历史，存在剩余奖励全相同的合法完成，故在“对所有合法完成不浪费任何退化组reward反传”的约束下不能保证更早启动；混合一旦出现不可退化。这是受限安全启动条件，而非所有计算不能提前做（可预取/前向/推迟反向，或接受浪费）。
+反例1：两区各两条同prompt轨迹，一区奖励全0，另一区全1；分别局部GRPO归一化得到零；全局μ=.5，若g_i^−=−1、g_i^+=1，则全组梯度=1/(1+2ε)≠0。不能把不同组的本地归一化梯度直接平均还声称同一全组目标。反例2：连续奖励r=.5、另一未到奖励0或1，则A符号相反；当ρ>u，正项梯度可为0、负项仍有效，不能用二元固定类别方法直接处理一般奖励。混合门控仍需真实reward到达、共享组信息及合法通信。
+普通AR的正式输出同样可产生上述统计，普通非投机流式计算与允许同等区域委托的平坦可完全复制该分解和门控，未证SD反向的特异性。SD能改变到达时序，但不改变此数学原语。
+
+#### 3. 实际执行：外部trace锚定的假设队列与梯度检查（E/E-H/P）
+[代码](experiments/team-hiercouple/R06/probe.js)，[逐配置结果及汇总](experiments/team-hiercouple/R06/results.json)，命令 node experiments/team-hiercouple/R06/probe.js。实际JS V8执行，LCG seed11/29/73；复用固定起始commit中 [HIERASPEC/R05/source_metrics.json](experiments/HIERASPEC/R05/source_metrics.json) 的MTP1 100条观测匹配记录，原始源 [shreyansh26/Speculative-Decoding commit 76335be2f8f1a7bf25739310ae80435b83782b23](https://github.com/shreyansh26/Speculative-Decoding/tree/76335be2f8f1a7bf25739310ae80435b83782b23)。来源Qwen2.5-7B-Instruct、greedy、UltraChat；MTP1该具体实现无真正合批验证且全部慢于AR，非高效生产SD，不支持随机精确性。均值AR1.880870s、MTP1 2.108693s。这不是本队独立原始日志核查，非同prompt的真实RL组，使用时间和token长度作为经验服务时间锚，不使用内容。
+模拟：每seed×奖励成功率.1/.5/.9×训练成本比例.25/1/2×100重复=2700个假设batch，每8组×8轨迹（从100条配对记录有放回抽样），模拟单串行generator及单独trainer FIFO（两逻辑资源），每轨迹独立合成Bernoulli reward、ρ=.5+Uniform(0,1)、16维随机score；梯度job耗时=比例×平均AR耗时×token数/128。假设所有任务在同一固定快照，无真实物理重叠、通信、batch效率、梯度聚合、评分或优化器耗时；另外门控单job加20ms敏感性。比较完整组流水线、混合门控流式、无门控eager；generator分别按组连续和round-robin，完整组与流式各取两者较好（事后oracle选择，为成本代理，非可部署策略）。相同随机配置的两种服务时间对照；使用相同seed重复部分设置，不把21600组当独立模型实验。梯度代数检查21600组，最大坐标误差2.220446049250313e−16；真实模型autograd、浮点位级一致性未测。三种子均值：
+|合成成功率|训练比例|AR门控相对最佳组流水线总时间减少|MTP1门控相对最佳组流水线减少|eager多余轨迹/64|
+|---:|---:|---:|---:|---:|
+|.1|.25|1.1946%|1.0695%|28.1867|
+|.1|1|3.0755%|3.0492%|28.1867|
+|.1|2|5.1615%|5.1669%|28.1867|
+|.5|.25|2.4551%|2.1971%|.4|
+|.5|1|5.5737%|6.8763%|.4|
+|.5|2|3.9561%|4.3946%|.4|
+|.9|.25|1.3609%|1.2178%|26.6133|
+|.9|1|3.5354%|3.5749%|26.6133|
+|.9|2|4.6132%|4.8130%|26.6133|
+报告的是各次模拟相对节省的均值，不是两个均值的比。成功率.5、比例1时AR完整组/门控最佳总时间134.9798/127.4497s，MTP1为149.3465/139.0628s；相对跨算法AR强基线，MTP1门控仍慢。AR混合组平均gate lead约9.514s（.5），但等待减少不等于全流程节省。低/高成功率退化组多，eager浪费约27–28/64个reward反传。全部九种场景即使零额外门控开销也未达15%，而且普通AR同样有收益。只是特定模拟，不是所有物理系统不可能达标。无独立GPU重复、真实reward/grad time、真实网络、CI。
+成本P：D个可训练标量，FP32双类向量每活跃组8D B（对比最终单向量4D B，实际可以等待m再合成或保留activation/重算）；8活跃组、D=10M示意640MB梯度累加器，不计模型/优化器/显存；若上行两向量为8D B，相比最终单向量多4D B/组；边缘留存并等待全组统计可降回单向量，但不消除状态/广播。组ID、双类存在bit/计数、版本及安全协议另计。普通complete-group pipeline可批量VJP，而每轨迹小批反传可能增加kernel/权重访问；模拟假设等计算成本对流式有利。真实训练时间占比与物理驻留需求待测。额外KL及熵项独立保留。不能将提前反传误作梯度通信节省或模型更新提前生效。
+
+#### 4. 文献核查（2026-11-24）
+实际检索 GRPO streaming partial group binary reward backward、group normalization federated、overlap rollout training；核对原始论文页面、摘要及可访问正文，非全领域逐式查重。
+- [RolloutPipe](https://arxiv.org/abs/2606.26997) 2026-06：固定快照完整组流水线与frontier group dispatch，作者报告Qwen3-1.7B rollout-to-train-end降30.7–42.3%，最强直接系统近邻（非本队复现）；本轮尝试进一步消除组内等待而非整批等待。
+- [DeepSeekMath/GRPO](https://arxiv.org/abs/2402.03300) 2024：组相对优势原始目标。
+- [DAPO](https://arxiv.org/abs/2503.14476) 2025：动态采样、退化组与不对称clip；本轮不改变组抽样及更新语义。
+- [AReaL](https://arxiv.org/abs/2505.24298) 2025/v5 2026：异步rollout与训练重叠、staleness修正，真实系统对照。
+- [FedGRPO](https://arxiv.org/abs/2602.12014) 2026-02：跨域客户端奖励反馈与联邦组相对优化，数据驻留近邻。
+- [FGRPO](https://arxiv.org/abs/2606.03094) 2026-06：non-IID联邦GRPO的自适应聚合；[Fed-GRPO](https://arxiv.org/abs/2610.11502) 2026-10；[GDPO](https://proceedings.mlr.press/v306/liu26aa.html) ICML2026多奖励分解，非二元固定目标。
+- [TRL Async GRPO documentation](https://huggingface.co/docs/trl/main/async_grpo_trainer)：已有完整组后过滤与流水线；[HierFAVG](https://arxiv.org/abs/1905.06641)、标准SD/LayerSkip为基础。
+未穷尽最近组内流水、奖励到达优化、分布式VJP或未索引论文；无正式文字查重。不要宣称首创二元归一化或分解。
+
+#### 5. 裁决及后续
+CRITICAL：普通AR可同样流式反传，平坦同信息同委托可复制；跨机构同prompt同奖励语义的必要性未证；已有RolloutPipe、AReaL直接系统近邻；所有模拟收益<7%（且未计多数额外成本），无真实HFL总体时间。主观加权创新6.0/10（问题7×25%、机制5.5×25%、理论6×20%、价值6.5×15%、距离4.5×15%=5.975），非审稿评分。G1 FAIL；G2 CRITICAL FAIL；G3 PARTIAL/FAIL（限定二元梯度代数、真实SD/精度/完整训练未验）；G4 FAIL；G5未验证（代理未达标）；G6未验证，无80%依据；G7局部代码可复算/完整未过。好结果同目标/质量/资源对最强基线真实全流程wall time−15%或同成本有效工作+20%，两预训练尺度三非IID/时延三独立训练seed、CI及全部G。
+H未执行：仅有新证据时，1–2×40GB NVIDIA、Qwen2.5-1.5B/3B或带适用内生头的两尺度模型，LoRA GRPO，8逻辑客户端2边缘，公开数学/代码二元可验证奖励，三非IID/时延三seed，真实同prompt组权限、固定快照；先测真实每轨迹生成/奖励/训练耗时、混合gate时刻、完整组与最佳batch流水、梯度buffer峰值、真实通信、质量和CI；对照普通HFL AR+组流水、普通HFL+优化内生SD、RolloutPipe FGD、AReaL（语义匹配）、公平平坦以及AR门控流式；不得把单卡逻辑模拟当物理并行。若普通AR门控匹配、真实增益不足或无真实跨域组约束，即停。
+**Reject and Pivot**。保留固定快照二元reward精确梯度分解、混合门控安全条件、局部归一化反例、连续奖励限制及外部trace锚定的实际队列负结果。不为此否决机制投入GPU。下一轮优先寻找不可由允许同等委托的平坦模拟所实现的真实跨层约束（权限、物理带宽、算子归属），先写明信息模型并给出反事实强基线差异，再用实际模型trace检验；若依然无法取得权重/trace或约束实证，暂停候选立项而非重复通用调度/梯度分解。
+
+- 追加时实际README blob 9635ad0cab50fb4e2185bccccb7574066ec42301，使用完整最新旧文本及其blob保护并发。
