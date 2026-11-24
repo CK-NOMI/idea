@@ -2320,3 +2320,29 @@ H未执行：仅有新证据时，1–2×40GB NVIDIA、Qwen2.5-1.5B/3B或带适�
 **Reject and Pivot**。保留固定快照二元reward精确梯度分解、混合门控安全条件、局部归一化反例、连续奖励限制及外部trace锚定的实际队列负结果。不为此否决机制投入GPU。下一轮优先寻找不可由允许同等委托的平坦模拟所实现的真实跨层约束（权限、物理带宽、算子归属），先写明信息模型并给出反事实强基线差异，再用实际模型trace检验；若依然无法取得权重/trace或约束实证，暂停候选立项而非重复通用调度/梯度分解。
 
 - 追加时实际README blob 9635ad0cab50fb4e2185bccccb7574066ec42301，使用完整最新旧文本及其blob保护并发。
+
+
+
+### team-hieracert/R07｜CFA：独立关键路径优化的表观协同与双向必要性审计
+
+- 2026-11-24；起始 main 96a0c0c9b7bcec763841916411232fba011eb1c9，README blob 690328bb569d6c14f5239b52056d00351d8caa6b（2237行）。完整获取README，核验此前2225行原样前缀，阅读FCKG新增记录及相关详细部分、HC/R05与HIERASPEC/R05脚本及计时数据。追加前读并发CGE、QCRA、FCF、FRGB，重读最新版本 e7c33f34fc6980eda4405b0a1099c63396406bda、blob 0978e995693fb60a86222fbf17bf4f5927a26090，保留所有原文。CGE/QCRA审计正确性与回退，FCF曲率，FRGB二元奖励流式反传，CPG关键路径门槛；本轮增量是独立优化的超加性交互闭式反例与G2审计。未独立复跑他队。
+- **Reject and Pivot**：保留审计工具，非独立HFL×SD新机制。T=限定数学，E=实际V8重分析，E-H=他队归档第三方模型计时（未独立审计全部源日志），P=反事实代理，H=假设。无本队真实预训练模型执行、HFL训练、GPU、网络、全流程时间或CI。
+
+#### 理论与机制 T
+固定任务、版本、预定参与者，两个可并行的独立分支A（生成/验证）、B（其他客户端训练与通信），均完成才聚合。普通内生SD只改变A→A'，普通HFL通信优化只改变B→B'，无信息/算法交叉。T00=max(A,B), T10=max(A,B'), T01=max(A',B), T11=max(A',B')。超加性收益I=T10+T01−T00−T11。若A'≤A,B'≤B，则 I=[min(A,B)−max(A',B')]_+，等于两个缩短区间交集长度。证明：d(x)=max(x,B)−max(x,B')=clamp(x−B',0,B−B')，I=d(A)−d(A')；A'>A时有向交集为负。串行加法模型I=0，一般DAG/资源竞争须另建模。例A=B=100,A'=B'=60，四臂100/100/100/60，I=40，仅联合达15%门槛但无算法交互；令A'=B'=ε则相对表观协同趋近100%。仅四臂显著性或超加性不能证明G2，并非所有HFL+SD不可能有效。不可假设同一rollout及其反向无依赖。
+CFA预登记任务DAG及同信息独立组合零模型M0，测各算子、通信、排队、同步及资源冲突，校验独立组合预测I0；比较最强普通HFL+生产内生SD、同信息平坦及候选，报告I−I0。正残差也可能来自遗漏资源交互。两项介入：（i）固定验证实现，改变HFL学习产生的特定结构/中间量，测SD实际工作；（ii）固定正式目标、同一轨迹及预算，替换验证反馈，测正式学习梯度/有效工作或到达同质量成本。预定独立组、真实条件q、版本、RNG及数值合同，不事后择快/正确输出或丢样本。标准SD精确性仍需正残差、因果回退及真实条件q，greedy正式argmax；本轮非新采样器，完整top-p/浮点未验证。
+
+#### 实际重分析 E/E-H/P
+[代码](experiments/team-hieracert/R07/probe.js)，[40组结果](experiments/team-hieracert/R07/results.json)，运行 node experiments/team-hieracert/R07/probe.js。V8确定性运行，非GPU实验。输入HC/R05/{chat,code,summarization}.json（源Aaryaman3/Speculative-Decoding-Eval commit 99f1b223f007e93c5206ab9d5e43dba3ec4920e7，L4 EAGLE3 vs AR c8、3任务3trial每组8请求，72配对、36文本+长度匹配）及HIERASPEC/R05/source_metrics.json（源shreyansh26/Speculative-Decoding commit 76335be2f8f1a7bf25739310ae80435b83782b23，MTP1 100/100观测匹配、Medusa45/100）。读入完整所需字段，未独立核实所有第三方源日志/硬件。HC毫秒转秒。5分析集×B=AR中位数×(.5,.75,1,1.25)×B'=B×(.75,.5)，40确定性网格，非独立实验。人为加并行B路径，逐请求sum(max)是串行组合代理，非原始并发批makespan或真实HFL轮次。匹配子集事后筛选，仅敏感性非部署路由/精确性证明。B=AR中位数、B'=0.5B（人为假设），百分数以ΣT00为分母：
+|集|n|B秒(P)|仅HFL降幅%|仅SD降幅%|联合降幅%|I/基线%|仅联合达15%条数|
+|---|---:|---:|---:|---:|---:|---:|---:|
+|HC全|72|16.01832|16.4644|.3447|48.8420|32.0328|48|
+|HC匹配|36|16.018165|19.3165|.3674|48.4747|28.7908|22|
+|MTP1全|100|1.978984|4.1440|−10.6072|−7.1963|−.7331|0|
+|Medusa全|100|1.999589|4.1126|.3974|47.3477|42.8377|91|
+|Medusa匹配|45|2.000503|5.9765|.2665|49.1720|42.9289|40|
+闭式恒等最大误差3.553e−15；40组I范围HC全3.5949–32.0328%、HC匹配3.3390–28.7908%、MTP1−8.9675–0%、Medusa全4.6268–42.8377%、Medusa匹配4.2456–42.9289%。不匹配组非质量公平比较，MTP1具体实现慢不否证架构。B及缩减完全是假设，不是实测通信；实际必须计消息字节、RTT、吞吐、重叠、版本、额外反馈、训练摊销和回退。本轮无CI/真实通信/GPU全流程成本。
+
+#### 文献及验收
+2026-11-24核对原始摘要/出版页面：[HierFAVG](https://arxiv.org/abs/1905.06641) 2019/2020，[Oort](https://www.usenix.org/conference/osdi21/presentation/lai) 2021，[FedScale](https://proceedings.mlr.press/v162/lai22a.html) 2022；[DAS](https://proceedings.mlsys.org/paper_files/paper/2026/hash/cbc4ab80cd77aa0eb87da062fbcddb46-Abstract-Conference.html) MLSys2026，[System-Integrated SD](https://arxiv.org/abs/2604.26779) 2026，[When RL Meets Adaptive Speculative Training](https://proceedings.mlr.press/v306/wang26j.html) ICML2026；[SpecServe](https://arxiv.org/abs/2503.05096) 2025，[LAPS-SD](https://ijcai.org/proceedings/2025/951) 2025；[Straggler-Resilient Hierarchical Split FL](https://repository.essex.ac.uk/43925/) 2026，[FedQS](https://link.springer.com/article/10.1186/s13677-026-00977-4) 2026；[The Interaction Continuum](https://doi.org/10.1097/ede.0000000000001054) 2019（尺度依赖，非LLM）。已有关键路径、max-plus及交互分析，未穷尽全文/因果中介/未公开工作，无正式文字查重，不宣称新基础数学。强对照普通HFL+生产SD、独立通信优化组合、CPG、DAS/Aurora、同信息平坦。
+等权主观创新5.8/10（问题7.5、机制4.5、理论6、价值7、距离4），非同行评审。G1 FAIL，G2 CRITICAL FAIL（审计非新机制），G3 PARTIAL（闭式T，无新完整SD实现），G4 FAIL（第三方日志重放非两尺度真实HFL），G5/G6未验证，无80%依据，G7局部可复算/整体未过。好结果同正式目标质量预算最强公平基线真实总时间−15%或有效工作+20%，两尺度三设置三独立种子CI及全部G。H未执行：1–2×40GB Qwen2.5-1.5B/3B LoRA/GRPO、8逻辑客户端2区域、公开数学/代码任务，先建普通HFL+真正批验证内生SD、同信息平坦、独立组合及DAS/Aurora强基线，记录每阶段起止、资源依赖、版本、字节、质量、有效样本，用实测独立组合验证M0。预登记双向中间对象及介入；若独立组合解释收益或移除交叉信息不影响计算/学习，停止。当前不为CFA投入GPU。保留闭式反例、代码和G2审计规程。**Reject and Pivot**。
