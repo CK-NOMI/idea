@@ -1,0 +1,44 @@
+{
+  "environment": {
+    "python": "3.13.5",
+    "torch": "2.10.0+cpu",
+    "cuda": false,
+    "threads": 2
+  },
+  "manifest": [
+    {
+      "domain": "email",
+      "files": 20,
+      "sha256": "4e9b5d87c7fe31419955bee1dd6b040682b8b7945030a2411027544575a3a334",
+      "bytes": 372759
+    },
+    {
+      "domain": "json",
+      "files": 5,
+      "sha256": "16cee4dac523c8d050a1591536c9460fedff14b505e573c41c87eff44a17be72",
+      "bytes": 48848
+    },
+    {
+      "domain": "urllib",
+      "files": 6,
+      "sha256": "5515596043173bbc40473525aa1e9200921446ed981811f2d1b304b1ed9b5653",
+      "bytes": 162185
+    }
+  ],
+  "seeds": [
+    11,
+    29,
+    73
+  ],
+  "trainLengths": [
+    212570,
+    26207,
+    89921
+  ],
+  "testLengths": [
+    53143,
+    6552,
+    22481
+  ],
+  "note": "CSV contains all numeric result fields from the actual CPU run. No actual DPO optimization, HFL, SD rollout or timing."
+}
