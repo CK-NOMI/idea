@@ -3290,3 +3290,11 @@ H未执行：只有真实训练部署确实将同一合法GRPO组跨区域分配
 - T：X~q,Y~p，D=traceΓ,T=1−D,d_i=Γ_ii，残差行/列a_i=q_i−d_i,b_i=p_i−d_i。完整二部图去对角的Hall条件a_i+b_i≤T，等价max(0,(p_i+q_i−T)/2)≤d_i≤min(p_i,q_i),Σd=D；给出精确纳入概率区间l=max(p,q),u=p+q−max(0,(p+q−T)/2),Σπ=2−D。G=Σp_i m_i s_i+ΣI_i p_i/π_i(R_i−m_i)s_i无偏；oracle m=μ且独立工具噪声时V=Σw_i/π_i,w_i=p_i²Var(R_i)||s_i||²，凸最优π*=clip(sqrt(w/λ),l,u)，maxflow实现。最大接受时对角固定，残差运输无法改善该oracle目标；m误差引入交叉项，最优保证失效但预先固定m仍无偏。非任意GRPO、非生产SD、非新Hall/KKT理论。
 - E/O：两同尺度microGPT检查点，128实际上下文、3人工Bernoulli reward、3固定接受预算、3预测校准=3456实际分配/最大流检查（1152结果行），同m同D混合耦合强基线；max流误差1.7763568394002505e-15、bias 1.3877787807814457e-16、oracle式误差5.551115123125783e-17、oracle支配违反0。t=1（独立p/q的D）三profile oracle同成本方差改善 sparse:1.63%/dense:1.57%/constant:0.71%; m=.5时 sparse:0.21%/dense:1.84%/constant:0.71%. 无真实工具/生成/训练/GPU/物理HFL。全表V²成本，普通独立/最大耦合及同信息平坦可替代。文献SpecTr/GBV/Acceptance-Aware/EPG/最优MIS/Cube等见报告。主观创新7.375/10（8.5/7/8.5/6.5/5.5,25/25/20/15/15），G1/G2/G4未过、G3/G7部分、G5/G6未验，无80%依据。保留精确可行域与oracle前沿，不立项；仅真实工具成本和可泛化reward预测新证据后继续。
 - [报告](experiments/team-far/R16/record.md) · [实际代码](experiments/team-far/R16/probe.js) · [结果](experiments/team-far/R16/results.json)
+
+
+### team-far/R17｜LSPT：指定对角概率的线性稀疏运输构造
+
+- 2026-11-24；起始/写前 3d31cd221f83982ec6e42edf141cd6e7a4dfbd00；README blob 960d4cd4f2dbe1ee0a61607f74352e7dc2b069c1。完整获取，重开R16记录、筛查架构/梯度/表示标题；未逐式审计或复跑他队。不是新双路径神经架构，针对R16的V²稠密最大流瓶颈。
+- T：合法指定d后残差a=q−d,b=p−d,T=1−Σd，a_i+b_i≤T。普通有序区间扫描(NW)得≤2V−1边，取误对角t_i,H=Σt。若max t≤H/2，圆周H/2平移两同分区消去所有误对角；否则主导k与其余对角成对交换，剩r=2t_k−H，非k关联的已有非对角质量T−a_k−b_k+r≥r，单次扫描以(i,j),(k,k)→(i,k),(k,j)守恒清除。恢复预定d，O(V)时空，保守≤5V边片，重复可合并。R16 oracle中心化梯度方差仅依赖纳入π，故稀疏与dense同最优；m不准时交叉项依赖残差运输，不保证优于dense。经典NW/交换/耦合非新基础数学。
+- E/O：真实两同尺度microGPT、128上下文×3奖励×3预算=1152配置，实际稀疏及R16 dense构造、3中心化条件矩（固定oracle分配隔离运输）；边际误差8.326672684688674e-16、均值误差1.3877787807814457e-16、oracle方差差0。另6词表尺寸2/3/27/1024/32768/128000×4合成分布×3seed×3对角=216实际压力测试；max边际误差3.557079262046694e-12、最大边片/V 4.592592592592593。V128k FP32稠密65.536GB vs保守5V×12B=7.68MB边片代理，非实测显存/时间。普通最大耦合及独立采样已O(V)，AR同信息平坦可替代。文献SpecTr/SpecHub/Global Resolution/List-level/GBV等见报告。内部创新7.575/10（8.5/7.5/8.5/7/5.5,25/25/20/15/15），G1/G2/G4失败,G3/G7部分,G5/G6未验，无80%依据。Reject独立立项，保留线性构造和非oracle限制，停止无双向必要性的概率运输优化。
+- [报告](experiments/team-far/R17/record.md) · [实际代码](experiments/team-far/R17/probe.js) · [原始结果](experiments/team-far/R17/results.json)
