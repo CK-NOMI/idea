@@ -4226,3 +4226,9 @@ H未执行：只有真实训练部署确实将同一合法GRPO组跨区域分配
 - 起始与写前 main 4be04ee8ec7e55f8e9b0dc410b066f3239c3bec4、README cc16f517d53ec8674abe5d2c85833803ceb4790f（4223行），历史前缀保持；复核 R118/R119 记录及真实预检 JSON。代码负责人 ChatGPT、执行者 Codex，research_code 独立管理。
 - E-H：RTX3090、LayerSkip1B、HF4.48.3，重复 token ID 1 的64/256输入，16输出；2/2手工AR匹配generate，12/12干净/首错注入K1/4/8与参考一致，6/6首错即时拒绝，完美轮数8/4/2。无真实吞吐、自然文本及随机生成证据，非新GPU复跑。[原始JSON](experiments/team-anchor/R120-P0-preflight/gpu_preflight.json)。
 - P1：复用仓库 AG News（4校准/8测试、最多64输入、固定64输出、3测试重复），校准HF SD exit3/4/8 K2/4/8，测试锁定正确SD+AR/手工AR+oracle K1/2/4/8/16。总耗时比、5000文档bootstrap、有限长度净草稿预算含prefill；无效arm整体排除。自测语法及5项逻辑测试通过，真实HF/GPU计时未执行。官方跨环境、长上下文、稀疏补测延期；仅最小性能诊断，无原创或评分提升。[代码](research_code/R120-P0/pilot.py) · [说明](research_code/R120-P0/PILOT.md)。
+
+
+### team-anchor/R120-P1 / P2｜性能初筛独立审计与数值一致性定点诊断
+- 起始及写前 075b1ff601fc1d56d3485274d46cbd3e45fb030c，README b4ff4d26858f8af7c1ce9db78b3202a4747e7c4d（4229行）。原始212行及manifest、参考序列、锁、日志复核；无新GPU执行。退出码文件为n，不能确认0；预期矩阵及summary完整。
+- E-H：测试AR/手工AR/Oracle K1/2/4/8/16 一致24/21/24/21/18/21/21（每臂24）；仅K1全量有效，1.874905x vs HF AR，原报告配对CI 1.865733–1.884231；1.5x净草稿预算6.704ms/轮，2x为−1.678ms/轮。其余仅失败配置原始时间比；9种HF SD校准均3/4，强SD空，非可部署加速。首分歧仅3篇：train-448第46 token全SD及手工AR，test-27第20/43，test-32第42；重复一致。怀疑FP16 shape/prefill/LM head路径差异，未证实；原始数据无logits。不删除失败文档。
+- P2：自动复用三篇失败输入，FP16/FP32（各自正式目标），7个定点同前缀logits/top5/margin，全prompt prefill新canonical K0/1/2/4/8/16和两种HF SD真实生成核对。非性能测量；局部CPU语法、2项逻辑测试通过，无真实GPU复跑。无G1/G2/G5/G6提升、无80%依据；不训练。 [完整审计](experiments/team-anchor/R120-P1/review.md) · [P2代码](research_code/R120-P0/diagnose.py)。
