@@ -4045,3 +4045,11 @@ H未执行：只有真实训练部署确实将同一合法GRPO组跨区域分配
 - 选择历史完整最高R44 8.14（R30 8.35仅子问题，R54更正8.120），结合R43双向学习与R46共同锚点质量guard；R48强负结果禁止强制共享q或将头数当计算。候选同一预训练early-exit主干+全局/区域/客户端低秩正式适配与条件内生q，默认局部q，仅合法实际共享成本满足R48门槛时R44按生存条件切分；R88计全部草稿成本与接受质量，R59真实长期成本。非新定理/已验证机制，同委托flat可复制。R48高漂移共享需块成本−9.217%保本、−22.835%才生成侧−15%。
 - P0先真实预训练LayerSkip pilot，实测强HFL+LayerSkip+WTV/VAT/局部条件q/动态批缓存AR/同委托flat全成本；若可消除暴露成本<15%停止，禁止继续toy扫参。2×2因果消融+同预算q-only/正式质量锁定、双尺度1–2×40GB三nonIID/时延/独立seed/CI。实查LayerSkip/ReeFL/VSD/VAT/WTV/DVI原始摘要/出版页，非全文穷尽。G1/G2/G4未过，G3/G7部分，G5未验，G6不足；不另报新分/80%概率。优先验证，不批准独立立项。
 - [综合方案及实验预登记](experiments/team-far/R97/record.md)
+
+
+### team-far/R98｜SCP-SD共同低秩坐标与CPU算子成本审计
+- 起始 main f6151b51a645d055ec0cba49117e9263d5156ede、README 55eacd6429b894c42aa88c12e71607f6ce1a239e（4048行/595972字符）；写前 f6151b51a645d055ec0cba49117e9263d5156ede/55eacd6429b894c42aa88c12e71607f6ce1a239e。完整取得结构筛查，重开R97及R39/40/44/48/59/77/88/90/FOAS/CPG，未全库复跑。
+- T：共同A、个性B_c、固定W，Z_c=X_c A^T，dA=Σ(G_cB_c)^T X_c；异prompt可同批投影及VJP精确归约，领先MAC不降，普通LoRA/同委托flat可复制。H：令p/q共享浅层残差B_cAh_s以构造精确复用（新正式模型、质量未知），只省一残差时完整双头MAC上限约0.864%（指定尺寸、非wall-time下界）。
+- E：torch2.10 CPU、无CUDA/缓存模型，d1024 V8192 r16，96配置/2112实际计时，3seed/1或4线程/4或16组/1或8行、同A grouped bmm强对照；最大归一差6.38e−7。adapter-only前向/前反向中位节省−3.93%/+4.71%，完整head +0.81%/+0.28%，无CI/GPU/真实模型/训练/通信。96中位原始配置已归档，2112单次时间仅会话附件（hash见报告），未转入GitHub。实查FedSA/FFA/FedAS-LoRA/Punica/S-LoRA/LayerSkip/VSD原始页，强重合。
+- 新增未执行GPU pilot（官方HF early-exit接口，固定revision、greedy ID一致、逐请求计时/显存），候选1B/7B。保留R97优先，Reject共同坐标头独立立项；历史完整8.14不变，G1/G2/G4未过、G3/G7部分、G5未验、G6不足。停止toy头扫参，真实GPU全成本及双向消融未执行。
+- [报告](experiments/team-far/R98/record.md) · [CPU脚本](experiments/team-far/R98/cpu_bench.py) · [96配置计时](experiments/team-far/R98/medians.csv) · [GPU pilot未执行](experiments/team-far/R98/pilot_gpu.py)
