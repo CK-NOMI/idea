@@ -4152,3 +4152,11 @@ H未执行：只有真实训练部署确实将同一合法GRPO组跨区域分配
 - E2：实际增量浅/深KV、失败后按已提交父位置及活跃子集回滚；同3seed重放，72组8+16生成，每臂1152输出，dense SD/稀疏AR/稀疏SD相对各自AR全序列一致；不同正式目标仅24/72输出一致。含prefill的时间1.187902/.926545/.845246s，深层调用885/355/327、行1928/355/361；稀疏SD比dense SD 1.405x（不同p，非等质量），比同p稀疏AR 1.096x，普通稀疏SD即强基线。无真实GPU、网络、生产KV、随机SD/CI及学习—推理全流程。文献实查MoD/LayerSkip/CLaSp/ReeFL/TSS/SpecGen，强近邻。
 - Retain真实稀疏KV和块反事实学习，Reject强制对齐及已证区域优势；规划G1–7 8/7.5/9/8.2/8.4/7.3/8.6=8.14，历史实证成熟度6.60另列，无80%依据。先真实预训练稀疏适配及质量匹配，比较全局/区域、普通MoD+SD、稀疏AR、TSS、同委托flat；无分层增量则停止该核心。1–2×40GB双尺度、三nonIID/时延/seed、batch1/4/16和全成本CI未执行。
 - [报告](experiments/team-far/R110/record.md) · [结果汇总](experiments/team-far/R110/summary.csv)，完整原始代码/JSON留会话，SHA256见报告。
+
+
+### team-far/R111｜门控感知分层浅层蒸馏与普通全局蒸馏强基线
+- 起始 dd7af60f8acc5d4d2472b2b19456d1f3cf309c8c、README 1af43d59992e84ae90c877b41e2a3c569669b810（4155行/616772字符）；写前 dd7af60f8acc5d4d2472b2b19456d1f3cf309c8c、README 1af43d59992e84ae90c877b41e2a3c569669b810，原历史前缀保留。结构筛查及R110/R109/R106源码，未全库复跑。
+- T/H：固定原浅层门控g与稀疏深层d，适配q_phi，p_phi=(1-g)q_phi+gd。固定g时质量KL=(1-g)KL(r||q)+gKL(r||d)，TV(p,q)=gTV(d,q)，门控感知目标为非活跃教师KL+活跃实际d的TV；经典恒等式，单步非EAL，p非原dense。同委托flat可复刻。
+- E1：同3seed教师重放，4逻辑client/2edge，7训练臂等768参数（rank8或4+4），4cycle×12步/client，21fit/4032步。实际活跃率.221137；base/global/region/local/hier/global-aware/region-aware/hier-aware KL .015421/.014360/.014610/.014742/.014500/.014385/.014643/.014537，global最佳KL、local最佳NLL，hier-aware未优于hier KD。E2强化AdamW/24步、活跃TV，超时仅11/29两个完整seed checkpoint（14fit/5376步），25%名义预算实际.228190，base/global/hier-aware KL .015616/.011821/.013016；浅层global KL降26.77%。校准KL .01时base/global/hier-aware test活跃率.543620/.335286/.394206，KL .008574/.009942/.009998，过guard5/8、4/8、4/8，非同质量优势。无本轮真实生成/GPU/通信/CI。实查LayerSkip/MoD/ReeFL/FedLMT/WTV/TVP，强近邻。
+- Retain普通global KD强基线与损失分解，Reject固定rank分层/门控感知损失作为已证额外优势；规划G1–7 7.8/7.2/9/8.2/8.4/7/8.6=8.03，历史实证成熟度6.60不变，无80%证据。下一步实际异构设备/边缘容量下正式计算分配与同质量全局稀疏SD强基线，不再盲目堆叠区域adapter。1–2×40GB双尺度三nonIID/时延/seed全成本CI待验。
+- [报告](experiments/team-far/R111/record.md) · [汇总](experiments/team-far/R111/summary.csv)。脚本及完整原始JSON留会话，SHA256见报告。
