@@ -4196,3 +4196,12 @@ H未执行：只有真实训练部署确实将同一合法GRPO组跨区域分配
 - T/P：串行暴露成本比1-f*s+h，S倍要求fs≥1−1/S+h；h=.03且f=.6，1.5x/2x需削减该阶段60.56%/88.33%，非实际性能。实查LayerSkip作者benchmark、Medusa、Hydra、Speculative Streaming、Speculative Pipeline Decoding及vLLM，强重合。
 - H：保留R110/R44高收益假说，R115可选，R111普通KD及R112–114仅工程；仅在真实profile支持时尝试同主干块级内生预测+学习稀疏正式验证，非新原创认定。先执行R104现有官方pilot再分解prefill/serial draft/verify/cache/通信训练暴露关键路径；无足够f即停止。新p质量非劣、同p精确性、全局稀疏SD/调优同委托flat、双向消融，双尺度三nonIID/时延/seed、batch1/4/16、1–2×40GB及CI待验。未新立方案，不抬分；R115规划7.96、R110规划8.14、历史完整创新8.14/成熟6.60，无80%依据。
 - [报告](experiments/team-far/R116/record.md) · [实际审计代码](experiments/team-far/R116/audit.py) · [汇总](experiments/team-far/R116/summary.csv)。旧原始轨迹未在本轮上传。
+
+
+### team-anchor/R117｜低频深层锚点残差、晚融合内生投机及性能审计
+- 起始 main e69b4c167e59713c3b79df7bf02ce885093c1601、README 1264e2616aebc2dca9aaaf15b4c7ffed406daa48（4199行/624291 JS字符）；写前 main 1006e66e0c59d849bbaf09d58722697a21a137bd、README 1264e2616aebc2dca9aaaf15b4c7ffed406daa48，历史前缀核对一致。普通contents接口空内容，通过blob恢复全文；结构/关键词筛查与R44/56/59/92/95/99/102/104/110/112/115/116详报、R44源/R116代码及汇总核对，非全库复跑。独立team-anchor标识避免并发轮号冲突。
+- T/H：新正式模型p_t=softmax(W(x_t+gamma_(t-a)*r_a))，r_a为已提交因果锚点的深层残差，q_t以区域预测A_e(x_a)替代。晚融合使浅层状态独立于未知锚点，独立资源上可并行计算；标准最大耦合和正残差、拒绝后丢弃余下草稿并直接AR，保持新p固定长度序列分布，非原dense无损；greedy固定tie规则，EOS/top-p/FP生产未验。单深层可保留全部浅层KV只算锚点query，深多层须新结构或重算。教师KL有Hoeffding logit range界，非新定理。反例：锚点残差为零而后续深层修正关键token，质量可能恶化。
+- E/P：实际JS运行两个同尺度7264参数公开microGPT检查点、3数据hash种子、4逻辑client/2region，教师全前向，真实网格标量拟合与ridge预测。每B=2/4/8共3560测试位置、1914/1122/730锚点；深查询位置机会−46.24/68.48/79.49%，非稀疏实测。原教师NLL2.107086、浅层2.114607，全局锚点NLL2.107241/2.113568/2.113786、KL .013752/.023083/.026675；分层NLL近同、全块teacher-forced survival均输global（.880563/.843319/.742553 vs .881383/.844403/.748720）。未物理HFL/真实生成/GPU/CI，预训练可能包含原语料，两个同尺度checkpoint不满足G4。Reject已证区域优势。
+- P：假设同锚点串行AR D+B*a0，新max(D,B*a0)+L+a0*E[R]；R为首拒绝后剩余位置，使用teacher-forced前缀生存代理，B2/4/8全块suffix比例.041820/.082078/.167133。假设D=B*a0、L=.08B*a0，得1.783/1.721/1.604x，相对同锚点串行AR且非实测，不是vs强dense SD；B4需D/(Ba0)∈[.743,1.514]才有1.5x，正开销下重叠机制不能达2x。若生成占70%、额外总开销3%，B4全流程仅约1.36x。强同锚点AR、部分块流水、同委托flat可替代；多尺度近邻MEGABYTE/BLT/H-Net及LayerSkip/PipeSD/PipeSpec/Speculation at a Distance已查原始摘要/出版页，未通过原创性审查。
+- Retain性能候选，不立项；规划G1–7 7.4/7.2/9/8.3/8.6/7.4/8.7=8.09（R115 7.96、R110历史最佳8.14），历史实证成熟度6.60不变，G1/G2/G4未过、G3/G7部分、G5未验、G6无80%证据。下一步R104官方1B/8B profile及真正低频深层KV结构，匹配任务质量、真实全成本和强同模型AR/SD、多尺度、调优流水、同委托flat双向消融；三nonIID/时延/独立seed、1–2×40GB、CI。停止无收益的区域适配扫参。
+- [完整报告](experiments/team-anchor/R117/record.md) · [实际执行源码](experiments/team-anchor/R117/probe.js) · [完整数值结果](experiments/team-anchor/R117/results.json)。
