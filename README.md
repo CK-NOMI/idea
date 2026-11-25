@@ -3891,3 +3891,12 @@ H未执行：只有真实训练部署确实将同一合法GRPO组跨区域分配
 - E/O：R69 48原始K27行、6 bank各8，168配对双向数值审计，无新模型/训练；独立.17785647、固定tau=.5前向.16938173、逐对grid+方向oracle .15626469、单向方向oracle .15445809、全信息TV .13620080；一位oracle相对独立修复事件−12.14%、固定−4.77%，误差≤4.45e−16，168/168改善，非独立模型seed。单lane总修复.18654939不变，无实际时延/网络/GPU/CI。P：真实固定修复成本b、额外关键路径h须满足h<b*概率差；若b=1ms，固定/理想阈值8.47/21.59微秒，非实测。
 - 实查DISD/SpecTr/List-Level/Causal OT/Field Codes/SpecFed/LayerSkip/HierFAVG原始页面。**Retain信息边界及低payload原语，Reject standalone**；狭义机制主观暂8.0，完整历史8.14不变；G1/G2/G4未过、G3/G7部分、G5未验、G6证据不足。无HFL学习因果收益，flat同委托可复制。P0先验证真实共享修复启动开销及G5上限，后做双尺度、3nonIID/延迟/独立seed、同质量AR/BV/异步/R72/同资源flat全成本；未执行。
 - [报告](experiments/team-far/R79/record.md) · [审计代码](experiments/team-far/R79/audit.js) · [原始数值](experiments/team-far/R79/results.json)
+
+
+### team-far/R80｜HQPC-SD：有限比特概率协调、校准前沿及学习等价反例
+- 2026-11-25；起始 main 725d489ea9e3a70ebe3a0ffff33ffd115eefb61e、README 1620e25c4ec02e01c6cfb3e63f3a2904c41c0e4e；写前 main 725d489ea9e3a70ebe3a0ffff33ffd115eefb61e、README 1620e25c4ec02e01c6cfb3e63f3a2904c41c0e4e。完整获取结构筛查，重点R15–16/R28–30/R69–79及群体蒸馏/通信历史，未穷尽复跑。
+- T：A在真实Y/R后生成U（修复时Uniform[0,s(Y)]，否则Uniform[s(Y),1]），U独立Y。预承诺m区间发送编号ceil(log2 m)bit；B按各区间与[0,t(x)]交长度拆donor残余，恢复原最大耦合，正式输出乘积。f(u)=Pr_p(s>u),g(u)=Pr_q(t>u)，联合修复M=Σ区间∫f∫g/宽；细化单调提升、与单向最优差≤max宽/4；含f或g全部断点即可精确（预同步成本非免费）。固定网格DP O(mK²)最优，不宣称任意消息最优。
+- T/H：独立上下文时各区平均(d,A_k)/(d,B_k)足以精确计算期望群修复与固定快照梯度系数；相关上下文缺失Cov(A_k,B_k)项，flat同委托可复制。固定TV/sign sets按p比例重分配残差同时最大化所有累积质量及对单调伙伴的有限/连续耦合收益，但也正是正反KL在此约束下最优；否决将自由概率形状学习视为不可替代创新。纯正式输出学习分布不变。
+- E/O：R69原始48 K27行，168配对固定方向，6留一bank校准（非独立训练种子），64网格DP；独立.17785647，1/2/3/4bit均匀.16938173/.16111036/.15836203/.15763825；校准1/2/3bit .16123659/.15812474/.15768233，单向最优.15741491，全信息.13620080。2bit获单向收益约96.53%，3bit约98.69%。构造核审计见JSON；投影TV不变、KL .03119880→.02283736、单向成本.15741491→.14982613，固定.5 bit收益微小。无新模型前向/训练/GPU/实际通信/CI。P：2bit固定修复1ms可容忍新增关键路径约19.73us，群体事件降11.09%非实际加速。
+- 实查SpecTr/SpecTr-GBV/DISD/LayerSkip/DistillSpec/OnlineSD/WTV/TVP/HierFAVG/causalOT原始页面；非穷尽。Retain有限比特机制，Reject standalone及独有形状学习，G1/G2/G4未过、G3/G7部分、G5未验、G6不足、历史完整8.14不变。停止纯toy比特优化，P0真实共享修复及正式学习关键路径，双尺度1–2×40GB、3nonIID/延迟/独立seed、同质量AR/BV/async/KL/TV/WTV/flat全成本，未执行。
+- [报告](experiments/team-far/R80/record.md) · [代码](experiments/team-far/R80/audit.js) · [结果](experiments/team-far/R80/results.json)
