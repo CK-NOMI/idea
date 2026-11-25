@@ -3909,3 +3909,12 @@ H未执行：只有真实训练部署确实将同一合法GRPO组跨区域分配
 - E/O：R69 48原K27行，240曲线case N4/8/16/32/64（后3重复上下文压力）、96显式核case、80二元全联合审计；N8 ind.543147/单向pair oracle.489951/full pair.445303/4组.445824/均匀2bit.395207/探索非均匀2bit.384226/均匀3bit.375735。N4 2bit均匀.261118 vs full root.194378。pi=.2 repair-or-upload ind随机.634518/ind+relay.548586/新relay.427407；额外上传.091371/.005439/.043181，新机制额外上传反而劣于ind+relay。完整结果/误差见JSON。无新前向/训练/实际通信/GPU/CI。P：N8相对独立事件降29.26%，7串行hop每hop容忍<.0227b才净收益；零新增开销亦需共同修复启动占总时间至少约51.3%才够15%总降。
 - 实查SpecTr/DISD/BV/SpecTr-GBV/UniVer/HSD/CausalOT/Optimal Client Sampling/DELTA/LayerSkip/HierFAVG摘要或出版页，非穷尽。Retain有限状态最优性，狭义理论暂8.3/10，完整历史8.14不变；G1/G2/G4未过、G3/G7部分、G5未验、G6不足。P0真实HFL/LayerSkip共享修复关键路径及并行因果图、同资源flat/AR/BV/异步/强组基线、真实双尺度三nonIID/时延/独立seed，1–2×40GB，同质量全成本及CI未执行。拒绝单独完整立项。
 - [报告](experiments/team-far/R81/record.md) · [代码](experiments/team-far/R81/audit.js) · [结果](experiments/team-far/R81/results.json)
+
+
+### team-far/R82｜HRMC-SD：随机状态映射结合律、树形并行验证与正式学习复用审计
+- 2026-11-25；起始 main e22cc8da9cb6608138f0c952d8340217d8255e01、README f692f830b493860958814f521728f8c38c9aa067；写前 main e22cc8da9cb6608138f0c952d8340217d8255e01、README f692f830b493860958814f521728f8c38c9aa067。完整获取结构筛查，复查R81代码/报告及R72、HieraCert/R03并行状态扫描，未穷尽复跑。
+- T：固定前缀/独立本地随机源，预计算每个输入flag的R81条件(Y,R,F)，共享草稿、拒绝残差token及均匀数使每节点最多2种候选输出；F_AB=F_B∘F_A结合不交换。树上行映射、下行真实输入，与同表串行逐路径相同，保R81限定最优性；O(Nm)合并、O(logN)逻辑深度。满树载荷2(N−1)(m+1)b vs (N−1)b，非下界；identity/constant/raw前缀码长度审计，非实际通信。经典FSM扫描直接近邻。
+- T/H：给定所有随机表枚举初始flag，Rao–Blackwell正式统计/单步梯度无偏且协方差不增；加性梯度可沿map传播输入直方图，实际reward/VJP/额外通信未证；普通AR/条件积分/同委托flat可替代。无学习收敛证据。
+- E：48历史K27概率，72配置×1024=73728实际群体模拟，1474560路径状态/输出检查0差；N32循环上下文非真实集群。N8 m4共享map修复MC.388835 vs理论.394772，全部entry平均1.308候选token，root常量约23%；N32 m4 root常量约89%。所有初始flag积分只测token0指示统计，非梯度/SGD；完整条件方差、实际可达候选数及载荷代理见JSON。无新模型前向/GPU/网络/CI。
+- 实查Blelloch/MicroSpec/Propp-Wilson/Autospeculation/FlowSpec/SpecRelay/SpecTr/LayerSkip/RB梯度原始页面或摘要。Retain精确并行编译，Reject独立立项，G1/G2/G4未过、G3/G7部分、G5未验、G6不足、历史完整8.14不变。P0真实共同修复瓶颈与训练/推理关键路径，双尺度1–2×40GB三nonIID/时延/独立seed同质量全成本，未执行。
+- [报告](experiments/team-far/R82/record.md) · [代码](experiments/team-far/R82/audit.js) · [结果](experiments/team-far/R82/results.json)
