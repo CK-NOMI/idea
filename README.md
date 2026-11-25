@@ -4188,3 +4188,11 @@ H未执行：只有真实训练部署确实将同一合法GRPO组跨区域分配
 - E3：同seed训练确定性重放6fit/576步非独立，真实48对随机生成K1/K4同位置随机带全部ID一致（不同p各自ref），每arm384 token；fullkv .545555/.291636s，weighted .603486/.308542s；weighted K4输fullkv K4 5.80%，不同目标未匹配质量；全前缀重算、无增量KV/物理网络/GPU/CI。实查ToMe、MoD、LayerSkip、ReeFL、WeightedKV、SelKV、Statistically Calibrated Scaling，近邻强重合。
 - Retain摘要质量—内存折中，Reject已证HFL特有收益或实际强基线加速。规划G1–7 7.6/7.0/9.1/8.3/8.2/6.9/8.6=7.96（不同候选非直接晋级），历史完整创新8.14/实证成熟度6.60不变，无80%证据。停止微型扫参充当大模型证据；优先真实预训练1B/8B、增量KV/质量/同存储强MoD+SD及稀疏AR/同委托flat，三nonIID/时延/seed、batch1/4/16、全成本CI、1–2×40GB，未执行。
 - [报告](experiments/team-far/R115/record.md) · [汇总](experiments/team-far/R115/summary.csv)。完整代码及JSON留会话，SHA256见报告。
+
+
+### team-far/R116｜实际生成轨迹的经验Oracle与强基线关键路径门槛
+- 起始 b7307bd0d5b68a3a1494dc74c18dfe9326e8f729、README d5f4380c651f2b87f97d718e9e38167f51c150b0（4191行/622937字符），写前 b7307bd0d5b68a3a1494dc74c18dfe9326e8f729、README d5f4380c651f2b87f97d718e9e38167f51c150b0，历史前缀保留。结构筛查及R25/44/59/81/82/90/95/101/104/115、R104实际pilot及R112/R110/R115原始轨迹；非全库复跑。CPU torch2.10无CUDA/transformers/HF缓存，无新模型训练或前向。
+- E-H/P：重分析R112 72配对组×12策略=864历史真实轨迹，全部ID一致。36 test请求的事后min_k(旧CPU秒+假设RTT×deep_calls+bytes_proxy/B) vs fixed12，在local/regional/hetero/slow/very_slow五场景加速1.1801/1.0668/1.0448/1.0448/1.0452x；更松独立逐项min为1.1801/1.0744/1.0482/1.0527/1.0562x。非真实网络、非独立样本或普适上限，Oracle受CPU噪声偏乐观。区域校准输全局/固定12。停止窗口微调。R110重新汇总1.405x vs不同p的dense SD、仅24/72完整ID相同；R115摘要未赢fullkv。
+- T/P：串行暴露成本比1-f*s+h，S倍要求fs≥1−1/S+h；h=.03且f=.6，1.5x/2x需削减该阶段60.56%/88.33%，非实际性能。实查LayerSkip作者benchmark、Medusa、Hydra、Speculative Streaming、Speculative Pipeline Decoding及vLLM，强重合。
+- H：保留R110/R44高收益假说，R115可选，R111普通KD及R112–114仅工程；仅在真实profile支持时尝试同主干块级内生预测+学习稀疏正式验证，非新原创认定。先执行R104现有官方pilot再分解prefill/serial draft/verify/cache/通信训练暴露关键路径；无足够f即停止。新p质量非劣、同p精确性、全局稀疏SD/调优同委托flat、双向消融，双尺度三nonIID/时延/seed、batch1/4/16、1–2×40GB及CI待验。未新立方案，不抬分；R115规划7.96、R110规划8.14、历史完整创新8.14/成熟6.60，无80%依据。
+- [报告](experiments/team-far/R116/record.md) · [实际审计代码](experiments/team-far/R116/audit.py) · [汇总](experiments/team-far/R116/summary.csv)。旧原始轨迹未在本轮上传。
