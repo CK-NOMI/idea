@@ -3936,3 +3936,12 @@ H未执行：只有真实训练部署确实将同一合法GRPO组跨区域分配
 - E2：648固定rate DP配置，前后向cost误差3.552713678800501e-15、无差于all1/all4/myopic；slack2 k=.03 adaptive3.69045 vs all1 3.99804/all4 3.71883（仅−7.69%/−.76%启动代理）；k=.08近乎无收益，.12无。非在线实际动态训练。实查PipeSD/SpecFed/SpecEdge/WAN SD/TCP ACK/MG-WFBP/OASR/FedBuff/LayerSkip/异步HFL原始摘要/出版页，非穷尽。
 - Retain固定版本融合与截止阈值，Reject standalone，G1/G2/G4未过、G3/G7部分、G5未验、G6不足，历史完整8.14不变。P0核实共享授权事务真实存在（若修复本地GPU而梯度跨云则终止），双尺度1–2×40GB三nonIID/延迟/独立seed、强fusion/AR/SD/同委托flat、真实全成本质量与CI未执行。
 - [报告](experiments/team-far/R84/record.md) · [训练代码](experiments/team-far/R84/audit.js) · [训练结果](experiments/team-far/R84/results.json) · [DP代码](experiments/team-far/R84/deadline.js) · [DP结果](experiments/team-far/R84/deadline_results.json)
+
+
+### team-far/R85｜VPH-SD：验证敏感的主干参数三级归属与树切分一阶收益
+- 2026-11-25；起始 main 48a2e586e3ab27bef47576efa69922e6c2db6ae3、README 2b81f796625de6cddb7f455862db8c58cdb996a1；写前 main 48a2e586e3ab27bef47576efa69922e6c2db6ae3、README 2b81f796625de6cddb7f455862db8c58cdb996a1。完整获取结构筛查，复查R26/39/45/48–55/76–84及R77全记录/代码，未穷尽复跑。
+- T：同快照CE梯度g、双向TV梯度t，block树cut P相对global步的额外一阶CE/TV下降ηC=ηΣ W_A||g_A−gbar||²、ηS=ηΣ W_A〈t_A−tbar,g_A−gbar〉；逐split可加，C非负S可负，按额外副本预算Pareto DP选max C且S≥0。只保相对global的一阶性质，不保多步泛化/绝对TV。FedLAG/FedSelect/FLAYER及经典方差分解/背包直接近邻，同委托flat可替代。
+- E1：实际重取两同7264 microGPT、R77 VJP加入浅层adjoint；8 FFN-down块选四区域复制，144fits/3456client SGD/9216生成token、69408前向/35656 VJP，3人工layout×3hash×2检查点。全部方法观察接受/轮次同布局相同，收益近零；原执行后确定性复跑非独立证据。
+- E2：24 Q/K/V/O与FFN up/down块，五种树cut，预算8副本(2048参数)，真实逻辑client/edge/cloud分层CE更新，144fits/4608client SGD/9216正式token、83769前向/46776 VJP；另用hash区间与η=.1探索设置，非预注册/与E1不配对。完整144行、切分与有限差分审计见JSON；无大模型新训练、物理通信/GPU/CI/实测wall time。实查LayerSkip/FedLAG/FedSelect/FLAYER/FedSPC/FedECP等原始摘要/出版页。
+- Retain树切分身份与真实主干归属审计，Reject standalone，G1/G2/G4未过、G3/G7部分、G5未验、G6不足，历史完整8.14不变。P0真实双尺度1–2×40GB、三nonIID/延迟/独立seed，pFL+LayerSkip/FedLAG/FedSelect/FLAYER/同委托flat同质量全成本与CI；停止单纯参数归属微调。
+- [报告](experiments/team-far/R85/record.md) · [代码](experiments/team-far/R85/audit.js) · [E1](experiments/team-far/R85/results1.json) · [E2](experiments/team-far/R85/results2.json)
