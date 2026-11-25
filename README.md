@@ -3953,3 +3953,11 @@ H未执行：只有真实训练部署确实将同一合法GRPO组跨区域分配
 - E/P：实际V8整数合成审计，405行，3场景×3seed×32向量，d16/256/4096、G64/128/256、b0/2/4/6/8；17,694,720坐标检查，认证错误/细化错误/单调性违反均0。G128 d4096 b4/6/8认证.615304/.910146/.982135但整块均0，剩余边缘含mask载荷7.30818/7.35942/9.03573 vs原10bit；b4两边缘总载荷仅降13.46%。G256 d4096 b4认证.864454、整块0、5.81328bit，质量未知；无真实SGD/LLM/SD/GPU/通信/计时/CI。实查SwiftFL/LayerSkip/FedPAQ/BHFL/BIQ/When Drafts Evolve/FedALPA原始出版或摘要/检索节选，非穷尽。
 - Retain证书和整块尺度负证据，Reject standalone；候选原创性暂6/10，历史最高完整8.14不变。G1/G2/G4未过、G3/G7部分、G5未验、G6不足。P0实测版本等待与依赖闭包，匹配量化目标/质量/全成本，比较原始/熵编码/渐进量化+AR/SD、SwiftFL、同信息调度及同委托flat；双尺度三nonIID/时延/独立seed 1–2×40GB，未执行。
 - [报告](experiments/team-far/R86/record.md) · [代码](experiments/team-far/R86/audit.js) · [结果](experiments/team-far/R86/results.json)
+
+
+### team-far/R87｜CDR-SD：离散计算路径认证、标量必选专家精确扫描与晚绑定梯度
+- 2026-11-25；起始 main 8baffed03c436bc82897fd4d9891f176f800779d、README abc1b860916069d25f2f6d21ba3f711982e73704（3956行/577262字符）；写前 main 82f15adf093df6460555044f3a814134d44f3abf、README abc1b860916069d25f2f6d21ba3f711982e73704；完整获取结构筛查，复读R86及A/R03/R12/FVP/R45/R55/R64/R76/R77/MoE历史，未穷尽复跑。
+- T：固定输入/专家版本、待聚合router score a+Bz、盒约束；候选S严格top-k不变iff所有内外pair margin a_i−a_j>Σr|B_i−B_j|，共享偏移抵消；可能超越者少于k仅为必选充分。标量z精确排序交点扫描最大同时超越数O(kE logE)，例(0,z−.1,−z−.1) top2首专家始终入选但pairwise误拒。固定expert tape待精确alpha/adjoint后反传，dy/dscore=alpha_i(f_i−y)，无通用提前VJP。端点ties/FP生产实现未验；AR及同委托flat可复制。
+- E1：实际V8合成3维router、3mode×3seed×3E×3radius×128=10368case、41472 toy MLP forward、331776梯度分量对比，认证违反/梯度差/整集顶点审计差0；E32 radius.1 common separate/center/pair .0/.39974/.55859，nominal hit .9375；radius.3 independent/common/cluster pair .001302/.164063/0；E64 radius.3 common .014323。E2：20736标量case、41472候选，扫线vs直接oracle rank差0/违反0；E32 radius.3 independent/common/cluster pair→sweep .113932→.160156/.547526→.582031/.098958→.128906；全set不变。非真实LLM/SGD/SD/GPU/网络/计时/CI。
+- 实查SpecMoE/DraftExpert/EcoSpec/Speculating Experts/FedAlign-MoE/FedMoE/HFedMoE/SwiftFL/Top-k认证摘要或出版页，非穷尽。Retain离散认证及精确标量算法，Reject standalone，候选原创性暂6.8/10、历史完整8.14不变；G1/G2/G4未过、G3/G7部分、G5未验、G6不足。P0真实MoE联邦router更新轨迹及等待、输入/专家版本稳定性，双尺度三nonIID/延迟/独立seed，AR/自SD/SpecMoE/SwiftFL/同委托flat同质量全成本与CI；无SD特有瓶颈则停止。
+- [报告](experiments/team-far/R87/record.md) · [E1代码](experiments/team-far/R87/audit.js) · [E1结果](experiments/team-far/R87/results.json) · [E2代码](experiments/team-far/R87/sweep.js) · [E2结果](experiments/team-far/R87/sweep_results.json)
