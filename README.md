@@ -4136,3 +4136,11 @@ H未执行：只有真实训练部署确实将同一合法GRPO组跨区域分配
 - T/P：固定块起点、无EOS标准bonus下成本比=(Cnew/Cbase)(1+Abase)/(1+Anew)。假设生成/学习/其他占.65/.25/.10，新增成本.01，Abase2；Anew2.1/2.3/2.6、C比1.02/.98/.95、学习节省0/.1/.15，解析全流程节省−.16%/8.59%/16.29%，非观测、非预测概率。实查LayerSkip/CLaSp/ReeFL/OnlineSD/When Drafts Evolve/FedLAG/WTV/REAL/SpecFed摘要或出版页，近邻重合风险高。
 - 旧成熟度6.60、历史完整创新8.14不变；规划潜力G1–7 8.0/8.1/9.0/8.0/7.8/7.3/8.5均值8.10，非实证门槛、非成功概率。G6无80%证据。Retain唯一优先验证主线，不批准成熟顶刊立项。P0 1B/8B官方LayerSkip同质量真实端到端与普通HFL+本地WTV/REAL、自适应exit、FedLAG、同委托flat；三nonIID/网络/独立seed，1–2×40GB，15%真实总耗时或20%有效工作门槛，未执行。
 - [收敛方案与条件收益推导](experiments/team-far/R108/record.md)。无新增实验。
+
+
+### team-far/R109｜连续块稀疏正式验证与深层权重激活边界
+- 起始 74f19b5810fb78bc1d1f8b66a1e65e7dc076a417、README 16021c696c2c6fa3853fcdc8162cb3989c3418eb（4139行/614244字符）；写前 74f19b5810fb78bc1d1f8b66a1e65e7dc076a417、README 16021c696c2c6fa3853fcdc8162cb3989c3418eb，历史前缀保留。重点复核R56/65/82/85/92/94/108，未全库复跑。
+- T/H：绝对位置四行一组、起始浅层状态因果定门控，深层两块仅在活跃索引间计算，非活跃p=q，无深层KV行；新正式p非dense无损；标准同p精确SD条件证明，未跑真实rollout/KV/FP。普通稀疏AR可复制计算结构。
+- E：3seed CPU四层字符Transformer、240教师步/seed，4逻辑client/2region，加和ridge充分统计，真实窄序列前向；30+24次评估，后者同seed重放非独立。名义25%时teacher/q NLL2.241680/2.262187；global/region/block活跃率.218370/.213867/.214193，NLL2.261753/2.261147/2.257666，KL .016601/.016609/.017080；四行对齐块激活.522786/.533203/.214193，八行.710503/.729167/.366753。块级深层行减少78.58%，NLL增.71%，但不同p、无质量等价与HFL增量证明。无真实生成/GPU/通信/CI。假设f=.6二元深层调用成本、对齐块同输出，1/[1-f(1-u)]为1.89x相对稠密SD、相对零散门控1.36x，非实测。batch/错位/拒绝回退可能削弱。实查MoD、LayerSkip、CLaSp、DEL、ReeFL、TSS、SparseSpec、DepthKV，强近邻。
+- 规划G1–7 8.0/7.8/9/8/8.4/7.3/8.5=8.14，实证成熟度6.60不变，无80%依据。Retain高收益候选，不定稿。P0真实1B稀疏KV与块对齐、同质量同活跃率普通MoD+SD/稀疏AR/全局块门控/同委托flat、batch1/4/16；仅有增量才继续8B三nonIID/时延/seed，1–2×40GB全流程G5与CI，未执行。
+- [报告](experiments/team-far/R109/record.md) · [真实代码](experiments/team-far/R109/probe.py.gz.b64) · [块实验代码](experiments/team-far/R109/block_probe.py.gz.b64)，完整原始JSON留会话，SHA256见报告。
