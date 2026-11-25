@@ -1,0 +1,6 @@
+function frontier(){
+const data=[{name:"Llama3.2-1B exit4",sd:9.96,ar:17.9},{name:"Llama3-8B exit4",sd:15.75,ar:28.87},{name:"Llama2-7B exit4",sd:19.91,ar:25.83},{name:"Llama2-13B exit4",sd:33.11,ar:32.95},{name:"Llama2-13B exit8",sd:19.22,ar:33.55}];let models=data.map(x=>({...x,ratio:x.sd/x.ar,sdSpeed:x.ar/x.sd,strong:Math.min(x.sd,x.ar),target:.85*Math.min(x.sd,x.ar)}));
+let rows=[];for(let f of [.25,.4,.5,.6,.7,.8])for(let h of [0,.01,.03,.05])for(let s of [.15,.20,.25,.30,.35]){let gain=f*s-h;rows.push({f,h,s,gain,pass:gain>=.15-1e-12,required:(.15+h)/f})}
+let sample=[];for(let p of [.8,.9,.95])for(let confidence of [.8,.9,.95]){let n=Math.ceil(Math.log(1-confidence)/Math.log(p));sample.push({threshold:p,confidence,nAllSuccess:n,lower:Math.pow(1-confidence,1/n)})}
+return {source:"https://huggingface.co/blog/layerskip, A100 public summarization table; not our hardware or matched HFL runs",models,rows,sample,notes:"Hypothetical f, overhead h, extra fractional stage reduction s relative to strongest baseline; no frequency/probability from grid. Binomial all-success bound requires independently representative trials of a frozen method, not repeated prompts or chosen seeds."}}
+console.log(JSON.stringify(frontier(),null,2));
