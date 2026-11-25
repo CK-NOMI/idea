@@ -4213,3 +4213,10 @@ H未执行：只有真实训练部署确实将同一合法GRPO组跨区域分配
 - E/P：RTX 3090 上 HF 4.48.3 共 112 次，校准选型相对 AR 留出 0.864×（95% CI 0.798–0.966），序列一致 7/8。官方 4.46.3 兼容环境下复用算法 160 次，留出 1.001×（0.917–1.105），一致 8/8。最后层实测阶段占总时间 5.90%，模拟免费删除一半最后层调用仅约 1.03×；未把代理当候选实际吞吐。历史 HF pilot 仅传目标 `generation_config` 无法落实助手端窗口，本轮修正并废弃初次未修正轨迹。
 - 主观原创性 7.4/10。G1/G2 未过，G3/G4/G7 部分，G5 未验证，G6 无 80% 依据。**Reject 冻结锚点桥为论文机制，保留多层因果反例、可核验性能边界和同目标基线。** 下轮单卡先训练因果稀疏后缀，显式构建全 token 浅层共享记忆与锚点历史；预先设质量及可移除关键路径双门槛，再决定是否增加 GPU 或引入 HFL。
 - [报告](experiments/team-anchor/R118/record.md) · [实验源代码及全部结果](experiments/team-anchor/R118/) · [官方基线请求级原始数据](experiments/team-anchor/R118/official_cuda_latency.jsonl) · [3090 最后一层剖析](experiments/team-anchor/R118/layerskip_1b_cuda_final_profile.json)
+
+### team-anchor/R119-P0｜多层稀疏后缀计算与质量门槛初筛
+
+- 读取 commit `80f56a396b36c8148fc1bff3ae12bca1e87c13f6`；单 RTX 3090、LayerSkip 1B、AG News 独立校准/测试各 8 篇。逐层模块剖析做 64/256/512 输入、AR 与 Transformers LayerSkip，每配置预热后 6 次；记录插桩与不插桩墙钟。自定义路径实际跳过非锚点深层 Q/Attention/MLP，比较稠密、周期深算、锚点历史、全 token 浅层记忆加锚点历史。
+- **两门槛均失败。** 最佳 NLL 增幅 +1.389%，配对文档 bootstrap 单侧 95% 上界 +2.089%。最佳真实稀疏前向约 65 ms，对稠密约 27 ms，净关键路径变化约 −140%；自定义路径仍受 Python 锚点循环及 K/V 成本影响。冻结模型，0 个训练参数/步骤；不含 HFL。
+- 已知限制：未拆出采样、KV 更新、draft/verify/rollback 阶段墙钟；新稀疏目标的 AR/SD decode 吞吐及可靠逐配置峰值显存未测。第一次 RoPE 失败、第二次共享张量别名对照、第三次预热事件污染均留档并从最终结果剔除。未以插桩 CUDA event 代替墙钟。
+- [完整报告](experiments/team-anchor/R119-P0/record.md) · [源代码、原始输入、逐请求结果、环境和失败记录](experiments/team-anchor/R119-P0/)。

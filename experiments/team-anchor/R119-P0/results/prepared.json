@@ -1,0 +1,32 @@
+{
+  "snapshot": "/root/rivermind-data/hfl_sd_r118/layerskip-1b",
+  "model_id": "facebook/layerskip-llama3.2-1B",
+  "revision": "81deb0f88734409cca506bcefcfb5c6bd2667565",
+  "weight_sha256": "ba9a27bc1fadc74d7ca576aa618e464aa006b1c56b4a940c668c980a302708ee",
+  "official_git_blobs": {
+    "config.json": "bb65e33cb3db2727698e755950cb8c1f5a8b9775",
+    "generation_config.json": "9d6875bc4b1ad172618be34ec767b21ed35fda84",
+    "tokenizer.json": "1c1d8d5c9024994f1d3b00f9662b8dd89ca13cf2",
+    "tokenizer_config.json": "93623bc19ca3b4757444f2c6ec6a3ffea46938a9",
+    "special_tokens_map.json": "02ee80b6196926a5ad790a004d9efd6ab1ba6542",
+    "LICENSE": "99692fc3969c32ee00e0b20484d2693947d3d7c2"
+  },
+  "tokenizer_lfs_sha256": "6b9e4e7fb171f92fd137b777cc2714bf87d11576700a1dcd7a399e7bbe39537b",
+  "source_url": "https://www.modelscope.cn/api/v1/models/facebook/layerskip-llama3.2-1B/repo?Revision=master&FilePath=",
+  "torch": "2.5.1+cu124",
+  "transformers": "4.48.3",
+  "n_layers": 16,
+  "prompt_sha256": "eca6e363a3070ebb6e1610ab273091c0ae6418f27efaf5c39e3060430d81ecf9",
+  "dataset": "AG News CSV",
+  "dataset_revision": "555590db4219b1243abb1918effd6a7425a2d75f",
+  "rows": 64,
+  "ready": true,
+  "dataset_sha256": {
+    "train": "199e6cfd2478399e8c2bb6ab74f795c8c476c6536125c22727201aa11e3402d2",
+    "test": "65860ae613aa57967567aee39c633730337e25b0cfea0372a82da5fea8f52407"
+  },
+  "dataset_source_rows": {
+    "train": 1024,
+    "test": 256
+  }
+}

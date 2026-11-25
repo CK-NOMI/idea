@@ -1,0 +1,206 @@
+From v4.47 onwards, when a model cache is to be returned, `generate` will return a `Cache` instance instead by default (as opposed to the legacy tuple of tuples format). If you want to keep returning the legacy format, please set `return_legacy_cache=True`.
+{
+  "gpu": "NVIDIA GeForce RTX 3090",
+  "profile_rows": 36,
+  "failures": 0,
+  "summary": [
+    {
+      "suffix": 2,
+      "B": 2,
+      "mode": "anchor_history",
+      "test_documents": 8,
+      "mean_relative_nll": 0.04776710358666805,
+      "one_sided_95_upper": 0.05351204566808673,
+      "mean_actual_speedup": 0.26526302064321494,
+      "gate_quality_pass": false,
+      "gate_perf_pass": false
+    },
+    {
+      "suffix": 2,
+      "B": 2,
+      "mode": "periodic_all_hidden",
+      "test_documents": 8,
+      "mean_relative_nll": 0.013891388698729537,
+      "one_sided_95_upper": 0.020887142447059387,
+      "mean_actual_speedup": 0.2629581549041519,
+      "gate_quality_pass": false,
+      "gate_perf_pass": false
+    },
+    {
+      "suffix": 2,
+      "B": 2,
+      "mode": "shared_memory",
+      "test_documents": 8,
+      "mean_relative_nll": 0.016933633003080387,
+      "one_sided_95_upper": 0.02380227813536681,
+      "mean_actual_speedup": 0.13253019112987666,
+      "gate_quality_pass": false,
+      "gate_perf_pass": false
+    },
+    {
+      "suffix": 2,
+      "B": 4,
+      "mode": "anchor_history",
+      "test_documents": 8,
+      "mean_relative_nll": 0.038882559623166266,
+      "one_sided_95_upper": 0.049987057910245214,
+      "mean_actual_speedup": 0.41610376929505155,
+      "gate_quality_pass": false,
+      "gate_perf_pass": false
+    },
+    {
+      "suffix": 2,
+      "B": 4,
+      "mode": "periodic_all_hidden",
+      "test_documents": 8,
+      "mean_relative_nll": 0.023389140923240834,
+      "one_sided_95_upper": 0.03268179102116554,
+      "mean_actual_speedup": 0.41622855271571024,
+      "gate_quality_pass": false,
+      "gate_perf_pass": false
+    },
+    {
+      "suffix": 2,
+      "B": 4,
+      "mode": "shared_memory",
+      "test_documents": 8,
+      "mean_relative_nll": 0.024017524277798963,
+      "one_sided_95_upper": 0.03338648470922048,
+      "mean_actual_speedup": 0.2346686332897684,
+      "gate_quality_pass": false,
+      "gate_perf_pass": false
+    },
+    {
+      "suffix": 4,
+      "B": 2,
+      "mode": "anchor_history",
+      "test_documents": 8,
+      "mean_relative_nll": 0.14788376425710212,
+      "one_sided_95_upper": 0.1555345865396517,
+      "mean_actual_speedup": 0.15442197653813247,
+      "gate_quality_pass": false,
+      "gate_perf_pass": false
+    },
+    {
+      "suffix": 4,
+      "B": 2,
+      "mode": "periodic_all_hidden",
+      "test_documents": 8,
+      "mean_relative_nll": 0.052180275367717854,
+      "one_sided_95_upper": 0.06452733485762926,
+      "mean_actual_speedup": 0.15452034185866442,
+      "gate_quality_pass": false,
+      "gate_perf_pass": false
+    },
+    {
+      "suffix": 4,
+      "B": 2,
+      "mode": "shared_memory",
+      "test_documents": 8,
+      "mean_relative_nll": 0.05511002304171311,
+      "one_sided_95_upper": 0.06715469633665735,
+      "mean_actual_speedup": 0.07188134048482117,
+      "gate_quality_pass": false,
+      "gate_perf_pass": false
+    },
+    {
+      "suffix": 4,
+      "B": 4,
+      "mode": "anchor_history",
+      "test_documents": 8,
+      "mean_relative_nll": 0.11764737094554195,
+      "one_sided_95_upper": 0.13956902277668945,
+      "mean_actual_speedup": 0.26600960010309405,
+      "gate_quality_pass": false,
+      "gate_perf_pass": false
+    },
+    {
+      "suffix": 4,
+      "B": 4,
+      "mode": "periodic_all_hidden",
+      "test_documents": 8,
+      "mean_relative_nll": 0.07471294511021595,
+      "one_sided_95_upper": 0.08888252331620178,
+      "mean_actual_speedup": 0.2642584974969714,
+      "gate_quality_pass": false,
+      "gate_perf_pass": false
+    },
+    {
+      "suffix": 4,
+      "B": 4,
+      "mode": "shared_memory",
+      "test_documents": 8,
+      "mean_relative_nll": 0.07602586766623343,
+      "one_sided_95_upper": 0.09016822470770086,
+      "mean_actual_speedup": 0.13336368016924724,
+      "gate_quality_pass": false,
+      "gate_perf_pass": false
+    },
+    {
+      "suffix": 8,
+      "B": 2,
+      "mode": "anchor_history",
+      "test_documents": 8,
+      "mean_relative_nll": 0.40382709406329376,
+      "one_sided_95_upper": 0.46058286771196233,
+      "mean_actual_speedup": 0.08404384682028193,
+      "gate_quality_pass": false,
+      "gate_perf_pass": false
+    },
+    {
+      "suffix": 8,
+      "B": 2,
+      "mode": "periodic_all_hidden",
+      "test_documents": 8,
+      "mean_relative_nll": 0.12713124732861478,
+      "one_sided_95_upper": 0.15426038802776593,
+      "mean_actual_speedup": 0.08366701224965076,
+      "gate_quality_pass": false,
+      "gate_perf_pass": false
+    },
+    {
+      "suffix": 8,
+      "B": 2,
+      "mode": "shared_memory",
+      "test_documents": 8,
+      "mean_relative_nll": 0.1315147536522546,
+      "one_sided_95_upper": 0.15936578056001754,
+      "mean_actual_speedup": 0.03717164533700062,
+      "gate_quality_pass": false,
+      "gate_perf_pass": false
+    },
+    {
+      "suffix": 8,
+      "B": 4,
+      "mode": "anchor_history",
+      "test_documents": 8,
+      "mean_relative_nll": 0.34730210887513374,
+      "one_sided_95_upper": 0.4048410495493346,
+      "mean_actual_speedup": 0.15231710568822504,
+      "gate_quality_pass": false,
+      "gate_perf_pass": false
+    },
+    {
+      "suffix": 8,
+      "B": 4,
+      "mode": "periodic_all_hidden",
+      "test_documents": 8,
+      "mean_relative_nll": 0.17706770511838585,
+      "one_sided_95_upper": 0.20883560744153942,
+      "mean_actual_speedup": 0.15174933144525143,
+      "gate_quality_pass": false,
+      "gate_perf_pass": false
+    },
+    {
+      "suffix": 8,
+      "B": 4,
+      "mode": "shared_memory",
+      "test_documents": 8,
+      "mean_relative_nll": 0.17998720345058555,
+      "one_sided_95_upper": 0.21391950817311722,
+      "mean_actual_speedup": 0.07136786001361599,
+      "gate_quality_pass": false,
+      "gate_perf_pass": false
+    }
+  ]
+}
