@@ -4144,3 +4144,11 @@ H未执行：只有真实训练部署确实将同一合法GRPO组跨区域分配
 - E：3seed CPU四层字符Transformer、240教师步/seed，4逻辑client/2region，加和ridge充分统计，真实窄序列前向；30+24次评估，后者同seed重放非独立。名义25%时teacher/q NLL2.241680/2.262187；global/region/block活跃率.218370/.213867/.214193，NLL2.261753/2.261147/2.257666，KL .016601/.016609/.017080；四行对齐块激活.522786/.533203/.214193，八行.710503/.729167/.366753。块级深层行减少78.58%，NLL增.71%，但不同p、无质量等价与HFL增量证明。无真实生成/GPU/通信/CI。假设f=.6二元深层调用成本、对齐块同输出，1/[1-f(1-u)]为1.89x相对稠密SD、相对零散门控1.36x，非实测。batch/错位/拒绝回退可能削弱。实查MoD、LayerSkip、CLaSp、DEL、ReeFL、TSS、SparseSpec、DepthKV，强近邻。
 - 规划G1–7 8.0/7.8/9/8/8.4/7.3/8.5=8.14，实证成熟度6.60不变，无80%依据。Retain高收益候选，不定稿。P0真实1B稀疏KV与块对齐、同质量同活跃率普通MoD+SD/稀疏AR/全局块门控/同委托flat、batch1/4/16；仅有增量才继续8B三nonIID/时延/seed，1–2×40GB全流程G5与CI，未执行。
 - [报告](experiments/team-far/R109/record.md) · [真实代码](experiments/team-far/R109/probe.py.gz.b64) · [块实验代码](experiments/team-far/R109/block_probe.py.gz.b64)，完整原始JSON留会话，SHA256见报告。
+
+
+### team-far/R110｜真实块反事实收益、增量稀疏KV与实际生成强基线
+- 起始 67dc4bcacb45992de1d2c8c38f5d1beb7181cf4b、README 62de58451aaadc66c8101eaa1ca6153daabe5492（4147行/615497字符），写前 67dc4bcacb45992de1d2c8c38f5d1beb7181cf4b、README 62de58451aaadc66c8101eaa1ca6153daabe5492，历史前缀保留；重点R109源码/R106模型/R56/85/108，未全库复跑。
+- E1：同R109三seed/teacher确定性重放，真实反事实随机背景mask开关完整四位置块，6144配对标签；四逻辑client/2区加和ridge，96客户端评估。25%名义预算old/global/region/shrink活跃率.214193/.221137/.232205/.222005，NLL2.257666/2.257213/2.257711/2.257634，KL .017080/.015421/.015502/.015473；全局更优，非严格等实际活跃率，教师NLL2.241680。108组真实greedy全前缀AR/普通稀疏SD/强制对齐SD输出一致，深层调用145/76/80，时间1.700655/1.233634/1.415918s；对齐更慢，Reject。
+- E2：实际增量浅/深KV、失败后按已提交父位置及活跃子集回滚；同3seed重放，72组8+16生成，每臂1152输出，dense SD/稀疏AR/稀疏SD相对各自AR全序列一致；不同正式目标仅24/72输出一致。含prefill的时间1.187902/.926545/.845246s，深层调用885/355/327、行1928/355/361；稀疏SD比dense SD 1.405x（不同p，非等质量），比同p稀疏AR 1.096x，普通稀疏SD即强基线。无真实GPU、网络、生产KV、随机SD/CI及学习—推理全流程。文献实查MoD/LayerSkip/CLaSp/ReeFL/TSS/SpecGen，强近邻。
+- Retain真实稀疏KV和块反事实学习，Reject强制对齐及已证区域优势；规划G1–7 8/7.5/9/8.2/8.4/7.3/8.6=8.14，历史实证成熟度6.60另列，无80%依据。先真实预训练稀疏适配及质量匹配，比较全局/区域、普通MoD+SD、稀疏AR、TSS、同委托flat；无分层增量则停止该核心。1–2×40GB双尺度、三nonIID/时延/seed、batch1/4/16和全成本CI未执行。
+- [报告](experiments/team-far/R110/record.md) · [结果汇总](experiments/team-far/R110/summary.csv)，完整原始代码/JSON留会话，SHA256见报告。

@@ -1,0 +1,7 @@
+experiment,mode,trajectories,seconds,deep_calls,deep_rows,shallow_rows_or_calls
+full_prefix,ar,108,1.70065487,145,1640,1728
+full_prefix,sd,108,1.23363439,76,829,1785
+full_prefix,aligned,108,1.41591763,80,899,1762
+incremental,dense_sd,72,1.187902,885,1928,1928
+incremental,sparse_ar,72,0.926545,355,355,1656
+incremental,sparse_sd,72,0.845246,327,361,1671
