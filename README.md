@@ -4168,3 +4168,14 @@ H未执行：只有真实训练部署确实将同一合法GRPO组跨区域分配
 - E2：共享同快照head，实际binary活跃h+候选ID+随机数，接收端重建q，深层p拒绝修正；36对与本地ref全部ID一致，74调用284行16拒绝，双向应用载荷122984→58472B（−52.46%），CPU .35608→.36011s；进程内编码非网络。同head split强基线可完全复制，token replay可能更少payload。假设B=50kB/s,RTT10ms时相对传冗余q 1.567x，B2.5MB/s仅1.019x，非实测。实查PipeSD/DISCO/BanditSpec/SVIP/Speculation at a Distance/ReeFL，强近邻。
 - Retain随机审计与通信工程，Reject作为已证HFL独有收益。规划G1–7 7.8/7.1/9.1/8.2/8.4/7/8.6=8.03，历史实证成熟度6.60另列，无80%依据。下一步真实预训练质量/同head split/远端token replay/自适应强基线物理网络，双尺度三nonIID/时延/seed及全成本CI，未执行。
 - [报告](experiments/team-far/R112/record.md) · [生成代码](experiments/team-far/R112/probe.py.gz.b64) · [评估代码](experiments/team-far/R112/evaluate.py.gz.b64) · [通信代码](experiments/team-far/R112/wire.py.gz.b64)。完整原始JSON留会话，SHA256见报告。
+
+
+### team-far/R113｜补归档：低秩接口、INT4强基线与远端Token重算
+- 原轮未提交；R114重读实际脚本和三份原始JSON后补归档，非重跑。45组低秩评估/1944局部步，3seed、4client/2edge，每cycle聚合；rank8/16/24全局joint KL .029961/.018607/.016647，hier .029991/.018679/.016664。INT4理论行28B，NLL2.257849 KL.015915 vs FP32 NLL2.257213 KL.015421；INT4新目标、未跑真实量化SD。36组真实随机轨迹远端重算ID完全一致，58472→6856B、CPU .410817→.632701s，额外640浅层行、77 replay RPC；无物理网络。低秩输INT4，远端重算强基线。原规划8.03，实证6.60，HFL增量无证据。[补归档](experiments/team-far/R113/record.md)
+
+### team-far/R114｜量化验证状态精确预测编码与侧信息边界
+- 起始 a2fedf4691f5ee88ac76d120683fa39e45095552、README b13b4572456b0809aff2a0edff5bf1f9ef6a1314（4171行/619468字符）；写前 a2fedf4691f5ee88ac76d120683fa39e45095552、README b13b4572456b0809aff2a0edff5bf1f9ef6a1314，保留历史。R45/77/90/106/107/112及R113源/原始结果复核，非全库复跑。
+- T：整数残差mod16无损还原固定INT4状态，非原FP32；SD须用真实q且双方版本/因果一致；若客户端采原q、服务端验量化q则一般错误。条件熵恒等式H(Z)-H(Z|U)=I(Z;U)，发送非共享U成本可抵消；经典非新定理。相邻活跃parent可复用前一候选ID，首行/间断需补；本轮teacher-forced y代理候选metadata非真实SD轨迹。
+- E1：同3seed教师确定性重放，4逻辑client/2区，因果四位置熵门控，训练统计16高频token，全局/区域收缩与逐坐标Huffman，72评估，4452活跃行/499包每臂全整数及scale精确。raw/zlib/global entropy/region entropy/global pred/hier pred bytes126652/132053/108936/109107/113616/113102；hier输global entropy。FP32/INT4 NLL2.256081/2.256662，KL .017286/.017828；新正式目标、无生成。
+- E2：修正nn变量覆盖后3seed全重放，84评估，实际共同activity mask+候选metadata，预测模式仅补806起始parent ID；raw/global entropy/region entropy/global pred/hier pred/global conditional/region conditional 144460/126744/126915/116840/116326/114942/117976B，直接全局条件熵最强，较raw−20.43%、较global entropy−9.31%，hier输1.20%。无GPU、实际网络、真实SD、同步/码本费用/CI；纯线性字节时间上限1.103x vs global entropy，远低于1.5x。实查RAC/SLICER/联邦神经压缩/SplitCom/FourierCompress/DISCO/PipeSD，强重合。
+- Reject HFR-SD分层预测编码为核心；保留可逆整数协议和条件熵强基线。规划G1–7 7.5/6.9/9.1/8.3/8.2/6.9/8.6=7.93，历史成熟6.60不变，无80%依据。停止压缩微调，优先R110真实预训练质量/关键路径及强稀疏AR/MoD+SD同委托对照，双尺度三nonIID/网络/seed全成本，未执行。[报告](experiments/team-far/R114/record.md) · [汇总](experiments/team-far/R114/summary.csv)。完整源码及JSON留会话，SHA256见报告。
