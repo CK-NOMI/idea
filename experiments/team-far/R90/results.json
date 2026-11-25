@@ -1,0 +1,2044 @@
+{
+  "spec": {
+    "mode": "fixed length stochastic SD, two same-size external character transformer checkpoints, 4 logical clients / 2 edges, all 3 rounds, shared embedding + first transformer layer + output head, regional second layer. Actual full model p/q computation and analytical reward-weighted gradient, no actual split execution, no physical network GPU or timing. AR is counterfactual replay of identical formal samples, not independent AR sampling."
+  },
+  "results": [
+    {
+      "wi": 0,
+      "seed": 17,
+      "mode": "common",
+      "epoch": 0,
+      "heldNll": 2.460039222812056,
+      "reward": 0.08333333333333333,
+      "allTokens": 144,
+      "rounds": 62,
+      "attempt": 108,
+      "accepted": 90,
+      "sharedDiff": 0,
+      "regionDiff": 0,
+      "stats": {
+        "AR": {
+          "clientSh": 172,
+          "sharedSh": 128,
+          "clientDeep": 172,
+          "regionDeep": 143,
+          "trainSh": 128,
+          "trainDeep": 143,
+          "qCalls": 0,
+          "rounds": 144
+        },
+        "SD": {
+          "clientSh": 197,
+          "sharedSh": 152,
+          "clientDeep": 197,
+          "regionDeep": 168,
+          "trainSh": 128,
+          "trainDeep": 143,
+          "qCalls": 95,
+          "rounds": 62
+        }
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 17,
+      "mode": "common",
+      "epoch": 1,
+      "heldNll": 2.460571530994683,
+      "reward": 0.16666666666666666,
+      "allTokens": 144,
+      "rounds": 56,
+      "attempt": 104,
+      "accepted": 95,
+      "sharedDiff": 0,
+      "regionDiff": 0,
+      "stats": {
+        "AR": {
+          "clientSh": 172,
+          "sharedSh": 125,
+          "clientDeep": 172,
+          "regionDeep": 143,
+          "trainSh": 125,
+          "trainDeep": 143,
+          "qCalls": 0,
+          "rounds": 144
+        },
+        "SD": {
+          "clientSh": 186,
+          "sharedSh": 139,
+          "clientDeep": 186,
+          "regionDeep": 157,
+          "trainSh": 125,
+          "trainDeep": 143,
+          "qCalls": 86,
+          "rounds": 56
+        }
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 17,
+      "mode": "common",
+      "epoch": 2,
+      "heldNll": 2.46314356454294,
+      "reward": 0,
+      "allTokens": 144,
+      "rounds": 66,
+      "attempt": 114,
+      "accepted": 93,
+      "sharedDiff": 0,
+      "regionDiff": 0,
+      "stats": {
+        "AR": {
+          "clientSh": 172,
+          "sharedSh": 127,
+          "clientDeep": 172,
+          "regionDeep": 143,
+          "trainSh": 127,
+          "trainDeep": 143,
+          "qCalls": 0,
+          "rounds": 144
+        },
+        "SD": {
+          "clientSh": 203,
+          "sharedSh": 154,
+          "clientDeep": 203,
+          "regionDeep": 171,
+          "trainSh": 127,
+          "trainDeep": 143,
+          "qCalls": 99,
+          "rounds": 66
+        }
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 17,
+      "mode": "regional",
+      "epoch": 0,
+      "heldNll": 2.460039222812056,
+      "reward": 0.20833333333333334,
+      "allTokens": 144,
+      "rounds": 63,
+      "attempt": 108,
+      "accepted": 89,
+      "sharedDiff": 0,
+      "regionDiff": 0,
+      "stats": {
+        "AR": {
+          "clientSh": 170,
+          "sharedSh": 141,
+          "clientDeep": 170,
+          "regionDeep": 143,
+          "trainSh": 141,
+          "trainDeep": 143,
+          "qCalls": 0,
+          "rounds": 144
+        },
+        "SD": {
+          "clientSh": 197,
+          "sharedSh": 168,
+          "clientDeep": 197,
+          "regionDeep": 170,
+          "trainSh": 141,
+          "trainDeep": 143,
+          "qCalls": 105,
+          "rounds": 63
+        }
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 17,
+      "mode": "regional",
+      "epoch": 1,
+      "heldNll": 2.4648110918948842,
+      "reward": 0.20833333333333334,
+      "allTokens": 144,
+      "rounds": 53,
+      "attempt": 102,
+      "accepted": 96,
+      "sharedDiff": 0,
+      "regionDiff": 0,
+      "stats": {
+        "AR": {
+          "clientSh": 170,
+          "sharedSh": 141,
+          "clientDeep": 170,
+          "regionDeep": 143,
+          "trainSh": 141,
+          "trainDeep": 143,
+          "qCalls": 0,
+          "rounds": 144
+        },
+        "SD": {
+          "clientSh": 180,
+          "sharedSh": 151,
+          "clientDeep": 180,
+          "regionDeep": 153,
+          "trainSh": 141,
+          "trainDeep": 143,
+          "qCalls": 92,
+          "rounds": 53
+        }
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 17,
+      "mode": "regional",
+      "epoch": 2,
+      "heldNll": 2.4665938525701168,
+      "reward": 0.16666666666666666,
+      "allTokens": 144,
+      "rounds": 64,
+      "attempt": 112,
+      "accepted": 94,
+      "sharedDiff": 0,
+      "regionDiff": 0,
+      "stats": {
+        "AR": {
+          "clientSh": 170,
+          "sharedSh": 140,
+          "clientDeep": 170,
+          "regionDeep": 142,
+          "trainSh": 140,
+          "trainDeep": 142,
+          "qCalls": 0,
+          "rounds": 144
+        },
+        "SD": {
+          "clientSh": 198,
+          "sharedSh": 166,
+          "clientDeep": 198,
+          "regionDeep": 168,
+          "trainSh": 140,
+          "trainDeep": 142,
+          "qCalls": 106,
+          "rounds": 64
+        }
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 17,
+      "mode": "private",
+      "epoch": 0,
+      "heldNll": 2.460039222812056,
+      "reward": 0.08333333333333333,
+      "allTokens": 144,
+      "rounds": 61,
+      "attempt": 108,
+      "accepted": 90,
+      "sharedDiff": 0,
+      "regionDiff": 0,
+      "stats": {
+        "AR": {
+          "clientSh": 170,
+          "sharedSh": 156,
+          "clientDeep": 170,
+          "regionDeep": 165,
+          "trainSh": 156,
+          "trainDeep": 165,
+          "qCalls": 0,
+          "rounds": 144
+        },
+        "SD": {
+          "clientSh": 196,
+          "sharedSh": 182,
+          "clientDeep": 196,
+          "regionDeep": 191,
+          "trainSh": 156,
+          "trainDeep": 165,
+          "qCalls": 116,
+          "rounds": 61
+        }
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 17,
+      "mode": "private",
+      "epoch": 1,
+      "heldNll": 2.463696819563357,
+      "reward": 0.125,
+      "allTokens": 144,
+      "rounds": 54,
+      "attempt": 102,
+      "accepted": 96,
+      "sharedDiff": 0,
+      "regionDiff": 0,
+      "stats": {
+        "AR": {
+          "clientSh": 170,
+          "sharedSh": 157,
+          "clientDeep": 170,
+          "regionDeep": 165,
+          "trainSh": 157,
+          "trainDeep": 165,
+          "qCalls": 0,
+          "rounds": 144
+        },
+        "SD": {
+          "clientSh": 179,
+          "sharedSh": 166,
+          "clientDeep": 179,
+          "regionDeep": 174,
+          "trainSh": 157,
+          "trainDeep": 165,
+          "qCalls": 103,
+          "rounds": 54
+        }
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 17,
+      "mode": "private",
+      "epoch": 2,
+      "heldNll": 2.4637919463391436,
+      "reward": 0.125,
+      "allTokens": 144,
+      "rounds": 64,
+      "attempt": 111,
+      "accepted": 93,
+      "sharedDiff": 0,
+      "regionDiff": 0,
+      "stats": {
+        "AR": {
+          "clientSh": 170,
+          "sharedSh": 156,
+          "clientDeep": 170,
+          "regionDeep": 165,
+          "trainSh": 156,
+          "trainDeep": 165,
+          "qCalls": 0,
+          "rounds": 144
+        },
+        "SD": {
+          "clientSh": 196,
+          "sharedSh": 182,
+          "clientDeep": 196,
+          "regionDeep": 191,
+          "trainSh": 156,
+          "trainDeep": 165,
+          "qCalls": 117,
+          "rounds": 64
+        }
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "mode": "common",
+      "epoch": 0,
+      "heldNll": 2.460039222812056,
+      "reward": 0,
+      "allTokens": 144,
+      "rounds": 58,
+      "attempt": 106,
+      "accepted": 95,
+      "sharedDiff": 0,
+      "regionDiff": 0,
+      "stats": {
+        "AR": {
+          "clientSh": 172,
+          "sharedSh": 127,
+          "clientDeep": 172,
+          "regionDeep": 142,
+          "trainSh": 127,
+          "trainDeep": 142,
+          "qCalls": 0,
+          "rounds": 144
+        },
+        "SD": {
+          "clientSh": 189,
+          "sharedSh": 142,
+          "clientDeep": 189,
+          "regionDeep": 158,
+          "trainSh": 127,
+          "trainDeep": 142,
+          "qCalls": 88,
+          "rounds": 58
+        }
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "mode": "common",
+      "epoch": 1,
+      "heldNll": 2.460039222812056,
+      "reward": 0,
+      "allTokens": 144,
+      "rounds": 58,
+      "attempt": 106,
+      "accepted": 95,
+      "sharedDiff": 0,
+      "regionDiff": 0,
+      "stats": {
+        "AR": {
+          "clientSh": 172,
+          "sharedSh": 127,
+          "clientDeep": 172,
+          "regionDeep": 146,
+          "trainSh": 127,
+          "trainDeep": 146,
+          "qCalls": 0,
+          "rounds": 144
+        },
+        "SD": {
+          "clientSh": 186,
+          "sharedSh": 141,
+          "clientDeep": 186,
+          "regionDeep": 160,
+          "trainSh": 127,
+          "trainDeep": 146,
+          "qCalls": 87,
+          "rounds": 58
+        }
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "mode": "common",
+      "epoch": 2,
+      "heldNll": 2.460039222812056,
+      "reward": 0.08333333333333333,
+      "allTokens": 144,
+      "rounds": 60,
+      "attempt": 108,
+      "accepted": 93,
+      "sharedDiff": 0,
+      "regionDiff": 0,
+      "stats": {
+        "AR": {
+          "clientSh": 172,
+          "sharedSh": 129,
+          "clientDeep": 172,
+          "regionDeep": 144,
+          "trainSh": 129,
+          "trainDeep": 144,
+          "qCalls": 0,
+          "rounds": 144
+        },
+        "SD": {
+          "clientSh": 192,
+          "sharedSh": 149,
+          "clientDeep": 192,
+          "regionDeep": 164,
+          "trainSh": 129,
+          "trainDeep": 144,
+          "qCalls": 93,
+          "rounds": 60
+        }
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "mode": "regional",
+      "epoch": 0,
+      "heldNll": 2.460039222812056,
+      "reward": 0.08333333333333333,
+      "allTokens": 144,
+      "rounds": 57,
+      "attempt": 105,
+      "accepted": 96,
+      "sharedDiff": 0,
+      "regionDiff": 0,
+      "stats": {
+        "AR": {
+          "clientSh": 170,
+          "sharedSh": 141,
+          "clientDeep": 170,
+          "regionDeep": 143,
+          "trainSh": 141,
+          "trainDeep": 143,
+          "qCalls": 0,
+          "rounds": 144
+        },
+        "SD": {
+          "clientSh": 184,
+          "sharedSh": 155,
+          "clientDeep": 184,
+          "regionDeep": 157,
+          "trainSh": 141,
+          "trainDeep": 143,
+          "qCalls": 96,
+          "rounds": 57
+        }
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "mode": "regional",
+      "epoch": 1,
+      "heldNll": 2.4606504604041115,
+      "reward": 0,
+      "allTokens": 144,
+      "rounds": 60,
+      "attempt": 108,
+      "accepted": 95,
+      "sharedDiff": 0,
+      "regionDiff": 0,
+      "stats": {
+        "AR": {
+          "clientSh": 170,
+          "sharedSh": 143,
+          "clientDeep": 170,
+          "regionDeep": 145,
+          "trainSh": 143,
+          "trainDeep": 145,
+          "qCalls": 0,
+          "rounds": 144
+        },
+        "SD": {
+          "clientSh": 186,
+          "sharedSh": 159,
+          "clientDeep": 186,
+          "regionDeep": 161,
+          "trainSh": 143,
+          "trainDeep": 145,
+          "qCalls": 100,
+          "rounds": 60
+        }
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "mode": "regional",
+      "epoch": 2,
+      "heldNll": 2.4606504604041115,
+      "reward": 0.16666666666666666,
+      "allTokens": 144,
+      "rounds": 58,
+      "attempt": 105,
+      "accepted": 92,
+      "sharedDiff": 0,
+      "regionDiff": 0,
+      "stats": {
+        "AR": {
+          "clientSh": 170,
+          "sharedSh": 140,
+          "clientDeep": 170,
+          "regionDeep": 142,
+          "trainSh": 140,
+          "trainDeep": 142,
+          "qCalls": 0,
+          "rounds": 144
+        },
+        "SD": {
+          "clientSh": 186,
+          "sharedSh": 156,
+          "clientDeep": 186,
+          "regionDeep": 158,
+          "trainSh": 140,
+          "trainDeep": 142,
+          "qCalls": 96,
+          "rounds": 58
+        }
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "mode": "private",
+      "epoch": 0,
+      "heldNll": 2.460039222812056,
+      "reward": 0.08333333333333333,
+      "allTokens": 144,
+      "rounds": 58,
+      "attempt": 106,
+      "accepted": 95,
+      "sharedDiff": 0,
+      "regionDiff": 0,
+      "stats": {
+        "AR": {
+          "clientSh": 170,
+          "sharedSh": 157,
+          "clientDeep": 170,
+          "regionDeep": 165,
+          "trainSh": 157,
+          "trainDeep": 165,
+          "qCalls": 0,
+          "rounds": 144
+        },
+        "SD": {
+          "clientSh": 186,
+          "sharedSh": 173,
+          "clientDeep": 186,
+          "regionDeep": 181,
+          "trainSh": 157,
+          "trainDeep": 165,
+          "qCalls": 109,
+          "rounds": 58
+        }
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "mode": "private",
+      "epoch": 1,
+      "heldNll": 2.4607240146429086,
+      "reward": 0.041666666666666664,
+      "allTokens": 144,
+      "rounds": 61,
+      "attempt": 109,
+      "accepted": 93,
+      "sharedDiff": 0,
+      "regionDiff": 0,
+      "stats": {
+        "AR": {
+          "clientSh": 170,
+          "sharedSh": 157,
+          "clientDeep": 170,
+          "regionDeep": 165,
+          "trainSh": 157,
+          "trainDeep": 165,
+          "qCalls": 0,
+          "rounds": 144
+        },
+        "SD": {
+          "clientSh": 189,
+          "sharedSh": 176,
+          "clientDeep": 189,
+          "regionDeep": 184,
+          "trainSh": 157,
+          "trainDeep": 165,
+          "qCalls": 112,
+          "rounds": 61
+        }
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 29,
+      "mode": "private",
+      "epoch": 2,
+      "heldNll": 2.461479728713561,
+      "reward": 0.16666666666666666,
+      "allTokens": 144,
+      "rounds": 59,
+      "attempt": 107,
+      "accepted": 92,
+      "sharedDiff": 0,
+      "regionDiff": 0,
+      "stats": {
+        "AR": {
+          "clientSh": 170,
+          "sharedSh": 157,
+          "clientDeep": 170,
+          "regionDeep": 165,
+          "trainSh": 157,
+          "trainDeep": 165,
+          "qCalls": 0,
+          "rounds": 144
+        },
+        "SD": {
+          "clientSh": 190,
+          "sharedSh": 177,
+          "clientDeep": 190,
+          "regionDeep": 185,
+          "trainSh": 157,
+          "trainDeep": 165,
+          "qCalls": 112,
+          "rounds": 59
+        }
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 43,
+      "mode": "common",
+      "epoch": 0,
+      "heldNll": 2.4600392228120564,
+      "reward": 0.041666666666666664,
+      "allTokens": 144,
+      "rounds": 57,
+      "attempt": 105,
+      "accepted": 94,
+      "sharedDiff": 0,
+      "regionDiff": 0,
+      "stats": {
+        "AR": {
+          "clientSh": 168,
+          "sharedSh": 130,
+          "clientDeep": 168,
+          "regionDeep": 144,
+          "trainSh": 130,
+          "trainDeep": 144,
+          "qCalls": 0,
+          "rounds": 144
+        },
+        "SD": {
+          "clientSh": 181,
+          "sharedSh": 143,
+          "clientDeep": 181,
+          "regionDeep": 157,
+          "trainSh": 130,
+          "trainDeep": 144,
+          "qCalls": 90,
+          "rounds": 57
+        }
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 43,
+      "mode": "common",
+      "epoch": 1,
+      "heldNll": 2.461550010436809,
+      "reward": 0.041666666666666664,
+      "allTokens": 144,
+      "rounds": 56,
+      "attempt": 104,
+      "accepted": 94,
+      "sharedDiff": 0,
+      "regionDiff": 0,
+      "stats": {
+        "AR": {
+          "clientSh": 168,
+          "sharedSh": 126,
+          "clientDeep": 168,
+          "regionDeep": 142,
+          "trainSh": 126,
+          "trainDeep": 142,
+          "qCalls": 0,
+          "rounds": 144
+        },
+        "SD": {
+          "clientSh": 181,
+          "sharedSh": 139,
+          "clientDeep": 181,
+          "regionDeep": 155,
+          "trainSh": 126,
+          "trainDeep": 142,
+          "qCalls": 86,
+          "rounds": 56
+        }
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 43,
+      "mode": "common",
+      "epoch": 2,
+      "heldNll": 2.460287880546228,
+      "reward": 0.125,
+      "allTokens": 144,
+      "rounds": 61,
+      "attempt": 107,
+      "accepted": 92,
+      "sharedDiff": 0,
+      "regionDiff": 0,
+      "stats": {
+        "AR": {
+          "clientSh": 168,
+          "sharedSh": 131,
+          "clientDeep": 168,
+          "regionDeep": 144,
+          "trainSh": 131,
+          "trainDeep": 144,
+          "qCalls": 0,
+          "rounds": 144
+        },
+        "SD": {
+          "clientSh": 190,
+          "sharedSh": 153,
+          "clientDeep": 190,
+          "regionDeep": 166,
+          "trainSh": 131,
+          "trainDeep": 144,
+          "qCalls": 98,
+          "rounds": 61
+        }
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 43,
+      "mode": "regional",
+      "epoch": 0,
+      "heldNll": 2.4600392228120564,
+      "reward": 0.041666666666666664,
+      "allTokens": 144,
+      "rounds": 59,
+      "attempt": 107,
+      "accepted": 94,
+      "sharedDiff": 0,
+      "regionDiff": 0,
+      "stats": {
+        "AR": {
+          "clientSh": 170,
+          "sharedSh": 141,
+          "clientDeep": 170,
+          "regionDeep": 143,
+          "trainSh": 141,
+          "trainDeep": 143,
+          "qCalls": 0,
+          "rounds": 144
+        },
+        "SD": {
+          "clientSh": 186,
+          "sharedSh": 156,
+          "clientDeep": 186,
+          "regionDeep": 158,
+          "trainSh": 141,
+          "trainDeep": 143,
+          "qCalls": 98,
+          "rounds": 59
+        }
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 43,
+      "mode": "regional",
+      "epoch": 1,
+      "heldNll": 2.4596453400887555,
+      "reward": 0.041666666666666664,
+      "allTokens": 144,
+      "rounds": 59,
+      "attempt": 107,
+      "accepted": 93,
+      "sharedDiff": 0,
+      "regionDiff": 0,
+      "stats": {
+        "AR": {
+          "clientSh": 170,
+          "sharedSh": 141,
+          "clientDeep": 170,
+          "regionDeep": 143,
+          "trainSh": 141,
+          "trainDeep": 143,
+          "qCalls": 0,
+          "rounds": 144
+        },
+        "SD": {
+          "clientSh": 190,
+          "sharedSh": 161,
+          "clientDeep": 190,
+          "regionDeep": 163,
+          "trainSh": 141,
+          "trainDeep": 143,
+          "qCalls": 101,
+          "rounds": 59
+        }
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 43,
+      "mode": "regional",
+      "epoch": 2,
+      "heldNll": 2.4584016072162354,
+      "reward": 0.041666666666666664,
+      "allTokens": 144,
+      "rounds": 58,
+      "attempt": 106,
+      "accepted": 93,
+      "sharedDiff": 0,
+      "regionDiff": 0,
+      "stats": {
+        "AR": {
+          "clientSh": 170,
+          "sharedSh": 143,
+          "clientDeep": 170,
+          "regionDeep": 145,
+          "trainSh": 143,
+          "trainDeep": 145,
+          "qCalls": 0,
+          "rounds": 144
+        },
+        "SD": {
+          "clientSh": 189,
+          "sharedSh": 162,
+          "clientDeep": 189,
+          "regionDeep": 164,
+          "trainSh": 143,
+          "trainDeep": 145,
+          "qCalls": 101,
+          "rounds": 58
+        }
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 43,
+      "mode": "private",
+      "epoch": 0,
+      "heldNll": 2.4600392228120564,
+      "reward": 0.041666666666666664,
+      "allTokens": 144,
+      "rounds": 58,
+      "attempt": 107,
+      "accepted": 95,
+      "sharedDiff": 0,
+      "regionDiff": 0,
+      "stats": {
+        "AR": {
+          "clientSh": 170,
+          "sharedSh": 156,
+          "clientDeep": 170,
+          "regionDeep": 165,
+          "trainSh": 156,
+          "trainDeep": 165,
+          "qCalls": 0,
+          "rounds": 144
+        },
+        "SD": {
+          "clientSh": 185,
+          "sharedSh": 171,
+          "clientDeep": 185,
+          "regionDeep": 180,
+          "trainSh": 156,
+          "trainDeep": 165,
+          "qCalls": 108,
+          "rounds": 58
+        }
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 43,
+      "mode": "private",
+      "epoch": 1,
+      "heldNll": 2.4592113011121546,
+      "reward": 0,
+      "allTokens": 144,
+      "rounds": 61,
+      "attempt": 109,
+      "accepted": 92,
+      "sharedDiff": 0,
+      "regionDiff": 0,
+      "stats": {
+        "AR": {
+          "clientSh": 170,
+          "sharedSh": 157,
+          "clientDeep": 170,
+          "regionDeep": 165,
+          "trainSh": 157,
+          "trainDeep": 165,
+          "qCalls": 0,
+          "rounds": 144
+        },
+        "SD": {
+          "clientSh": 193,
+          "sharedSh": 180,
+          "clientDeep": 193,
+          "regionDeep": 188,
+          "trainSh": 157,
+          "trainDeep": 165,
+          "qCalls": 115,
+          "rounds": 61
+        }
+      }
+    },
+    {
+      "wi": 0,
+      "seed": 43,
+      "mode": "private",
+      "epoch": 2,
+      "heldNll": 2.4592113011121546,
+      "reward": 0.16666666666666666,
+      "allTokens": 144,
+      "rounds": 58,
+      "attempt": 105,
+      "accepted": 93,
+      "sharedDiff": 0,
+      "regionDiff": 0,
+      "stats": {
+        "AR": {
+          "clientSh": 170,
+          "sharedSh": 156,
+          "clientDeep": 170,
+          "regionDeep": 165,
+          "trainSh": 156,
+          "trainDeep": 165,
+          "qCalls": 0,
+          "rounds": 144
+        },
+        "SD": {
+          "clientSh": 189,
+          "sharedSh": 175,
+          "clientDeep": 189,
+          "regionDeep": 184,
+          "trainSh": 156,
+          "trainDeep": 165,
+          "qCalls": 110,
+          "rounds": 58
+        }
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 17,
+      "mode": "common",
+      "epoch": 0,
+      "heldNll": 2.399084828215082,
+      "reward": 0,
+      "allTokens": 144,
+      "rounds": 54,
+      "attempt": 102,
+      "accepted": 95,
+      "sharedDiff": 0,
+      "regionDiff": 0,
+      "stats": {
+        "AR": {
+          "clientSh": 172,
+          "sharedSh": 131,
+          "clientDeep": 172,
+          "regionDeep": 145,
+          "trainSh": 131,
+          "trainDeep": 145,
+          "qCalls": 0,
+          "rounds": 144
+        },
+        "SD": {
+          "clientSh": 179,
+          "sharedSh": 138,
+          "clientDeep": 179,
+          "regionDeep": 152,
+          "trainSh": 131,
+          "trainDeep": 145,
+          "qCalls": 83,
+          "rounds": 54
+        }
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 17,
+      "mode": "common",
+      "epoch": 1,
+      "heldNll": 2.399084828215082,
+      "reward": 0.20833333333333334,
+      "allTokens": 144,
+      "rounds": 59,
+      "attempt": 105,
+      "accepted": 90,
+      "sharedDiff": 0,
+      "regionDiff": 0,
+      "stats": {
+        "AR": {
+          "clientSh": 172,
+          "sharedSh": 129,
+          "clientDeep": 172,
+          "regionDeep": 144,
+          "trainSh": 129,
+          "trainDeep": 144,
+          "qCalls": 0,
+          "rounds": 144
+        },
+        "SD": {
+          "clientSh": 193,
+          "sharedSh": 149,
+          "clientDeep": 193,
+          "regionDeep": 165,
+          "trainSh": 129,
+          "trainDeep": 144,
+          "qCalls": 93,
+          "rounds": 59
+        }
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 17,
+      "mode": "common",
+      "epoch": 2,
+      "heldNll": 2.4011323310249457,
+      "reward": 0.041666666666666664,
+      "allTokens": 144,
+      "rounds": 54,
+      "attempt": 102,
+      "accepted": 94,
+      "sharedDiff": 0,
+      "regionDiff": 0,
+      "stats": {
+        "AR": {
+          "clientSh": 172,
+          "sharedSh": 129,
+          "clientDeep": 172,
+          "regionDeep": 146,
+          "trainSh": 129,
+          "trainDeep": 146,
+          "qCalls": 0,
+          "rounds": 144
+        },
+        "SD": {
+          "clientSh": 182,
+          "sharedSh": 139,
+          "clientDeep": 182,
+          "regionDeep": 156,
+          "trainSh": 129,
+          "trainDeep": 146,
+          "qCalls": 84,
+          "rounds": 54
+        }
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 17,
+      "mode": "regional",
+      "epoch": 0,
+      "heldNll": 2.399084828215082,
+      "reward": 0.041666666666666664,
+      "allTokens": 144,
+      "rounds": 55,
+      "attempt": 103,
+      "accepted": 95,
+      "sharedDiff": 0,
+      "regionDiff": 0,
+      "stats": {
+        "AR": {
+          "clientSh": 170,
+          "sharedSh": 142,
+          "clientDeep": 170,
+          "regionDeep": 144,
+          "trainSh": 142,
+          "trainDeep": 144,
+          "qCalls": 0,
+          "rounds": 144
+        },
+        "SD": {
+          "clientSh": 179,
+          "sharedSh": 151,
+          "clientDeep": 179,
+          "regionDeep": 153,
+          "trainSh": 142,
+          "trainDeep": 144,
+          "qCalls": 92,
+          "rounds": 55
+        }
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 17,
+      "mode": "regional",
+      "epoch": 1,
+      "heldNll": 2.400118223172328,
+      "reward": 0.125,
+      "allTokens": 144,
+      "rounds": 61,
+      "attempt": 106,
+      "accepted": 91,
+      "sharedDiff": 0,
+      "regionDiff": 0,
+      "stats": {
+        "AR": {
+          "clientSh": 170,
+          "sharedSh": 141,
+          "clientDeep": 170,
+          "regionDeep": 143,
+          "trainSh": 141,
+          "trainDeep": 143,
+          "qCalls": 0,
+          "rounds": 144
+        },
+        "SD": {
+          "clientSh": 194,
+          "sharedSh": 165,
+          "clientDeep": 194,
+          "regionDeep": 167,
+          "trainSh": 141,
+          "trainDeep": 143,
+          "qCalls": 105,
+          "rounds": 61
+        }
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 17,
+      "mode": "regional",
+      "epoch": 2,
+      "heldNll": 2.4005790903200968,
+      "reward": 0.041666666666666664,
+      "allTokens": 144,
+      "rounds": 57,
+      "attempt": 105,
+      "accepted": 95,
+      "sharedDiff": 0,
+      "regionDiff": 0,
+      "stats": {
+        "AR": {
+          "clientSh": 170,
+          "sharedSh": 143,
+          "clientDeep": 170,
+          "regionDeep": 145,
+          "trainSh": 143,
+          "trainDeep": 145,
+          "qCalls": 0,
+          "rounds": 144
+        },
+        "SD": {
+          "clientSh": 186,
+          "sharedSh": 159,
+          "clientDeep": 186,
+          "regionDeep": 161,
+          "trainSh": 143,
+          "trainDeep": 145,
+          "qCalls": 99,
+          "rounds": 57
+        }
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 17,
+      "mode": "private",
+      "epoch": 0,
+      "heldNll": 2.399084828215082,
+      "reward": 0,
+      "allTokens": 144,
+      "rounds": 56,
+      "attempt": 104,
+      "accepted": 95,
+      "sharedDiff": 0,
+      "regionDiff": 0,
+      "stats": {
+        "AR": {
+          "clientSh": 170,
+          "sharedSh": 157,
+          "clientDeep": 170,
+          "regionDeep": 165,
+          "trainSh": 157,
+          "trainDeep": 165,
+          "qCalls": 0,
+          "rounds": 144
+        },
+        "SD": {
+          "clientSh": 181,
+          "sharedSh": 168,
+          "clientDeep": 181,
+          "regionDeep": 176,
+          "trainSh": 157,
+          "trainDeep": 165,
+          "qCalls": 105,
+          "rounds": 56
+        }
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 17,
+      "mode": "private",
+      "epoch": 1,
+      "heldNll": 2.399084828215082,
+      "reward": 0.20833333333333334,
+      "allTokens": 144,
+      "rounds": 63,
+      "attempt": 107,
+      "accepted": 91,
+      "sharedDiff": 0,
+      "regionDiff": 0,
+      "stats": {
+        "AR": {
+          "clientSh": 170,
+          "sharedSh": 157,
+          "clientDeep": 170,
+          "regionDeep": 165,
+          "trainSh": 157,
+          "trainDeep": 165,
+          "qCalls": 0,
+          "rounds": 144
+        },
+        "SD": {
+          "clientSh": 195,
+          "sharedSh": 182,
+          "clientDeep": 195,
+          "regionDeep": 190,
+          "trainSh": 157,
+          "trainDeep": 165,
+          "qCalls": 118,
+          "rounds": 63
+        }
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 17,
+      "mode": "private",
+      "epoch": 2,
+      "heldNll": 2.398604735495739,
+      "reward": 0.041666666666666664,
+      "allTokens": 144,
+      "rounds": 61,
+      "attempt": 107,
+      "accepted": 92,
+      "sharedDiff": 0,
+      "regionDiff": 0,
+      "stats": {
+        "AR": {
+          "clientSh": 170,
+          "sharedSh": 157,
+          "clientDeep": 170,
+          "regionDeep": 165,
+          "trainSh": 157,
+          "trainDeep": 165,
+          "qCalls": 0,
+          "rounds": 144
+        },
+        "SD": {
+          "clientSh": 193,
+          "sharedSh": 180,
+          "clientDeep": 193,
+          "regionDeep": 188,
+          "trainSh": 157,
+          "trainDeep": 165,
+          "qCalls": 115,
+          "rounds": 61
+        }
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "mode": "common",
+      "epoch": 0,
+      "heldNll": 2.399084828215082,
+      "reward": 0.125,
+      "allTokens": 144,
+      "rounds": 55,
+      "attempt": 103,
+      "accepted": 96,
+      "sharedDiff": 0,
+      "regionDiff": 0,
+      "stats": {
+        "AR": {
+          "clientSh": 172,
+          "sharedSh": 131,
+          "clientDeep": 172,
+          "regionDeep": 144,
+          "trainSh": 131,
+          "trainDeep": 144,
+          "qCalls": 0,
+          "rounds": 144
+        },
+        "SD": {
+          "clientSh": 184,
+          "sharedSh": 142,
+          "clientDeep": 184,
+          "regionDeep": 155,
+          "trainSh": 131,
+          "trainDeep": 144,
+          "qCalls": 87,
+          "rounds": 55
+        }
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "mode": "common",
+      "epoch": 1,
+      "heldNll": 2.4018866844435016,
+      "reward": 0.125,
+      "allTokens": 144,
+      "rounds": 58,
+      "attempt": 105,
+      "accepted": 95,
+      "sharedDiff": 0,
+      "regionDiff": 0,
+      "stats": {
+        "AR": {
+          "clientSh": 172,
+          "sharedSh": 132,
+          "clientDeep": 172,
+          "regionDeep": 146,
+          "trainSh": 132,
+          "trainDeep": 146,
+          "qCalls": 0,
+          "rounds": 144
+        },
+        "SD": {
+          "clientSh": 188,
+          "sharedSh": 148,
+          "clientDeep": 188,
+          "regionDeep": 162,
+          "trainSh": 132,
+          "trainDeep": 146,
+          "qCalls": 93,
+          "rounds": 58
+        }
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "mode": "common",
+      "epoch": 2,
+      "heldNll": 2.4018753178798815,
+      "reward": 0.2916666666666667,
+      "allTokens": 144,
+      "rounds": 58,
+      "attempt": 106,
+      "accepted": 96,
+      "sharedDiff": 0,
+      "regionDiff": 0,
+      "stats": {
+        "AR": {
+          "clientSh": 172,
+          "sharedSh": 128,
+          "clientDeep": 172,
+          "regionDeep": 145,
+          "trainSh": 128,
+          "trainDeep": 145,
+          "qCalls": 0,
+          "rounds": 144
+        },
+        "SD": {
+          "clientSh": 189,
+          "sharedSh": 145,
+          "clientDeep": 189,
+          "regionDeep": 162,
+          "trainSh": 128,
+          "trainDeep": 145,
+          "qCalls": 90,
+          "rounds": 58
+        }
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "mode": "regional",
+      "epoch": 0,
+      "heldNll": 2.399084828215082,
+      "reward": 0.125,
+      "allTokens": 144,
+      "rounds": 54,
+      "attempt": 102,
+      "accepted": 95,
+      "sharedDiff": 0,
+      "regionDiff": 0,
+      "stats": {
+        "AR": {
+          "clientSh": 170,
+          "sharedSh": 142,
+          "clientDeep": 170,
+          "regionDeep": 144,
+          "trainSh": 142,
+          "trainDeep": 144,
+          "qCalls": 0,
+          "rounds": 144
+        },
+        "SD": {
+          "clientSh": 181,
+          "sharedSh": 152,
+          "clientDeep": 181,
+          "regionDeep": 154,
+          "trainSh": 142,
+          "trainDeep": 144,
+          "qCalls": 93,
+          "rounds": 54
+        }
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "mode": "regional",
+      "epoch": 1,
+      "heldNll": 2.40131192813495,
+      "reward": 0.125,
+      "allTokens": 144,
+      "rounds": 58,
+      "attempt": 105,
+      "accepted": 95,
+      "sharedDiff": 0,
+      "regionDiff": 0,
+      "stats": {
+        "AR": {
+          "clientSh": 170,
+          "sharedSh": 143,
+          "clientDeep": 170,
+          "regionDeep": 145,
+          "trainSh": 143,
+          "trainDeep": 145,
+          "qCalls": 0,
+          "rounds": 144
+        },
+        "SD": {
+          "clientSh": 186,
+          "sharedSh": 159,
+          "clientDeep": 186,
+          "regionDeep": 161,
+          "trainSh": 143,
+          "trainDeep": 145,
+          "qCalls": 100,
+          "rounds": 58
+        }
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "mode": "regional",
+      "epoch": 2,
+      "heldNll": 2.4018588061492765,
+      "reward": 0.16666666666666666,
+      "allTokens": 144,
+      "rounds": 59,
+      "attempt": 107,
+      "accepted": 95,
+      "sharedDiff": 0,
+      "regionDiff": 0,
+      "stats": {
+        "AR": {
+          "clientSh": 170,
+          "sharedSh": 143,
+          "clientDeep": 170,
+          "regionDeep": 145,
+          "trainSh": 143,
+          "trainDeep": 145,
+          "qCalls": 0,
+          "rounds": 144
+        },
+        "SD": {
+          "clientSh": 189,
+          "sharedSh": 161,
+          "clientDeep": 189,
+          "regionDeep": 163,
+          "trainSh": 143,
+          "trainDeep": 145,
+          "qCalls": 101,
+          "rounds": 59
+        }
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "mode": "private",
+      "epoch": 0,
+      "heldNll": 2.399084828215082,
+      "reward": 0.041666666666666664,
+      "allTokens": 144,
+      "rounds": 57,
+      "attempt": 105,
+      "accepted": 96,
+      "sharedDiff": 0,
+      "regionDiff": 0,
+      "stats": {
+        "AR": {
+          "clientSh": 170,
+          "sharedSh": 157,
+          "clientDeep": 170,
+          "regionDeep": 165,
+          "trainSh": 157,
+          "trainDeep": 165,
+          "qCalls": 0,
+          "rounds": 144
+        },
+        "SD": {
+          "clientSh": 185,
+          "sharedSh": 172,
+          "clientDeep": 185,
+          "regionDeep": 180,
+          "trainSh": 157,
+          "trainDeep": 165,
+          "qCalls": 109,
+          "rounds": 57
+        }
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "mode": "private",
+      "epoch": 1,
+      "heldNll": 2.399902714423722,
+      "reward": 0.08333333333333333,
+      "allTokens": 144,
+      "rounds": 57,
+      "attempt": 106,
+      "accepted": 95,
+      "sharedDiff": 0,
+      "regionDiff": 0,
+      "stats": {
+        "AR": {
+          "clientSh": 170,
+          "sharedSh": 157,
+          "clientDeep": 170,
+          "regionDeep": 165,
+          "trainSh": 157,
+          "trainDeep": 165,
+          "qCalls": 0,
+          "rounds": 144
+        },
+        "SD": {
+          "clientSh": 185,
+          "sharedSh": 172,
+          "clientDeep": 185,
+          "regionDeep": 180,
+          "trainSh": 157,
+          "trainDeep": 165,
+          "qCalls": 109,
+          "rounds": 57
+        }
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 29,
+      "mode": "private",
+      "epoch": 2,
+      "heldNll": 2.4005528711999338,
+      "reward": 0.25,
+      "allTokens": 144,
+      "rounds": 59,
+      "attempt": 107,
+      "accepted": 94,
+      "sharedDiff": 0,
+      "regionDiff": 0,
+      "stats": {
+        "AR": {
+          "clientSh": 170,
+          "sharedSh": 157,
+          "clientDeep": 170,
+          "regionDeep": 165,
+          "trainSh": 157,
+          "trainDeep": 165,
+          "qCalls": 0,
+          "rounds": 144
+        },
+        "SD": {
+          "clientSh": 189,
+          "sharedSh": 176,
+          "clientDeep": 189,
+          "regionDeep": 184,
+          "trainSh": 157,
+          "trainDeep": 165,
+          "qCalls": 112,
+          "rounds": 59
+        }
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 43,
+      "mode": "common",
+      "epoch": 0,
+      "heldNll": 2.3990848282150816,
+      "reward": 0.08333333333333333,
+      "allTokens": 144,
+      "rounds": 61,
+      "attempt": 107,
+      "accepted": 94,
+      "sharedDiff": 0,
+      "regionDiff": 0,
+      "stats": {
+        "AR": {
+          "clientSh": 168,
+          "sharedSh": 127,
+          "clientDeep": 168,
+          "regionDeep": 143,
+          "trainSh": 127,
+          "trainDeep": 143,
+          "qCalls": 0,
+          "rounds": 144
+        },
+        "SD": {
+          "clientSh": 187,
+          "sharedSh": 146,
+          "clientDeep": 187,
+          "regionDeep": 162,
+          "trainSh": 127,
+          "trainDeep": 143,
+          "qCalls": 93,
+          "rounds": 61
+        }
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 43,
+      "mode": "common",
+      "epoch": 1,
+      "heldNll": 2.397867171364691,
+      "reward": 0.08333333333333333,
+      "allTokens": 144,
+      "rounds": 56,
+      "attempt": 104,
+      "accepted": 95,
+      "sharedDiff": 0,
+      "regionDiff": 0,
+      "stats": {
+        "AR": {
+          "clientSh": 168,
+          "sharedSh": 128,
+          "clientDeep": 168,
+          "regionDeep": 144,
+          "trainSh": 128,
+          "trainDeep": 144,
+          "qCalls": 0,
+          "rounds": 144
+        },
+        "SD": {
+          "clientSh": 180,
+          "sharedSh": 140,
+          "clientDeep": 180,
+          "regionDeep": 156,
+          "trainSh": 128,
+          "trainDeep": 144,
+          "qCalls": 87,
+          "rounds": 56
+        }
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 43,
+      "mode": "common",
+      "epoch": 2,
+      "heldNll": 2.3973517530584636,
+      "reward": 0.125,
+      "allTokens": 144,
+      "rounds": 59,
+      "attempt": 107,
+      "accepted": 93,
+      "sharedDiff": 0,
+      "regionDiff": 0,
+      "stats": {
+        "AR": {
+          "clientSh": 168,
+          "sharedSh": 132,
+          "clientDeep": 168,
+          "regionDeep": 144,
+          "trainSh": 132,
+          "trainDeep": 144,
+          "qCalls": 0,
+          "rounds": 144
+        },
+        "SD": {
+          "clientSh": 188,
+          "sharedSh": 151,
+          "clientDeep": 188,
+          "regionDeep": 164,
+          "trainSh": 132,
+          "trainDeep": 144,
+          "qCalls": 95,
+          "rounds": 59
+        }
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 43,
+      "mode": "regional",
+      "epoch": 0,
+      "heldNll": 2.3990848282150816,
+      "reward": 0.08333333333333333,
+      "allTokens": 144,
+      "rounds": 60,
+      "attempt": 107,
+      "accepted": 93,
+      "sharedDiff": 0,
+      "regionDiff": 0,
+      "stats": {
+        "AR": {
+          "clientSh": 170,
+          "sharedSh": 143,
+          "clientDeep": 170,
+          "regionDeep": 145,
+          "trainSh": 143,
+          "trainDeep": 145,
+          "qCalls": 0,
+          "rounds": 144
+        },
+        "SD": {
+          "clientSh": 189,
+          "sharedSh": 162,
+          "clientDeep": 189,
+          "regionDeep": 164,
+          "trainSh": 143,
+          "trainDeep": 145,
+          "qCalls": 102,
+          "rounds": 60
+        }
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 43,
+      "mode": "regional",
+      "epoch": 1,
+      "heldNll": 2.3969343375161514,
+      "reward": 0.041666666666666664,
+      "allTokens": 144,
+      "rounds": 57,
+      "attempt": 105,
+      "accepted": 94,
+      "sharedDiff": 0,
+      "regionDiff": 0,
+      "stats": {
+        "AR": {
+          "clientSh": 170,
+          "sharedSh": 143,
+          "clientDeep": 170,
+          "regionDeep": 145,
+          "trainSh": 143,
+          "trainDeep": 145,
+          "qCalls": 0,
+          "rounds": 144
+        },
+        "SD": {
+          "clientSh": 186,
+          "sharedSh": 159,
+          "clientDeep": 186,
+          "regionDeep": 161,
+          "trainSh": 143,
+          "trainDeep": 145,
+          "qCalls": 99,
+          "rounds": 57
+        }
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 43,
+      "mode": "regional",
+      "epoch": 2,
+      "heldNll": 2.39642195308814,
+      "reward": 0.16666666666666666,
+      "allTokens": 144,
+      "rounds": 59,
+      "attempt": 105,
+      "accepted": 93,
+      "sharedDiff": 0,
+      "regionDiff": 0,
+      "stats": {
+        "AR": {
+          "clientSh": 170,
+          "sharedSh": 142,
+          "clientDeep": 170,
+          "regionDeep": 144,
+          "trainSh": 142,
+          "trainDeep": 144,
+          "qCalls": 0,
+          "rounds": 144
+        },
+        "SD": {
+          "clientSh": 188,
+          "sharedSh": 160,
+          "clientDeep": 188,
+          "regionDeep": 162,
+          "trainSh": 142,
+          "trainDeep": 144,
+          "qCalls": 100,
+          "rounds": 59
+        }
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 43,
+      "mode": "private",
+      "epoch": 0,
+      "heldNll": 2.3990848282150816,
+      "reward": 0.20833333333333334,
+      "allTokens": 144,
+      "rounds": 65,
+      "attempt": 112,
+      "accepted": 92,
+      "sharedDiff": 0,
+      "regionDiff": 0,
+      "stats": {
+        "AR": {
+          "clientSh": 170,
+          "sharedSh": 155,
+          "clientDeep": 170,
+          "regionDeep": 165,
+          "trainSh": 155,
+          "trainDeep": 165,
+          "qCalls": 0,
+          "rounds": 144
+        },
+        "SD": {
+          "clientSh": 197,
+          "sharedSh": 182,
+          "clientDeep": 197,
+          "regionDeep": 192,
+          "trainSh": 155,
+          "trainDeep": 165,
+          "qCalls": 117,
+          "rounds": 65
+        }
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 43,
+      "mode": "private",
+      "epoch": 1,
+      "heldNll": 2.3978802199522704,
+      "reward": 0.08333333333333333,
+      "allTokens": 144,
+      "rounds": 57,
+      "attempt": 105,
+      "accepted": 95,
+      "sharedDiff": 0,
+      "regionDiff": 0,
+      "stats": {
+        "AR": {
+          "clientSh": 170,
+          "sharedSh": 157,
+          "clientDeep": 170,
+          "regionDeep": 165,
+          "trainSh": 157,
+          "trainDeep": 165,
+          "qCalls": 0,
+          "rounds": 144
+        },
+        "SD": {
+          "clientSh": 185,
+          "sharedSh": 172,
+          "clientDeep": 185,
+          "regionDeep": 180,
+          "trainSh": 157,
+          "trainDeep": 165,
+          "qCalls": 109,
+          "rounds": 57
+        }
+      }
+    },
+    {
+      "wi": 1,
+      "seed": 43,
+      "mode": "private",
+      "epoch": 2,
+      "heldNll": 2.3966857450632046,
+      "reward": 0.041666666666666664,
+      "allTokens": 144,
+      "rounds": 57,
+      "attempt": 105,
+      "accepted": 94,
+      "sharedDiff": 0,
+      "regionDiff": 0,
+      "stats": {
+        "AR": {
+          "clientSh": 170,
+          "sharedSh": 157,
+          "clientDeep": 170,
+          "regionDeep": 165,
+          "trainSh": 157,
+          "trainDeep": 165,
+          "qCalls": 0,
+          "rounds": 144
+        },
+        "SD": {
+          "clientSh": 184,
+          "sharedSh": 171,
+          "clientDeep": 184,
+          "regionDeep": 179,
+          "trainSh": 157,
+          "trainDeep": 165,
+          "qCalls": 108,
+          "rounds": 57
+        }
+      }
+    }
+  ],
+  "summary": [
+    {
+      "mode": "common",
+      "n": 18,
+      "accept": 0.8875459800315292,
+      "tokens": 144,
+      "nll": 2.4301223150673756,
+      "reward": 0.09027777777777778,
+      "AR": {
+        "clientSh": 170.66666666666666,
+        "sharedSh": 128.72222222222223,
+        "clientDeep": 170.66666666666666,
+        "regionDeep": 144,
+        "trainSh": 128.72222222222223,
+        "trainDeep": 144,
+        "qCalls": 0,
+        "rounds": 144
+      },
+      "SD": {
+        "clientSh": 187.5,
+        "sharedSh": 145,
+        "clientDeep": 187.5,
+        "regionDeep": 160.55555555555554,
+        "trainSh": 128.72222222222223,
+        "trainDeep": 144,
+        "qCalls": 90.38888888888889,
+        "rounds": 58.22222222222222
+      }
+    },
+    {
+      "mode": "regional",
+      "n": 18,
+      "accept": 0.8860892388451443,
+      "tokens": 144,
+      "nll": 2.4302971835578098,
+      "reward": 0.10416666666666669,
+      "AR": {
+        "clientSh": 170,
+        "sharedSh": 141.83333333333334,
+        "clientDeep": 170,
+        "regionDeep": 143.83333333333334,
+        "trainSh": 141.83333333333334,
+        "trainDeep": 143.83333333333334,
+        "qCalls": 0,
+        "rounds": 144
+      },
+      "SD": {
+        "clientSh": 187.44444444444446,
+        "sharedSh": 159,
+        "clientDeep": 187.44444444444446,
+        "regionDeep": 161,
+        "trainSh": 141.83333333333334,
+        "trainDeep": 143.83333333333334,
+        "qCalls": 99.22222222222223,
+        "rounds": 58.388888888888886
+      }
+    },
+    {
+      "mode": "private",
+      "n": 18,
+      "accept": 0.8756503642039543,
+      "tokens": 144,
+      "nll": 2.429899909939702,
+      "reward": 0.09953703703703703,
+      "AR": {
+        "clientSh": 170,
+        "sharedSh": 156.66666666666666,
+        "clientDeep": 170,
+        "regionDeep": 165,
+        "trainSh": 156.66666666666666,
+        "trainDeep": 165,
+        "qCalls": 0,
+        "rounds": 144
+      },
+      "SD": {
+        "clientSh": 188.72222222222223,
+        "sharedSh": 175.38888888888889,
+        "clientDeep": 188.72222222222223,
+        "regionDeep": 183.72222222222223,
+        "trainSh": 156.66666666666666,
+        "trainDeep": 165,
+        "qCalls": 111.33333333333333,
+        "rounds": 59.22222222222222
+      }
+    }
+  ],
+  "counts": {
+    "gradUpdates": 216,
+    "tokenTotal": 7776,
+    "forwardCalls": 23544,
+    "backCalls": 9192,
+    "gradErr": 1.3877787807814457e-17
+  }
+}
