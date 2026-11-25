@@ -1,0 +1,2313 @@
+{
+  "spec": {
+    "V": 26,
+    "B": 4,
+    "L": 3,
+    "seeds": [
+      17,
+      29,
+      43
+    ],
+    "rounds": 120,
+    "lr": 12,
+    "reg": 0.0008,
+    "notes": "real public names converted to 5-char blocks; trainable log-linear additive lag model, shared anchor and partly global regional lag parameters, four logical clients two regions; new formal model, not a Transformer or original model preserving. Gumbel vectors fixed per position. Actual SGD and simulation of exact decoding, no GPU, physical network or wall time. Verify feedback counts failed certificates involving unresolved lags, heuristic not gradient of expected runtime."
+  },
+  "checks": 43200,
+  "certChecks": 156099,
+  "viol": 0,
+  "gradSteps": 12960,
+  "rows": [
+    {
+      "seed": 17,
+      "split": "hash",
+      "arm": "CE",
+      "n": 256,
+      "nll": 2.5792906656321155,
+      "weights": [
+        [
+          0,
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ]
+      ],
+      "acc": {
+        "topo": {
+          "depth": 4,
+          "full": 4,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 0,
+          "fullAdds": 260,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.6123046875
+        },
+        "jacobi": {
+          "depth": 2.57421875,
+          "full": 5.5078125,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 2.4140625,
+          "fullAdds": 404.625,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.6123046875
+        },
+        "box": {
+          "depth": 3.91015625,
+          "full": 3.91015625,
+          "cert": 0.08984375,
+          "comp": 12.33984375,
+          "cacheHits": 0,
+          "fullAdds": 253.09375,
+          "certAdds": 254.515625,
+          "certTerms": 29.03515625,
+          "qHit": 0.6123046875
+        },
+        "pair": {
+          "depth": 3.79296875,
+          "full": 3.79296875,
+          "cert": 0.20703125,
+          "comp": 19.421875,
+          "cacheHits": 0,
+          "fullAdds": 244.15625,
+          "certAdds": 245.78125,
+          "certTerms": 44.69921875,
+          "qHit": 0.6123046875
+        },
+        "hybrid": {
+          "depth": 2.57421875,
+          "full": 5.50390625,
+          "cert": 0.14453125,
+          "comp": 13.94140625,
+          "cacheHits": 2.31640625,
+          "fullAdds": 404.21875,
+          "certAdds": 208.9140625,
+          "certTerms": 33.21484375,
+          "qHit": 0.6123046875
+        }
+      }
+    },
+    {
+      "seed": 17,
+      "split": "hash",
+      "arm": "uniform",
+      "n": 256,
+      "nll": 2.531769433324574,
+      "weights": [
+        [
+          0,
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ]
+      ],
+      "acc": {
+        "topo": {
+          "depth": 4,
+          "full": 4,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 0,
+          "fullAdds": 260,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.69921875
+        },
+        "jacobi": {
+          "depth": 2.29296875,
+          "full": 5.140625,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 2.1640625,
+          "fullAdds": 369.9921875,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.69921875
+        },
+        "box": {
+          "depth": 3.765625,
+          "full": 3.765625,
+          "cert": 0.234375,
+          "comp": 19.28125,
+          "cacheHits": 0,
+          "fullAdds": 242.328125,
+          "certAdds": 244.0546875,
+          "certTerms": 44.578125,
+          "qHit": 0.69921875
+        },
+        "pair": {
+          "depth": 3.5859375,
+          "full": 3.5859375,
+          "cert": 0.4140625,
+          "comp": 29.5234375,
+          "cacheHits": 0,
+          "fullAdds": 228.921875,
+          "certAdds": 230.6484375,
+          "certTerms": 68.4296875,
+          "qHit": 0.69921875
+        },
+        "hybrid": {
+          "depth": 2.29296875,
+          "full": 5.125,
+          "cert": 0.30078125,
+          "comp": 21.390625,
+          "cacheHits": 2,
+          "fullAdds": 368.671875,
+          "certAdds": 185.1484375,
+          "certTerms": 50.5703125,
+          "qHit": 0.69921875
+        }
+      }
+    },
+    {
+      "seed": 17,
+      "split": "hash",
+      "arm": "verify",
+      "n": 256,
+      "nll": 2.5465415287918183,
+      "weights": [
+        [
+          0,
+          1.624505928853755,
+          0.9841897233201582,
+          0.391304347826087
+        ],
+        [
+          0,
+          1.696113074204947,
+          0.9540636042402827,
+          0.34982332155477036
+        ]
+      ],
+      "acc": {
+        "topo": {
+          "depth": 4,
+          "full": 4,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 0,
+          "fullAdds": 260,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.7138671875
+        },
+        "jacobi": {
+          "depth": 2.16015625,
+          "full": 5.0234375,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 2.01171875,
+          "fullAdds": 358.6171875,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.7138671875
+        },
+        "box": {
+          "depth": 3.67578125,
+          "full": 3.67578125,
+          "cert": 0.32421875,
+          "comp": 22.91015625,
+          "cacheHits": 0,
+          "fullAdds": 236.234375,
+          "certAdds": 236.3359375,
+          "certTerms": 52.3984375,
+          "qHit": 0.7138671875
+        },
+        "pair": {
+          "depth": 3.46484375,
+          "full": 3.46484375,
+          "cert": 0.53515625,
+          "comp": 33.0078125,
+          "cacheHits": 0,
+          "fullAdds": 220.1875,
+          "certAdds": 221.609375,
+          "certTerms": 76.3515625,
+          "qHit": 0.7138671875
+        },
+        "hybrid": {
+          "depth": 2.16015625,
+          "full": 5.00390625,
+          "cert": 0.40234375,
+          "comp": 23.921875,
+          "cacheHits": 1.8046875,
+          "fullAdds": 356.9921875,
+          "certAdds": 174.6875,
+          "certTerms": 56.2578125,
+          "qHit": 0.7138671875
+        }
+      }
+    },
+    {
+      "seed": 17,
+      "split": "prefix",
+      "arm": "CE",
+      "n": 256,
+      "nll": 2.5611573099458425,
+      "weights": [
+        [
+          0,
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ]
+      ],
+      "acc": {
+        "topo": {
+          "depth": 4,
+          "full": 4,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 0,
+          "fullAdds": 260,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.6103515625
+        },
+        "jacobi": {
+          "depth": 2.65625,
+          "full": 5.46484375,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 2.61328125,
+          "fullAdds": 400.4609375,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.6103515625
+        },
+        "box": {
+          "depth": 3.91796875,
+          "full": 3.91796875,
+          "cert": 0.08203125,
+          "comp": 11.43359375,
+          "cacheHits": 0,
+          "fullAdds": 253.8046875,
+          "certAdds": 254.515625,
+          "certTerms": 27.1796875,
+          "qHit": 0.6103515625
+        },
+        "pair": {
+          "depth": 3.80078125,
+          "full": 3.80078125,
+          "cert": 0.19921875,
+          "comp": 19.7890625,
+          "cacheHits": 0,
+          "fullAdds": 245.375,
+          "certAdds": 245.375,
+          "certTerms": 45.27734375,
+          "qHit": 0.6103515625
+        },
+        "hybrid": {
+          "depth": 2.65625,
+          "full": 5.46484375,
+          "cert": 0.15234375,
+          "comp": 14.33984375,
+          "cacheHits": 2.484375,
+          "fullAdds": 400.4609375,
+          "certAdds": 212.7734375,
+          "certTerms": 33.85546875,
+          "qHit": 0.6103515625
+        }
+      }
+    },
+    {
+      "seed": 17,
+      "split": "prefix",
+      "arm": "uniform",
+      "n": 256,
+      "nll": 2.5211530308264134,
+      "weights": [
+        [
+          0,
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ]
+      ],
+      "acc": {
+        "topo": {
+          "depth": 4,
+          "full": 4,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 0,
+          "fullAdds": 260,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.6923828125
+        },
+        "jacobi": {
+          "depth": 2.28515625,
+          "full": 5.14453125,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 2.19140625,
+          "fullAdds": 370.09375,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.6923828125
+        },
+        "box": {
+          "depth": 3.80078125,
+          "full": 3.80078125,
+          "cert": 0.19921875,
+          "comp": 18.15234375,
+          "cacheHits": 0,
+          "fullAdds": 244.96875,
+          "certAdds": 246.2890625,
+          "certTerms": 41.82421875,
+          "qHit": 0.6923828125
+        },
+        "pair": {
+          "depth": 3.61328125,
+          "full": 3.61328125,
+          "cert": 0.38671875,
+          "comp": 28.6328125,
+          "cacheHits": 0,
+          "fullAdds": 231.15625,
+          "certAdds": 231.0546875,
+          "certTerms": 67.05078125,
+          "qHit": 0.6923828125
+        },
+        "hybrid": {
+          "depth": 2.28515625,
+          "full": 5.11328125,
+          "cert": 0.296875,
+          "comp": 20.46484375,
+          "cacheHits": 2.0234375,
+          "fullAdds": 367.25,
+          "certAdds": 185.859375,
+          "certTerms": 49.51953125,
+          "qHit": 0.6923828125
+        }
+      }
+    },
+    {
+      "seed": 17,
+      "split": "prefix",
+      "arm": "verify",
+      "n": 256,
+      "nll": 2.5345585609029904,
+      "weights": [
+        [
+          0,
+          1.6615384615384614,
+          0.9576923076923076,
+          0.38076923076923075
+        ],
+        [
+          0,
+          1.6942446043165467,
+          0.9496402877697842,
+          0.35611510791366907
+        ]
+      ],
+      "acc": {
+        "topo": {
+          "depth": 4,
+          "full": 4,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 0,
+          "fullAdds": 260,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.7099609375
+        },
+        "jacobi": {
+          "depth": 2.1953125,
+          "full": 5.00390625,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 2.14453125,
+          "fullAdds": 356.6875,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.7099609375
+        },
+        "box": {
+          "depth": 3.6953125,
+          "full": 3.6953125,
+          "cert": 0.3046875,
+          "comp": 22.76171875,
+          "cacheHits": 0,
+          "fullAdds": 236.1328125,
+          "certAdds": 240.8046875,
+          "certTerms": 52.05078125,
+          "qHit": 0.7099609375
+        },
+        "pair": {
+          "depth": 3.4609375,
+          "full": 3.4609375,
+          "cert": 0.5390625,
+          "comp": 33.390625,
+          "cacheHits": 0,
+          "fullAdds": 219.2734375,
+          "certAdds": 221.40625,
+          "certTerms": 77.859375,
+          "qHit": 0.7099609375
+        },
+        "hybrid": {
+          "depth": 2.1953125,
+          "full": 4.97265625,
+          "cert": 0.4140625,
+          "comp": 24.4609375,
+          "cacheHits": 1.93359375,
+          "fullAdds": 353.9453125,
+          "certAdds": 178.140625,
+          "certTerms": 58.6328125,
+          "qHit": 0.7099609375
+        }
+      }
+    },
+    {
+      "seed": 17,
+      "split": "last",
+      "arm": "CE",
+      "n": 256,
+      "nll": 2.5890557947763853,
+      "weights": [
+        [
+          0,
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ]
+      ],
+      "acc": {
+        "topo": {
+          "depth": 4,
+          "full": 4,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 0,
+          "fullAdds": 260,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.5966796875
+        },
+        "jacobi": {
+          "depth": 2.66796875,
+          "full": 5.515625,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 2.5078125,
+          "fullAdds": 405.3359375,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.5966796875
+        },
+        "box": {
+          "depth": 3.921875,
+          "full": 3.921875,
+          "cert": 0.078125,
+          "comp": 11.40234375,
+          "cacheHits": 0,
+          "fullAdds": 254.109375,
+          "certAdds": 254.921875,
+          "certTerms": 27.125,
+          "qHit": 0.5966796875
+        },
+        "pair": {
+          "depth": 3.83984375,
+          "full": 3.83984375,
+          "cert": 0.16015625,
+          "comp": 18.65234375,
+          "cacheHits": 0,
+          "fullAdds": 247.9140625,
+          "certAdds": 248.625,
+          "certTerms": 43.0625,
+          "qHit": 0.5966796875
+        },
+        "hybrid": {
+          "depth": 2.66796875,
+          "full": 5.50390625,
+          "cert": 0.1171875,
+          "comp": 13.38671875,
+          "cacheHits": 2.4140625,
+          "fullAdds": 404.3203125,
+          "certAdds": 210.4375,
+          "certTerms": 31.94921875,
+          "qHit": 0.5966796875
+        }
+      }
+    },
+    {
+      "seed": 17,
+      "split": "last",
+      "arm": "uniform",
+      "n": 256,
+      "nll": 2.5480040799704238,
+      "weights": [
+        [
+          0,
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ]
+      ],
+      "acc": {
+        "topo": {
+          "depth": 4,
+          "full": 4,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 0,
+          "fullAdds": 260,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.6689453125
+        },
+        "jacobi": {
+          "depth": 2.37109375,
+          "full": 5.23046875,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 2.203125,
+          "fullAdds": 377.9140625,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.6689453125
+        },
+        "box": {
+          "depth": 3.7734375,
+          "full": 3.7734375,
+          "cert": 0.2265625,
+          "comp": 18.6875,
+          "cacheHits": 0,
+          "fullAdds": 242.9375,
+          "certAdds": 243.8515625,
+          "certTerms": 43.5234375,
+          "qHit": 0.6689453125
+        },
+        "pair": {
+          "depth": 3.62109375,
+          "full": 3.62109375,
+          "cert": 0.37890625,
+          "comp": 28.85546875,
+          "cacheHits": 0,
+          "fullAdds": 231.15625,
+          "certAdds": 232.4765625,
+          "certTerms": 67.6171875,
+          "qHit": 0.6689453125
+        },
+        "hybrid": {
+          "depth": 2.37109375,
+          "full": 5.21875,
+          "cert": 0.28515625,
+          "comp": 20.29296875,
+          "cacheHits": 2.05859375,
+          "fullAdds": 376.796875,
+          "certAdds": 189.71875,
+          "certTerms": 48.85546875,
+          "qHit": 0.6689453125
+        }
+      }
+    },
+    {
+      "seed": 17,
+      "split": "last",
+      "arm": "verify",
+      "n": 256,
+      "nll": 2.5562791077963425,
+      "weights": [
+        [
+          0,
+          1.640625,
+          0.97265625,
+          0.38671875
+        ],
+        [
+          0,
+          1.696113074204947,
+          0.9540636042402827,
+          0.34982332155477036
+        ]
+      ],
+      "acc": {
+        "topo": {
+          "depth": 4,
+          "full": 4,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 0,
+          "fullAdds": 260,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.6845703125
+        },
+        "jacobi": {
+          "depth": 2.27734375,
+          "full": 5.12890625,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 2.1328125,
+          "fullAdds": 368.1640625,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.6845703125
+        },
+        "box": {
+          "depth": 3.66796875,
+          "full": 3.66796875,
+          "cert": 0.33203125,
+          "comp": 22.8203125,
+          "cacheHits": 0,
+          "fullAdds": 234.7109375,
+          "certAdds": 237.453125,
+          "certTerms": 52.4765625,
+          "qHit": 0.6845703125
+        },
+        "pair": {
+          "depth": 3.48828125,
+          "full": 3.48828125,
+          "cert": 0.51171875,
+          "comp": 32.8046875,
+          "cacheHits": 0,
+          "fullAdds": 221.3046875,
+          "certAdds": 223.3359375,
+          "certTerms": 76.59375,
+          "qHit": 0.6845703125
+        },
+        "hybrid": {
+          "depth": 2.27734375,
+          "full": 5.109375,
+          "cert": 0.390625,
+          "comp": 23.78515625,
+          "cacheHits": 1.95703125,
+          "fullAdds": 366.4375,
+          "certAdds": 183.21875,
+          "certTerms": 56.7421875,
+          "qHit": 0.6845703125
+        }
+      }
+    },
+    {
+      "seed": 29,
+      "split": "hash",
+      "arm": "CE",
+      "n": 256,
+      "nll": 2.6464662978384426,
+      "weights": [
+        [
+          0,
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ]
+      ],
+      "acc": {
+        "topo": {
+          "depth": 4,
+          "full": 4,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 0,
+          "fullAdds": 260,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.625
+        },
+        "jacobi": {
+          "depth": 2.48828125,
+          "full": 5.37109375,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 2.37109375,
+          "fullAdds": 390.9140625,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.625
+        },
+        "box": {
+          "depth": 3.890625,
+          "full": 3.890625,
+          "cert": 0.109375,
+          "comp": 12.16796875,
+          "cacheHits": 0,
+          "fullAdds": 251.875,
+          "certAdds": 252.1796875,
+          "certTerms": 28.73828125,
+          "qHit": 0.625
+        },
+        "pair": {
+          "depth": 3.78125,
+          "full": 3.78125,
+          "cert": 0.21875,
+          "comp": 20.20703125,
+          "cacheHits": 0,
+          "fullAdds": 243.4453125,
+          "certAdds": 244.6640625,
+          "certTerms": 46.5078125,
+          "qHit": 0.625
+        },
+        "hybrid": {
+          "depth": 2.48828125,
+          "full": 5.3671875,
+          "cert": 0.16796875,
+          "comp": 14.71875,
+          "cacheHits": 2.265625,
+          "fullAdds": 390.609375,
+          "certAdds": 203.0234375,
+          "certTerms": 34.82421875,
+          "qHit": 0.625
+        }
+      }
+    },
+    {
+      "seed": 29,
+      "split": "hash",
+      "arm": "uniform",
+      "n": 256,
+      "nll": 2.5895352624076526,
+      "weights": [
+        [
+          0,
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ]
+      ],
+      "acc": {
+        "topo": {
+          "depth": 4,
+          "full": 4,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 0,
+          "fullAdds": 260,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.6923828125
+        },
+        "jacobi": {
+          "depth": 2.19921875,
+          "full": 5.078125,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 2.0390625,
+          "fullAdds": 363.390625,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.6923828125
+        },
+        "box": {
+          "depth": 3.765625,
+          "full": 3.765625,
+          "cert": 0.234375,
+          "comp": 19.44921875,
+          "cacheHits": 0,
+          "fullAdds": 242.8359375,
+          "certAdds": 241.515625,
+          "certTerms": 45.671875,
+          "qHit": 0.6923828125
+        },
+        "pair": {
+          "depth": 3.578125,
+          "full": 3.578125,
+          "cert": 0.421875,
+          "comp": 29.63671875,
+          "cacheHits": 0,
+          "fullAdds": 227.90625,
+          "certAdds": 228.921875,
+          "certTerms": 69.8203125,
+          "qHit": 0.6923828125
+        },
+        "hybrid": {
+          "depth": 2.19921875,
+          "full": 5.06640625,
+          "cert": 0.3125,
+          "comp": 21.35546875,
+          "cacheHits": 1.875,
+          "fullAdds": 362.2734375,
+          "certAdds": 179.15625,
+          "certTerms": 51.71875,
+          "qHit": 0.6923828125
+        }
+      }
+    },
+    {
+      "seed": 29,
+      "split": "hash",
+      "arm": "verify",
+      "n": 256,
+      "nll": 2.601772378338317,
+      "weights": [
+        [
+          0,
+          1.6888888888888889,
+          0.9444444444444444,
+          0.36666666666666664
+        ],
+        [
+          0,
+          1.6666666666666667,
+          0.9777777777777777,
+          0.35555555555555557
+        ]
+      ],
+      "acc": {
+        "topo": {
+          "depth": 4,
+          "full": 4,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 0,
+          "fullAdds": 260,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.716796875
+        },
+        "jacobi": {
+          "depth": 2.0703125,
+          "full": 4.9375,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 1.8828125,
+          "fullAdds": 349.984375,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.716796875
+        },
+        "box": {
+          "depth": 3.6640625,
+          "full": 3.6640625,
+          "cert": 0.3359375,
+          "comp": 23.8359375,
+          "cacheHits": 0,
+          "fullAdds": 235.625,
+          "certAdds": 233.4921875,
+          "certTerms": 55.015625,
+          "qHit": 0.716796875
+        },
+        "pair": {
+          "depth": 3.4609375,
+          "full": 3.4609375,
+          "cert": 0.5390625,
+          "comp": 33.75390625,
+          "cacheHits": 0,
+          "fullAdds": 219.6796875,
+          "certAdds": 219.8828125,
+          "certTerms": 78.703125,
+          "qHit": 0.716796875
+        },
+        "hybrid": {
+          "depth": 2.0703125,
+          "full": 4.91796875,
+          "cert": 0.3984375,
+          "comp": 23.96484375,
+          "cacheHits": 1.65625,
+          "fullAdds": 348.15625,
+          "certAdds": 166.359375,
+          "certTerms": 57.75,
+          "qHit": 0.716796875
+        }
+      }
+    },
+    {
+      "seed": 29,
+      "split": "prefix",
+      "arm": "CE",
+      "n": 256,
+      "nll": 2.5298424243447135,
+      "weights": [
+        [
+          0,
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ]
+      ],
+      "acc": {
+        "topo": {
+          "depth": 4,
+          "full": 4,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 0,
+          "fullAdds": 260,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.6005859375
+        },
+        "jacobi": {
+          "depth": 2.578125,
+          "full": 5.4765625,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 2.45703125,
+          "fullAdds": 401.4765625,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.6005859375
+        },
+        "box": {
+          "depth": 3.91015625,
+          "full": 3.91015625,
+          "cert": 0.08984375,
+          "comp": 12.05078125,
+          "cacheHits": 0,
+          "fullAdds": 253.3984375,
+          "certAdds": 253.09375,
+          "certTerms": 28.546875,
+          "qHit": 0.6005859375
+        },
+        "pair": {
+          "depth": 3.79296875,
+          "full": 3.79296875,
+          "cert": 0.20703125,
+          "comp": 19.8203125,
+          "cacheHits": 0,
+          "fullAdds": 244.4609375,
+          "certAdds": 244.6640625,
+          "certTerms": 46.0234375,
+          "qHit": 0.6005859375
+        },
+        "hybrid": {
+          "depth": 2.578125,
+          "full": 5.46875,
+          "cert": 0.171875,
+          "comp": 14.9296875,
+          "cacheHits": 2.35546875,
+          "fullAdds": 400.8671875,
+          "certAdds": 208.7109375,
+          "certTerms": 35.453125,
+          "qHit": 0.6005859375
+        }
+      }
+    },
+    {
+      "seed": 29,
+      "split": "prefix",
+      "arm": "uniform",
+      "n": 256,
+      "nll": 2.499317363401509,
+      "weights": [
+        [
+          0,
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ]
+      ],
+      "acc": {
+        "topo": {
+          "depth": 4,
+          "full": 4,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 0,
+          "fullAdds": 260,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.69140625
+        },
+        "jacobi": {
+          "depth": 2.28125,
+          "full": 5.15234375,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 2.16796875,
+          "fullAdds": 370.703125,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.69140625
+        },
+        "box": {
+          "depth": 3.79296875,
+          "full": 3.79296875,
+          "cert": 0.20703125,
+          "comp": 17.9609375,
+          "cacheHits": 0,
+          "fullAdds": 245.2734375,
+          "certAdds": 242.9375,
+          "certTerms": 42.2890625,
+          "qHit": 0.69140625
+        },
+        "pair": {
+          "depth": 3.58203125,
+          "full": 3.58203125,
+          "cert": 0.41796875,
+          "comp": 28.96484375,
+          "cacheHits": 0,
+          "fullAdds": 229.0234375,
+          "certAdds": 229.6328125,
+          "certTerms": 67.875,
+          "qHit": 0.69140625
+        },
+        "hybrid": {
+          "depth": 2.28125,
+          "full": 5.140625,
+          "cert": 0.33984375,
+          "comp": 21.859375,
+          "cacheHits": 1.9375,
+          "fullAdds": 369.6875,
+          "certAdds": 182.9140625,
+          "certTerms": 52.23828125,
+          "qHit": 0.69140625
+        }
+      }
+    },
+    {
+      "seed": 29,
+      "split": "prefix",
+      "arm": "verify",
+      "n": 256,
+      "nll": 2.5133693428605417,
+      "weights": [
+        [
+          0,
+          1.6641509433962265,
+          0.9622641509433962,
+          0.3735849056603774
+        ],
+        [
+          0,
+          1.6985294117647058,
+          0.9485294117647058,
+          0.3529411764705882
+        ]
+      ],
+      "acc": {
+        "topo": {
+          "depth": 4,
+          "full": 4,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 0,
+          "fullAdds": 260,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.7109375
+        },
+        "jacobi": {
+          "depth": 2.15625,
+          "full": 5.0234375,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 2.04296875,
+          "fullAdds": 358.515625,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.7109375
+        },
+        "box": {
+          "depth": 3.68359375,
+          "full": 3.68359375,
+          "cert": 0.31640625,
+          "comp": 21.69140625,
+          "cacheHits": 0,
+          "fullAdds": 237.7578125,
+          "certAdds": 234.3046875,
+          "certTerms": 50.1953125,
+          "qHit": 0.7109375
+        },
+        "pair": {
+          "depth": 3.47265625,
+          "full": 3.47265625,
+          "cert": 0.52734375,
+          "comp": 31.578125,
+          "cacheHits": 0,
+          "fullAdds": 221.3046875,
+          "certAdds": 221.7109375,
+          "certTerms": 73.5078125,
+          "qHit": 0.7109375
+        },
+        "hybrid": {
+          "depth": 2.15625,
+          "full": 5.00390625,
+          "cert": 0.4296875,
+          "comp": 23.97265625,
+          "cacheHits": 1.7890625,
+          "fullAdds": 356.890625,
+          "certAdds": 174.1796875,
+          "certTerms": 56.84375,
+          "qHit": 0.7109375
+        }
+      }
+    },
+    {
+      "seed": 29,
+      "split": "last",
+      "arm": "CE",
+      "n": 256,
+      "nll": 2.695088872576949,
+      "weights": [
+        [
+          0,
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ]
+      ],
+      "acc": {
+        "topo": {
+          "depth": 4,
+          "full": 4,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 0,
+          "fullAdds": 260,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.626953125
+        },
+        "jacobi": {
+          "depth": 2.52734375,
+          "full": 5.3984375,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 2.34375,
+          "fullAdds": 394.265625,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.626953125
+        },
+        "box": {
+          "depth": 3.87890625,
+          "full": 3.87890625,
+          "cert": 0.12109375,
+          "comp": 13.18359375,
+          "cacheHits": 0,
+          "fullAdds": 250.5546875,
+          "certAdds": 252.1796875,
+          "certTerms": 31.0234375,
+          "qHit": 0.626953125
+        },
+        "pair": {
+          "depth": 3.796875,
+          "full": 3.796875,
+          "cert": 0.203125,
+          "comp": 20.87109375,
+          "cacheHits": 0,
+          "fullAdds": 244.0546875,
+          "certAdds": 247.1015625,
+          "certTerms": 48.6171875,
+          "qHit": 0.626953125
+        },
+        "hybrid": {
+          "depth": 2.52734375,
+          "full": 5.390625,
+          "cert": 0.15234375,
+          "comp": 14.75390625,
+          "cacheHits": 2.265625,
+          "fullAdds": 393.65625,
+          "certAdds": 202.2109375,
+          "certTerms": 35.5390625,
+          "qHit": 0.626953125
+        }
+      }
+    },
+    {
+      "seed": 29,
+      "split": "last",
+      "arm": "uniform",
+      "n": 256,
+      "nll": 2.6422858932496633,
+      "weights": [
+        [
+          0,
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ]
+      ],
+      "acc": {
+        "topo": {
+          "depth": 4,
+          "full": 4,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 0,
+          "fullAdds": 260,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.6962890625
+        },
+        "jacobi": {
+          "depth": 2.296875,
+          "full": 5.21875,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 2.06640625,
+          "fullAdds": 376.8984375,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.6962890625
+        },
+        "box": {
+          "depth": 3.7578125,
+          "full": 3.7578125,
+          "cert": 0.2421875,
+          "comp": 19.6953125,
+          "cacheHits": 0,
+          "fullAdds": 241.515625,
+          "certAdds": 243.75,
+          "certTerms": 46.21484375,
+          "qHit": 0.6962890625
+        },
+        "pair": {
+          "depth": 3.55078125,
+          "full": 3.55078125,
+          "cert": 0.44921875,
+          "comp": 31.546875,
+          "cacheHits": 0,
+          "fullAdds": 225.671875,
+          "certAdds": 228.3125,
+          "certTerms": 74.9765625,
+          "qHit": 0.6962890625
+        },
+        "hybrid": {
+          "depth": 2.296875,
+          "full": 5.19921875,
+          "cert": 0.35546875,
+          "comp": 22.69921875,
+          "cacheHits": 1.89453125,
+          "fullAdds": 375.171875,
+          "certAdds": 182.609375,
+          "certTerms": 55.7109375,
+          "qHit": 0.6962890625
+        }
+      }
+    },
+    {
+      "seed": 29,
+      "split": "last",
+      "arm": "verify",
+      "n": 256,
+      "nll": 2.65248456935017,
+      "weights": [
+        [
+          0,
+          1.690909090909091,
+          0.9490909090909091,
+          0.36
+        ],
+        [
+          0,
+          1.6867924528301887,
+          0.9509433962264151,
+          0.36226415094339626
+        ]
+      ],
+      "acc": {
+        "topo": {
+          "depth": 4,
+          "full": 4,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 0,
+          "fullAdds": 260,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.7275390625
+        },
+        "jacobi": {
+          "depth": 2.15625,
+          "full": 5.03125,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 1.9453125,
+          "fullAdds": 359.125,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.7275390625
+        },
+        "box": {
+          "depth": 3.671875,
+          "full": 3.671875,
+          "cert": 0.328125,
+          "comp": 24.015625,
+          "cacheHits": 0,
+          "fullAdds": 235.015625,
+          "certAdds": 238.265625,
+          "certTerms": 55.6640625,
+          "qHit": 0.7275390625
+        },
+        "pair": {
+          "depth": 3.41796875,
+          "full": 3.41796875,
+          "cert": 0.58203125,
+          "comp": 34.61328125,
+          "cacheHits": 0,
+          "fullAdds": 215.0078125,
+          "certAdds": 220.1875,
+          "certTerms": 81.78515625,
+          "qHit": 0.7275390625
+        },
+        "hybrid": {
+          "depth": 2.15625,
+          "full": 4.99609375,
+          "cert": 0.4453125,
+          "comp": 24.51171875,
+          "cacheHits": 1.74609375,
+          "fullAdds": 355.9765625,
+          "certAdds": 171.03125,
+          "certTerms": 59.9140625,
+          "qHit": 0.7275390625
+        }
+      }
+    },
+    {
+      "seed": 43,
+      "split": "hash",
+      "arm": "CE",
+      "n": 256,
+      "nll": 2.5849449922599836,
+      "weights": [
+        [
+          0,
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ]
+      ],
+      "acc": {
+        "topo": {
+          "depth": 4,
+          "full": 4,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 0,
+          "fullAdds": 260,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.609375
+        },
+        "jacobi": {
+          "depth": 2.578125,
+          "full": 5.453125,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 2.41796875,
+          "fullAdds": 399.8515625,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.609375
+        },
+        "box": {
+          "depth": 3.9609375,
+          "full": 3.9609375,
+          "cert": 0.0390625,
+          "comp": 10.703125,
+          "cacheHits": 0,
+          "fullAdds": 257.2578125,
+          "certAdds": 257.0546875,
+          "certTerms": 25.59375,
+          "qHit": 0.609375
+        },
+        "pair": {
+          "depth": 3.8515625,
+          "full": 3.8515625,
+          "cert": 0.1484375,
+          "comp": 18.85546875,
+          "cacheHits": 0,
+          "fullAdds": 249.03125,
+          "certAdds": 249.640625,
+          "certTerms": 43.18359375,
+          "qHit": 0.609375
+        },
+        "hybrid": {
+          "depth": 2.578125,
+          "full": 5.453125,
+          "cert": 0.1171875,
+          "comp": 12.71484375,
+          "cacheHits": 2.34375,
+          "fullAdds": 399.8515625,
+          "certAdds": 206.984375,
+          "certTerms": 30.22265625,
+          "qHit": 0.609375
+        }
+      }
+    },
+    {
+      "seed": 43,
+      "split": "hash",
+      "arm": "uniform",
+      "n": 256,
+      "nll": 2.5332589212293306,
+      "weights": [
+        [
+          0,
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ]
+      ],
+      "acc": {
+        "topo": {
+          "depth": 4,
+          "full": 4,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 0,
+          "fullAdds": 260,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.693359375
+        },
+        "jacobi": {
+          "depth": 2.23046875,
+          "full": 5.078125,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 2.08203125,
+          "fullAdds": 364.1015625,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.693359375
+        },
+        "box": {
+          "depth": 3.82421875,
+          "full": 3.82421875,
+          "cert": 0.17578125,
+          "comp": 18.109375,
+          "cacheHits": 0,
+          "fullAdds": 246.8984375,
+          "certAdds": 247.7109375,
+          "certTerms": 41.8671875,
+          "qHit": 0.693359375
+        },
+        "pair": {
+          "depth": 3.66015625,
+          "full": 3.66015625,
+          "cert": 0.33984375,
+          "comp": 28.9140625,
+          "cacheHits": 0,
+          "fullAdds": 233.0859375,
+          "certAdds": 238.875,
+          "certTerms": 67.30078125,
+          "qHit": 0.693359375
+        },
+        "hybrid": {
+          "depth": 2.23046875,
+          "full": 5.07421875,
+          "cert": 0.203125,
+          "comp": 18.671875,
+          "cacheHits": 1.98828125,
+          "fullAdds": 363.796875,
+          "certAdds": 184.7421875,
+          "certTerms": 45.0859375,
+          "qHit": 0.693359375
+        }
+      }
+    },
+    {
+      "seed": 43,
+      "split": "hash",
+      "arm": "verify",
+      "n": 256,
+      "nll": 2.540942890490145,
+      "weights": [
+        [
+          0,
+          1.6575875486381322,
+          0.9688715953307393,
+          0.3735408560311284
+        ],
+        [
+          0,
+          1.711340206185567,
+          0.9587628865979382,
+          0.32989690721649484
+        ]
+      ],
+      "acc": {
+        "topo": {
+          "depth": 4,
+          "full": 4,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 0,
+          "fullAdds": 260,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.71484375
+        },
+        "jacobi": {
+          "depth": 2.1171875,
+          "full": 4.94921875,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 1.98046875,
+          "fullAdds": 351.9140625,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.71484375
+        },
+        "box": {
+          "depth": 3.73828125,
+          "full": 3.73828125,
+          "cert": 0.26171875,
+          "comp": 22.41796875,
+          "cacheHits": 0,
+          "fullAdds": 239.7890625,
+          "certAdds": 243.34375,
+          "certTerms": 51.06640625,
+          "qHit": 0.71484375
+        },
+        "pair": {
+          "depth": 3.48828125,
+          "full": 3.48828125,
+          "cert": 0.51171875,
+          "comp": 33.47265625,
+          "cacheHits": 0,
+          "fullAdds": 220.2890625,
+          "certAdds": 226.9921875,
+          "certTerms": 77.25,
+          "qHit": 0.71484375
+        },
+        "hybrid": {
+          "depth": 2.1171875,
+          "full": 4.9375,
+          "cert": 0.36328125,
+          "comp": 22.421875,
+          "cacheHits": 1.81640625,
+          "fullAdds": 350.8984375,
+          "certAdds": 173.3671875,
+          "certTerms": 53.265625,
+          "qHit": 0.71484375
+        }
+      }
+    },
+    {
+      "seed": 43,
+      "split": "prefix",
+      "arm": "CE",
+      "n": 256,
+      "nll": 2.6215881304025426,
+      "weights": [
+        [
+          0,
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ]
+      ],
+      "acc": {
+        "topo": {
+          "depth": 4,
+          "full": 4,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 0,
+          "fullAdds": 260,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.599609375
+        },
+        "jacobi": {
+          "depth": 2.55859375,
+          "full": 5.51953125,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 2.3515625,
+          "fullAdds": 405.4375,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.599609375
+        },
+        "box": {
+          "depth": 3.9609375,
+          "full": 3.9609375,
+          "cert": 0.0390625,
+          "comp": 9.875,
+          "cacheHits": 0,
+          "fullAdds": 257.4609375,
+          "certAdds": 256.8515625,
+          "certTerms": 23.9375,
+          "qHit": 0.599609375
+        },
+        "pair": {
+          "depth": 3.8359375,
+          "full": 3.8359375,
+          "cert": 0.1640625,
+          "comp": 18.26171875,
+          "cacheHits": 0,
+          "fullAdds": 248.21875,
+          "certAdds": 248.015625,
+          "certTerms": 41.94140625,
+          "qHit": 0.599609375
+        },
+        "hybrid": {
+          "depth": 2.55859375,
+          "full": 5.51953125,
+          "cert": 0.12109375,
+          "comp": 13.328125,
+          "cacheHits": 2.2890625,
+          "fullAdds": 405.4375,
+          "certAdds": 208.8125,
+          "certTerms": 31.50390625,
+          "qHit": 0.599609375
+        }
+      }
+    },
+    {
+      "seed": 43,
+      "split": "prefix",
+      "arm": "uniform",
+      "n": 256,
+      "nll": 2.556191051066456,
+      "weights": [
+        [
+          0,
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ]
+      ],
+      "acc": {
+        "topo": {
+          "depth": 4,
+          "full": 4,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 0,
+          "fullAdds": 260,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.669921875
+        },
+        "jacobi": {
+          "depth": 2.27734375,
+          "full": 5.22265625,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 2.078125,
+          "fullAdds": 377.5078125,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.669921875
+        },
+        "box": {
+          "depth": 3.84375,
+          "full": 3.84375,
+          "cert": 0.15625,
+          "comp": 17.04296875,
+          "cacheHits": 0,
+          "fullAdds": 248.7265625,
+          "certAdds": 248.7265625,
+          "certTerms": 39.50390625,
+          "qHit": 0.669921875
+        },
+        "pair": {
+          "depth": 3.65625,
+          "full": 3.65625,
+          "cert": 0.34375,
+          "comp": 27.5625,
+          "cacheHits": 0,
+          "fullAdds": 234,
+          "certAdds": 235.828125,
+          "certTerms": 64.7578125,
+          "qHit": 0.669921875
+        },
+        "hybrid": {
+          "depth": 2.27734375,
+          "full": 5.2109375,
+          "cert": 0.25390625,
+          "comp": 19.48046875,
+          "cacheHits": 1.96875,
+          "fullAdds": 376.390625,
+          "certAdds": 188.296875,
+          "certTerms": 47.3515625,
+          "qHit": 0.669921875
+        }
+      }
+    },
+    {
+      "seed": 43,
+      "split": "prefix",
+      "arm": "verify",
+      "n": 256,
+      "nll": 2.5651165509610876,
+      "weights": [
+        [
+          0,
+          1.6840148698884758,
+          0.9591078066914498,
+          0.35687732342007433
+        ],
+        [
+          0,
+          1.7244897959183674,
+          0.9387755102040817,
+          0.336734693877551
+        ]
+      ],
+      "acc": {
+        "topo": {
+          "depth": 4,
+          "full": 4,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 0,
+          "fullAdds": 260,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.6904296875
+        },
+        "jacobi": {
+          "depth": 2.15625,
+          "full": 5.12109375,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 1.921875,
+          "fullAdds": 367.5546875,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.6904296875
+        },
+        "box": {
+          "depth": 3.734375,
+          "full": 3.734375,
+          "cert": 0.265625,
+          "comp": 21.30859375,
+          "cacheHits": 0,
+          "fullAdds": 240.3984375,
+          "certAdds": 241.0078125,
+          "certTerms": 48.7109375,
+          "qHit": 0.6904296875
+        },
+        "pair": {
+          "depth": 3.50390625,
+          "full": 3.50390625,
+          "cert": 0.49609375,
+          "comp": 32.66015625,
+          "cacheHits": 0,
+          "fullAdds": 222.3203125,
+          "certAdds": 226.1796875,
+          "certTerms": 76.203125,
+          "qHit": 0.6904296875
+        },
+        "hybrid": {
+          "depth": 2.15625,
+          "full": 5.10546875,
+          "cert": 0.3515625,
+          "comp": 23.171875,
+          "cacheHits": 1.75,
+          "fullAdds": 366.3359375,
+          "certAdds": 176.6171875,
+          "certTerms": 55.85546875,
+          "qHit": 0.6904296875
+        }
+      }
+    },
+    {
+      "seed": 43,
+      "split": "last",
+      "arm": "CE",
+      "n": 256,
+      "nll": 2.6681947216575654,
+      "weights": [
+        [
+          0,
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ]
+      ],
+      "acc": {
+        "topo": {
+          "depth": 4,
+          "full": 4,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 0,
+          "fullAdds": 260,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.591796875
+        },
+        "jacobi": {
+          "depth": 2.625,
+          "full": 5.5546875,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 2.4765625,
+          "fullAdds": 409.3984375,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.591796875
+        },
+        "box": {
+          "depth": 3.8984375,
+          "full": 3.8984375,
+          "cert": 0.1015625,
+          "comp": 12.2578125,
+          "cacheHits": 0,
+          "fullAdds": 252.3828125,
+          "certAdds": 253.3984375,
+          "certTerms": 28.87890625,
+          "qHit": 0.591796875
+        },
+        "pair": {
+          "depth": 3.76953125,
+          "full": 3.76953125,
+          "cert": 0.23046875,
+          "comp": 19.984375,
+          "cacheHits": 0,
+          "fullAdds": 241.921875,
+          "certAdds": 245.6796875,
+          "certTerms": 45.8515625,
+          "qHit": 0.591796875
+        },
+        "hybrid": {
+          "depth": 2.625,
+          "full": 5.55078125,
+          "cert": 0.18359375,
+          "comp": 14.9921875,
+          "cacheHits": 2.35546875,
+          "fullAdds": 409.09375,
+          "certAdds": 212.0625,
+          "certTerms": 35.2890625,
+          "qHit": 0.591796875
+        }
+      }
+    },
+    {
+      "seed": 43,
+      "split": "last",
+      "arm": "uniform",
+      "n": 256,
+      "nll": 2.613668352139167,
+      "weights": [
+        [
+          0,
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ]
+      ],
+      "acc": {
+        "topo": {
+          "depth": 4,
+          "full": 4,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 0,
+          "fullAdds": 260,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.6845703125
+        },
+        "jacobi": {
+          "depth": 2.296875,
+          "full": 5.2265625,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 2.07421875,
+          "fullAdds": 378.015625,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.6845703125
+        },
+        "box": {
+          "depth": 3.76953125,
+          "full": 3.76953125,
+          "cert": 0.23046875,
+          "comp": 18.9140625,
+          "cacheHits": 0,
+          "fullAdds": 242.53125,
+          "certAdds": 244.4609375,
+          "certTerms": 43.6875,
+          "qHit": 0.6845703125
+        },
+        "pair": {
+          "depth": 3.59765625,
+          "full": 3.59765625,
+          "cert": 0.40234375,
+          "comp": 28.86328125,
+          "cacheHits": 0,
+          "fullAdds": 228.4140625,
+          "certAdds": 233.59375,
+          "certTerms": 67.66796875,
+          "qHit": 0.6845703125
+        },
+        "hybrid": {
+          "depth": 2.296875,
+          "full": 5.203125,
+          "cert": 0.2734375,
+          "comp": 20.0234375,
+          "cacheHits": 1.9296875,
+          "fullAdds": 375.78125,
+          "certAdds": 185.3515625,
+          "certTerms": 48.57421875,
+          "qHit": 0.6845703125
+        }
+      }
+    },
+    {
+      "seed": 43,
+      "split": "last",
+      "arm": "verify",
+      "n": 256,
+      "nll": 2.6208884624052393,
+      "weights": [
+        [
+          0,
+          1.6928571428571428,
+          0.9535714285714286,
+          0.3535714285714286
+        ],
+        [
+          0,
+          1.7097902097902098,
+          0.9440559440559441,
+          0.34615384615384615
+        ]
+      ],
+      "acc": {
+        "topo": {
+          "depth": 4,
+          "full": 4,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 0,
+          "fullAdds": 260,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.708984375
+        },
+        "jacobi": {
+          "depth": 2.1875,
+          "full": 5.09375,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 1.97265625,
+          "fullAdds": 365.3203125,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.708984375
+        },
+        "box": {
+          "depth": 3.7109375,
+          "full": 3.7109375,
+          "cert": 0.2890625,
+          "comp": 22.25390625,
+          "cacheHits": 0,
+          "fullAdds": 237.7578125,
+          "certAdds": 240.90625,
+          "certTerms": 51.11328125,
+          "qHit": 0.708984375
+        },
+        "pair": {
+          "depth": 3.5,
+          "full": 3.5,
+          "cert": 0.5,
+          "comp": 32.83203125,
+          "cacheHits": 0,
+          "fullAdds": 221.8125,
+          "certAdds": 225.1640625,
+          "certTerms": 76.73046875,
+          "qHit": 0.708984375
+        },
+        "hybrid": {
+          "depth": 2.1875,
+          "full": 5.07421875,
+          "cert": 0.37109375,
+          "comp": 23.1953125,
+          "cacheHits": 1.77734375,
+          "fullAdds": 363.4921875,
+          "certAdds": 176.4140625,
+          "certTerms": 55.6484375,
+          "qHit": 0.708984375
+        }
+      }
+    }
+  ],
+  "summary": [
+    {
+      "arm": "CE",
+      "nll": 2.608403245492727,
+      "modes": {
+        "topo": {
+          "depth": 4,
+          "full": 4,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 0,
+          "fullAdds": 260,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.6080729166666666
+        },
+        "jacobi": {
+          "depth": 2.583767361111111,
+          "full": 5.473524305555555,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 2.439236111111111,
+          "fullAdds": 401.3072916666667,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.6080729166666666
+        },
+        "box": {
+          "depth": 3.9166666666666665,
+          "full": 3.9166666666666665,
+          "cert": 0.08333333333333333,
+          "comp": 11.71267361111111,
+          "cacheHits": 0,
+          "fullAdds": 253.77083333333334,
+          "certAdds": 254.30121527777777,
+          "certTerms": 27.784288194444443,
+          "qHit": 0.6080729166666666
+        },
+        "pair": {
+          "depth": 3.806857638888889,
+          "full": 3.806857638888889,
+          "cert": 0.1931423611111111,
+          "comp": 19.540364583333332,
+          "cacheHits": 0,
+          "fullAdds": 245.39756944444446,
+          "certAdds": 246.61631944444446,
+          "certTerms": 45.018229166666664,
+          "qHit": 0.6080729166666666
+        },
+        "hybrid": {
+          "depth": 2.583767361111111,
+          "full": 5.469184027777778,
+          "cert": 0.14756944444444445,
+          "comp": 14.12282986111111,
+          "cacheHits": 2.3433159722222223,
+          "fullAdds": 400.94618055555554,
+          "certAdds": 208.21440972222223,
+          "certTerms": 33.5390625,
+          "qHit": 0.6080729166666666
+        }
+      }
+    },
+    {
+      "arm": "uniform",
+      "nll": 2.5594648208461326,
+      "modes": {
+        "topo": {
+          "depth": 4,
+          "full": 4,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 0,
+          "fullAdds": 260,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.6876085069444444
+        },
+        "jacobi": {
+          "depth": 2.28125,
+          "full": 5.165798611111111,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 2.1184895833333335,
+          "fullAdds": 372.0685763888889,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.6876085069444444
+        },
+        "box": {
+          "depth": 3.7881944444444446,
+          "full": 3.7881944444444446,
+          "cert": 0.21180555555555555,
+          "comp": 18.58810763888889,
+          "cacheHits": 0,
+          "fullAdds": 244.22395833333334,
+          "certAdds": 244.81076388888889,
+          "certTerms": 43.240017361111114,
+          "qHit": 0.6876085069444444
+        },
+        "pair": {
+          "depth": 3.6050347222222223,
+          "full": 3.6050347222222223,
+          "cert": 0.3949652777777778,
+          "comp": 29.166666666666668,
+          "cacheHits": 0,
+          "fullAdds": 229.92621527777777,
+          "certAdds": 232.14930555555554,
+          "certTerms": 68.38845486111111,
+          "qHit": 0.6876085069444444
+        },
+        "hybrid": {
+          "depth": 2.28125,
+          "full": 5.150173611111111,
+          "cert": 0.2912326388888889,
+          "comp": 20.69314236111111,
+          "cacheHits": 1.9639756944444444,
+          "fullAdds": 370.6467013888889,
+          "certAdds": 184.86631944444446,
+          "certTerms": 49.958333333333336,
+          "qHit": 0.6876085069444444
+        }
+      }
+    },
+    {
+      "arm": "verify",
+      "nll": 2.5702170435440723,
+      "modes": {
+        "topo": {
+          "depth": 4,
+          "full": 4,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 0,
+          "fullAdds": 260,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.7086588541666666
+        },
+        "jacobi": {
+          "depth": 2.1640625,
+          "full": 5.034722222222222,
+          "cert": 0,
+          "comp": 0,
+          "cacheHits": 2.00390625,
+          "fullAdds": 359.54253472222223,
+          "certAdds": 0,
+          "certTerms": 0,
+          "qHit": 0.7086588541666666
+        },
+        "box": {
+          "depth": 3.693576388888889,
+          "full": 3.693576388888889,
+          "cert": 0.3064236111111111,
+          "comp": 22.66840277777778,
+          "cacheHits": 0,
+          "fullAdds": 237.046875,
+          "certAdds": 238.43489583333334,
+          "certTerms": 52.076822916666664,
+          "qHit": 0.7086588541666666
+        },
+        "pair": {
+          "depth": 3.4730902777777777,
+          "full": 3.4730902777777777,
+          "cert": 0.5269097222222222,
+          "comp": 33.123697916666664,
+          "cacheHits": 0,
+          "fullAdds": 220.13107638888889,
+          "certAdds": 222.94097222222223,
+          "certTerms": 77.22048611111111,
+          "qHit": 0.7086588541666666
+        },
+        "hybrid": {
+          "depth": 2.1640625,
+          "full": 5.013454861111111,
+          "cert": 0.3962673611111111,
+          "comp": 23.711805555555557,
+          "cacheHits": 1.8033854166666667,
+          "fullAdds": 357.68055555555554,
+          "certAdds": 174.890625,
+          "certTerms": 56.767795138888886,
+          "qHit": 0.7086588541666666
+        }
+      }
+    }
+  ]
+}
