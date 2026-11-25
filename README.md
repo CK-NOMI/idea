@@ -3918,3 +3918,11 @@ H未执行：只有真实训练部署确实将同一合法GRPO组跨区域分配
 - E：48历史K27概率，72配置×1024=73728实际群体模拟，1474560路径状态/输出检查0差；N32循环上下文非真实集群。N8 m4共享map修复MC.388835 vs理论.394772，全部entry平均1.308候选token，root常量约23%；N32 m4 root常量约89%。所有初始flag积分只测token0指示统计，非梯度/SGD；完整条件方差、实际可达候选数及载荷代理见JSON。无新模型前向/GPU/网络/CI。
 - 实查Blelloch/MicroSpec/Propp-Wilson/Autospeculation/FlowSpec/SpecRelay/SpecTr/LayerSkip/RB梯度原始页面或摘要。Retain精确并行编译，Reject独立立项，G1/G2/G4未过、G3/G7部分、G5未验、G6不足、历史完整8.14不变。P0真实共同修复瓶颈与训练/推理关键路径，双尺度1–2×40GB三nonIID/时延/独立seed同质量全成本，未执行。
 - [报告](experiments/team-far/R82/record.md) · [代码](experiments/team-far/R82/audit.js) · [结果](experiments/team-far/R82/results.json)
+
+
+### team-far/R83｜HDPT-SD：精确可微概率传输、分层伴随归约与联合学习审计
+- 2026-11-25；起始 main b8e987eac59fb08c8942298736097258763a4d76、README d835e7792fd5b900767d6d00a47b260e3951570a；写前 main b8e987eac59fb08c8942298736097258763a4d76、README d835e7792fd5b900767d6d00a47b260e3951570a。完整获取结构筛查，复查R69源、R75报告、R81–82及历史可组合机制，未穷尽复跑。
+- T：R81均匀m状态上尾插值线性化为f_i=M_i(p_i,q_i)f_{i-1}，S=e_m^T M_N…M_1 f0；矩阵结合不交换，log损失伴随lambda及外积梯度，局部解析softmax p/q梯度O(mV)。独立context E矩阵乘积=均值矩阵乘积，相关context失效；log E S≠E log S；同委托flat可复制，经典scan/compositional optimization近邻。非多步/greedy生产证明。
+- E：48历史K27概率、实际第四字符标签，6留一bank，2×27维bias实际SGD，9方法×3lr×2raw/幅度匹配×6fold=324 fits、25920共享更新、207360复用行实例；576 FD误差9.127245747392321e-11，树/flat误差8.326672684688674e-17，18组独立context均值矩阵审计误差4.440892098500626e-16，相关绝对均差0.0029119129583504095。CE-only p相同、joint加入.5概率损失梯度；同训练集选择lr，非独立验证。完整选参/匹配结果见JSON；群体精确梯度未证明优于TV及joint1强基线，非真实完整头/主干/多步FedAvg/SD rollout/GPU/物理网络/CI。
+- 实查WTV/VSD/TVP/LK/REAL、Gao24联邦多级compositional optimization、JAX/PyTorch associative scan原始摘要或文档。Retain精确矩阵/伴随/相关性障碍，Reject完整独立立项；G1/G2/G4未过、G3/G7部分、G5未验、G6不足、历史完整8.14不变。P0真实HFL/LayerSkip关键路径，双尺度1–2×40GB三nonIID/时延/独立seed，同质量全成本强基线与CI未执行。
+- [报告](experiments/team-far/R83/record.md) · [代码](experiments/team-far/R83/audit.js) · [结果](experiments/team-far/R83/results.json)
