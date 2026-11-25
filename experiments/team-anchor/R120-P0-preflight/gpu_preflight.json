@@ -1,0 +1,2350 @@
+{
+  "scope": "minimal interface preflight only; no speed claims",
+  "torch": "2.5.1+cu124",
+  "transformers": "4.48.3",
+  "gpu": "NVIDIA GeForce RTX 3090",
+  "source_sha256": "b58fe5ccd5f5d8987dd8b2df88dbd138f63e9cfa8e96eb210d78a23f2779699b",
+  "model_files": {
+    "model.safetensors": "ba9a27bc1fadc74d7ca576aa618e464aa006b1c56b4a940c668c980a302708ee",
+    "special_tokens_map.json": "6f38c73729248f6c127296386e3cdde96e254636cc58b4169d3fd32328d9a8ec",
+    "tokenizer_config.json": "8c8270de650b79e2f449be4e3772da46999a3e53bc54c8d4c629bbff0c397933",
+    "generation_config.json": "f72132b15e0d0df9c6fc99d2d69ee52446f973a9f4641578c98156b1785ebc29",
+    "tokenizer.json": "6b9e4e7fb171f92fd137b777cc2714bf87d11576700a1dcd7a399e7bbe39537b",
+    "config.json": "0fa5bb77b0c8f1a5a335fd05773ed60522c015b6792324fe91904a757d7f815a"
+  },
+  "records": [
+    {
+      "prompt_ids": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference_ids": [
+        11,
+        32069,
+        311,
+        279,
+        1023,
+        1450,
+        11,
+        279,
+        1023,
+        1450,
+        11,
+        279,
+        1023,
+        1450,
+        11,
+        279
+      ],
+      "manual_ar": {
+        "output_ids": [
+          11,
+          32069,
+          311,
+          279,
+          1023,
+          1450,
+          11,
+          279,
+          1023,
+          1450,
+          11,
+          279,
+          1023,
+          1450,
+          11,
+          279
+        ],
+        "blocks": [
+          {
+            "cache_before": 63,
+            "cache_after": 64,
+            "draft": [],
+            "predictions": [
+              11
+            ],
+            "accepted": 0,
+            "emitted": [
+              11
+            ]
+          },
+          {
+            "cache_before": 64,
+            "cache_after": 65,
+            "draft": [],
+            "predictions": [
+              32069
+            ],
+            "accepted": 0,
+            "emitted": [
+              32069
+            ]
+          },
+          {
+            "cache_before": 65,
+            "cache_after": 66,
+            "draft": [],
+            "predictions": [
+              311
+            ],
+            "accepted": 0,
+            "emitted": [
+              311
+            ]
+          },
+          {
+            "cache_before": 66,
+            "cache_after": 67,
+            "draft": [],
+            "predictions": [
+              279
+            ],
+            "accepted": 0,
+            "emitted": [
+              279
+            ]
+          },
+          {
+            "cache_before": 67,
+            "cache_after": 68,
+            "draft": [],
+            "predictions": [
+              1023
+            ],
+            "accepted": 0,
+            "emitted": [
+              1023
+            ]
+          },
+          {
+            "cache_before": 68,
+            "cache_after": 69,
+            "draft": [],
+            "predictions": [
+              1450
+            ],
+            "accepted": 0,
+            "emitted": [
+              1450
+            ]
+          },
+          {
+            "cache_before": 69,
+            "cache_after": 70,
+            "draft": [],
+            "predictions": [
+              11
+            ],
+            "accepted": 0,
+            "emitted": [
+              11
+            ]
+          },
+          {
+            "cache_before": 70,
+            "cache_after": 71,
+            "draft": [],
+            "predictions": [
+              279
+            ],
+            "accepted": 0,
+            "emitted": [
+              279
+            ]
+          },
+          {
+            "cache_before": 71,
+            "cache_after": 72,
+            "draft": [],
+            "predictions": [
+              1023
+            ],
+            "accepted": 0,
+            "emitted": [
+              1023
+            ]
+          },
+          {
+            "cache_before": 72,
+            "cache_after": 73,
+            "draft": [],
+            "predictions": [
+              1450
+            ],
+            "accepted": 0,
+            "emitted": [
+              1450
+            ]
+          },
+          {
+            "cache_before": 73,
+            "cache_after": 74,
+            "draft": [],
+            "predictions": [
+              11
+            ],
+            "accepted": 0,
+            "emitted": [
+              11
+            ]
+          },
+          {
+            "cache_before": 74,
+            "cache_after": 75,
+            "draft": [],
+            "predictions": [
+              279
+            ],
+            "accepted": 0,
+            "emitted": [
+              279
+            ]
+          },
+          {
+            "cache_before": 75,
+            "cache_after": 76,
+            "draft": [],
+            "predictions": [
+              1023
+            ],
+            "accepted": 0,
+            "emitted": [
+              1023
+            ]
+          },
+          {
+            "cache_before": 76,
+            "cache_after": 77,
+            "draft": [],
+            "predictions": [
+              1450
+            ],
+            "accepted": 0,
+            "emitted": [
+              1450
+            ]
+          },
+          {
+            "cache_before": 77,
+            "cache_after": 78,
+            "draft": [],
+            "predictions": [
+              11
+            ],
+            "accepted": 0,
+            "emitted": [
+              11
+            ]
+          },
+          {
+            "cache_before": 78,
+            "cache_after": 79,
+            "draft": [],
+            "predictions": [
+              279
+            ],
+            "accepted": 0,
+            "emitted": [
+              279
+            ]
+          }
+        ]
+      },
+      "arms": [
+        {
+          "output_ids": [
+            11,
+            32069,
+            311,
+            279,
+            1023,
+            1450,
+            11,
+            279,
+            1023,
+            1450,
+            11,
+            279,
+            1023,
+            1450,
+            11,
+            279
+          ],
+          "blocks": [
+            {
+              "cache_before": 63,
+              "cache_after": 65,
+              "draft": [
+                11
+              ],
+              "predictions": [
+                11,
+                32069
+              ],
+              "accepted": 1,
+              "emitted": [
+                11,
+                32069
+              ]
+            },
+            {
+              "cache_before": 65,
+              "cache_after": 67,
+              "draft": [
+                311
+              ],
+              "predictions": [
+                311,
+                279
+              ],
+              "accepted": 1,
+              "emitted": [
+                311,
+                279
+              ]
+            },
+            {
+              "cache_before": 67,
+              "cache_after": 69,
+              "draft": [
+                1023
+              ],
+              "predictions": [
+                1023,
+                1450
+              ],
+              "accepted": 1,
+              "emitted": [
+                1023,
+                1450
+              ]
+            },
+            {
+              "cache_before": 69,
+              "cache_after": 71,
+              "draft": [
+                11
+              ],
+              "predictions": [
+                11,
+                279
+              ],
+              "accepted": 1,
+              "emitted": [
+                11,
+                279
+              ]
+            },
+            {
+              "cache_before": 71,
+              "cache_after": 73,
+              "draft": [
+                1023
+              ],
+              "predictions": [
+                1023,
+                1450
+              ],
+              "accepted": 1,
+              "emitted": [
+                1023,
+                1450
+              ]
+            },
+            {
+              "cache_before": 73,
+              "cache_after": 75,
+              "draft": [
+                11
+              ],
+              "predictions": [
+                11,
+                279
+              ],
+              "accepted": 1,
+              "emitted": [
+                11,
+                279
+              ]
+            },
+            {
+              "cache_before": 75,
+              "cache_after": 77,
+              "draft": [
+                1023
+              ],
+              "predictions": [
+                1023,
+                1450
+              ],
+              "accepted": 1,
+              "emitted": [
+                1023,
+                1450
+              ]
+            },
+            {
+              "cache_before": 77,
+              "cache_after": 79,
+              "draft": [
+                11
+              ],
+              "predictions": [
+                11,
+                279
+              ],
+              "accepted": 1,
+              "emitted": [
+                11,
+                279
+              ]
+            }
+          ],
+          "k": 1,
+          "corrupt": false,
+          "match": true,
+          "peak_allocated_bytes": 2500300288
+        },
+        {
+          "output_ids": [
+            11,
+            32069,
+            311,
+            279,
+            1023,
+            1450,
+            11,
+            279,
+            1023,
+            1450,
+            11,
+            279,
+            1023,
+            1450,
+            11,
+            279
+          ],
+          "blocks": [
+            {
+              "cache_before": 63,
+              "cache_after": 64,
+              "draft": [
+                12
+              ],
+              "predictions": [
+                11,
+                81406
+              ],
+              "accepted": 0,
+              "emitted": [
+                11
+              ]
+            },
+            {
+              "cache_before": 64,
+              "cache_after": 66,
+              "draft": [
+                32069
+              ],
+              "predictions": [
+                32069,
+                311
+              ],
+              "accepted": 1,
+              "emitted": [
+                32069,
+                311
+              ]
+            },
+            {
+              "cache_before": 66,
+              "cache_after": 68,
+              "draft": [
+                279
+              ],
+              "predictions": [
+                279,
+                1023
+              ],
+              "accepted": 1,
+              "emitted": [
+                279,
+                1023
+              ]
+            },
+            {
+              "cache_before": 68,
+              "cache_after": 70,
+              "draft": [
+                1450
+              ],
+              "predictions": [
+                1450,
+                11
+              ],
+              "accepted": 1,
+              "emitted": [
+                1450,
+                11
+              ]
+            },
+            {
+              "cache_before": 70,
+              "cache_after": 72,
+              "draft": [
+                279
+              ],
+              "predictions": [
+                279,
+                1023
+              ],
+              "accepted": 1,
+              "emitted": [
+                279,
+                1023
+              ]
+            },
+            {
+              "cache_before": 72,
+              "cache_after": 74,
+              "draft": [
+                1450
+              ],
+              "predictions": [
+                1450,
+                11
+              ],
+              "accepted": 1,
+              "emitted": [
+                1450,
+                11
+              ]
+            },
+            {
+              "cache_before": 74,
+              "cache_after": 76,
+              "draft": [
+                279
+              ],
+              "predictions": [
+                279,
+                1023
+              ],
+              "accepted": 1,
+              "emitted": [
+                279,
+                1023
+              ]
+            },
+            {
+              "cache_before": 76,
+              "cache_after": 78,
+              "draft": [
+                1450
+              ],
+              "predictions": [
+                1450,
+                11
+              ],
+              "accepted": 1,
+              "emitted": [
+                1450,
+                11
+              ]
+            },
+            {
+              "cache_before": 78,
+              "cache_after": 79,
+              "draft": [],
+              "predictions": [
+                279
+              ],
+              "accepted": 0,
+              "emitted": [
+                279
+              ]
+            }
+          ],
+          "k": 1,
+          "corrupt": true,
+          "match": true,
+          "peak_allocated_bytes": 2500300288
+        },
+        {
+          "output_ids": [
+            11,
+            32069,
+            311,
+            279,
+            1023,
+            1450,
+            11,
+            279,
+            1023,
+            1450,
+            11,
+            279,
+            1023,
+            1450,
+            11,
+            279
+          ],
+          "blocks": [
+            {
+              "cache_before": 63,
+              "cache_after": 68,
+              "draft": [
+                11,
+                32069,
+                311,
+                279
+              ],
+              "predictions": [
+                11,
+                32069,
+                311,
+                279,
+                1023
+              ],
+              "accepted": 4,
+              "emitted": [
+                11,
+                32069,
+                311,
+                279,
+                1023
+              ]
+            },
+            {
+              "cache_before": 68,
+              "cache_after": 73,
+              "draft": [
+                1450,
+                11,
+                279,
+                1023
+              ],
+              "predictions": [
+                1450,
+                11,
+                279,
+                1023,
+                1450
+              ],
+              "accepted": 4,
+              "emitted": [
+                1450,
+                11,
+                279,
+                1023,
+                1450
+              ]
+            },
+            {
+              "cache_before": 73,
+              "cache_after": 78,
+              "draft": [
+                11,
+                279,
+                1023,
+                1450
+              ],
+              "predictions": [
+                11,
+                279,
+                1023,
+                1450,
+                11
+              ],
+              "accepted": 4,
+              "emitted": [
+                11,
+                279,
+                1023,
+                1450,
+                11
+              ]
+            },
+            {
+              "cache_before": 78,
+              "cache_after": 79,
+              "draft": [],
+              "predictions": [
+                279
+              ],
+              "accepted": 0,
+              "emitted": [
+                279
+              ]
+            }
+          ],
+          "k": 4,
+          "corrupt": false,
+          "match": true,
+          "peak_allocated_bytes": 2500300288
+        },
+        {
+          "output_ids": [
+            11,
+            32069,
+            311,
+            279,
+            1023,
+            1450,
+            11,
+            279,
+            1023,
+            1450,
+            11,
+            279,
+            1023,
+            1450,
+            11,
+            279
+          ],
+          "blocks": [
+            {
+              "cache_before": 63,
+              "cache_after": 64,
+              "draft": [
+                12,
+                32069,
+                311,
+                279
+              ],
+              "predictions": [
+                11,
+                81406,
+                279,
+                279,
+                842
+              ],
+              "accepted": 0,
+              "emitted": [
+                11
+              ]
+            },
+            {
+              "cache_before": 64,
+              "cache_after": 69,
+              "draft": [
+                32069,
+                311,
+                279,
+                1023
+              ],
+              "predictions": [
+                32069,
+                311,
+                279,
+                1023,
+                1450
+              ],
+              "accepted": 4,
+              "emitted": [
+                32069,
+                311,
+                279,
+                1023,
+                1450
+              ]
+            },
+            {
+              "cache_before": 69,
+              "cache_after": 74,
+              "draft": [
+                11,
+                279,
+                1023,
+                1450
+              ],
+              "predictions": [
+                11,
+                279,
+                1023,
+                1450,
+                11
+              ],
+              "accepted": 4,
+              "emitted": [
+                11,
+                279,
+                1023,
+                1450,
+                11
+              ]
+            },
+            {
+              "cache_before": 74,
+              "cache_after": 79,
+              "draft": [
+                279,
+                1023,
+                1450,
+                11
+              ],
+              "predictions": [
+                279,
+                1023,
+                1450,
+                11,
+                279
+              ],
+              "accepted": 4,
+              "emitted": [
+                279,
+                1023,
+                1450,
+                11,
+                279
+              ]
+            }
+          ],
+          "k": 4,
+          "corrupt": true,
+          "match": true,
+          "peak_allocated_bytes": 2500300288
+        },
+        {
+          "output_ids": [
+            11,
+            32069,
+            311,
+            279,
+            1023,
+            1450,
+            11,
+            279,
+            1023,
+            1450,
+            11,
+            279,
+            1023,
+            1450,
+            11,
+            279
+          ],
+          "blocks": [
+            {
+              "cache_before": 63,
+              "cache_after": 72,
+              "draft": [
+                11,
+                32069,
+                311,
+                279,
+                1023,
+                1450,
+                11,
+                279
+              ],
+              "predictions": [
+                11,
+                32069,
+                311,
+                279,
+                1023,
+                1450,
+                11,
+                279,
+                1023
+              ],
+              "accepted": 8,
+              "emitted": [
+                11,
+                32069,
+                311,
+                279,
+                1023,
+                1450,
+                11,
+                279,
+                1023
+              ]
+            },
+            {
+              "cache_before": 72,
+              "cache_after": 79,
+              "draft": [
+                1450,
+                11,
+                279,
+                1023,
+                1450,
+                11
+              ],
+              "predictions": [
+                1450,
+                11,
+                279,
+                1023,
+                1450,
+                11,
+                279
+              ],
+              "accepted": 6,
+              "emitted": [
+                1450,
+                11,
+                279,
+                1023,
+                1450,
+                11,
+                279
+              ]
+            }
+          ],
+          "k": 8,
+          "corrupt": false,
+          "match": true,
+          "peak_allocated_bytes": 2500300288
+        },
+        {
+          "output_ids": [
+            11,
+            32069,
+            311,
+            279,
+            1023,
+            1450,
+            11,
+            279,
+            1023,
+            1450,
+            11,
+            279,
+            1023,
+            1450,
+            11,
+            279
+          ],
+          "blocks": [
+            {
+              "cache_before": 63,
+              "cache_after": 64,
+              "draft": [
+                12,
+                32069,
+                311,
+                279,
+                1023,
+                1450,
+                11,
+                279
+              ],
+              "predictions": [
+                11,
+                81406,
+                279,
+                279,
+                842,
+                1450,
+                11,
+                279,
+                1023
+              ],
+              "accepted": 0,
+              "emitted": [
+                11
+              ]
+            },
+            {
+              "cache_before": 64,
+              "cache_after": 73,
+              "draft": [
+                32069,
+                311,
+                279,
+                1023,
+                1450,
+                11,
+                279,
+                1023
+              ],
+              "predictions": [
+                32069,
+                311,
+                279,
+                1023,
+                1450,
+                11,
+                279,
+                1023,
+                1450
+              ],
+              "accepted": 8,
+              "emitted": [
+                32069,
+                311,
+                279,
+                1023,
+                1450,
+                11,
+                279,
+                1023,
+                1450
+              ]
+            },
+            {
+              "cache_before": 73,
+              "cache_after": 79,
+              "draft": [
+                11,
+                279,
+                1023,
+                1450,
+                11
+              ],
+              "predictions": [
+                11,
+                279,
+                1023,
+                1450,
+                11,
+                279
+              ],
+              "accepted": 5,
+              "emitted": [
+                11,
+                279,
+                1023,
+                1450,
+                11,
+                279
+              ]
+            }
+          ],
+          "k": 8,
+          "corrupt": true,
+          "match": true,
+          "peak_allocated_bytes": 2500300288
+        }
+      ]
+    },
+    {
+      "prompt_ids": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "reference_ids": [
+        11,
+        90225,
+        279,
+        1023,
+        279,
+        1890,
+        1129,
+        34,
+        7338,
+        7386,
+        59,
+        10,
+        16,
+        59,
+        10,
+        16
+      ],
+      "manual_ar": {
+        "output_ids": [
+          11,
+          90225,
+          279,
+          1023,
+          279,
+          1890,
+          1129,
+          34,
+          7338,
+          7386,
+          59,
+          10,
+          16,
+          59,
+          10,
+          16
+        ],
+        "blocks": [
+          {
+            "cache_before": 255,
+            "cache_after": 256,
+            "draft": [],
+            "predictions": [
+              11
+            ],
+            "accepted": 0,
+            "emitted": [
+              11
+            ]
+          },
+          {
+            "cache_before": 256,
+            "cache_after": 257,
+            "draft": [],
+            "predictions": [
+              90225
+            ],
+            "accepted": 0,
+            "emitted": [
+              90225
+            ]
+          },
+          {
+            "cache_before": 257,
+            "cache_after": 258,
+            "draft": [],
+            "predictions": [
+              279
+            ],
+            "accepted": 0,
+            "emitted": [
+              279
+            ]
+          },
+          {
+            "cache_before": 258,
+            "cache_after": 259,
+            "draft": [],
+            "predictions": [
+              1023
+            ],
+            "accepted": 0,
+            "emitted": [
+              1023
+            ]
+          },
+          {
+            "cache_before": 259,
+            "cache_after": 260,
+            "draft": [],
+            "predictions": [
+              279
+            ],
+            "accepted": 0,
+            "emitted": [
+              279
+            ]
+          },
+          {
+            "cache_before": 260,
+            "cache_after": 261,
+            "draft": [],
+            "predictions": [
+              1890
+            ],
+            "accepted": 0,
+            "emitted": [
+              1890
+            ]
+          },
+          {
+            "cache_before": 261,
+            "cache_after": 262,
+            "draft": [],
+            "predictions": [
+              1129
+            ],
+            "accepted": 0,
+            "emitted": [
+              1129
+            ]
+          },
+          {
+            "cache_before": 262,
+            "cache_after": 263,
+            "draft": [],
+            "predictions": [
+              34
+            ],
+            "accepted": 0,
+            "emitted": [
+              34
+            ]
+          },
+          {
+            "cache_before": 263,
+            "cache_after": 264,
+            "draft": [],
+            "predictions": [
+              7338
+            ],
+            "accepted": 0,
+            "emitted": [
+              7338
+            ]
+          },
+          {
+            "cache_before": 264,
+            "cache_after": 265,
+            "draft": [],
+            "predictions": [
+              7386
+            ],
+            "accepted": 0,
+            "emitted": [
+              7386
+            ]
+          },
+          {
+            "cache_before": 265,
+            "cache_after": 266,
+            "draft": [],
+            "predictions": [
+              59
+            ],
+            "accepted": 0,
+            "emitted": [
+              59
+            ]
+          },
+          {
+            "cache_before": 266,
+            "cache_after": 267,
+            "draft": [],
+            "predictions": [
+              10
+            ],
+            "accepted": 0,
+            "emitted": [
+              10
+            ]
+          },
+          {
+            "cache_before": 267,
+            "cache_after": 268,
+            "draft": [],
+            "predictions": [
+              16
+            ],
+            "accepted": 0,
+            "emitted": [
+              16
+            ]
+          },
+          {
+            "cache_before": 268,
+            "cache_after": 269,
+            "draft": [],
+            "predictions": [
+              59
+            ],
+            "accepted": 0,
+            "emitted": [
+              59
+            ]
+          },
+          {
+            "cache_before": 269,
+            "cache_after": 270,
+            "draft": [],
+            "predictions": [
+              10
+            ],
+            "accepted": 0,
+            "emitted": [
+              10
+            ]
+          },
+          {
+            "cache_before": 270,
+            "cache_after": 271,
+            "draft": [],
+            "predictions": [
+              16
+            ],
+            "accepted": 0,
+            "emitted": [
+              16
+            ]
+          }
+        ]
+      },
+      "arms": [
+        {
+          "output_ids": [
+            11,
+            90225,
+            279,
+            1023,
+            279,
+            1890,
+            1129,
+            34,
+            7338,
+            7386,
+            59,
+            10,
+            16,
+            59,
+            10,
+            16
+          ],
+          "blocks": [
+            {
+              "cache_before": 255,
+              "cache_after": 257,
+              "draft": [
+                11
+              ],
+              "predictions": [
+                11,
+                90225
+              ],
+              "accepted": 1,
+              "emitted": [
+                11,
+                90225
+              ]
+            },
+            {
+              "cache_before": 257,
+              "cache_after": 259,
+              "draft": [
+                279
+              ],
+              "predictions": [
+                279,
+                1023
+              ],
+              "accepted": 1,
+              "emitted": [
+                279,
+                1023
+              ]
+            },
+            {
+              "cache_before": 259,
+              "cache_after": 261,
+              "draft": [
+                279
+              ],
+              "predictions": [
+                279,
+                1890
+              ],
+              "accepted": 1,
+              "emitted": [
+                279,
+                1890
+              ]
+            },
+            {
+              "cache_before": 261,
+              "cache_after": 263,
+              "draft": [
+                1129
+              ],
+              "predictions": [
+                1129,
+                34
+              ],
+              "accepted": 1,
+              "emitted": [
+                1129,
+                34
+              ]
+            },
+            {
+              "cache_before": 263,
+              "cache_after": 265,
+              "draft": [
+                7338
+              ],
+              "predictions": [
+                7338,
+                7386
+              ],
+              "accepted": 1,
+              "emitted": [
+                7338,
+                7386
+              ]
+            },
+            {
+              "cache_before": 265,
+              "cache_after": 267,
+              "draft": [
+                59
+              ],
+              "predictions": [
+                59,
+                10
+              ],
+              "accepted": 1,
+              "emitted": [
+                59,
+                10
+              ]
+            },
+            {
+              "cache_before": 267,
+              "cache_after": 269,
+              "draft": [
+                16
+              ],
+              "predictions": [
+                16,
+                59
+              ],
+              "accepted": 1,
+              "emitted": [
+                16,
+                59
+              ]
+            },
+            {
+              "cache_before": 269,
+              "cache_after": 271,
+              "draft": [
+                10
+              ],
+              "predictions": [
+                10,
+                16
+              ],
+              "accepted": 1,
+              "emitted": [
+                10,
+                16
+              ]
+            }
+          ],
+          "k": 1,
+          "corrupt": false,
+          "match": true,
+          "peak_allocated_bytes": 2556019200
+        },
+        {
+          "output_ids": [
+            11,
+            90225,
+            279,
+            1023,
+            279,
+            1890,
+            1129,
+            34,
+            7338,
+            7386,
+            59,
+            10,
+            16,
+            59,
+            10,
+            16
+          ],
+          "blocks": [
+            {
+              "cache_before": 255,
+              "cache_after": 256,
+              "draft": [
+                12
+              ],
+              "predictions": [
+                11,
+                7386
+              ],
+              "accepted": 0,
+              "emitted": [
+                11
+              ]
+            },
+            {
+              "cache_before": 256,
+              "cache_after": 258,
+              "draft": [
+                90225
+              ],
+              "predictions": [
+                90225,
+                279
+              ],
+              "accepted": 1,
+              "emitted": [
+                90225,
+                279
+              ]
+            },
+            {
+              "cache_before": 258,
+              "cache_after": 260,
+              "draft": [
+                1023
+              ],
+              "predictions": [
+                1023,
+                279
+              ],
+              "accepted": 1,
+              "emitted": [
+                1023,
+                279
+              ]
+            },
+            {
+              "cache_before": 260,
+              "cache_after": 262,
+              "draft": [
+                1890
+              ],
+              "predictions": [
+                1890,
+                1129
+              ],
+              "accepted": 1,
+              "emitted": [
+                1890,
+                1129
+              ]
+            },
+            {
+              "cache_before": 262,
+              "cache_after": 264,
+              "draft": [
+                34
+              ],
+              "predictions": [
+                34,
+                7338
+              ],
+              "accepted": 1,
+              "emitted": [
+                34,
+                7338
+              ]
+            },
+            {
+              "cache_before": 264,
+              "cache_after": 266,
+              "draft": [
+                7386
+              ],
+              "predictions": [
+                7386,
+                59
+              ],
+              "accepted": 1,
+              "emitted": [
+                7386,
+                59
+              ]
+            },
+            {
+              "cache_before": 266,
+              "cache_after": 268,
+              "draft": [
+                10
+              ],
+              "predictions": [
+                10,
+                16
+              ],
+              "accepted": 1,
+              "emitted": [
+                10,
+                16
+              ]
+            },
+            {
+              "cache_before": 268,
+              "cache_after": 270,
+              "draft": [
+                59
+              ],
+              "predictions": [
+                59,
+                10
+              ],
+              "accepted": 1,
+              "emitted": [
+                59,
+                10
+              ]
+            },
+            {
+              "cache_before": 270,
+              "cache_after": 271,
+              "draft": [],
+              "predictions": [
+                16
+              ],
+              "accepted": 0,
+              "emitted": [
+                16
+              ]
+            }
+          ],
+          "k": 1,
+          "corrupt": true,
+          "match": true,
+          "peak_allocated_bytes": 2556019200
+        },
+        {
+          "output_ids": [
+            11,
+            90225,
+            279,
+            1023,
+            279,
+            1890,
+            1129,
+            34,
+            7338,
+            7386,
+            59,
+            10,
+            16,
+            59,
+            10,
+            16
+          ],
+          "blocks": [
+            {
+              "cache_before": 255,
+              "cache_after": 260,
+              "draft": [
+                11,
+                90225,
+                279,
+                1023
+              ],
+              "predictions": [
+                11,
+                90225,
+                279,
+                1023,
+                279
+              ],
+              "accepted": 4,
+              "emitted": [
+                11,
+                90225,
+                279,
+                1023,
+                279
+              ]
+            },
+            {
+              "cache_before": 260,
+              "cache_after": 265,
+              "draft": [
+                1890,
+                1129,
+                34,
+                7338
+              ],
+              "predictions": [
+                1890,
+                1129,
+                34,
+                7338,
+                7386
+              ],
+              "accepted": 4,
+              "emitted": [
+                1890,
+                1129,
+                34,
+                7338,
+                7386
+              ]
+            },
+            {
+              "cache_before": 265,
+              "cache_after": 270,
+              "draft": [
+                59,
+                10,
+                16,
+                59
+              ],
+              "predictions": [
+                59,
+                10,
+                16,
+                59,
+                10
+              ],
+              "accepted": 4,
+              "emitted": [
+                59,
+                10,
+                16,
+                59,
+                10
+              ]
+            },
+            {
+              "cache_before": 270,
+              "cache_after": 271,
+              "draft": [],
+              "predictions": [
+                16
+              ],
+              "accepted": 0,
+              "emitted": [
+                16
+              ]
+            }
+          ],
+          "k": 4,
+          "corrupt": false,
+          "match": true,
+          "peak_allocated_bytes": 2556019200
+        },
+        {
+          "output_ids": [
+            11,
+            90225,
+            279,
+            1023,
+            279,
+            1890,
+            1129,
+            34,
+            7338,
+            7386,
+            59,
+            10,
+            16,
+            59,
+            10,
+            16
+          ],
+          "blocks": [
+            {
+              "cache_before": 255,
+              "cache_after": 256,
+              "draft": [
+                12,
+                90225,
+                279,
+                1023
+              ],
+              "predictions": [
+                11,
+                7386,
+                662,
+                662,
+                662
+              ],
+              "accepted": 0,
+              "emitted": [
+                11
+              ]
+            },
+            {
+              "cache_before": 256,
+              "cache_after": 261,
+              "draft": [
+                90225,
+                279,
+                1023,
+                279
+              ],
+              "predictions": [
+                90225,
+                279,
+                1023,
+                279,
+                1890
+              ],
+              "accepted": 4,
+              "emitted": [
+                90225,
+                279,
+                1023,
+                279,
+                1890
+              ]
+            },
+            {
+              "cache_before": 261,
+              "cache_after": 266,
+              "draft": [
+                1129,
+                34,
+                7338,
+                7386
+              ],
+              "predictions": [
+                1129,
+                34,
+                7338,
+                7386,
+                59
+              ],
+              "accepted": 4,
+              "emitted": [
+                1129,
+                34,
+                7338,
+                7386,
+                59
+              ]
+            },
+            {
+              "cache_before": 266,
+              "cache_after": 271,
+              "draft": [
+                10,
+                16,
+                59,
+                10
+              ],
+              "predictions": [
+                10,
+                16,
+                59,
+                10,
+                16
+              ],
+              "accepted": 4,
+              "emitted": [
+                10,
+                16,
+                59,
+                10,
+                16
+              ]
+            }
+          ],
+          "k": 4,
+          "corrupt": true,
+          "match": true,
+          "peak_allocated_bytes": 2556019200
+        },
+        {
+          "output_ids": [
+            11,
+            90225,
+            279,
+            1023,
+            279,
+            1890,
+            1129,
+            34,
+            7338,
+            7386,
+            59,
+            10,
+            16,
+            59,
+            10,
+            16
+          ],
+          "blocks": [
+            {
+              "cache_before": 255,
+              "cache_after": 264,
+              "draft": [
+                11,
+                90225,
+                279,
+                1023,
+                279,
+                1890,
+                1129,
+                34
+              ],
+              "predictions": [
+                11,
+                90225,
+                279,
+                1023,
+                279,
+                1890,
+                1129,
+                34,
+                7338
+              ],
+              "accepted": 8,
+              "emitted": [
+                11,
+                90225,
+                279,
+                1023,
+                279,
+                1890,
+                1129,
+                34,
+                7338
+              ]
+            },
+            {
+              "cache_before": 264,
+              "cache_after": 271,
+              "draft": [
+                7386,
+                59,
+                10,
+                16,
+                59,
+                10
+              ],
+              "predictions": [
+                7386,
+                59,
+                10,
+                16,
+                59,
+                10,
+                16
+              ],
+              "accepted": 6,
+              "emitted": [
+                7386,
+                59,
+                10,
+                16,
+                59,
+                10,
+                16
+              ]
+            }
+          ],
+          "k": 8,
+          "corrupt": false,
+          "match": true,
+          "peak_allocated_bytes": 2556019200
+        },
+        {
+          "output_ids": [
+            11,
+            90225,
+            279,
+            1023,
+            279,
+            1890,
+            1129,
+            34,
+            7338,
+            7386,
+            59,
+            10,
+            16,
+            59,
+            10,
+            16
+          ],
+          "blocks": [
+            {
+              "cache_before": 255,
+              "cache_after": 256,
+              "draft": [
+                12,
+                90225,
+                279,
+                1023,
+                279,
+                1890,
+                1129,
+                34
+              ],
+              "predictions": [
+                11,
+                7386,
+                662,
+                662,
+                662,
+                279,
+                97329,
+                59005,
+                7338
+              ],
+              "accepted": 0,
+              "emitted": [
+                11
+              ]
+            },
+            {
+              "cache_before": 256,
+              "cache_after": 265,
+              "draft": [
+                90225,
+                279,
+                1023,
+                279,
+                1890,
+                1129,
+                34,
+                7338
+              ],
+              "predictions": [
+                90225,
+                279,
+                1023,
+                279,
+                1890,
+                1129,
+                34,
+                7338,
+                7386
+              ],
+              "accepted": 8,
+              "emitted": [
+                90225,
+                279,
+                1023,
+                279,
+                1890,
+                1129,
+                34,
+                7338,
+                7386
+              ]
+            },
+            {
+              "cache_before": 265,
+              "cache_after": 271,
+              "draft": [
+                59,
+                10,
+                16,
+                59,
+                10
+              ],
+              "predictions": [
+                59,
+                10,
+                16,
+                59,
+                10,
+                16
+              ],
+              "accepted": 5,
+              "emitted": [
+                59,
+                10,
+                16,
+                59,
+                10,
+                16
+              ]
+            }
+          ],
+          "k": 8,
+          "corrupt": true,
+          "match": true,
+          "peak_allocated_bytes": 2556019200
+        }
+      ]
+    }
+  ],
+  "passed": true
+}

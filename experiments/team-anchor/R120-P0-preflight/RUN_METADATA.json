@@ -1,0 +1,43 @@
+{
+  "experiment": "R120-P0 minimal GPU correctness preflight",
+  "source_commit": "3b291f1528dd513f08c5c7c7eaf4c7ae9b4fd170",
+  "source_file": "research_code/R120-P0/preflight.py",
+  "source_file_sha256": "b58fe5ccd5f5d8987dd8b2df88dbd138f63e9cfa8e96eb210d78a23f2779699b",
+  "source_worktree_was_clean_at_checkout": true,
+  "model_directory": "/root/rivermind-data/hfl_sd_r118/layerskip-1b",
+  "model_weight_sha256": "ba9a27bc1fadc74d7ca576aa618e464aa006b1c56b4a940c668c980a302708ee",
+  "runtime": {
+    "python": "3.11.10",
+    "pytorch": "2.5.1+cu124",
+    "transformers": "4.48.3",
+    "tokenizers": "0.21.4",
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "gpu_memory_total_bytes": 25769803776
+  },
+  "prompts": {
+    "file": "prompts.json",
+    "shape": [
+      64,
+      256
+    ],
+    "construction": "synthetic token ID 1 repeated; no natural text or external data, as instructed"
+  },
+  "cpu_self_test_exit_code": 0,
+  "gpu_preflight_exit_code": 0,
+  "gpu_preflight_passed": true,
+  "correctness_summary": {
+    "prompt_count": 2,
+    "manual_ar_matches_generate": true,
+    "all_clean_and_corrupted_oracle_arms_match_ar": true,
+    "clean_tapes_fully_accepted": true,
+    "corrupted_first_token_rejected": true,
+    "k_values": [
+      1,
+      4,
+      8
+    ],
+    "generated_tokens_per_prompt": 16
+  },
+  "performance_evaluation": "not performed; no throughput claim",
+  "training": "not performed"
+}

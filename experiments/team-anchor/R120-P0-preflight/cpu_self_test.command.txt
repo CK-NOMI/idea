@@ -1,0 +1,1 @@
+cd research_code/R120-P0 && /root/rivermind-data/hfl_sd_r118/venv/bin/python preflight.py --self-test

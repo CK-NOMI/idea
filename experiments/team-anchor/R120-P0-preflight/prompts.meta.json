@@ -1,0 +1,10 @@
+{
+  "prompt_file": "prompts.json",
+  "prompt_sha256": "ba4a7b3147532bf7250080f7a7269ee0d3c44f45cdc6c12bd53108caacf6f1d5",
+  "shape": [
+    64,
+    256
+  ],
+  "construction": "synthetic valid token IDs; token ID 1 repeated to requested lengths; no natural text or external data used",
+  "source_code_commit": "3b291f1528dd513f08c5c7c7eaf4c7ae9b4fd170"
+}
