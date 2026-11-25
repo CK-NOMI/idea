@@ -4205,3 +4205,11 @@ H未执行：只有真实训练部署确实将同一合法GRPO组跨区域分配
 - P：假设同锚点串行AR D+B*a0，新max(D,B*a0)+L+a0*E[R]；R为首拒绝后剩余位置，使用teacher-forced前缀生存代理，B2/4/8全块suffix比例.041820/.082078/.167133。假设D=B*a0、L=.08B*a0，得1.783/1.721/1.604x，相对同锚点串行AR且非实测，不是vs强dense SD；B4需D/(Ba0)∈[.743,1.514]才有1.5x，正开销下重叠机制不能达2x。若生成占70%、额外总开销3%，B4全流程仅约1.36x。强同锚点AR、部分块流水、同委托flat可替代；多尺度近邻MEGABYTE/BLT/H-Net及LayerSkip/PipeSD/PipeSpec/Speculation at a Distance已查原始摘要/出版页，未通过原创性审查。
 - Retain性能候选，不立项；规划G1–7 7.4/7.2/9/8.3/8.6/7.4/8.7=8.09（R115 7.96、R110历史最佳8.14），历史实证成熟度6.60不变，G1/G2/G4未过、G3/G7部分、G5未验、G6无80%证据。下一步R104官方1B/8B profile及真正低频深层KV结构，匹配任务质量、真实全成本和强同模型AR/SD、多尺度、调优流水、同委托flat双向消融；三nonIID/时延/独立seed、1–2×40GB、CI。停止无收益的区域适配扫参。
 - [完整报告](experiments/team-anchor/R117/record.md) · [实际执行源码](experiments/team-anchor/R117/probe.js) · [完整数值结果](experiments/team-anchor/R117/results.json)。
+
+### team-anchor/R118｜真实预训练锚点复用反例与 RTX 3090 强基线
+
+- 2026-11-25；起始与写前 main `8c1347f533c5dcbde5f3ef387493b84c12969cf6`，README blob `20f01001d690d1c583f1fa640e7e81a865a40517`。复核 R44/R104/R110/R115/R116/R117 和后续 GPU 脚本，未复跑全库。LayerSkip 1B 经 ModelScope 匿名完整下载，校验权重与官方 SHA-256、Tokenizer 和配置；使用一张 RTX 3090 24GB。
+- E/T：135M、360M 两预训练 SmolLM2 在 CPU 实测，1B LayerSkip 在 GPU 实测。1B 全部切分/间隔的直接残差搬运校准选择 γ=0；最后层 B=2 的留出 NLL +0.579%（95% 单侧上界 +0.947%），只保留周期深算；对角桥及区域版本劣于周期强基线。固定最后层输入保留全部 K/V 时，单层锚点稀疏 Q/注意力/MLP 保持原锚点计算；三个模型共 1866 个锚点 argmax 保持。用更早层状态替换非锚点后，三模型共 32 个锚点 argmax 改变。无真实 HFL 或新模型自由生成。
+- E/P：RTX 3090 上 HF 4.48.3 共 112 次，校准选型相对 AR 留出 0.864×（95% CI 0.798–0.966），序列一致 7/8。官方 4.46.3 兼容环境下复用算法 160 次，留出 1.001×（0.917–1.105），一致 8/8。最后层实测阶段占总时间 5.90%，模拟免费删除一半最后层调用仅约 1.03×；未把代理当候选实际吞吐。历史 HF pilot 仅传目标 `generation_config` 无法落实助手端窗口，本轮修正并废弃初次未修正轨迹。
+- 主观原创性 7.4/10。G1/G2 未过，G3/G4/G7 部分，G5 未验证，G6 无 80% 依据。**Reject 冻结锚点桥为论文机制，保留多层因果反例、可核验性能边界和同目标基线。** 下轮单卡先训练因果稀疏后缀，显式构建全 token 浅层共享记忆与锚点历史；预先设质量及可移除关键路径双门槛，再决定是否增加 GPU 或引入 HFL。
+- [报告](experiments/team-anchor/R118/record.md) · [实验源代码及全部结果](experiments/team-anchor/R118/) · [官方基线请求级原始数据](experiments/team-anchor/R118/official_cuda_latency.jsonl) · [3090 最后一层剖析](experiments/team-anchor/R118/layerskip_1b_cuda_final_profile.json)

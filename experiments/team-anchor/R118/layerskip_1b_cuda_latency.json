@@ -1,0 +1,2153 @@
+{
+  "prepared": {
+    "model_id": "facebook/layerskip-llama3.2-1B",
+    "revision": "81deb0f88734409cca506bcefcfb5c6bd2667565",
+    "weight_sha256": "ba9a27bc1fadc74d7ca576aa618e464aa006b1c56b4a940c668c980a302708ee",
+    "official_git_blobs": {
+      "config.json": "bb65e33cb3db2727698e755950cb8c1f5a8b9775",
+      "generation_config.json": "9d6875bc4b1ad172618be34ec767b21ed35fda84",
+      "tokenizer.json": "1c1d8d5c9024994f1d3b00f9662b8dd89ca13cf2",
+      "tokenizer_config.json": "93623bc19ca3b4757444f2c6ec6a3ffea46938a9",
+      "special_tokens_map.json": "02ee80b6196926a5ad790a004d9efd6ab1ba6542",
+      "LICENSE": "99692fc3969c32ee00e0b20484d2693947d3d7c2"
+    },
+    "tokenizer_lfs_sha256": "6b9e4e7fb171f92fd137b777cc2714bf87d11576700a1dcd7a399e7bbe39537b",
+    "source_url": "https://www.modelscope.cn/api/v1/models/facebook/layerskip-llama3.2-1B/repo?Revision=master&FilePath=",
+    "torch": "2.5.1+cu124",
+    "transformers": "4.48.3",
+    "n_layers": 16,
+    "prompt_sha256": "eca6e363a3070ebb6e1610ab273091c0ae6418f27efaf5c39e3060430d81ecf9",
+    "dataset": "AG News CSV",
+    "dataset_revision": "555590db4219b1243abb1918effd6a7425a2d75f",
+    "rows": 64,
+    "ready": true,
+    "dataset_sha256": {
+      "train": "199e6cfd2478399e8c2bb6ab74f795c8c476c6536125c22727201aa11e3402d2",
+      "test": "65860ae613aa57967567aee39c633730337e25b0cfea0372a82da5fea8f52407"
+    },
+    "dataset_source_rows": {
+      "train": 1024,
+      "test": 256
+    }
+  },
+  "torch": "2.5.1+cu124",
+  "transformers": "4.48.3",
+  "device": "cuda",
+  "platform": "Linux-5.15.0-203-generic-x86_64-with-glibc2.35",
+  "accelerator": "NVIDIA GeForce RTX 3090",
+  "accelerator_memory_bytes": 25296044032,
+  "cuda_runtime": "12.4",
+  "seed": 118,
+  "max_new_tokens": 32,
+  "context": 64,
+  "repeats": 1,
+  "selected": {
+    "best": [
+      3,
+      2
+    ],
+    "ref": {
+      "runs": 8,
+      "equal": 8,
+      "tokens": 256,
+      "seconds": 7.126470449031331
+    },
+    "test": {
+      "runs": 8,
+      "equal": 7,
+      "tokens": 256,
+      "seconds": 8.244555427110754
+    },
+    "speedup": 0.8643850492650216,
+    "paired_document_bootstrap_95": [
+      0.7983664929703327,
+      0.9655589019135135
+    ],
+    "exact_on_test": false
+  },
+  "profiles": [
+    {
+      "id": "test-0",
+      "arm": [
+        0,
+        0
+      ],
+      "seconds": 0.8930225949734449,
+      "tokens": 32,
+      "forwards": [
+        {
+          "layers": 16,
+          "inputs": 37,
+          "gpu_event_ms": 27.92755126953125
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.084800720214844
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.11961555480957
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 26.820608139038086
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 26.884096145629883
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 26.645503997802734
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.14316749572754
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.254783630371094
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.2106876373291
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.458463668823242
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.15545654296875
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 26.986495971679688
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.05695915222168
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 26.996736526489258
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.079679489135742
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 26.969247817993164
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 26.986495971679688
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.064319610595703
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 26.860544204711914
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.059200286865234
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.077632904052734
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.496448516845703
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.250688552856445
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 26.966272354125977
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 26.94246482849121
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 26.974271774291992
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 26.806272506713867
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 26.76518440246582
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.32851219177246
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 26.94963264465332
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 26.816511154174805
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 26.998720169067383
+        }
+      ]
+    },
+    {
+      "id": "test-0",
+      "arm": [
+        3,
+        2
+      ],
+      "seconds": 1.1672107100021094,
+      "tokens": 32,
+      "forwards": [
+        {
+          "layers": 3,
+          "inputs": 37,
+          "gpu_event_ms": 6.415584087371826
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.326240062713623
+        },
+        {
+          "layers": 16,
+          "inputs": 39,
+          "gpu_event_ms": 27.538368225097656
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.315423965454102
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.223872184753418
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.410303115844727
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.031807899475098
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.334464073181152
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.564735412597656
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.41974401473999
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.319104194641113
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.56492805480957
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.236608028411865
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.654975891113281
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.567935943603516
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.2775678634643555
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.296576023101807
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.696800231933594
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.326720237731934
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.372159957885742
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.714431762695312
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.430975914001465
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.441984176635742
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 28.77440071105957
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.2335357666015625
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.377471923828125
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.51468849182129
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.238656044006348
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.372352123260498
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.35193634033203
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.086080074310303
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.407167911529541
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.455360412597656
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.493631839752197
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.413311958312988
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.39084815979004
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.265088081359863
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.426623821258545
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.419519424438477
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.344992160797119
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.309887886047363
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.213695526123047
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.29804801940918
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.429696083068848
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.518848419189453
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.120863914489746
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.375423908233643
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.508607864379883
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.261184215545654
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.33139181137085
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.712383270263672
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.44652795791626
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 7.071743965148926
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.60793685913086
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.270400047302246
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.464511871337891
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.584415435791016
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.234560012817383
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.466559886932373
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.667327880859375
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.086080074310303
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.5589118003845215
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.59347152709961
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.2724480628967285
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.358016014099121
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 30.842880249023438
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.215104103088379
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.351744174957275
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.542400360107422
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.322368621826172
+        }
+      ]
+    },
+    {
+      "id": "test-1",
+      "arm": [
+        0,
+        0
+      ],
+      "seconds": 0.8930583589244634,
+      "tokens": 32,
+      "forwards": [
+        {
+          "layers": 16,
+          "inputs": 64,
+          "gpu_event_ms": 27.64201545715332
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.037696838378906
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.106304168701172
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.006975173950195
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 26.97318458557129
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.040767669677734
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 26.964031219482422
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 26.947359085083008
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.027456283569336
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 26.901504516601562
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.14009666442871
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 26.852352142333984
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 26.797056198120117
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 26.92198371887207
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.17568016052246
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.15340805053711
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.116544723510742
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.15724754333496
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.001855850219727
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 26.861568450927734
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 26.983423233032227
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.187999725341797
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.090944290161133
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.001855850219727
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.157503128051758
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.022335052490234
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.11244773864746
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.053056716918945
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.14828872680664
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 26.978239059448242
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.14499282836914
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.181055068969727
+        }
+      ]
+    },
+    {
+      "id": "test-1",
+      "arm": [
+        3,
+        2
+      ],
+      "seconds": 1.1236699760193005,
+      "tokens": 32,
+      "forwards": [
+        {
+          "layers": 3,
+          "inputs": 64,
+          "gpu_event_ms": 6.623231887817383
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.350848197937012
+        },
+        {
+          "layers": 16,
+          "inputs": 66,
+          "gpu_event_ms": 27.880447387695312
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.304192066192627
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.3447041511535645
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.718528747558594
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.364543914794922
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.38259220123291
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.732864379882812
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.374847888946533
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.501376152038574
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.77280044555664
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.383808135986328
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.400191783905029
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.411327362060547
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.1690239906311035
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.384640216827393
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.652992248535156
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.441408157348633
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.414336204528809
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.51900863647461
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.2724480628967285
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.359871864318848
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 30.072832107543945
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.357439994812012
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.484992027282715
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 30.21824073791504
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.379968166351318
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.387712001800537
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 30.119935989379883
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.371776103973389
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.501471996307373
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.949951171875
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.387135982513428
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.486944198608398
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.56377601623535
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.261184215545654
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.310912132263184
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.621248245239258
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.265279769897461
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.297599792480469
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.362943649291992
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.241727828979492
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.352896213531494
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.56492805480957
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.266304016113281
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.32422399520874
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.995967864990234
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.279615879058838
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.3160319328308105
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.59872055053711
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.172095775604248
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.337279796600342
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.72876739501953
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.266304016113281
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.410240173339844
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.621248245239258
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.421919822692871
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.413055896759033
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.625343322753906
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.311359882354736
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.358016014099121
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.628192901611328
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.281760215759277
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.38156795501709
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.69385528564453
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.431936264038086
+        }
+      ]
+    },
+    {
+      "id": "test-2",
+      "arm": [
+        0,
+        0
+      ],
+      "seconds": 0.8929368379758671,
+      "tokens": 32,
+      "forwards": [
+        {
+          "layers": 16,
+          "inputs": 53,
+          "gpu_event_ms": 27.33875274658203
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.13190460205078
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.173824310302734
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.172800064086914
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 26.96499252319336
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.14112091064453
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.028480529785156
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.076608657836914
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.35001564025879
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 26.95270347595215
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.009023666381836
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.149215698242188
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.195392608642578
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 26.890239715576172
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.165727615356445
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.005952835083008
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.073535919189453
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 26.830848693847656
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 26.808319091796875
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.073471069335938
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.025407791137695
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.048959732055664
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 26.902528762817383
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 26.92095947265625
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 26.917888641357422
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.065343856811523
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 26.960895538330078
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.060287475585938
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.0098876953125
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 26.74380874633789
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.026208877563477
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.11961555480957
+        }
+      ]
+    },
+    {
+      "id": "test-2",
+      "arm": [
+        3,
+        2
+      ],
+      "seconds": 0.7239415290532634,
+      "tokens": 32,
+      "forwards": [
+        {
+          "layers": 3,
+          "inputs": 53,
+          "gpu_event_ms": 6.512415885925293
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.33241605758667
+        },
+        {
+          "layers": 16,
+          "inputs": 55,
+          "gpu_event_ms": 27.215871810913086
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.305215835571289
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.319104194641113
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.56902313232422
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.154687881469727
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.392831802368164
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.38377571105957
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.269184112548828
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.314943790435791
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.574047088623047
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.24070405960083
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.321152210235596
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.452192306518555
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.210815906524658
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.320000171661377
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.442047119140625
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.152639865875244
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.2863359451293945
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.396928787231445
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.1393280029296875
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.375423908233643
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.249536514282227
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.291679859161377
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.347968101501465
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.424640655517578
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.205887794494629
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.337535858154297
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.548320770263672
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.218175888061523
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.361087799072266
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.37548828125
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.18233585357666
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.322175979614258
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.505535125732422
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.258111953735352
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.579103946685791
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.56390380859375
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.158783912658691
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.347775936126709
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.535232543945312
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.291808128356934
+        },
+        {
+          "layers": 16,
+          "inputs": 2,
+          "gpu_event_ms": 29.444095611572266
+        }
+      ]
+    },
+    {
+      "id": "test-26",
+      "arm": [
+        0,
+        0
+      ],
+      "seconds": 0.8933813789626583,
+      "tokens": 32,
+      "forwards": [
+        {
+          "layers": 16,
+          "inputs": 42,
+          "gpu_event_ms": 27.626304626464844
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.089920043945312
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 26.801151275634766
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 26.74892807006836
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 26.96601676940918
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 28.32486343383789
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.198463439941406
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.065343856811523
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 26.830848693847656
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 26.97113609313965
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.14316749572754
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 26.95052719116211
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.019136428833008
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 26.88697624206543
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.082752227783203
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 26.98851203918457
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 26.90355110168457
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 26.78873634338379
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.003679275512695
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.365312576293945
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.11859130859375
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.176959991455078
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.210752487182617
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.429887771606445
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.13190460205078
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.232255935668945
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.295743942260742
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.243520736694336
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 26.99065589904785
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.097919464111328
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.06719970703125
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 26.799039840698242
+        }
+      ]
+    },
+    {
+      "id": "test-26",
+      "arm": [
+        3,
+        2
+      ],
+      "seconds": 1.0642951839836314,
+      "tokens": 32,
+      "forwards": [
+        {
+          "layers": 3,
+          "inputs": 42,
+          "gpu_event_ms": 6.455039978027344
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.363135814666748
+        },
+        {
+          "layers": 16,
+          "inputs": 44,
+          "gpu_event_ms": 27.76576042175293
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.207935810089111
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.411263942718506
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.434879302978516
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.207935810089111
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.302720069885254
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.634464263916016
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.219391822814941
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.337535858154297
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.56390380859375
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.283455848693848
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.416128158569336
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.00150489807129
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.261184215545654
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.356959819793701
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.36832046508789
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.208960056304932
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.290431976318359
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.491199493408203
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.270400047302246
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.380767822265625
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.7205753326416
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.296000003814697
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.42252779006958
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.826047897338867
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.478271961212158
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.494207859039307
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 28.804096221923828
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.280640125274658
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.378431797027588
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 28.990463256835938
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.285759925842285
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 7.016448020935059
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.682687759399414
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.271423816680908
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.34768009185791
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.716480255126953
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.113855838775635
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.365407943725586
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.224960327148438
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.266208171844482
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.339583873748779
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.290496826171875
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.081984043121338
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.12659215927124
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 28.039167404174805
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.243711948394775
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.3160319328308105
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.603839874267578
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.224319934844971
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.458367824554443
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.72979164123535
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.352128028869629
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.4530558586120605
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 30.028799057006836
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.471104145050049
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.309919834136963
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 28.892160415649414
+        },
+        {
+          "layers": 3,
+          "inputs": 2,
+          "gpu_event_ms": 7.337984085083008
+        },
+        {
+          "layers": 3,
+          "inputs": 1,
+          "gpu_event_ms": 6.374527931213379
+        },
+        {
+          "layers": 16,
+          "inputs": 3,
+          "gpu_event_ms": 29.8372802734375
+        },
+        {
+          "layers": 16,
+          "inputs": 1,
+          "gpu_event_ms": 27.14828872680664
+        }
+      ]
+    }
+  ],
+  "whole_experiment_seconds": 172.7925248669926,
+  "arms": [
+    {
+      "arm": [
+        0,
+        0
+      ],
+      "calibration": {
+        "runs": 8,
+        "equal": 8,
+        "tokens": 256,
+        "seconds": 7.107596271089278
+      },
+      "test": {
+        "runs": 8,
+        "equal": 8,
+        "tokens": 256,
+        "seconds": 7.126470449031331
+      }
+    },
+    {
+      "arm": [
+        3,
+        2
+      ],
+      "calibration": {
+        "runs": 8,
+        "equal": 8,
+        "tokens": 256,
+        "seconds": 7.765138603048399
+      },
+      "test": {
+        "runs": 8,
+        "equal": 7,
+        "tokens": 256,
+        "seconds": 8.244555427110754
+      }
+    },
+    {
+      "arm": [
+        3,
+        4
+      ],
+      "calibration": {
+        "runs": 8,
+        "equal": 8,
+        "tokens": 256,
+        "seconds": 9.32952354196459
+      },
+      "test": {
+        "runs": 8,
+        "equal": 8,
+        "tokens": 256,
+        "seconds": 10.114843263057992
+      }
+    },
+    {
+      "arm": [
+        3,
+        8
+      ],
+      "calibration": {
+        "runs": 8,
+        "equal": 8,
+        "tokens": 256,
+        "seconds": 13.12154175597243
+      },
+      "test": {
+        "runs": 8,
+        "equal": 7,
+        "tokens": 256,
+        "seconds": 13.682962578022853
+      }
+    },
+    {
+      "arm": [
+        8,
+        2
+      ],
+      "calibration": {
+        "runs": 8,
+        "equal": 8,
+        "tokens": 256,
+        "seconds": 9.225315318093635
+      },
+      "test": {
+        "runs": 8,
+        "equal": 8,
+        "tokens": 256,
+        "seconds": 8.872298742062412
+      }
+    },
+    {
+      "arm": [
+        8,
+        4
+      ],
+      "calibration": {
+        "runs": 8,
+        "equal": 8,
+        "tokens": 256,
+        "seconds": 11.837292448035441
+      },
+      "test": {
+        "runs": 8,
+        "equal": 8,
+        "tokens": 256,
+        "seconds": 11.563775488757528
+      }
+    },
+    {
+      "arm": [
+        8,
+        8
+      ],
+      "calibration": {
+        "runs": 8,
+        "equal": 8,
+        "tokens": 256,
+        "seconds": 18.045344252954237
+      },
+      "test": {
+        "runs": 8,
+        "equal": 8,
+        "tokens": 256,
+        "seconds": 16.502574869897217
+      }
+    }
+  ],
+  "scope": "batch-1 greedy prefill + decode, HF 4.48.3 early exit, excludes tokenization and model load"
+}

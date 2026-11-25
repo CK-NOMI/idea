@@ -1,0 +1,119 @@
+{
+  "calibrationBlocks": 8,
+  "testBlocks": 8,
+  "calibrationPrompts": 8,
+  "testPrompts": 8,
+  "global": "4:2",
+  "regional": {
+    "0": "0:0",
+    "1": "3:2"
+  },
+  "sums": {
+    "ar": 7.7937953469809145,
+    "global": 7.785680945031345,
+    "regional": 7.794561290065758
+  },
+  "greedyAllMatch": true,
+  "regionalGainVsGlobal": -0.0011405996594402446,
+  "calibrationArmTime": 100.37589220388327,
+  "testArmTime": 103.93174994690344,
+  "scope": "offline paired batch1 greedy comparison, regional configuration selection is ordinary baseline, not HFL mechanism; no sampled correctness or total lifecycle G5 claim",
+  "choices": [
+    {
+      "id": "test-0",
+      "region": "1",
+      "repeat": 0,
+      "ar": 0.9710210750345141,
+      "global": 1.0538554230006412,
+      "regional": 1.1026273579336703,
+      "globalMatch": true,
+      "regionalMatch": true,
+      "globalArm": "4:2",
+      "regionalArm": "3:2"
+    },
+    {
+      "id": "test-1",
+      "region": "1",
+      "repeat": 0,
+      "ar": 0.9785892419749871,
+      "global": 1.1748135229572654,
+      "regional": 1.099456689087674,
+      "globalMatch": true,
+      "regionalMatch": true,
+      "globalArm": "4:2",
+      "regionalArm": "3:2"
+    },
+    {
+      "id": "test-2",
+      "region": "1",
+      "repeat": 0,
+      "ar": 0.9725153049221262,
+      "global": 0.7469817870296538,
+      "regional": 0.6964255960192531,
+      "globalMatch": true,
+      "regionalMatch": true,
+      "globalArm": "4:2",
+      "regionalArm": "3:2"
+    },
+    {
+      "id": "test-26",
+      "region": "0",
+      "repeat": 0,
+      "ar": 0.9738212460651994,
+      "global": 1.0246342020109296,
+      "regional": 0.9738212460651994,
+      "globalMatch": true,
+      "regionalMatch": true,
+      "globalArm": "4:2",
+      "regionalArm": "0:0"
+    },
+    {
+      "id": "test-27",
+      "region": "0",
+      "repeat": 0,
+      "ar": 0.9750249480130151,
+      "global": 0.8510345120448619,
+      "regional": 0.9750249480130151,
+      "globalMatch": true,
+      "regionalMatch": true,
+      "globalArm": "4:2",
+      "regionalArm": "0:0"
+    },
+    {
+      "id": "test-32",
+      "region": "0",
+      "repeat": 0,
+      "ar": 0.9785852980567142,
+      "global": 0.8849253810476512,
+      "regional": 0.9785852980567142,
+      "globalMatch": true,
+      "regionalMatch": true,
+      "globalArm": "4:2",
+      "regionalArm": "0:0"
+    },
+    {
+      "id": "test-33",
+      "region": "0",
+      "repeat": 0,
+      "ar": 0.969470024923794,
+      "global": 0.9843812889885157,
+      "regional": 0.969470024923794,
+      "globalMatch": true,
+      "regionalMatch": true,
+      "globalArm": "4:2",
+      "regionalArm": "0:0"
+    },
+    {
+      "id": "test-41",
+      "region": "1",
+      "repeat": 0,
+      "ar": 0.9747682079905644,
+      "global": 1.0650548279518262,
+      "regional": 0.9991501299664378,
+      "globalMatch": true,
+      "regionalMatch": true,
+      "globalArm": "4:2",
+      "regionalArm": "3:2"
+    }
+  ]
+}

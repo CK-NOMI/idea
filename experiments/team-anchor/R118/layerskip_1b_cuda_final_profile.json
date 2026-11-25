@@ -1,0 +1,1107 @@
+{
+  "model": "facebook/layerskip-llama3.2-1B",
+  "revision": "81deb0f88734409cca506bcefcfb5c6bd2667565",
+  "accelerator": "NVIDIA GeForce RTX 3090",
+  "torch": "2.5.1+cu124",
+  "transformers": "4.48.3",
+  "sequence_lengths": [
+    64,
+    32
+  ],
+  "observations": [
+    {
+      "id": "test-32",
+      "tokens": 32,
+      "uninstrumented_seconds": 0.8573110020952299,
+      "instrumented_seconds": 0.8592422599904239,
+      "layer_invocations": [
+        {
+          "input_tokens": 57,
+          "cuda_event_ms": 1.5791360139846802
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5781760215759277
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6220159530639648
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.53929603099823
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.9578880071640015
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5514559745788574
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6198079586029053
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5032000541687012
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.550112009048462
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5808320045471191
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.574112057685852
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5728319883346558
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6261119842529297
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.503167986869812
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.7192959785461426
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.505247950553894
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.4940160512924194
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6519039869308472
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.619968056678772
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.627135992050171
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5503360033035278
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6394239664077759
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6035840511322021
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5623680353164673
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6474560499191284
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.610751986503601
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5011839866638184
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6484479904174805
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.7703039646148682
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5551999807357788
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6159679889678955
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5104000568389893
+        }
+      ]
+    },
+    {
+      "id": "test-33",
+      "tokens": 32,
+      "uninstrumented_seconds": 0.8675368489930406,
+      "instrumented_seconds": 0.8742826640373096,
+      "layer_invocations": [
+        {
+          "input_tokens": 64,
+          "cuda_event_ms": 1.610751986503601
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5790079832077026
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6027840375900269
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5881919860839844
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.598688006401062
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5831040143966675
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.602560043334961
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.572864055633545
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.605631947517395
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5779839754104614
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5738879442214966
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5646719932556152
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6731200218200684
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6209919452667236
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5331519842147827
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5861760377883911
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6383999586105347
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6640000343322754
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6067839860916138
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5952320098876953
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6087679862976074
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.56876802444458
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6343040466308594
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.533951997756958
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6149120330810547
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5902719497680664
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.586016058921814
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6168320178985596
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5555200576782227
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5841280221939087
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6047999858856201
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6416640281677246
+        }
+      ]
+    },
+    {
+      "id": "test-26",
+      "tokens": 32,
+      "uninstrumented_seconds": 0.8924165059579536,
+      "instrumented_seconds": 0.856847450020723,
+      "layer_invocations": [
+        {
+          "input_tokens": 42,
+          "cuda_event_ms": 1.5626239776611328
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6783360242843628
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5915199518203735
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5953919887542725
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.551584005355835
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6231039762496948
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6394239664077759
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.56876802444458
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.572864055633545
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5453439950942993
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5554560422897339
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5882240533828735
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5811200141906738
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5655360221862793
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5708160400390625
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.627135992050171
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.4939839839935303
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5872000455856323
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.586400032043457
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.59334397315979
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.609663963317871
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6117759943008423
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.58515202999115
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5874240398406982
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5472639799118042
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.572864055633545
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5769599676132202
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5726079940795898
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5841280221939087
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6581120491027832
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.491968035697937
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5965759754180908
+        }
+      ]
+    },
+    {
+      "id": "test-27",
+      "tokens": 32,
+      "uninstrumented_seconds": 0.8566608510445803,
+      "instrumented_seconds": 0.8602709590923041,
+      "layer_invocations": [
+        {
+          "input_tokens": 64,
+          "cuda_event_ms": 1.6079360246658325
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5523840188980103
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.56876802444458
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6046080589294434
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.499135971069336
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5431679487228394
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6476160287857056
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5914239883422852
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5440640449523926
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.581984043121338
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.602560043334961
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.491968035697937
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5656960010528564
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6179200410842896
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5800319910049438
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6136959791183472
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.605631947517395
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.56985604763031
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.551360011100769
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5951999425888062
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5574719905853271
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6558079719543457
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5769599676132202
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.59334397315979
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6486400365829468
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5493119955062866
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5831040143966675
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.528831958770752
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5459840297698975
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6291840076446533
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6363199949264526
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.531999945640564
+        }
+      ]
+    },
+    {
+      "id": "test-0",
+      "tokens": 32,
+      "uninstrumented_seconds": 0.8512280290015042,
+      "instrumented_seconds": 0.8528359569609165,
+      "layer_invocations": [
+        {
+          "input_tokens": 37,
+          "cuda_event_ms": 1.5493119955062866
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5452159643173218
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5872000455856323
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.4907519817352295
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5432640314102173
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.636512041091919
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5237120389938354
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5994880199432373
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.4888960123062134
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6146880388259888
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5820800065994263
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.56876802444458
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6272000074386597
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5657919645309448
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5697920322418213
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5862079858779907
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6035840511322021
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.633247971534729
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6363519430160522
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.645792007446289
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6304320096969604
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.4991040229797363
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6375360488891602
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5646719932556152
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5994559526443481
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.649664044380188
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.4886720180511475
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5001599788665771
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5482879877090454
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6179200410842896
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.55948805809021
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5329279899597168
+        }
+      ]
+    },
+    {
+      "id": "test-41",
+      "tokens": 32,
+      "uninstrumented_seconds": 0.8499545870581642,
+      "instrumented_seconds": 0.8677757369587198,
+      "layer_invocations": [
+        {
+          "input_tokens": 64,
+          "cuda_event_ms": 1.5708160400390625
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.563647985458374
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.600383996963501
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5718400478363037
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5617599487304688
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5801279544830322
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5852479934692383
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.7487679719924927
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5902719497680664
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5882240533828735
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5962560176849365
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.520799994468689
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.567520022392273
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.598464012145996
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6015360355377197
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5892479419708252
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5595519542694092
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.605631947517395
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6046080589294434
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5635839700698853
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5348800420761108
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6128000020980835
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6097279787063599
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6046080589294434
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5708160400390625
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5319039821624756
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6332800388336182
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5851199626922607
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5740480422973633
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5831040143966675
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5935039520263672
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5800319910049438
+        }
+      ]
+    },
+    {
+      "id": "test-1",
+      "tokens": 32,
+      "uninstrumented_seconds": 0.8685299230273813,
+      "instrumented_seconds": 0.8645399359520525,
+      "layer_invocations": [
+        {
+          "input_tokens": 64,
+          "cuda_event_ms": 1.649664044380188
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6046080589294434
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.581984043121338
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6732159852981567
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6043519973754883
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.592352032661438
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5912319421768188
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5892800092697144
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.644544005393982
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5902719497680664
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5737919807434082
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5790079832077026
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5925120115280151
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5882240533828735
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5861760377883911
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5872960090637207
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.599295973777771
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5892800092697144
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.619968056678772
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5441919565200806
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.638592004776001
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6362559795379639
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5572799444198608
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5954560041427612
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6989120244979858
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.553279995918274
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5452159643173218
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6005439758300781
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5605759620666504
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5921920537948608
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.55840003490448
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.509376049041748
+        }
+      ]
+    },
+    {
+      "id": "test-2",
+      "tokens": 32,
+      "uninstrumented_seconds": 0.8532837870297953,
+      "instrumented_seconds": 0.8521362899336964,
+      "layer_invocations": [
+        {
+          "input_tokens": 53,
+          "cuda_event_ms": 1.5900479555130005
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.605631947517395
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.563647985458374
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.557536005973816
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5370240211486816
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5308799743652344
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.598464012145996
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6035840511322021
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5349760055541992
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5892159938812256
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5441919565200806
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.598464012145996
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6732159852981567
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5595519542694092
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5319039821624756
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.719264030456543
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5441919565200806
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5112320184707642
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5493119955062866
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.538815975189209
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6280959844589233
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5493119955062866
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6578559875488281
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5872000455856323
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6621439456939697
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5321279764175415
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.562559962272644
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.491968035697937
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.5225600004196167
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6016960144042969
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.551360011100769
+        },
+        {
+          "input_tokens": 1,
+          "cuda_event_ms": 1.6139839887619019
+        }
+      ]
+    }
+  ],
+  "last_layer_event_seconds": 0.4062313288450241,
+  "instrumented_total_seconds": 6.887931252946146,
+  "uninstrumented_total_seconds": 6.8969215342076495,
+  "observed_event_fraction": 0.05897726239228484,
+  "idealized_speedup_eliminating_entire_final_layer": 1.0626735784750727,
+  "scope": "instrumented CUDA stream events and serial projection, not actual sparse speed"
+}
