@@ -4128,3 +4128,11 @@ H未执行：只有真实训练部署确实将同一合法GRPO组跨区域分配
 - E：torch CPU真实4层因果Transformer，240初训步/seed，CPython四文件，3独立seed、4client/2edge/4区域cycle/2云同步，5arm×3=15fit/1920 SGD；两深层FFN实际窄矩阵计算，缓存浅层h和teacher logits；所有输入basis云同步，等参数非等WAN。teacher NLL2.232647；独立/正式共享/全共享/no_q/no_p NLL 2.236255/2.236126/2.235779/2.235841/2.236204，overlap .936319/.935999/.937074/.937011/.936861。共享vs阻断q梯度仅+.0063pp overlap。180对实际greedy AR/SD轨迹、各2880生成token，ID一致；3451提出/2510接受/927块。各arm块数187/184/186/185/185，SD总耗时 .494026/.463457/.515727/.507697/.502770s；共享输正式共享强基线约11.28%，单次CPU时序非生产KV/CI。不同p未严格质量等价，无GPU/物理通信/真实任务。
 - 实查LayerSkip/Kangaroo/CLaSp/Basis Sharing/ReeFL/FedLMT/FedLore原始摘要或出版页，非查重通过。Retain多层结构质量可行性与WAN边界，Reject固定全共享独立立项，历史创新8.14、综合成熟度6.60不变；G1/G2/G4未过、G3/G7部分、G5未验、G6不足。P0真实1B/8B官方LayerSkip profile及WAN关键路径、强p_shared与普通pruning+SD；P1仅在暴露成本成立时按校准集学习共享/私有rank，同委托flat、双向消融、三nonIID/时延/独立seed、同质量真实总成本及CI，1–2×40GB，未执行。
 - [报告](experiments/team-far/R107/record.md) · [实际代码](experiments/team-far/R107/probe.py.gz.b64) · [15行完整精度汇总](experiments/team-far/R107/summary.csv)；每客户端/轨迹完整JSON留会话，SHA256见报告。
+
+
+### team-far/R108｜收敛决策：生存收益驱动的分层内生适配（方案潜力与实证成熟度分离）
+- 起始 main a93bdf53baa29de177ae98d55f76d5f7a3100b16、README 68cea489f55597f584fa5d31bcb51a2169948db3（4131行/613112字符）；写前 main a93bdf53baa29de177ae98d55f76d5f7a3100b16、README 68cea489f55597f584fa5d31bcb51a2169948db3，历史前缀完整。全文结构/关键词筛查、复核R43/44/48/88/97/106/107，未全库复跑。用户允许双向作用尽量实现但不强制绝对不可替代；实证门槛保持，新增单独规划评分。
+- H：R44/R97主线，固定同模型内生q、合法p版本，按多Token生存收益/实际摊销成本选全局/区域/私有适配预算和聚合范围，默认区域条件q、不强制共分布，先p固定再质量约束正式反馈；同预算q-only/detach/同委托flat强对照。R43中/高漂移EAL+4.63/+4.33%，等块成本生成节省代理约2.79/2.52%，R44微弱收益、R48强制共享负例、R107强基线耗时负例；不并入FFN裁剪或缓存作为主创新。
+- T/P：固定块起点、无EOS标准bonus下成本比=(Cnew/Cbase)(1+Abase)/(1+Anew)。假设生成/学习/其他占.65/.25/.10，新增成本.01，Abase2；Anew2.1/2.3/2.6、C比1.02/.98/.95、学习节省0/.1/.15，解析全流程节省−.16%/8.59%/16.29%，非观测、非预测概率。实查LayerSkip/CLaSp/ReeFL/OnlineSD/When Drafts Evolve/FedLAG/WTV/REAL/SpecFed摘要或出版页，近邻重合风险高。
+- 旧成熟度6.60、历史完整创新8.14不变；规划潜力G1–7 8.0/8.1/9.0/8.0/7.8/7.3/8.5均值8.10，非实证门槛、非成功概率。G6无80%证据。Retain唯一优先验证主线，不批准成熟顶刊立项。P0 1B/8B官方LayerSkip同质量真实端到端与普通HFL+本地WTV/REAL、自适应exit、FedLAG、同委托flat；三nonIID/网络/独立seed，1–2×40GB，15%真实总耗时或20%有效工作门槛，未执行。
+- [收敛方案与条件收益推导](experiments/team-far/R108/record.md)。无新增实验。
