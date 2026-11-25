@@ -1,0 +1,96 @@
+{
+  "lock": {
+    "best_sd": null,
+    "best_baseline": "ar",
+    "eligible_sd": [
+      "sd:3:2",
+      "sd:3:4",
+      "sd:3:8",
+      "sd:4:2",
+      "sd:4:4",
+      "sd:4:8",
+      "sd:8:2",
+      "sd:8:4",
+      "sd:8:8"
+    ],
+    "calibration": {
+      "ar": {
+        "train-492": [
+          1.6003878299379721,
+          0.0
+        ],
+        "train-448": [
+          1.5779791990062222,
+          0.0
+        ],
+        "train-0": [
+          1.6356683410704136,
+          0.0
+        ],
+        "train-78": [
+          1.6330862189643085,
+          0.0
+        ]
+      },
+      "manual": null,
+      "sd:3:2": null,
+      "sd:3:4": null,
+      "sd:3:8": null,
+      "sd:4:2": null,
+      "sd:4:4": null,
+      "sd:4:8": null,
+      "sd:8:2": null,
+      "sd:8:4": null,
+      "sd:8:8": null
+    }
+  },
+  "valid": {
+    "ar": true,
+    "manual": false,
+    "oracle:1": true,
+    "oracle:2": false,
+    "oracle:4": false,
+    "oracle:8": false,
+    "oracle:16": false
+  },
+  "results": {
+    "oracle:1": {
+      "ar": {
+        "speedup": 1.8749046045736517,
+        "ci95": [
+          1.8657333158668168,
+          1.8842310854195725
+        ],
+        "documents": 8,
+        "draft_budget_seconds_per_round_1_5x": 0.006703972034251309,
+        "budget_1_5x_ci95": [
+          0.006564832190431639,
+          0.006851907909145263
+        ],
+        "draft_budget_seconds_per_round_2x": -0.0016776988512295574,
+        "budget_2x_ci95": [
+          -0.001808587613140851,
+          -0.001547329682125561
+        ],
+        "mean_committed_per_round": 2.0
+      },
+      "manual": null
+    },
+    "oracle:2": {
+      "ar": null,
+      "manual": null
+    },
+    "oracle:4": {
+      "ar": null,
+      "manual": null
+    },
+    "oracle:8": {
+      "ar": null,
+      "manual": null
+    },
+    "oracle:16": {
+      "ar": null,
+      "manual": null
+    }
+  }
+}
