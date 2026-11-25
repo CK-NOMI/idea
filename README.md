@@ -4218,5 +4218,5 @@ H未执行：只有真实训练部署确实将同一合法GRPO组跨区域分配
 
 - 读取 commit `80f56a396b36c8148fc1bff3ae12bca1e87c13f6`；单 RTX 3090、LayerSkip 1B、AG News 独立校准/测试各 8 篇。逐层模块剖析做 64/256/512 输入、AR 与 Transformers LayerSkip，每配置预热后 6 次；记录插桩与不插桩墙钟。自定义路径实际跳过非锚点深层 Q/Attention/MLP，比较稠密、周期深算、锚点历史、全 token 浅层记忆加锚点历史。
 - **两门槛均失败。** 最佳 NLL 增幅 +1.389%，配对文档 bootstrap 单侧 95% 上界 +2.089%。最佳真实稀疏前向约 65 ms，对稠密约 27 ms，净关键路径变化约 −140%；自定义路径仍受 Python 锚点循环及 K/V 成本影响。冻结模型，0 个训练参数/步骤；不含 HFL。
-- 已知限制：未拆出采样、KV 更新、draft/verify/rollback 阶段墙钟；新稀疏目标的 AR/SD decode 吞吐及可靠逐配置峰值显存未测。第一次 RoPE 失败、第二次共享张量别名对照、第三次预热事件污染均留档并从最终结果剔除。未以插桩 CUDA event 代替墙钟。
+- 阶段补测以每长度单文档、5 次请求记录 greedy argmax、Cache.update、draft candidate、target forward 与拒绝后 KV crop；各阶段事件重叠，不将其相加成关键路径收益。multinomial sampling、独立 fallback 重算时间、新稀疏目标 AR/SD decode 吞吐及可靠逐配置峰值显存仍未测。第一次 RoPE 失败、第二次共享张量别名对照、第三次预热事件污染均留档并从最终结果剔除。未以插桩 CUDA event 代替墙钟。
 - [完整报告](experiments/team-anchor/R119-P0/record.md) · [源代码、原始输入、逐请求结果、环境和失败记录](experiments/team-anchor/R119-P0/)。

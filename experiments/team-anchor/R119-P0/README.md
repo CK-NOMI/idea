@@ -13,10 +13,17 @@ python run.py \
   --repeats 6 \
   --tokens 8 \
   --eval-docs 8
+
+python stage_profile.py \
+  --root /path/to/hfl_sd_r118 \
+  --out results/stage_profile_final.jsonl \
+  --repeats 5 \
+  --tokens 8 \
+  --docs 1
 ```
 
-The R118 directory must contain `prepared.json`, `prompts.json`, and `layerskip-1b/model.safetensors`. The first six measured profile repetitions follow a two-token warmup; warmup hook events are cleared before measurement. The result files retain individual repetitions and per-document metrics.
+The R118 directory must contain `prepared.json`, `prompts.json`, and `layerskip-1b/model.safetensors`. The first six measured profile repetitions follow a two-token warmup; warmup hook events are cleared before measurement. The result files retain individual repetitions and per-document metrics. `stage_profile.py` separately records five requests per length for AR and LayerSkip stage attribution.
 
 ## Evidence boundary
 
-The model was frozen: zero trainable parameters, zero optimizer steps, and zero training cost. The calibration and test documents are disjoint. This round did not run HFL, adapter tuning, sparse-model autoregressive decoding, or speculative decoding on the new sparse target. LayerSkip timing is the Transformers integrated self-speculative path. Per-layer and submodule CUDA-event timings are attribution aids, not removable wall-clock time. Sampling, KV update, and draft/verification/rollback stages are not separately isolated; this limitation is recorded rather than estimated.
+The model was frozen: zero trainable parameters, zero optimizer steps, and zero training cost. The calibration and test documents are disjoint. This round did not run HFL, adapter tuning, sparse-model autoregressive decoding, or speculative decoding on the new sparse target. LayerSkip timing is the Transformers integrated self-speculative path. Per-layer and submodule CUDA-event timings are attribution aids, not removable wall-clock time. A separate five-repeat stage profile measures greedy argmax, Cache.update, candidate generation, target forward, and KV crop; see `results/stage_profile_final.jsonl`. These intervals overlap and are not additive. Multinomial sampling, isolated fallback recomputation time, new sparse-target AR/SD throughput, and reliable per-configuration peak memory remain unmeasured.

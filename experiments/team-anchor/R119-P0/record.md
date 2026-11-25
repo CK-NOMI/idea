@@ -18,7 +18,7 @@
 
 自定义稀疏路径确实跳过了非锚点的深层 Q、注意力输出和 MLP，但仍需要建立相应 K/V 记忆，且当前实现通过 Python 按锚点循环。记录的是同步后的完整稀疏前向墙钟时间，与同一前缀的完整稠密前向墙钟时间配对。该实现不是优化过的生产内核。
 
-逐层、Attention、MLP、Q/K/V、O 投影和 LM Head 由模块 hook 与 CUDA event 插桩。插桩测得的层/子模块事件会受 Python 启动间隔和 hook 开销影响，模块区间相互嵌套且不可相加。插桩墙钟与独立不插桩墙钟同时保存。**不能把 event 时间当作可消除墙钟时间。**
+逐层、Attention、MLP、Q/K/V、O 投影和 LM Head 由模块 hook 与 CUDA event 插桩。插桩测得的层/子模块事件会受 Python 启动间隔和 hook 开销影响，模块区间相互嵌套且不可相加。插桩墙钟与独立不插桩墙钟同时保存。另运行 `stage_profile.py`，对每个输入长度的一个固定测试请求重复 5 次，分别记录 AR/LayerSkip 顶层 forward、Cache.update、greedy argmax、候选生成及拒绝后 cache crop。**不能把 event 时间当作可消除墙钟时间，也不能将重叠的阶段值相加成总成本。**
 
 ## 实际结果
 
@@ -45,7 +45,18 @@ CUDA-event 的层/模块均值例（毫秒；覆盖该次 generate 中各次模�
 | 512 | AR | 244.56 | 132.31 | 45.83 | 30.22 | 4.51 |
 | 512 | LayerSkip | 262.00 | 142.45 | 50.74 | 32.49 | 9.14 |
 
-逐个 16 层的原始值在 JSON 中。测量可见 LM Head 的 CUDA-event 区间，但**采样没有独立测时**；K/V 是投影区间，不等于 KV Cache 更新耗时。当前剖析也没有将内生草稿、正式验证与拒绝回退拆成各自墙钟阶段。因此这些细项仍未完成，不能拿模块事件反推。
+逐个 16 层的原始值在 JSON 中。LM Head 的 CUDA-event 区间包含在上面 `profile.json`。阶段性补测结果见 `results/stage_profile_final.jsonl`：下表为请求均值；Stage CUDA-event 包含流上等待/排队区间，host 列是 Python 调用区间，二者不是可相加的独立墙钟分量。
+
+| 输入 | 解码 | 总墙钟 | 草稿候选函数 host | 草稿模型 forward event | 正式模型 forward event | Cache.update event | greedy argmax event | KV crop host |
+|---:|---|---:|---:|---:|---:|---:|---:|---:|
+| 64 | AR | 0.262 s | — | — | 0.252 s | 13.1 ms | 0.282 ms | — |
+| 64 | LayerSkip | 0.191 s | 100.8 ms | 45.8 ms | 121.6 ms | 7.6 ms | 0.354 ms | 0.944 ms |
+| 256 | AR | 0.236 s | — | — | 0.229 s | 12.2 ms | 0.282 ms | — |
+| 256 | LayerSkip | 0.192 s | 111.6 ms | 51.5 ms | 119.0 ms | 7.9 ms | 0.351 ms | 0.934 ms |
+| 512 | AR | 0.211 s | — | — | 0.203 s | 10.2 ms | 0.249 ms | — |
+| 512 | LayerSkip | 0.266 s | 172.5 ms | 79.7 ms | 153.2 ms | 10.7 ms | 0.506 ms | 3.472 ms |
+
+“草稿候选函数 host”包含候选生成期间的模型调用，和草稿 forward event 重叠；“正式模型 forward event”也不等于端到端可删耗时。greedy argmax 已单独记时，但没有 multinomial sampling，因为本轮固定 greedy。拒绝的草稿 KV 通过 Cache crop 作废，作废计算并无单独 AR 重算阶段；crop host 是回退整理耗时，不是拒绝后的完整增量生成时间。每个长度仅一个文档、5 次请求，接受/拒绝计数只作轨迹核验：64/256/512 的提议 token 数为 25/30/45，已接受 20/20/10、拒绝 5/10/35，不能当总体接受率结论。
 
 ### 2. 多层稀疏后缀质量
 
@@ -61,7 +72,7 @@ CUDA-event 的层/模块均值例（毫秒；覆盖该次 generate 中各次模�
 
 ### 4. 显存与未完成成本项
 
-GPU 运行时总显存 24,124 MiB；`sparse_timing.jsonl` 中记录了 PyTorch allocator 高水位，但现版本在每个设置前没有重置 high-water mark，因此该字段不是独立配置的峰值，不能用于配置间比较。`gpu_snapshot_postrun.csv` 是任务结束后的空闲快照（1 MiB、0%），不是任务峰值。GPU 每请求峰值显存、采样、KV 更新、SD 草稿/验证/拒绝回退、稀疏目标 AR/SD 吞吐均未验证。
+GPU 运行时总显存 24,124 MiB；`sparse_timing.jsonl` 中记录了 PyTorch allocator 高水位，但现版本在每个设置前没有重置 high-water mark，因此该字段不是独立配置的峰值，不能用于配置间比较。`gpu_snapshot_postrun.csv` 是任务结束后的空闲快照（1 MiB、0%），不是任务峰值。逐请求峰值显存仍未验证。greedy LayerSkip 的 draft、target verification、argmax、KV update 和 KV crop 都有实际阶段记录，但拒绝后的独立重算耗时不适用/未单独形成阶段；新稀疏目标 AR/SD 吞吐仍未测。
 
 ## 失败迭代与数据完整性
 
@@ -70,8 +81,10 @@ GPU 运行时总显存 24,124 MiB；`sparse_timing.jsonl` 中记录了 PyTorch a
 1. `attempt-1-rope-failure`：稀疏前向未传 `position_embeddings`，16 条评测记录失败，已修正 Transformers 4.48 接口。
 2. `attempt-2-aliased-memory-control`：共享记忆张量与锚点状态别名，两个对照实际重合；标记为无效对照，不作为结果。
 3. `attempt-3-prewarmup-event-contamination`：模块 hook 预热事件进入首条插桩统计；已在预热后清空事件并以 6 次正式重复复跑。该次数据只保留审计，不用于上表。
+4. `attempt-stage-profile-buffer-alias`：阶段插桩把可变列表引用直接存进逐请求记录，后续重复覆盖了前序接受/候选计数；该文件不用于汇总。
+5. `attempt-stage-profile-argmax-missed`：修正列表快照后发现 AR 使用 `torch.argmax` 函数入口而非 Tensor 方法，原插桩漏计 AR greedy selection。最终版同时插桩两个入口，采用 `stage_profile_final.jsonl`；共 30 条记录（3 长度 × 2 路径 × 5 重复），失败数 0。
 
-最终复跑 `failures.json` 为空。没有 GPU 训练；`results/run.log` 是实际运行日志，训练日志不适用。固定输入、模型标识和 hash、依赖、逐请求输出、代码及 SHA-256 清单一起归档。
+最终复跑 `failures.json` 为空。没有 GPU 训练；`results/run.log` 与 `results/stage_profile_final.log` 是实际运行日志，训练日志记录在 `results/training.log`。固定输入、模型标识和 hash、依赖、逐请求输出、代码及 SHA-256 清单一起归档。
 
 ## 结论与下一步实验边界
 

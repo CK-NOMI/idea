@@ -1,0 +1,8 @@
+From v4.47 onwards, when a model cache is to be returned, `generate` will return a `Cache` instance instead by default (as opposed to the legacy tuple of tuples format). If you want to keep returning the legacy format, please set `return_legacy_cache=True`.
+{
+  "rows": 30,
+  "gpu": "NVIDIA GeForce RTX 3090",
+  "repeats": 5,
+  "docs": 1,
+  "out": "results/stage_profile_final.jsonl"
+}
