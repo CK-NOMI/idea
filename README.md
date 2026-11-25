@@ -3945,3 +3945,11 @@ H未执行：只有真实训练部署确实将同一合法GRPO组跨区域分配
 - E2：24 Q/K/V/O与FFN up/down块，五种树cut，预算8副本(2048参数)，真实逻辑client/edge/cloud分层CE更新，144fits/4608client SGD/9216正式token、83769前向/46776 VJP；另用hash区间与η=.1探索设置，非预注册/与E1不配对。完整144行、切分与有限差分审计见JSON；无大模型新训练、物理通信/GPU/CI/实测wall time。实查LayerSkip/FedLAG/FedSelect/FLAYER/FedSPC/FedECP等原始摘要/出版页。
 - Retain树切分身份与真实主干归属审计，Reject standalone，G1/G2/G4未过、G3/G7部分、G5未验、G6不足，历史完整8.14不变。P0真实双尺度1–2×40GB、三nonIID/延迟/独立seed，pFL+LayerSkip/FedLAG/FedSelect/FLAYER/同委托flat同质量全成本与CI；停止单纯参数归属微调。
 - [报告](experiments/team-far/R85/record.md) · [代码](experiments/team-far/R85/audit.js) · [E1](experiments/team-far/R85/results1.json) · [E2](experiments/team-far/R85/results2.json)
+
+
+### team-far/R86｜CPAV-SD：部分聚合的精确版本认证、选择性细化与整块提前执行障碍
+- 2026-11-25；起始 main ba31315b16d7d81890cbc0c0c758c25b450bae31、README 7d77f1e5b2b690029caad7280d70cfad27c3a52c（3948行/575939字符）；写前 main 1dc97c149d2e132e14516c6217a27354b02aca2e、README 7d77f1e5b2b690029caad7280d70cfad27c3a52c；完整取得结构筛查，重读R85/R77报告及R41/FQR-SD/HC-R07/R63/R84摘要，未穷尽复跑。SwiftFL EuroSys26已预测梯度提前训练并补偿，不能将其重命名为原创。
+- T：固定整数加性量化正式优化器，无隐藏FP状态/动量/误差反馈。已知和a、待到区间[lo,hi]，Q(a+lo)=Q(a+hi) iff 区间常量；独立区间端点可达时为零误差必要充分。树加权区间可组合，认证坐标无需fine bits，未认证细化，保同一量化优化器路径。独立均匀相位下宽w、格G整块d认证概率[max(0,(G-w+1)/G)]^d；非真实模型普适律。粗消息须慢端完成计算，不能隐藏其训练；旧q可作为实际proposal但不许复用错误target KV；AR/同委托flat亦可用认证，G2未证。
+- E/P：实际V8整数合成审计，405行，3场景×3seed×32向量，d16/256/4096、G64/128/256、b0/2/4/6/8；17,694,720坐标检查，认证错误/细化错误/单调性违反均0。G128 d4096 b4/6/8认证.615304/.910146/.982135但整块均0，剩余边缘含mask载荷7.30818/7.35942/9.03573 vs原10bit；b4两边缘总载荷仅降13.46%。G256 d4096 b4认证.864454、整块0、5.81328bit，质量未知；无真实SGD/LLM/SD/GPU/通信/计时/CI。实查SwiftFL/LayerSkip/FedPAQ/BHFL/BIQ/When Drafts Evolve/FedALPA原始出版或摘要/检索节选，非穷尽。
+- Retain证书和整块尺度负证据，Reject standalone；候选原创性暂6/10，历史最高完整8.14不变。G1/G2/G4未过、G3/G7部分、G5未验、G6不足。P0实测版本等待与依赖闭包，匹配量化目标/质量/全成本，比较原始/熵编码/渐进量化+AR/SD、SwiftFL、同信息调度及同委托flat；双尺度三nonIID/时延/独立seed 1–2×40GB，未执行。
+- [报告](experiments/team-far/R86/record.md) · [代码](experiments/team-far/R86/audit.js) · [结果](experiments/team-far/R86/results.json)
