@@ -1,0 +1,6 @@
+{
+  "passed": 3,
+  "fixtureOnly": true,
+  "nominalGain": 0.23076923076923073,
+  "warning": "synthetic software unit test, not performance evidence"
+}
