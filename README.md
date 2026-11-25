@@ -4220,3 +4220,9 @@ H未执行：只有真实训练部署确实将同一合法GRPO组跨区域分配
 - **两门槛均失败。** 最佳 NLL 增幅 +1.389%，配对文档 bootstrap 单侧 95% 上界 +2.089%。最佳真实稀疏前向约 65 ms，对稠密约 27 ms，净关键路径变化约 −140%；自定义路径仍受 Python 锚点循环及 K/V 成本影响。冻结模型，0 个训练参数/步骤；不含 HFL。
 - 阶段补测以每长度单文档、5 次请求记录 greedy argmax、Cache.update、draft candidate、target forward 与拒绝后 KV crop；各阶段事件重叠，不将其相加成关键路径收益。multinomial sampling、独立 fallback 重算时间、新稀疏目标 AR/SD decode 吞吐及可靠逐配置峰值显存仍未测。第一次 RoPE 失败、第二次共享张量别名对照、第三次预热事件污染均留档并从最终结果剔除。未以插桩 CUDA event 代替墙钟。
 - [完整报告](experiments/team-anchor/R119-P0/record.md) · [源代码、原始输入、逐请求结果、环境和失败记录](experiments/team-anchor/R119-P0/)。
+
+
+### team-anchor/R120-P0 / P1｜真实缓存预检通过，发布最小性能初筛
+- 起始与写前 main 4be04ee8ec7e55f8e9b0dc410b066f3239c3bec4、README cc16f517d53ec8674abe5d2c85833803ceb4790f（4223行），历史前缀保持；复核 R118/R119 记录及真实预检 JSON。代码负责人 ChatGPT、执行者 Codex，research_code 独立管理。
+- E-H：RTX3090、LayerSkip1B、HF4.48.3，重复 token ID 1 的64/256输入，16输出；2/2手工AR匹配generate，12/12干净/首错注入K1/4/8与参考一致，6/6首错即时拒绝，完美轮数8/4/2。无真实吞吐、自然文本及随机生成证据，非新GPU复跑。[原始JSON](experiments/team-anchor/R120-P0-preflight/gpu_preflight.json)。
+- P1：复用仓库 AG News（4校准/8测试、最多64输入、固定64输出、3测试重复），校准HF SD exit3/4/8 K2/4/8，测试锁定正确SD+AR/手工AR+oracle K1/2/4/8/16。总耗时比、5000文档bootstrap、有限长度净草稿预算含prefill；无效arm整体排除。自测语法及5项逻辑测试通过，真实HF/GPU计时未执行。官方跨环境、长上下文、稀疏补测延期；仅最小性能诊断，无原创或评分提升。[代码](research_code/R120-P0/pilot.py) · [说明](research_code/R120-P0/PILOT.md)。
