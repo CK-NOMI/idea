@@ -4012,3 +4012,11 @@ H未执行：只有真实训练部署确实将同一合法GRPO组跨区域分配
 - [报告](experiments/team-far/R93/record.md) · [代码](experiments/team-far/R93/audit.js) · [原始结果](experiments/team-far/R93/results.json)
 
 - R93补充成本审计：K16 λ0 multiSD 同路径启动减少55.29%、修正坐标增加8.59%；线性代理F>0.1987 c_q+1.9966 c_r才正收益，生成侧降15%需F≥0.7536 c_q+7.5247 c_r（不含学习、网络，强批AR可进一步摊薄F）。single相应阈值0.1695 c_q+2.4115 c_r及0.5383 c_q+7.6406 c_r。不同p质量不匹配，不将代理当实测；原始结果可推算。
+
+
+### team-far/R94｜CPF-SD：有向守恒概率流正式模型、组合学习与容量障碍
+- 2026-11-25；起始 main a6749f267e2e18933a3aa6b952bda7571bbf504a、README d6e7a2116de14a5fb86c09e9597679378bdc6b4e（4015行/589941字符/182轮次标题）；写前 main a6749f267e2e18933a3aa6b952bda7571bbf504a、README d6e7a2116de14a5fb86c09e9597679378bdc6b4e。完整取得结构筛查，重点R17/31/39/44/46/47/48/53/54–59/61–68/77/83–93、HIERASPEC/R01/R08、HC/R03/HCA/R01/HierCouple/R01；重开R69/R93结果，未穷尽复跑。
+- T：固定因果q、互斥D/R、稀疏a_ij≥0、行和≤rho，正式p=qT，p_i=q_i(1−Σ_j a_ij)+Σ_k q_k a_ki。X~q原位保留1−Σa，否则沿本地边抽j，边际p、拒绝=TV=Σq_i a_ij（无需全残差），任意图额外拒绝Σmin(in,out)。硬标签∂CE/∂a_ij=q_i(1{y=i}−1{y=j})/p_y，仅关联边；固定q直接a时CE凸。共同q/方向的加权聚合精确平均p、coupling及TV；异q用Σwq_i a_ij/Σwq_i，按context归约非普通参数FedAvg。Max-flow容量条件及最小TV（固定二部图），共同方向可限制表达力；direct AR/普通SD/同委托flat可复制；新p非旧teacher无损，greedy/top-p/FP未验。
+- E/P/O：48历史K27概率/24唯一名字、同尺寸2检查点/3留seed折、人工2区；648实际fit/64800更新/1440留出行；初版绝对步长FD误差3.306，修正版log1p相对误差3.333363951070897e-11（非独立autograd）、off-edge差0，边际误差1.3877787807814457e-16。K16 lambda0区域adaptive KL 0.025395、TV(q,p) 0.036885、预期outgoing 1.7167、incident 2.3299，共享图区域KL 0.027285；oracle TV directed/undirected 0.057483/0.055583；dense 0.026548/0.018800。R93 KL .019697更好，非等参数/操作/质量。无新Transformer/真实SD/正式硬标签训练/物理HFL/GPU/通信/CI。
+- 实查SpecTr/LayerSkip/NanoSpec/DynaSpec/pFedGate/DisPFL/SpecFed/Dirichlet calibration摘要或出版页；经典随机核/流/耦合非原创。Retain流参数化与可组合边界，Reject standalone；历史完整8.14不变，不虚增分。G1/G2/G4未过、G3/G7部分、G5未验、G6不足。停止概率头扫参，下一轮优先真实因果深层计算瓶颈与可证明的主干局部性；双尺度1–2×40GB三nonIID/时延/独立seed、同质量全成本CI未执行。
+- [报告](experiments/team-far/R94/record.md) · [实际代码](experiments/team-far/R94/audit.js) · [原始结果](experiments/team-far/R94/results.json)
