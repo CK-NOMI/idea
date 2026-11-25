@@ -4160,3 +4160,11 @@ H未执行：只有真实训练部署确实将同一合法GRPO组跨区域分配
 - E1：同3seed教师重放，4逻辑client/2edge，7训练臂等768参数（rank8或4+4），4cycle×12步/client，21fit/4032步。实际活跃率.221137；base/global/region/local/hier/global-aware/region-aware/hier-aware KL .015421/.014360/.014610/.014742/.014500/.014385/.014643/.014537，global最佳KL、local最佳NLL，hier-aware未优于hier KD。E2强化AdamW/24步、活跃TV，超时仅11/29两个完整seed checkpoint（14fit/5376步），25%名义预算实际.228190，base/global/hier-aware KL .015616/.011821/.013016；浅层global KL降26.77%。校准KL .01时base/global/hier-aware test活跃率.543620/.335286/.394206，KL .008574/.009942/.009998，过guard5/8、4/8、4/8，非同质量优势。无本轮真实生成/GPU/通信/CI。实查LayerSkip/MoD/ReeFL/FedLMT/WTV/TVP，强近邻。
 - Retain普通global KD强基线与损失分解，Reject固定rank分层/门控感知损失作为已证额外优势；规划G1–7 7.8/7.2/9/8.2/8.4/7/8.6=8.03，历史实证成熟度6.60不变，无80%证据。下一步实际异构设备/边缘容量下正式计算分配与同质量全局稀疏SD强基线，不再盲目堆叠区域adapter。1–2×40GB双尺度三nonIID/时延/seed全成本CI待验。
 - [报告](experiments/team-far/R111/record.md) · [汇总](experiments/team-far/R111/summary.csv)。脚本及完整原始JSON留会话，SHA256见报告。
+
+
+### team-far/R112｜随机稀疏KV、分层窗口负结果与活跃行精确通信编码
+- 起始 eb634ab4009e924b7dafe7fa035cbec766afa04a、README 2418163c81868958b7f7910bc18d9cfe7eecaa58（4163行/618121字符）；写前 eb634ab4009e924b7dafe7fa035cbec766afa04a、README 2418163c81868958b7f7910bc18d9cfe7eecaa58，原前缀保留。结构筛查、R111/110/109/106源码和LEA/R22/85/90，未全库复跑。
+- T/E1：因果门控首parent决定K再采样；位置级独立随机带及最大耦合，逐条件保持当前稀疏p（非dense），无bonus/EOS/top-p/生产FP。3seed同teacher重放，72组8+16随机轨迹×12策略=864执行，全部与K1同随机带一致。36测试组K1/2/4/8/12深层调用135/105/85/75/74，CPU .3886/.3753/.3745/.3763/.3720s。P：校准选全局/区/本地策略，真实trace加假设RTT与带宽串行成本，区域/异构时全局fixed1.1983/3.2673s、区域all1.2852/3.6542，本地all1.1926/3.2856，fixed12更强1.1912/3.2302；非网络实测，Reject层级窗口收益。
+- E2：共享同快照head，实际binary活跃h+候选ID+随机数，接收端重建q，深层p拒绝修正；36对与本地ref全部ID一致，74调用284行16拒绝，双向应用载荷122984→58472B（−52.46%），CPU .35608→.36011s；进程内编码非网络。同head split强基线可完全复制，token replay可能更少payload。假设B=50kB/s,RTT10ms时相对传冗余q 1.567x，B2.5MB/s仅1.019x，非实测。实查PipeSD/DISCO/BanditSpec/SVIP/Speculation at a Distance/ReeFL，强近邻。
+- Retain随机审计与通信工程，Reject作为已证HFL独有收益。规划G1–7 7.8/7.1/9.1/8.2/8.4/7/8.6=8.03，历史实证成熟度6.60另列，无80%依据。下一步真实预训练质量/同head split/远端token replay/自适应强基线物理网络，双尺度三nonIID/时延/seed及全成本CI，未执行。
+- [报告](experiments/team-far/R112/record.md) · [生成代码](experiments/team-far/R112/probe.py.gz.b64) · [评估代码](experiments/team-far/R112/evaluate.py.gz.b64) · [通信代码](experiments/team-far/R112/wire.py.gz.b64)。完整原始JSON留会话，SHA256见报告。
