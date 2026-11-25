@@ -3900,3 +3900,12 @@ H未执行：只有真实训练部署确实将同一合法GRPO组跨区域分配
 - E/O：R69原始48 K27行，168配对固定方向，6留一bank校准（非独立训练种子），64网格DP；独立.17785647，1/2/3/4bit均匀.16938173/.16111036/.15836203/.15763825；校准1/2/3bit .16123659/.15812474/.15768233，单向最优.15741491，全信息.13620080。2bit获单向收益约96.53%，3bit约98.69%。构造核审计见JSON；投影TV不变、KL .03119880→.02283736、单向成本.15741491→.14982613，固定.5 bit收益微小。无新模型前向/训练/GPU/实际通信/CI。P：2bit固定修复1ms可容忍新增关键路径约19.73us，群体事件降11.09%非实际加速。
 - 实查SpecTr/SpecTr-GBV/DISD/LayerSkip/DistillSpec/OnlineSD/WTV/TVP/HierFAVG/causalOT原始页面；非穷尽。Retain有限比特机制，Reject standalone及独有形状学习，G1/G2/G4未过、G3/G7部分、G5未验、G6不足、历史完整8.14不变。停止纯toy比特优化，P0真实共享修复及正式学习关键路径，双尺度1–2×40GB、3nonIID/延迟/独立seed、同质量AR/BV/async/KL/TV/WTV/flat全成本，未执行。
 - [报告](experiments/team-far/R80/record.md) · [代码](experiments/team-far/R80/audit.js) · [结果](experiments/team-far/R80/results.json)
+
+
+### team-far/R81｜HFSC-SD：有限状态因果接力、上尾曲线最优递推与联邦上传审计
+- 2026-11-25；起始 main 0e57788641e1f2c1441ca7b1ad1262dbe6e3b147、README ad95ff956588b399009680c468a95b2f3e2956a7；写前 main 0e57788641e1f2c1441ca7b1ad1262dbe6e3b147、README ad95ff956588b399009680c468a95b2f3e2956a7。完整获取结构筛查，复查R62/R73/R80及R69–80、控制变量/采样历史，未穷尽复跑。
+- T：前序修复事件H，有限状态Z与全部已提交正式Y独立，状态w固定；按修复后验rank优先消耗本地donor，再按R=1优先、R=0旧rank重新分配条件于Y的状态质量w_k p(Y)。只需局部p/q及状态编号，保正式乘积分布和局部最大耦合，避免R80非最大父节点递归障碍。clean后验上尾积分F：F_next(t_j)=Σ_y q_y F(min(1,t_j p_y/q_y))，边界间线性；F0=t，根修复1−F_N(1)。逐步上尾容量界和单调性证明均匀m状态固定顺序、局部无额外共享状态的协议类全局最优；非均匀仅固定rank权重顺序，非任意交互/并行最优。均匀递推O(NmV)，串行N−1消息。
+- T/H：高修复flag选择pi概率正式梯度上传，给定正式Y及固定context无偏HT，额外条件协方差(pi^−1−1)GG^T；共享事务启动成本、梯度及时就绪未证，普通ind SD+后验relay及同委托flat可替代。
+- E/O：R69 48原K27行，240曲线case N4/8/16/32/64（后3重复上下文压力）、96显式核case、80二元全联合审计；N8 ind.543147/单向pair oracle.489951/full pair.445303/4组.445824/均匀2bit.395207/探索非均匀2bit.384226/均匀3bit.375735。N4 2bit均匀.261118 vs full root.194378。pi=.2 repair-or-upload ind随机.634518/ind+relay.548586/新relay.427407；额外上传.091371/.005439/.043181，新机制额外上传反而劣于ind+relay。完整结果/误差见JSON。无新前向/训练/实际通信/GPU/CI。P：N8相对独立事件降29.26%，7串行hop每hop容忍<.0227b才净收益；零新增开销亦需共同修复启动占总时间至少约51.3%才够15%总降。
+- 实查SpecTr/DISD/BV/SpecTr-GBV/UniVer/HSD/CausalOT/Optimal Client Sampling/DELTA/LayerSkip/HierFAVG摘要或出版页，非穷尽。Retain有限状态最优性，狭义理论暂8.3/10，完整历史8.14不变；G1/G2/G4未过、G3/G7部分、G5未验、G6不足。P0真实HFL/LayerSkip共享修复关键路径及并行因果图、同资源flat/AR/BV/异步/强组基线、真实双尺度三nonIID/时延/独立seed，1–2×40GB，同质量全成本及CI未执行。拒绝单独完整立项。
+- [报告](experiments/team-far/R81/record.md) · [代码](experiments/team-far/R81/audit.js) · [结果](experiments/team-far/R81/results.json)
