@@ -22,3 +22,22 @@ Actual fits 264, client gradient evaluations 23040, label occurrences 184320, re
 Evidence only small real checkpoint feature-based fit, not new pretrained scales, actual SD generation, real sparse execution or GPU latency. EAL for changed p does not mean teacher quality preserved. Compare same-quality actual strong sparse/early-exit baselines before claim. No new external literature review in this turn; previous A/R08/ReLU compilation, R56 gate, R57 writeback, R98 shared coordinates, MoD/LayerSkip are obvious near neighbors, external originality still unknown. Do not claim G1. 
 ## Verdict
 Retain testable backbone parameterization and results, no independent立项 or score increase. Historical complete 8.14 unchanged; G1/G2/G4 fail, G3/G7 partial, G5 unverified, G6 insufficient. P0 actual 1B/7B LayerSkip checkpoints under 1–2×40GB, benchmark fixed channel pruning vs dense, shared shallow FFN bridge vs same budget separate/ordinary sparse+LayerSkip, region alignment vs equal-copy shuffle and delegated flat; measure matched task quality, actual sparse kernels, all inference/training/communication costs, three nonIID/latency/independent seeds CI. R98 pilot not executed. No 80% evidence.
+
+
+## Post-audit: critical degeneracy and non-pretrained activation stress
+Reopened source microgpt2.py and model_runner.py to check ordering: wte,wpe,lm_head, per-layer q/k/v/o/fc1/fc2; original ReLU. Re-ran exact training-feature extraction for all 12 checkpoint/split/layout combinations. At least one |activation|>1e-10 in only 0–1/64 shallow and 0–2/64 deep channels across each training bank; shallow/deep activations extremely sparse, many all zero. This explains near-identical E1 metrics and invalidates interpreting near-preservation as a meaningful compression success. It does not establish all prompts or source-model execution have dead FFN; our JS evaluation was not cross-checked against the original Python on same inputs, and R44 reused similar evaluator, so audit upstream feature quality before relying on older FFN-related claims. Original E1 retained unchanged. As diagnostic stress ONLY, change both pretrained ReLUs to leaky ReLU slope .1 with the same weights (different untrained model, not a pretrained checkpoint result). Re-execute same training protocol, teacher is altered model, not original. Actual 12288 feature calls, 23040 client gradient evaluations, FD max 5.486986975888897e-10; 64/64 active channels first case. No GPU, no real sparse kernel or time. 
+|k|arm|NLL|teacher KL|EAL|
+|---|---|---|---|---|
+|8|deep|52.987802|34.919421|0.000407|
+|8|separate|55.031406|32.021869|0.000090|
+|8|formal|58.042674|32.979225|0.040824|
+|8|joint|51.084661|28.494353|0.000123|
+|8|shuffled|50.846949|31.090336|0.000041|
+|8|global|48.908880|31.379061|0.000082|
+|16|deep|52.987802|34.919421|0.000407|
+|16|separate|35.716415|15.647111|0.000093|
+|16|formal|39.256981|17.015763|0.000232|
+|16|joint|41.576834|16.973806|0.000043|
+|16|shuffled|31.979090|16.511054|0.004564|
+|16|global|30.914592|18.331212|0.054989|
+Stress test is not independent replication, not new external literature review or evidence of original model quality; its purpose is to expose nondegenerate tradeoffs. Do not increase score or claim G2. Source check is limited to source ordering, not full parity. 
