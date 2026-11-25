@@ -3926,3 +3926,13 @@ H未执行：只有真实训练部署确实将同一合法GRPO组跨区域分配
 - E：48历史K27概率、实际第四字符标签，6留一bank，2×27维bias实际SGD，9方法×3lr×2raw/幅度匹配×6fold=324 fits、25920共享更新、207360复用行实例；576 FD误差9.127245747392321e-11，树/flat误差8.326672684688674e-17，18组独立context均值矩阵审计误差4.440892098500626e-16，相关绝对均差0.0029119129583504095。CE-only p相同、joint加入.5概率损失梯度；同训练集选择lr，非独立验证。完整选参/匹配结果见JSON；群体精确梯度未证明优于TV及joint1强基线，非真实完整头/主干/多步FedAvg/SD rollout/GPU/物理网络/CI。
 - 实查WTV/VSD/TVP/LK/REAL、Gao24联邦多级compositional optimization、JAX/PyTorch associative scan原始摘要或文档。Retain精确矩阵/伴随/相关性障碍，Reject完整独立立项；G1/G2/G4未过、G3/G7部分、G5未验、G6不足、历史完整8.14不变。P0真实HFL/LayerSkip关键路径，双尺度1–2×40GB三nonIID/时延/独立seed，同质量全成本强基线与CI未执行。
 - [报告](experiments/team-far/R83/record.md) · [代码](experiments/team-far/R83/audit.js) · [结果](experiments/team-far/R83/results.json)
+
+
+### team-far/R84｜DEGF-SD：固定版本完整梯度融合、截止期反馈及协调成本边界
+- 2026-11-25；起始 main acb39cf6bf2a6e07f59b799af316f4fa99429cc6、README ac005861829f202690620ada4f9158712c465cfd；写前 main acb39cf6bf2a6e07f59b799af316f4fa99429cc6、README ac005861829f202690620ada4f9158712c465cfd。完整获取结构筛查，重点R23/26/61–63/76/81–83、FAM/FVR/FERV/FVP/FSC-Median，未穷尽复跑。
+- T：同快照/固定全体样本/共同截止期、可加梯度且同授权链路、无限瞬时容量时，最后贡献就绪R后首修复事务上传完整和，否则截止期单独发；同时达到1向量及最少paid启动，过早piggyback不能降低paid且可重复向量。异质截止期、无载荷费时online最早deadline+免费事务覆盖达路径最优；600合成穷举0差，经典interval stabbing。非实际带宽/overlap/隐私结论。
+- T/H：正式梯度pending反馈选择R81 m1/m4，须在新草稿前决定，保持条件正式乘积。归一修复/独立上传启动1、协调附加k、D=Vpending−Vdone，pending选m4 iff k<(r0−r1)(1−Dnext)，done iff k<r0−r1，终末D=1；最后pending时关闭正成本协调。固定外生rate两状态DP，不是普适RL或独立HFL优化器；普通SD+fusion与同委托flat可替代。
+- E1：R69 48原K27概率/第四字符reward，2逻辑区各4lane，324 bias fits、12960实际SGD轮、1175040单token采样含背景；每轨迹相同正式梯度回放3上传策略，最大梯度误差4.163336342344337e-17、final vs full参数误差0，lag0/slack2 m4 early2.7125向量 vs final1，同paid.42431；m1/m4 final启动3.52014/2.89583(−17.74%代理，未计协调)；m4 paid高于m1(.31806)，仅训练内概率非留出，草稿上传未计，无新模型前向/主干训练/网络/GPU/CI。
+- E2：648固定rate DP配置，前后向cost误差3.552713678800501e-15、无差于all1/all4/myopic；slack2 k=.03 adaptive3.69045 vs all1 3.99804/all4 3.71883（仅−7.69%/−.76%启动代理）；k=.08近乎无收益，.12无。非在线实际动态训练。实查PipeSD/SpecFed/SpecEdge/WAN SD/TCP ACK/MG-WFBP/OASR/FedBuff/LayerSkip/异步HFL原始摘要/出版页，非穷尽。
+- Retain固定版本融合与截止阈值，Reject standalone，G1/G2/G4未过、G3/G7部分、G5未验、G6不足，历史完整8.14不变。P0核实共享授权事务真实存在（若修复本地GPU而梯度跨云则终止），双尺度1–2×40GB三nonIID/延迟/独立seed、强fusion/AR/SD/同委托flat、真实全成本质量与CI未执行。
+- [报告](experiments/team-far/R84/record.md) · [训练代码](experiments/team-far/R84/audit.js) · [训练结果](experiments/team-far/R84/results.json) · [DP代码](experiments/team-far/R84/deadline.js) · [DP结果](experiments/team-far/R84/deadline_results.json)
