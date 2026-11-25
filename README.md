@@ -4053,3 +4053,10 @@ H未执行：只有真实训练部署确实将同一合法GRPO组跨区域分配
 - E：torch2.10 CPU、无CUDA/缓存模型，d1024 V8192 r16，96配置/2112实际计时，3seed/1或4线程/4或16组/1或8行、同A grouped bmm强对照；最大归一差6.38e−7。adapter-only前向/前反向中位节省−3.93%/+4.71%，完整head +0.81%/+0.28%，无CI/GPU/真实模型/训练/通信。96中位原始配置已归档，2112单次时间仅会话附件（hash见报告），未转入GitHub。实查FedSA/FFA/FedAS-LoRA/Punica/S-LoRA/LayerSkip/VSD原始页，强重合。
 - 新增未执行GPU pilot（官方HF early-exit接口，固定revision、greedy ID一致、逐请求计时/显存），候选1B/7B。保留R97优先，Reject共同坐标头独立立项；历史完整8.14不变，G1/G2/G4未过、G3/G7部分、G5未验、G6不足。停止toy头扫参，真实GPU全成本及双向消融未执行。
 - [报告](experiments/team-far/R98/record.md) · [CPU脚本](experiments/team-far/R98/cpu_bench.py) · [96配置计时](experiments/team-far/R98/medians.csv) · [GPU pilot未执行](experiments/team-far/R98/pilot_gpu.py)
+
+
+### team-far/R99｜SCP-SD浅层FFN激活复用与深层通道替代
+- 起始 main 92af7529345d0b6f390773127837dbba9b36a0e8、README caef4acee1bead24f2b57bcc3fc9518a930c1e1e（4056行/597105字符）；写前 92af7529345d0b6f390773127837dbba9b36a0e8/caef4acee1bead24f2b57bcc3fc9518a930c1e1e。完整取得结构筛查，复查A/R08/R56/57/64/85/87/97/98及R44代码，未穷尽复跑。
+- T/H：已计算浅FFN激活z_s，正式p=softmax(W(y0+M z_d[D]+B_e z_s[S]))、内生q=softmax(W(x+B_e z_s[S]))；同prefix/version复用B_e z_s[S]，正式新目标非旧teacher无损，dB_e=(adj_p+adj_q)z_s[S]^T。32通道基准、k8/16仅指定FFN乘加节省12.5/25%，非完整模型计时；普通AR/同委托flat也可用。无全主干VJP。
+- E/P：两同7264 microGPT检查点、3hash×2人工布局、4client/2edge，冻结特征；264 fits/23040 client梯度/184320标签/12288实际特征/576留出行，FD 3.4254651198883934e-11、复用差0。k8 deep NLL/KL/EAL 2.543536/0.000010/1.705463; k8 formal NLL/KL/EAL 2.543536/0.000010/1.705463; k8 joint NLL/KL/EAL 2.543536/0.000010/1.705463; k8 shuffled NLL/KL/EAL 2.543536/0.000010/1.705463; k8 global NLL/KL/EAL 2.543536/0.000010/1.705463; k16 deep NLL/KL/EAL 2.543536/0.000010/1.705463; k16 formal NLL/KL/EAL 2.543536/0.000010/1.705463; k16 joint NLL/KL/EAL 2.543536/0.000010/1.705463; k16 shuffled NLL/KL/EAL 2.543536/0.000010/1.705463; k16 global NLL/KL/EAL 2.543536/0.000010/1.705463。全量特征离线计算、单token overlap训练/双token EAL评估、无实际稀疏kernel/真实生成/物理HFL/GPU/CI；新p质量须单独验证。未新查外文献，A/R08/R56/R57/R98近邻。保留候选，不独立立项、不虚增历史完整8.14，G1/G2/G4未过/G3/G7部分/G5未验/G6不足。
+- [报告](experiments/team-far/R99/record.md) · [代码](experiments/team-far/R99/audit.js) · [结果](experiments/team-far/R99/results.json)
