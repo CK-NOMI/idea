@@ -3882,3 +3882,12 @@ H未执行：只有真实训练部署确实将同一合法GRPO组跨区域分配
 - E：R69历史48 K27概率表压缩K2/3（改类别空间，非原模型验证），4lane、48分布×3人工组权=144显式数值OT，边际误差1.51e−15、root7.49e−16、计数/费用误差1.33e−15（非独立对偶审计）。K3均匀叶+pair成本ind1.439727/star1.222537/固定tree1.211469/选择1.206645/最佳tree1.205910/OT1.171551/不可达下界1.114171；全部144严格超下界。K3计算权主导固定1.495846→选择1.396018，OT1.379939；人为权重非真实收益。另48 maxflow/mincut审计树48/48可行，六交叉pair 48/48不可行，K2/K3平均缺口.029625/.026029，证书误差≤1.33e−15。无新模型前向/训练/真实物理网络/GPU/CI。
 - 实查SpecTr/DISD/Contextuality multimaximal/product-space OT/CSAHFL/FedOC/overlapping clients，非穷尽。**Revise R72拓扑边界；Reject完整独立立项**；G1/G2/G4未过，G3/G7部分，G5/G6未验，历史完整8.14不变，无80%证据。真实交叉修复事务存在性尚未证；P0真实LayerSkip/HFL critical path、同资源flat/AR/BV/异步/固定树/OT，1–2×40GB两尺度三nonIID/时延独立seed、同质量总时间−15%或工作+20%与CI未执行。
 - [报告](experiments/team-far/R78/record.md) · [最优运输与匹配](experiments/team-far/R78/topology.js) · [结果](experiments/team-far/R78/results.json) · [可行性审计](experiments/team-far/R78/feasibility.js) · [结果](experiments/team-far/R78/feasibility_results.json)
+
+
+### team-far/R79｜OBHC-SD：单比特分层修复协调与信息最优前沿
+- 2026-11-25；起始 main 5e62a3afe892c3025942defdbc02d4e2a4b0c741、README 3f86741c940e7803e880505c8112bc35be2a9265；写前 main 5e62a3afe892c3025942defdbc02d4e2a4b0c741、README 3f86741c940e7803e880505c8112bc35be2a9265。完整获取并结构筛查，复查R28–30/R72/R75/R78/HCA R08/HIERASPEC R06及R69概率表，未穷尽复跑。
+- T：已独立生成草稿、共享U独立草稿、局部最大耦合、正式联合乘积、条件独立局部随机核下，R_i=1{X_i∈D_i}−1{Y_i∈D_i}，展开条件矩证明修复位联合独立；零通信不能降低组修复率。两区A先提交不见B草稿，单向最优共同修复M=Σ_yx min((p_A−q_A)_+(y)q_B(x),p_A(y)(q_B−p_B)_+(x))，构造条件核达界。二元反例独立/单向/全信息.75/.625/.5。
+- T：预承诺tau，发送Z一位，Pr(Z=1|Y_A)=tau；共同修复质量A(tau)=Σ_y min(tau p_A,(p_A−q_A)_+)，B(tau)=Σ_x min(tau q_B,(q_B−p_B)_+)；组修复率d_A+d_B−AB/tau−(d_A−A)(d_B−B)/(1−tau)，相对独立收益=(A−tau d_A)(B−tau d_B)/(tau(1−tau))≥0。精确乘积输出；可保持两个R72子树完整J，但父根通常非最大、不能直接递归宣称最优。实际帧/RTT、选择和概率计算非免费。
+- E/O：R69 48原始K27行、6 bank各8，168配对双向数值审计，无新模型/训练；独立.17785647、固定tau=.5前向.16938173、逐对grid+方向oracle .15626469、单向方向oracle .15445809、全信息TV .13620080；一位oracle相对独立修复事件−12.14%、固定−4.77%，误差≤4.45e−16，168/168改善，非独立模型seed。单lane总修复.18654939不变，无实际时延/网络/GPU/CI。P：真实固定修复成本b、额外关键路径h须满足h<b*概率差；若b=1ms，固定/理想阈值8.47/21.59微秒，非实测。
+- 实查DISD/SpecTr/List-Level/Causal OT/Field Codes/SpecFed/LayerSkip/HierFAVG原始页面。**Retain信息边界及低payload原语，Reject standalone**；狭义机制主观暂8.0，完整历史8.14不变；G1/G2/G4未过、G3/G7部分、G5未验、G6证据不足。无HFL学习因果收益，flat同委托可复制。P0先验证真实共享修复启动开销及G5上限，后做双尺度、3nonIID/延迟/独立seed、同质量AR/BV/异步/R72/同资源flat全成本；未执行。
+- [报告](experiments/team-far/R79/record.md) · [审计代码](experiments/team-far/R79/audit.js) · [原始数值](experiments/team-far/R79/results.json)
