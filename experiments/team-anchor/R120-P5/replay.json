@@ -1,0 +1,1040 @@
+{
+  "scope": "Post-hoc deterministic archived greedy trace replay; not GPU performance or independent holdout",
+  "mapSizes": [
+    18278,
+    9508,
+    8980,
+    4744,
+    4875,
+    4409,
+    4674
+  ],
+  "output": {
+    "calibration": {
+      "lookup": {
+        "accepted": 143,
+        "proposed": 653,
+        "rounds": 361,
+        "nonempty": 166,
+        "fallback": 0,
+        "rows": [
+          {
+            "id": "train-498",
+            "accepted": 18,
+            "proposed": 100,
+            "rounds": 45,
+            "nonempty": 25,
+            "fallback": 0
+          },
+          {
+            "id": "train-499",
+            "accepted": 8,
+            "proposed": 57,
+            "rounds": 55,
+            "nonempty": 15,
+            "fallback": 0
+          },
+          {
+            "id": "train-454",
+            "accepted": 12,
+            "proposed": 80,
+            "rounds": 51,
+            "nonempty": 20,
+            "fallback": 0
+          },
+          {
+            "id": "train-455",
+            "accepted": 24,
+            "proposed": 88,
+            "rounds": 39,
+            "nonempty": 22,
+            "fallback": 0
+          },
+          {
+            "id": "train-6",
+            "accepted": 35,
+            "proposed": 70,
+            "rounds": 28,
+            "nonempty": 18,
+            "fallback": 0
+          },
+          {
+            "id": "train-7",
+            "accepted": 4,
+            "proposed": 93,
+            "rounds": 59,
+            "nonempty": 24,
+            "fallback": 0
+          },
+          {
+            "id": "train-84",
+            "accepted": 29,
+            "proposed": 72,
+            "rounds": 34,
+            "nonempty": 18,
+            "fallback": 0
+          },
+          {
+            "id": "train-85",
+            "accepted": 13,
+            "proposed": 93,
+            "rounds": 50,
+            "nonempty": 24,
+            "fallback": 0
+          }
+        ]
+      },
+      "global2": {
+        "accepted": 23,
+        "proposed": 491,
+        "rounds": 481,
+        "nonempty": 124,
+        "fallback": 474,
+        "rows": [
+          {
+            "id": "train-498",
+            "accepted": 5,
+            "proposed": 64,
+            "rounds": 58,
+            "nonempty": 16,
+            "fallback": 57
+          },
+          {
+            "id": "train-499",
+            "accepted": 4,
+            "proposed": 37,
+            "rounds": 59,
+            "nonempty": 10,
+            "fallback": 59
+          },
+          {
+            "id": "train-454",
+            "accepted": 0,
+            "proposed": 64,
+            "rounds": 63,
+            "nonempty": 16,
+            "fallback": 62
+          },
+          {
+            "id": "train-455",
+            "accepted": 5,
+            "proposed": 76,
+            "rounds": 58,
+            "nonempty": 19,
+            "fallback": 57
+          },
+          {
+            "id": "train-6",
+            "accepted": 6,
+            "proposed": 86,
+            "rounds": 57,
+            "nonempty": 22,
+            "fallback": 56
+          },
+          {
+            "id": "train-7",
+            "accepted": 3,
+            "proposed": 60,
+            "rounds": 60,
+            "nonempty": 15,
+            "fallback": 59
+          },
+          {
+            "id": "train-84",
+            "accepted": 0,
+            "proposed": 32,
+            "rounds": 63,
+            "nonempty": 8,
+            "fallback": 62
+          },
+          {
+            "id": "train-85",
+            "accepted": 0,
+            "proposed": 72,
+            "rounds": 63,
+            "nonempty": 18,
+            "fallback": 62
+          }
+        ]
+      },
+      "region2": {
+        "accepted": 19,
+        "proposed": 447,
+        "rounds": 485,
+        "nonempty": 113,
+        "fallback": 478,
+        "rows": [
+          {
+            "id": "train-498",
+            "accepted": 3,
+            "proposed": 68,
+            "rounds": 60,
+            "nonempty": 17,
+            "fallback": 59
+          },
+          {
+            "id": "train-499",
+            "accepted": 4,
+            "proposed": 29,
+            "rounds": 59,
+            "nonempty": 8,
+            "fallback": 59
+          },
+          {
+            "id": "train-454",
+            "accepted": 0,
+            "proposed": 60,
+            "rounds": 63,
+            "nonempty": 15,
+            "fallback": 62
+          },
+          {
+            "id": "train-455",
+            "accepted": 5,
+            "proposed": 72,
+            "rounds": 58,
+            "nonempty": 18,
+            "fallback": 57
+          },
+          {
+            "id": "train-6",
+            "accepted": 4,
+            "proposed": 70,
+            "rounds": 59,
+            "nonempty": 18,
+            "fallback": 58
+          },
+          {
+            "id": "train-7",
+            "accepted": 3,
+            "proposed": 48,
+            "rounds": 60,
+            "nonempty": 12,
+            "fallback": 59
+          },
+          {
+            "id": "train-84",
+            "accepted": 0,
+            "proposed": 32,
+            "rounds": 63,
+            "nonempty": 8,
+            "fallback": 62
+          },
+          {
+            "id": "train-85",
+            "accepted": 0,
+            "proposed": 68,
+            "rounds": 63,
+            "nonempty": 17,
+            "fallback": 62
+          }
+        ]
+      },
+      "client2": {
+        "accepted": 16,
+        "proposed": 354,
+        "rounds": 488,
+        "nonempty": 89,
+        "fallback": 480,
+        "rows": [
+          {
+            "id": "train-498",
+            "accepted": 3,
+            "proposed": 48,
+            "rounds": 60,
+            "nonempty": 12,
+            "fallback": 59
+          },
+          {
+            "id": "train-499",
+            "accepted": 1,
+            "proposed": 24,
+            "rounds": 62,
+            "nonempty": 6,
+            "fallback": 61
+          },
+          {
+            "id": "train-454",
+            "accepted": 0,
+            "proposed": 56,
+            "rounds": 63,
+            "nonempty": 14,
+            "fallback": 62
+          },
+          {
+            "id": "train-455",
+            "accepted": 5,
+            "proposed": 56,
+            "rounds": 58,
+            "nonempty": 14,
+            "fallback": 57
+          },
+          {
+            "id": "train-6",
+            "accepted": 4,
+            "proposed": 70,
+            "rounds": 59,
+            "nonempty": 18,
+            "fallback": 58
+          },
+          {
+            "id": "train-7",
+            "accepted": 3,
+            "proposed": 32,
+            "rounds": 60,
+            "nonempty": 8,
+            "fallback": 59
+          },
+          {
+            "id": "train-84",
+            "accepted": 0,
+            "proposed": 32,
+            "rounds": 63,
+            "nonempty": 8,
+            "fallback": 62
+          },
+          {
+            "id": "train-85",
+            "accepted": 0,
+            "proposed": 36,
+            "rounds": 63,
+            "nonempty": 9,
+            "fallback": 62
+          }
+        ]
+      },
+      "hybrid_global2": {
+        "accepted": 154,
+        "proposed": 821,
+        "rounds": 350,
+        "nonempty": 208,
+        "fallback": 188,
+        "rows": [
+          {
+            "id": "train-498",
+            "accepted": 21,
+            "proposed": 112,
+            "rounds": 42,
+            "nonempty": 28,
+            "fallback": 19
+          },
+          {
+            "id": "train-499",
+            "accepted": 11,
+            "proposed": 89,
+            "rounds": 52,
+            "nonempty": 23,
+            "fallback": 37
+          },
+          {
+            "id": "train-454",
+            "accepted": 12,
+            "proposed": 112,
+            "rounds": 51,
+            "nonempty": 28,
+            "fallback": 31
+          },
+          {
+            "id": "train-455",
+            "accepted": 24,
+            "proposed": 108,
+            "rounds": 39,
+            "nonempty": 27,
+            "fallback": 17
+          },
+          {
+            "id": "train-6",
+            "accepted": 37,
+            "proposed": 78,
+            "rounds": 26,
+            "nonempty": 20,
+            "fallback": 9
+          },
+          {
+            "id": "train-7",
+            "accepted": 7,
+            "proposed": 121,
+            "rounds": 56,
+            "nonempty": 31,
+            "fallback": 34
+          },
+          {
+            "id": "train-84",
+            "accepted": 29,
+            "proposed": 80,
+            "rounds": 34,
+            "nonempty": 20,
+            "fallback": 15
+          },
+          {
+            "id": "train-85",
+            "accepted": 13,
+            "proposed": 121,
+            "rounds": 50,
+            "nonempty": 31,
+            "fallback": 26
+          }
+        ]
+      },
+      "hybrid_region2": {
+        "accepted": 150,
+        "proposed": 805,
+        "rounds": 354,
+        "nonempty": 204,
+        "fallback": 189,
+        "rows": [
+          {
+            "id": "train-498",
+            "accepted": 19,
+            "proposed": 120,
+            "rounds": 44,
+            "nonempty": 30,
+            "fallback": 19
+          },
+          {
+            "id": "train-499",
+            "accepted": 11,
+            "proposed": 81,
+            "rounds": 52,
+            "nonempty": 21,
+            "fallback": 37
+          },
+          {
+            "id": "train-454",
+            "accepted": 12,
+            "proposed": 108,
+            "rounds": 51,
+            "nonempty": 27,
+            "fallback": 31
+          },
+          {
+            "id": "train-455",
+            "accepted": 24,
+            "proposed": 104,
+            "rounds": 39,
+            "nonempty": 26,
+            "fallback": 17
+          },
+          {
+            "id": "train-6",
+            "accepted": 35,
+            "proposed": 78,
+            "rounds": 28,
+            "nonempty": 20,
+            "fallback": 10
+          },
+          {
+            "id": "train-7",
+            "accepted": 7,
+            "proposed": 117,
+            "rounds": 56,
+            "nonempty": 30,
+            "fallback": 34
+          },
+          {
+            "id": "train-84",
+            "accepted": 29,
+            "proposed": 80,
+            "rounds": 34,
+            "nonempty": 20,
+            "fallback": 15
+          },
+          {
+            "id": "train-85",
+            "accepted": 13,
+            "proposed": 117,
+            "rounds": 50,
+            "nonempty": 30,
+            "fallback": 26
+          }
+        ]
+      },
+      "hybrid_client2": {
+        "accepted": 148,
+        "proposed": 773,
+        "rounds": 356,
+        "nonempty": 196,
+        "fallback": 191,
+        "rows": [
+          {
+            "id": "train-498",
+            "accepted": 19,
+            "proposed": 112,
+            "rounds": 44,
+            "nonempty": 28,
+            "fallback": 19
+          },
+          {
+            "id": "train-499",
+            "accepted": 9,
+            "proposed": 77,
+            "rounds": 54,
+            "nonempty": 20,
+            "fallback": 39
+          },
+          {
+            "id": "train-454",
+            "accepted": 12,
+            "proposed": 108,
+            "rounds": 51,
+            "nonempty": 27,
+            "fallback": 31
+          },
+          {
+            "id": "train-455",
+            "accepted": 24,
+            "proposed": 104,
+            "rounds": 39,
+            "nonempty": 26,
+            "fallback": 17
+          },
+          {
+            "id": "train-6",
+            "accepted": 35,
+            "proposed": 78,
+            "rounds": 28,
+            "nonempty": 20,
+            "fallback": 10
+          },
+          {
+            "id": "train-7",
+            "accepted": 7,
+            "proposed": 105,
+            "rounds": 56,
+            "nonempty": 27,
+            "fallback": 34
+          },
+          {
+            "id": "train-84",
+            "accepted": 29,
+            "proposed": 80,
+            "rounds": 34,
+            "nonempty": 20,
+            "fallback": 15
+          },
+          {
+            "id": "train-85",
+            "accepted": 13,
+            "proposed": 109,
+            "rounds": 50,
+            "nonempty": 28,
+            "fallback": 26
+          }
+        ]
+      }
+    },
+    "test": {
+      "lookup": {
+        "accepted": 146,
+        "proposed": 647,
+        "rounds": 358,
+        "nonempty": 165,
+        "fallback": 0,
+        "rows": [
+          {
+            "id": "test-36",
+            "accepted": 5,
+            "proposed": 86,
+            "rounds": 58,
+            "nonempty": 22,
+            "fallback": 0
+          },
+          {
+            "id": "test-37",
+            "accepted": 20,
+            "proposed": 65,
+            "rounds": 43,
+            "nonempty": 17,
+            "fallback": 0
+          },
+          {
+            "id": "test-30",
+            "accepted": 24,
+            "proposed": 58,
+            "rounds": 39,
+            "nonempty": 15,
+            "fallback": 0
+          },
+          {
+            "id": "test-31",
+            "accepted": 18,
+            "proposed": 91,
+            "rounds": 45,
+            "nonempty": 23,
+            "fallback": 0
+          },
+          {
+            "id": "test-59",
+            "accepted": 19,
+            "proposed": 92,
+            "rounds": 44,
+            "nonempty": 23,
+            "fallback": 0
+          },
+          {
+            "id": "test-82",
+            "accepted": 9,
+            "proposed": 109,
+            "rounds": 54,
+            "nonempty": 28,
+            "fallback": 0
+          },
+          {
+            "id": "test-5",
+            "accepted": 18,
+            "proposed": 80,
+            "rounds": 45,
+            "nonempty": 20,
+            "fallback": 0
+          },
+          {
+            "id": "test-6",
+            "accepted": 33,
+            "proposed": 66,
+            "rounds": 30,
+            "nonempty": 17,
+            "fallback": 0
+          }
+        ]
+      },
+      "global2": {
+        "accepted": 44,
+        "proposed": 417,
+        "rounds": 460,
+        "nonempty": 107,
+        "fallback": 452,
+        "rows": [
+          {
+            "id": "test-36",
+            "accepted": 7,
+            "proposed": 61,
+            "rounds": 56,
+            "nonempty": 16,
+            "fallback": 55
+          },
+          {
+            "id": "test-37",
+            "accepted": 0,
+            "proposed": 23,
+            "rounds": 63,
+            "nonempty": 6,
+            "fallback": 62
+          },
+          {
+            "id": "test-30",
+            "accepted": 2,
+            "proposed": 75,
+            "rounds": 61,
+            "nonempty": 20,
+            "fallback": 60
+          },
+          {
+            "id": "test-31",
+            "accepted": 17,
+            "proposed": 64,
+            "rounds": 46,
+            "nonempty": 16,
+            "fallback": 45
+          },
+          {
+            "id": "test-59",
+            "accepted": 9,
+            "proposed": 66,
+            "rounds": 54,
+            "nonempty": 17,
+            "fallback": 53
+          },
+          {
+            "id": "test-82",
+            "accepted": 4,
+            "proposed": 56,
+            "rounds": 59,
+            "nonempty": 14,
+            "fallback": 58
+          },
+          {
+            "id": "test-5",
+            "accepted": 0,
+            "proposed": 36,
+            "rounds": 63,
+            "nonempty": 9,
+            "fallback": 62
+          },
+          {
+            "id": "test-6",
+            "accepted": 5,
+            "proposed": 36,
+            "rounds": 58,
+            "nonempty": 9,
+            "fallback": 57
+          }
+        ]
+      },
+      "region2": {
+        "accepted": 44,
+        "proposed": 345,
+        "rounds": 460,
+        "nonempty": 89,
+        "fallback": 452,
+        "rows": [
+          {
+            "id": "test-36",
+            "accepted": 8,
+            "proposed": 49,
+            "rounds": 55,
+            "nonempty": 13,
+            "fallback": 54
+          },
+          {
+            "id": "test-37",
+            "accepted": 0,
+            "proposed": 15,
+            "rounds": 63,
+            "nonempty": 4,
+            "fallback": 62
+          },
+          {
+            "id": "test-30",
+            "accepted": 0,
+            "proposed": 59,
+            "rounds": 63,
+            "nonempty": 16,
+            "fallback": 62
+          },
+          {
+            "id": "test-31",
+            "accepted": 17,
+            "proposed": 64,
+            "rounds": 46,
+            "nonempty": 16,
+            "fallback": 45
+          },
+          {
+            "id": "test-59",
+            "accepted": 10,
+            "proposed": 62,
+            "rounds": 53,
+            "nonempty": 16,
+            "fallback": 52
+          },
+          {
+            "id": "test-82",
+            "accepted": 6,
+            "proposed": 36,
+            "rounds": 57,
+            "nonempty": 9,
+            "fallback": 56
+          },
+          {
+            "id": "test-5",
+            "accepted": 0,
+            "proposed": 32,
+            "rounds": 63,
+            "nonempty": 8,
+            "fallback": 62
+          },
+          {
+            "id": "test-6",
+            "accepted": 3,
+            "proposed": 28,
+            "rounds": 60,
+            "nonempty": 7,
+            "fallback": 59
+          }
+        ]
+      },
+      "client2": {
+        "accepted": 40,
+        "proposed": 305,
+        "rounds": 464,
+        "nonempty": 79,
+        "fallback": 456,
+        "rows": [
+          {
+            "id": "test-36",
+            "accepted": 6,
+            "proposed": 45,
+            "rounds": 57,
+            "nonempty": 12,
+            "fallback": 56
+          },
+          {
+            "id": "test-37",
+            "accepted": 0,
+            "proposed": 15,
+            "rounds": 63,
+            "nonempty": 4,
+            "fallback": 62
+          },
+          {
+            "id": "test-30",
+            "accepted": 0,
+            "proposed": 51,
+            "rounds": 63,
+            "nonempty": 14,
+            "fallback": 62
+          },
+          {
+            "id": "test-31",
+            "accepted": 17,
+            "proposed": 56,
+            "rounds": 46,
+            "nonempty": 14,
+            "fallback": 45
+          },
+          {
+            "id": "test-59",
+            "accepted": 10,
+            "proposed": 62,
+            "rounds": 53,
+            "nonempty": 16,
+            "fallback": 52
+          },
+          {
+            "id": "test-82",
+            "accepted": 6,
+            "proposed": 32,
+            "rounds": 57,
+            "nonempty": 8,
+            "fallback": 56
+          },
+          {
+            "id": "test-5",
+            "accepted": 0,
+            "proposed": 16,
+            "rounds": 63,
+            "nonempty": 4,
+            "fallback": 62
+          },
+          {
+            "id": "test-6",
+            "accepted": 1,
+            "proposed": 28,
+            "rounds": 62,
+            "nonempty": 7,
+            "fallback": 61
+          }
+        ]
+      },
+      "hybrid_global2": {
+        "accepted": 161,
+        "proposed": 783,
+        "rounds": 343,
+        "nonempty": 199,
+        "fallback": 182,
+        "rows": [
+          {
+            "id": "test-36",
+            "accepted": 10,
+            "proposed": 118,
+            "rounds": 53,
+            "nonempty": 30,
+            "fallback": 32
+          },
+          {
+            "id": "test-37",
+            "accepted": 20,
+            "proposed": 73,
+            "rounds": 43,
+            "nonempty": 19,
+            "fallback": 25
+          },
+          {
+            "id": "test-30",
+            "accepted": 24,
+            "proposed": 90,
+            "rounds": 39,
+            "nonempty": 23,
+            "fallback": 24
+          },
+          {
+            "id": "test-31",
+            "accepted": 24,
+            "proposed": 103,
+            "rounds": 39,
+            "nonempty": 26,
+            "fallback": 20
+          },
+          {
+            "id": "test-59",
+            "accepted": 21,
+            "proposed": 104,
+            "rounds": 42,
+            "nonempty": 26,
+            "fallback": 20
+          },
+          {
+            "id": "test-82",
+            "accepted": 10,
+            "proposed": 129,
+            "rounds": 53,
+            "nonempty": 33,
+            "fallback": 24
+          },
+          {
+            "id": "test-5",
+            "accepted": 18,
+            "proposed": 88,
+            "rounds": 45,
+            "nonempty": 22,
+            "fallback": 25
+          },
+          {
+            "id": "test-6",
+            "accepted": 34,
+            "proposed": 78,
+            "rounds": 29,
+            "nonempty": 20,
+            "fallback": 12
+          }
+        ]
+      },
+      "hybrid_region2": {
+        "accepted": 163,
+        "proposed": 747,
+        "rounds": 341,
+        "nonempty": 190,
+        "fallback": 182,
+        "rows": [
+          {
+            "id": "test-36",
+            "accepted": 11,
+            "proposed": 114,
+            "rounds": 52,
+            "nonempty": 29,
+            "fallback": 32
+          },
+          {
+            "id": "test-37",
+            "accepted": 20,
+            "proposed": 69,
+            "rounds": 43,
+            "nonempty": 18,
+            "fallback": 25
+          },
+          {
+            "id": "test-30",
+            "accepted": 24,
+            "proposed": 82,
+            "rounds": 39,
+            "nonempty": 21,
+            "fallback": 24
+          },
+          {
+            "id": "test-31",
+            "accepted": 24,
+            "proposed": 103,
+            "rounds": 39,
+            "nonempty": 26,
+            "fallback": 20
+          },
+          {
+            "id": "test-59",
+            "accepted": 21,
+            "proposed": 104,
+            "rounds": 42,
+            "nonempty": 26,
+            "fallback": 20
+          },
+          {
+            "id": "test-82",
+            "accepted": 12,
+            "proposed": 117,
+            "rounds": 51,
+            "nonempty": 30,
+            "fallback": 23
+          },
+          {
+            "id": "test-5",
+            "accepted": 18,
+            "proposed": 84,
+            "rounds": 45,
+            "nonempty": 21,
+            "fallback": 25
+          },
+          {
+            "id": "test-6",
+            "accepted": 33,
+            "proposed": 74,
+            "rounds": 30,
+            "nonempty": 19,
+            "fallback": 13
+          }
+        ]
+      },
+      "hybrid_client2": {
+        "accepted": 161,
+        "proposed": 739,
+        "rounds": 343,
+        "nonempty": 188,
+        "fallback": 183,
+        "rows": [
+          {
+            "id": "test-36",
+            "accepted": 9,
+            "proposed": 114,
+            "rounds": 54,
+            "nonempty": 29,
+            "fallback": 33
+          },
+          {
+            "id": "test-37",
+            "accepted": 20,
+            "proposed": 69,
+            "rounds": 43,
+            "nonempty": 18,
+            "fallback": 25
+          },
+          {
+            "id": "test-30",
+            "accepted": 24,
+            "proposed": 78,
+            "rounds": 39,
+            "nonempty": 20,
+            "fallback": 24
+          },
+          {
+            "id": "test-31",
+            "accepted": 24,
+            "proposed": 99,
+            "rounds": 39,
+            "nonempty": 25,
+            "fallback": 20
+          },
+          {
+            "id": "test-59",
+            "accepted": 21,
+            "proposed": 104,
+            "rounds": 42,
+            "nonempty": 26,
+            "fallback": 20
+          },
+          {
+            "id": "test-82",
+            "accepted": 12,
+            "proposed": 117,
+            "rounds": 51,
+            "nonempty": 30,
+            "fallback": 23
+          },
+          {
+            "id": "test-5",
+            "accepted": 18,
+            "proposed": 84,
+            "rounds": 45,
+            "nonempty": 21,
+            "fallback": 25
+          },
+          {
+            "id": "test-6",
+            "accepted": 33,
+            "proposed": 74,
+            "rounds": 30,
+            "nonempty": 19,
+            "fallback": 13
+          }
+        ]
+      }
+    }
+  }
+}
