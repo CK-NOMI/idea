@@ -4232,3 +4232,8 @@ H未执行：只有真实训练部署确实将同一合法GRPO组跨区域分配
 - 起始及写前 075b1ff601fc1d56d3485274d46cbd3e45fb030c，README b4ff4d26858f8af7c1ce9db78b3202a4747e7c4d（4229行）。原始212行及manifest、参考序列、锁、日志复核；无新GPU执行。退出码文件为n，不能确认0；预期矩阵及summary完整。
 - E-H：测试AR/手工AR/Oracle K1/2/4/8/16 一致24/21/24/21/18/21/21（每臂24）；仅K1全量有效，1.874905x vs HF AR，原报告配对CI 1.865733–1.884231；1.5x净草稿预算6.704ms/轮，2x为−1.678ms/轮。其余仅失败配置原始时间比；9种HF SD校准均3/4，强SD空，非可部署加速。首分歧仅3篇：train-448第46 token全SD及手工AR，test-27第20/43，test-32第42；重复一致。怀疑FP16 shape/prefill/LM head路径差异，未证实；原始数据无logits。不删除失败文档。
 - P2：自动复用三篇失败输入，FP16/FP32（各自正式目标），7个定点同前缀logits/top5/margin，全prompt prefill新canonical K0/1/2/4/8/16和两种HF SD真实生成核对。非性能测量；局部CPU语法、2项逻辑测试通过，无真实GPU复跑。无G1/G2/G5/G6提升、无80%依据；不训练。 [完整审计](experiments/team-anchor/R120-P1/review.md) · [P2代码](research_code/R120-P0/diagnose.py)。
+
+
+### team-anchor/R120-P2-retry｜固定长度EOS继承缺陷修复
+- 起始/写前 main fb49fd5dde1eb4c9312ec862b2f3a4df5d91da39、README 10ad2dc94b6a4d024d6bd6de1fbc9c82ce512837（4235行）。P2原始JSON runs=[]、退出码1，首AR长度失败，无数值诊断数据。环境恢复记录六文件hash一致。P1参考train-448含第53个token 128001；P2未记录实际停止位置。
+- 源码核查HF4.48.3 `_prepare_generation_config`会将显式配置None EOS从默认配置恢复；P1双配置屏蔽，P2 AR漏设。确认配置缺陷，EOS触发仍待真实复现。保留旧代码和原失败，新增diagnose_v2.py，临时屏蔽双配置EOS、保留助手参数、finally恢复，记录实际长度/序列/阶段，短输出不静默剔除，继续其他文档，协议失败退出非0。语法+2项本地模拟单测通过，真实HF/CUDA未跑，不调整评分。 [修复代码](research_code/R120-P0/diagnose_v2.py) · [记录](experiments/team-anchor/R120-P2/review.md)。
