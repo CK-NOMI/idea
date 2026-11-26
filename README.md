@@ -4282,3 +4282,8 @@ H未执行：只有真实训练部署确实将同一合法GRPO组跨区域分配
 ### team-anchor/R124-P0审计/P1｜GPU可用，发布独立环境与官方权重校验
 - 起始/写前 fc530860966a3f927f366149a28c7835aa9ebccf，README 8d6eff7eb14cd865dd33e0975204b0bf1d1999f0（4280行），完整blob获取及相关章节筛查。读取P0四文件，先前SSH失败不计成功；后续NVIDIA/df/Python/package exit0，RTX3090 24576MiB空闲、580.119.02、数据盘47G、Python3.10.12、旧torch2.5.1+cu124/TF4.48.3、无vLLM记录；HF curl28、MS页面HTTP200非权重。未执行新GPU/下载。
 - 核对固定HF权重/tokenizer SHA256、vLLM0.17.1官方torch2.10.0依赖、GSM8K固定Git blob e4c2ff4942b9a78bd74f04141224c11e28d12dc9；发布P1独立环境、ModelScope官方模型下载、逐文件hash、MTP权重头校验和小BF16 CUDA smoke，非模型推理。ModelScope master仅获取入口，不宣称整个HF版本完全一致。未实际本地执行P1命令、未验证运行兼容性。G1/G2/G5/G6未过、G3/G4/G7部分、历史原创7.4不变。[审计](experiments/team-anchor/R124-P0-inventory/review.md) · [P1执行说明](experiments/team-anchor/R124/P1.md)。
+
+
+### team-anchor/R124-P1审计/retry｜ensurepip缺失，独立目录与固定pip wheel恢复
+- 起始/写前 77f6af61823a1d5bda17c81f8c9e6f4c2a7add23，README c66cf003f4262fba66c46d1c45f6cbbd4c632f4b（4285行），完整获取并近期记录筛查；P1原始commands、6个日志、退出码逐项回读。base check=0、disk=0/47G，download-venv stdout明确ensurepip不可用，exit=1、stage=1，未安装/下载/CUDA或LLM运行。保留失败目录和原始证据，旧R120不动。
+- 发布独立r124-p1-retry，venv --without-pip，官方PyPI pip25.3 wheel SHA256固定校验及双环境内pip路径验证，后续P1版本/权重与数据校验/最小BF16 smoke不变，禁止apt/conda/系统修改和模型推理。命令未执行，网络与真实兼容性仍未知；无科研评分变化。[审计](experiments/team-anchor/R124-P1-setup/review.md) · [恢复说明](experiments/team-anchor/R124/P1-retry.md)。
