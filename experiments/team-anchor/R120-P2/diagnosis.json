@@ -1,0 +1,12 @@
+{
+  "scope": "three known failure documents; diagnostic only; FP32 is separate numerical target",
+  "source_sha256": "73ccc333946d18b662595611b8fe1e86574be0b6b69658e8905759d69364a769",
+  "manifest_sha256": "1d9a45c7a9c46cd240af47a91e30ae5da36cd33518895044579d4824ec894171",
+  "references_sha256": "6dffb4345bad02fae35be3f5bb742c30d57db7b14ffada14bb37647eee2a2a14",
+  "torch": "2.5.1+cu124",
+  "transformers": "4.48.3",
+  "gpu": "NVIDIA GeForce RTX 3090",
+  "runs": [],
+  "completed": false,
+  "error": "RuntimeError('wrong AR length')"
+}

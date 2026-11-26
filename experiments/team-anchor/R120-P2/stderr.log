@@ -1,0 +1,9 @@
+From v4.47 onwards, when a model cache is to be returned, `generate` will return a `Cache` instance instead by default (as opposed to the legacy tuple of tuples format). If you want to keep returning the legacy format, please set `return_legacy_cache=True`.
+Traceback (most recent call last):
+  File "/root/rivermind-data/r120/repo/research_code/R120-P0/diagnose.py", line 177, in <module>
+    if __name__=='__main__': raise SystemExit(main())
+                                              ^^^^^^
+  File "/root/rivermind-data/r120/repo/research_code/R120-P0/diagnose.py", line 137, in main
+    if len(ar)!=N: raise RuntimeError('wrong AR length')
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: wrong AR length
