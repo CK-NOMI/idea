@@ -4242,3 +4242,8 @@ H未执行：只有真实训练部署确实将同一合法GRPO组跨区域分配
 ### team-anchor/R120-P2-retry审计 / P3｜数值路径一致性与同精度性能预算
 - 起始/写前 main 14a45b3d0ed2572cdd0c73215455f43b1b471dc8、README c3c00c7ab03a8b4d4090814621eaf12a7332591b（4240行）。P2-retry 原始JSON完整，六个64-token AR，协议失败0。FP16 canonical K0/1/2/4/8/16 一致3/1/1/3/1/1（10/18）；HF SD 1/6。FP32 canonical18/18、HF SD6/6（各自精度AR）；两篇FP32 AR与FP16参考分歧。train-448第46位置FP16分段top2平分、test-27第20位置原AR top3平分，支持有限精度/形状解释，非普适无损证明；无新GPU复跑或计时。
 - P3发布：同一FP32（TF32关闭）+完整prompt prefill、复用P1 4校准/8测试、固定64输出、3重复、校准HF SD、测试AR/手工AR/锁定SD+完美oracle K1/2/4/8/16。总墙钟比/5000文档bootstrap/每非空草稿调用净预算含prefill与尾部。语法+3项本地测试通过，无本地CUDA或HF真实执行。仅性能诊断，非独立论文测试或新算法；无评分提升。 [审计](experiments/team-anchor/R120-P2-retry/review.md) · [代码](research_code/R120-P0/pilot_fp32.py)。
+
+
+### team-anchor/R120-P3审计 / P4｜同精度性能空间确认与真实预测器门槛
+- 起始/写前 main f004a7140dae11c98e4b7856782a5b7c2ec50282、README fcb249f8ba33d88545d92ae09d0b3c4d9ee8a009（4245行）。独立复核236行（44校准/192测试），无重复、输出不一致或Oracle轨迹异常，退出码0；FP32同目标。AR/手工AR/锁定HF SD3:2平均1.012270/.994424/1.121735秒。Oracle K1/2/4/8/16相对AR 1.846/2.757/4.331/7.430/11.923x，相对锁定HF SD 2.046/3.055/4.800/8.234/13.213x，均为完美离线草稿非部署性能，HF SD慢于AR。相对AR 1.5x净预算4.080/14.652/33.934/76.944/147.487ms/非空调用；2x −1.362/6.618/20.956/52.843/105.309ms。无强优化SD对比，无80%依据，不抬原创分。
+- P4：停止重复基础诊断，实际冻结主干隐藏状态+pending嵌入→128 bottleneck→四步短词表预测头；CE及CE减前缀存活代理、免训练suffix lookup对照、K2/4校准选择、完整正式模型回滚验证。24/8/8篇，P4测试排除P1/P3测试（仍为历史R119语料），仅训练小头，不训练HFL或主干。CPU真实张量/反传及模拟回滚3项测试通过，无本地HF/GPU运行。若真实收益成立再设计与同委托flat匹配的分层机制；普通头非创新。 [审计与预注册](experiments/team-anchor/R120-P3/review.md) · [P4代码](research_code/R120-P0/learned_draft.py)。
