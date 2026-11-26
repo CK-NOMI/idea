@@ -1,0 +1,57 @@
+{
+  "ar": {
+    "n": 24,
+    "exact": 24,
+    "mean_seconds": 1.0748401929740794,
+    "speed_vs_ar": 1.0,
+    "speed_vs_sd": 1.012887291219926,
+    "accepted": 0,
+    "proposed": 0,
+    "verification_calls": 0,
+    "mean_commit": null
+  },
+  "sd": {
+    "n": 24,
+    "exact": 24,
+    "mean_seconds": 1.0886919715558179,
+    "speed_vs_ar": 0.9872766779367875,
+    "speed_vs_sd": 1.0,
+    "accepted": 0,
+    "proposed": 0,
+    "verification_calls": 0,
+    "mean_commit": null
+  },
+  "lookup:4": {
+    "n": 24,
+    "exact": 24,
+    "mean_seconds": 0.9033451766202537,
+    "speed_vs_ar": 1.1898443925891669,
+    "speed_vs_sd": 1.2051782637828594,
+    "accepted": 300,
+    "proposed": 1992,
+    "verification_calls": 1212,
+    "mean_commit": 1.2475247524752475
+  },
+  "ce:2": {
+    "n": 24,
+    "exact": 24,
+    "mean_seconds": 1.028230098891072,
+    "speed_vs_ar": 1.045330412067567,
+    "speed_vs_sd": 1.058801889508927,
+    "accepted": 189,
+    "proposed": 2586,
+    "verification_calls": 1323,
+    "mean_commit": 1.1428571428571428
+  },
+  "survival:2": {
+    "n": 24,
+    "exact": 24,
+    "mean_seconds": 1.0236218547991787,
+    "speed_vs_ar": 1.0500363859317452,
+    "speed_vs_sd": 1.0635685106287665,
+    "accepted": 195,
+    "proposed": 2574,
+    "verification_calls": 1317,
+    "mean_commit": 1.1480637813211845
+  }
+}

@@ -1,0 +1,5 @@
+From https://github.com/CK-NOMI/idea
+ * branch            8bbaba7e84f9738b76975b58c3a8cbfa8ec3a104 -> FETCH_HEAD
+Previous HEAD position was c68ff74 Audit P2 numerical consistency and release same-precision FP32 performance pilot
+HEAD is now at 8bbaba7 Audit P3 and release real frozen-backbone proposal pilot
+From v4.47 onwards, when a model cache is to be returned, `generate` will return a `Cache` instance instead by default (as opposed to the legacy tuple of tuples format). If you want to keep returning the legacy format, please set `return_legacy_cache=True`.
