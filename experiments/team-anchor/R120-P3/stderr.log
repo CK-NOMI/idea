@@ -1,0 +1,5 @@
+From https://github.com/CK-NOMI/idea
+ * branch            c68ff74547a721e3cf34d23d8dc53b84971bf68d -> FETCH_HEAD
+Previous HEAD position was 8696c1c Fix P2 EOS inheritance and preserve diagnostic failure details
+HEAD is now at c68ff74 Audit P2 numerical consistency and release same-precision FP32 performance pilot
+From v4.47 onwards, when a model cache is to be returned, `generate` will return a `Cache` instance instead by default (as opposed to the legacy tuple of tuples format). If you want to keep returning the legacy format, please set `return_legacy_cache=True`.
