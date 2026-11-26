@@ -4237,3 +4237,8 @@ H未执行：只有真实训练部署确实将同一合法GRPO组跨区域分配
 ### team-anchor/R120-P2-retry｜固定长度EOS继承缺陷修复
 - 起始/写前 main fb49fd5dde1eb4c9312ec862b2f3a4df5d91da39、README 10ad2dc94b6a4d024d6bd6de1fbc9c82ce512837（4235行）。P2原始JSON runs=[]、退出码1，首AR长度失败，无数值诊断数据。环境恢复记录六文件hash一致。P1参考train-448含第53个token 128001；P2未记录实际停止位置。
 - 源码核查HF4.48.3 `_prepare_generation_config`会将显式配置None EOS从默认配置恢复；P1双配置屏蔽，P2 AR漏设。确认配置缺陷，EOS触发仍待真实复现。保留旧代码和原失败，新增diagnose_v2.py，临时屏蔽双配置EOS、保留助手参数、finally恢复，记录实际长度/序列/阶段，短输出不静默剔除，继续其他文档，协议失败退出非0。语法+2项本地模拟单测通过，真实HF/CUDA未跑，不调整评分。 [修复代码](research_code/R120-P0/diagnose_v2.py) · [记录](experiments/team-anchor/R120-P2/review.md)。
+
+
+### team-anchor/R120-P2-retry审计 / P3｜数值路径一致性与同精度性能预算
+- 起始/写前 main 14a45b3d0ed2572cdd0c73215455f43b1b471dc8、README c3c00c7ab03a8b4d4090814621eaf12a7332591b（4240行）。P2-retry 原始JSON完整，六个64-token AR，协议失败0。FP16 canonical K0/1/2/4/8/16 一致3/1/1/3/1/1（10/18）；HF SD 1/6。FP32 canonical18/18、HF SD6/6（各自精度AR）；两篇FP32 AR与FP16参考分歧。train-448第46位置FP16分段top2平分、test-27第20位置原AR top3平分，支持有限精度/形状解释，非普适无损证明；无新GPU复跑或计时。
+- P3发布：同一FP32（TF32关闭）+完整prompt prefill、复用P1 4校准/8测试、固定64输出、3重复、校准HF SD、测试AR/手工AR/锁定SD+完美oracle K1/2/4/8/16。总墙钟比/5000文档bootstrap/每非空草稿调用净预算含prefill与尾部。语法+3项本地测试通过，无本地CUDA或HF真实执行。仅性能诊断，非独立论文测试或新算法；无评分提升。 [审计](experiments/team-anchor/R120-P2-retry/review.md) · [代码](research_code/R120-P0/pilot_fp32.py)。
