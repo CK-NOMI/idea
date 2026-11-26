@@ -4267,3 +4267,8 @@ H未执行：只有真实训练部署确实将同一合法GRPO组跨区域分配
 ### team-anchor/R122｜EOS口径审计、语义等价输出成本候选与原生MTP路线
 - 起始/写前 afb27a855cce1eed0966010e3361e01244ac696d，README 72b90e7086f5401ac4908ebb4c5f9700f21730e7（4265行），完整获取并筛查相关历史，非全库复跑。实际JS读取P5原始轨迹，128001首次出现train-6位置44/test-36位置0（零起点）。lookup rep0按EOS截断的校准轮数/接受/提交361/143/504→354/131/485，测试358/146/504→300/141/441；test-36首token EOS后仍有58轮。固定64是原预注册诊断，非协议错误；截断为离线反事实计数，非生产时延。
 - T/H：质量等价合法输出内成本+KL约束，固定轨迹成本的Gibbs tilt属经典优化，正式目标改变须另验质量；实际V8四客户端二表示toy，q=.9/.8/.2/.1，区域重叠.65→最高.95，K1等成本代理最多1.182x，强同分组flat完全复制，Reject独立立项。原生Qwen3.5-0.8B/2B官方MTP支持已核对，未下载/运行；新任务真实可验证数学/代码生成、正常EOS、同引擎AR/lookup/MTP，先证剩余关键路径和实际HFL约束。已查Draft-OPD、SPEC-Distill、Aurora、DVI、TLT、FedCoT等原始摘要；不宣称新颖。G1/G2/G5/G6未过，G3/G4/G7部分，历史原创7.4不变，无80%依据、无新GPU任务。[报告](experiments/team-anchor/R122/record.md) · [审计代码](experiments/team-anchor/R122/audit.js)。
+
+
+### team-anchor/R123｜公开轨迹经验分布的严格on-policy投机转换
+- 起始/写前 9e091e126fab39d6b09c3e17c4a55feda9e994b6，README 4c1d32a959e06a56c5e20a70f9b28f7b75e194c8；完整获取并筛查FCRR/FPCS/FOAS/R38/R44/R47/R69/R76/R121–122。PubSwap公开题离策略交换、SPEC-RL历史轨迹验证、Fed-GRPO/Aurora/TLT/NeMoRL/SkyRL已近邻，非穷尽查重。T：冻结授权公共题轨迹库B，前缀计数条件r_B，逐token真实混合q=(1−α)q_native+αr_B（空节点回退）。标准正残差恢复当前p，独立RNG且库不依赖当前样本时条件联合分布仍独立。无需旧logits，但不能声称保留PubSwap离策略学习收益；同信息平坦可完全复制。
+- E/P：实际V8 8逻辑client/2区、4步二元、3seed×3漂移×3样本量×120上下文，25920 client-context，27组；27代表核枚举误差1.1102230246251565e-16。native/本地/区域/全局EAL均值3.232197/3.358345/3.376797/3.335372; 9组区域相对native等轮成本提交代理仅1.025–1.041x，区域与同区域flat完全相等，非wall time；无真实GPU/学习/通信/CI。Reject独立立项，保留经验提议作强基线。G1/G2/G5/G6未过，G3/G4/G7部分，历史原创7.4不变，无80%依据。停止toy扫参，允许Codex仅盘点现有环境和公开模型元数据，不安装/下载/推理。[报告](experiments/team-anchor/R123/record.md) · [代码](experiments/team-anchor/R123/probe.js) · [结果](experiments/team-anchor/R123/results.json) · [下一步](experiments/team-anchor/R123/NEXT.md)。
