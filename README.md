@@ -4262,3 +4262,8 @@ H未执行：只有真实训练部署确实将同一合法GRPO组跨区域分配
 ### team-anchor/R121｜P5事后路由空间审计与研究转向
 - 起始/写前 c523c0dd81b0a3dbdb4bc0ca504081b8296cf392；README f8131dc99d8014731906e07bee6e9152a6caf0e4，完整blob获取并结构/相关记录筛查。新实际JS审计P5 288行全部参考一致、无重复。事后按每文档最快臂选择，校准/测试相对lookup仅1.001650/1.012454x（非部署，受噪声影响）。同位置已记录候选正确前缀联合+自由截短DP，校准361→320、测试358→314轮，等轮成本代理1.128/1.140x，非墙钟或普适上界。1.5x相对lookup需约29.83轮/文档、平均提交≥2.112（等轮成本/零固定开销假设），现有候选联合不达。无新GPU。
 - 停止P5预测器组合与调参；改用真实生成密集型联邦任务、预训练内生MTP/优化LayerSkip、同预算强平坦及独立HFL+SD；联合正式目标质量与验证成本的学习只是假说，R44/R85/R110近邻负证据，未发现通过G2机制。原始摘要/文档筛查EAGLE-3、DFlash、ReeFL、PipeSD、SpecRelay、CGSpec、MTP；G1/G2/G5/G6未过，G3/G4/G7部分，原创7.4不变，无80%依据，无新GPU授权。[报告](experiments/team-anchor/R121/record.md) · [离线审计代码](experiments/team-anchor/R121/audit.js)。JS计算在工具运行时实际完成，归档Node入口未另行运行。
+
+
+### team-anchor/R122｜EOS口径审计、语义等价输出成本候选与原生MTP路线
+- 起始/写前 afb27a855cce1eed0966010e3361e01244ac696d，README 72b90e7086f5401ac4908ebb4c5f9700f21730e7（4265行），完整获取并筛查相关历史，非全库复跑。实际JS读取P5原始轨迹，128001首次出现train-6位置44/test-36位置0（零起点）。lookup rep0按EOS截断的校准轮数/接受/提交361/143/504→354/131/485，测试358/146/504→300/141/441；test-36首token EOS后仍有58轮。固定64是原预注册诊断，非协议错误；截断为离线反事实计数，非生产时延。
+- T/H：质量等价合法输出内成本+KL约束，固定轨迹成本的Gibbs tilt属经典优化，正式目标改变须另验质量；实际V8四客户端二表示toy，q=.9/.8/.2/.1，区域重叠.65→最高.95，K1等成本代理最多1.182x，强同分组flat完全复制，Reject独立立项。原生Qwen3.5-0.8B/2B官方MTP支持已核对，未下载/运行；新任务真实可验证数学/代码生成、正常EOS、同引擎AR/lookup/MTP，先证剩余关键路径和实际HFL约束。已查Draft-OPD、SPEC-Distill、Aurora、DVI、TLT、FedCoT等原始摘要；不宣称新颖。G1/G2/G5/G6未过，G3/G4/G7部分，历史原创7.4不变，无80%依据、无新GPU任务。[报告](experiments/team-anchor/R122/record.md) · [审计代码](experiments/team-anchor/R122/audit.js)。

@@ -1,0 +1,6 @@
+// node audit.js <P5 runs.jsonl>
+const fs=require("fs"),rows=fs.readFileSync(process.argv[2],"utf8").trim().split("\n").map(JSON.parse);
+const result={};
+for(const split of ["calibration","test"]){const r=rows.filter(x=>x.split===split&&x.arm==="lookup"&&x.rep===0);let full={rounds:0,accepted:0,committed:0},cut={rounds:0,accepted:0,committed:0},docs=[];for(const x of r){const n=x.output_ids.indexOf(128001);const limit=n<0?64:n+1;let p=1,a=0,b=0,ca=0,cb=0,post=0;for(const k of x.blocks){a++;b+=k.accepted;if(p<limit){ca++;cb+=Math.min(k.accepted,limit-p)}if(p>=limit)post+=k.accepted;p+=k.emitted.length}full.rounds+=a;full.accepted+=b;full.committed+=63;cut.rounds+=ca;cut.accepted+=cb;cut.committed+=limit-1;docs.push({id:x.id,limit,rounds:a,accepted:b,cutRounds:ca,cutAccepted:cb,postAccepted:post})}result[split]={full,cut,docs};}
+const kl=p=>p*Math.log(2*p)+(1-p)*Math.log(2*(1-p));const q=[.9,.8,.2,.1],toy=[];for(const eps of [0,.01,.05,.1,.2,.4]){let l=.5,h=1;for(let i=0;i<70;i++){let m=(l+h)/2;if(kl(m)>eps)h=m;else l=m;}let p=Math.min(.85,l),pr=[p,p,1-p,1-p];const A=ps=>ps.reduce((s,x,i)=>s+1-Math.abs(x-q[i]),0)/4;const fixed=A([.5,.5,.5,.5]),regional=A(pr);toy.push({eps,p,global:fixed,regional,relativeCommit:(1+regional)/(1+fixed),flat:regional,actualKL:kl(p)})}
+console.log(JSON.stringify({eos:result,toy},null,2));
