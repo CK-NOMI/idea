@@ -1,0 +1,47 @@
+Thu Nov 26 09:05:06 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.119.02             Driver Version: 580.119.02     CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GeForce RTX 3090        On  |   00000000:A1:00.0 Off |                  N/A |
+| 30%   31C    P8             19W /  350W |       0MiB /  24576MiB |      0%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+
+NVIDIA_EXIT=0
+Filesystem                                                         Size  Used Avail Use% Mounted on
+overlay                                                             30G   30M   30G   1% /
+tmpfs                                                               64M     0   64M   0% /dev
+/dev/mapper/lvmdata-pvc--a03e07e5--6c2b--436d--8de5--9a3dd4590f2e   30G   30M   30G   1% /.rootfs
+/dev/sda3                                                          876G  160G  681G  19% /etc/hosts
+/dev/nvme0n1p1                                                     2.0T  1.3T  786G  62% /data/tini
+/dev/mapper/lvmdata-pvc--2f2a01e9--be65--4eaa--beca--7d90952f7b22   49G  2.6G   47G   6% /root/rivermind-data
+tmpfs                                                               24G     0   24G   0% /dev/shm
+tmpfs                                                              2.0T   12K  2.0T   1% /run/secrets/kubernetes.io/serviceaccount
+tmpfs                                                              4.0K  4.0K     0 100% /run/nvidia-ctk-hook/add1e1fd-c3ce-4259-b0c9-eced9517d1a2
+tmpfs                                                             1002G     0 1002G   0% /proc/acpi
+tmpfs                                                             1002G     0 1002G   0% /proc/scsi
+tmpfs                                                             1002G     0 1002G   0% /sys/firmware
+
+DF_EXIT=0
+Python 3.10.12
+PYTHON_EXIT=0
+{'torch': '2.5.1+cu124', 'transformers': '4.48.3', 'vllm': None, 'huggingface-hub': None}
+PACKAGES_EXIT=0
+HF_HTTP=000
+HF_CURL_EXIT=28
+curl: (28) Failed to connect to huggingface.co port 443 after 12707 ms: Connection timed out
+MS_HTTP=200
+MS_CURL_EXIT=0
+
