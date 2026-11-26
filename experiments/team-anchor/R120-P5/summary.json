@@ -1,0 +1,83 @@
+{
+  "ar": {
+    "n": 24,
+    "exact": 24,
+    "mean_seconds": 1.0715800769588288,
+    "speed_vs_ar": 1.0,
+    "accepted": 0,
+    "proposed": 0,
+    "rounds": 0
+  },
+  "sd": {
+    "n": 24,
+    "exact": 24,
+    "mean_seconds": 1.0595836858459127,
+    "speed_vs_ar": 1.0113217967331565,
+    "accepted": 0,
+    "proposed": 0,
+    "rounds": 0
+  },
+  "manual": {
+    "n": 24,
+    "exact": 24,
+    "mean_seconds": 1.0588505640625954,
+    "speed_vs_ar": 1.012022010780627,
+    "accepted": 0,
+    "proposed": 0,
+    "rounds": 1512
+  },
+  "lookup": {
+    "n": 24,
+    "exact": 24,
+    "mean_seconds": 0.8042519072187133,
+    "speed_vs_ar": 1.3323935788534185,
+    "accepted": 438,
+    "proposed": 1941,
+    "rounds": 1074
+  },
+  "direct": {
+    "n": 24,
+    "exact": 24,
+    "mean_seconds": 1.1178972653772992,
+    "speed_vs_ar": 0.9585675805344797,
+    "accepted": 159,
+    "proposed": 1335,
+    "rounds": 1353
+  },
+  "global": {
+    "n": 24,
+    "exact": 24,
+    "mean_seconds": 1.1153385286064197,
+    "speed_vs_ar": 0.9607666636404414,
+    "accepted": 168,
+    "proposed": 1320,
+    "rounds": 1344
+  },
+  "region": {
+    "n": 24,
+    "exact": 24,
+    "mean_seconds": 1.1112899909882497,
+    "speed_vs_ar": 0.9642668301240549,
+    "accepted": 183,
+    "proposed": 1308,
+    "rounds": 1329
+  },
+  "hybrid_global": {
+    "n": 24,
+    "exact": 24,
+    "mean_seconds": 0.8211559890575396,
+    "speed_vs_ar": 1.3049653065171052,
+    "accepted": 507,
+    "proposed": 2310,
+    "rounds": 1005
+  },
+  "hybrid_region": {
+    "n": 24,
+    "exact": 24,
+    "mean_seconds": 0.8278537707907768,
+    "speed_vs_ar": 1.294407436152935,
+    "accepted": 501,
+    "proposed": 2325,
+    "rounds": 1011
+  }
+}

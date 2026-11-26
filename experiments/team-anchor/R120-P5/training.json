@@ -1,0 +1,20 @@
+{
+  "windows": 2850,
+  "rank": 128,
+  "regularization": 10,
+  "regional_prior_regularization": 100,
+  "region_clients": {
+    "0": [
+      0,
+      1
+    ],
+    "1": [
+      2,
+      3
+    ]
+  },
+  "flat_equivalence_max_abs": {
+    "0": 8.326672684688674e-17,
+    "1": 7.632783294297951e-17
+  }
+}
