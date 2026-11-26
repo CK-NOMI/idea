@@ -4277,3 +4277,8 @@ H未执行：只有真实训练部署确实将同一合法GRPO组跨区域分配
 ### team-anchor/R124｜原生MTP强基线代码预发布（未授权GPU）
 - 起始/写前 42720faaae1bc3773977d961102c29ab817f4391，README fd5a6c67e81edee3d6a430c31afe8977f060d9be（4275行）；完整获取并相关记录筛查，未复跑全库；R124-P0 inventory尚未上传。固定K等轮成本完全接受上界代理(K+1)/(1+A)，联合全流程1/(1−f+f/S+h)仅成本分析，不是新机制。版本复用候选需对照R01/R03/R45/R77/R86及同委托flat，未证明新颖。
 - 核对Qwen3.5-0.8B官方固定版本112d51429c6afaee530e92f97ca2659dbe7cf875、vLLM MTP/ngram/get_metrics接口、GSM8K官方仓库版本3101c7d5072418e28b9008a6636bde82a006892c（数据尚未取得/哈希）；AR/MTP1/2/lookup4同引擎BF16、自然EOS、2热身/4校准/8保留、3session、独立进程、固定chat模板、逐ID及耗时/计数。先校准锁定，后留出。真实GPU兼容及计时未验。实际本地py_compile及4组stdlib自测通过，torch2.10 CPU无CUDA；源码sha256 f825d620fd9c3c8dbac4f6410e74108c968bb787c38a8caedfdaa122e42eda0c。未批准下载/安装/GPU运行，先inventory。G1/G2/G5/G6未过、G3/G4/G7部分、历史原创7.4不变、无80%依据。[报告](experiments/team-anchor/R124/record.md) · [代码](research_code/R124/probe.py) · [下一步](experiments/team-anchor/R124/NEXT.md)。
+
+
+### team-anchor/R124-P0审计/P1｜GPU可用，发布独立环境与官方权重校验
+- 起始/写前 fc530860966a3f927f366149a28c7835aa9ebccf，README 8d6eff7eb14cd865dd33e0975204b0bf1d1999f0（4280行），完整blob获取及相关章节筛查。读取P0四文件，先前SSH失败不计成功；后续NVIDIA/df/Python/package exit0，RTX3090 24576MiB空闲、580.119.02、数据盘47G、Python3.10.12、旧torch2.5.1+cu124/TF4.48.3、无vLLM记录；HF curl28、MS页面HTTP200非权重。未执行新GPU/下载。
+- 核对固定HF权重/tokenizer SHA256、vLLM0.17.1官方torch2.10.0依赖、GSM8K固定Git blob e4c2ff4942b9a78bd74f04141224c11e28d12dc9；发布P1独立环境、ModelScope官方模型下载、逐文件hash、MTP权重头校验和小BF16 CUDA smoke，非模型推理。ModelScope master仅获取入口，不宣称整个HF版本完全一致。未实际本地执行P1命令、未验证运行兼容性。G1/G2/G5/G6未过、G3/G4/G7部分、历史原创7.4不变。[审计](experiments/team-anchor/R124-P0-inventory/review.md) · [P1执行说明](experiments/team-anchor/R124/P1.md)。
