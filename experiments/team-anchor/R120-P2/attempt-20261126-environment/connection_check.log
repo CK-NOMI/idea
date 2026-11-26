@@ -1,0 +1,13 @@
+# Captured tool output, authentication prompt omitted; no credentials stored.
+# Check 1:
+$ ls -la /root/rivermind-data/r120p2 /root/rivermind-data/r120p2-log 2>/dev/null; cat /root/rivermind-data/r120p2-log/exit_code.txt 2>/dev/null; tail -5 /root/rivermind-data/r120p2-log/stderr.log 2>/dev/null
+# No remote stdout/stderr was returned. SSH wait status:
+SSH_STATUS 10223 exp5 0 1
+
+# Check 2:
+$ find /root /opt -maxdepth 5 -name model.safetensors -o -name pyvenv.cfg -o -name diagnose.py 2>/dev/null; python -c 'import torch,transformers; print(torch.__version__,transformers.__version__)'
+bash: line 1: python: command not found
+SSH_STATUS 10260 exp5 0 127
+
+# Local expect wrapper returned 0; remote SSH command returned 127.
+# diagnose.py was not launched. Its exit code is unavailable.

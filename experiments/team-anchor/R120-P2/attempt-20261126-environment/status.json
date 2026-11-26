@@ -1,0 +1,8 @@
+{
+  "status": "NOT_STARTED",
+  "source_commit": "18d4a3ec7da6851ca632ff73cd2a3d92674a1fea",
+  "diagnostic_executed": false,
+  "diagnostic_exit_code": null,
+  "environment_probe_exit_code": 127,
+  "model_backed_up_to_github": false
+}
