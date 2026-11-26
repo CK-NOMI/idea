@@ -1,0 +1,2 @@
+Filesystem                                                         Size  Used Avail Use% Mounted on
+/dev/mapper/lvmdata-pvc--2f2a01e9--be65--4eaa--beca--7d90952f7b22   49G  2.6G   47G   6% /root/rivermind-data
