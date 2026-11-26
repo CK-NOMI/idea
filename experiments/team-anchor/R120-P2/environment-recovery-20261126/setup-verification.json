@@ -1,0 +1,14 @@
+{
+  "torch": "2.5.1+cu124",
+  "transformers": "4.48.3",
+  "gpu": "NVIDIA GeForce RTX 3090",
+  "model_sha256": {
+    "special_tokens_map.json": "6f38c73729248f6c127296386e3cdde96e254636cc58b4169d3fd32328d9a8ec",
+    "tokenizer_config.json": "8c8270de650b79e2f449be4e3772da46999a3e53bc54c8d4c629bbff0c397933",
+    "generation_config.json": "f72132b15e0d0df9c6fc99d2d69ee52446f973a9f4641578c98156b1785ebc29",
+    "tokenizer.json": "6b9e4e7fb171f92fd137b777cc2714bf87d11576700a1dcd7a399e7bbe39537b",
+    "config.json": "0fa5bb77b0c8f1a5a335fd05773ed60522c015b6792324fe91904a757d7f815a",
+    "model.safetensors": "ba9a27bc1fadc74d7ca576aa618e464aa006b1c56b4a940c668c980a302708ee"
+  },
+  "source_commit": "18d4a3ec7da6851ca632ff73cd2a3d92674a1fea"
+}
